@@ -20,6 +20,8 @@ The source snapshot is recorded in `SOURCE_MONEY_COMMIT.txt`.
 
 Do not chain arrows autonomously. One completed, pushed arrow is a checkpoint for audit.
 
+A single active arrow may explicitly authorize **bounded recursive research inside that arrow**: C may generate, test, reject, refine, and combine hypotheses within the arrow's stated data firewall, economic constraints, wall-clock budget, and stopping rules. This is not permission to invent or begin the next arrow.
+
 ## Isolation rule — absolute
 
 `C:\Users\james\Money` is source provenance only and is **out of bounds for writes**.
