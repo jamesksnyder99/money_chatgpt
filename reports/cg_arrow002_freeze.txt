@@ -1,0 +1,17 @@
+CG Arrow 002 freeze status — NOT FROZEN / BLOCKED
+Recorded: 2026-09-12T22:58:09Z
+Finalist IDs: []
+OOS scoring authorized by this file: NO
+
+This is a status record, not a valid finalist freeze manifest. The corporate-action
+integrity gate failed before research or selection. There are no finalist rules,
+parameters, sizing decisions, or IS metrics to freeze. No confirmation pass occurred.
+
+No new out-of-sample (OOS) signal-cohort performance was generated, scored, or
+inspected in this arrow. The explicitly assigned inherited reports were read as
+historical provenance only. The same distinction applies to in-sample (IS) scoring:
+no fresh cohort baseline or candidate was scored.
+
+The exact preflight code identity and starting Git commit are recorded in
+cg_arrow002_recursive_lab.txt. Research requires a documented local split reference,
+a coverage and causal adjustment review, and a real finalist freeze before OOS.

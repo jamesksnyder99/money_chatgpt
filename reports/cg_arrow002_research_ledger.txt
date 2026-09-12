@@ -1,0 +1,58 @@
+CG Arrow 002 research ledger
+IS = in-sample; PnL = profit and loss; N/A = not applicable.
+Session start: 2026-09-12T22:55:12Z
+Infrastructure disposition: BLOCKED at the mandatory corporate-action gate.
+No research hypothesis was scored. The blocks below are NOT TESTED and are not
+negative performance evidence. All return, smoothness, and exposure metrics are N/A.
+
+GATE | INFRASTRUCTURE | completed 2026-09-12T22:58:09Z
+Mechanism: establish whether mechanical split changes can contaminate price returns
+and fixed-share held positions before researching the hold-short-for-fade parent.
+Result: BLOCKED. data/ref/splits.parquet contains zero events and no coverage proof.
+The inherited calendar writer explicitly creates an empty placeholder. No alternate
+split/corporate-action/adjustment filename was found anywhere under local data/.
+The copied tape is unadjusted and the parent does not apply split factors.
+No actual split event or amount of contamination has been established.
+
+D1 | DIRECTED | NOT TESTED — BLOCKED at preflight
+Hypothesis: pre-signal inverse 20-session volatility sizing, $32k batch,
+$2k–$6k clip and renormalization, could balance risk against equal-dollar sizing.
+Control: frozen Wednesday eight-name $4k parent plus exposure-matched control.
+Disposition: BLOCKED. Split artifacts would contaminate volatility and returns.
+IS PnL/session, red months/losses, worst month, drawdown/day, average/peak exposure:
+N/A (not scored). Runtime: 0 scoring seconds. Children: none.
+
+D2 | DIRECTED | NOT TESTED — BLOCKED at preflight
+Hypothesis: $8k aggregate symbol entry-value cap, both cash and next-ranked
+substitution, could reduce overlapping-name concentration.
+Control: frozen parent plus size/exposure-matched parent.
+Disposition: BLOCKED. Split-safe ranking and position accounting are unverified.
+All IS performance/exposure metrics: N/A. Runtime: 0 scoring seconds. Children: none.
+
+D3 | DIRECTED | NOT TESTED — BLOCKED at preflight
+Hypothesis: rank-1 minus rank-8 raw return width at/above the six-IS-month median
+gets $4k tickets; below gets $2k, compared with always-$4k and always-$3k controls.
+Disposition: BLOCKED. A mechanical reverse split can distort the raw return width.
+No median was calculated. All IS metrics: N/A. Scoring runtime: 0. Children: none.
+
+D4 | DIRECTED | NOT TESTED — BLOCKED at preflight
+Hypothesis: spreading the same $32k weekly allocation over actual signal sessions
+could reduce timing concentration while preserving delayed fills and ten-session holds.
+Control: frozen parent. Disposition: BLOCKED by unverified split-safe ranking.
+All IS metrics: N/A. Scoring runtime: 0. Children: none. No approximation selected.
+
+D5 | DIRECTED | NOT TESTED — BLOCKED at preflight
+Hypothesis: protection after hold day 3 and a 2-ATR favorable move, followed by a
+1-ATR rebound, could preserve mature fades; full and one-time half exits were specified.
+ATR means Average True Range; the specified signal-date lookback is 20 sessions.
+Control: frozen parent. Disposition: BLOCKED; unadjusted split jumps can distort ATR.
+All IS metrics: N/A. Scoring runtime: 0. Children: none. No checkpoint was selected.
+
+D6 | DIRECTED, CONDITIONAL | NOT OPENED
+Its prerequisite, a completed credible early-exit candidate releasing material
+capital, was not met. No replacement hypothesis was scored.
+
+ASTRA | No autonomous hypothesis opened or scored: common integrity gate blocked.
+Completed research hypotheses: 0. Directed: 0. Astra-originated: 0. Derived: 0.
+Performance REJECT: 0. PROMISING: 0. FRONTIER: 0. Frozen: 0.
+Five mandatory directed corridors closed as NOT TESTED — BLOCKED; no pending queue.
