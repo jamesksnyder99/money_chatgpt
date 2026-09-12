@@ -1,0 +1,136 @@
+CG Arrow 001 — isolated hold-short-for-fade parent reproduction
+
+VERDICT: REPRODUCED
+
+Repository and provenance
+-------------------------
+Requested repository root: C:\Users\james\money_chatgpt
+Windows canonical-case print: C:\Users\james\Money_ChatGPT
+Remote: https://github.com/jamesksnyder99/money_chatgpt.git
+Lab commit at start: 6496ad87c99a0015c1b140ad21760644cc372345
+Source Money commit: 594743b25a88ba16e1637f6a9ccbddf9fdbeb9ef
+Isolation: PASS
+
+The active Git root and every central data path resolve inside the independent
+money_chatgpt repository. No reparse points, junctions, or symbolic links were found
+under data/. No command read from, wrote to, or invoked code
+from the separate source repository. Git reports the entire data/ tree ignored and
+git ls-files reports no tracked data files.
+
+Original copied data inventory
+------------------------------
+tree             files          bytes  path/session coverage  purpose
+data/calendar        1          2,505  2026-05-15..2026-08-31 NYSE session calendar
+data/full       190,285  2,161,808,359  2026-05-15..2026-08-31 full 04:00–16:00 one-minute tape, eligibility, IWM benchmark, manifest
+data/meta             4      1,377,657  reference/as-of metadata SEC Standard Industrial Classification map and pull provenance
+data/ref              3        127,694  reference               common-stock symbols and split reference
+data/virgin      850,222  8,084,434,412  2025-08-01..2026-05-29 virgin 04:00–16:00 one-minute tape, daily state, eligibility, IWM benchmark, manifest
+TOTAL          1,040,515 10,247,750,627
+
+Relevant subtree detail:
+- data/full/bars: 190,209 parquet files, 2,154,779,572 bytes, 74 session directories.
+- data/full/bench/IWM: 74 parquet files, 1,194,616 bytes.
+- data/virgin/bars: 635,490 parquet files, 7,257,092,575 bytes, 208 session directories.
+- data/virgin/bench/IWM: 208 parquet files, 3,590,966 bytes.
+- data/virgin/eod: 214,522 parquet files, 799,035,960 bytes.
+
+Parquet reconciliation:
+- full eligibility: 1,133,828 rows, 74 sessions, 2026-05-15..2026-08-31.
+- full manifest: 190,209 rows, 74 sessions, 2026-05-15..2026-08-31.
+- virgin eligibility: 3,186,976 rows, 208 sessions, 2025-08-01..2026-05-29.
+- virgin manifest: 635,490 rows, 208 sessions, 2025-08-01..2026-05-29.
+- common-stock reference: 15,322 symbols; raw symbol reference: 26,640 symbols.
+- all 272 Arrow 70 feature sessions and all 251 score sessions have bar directories.
+- sampled tape files use one-minute bars from 04:00 through 15:59 America/New_York.
+
+Final data layout
+-----------------
+Layout preserved. The inherited central path layer in src/ingest/paths.py already
+provides one repository-relative source of truth, with data/virgin for August 2025
+through May 2026 and data/full for June through August 2026. Calendar, reference,
+and metadata roots are already separated by purpose. Consolidation would have added
+multi-gigabyte churn without improving correctness, so docs/CG_DATA_LAYOUT.md was not
+required or created. No canonical path depends on C:\Users\james\Money.
+
+Environment and tests
+---------------------
+Python: 3.14.5
+Dependency install: PASS from requirements.txt plus pytest.
+Installed direct packages: thetadata 1.0.10, python-dotenv 1.2.3,
+polars 1.44.2, pytest 9.1.1.
+Inherited pre-change baseline: PASS, 402 passed, 0 failed, 0 skipped;
+pytest 367.45 seconds, measured wall time 368.720 seconds.
+Arrow 001 focused guard tests: PASS, 3 passed in 2.58 seconds.
+Post-change full suite: PASS, 405 passed, 0 failed, 0 skipped;
+pytest 296.81 seconds, measured wall time 297.701 seconds.
+Path/layout changes: none. Added only repository/data isolation and frozen-parent
+guard tests in tests/test_cg_arrow001_guard.py.
+
+Exact reproduction commands
+---------------------------
+$env:PYTHONPATH = 'src'; .\.venv\Scripts\python.exe -c "from pathlib import Path; import research.arrow66 as a; a.REPORTS=Path(r'data/tmp/cg_arrow001/arrow66'); raise SystemExit(a.run_arrow66(workers=8))"
+$env:PYTHONPATH = 'src'; .\.venv\Scripts\python.exe -c "from pathlib import Path; import research.arrow70 as a; a.REPORTS=Path(r'data/tmp/cg_arrow001/arrow70'); raise SystemExit(a.run_arrow70(workers=8))"
+
+The inherited entrypoints were run with eight workers. Their generated legacy
+reports were redirected to ignored data/tmp/cg_arrow001/ subdirectories so the two
+independent reproductions could run concurrently without racing on RESEARCH_LOG.md
+or overwriting the tracked inherited reports.
+
+Arrow 66-style 2026 IS/OOS reconciliation
+-----------------------------------------
+Metric                                  inherited     reproduced   difference
+IS marked-to-market dollars/session        401.16          401.16         0.00
+IS completed trades                           116             116            0
+OOS marked-to-market dollars/session       260.36          260.36         0.00
+OOS completed trades                          113             113            0
+OOS maximum marked-to-market drawdown    -8,013.49       -8,013.49         0.00
+All-session peak live exposure            91,206          91,206            0
+
+IS = in-sample odd entry months. OOS = out-of-sample even entry months.
+The frozen h10_4k control reproduced exactly and remains the inherited slate result.
+
+Arrow 70-style continuous-year reconciliation
+---------------------------------------------
+Metric                                  inherited     reproduced   difference
+Total marked-to-market profit           51,855.71       51,855.71         0.00
+Marked-to-market dollars/session           206.60          206.60         0.00
+NYSE sessions                                 251             251            0
+Maximum marked-to-market drawdown       -20,033.68      -20,033.68         0.00
+Worst marked day                         -6,607.31       -6,607.31         0.00
+Completed trades                                376             376            0
+Peak live exposure                         102,922         102,922            0
+
+This continuous year is an exact reproduction of already-inspected research, not
+fresh validation. Peak live exposure exceeds the $100,000 account by $2,922, exactly
+as in the inherited result.
+
+Monthly marked-to-market reconciliation — flat $4,000 parent
+-------------------------------------------------------------
+month      sessions       MTM total   MTM dollars/session
+2025-09          21      -11,624.81               -553.56
+2025-10          23       20,205.67                878.51
+2025-11          19        5,274.46                277.60
+2025-12          22       -4,194.55               -190.66
+2026-01          20           57.30                  2.86
+2026-02          19          630.75                 33.20
+2026-03          22        6,404.67                291.12
+2026-04          21        1,001.48                 47.69
+2026-05          20        1,348.35                 67.42
+2026-06          21       19,788.66                942.32
+2026-07          22       13,035.11                592.51
+2026-08          21          -71.38                 -3.40
+TOTAL            251       51,855.71                206.60
+
+Discrepancies and research readiness
+------------------------------------
+Numerical discrepancies: none at reported precision.
+Data/layout discrepancies: none blocking. Windows prints the existing directory's
+canonical case as Money_ChatGPT; it is the same case-insensitive filesystem location
+as the requested money_chatgpt path and is distinct from the prohibited source tree.
+Economic caveat preserved: the continuous-year peak live exposure is $102,922 and
+therefore does not fit the $100,000 account without repair. This was already known
+and does not block reproduction.
+
+Final verdict: REPRODUCED
+The copied lab is self-contained and exactly reproduces the frozen hold-short-for-fade
+parent at every requested checkpoint. No optimization was performed.
