@@ -1,16 +1,22 @@
 # Agent rules
 
+- This repository is `jamesksnyder99/money_chatgpt`, an independent research lab. Read `docs/CHATGPT_LAB_PROTOCOL.md` before executing a lab arrow.
+- **Never write to `C:\Users\james\Money`.** The original Money repository and its data are out of bounds for modification. Use only the copied/local data under `C:\Users\james\money_chatgpt\data\` unless an active lab arrow explicitly authorizes a read-only provenance check.
 - Never print, log, commit, or echo `.env` or credential values.
+- This GitHub repository is public by user choice. Before every push, inspect staged files/diff for secrets, parquet, credentials, private account identifiers, or proprietary local data.
 - Stocks Professional only unless the user says otherwise. No options, no bulk/flat files, no streaming. Sub-minute bars only when the user asks for that tape.
 - Prefer the official `thetadata` Python SDK (HTTPS/gRPC). Do not launch Theta Terminal unless asked.
 - Follow `docs/DATA_CONTRACT.md`. Universe is the eligibility rules in the active brief, not an arbitrary 50-name cap.
 - Economic rule is `docs/SUCCESS.md` (two floors: slate $200/day, seat $100/day with IS not red / OOS green / low correlation / joint risk that fits $100k). Goal $300–$500 net per trading day on $100k. Do not optimize for pretty backtests that cannot clear the floors.
-- Language from Arrow 43 on: IS = in-sample (odd months), OOS = out-of-sample (even months). Do not use develop / holdout as names for new work.
+- Language from inherited Money Arrow 43 on: IS = in-sample (odd months), OOS = out-of-sample (even months). A lab arrow may define a different diagnostic split, but must label it explicitly and must not quietly promote an inspected slice to fresh validation.
 - **Granularity law:** the finest tape we actually possess is foundational for reading and acting. Today that is one-minute bars; if a 1-second or 10-second tape is added, that becomes the default. A higher timeframe (5-minute, 15-minute, etc.) is allowed only when a scored comparison shows it is superior for execution or computation (for example anti-twitch). Do not treat “one-minute” as the identity of the law.
-- Keep live pulls resumable. Pilot (5 symbols × 5 days) before a full ingest.
+- Keep live pulls resumable. Pilot before a full ingest when new data acquisition is authorized.
 - Parallelize by default: multi-core workers for local compute, parquet, tape replay, validation, and independent subprocesses. Theta pulls use up to 8 concurrent requests (Pro cap) with backoff on 429. Serial loops need a reason.
 - Long jobs: stdout heartbeat at least every 15 minutes with an ETA estimate. Soft time budgets are hints, not kill switches — checkpoint and resume.
-- Do not commit `data/`, parquet, or secrets. Manifests and reports may be committed if they contain no credentials.
-- Every new or changed file Build commits is audited by Grok before the next arrow is written. Prefer small, reviewable commits over one opaque dump.
+- Do not commit `data/`, parquet, secrets, `.venv/`, caches, or generated local proprietary datasets. Manifests and reports may be committed if they contain no credentials or proprietary payload.
+- Preserve the frozen control named by the active arrow. Reproduce before repairing; repair before optimizing.
+- Report negative findings with the same prominence as positive findings. Do not drop dates, trades, or months after seeing outcomes.
+- Prefer small, reviewable commits over one opaque dump.
 - Expand acronyms on first use in briefs and reports.
-- Standing SOP: the detailed instruction set is the `docs/BUILD_ARROW_XX.md` on Git. The paste to Build is a short pointer at that file. Do not treat a long chat paste as the spec.
+- **Standing SOP:** the detailed instruction set is the active `docs/CG_BUILD_ARROW_XXX.md` on GitHub. The paste to Codex is a short pointer at that file. Do not treat a long chat paste as the spec.
+- At the end of one lab arrow, run tests, write the requested audit report, commit, and push to `origin/main`. Do **not** invent or begin the next lab arrow. ChatGPT audits the pushed commit before the next arrow is written.
