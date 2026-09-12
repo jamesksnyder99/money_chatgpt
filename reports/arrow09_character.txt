@@ -1,0 +1,75 @@
+Arrow 9 Phase 1 — characterize movers (develop sessions only)
+develop n=42 2026-06-01..2026-07-30
+Holdout bars were not used to choose buckets, thresholds, or this paragraph.
+post_or_range = (09:45-11:59 high-low) / 09:44 OR mid.
+
+Track A name-days=32513 with post-OR range=32502
+  mean post_or_range by DV quintile (Q1=smallest DV … Q5=largest):
+    Q1:   2.919%  n=6433
+    Q2:   3.026%  n=6479
+    Q3:   3.028%  n=6526
+    Q4:   2.951%  n=6516
+    Q5:   3.278%  n=6548
+  mean post_or_range by |gap|:
+    <0.5%:   2.442%  n=12368
+    0.5-2%:   2.986%  n=15027
+    >=2%:   4.654%  n=5107
+  mean post_or_range by OR width:
+    <1%:   1.330%  n=6785
+    1-4%:   2.964%  n=21458
+    >4%:   6.155%  n=4259
+  mean post_or_range by 10d trend:
+    up:   2.934%  n=14471
+    down:   3.161%  n=12621
+    flat:   3.046%  n=5410
+  session-extreme clock hour counts:
+    09: 7487
+    10: 10179
+    11: 14836
+  Q5 × |gap| × OR-width mean post_or_range:
+    |gap|   >=2%  OR  >4%:   7.344%  n=576
+    |gap| 0.5-2%  OR  >4%:   6.048%  n=371
+    |gap|  <0.5%  OR  >4%:   5.593%  n=167
+    |gap|   >=2%  OR 1-4%:   3.629%  n=882
+    |gap| 0.5-2%  OR 1-4%:   2.847%  n=2136
+    |gap|  <0.5%  OR 1-4%:   2.645%  n=1268
+    |gap| 0.5-2%  OR  <1%:   1.382%  n=465
+    |gap|   >=2%  OR  <1%:   1.267%  n=68
+    |gap|  <0.5%  OR  <1%:   1.124%  n=615
+
+Track B name-days=16711 with post-OR range=16711
+  mean post_or_range by DV quintile (Q1=smallest DV … Q5=largest):
+    Q1:   2.813%  n=3341
+    Q2:   2.761%  n=3334
+    Q3:   2.791%  n=3347
+    Q4:   3.003%  n=3348
+    Q5:   3.468%  n=3341
+  mean post_or_range by |gap|:
+    <0.5%:   2.293%  n=5596
+    0.5-2%:   2.779%  n=7894
+    >=2%:   4.601%  n=3221
+  mean post_or_range by OR width:
+    <1%:   1.313%  n=3177
+    1-4%:   2.770%  n=11299
+    >4%:   6.314%  n=2235
+  mean post_or_range by 10d trend:
+    up:   2.876%  n=7365
+    down:   3.088%  n=6638
+    flat:   2.920%  n=2708
+  session-extreme clock hour counts:
+    09: 3779
+    10: 5179
+    11: 7753
+  Q5 × |gap| × OR-width mean post_or_range:
+    |gap|   >=2%  OR  >4%:   7.822%  n=367
+    |gap| 0.5-2%  OR  >4%:   5.762%  n=177
+    |gap|  <0.5%  OR  >4%:   5.633%  n=83
+    |gap|   >=2%  OR 1-4%:   3.718%  n=494
+    |gap| 0.5-2%  OR 1-4%:   2.809%  n=1127
+    |gap|  <0.5%  OR 1-4%:   2.543%  n=624
+    |gap| 0.5-2%  OR  <1%:   1.477%  n=184
+    |gap|  <0.5%  OR  <1%:   1.298%  n=262
+    |gap|   >=2%  OR  <1%:   1.201%  n=23
+
+Where movement lives (develop only):
+On develop, leftover range after 09:44 concentrates where the tables are tallest: liquid names (Q5) that already printed a real opening range and/or a real gap. Track A: post-09:44 range is larger in Q5 (3.28% n=6548) than Q1 (2.92% n=6433). Highest |gap| bucket is >=2% (4.65% n=5107); highest OR-width bucket is >4% (6.16% n=4259). Q5 intersection with the most leftover range: Q5 × |gap| >=2% × OR >4% (mean 7.34% n=576). Session extremes by clock: 9h 7487 (23%), 10h 10179 (31%), 11h 14836 (46%). Track B: post-09:44 range is larger in Q5 (3.47% n=3341) than Q1 (2.81% n=3341). Highest |gap| bucket is >=2% (4.60% n=3221); highest OR-width bucket is >4% (6.31% n=2235). Q5 intersection with the most leftover range: Q5 × |gap| >=2% × OR >4% (mean 7.82% n=367). Session extremes by clock: 9h 3779 (23%), 10h 5179 (31%), 11h 7753 (46%).

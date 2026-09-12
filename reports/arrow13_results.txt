@@ -1,0 +1,55 @@
+Arrow 13 — combine B-short gap15/2R; hunt non-mirror longs
+VERDICT: FAIL — no Arrow 13 book has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass.
+account=$100000  target=$300-$500/day  failure_line=$200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap file=True
+Pass = holdout >= $200/day AND develop not red. Do not promote develop-red / holdout-green.
+Short: Q5, gap-down>=1.5%, OR>2.5%, ema15 short. Longs are not the short recipe flipped.
+No Q4. No 5-min ORBR. No two-close. No 11:30 flatten. No Arrow 14.
+
+n_vs_control (short ids vs short_gap15|control on that track):
+  A/short_gap15|control: develop n=149 vs control 149 (1.00x) holdout n=52 vs control 52 (1.00x)
+  A/short_gap15|2R: develop n=150 vs control 149 (1.01x) holdout n=52 vs control 52 (1.00x)
+  A/short_gap15|c5_ema9: develop n=196 vs control 149 (1.32x) holdout n=89 vs control 52 (1.71x)
+  B/short_gap15|control: develop n=112 vs control 112 (1.00x) holdout n=41 vs control 41 (1.00x)
+  B/short_gap15|2R: develop n=113 vs control 112 (1.01x) holdout n=41 vs control 41 (1.00x)
+  B/short_gap15|c5_ema9: develop n=158 vs control 112 (1.41x) holdout n=63 vs control 41 (1.54x)
+
+track  side   id                        dev $/day  hold $/day  hold n    hit    avgR      maxDD  >=200
+A      short  short_gap15|control          -27.70       22.54      52  0.462   0.048    -770.99     NO
+       develop $/day=-27.70  trades=149  hit=0.383  avgR=-0.039  maxDD$=-1888.65
+       holdout $/day=22.54  trades=52  hit=0.462  avgR=0.048  maxDD$=-770.99  vs_$200=NO  vs_$300-500=NO
+A      short  short_gap15|2R               -23.05       21.43      52  0.462   0.045    -770.99     NO
+       develop $/day=-23.05  trades=150  hit=0.387  avgR=-0.032  maxDD$=-1854.19
+       holdout $/day=21.43  trades=52  hit=0.462  avgR=0.045  maxDD$=-770.99  vs_$200=NO  vs_$300-500=NO
+A      short  short_gap15|c5_ema9          -47.22      -37.72      89  0.360  -0.073   -1705.31     NO
+       develop $/day=-47.22  trades=196  hit=0.434  avgR=-0.091  maxDD$=-4420.17
+       holdout $/day=-37.72  trades=89  hit=0.360  avgR=-0.073  maxDD$=-1705.31  vs_$200=NO  vs_$300-500=NO
+A      long   long_pb_mid_ema9            -217.14     -322.82     186  0.145  -1.371   -7102.09     NO
+       develop $/day=-217.14  trades=351  hit=0.142  avgR=-1.299  maxDD$=-10462.02
+       holdout $/day=-322.82  trades=186  hit=0.145  avgR=-1.371  maxDD$=-7102.09  vs_$200=NO  vs_$300-500=NO
+A      long   long_vwap_reclaim           -195.36     -288.02     176  0.176  -1.599   -6829.47     NO
+       develop $/day=-195.36  trades=334  hit=0.177  avgR=-1.120  maxDD$=-9493.13
+       holdout $/day=-288.02  trades=176  hit=0.176  avgR=-1.599  maxDD$=-6829.47  vs_$200=NO  vs_$300-500=NO
+A      long   long_quiet_or15             -103.46     -183.51     101  0.356  -0.232   -4104.97     NO
+       develop $/day=-103.46  trades=194  hit=0.418  avgR=-0.138  maxDD$=-5659.72
+       holdout $/day=-183.51  trades=101  hit=0.356  avgR=-0.232  maxDD$=-4104.97  vs_$200=NO  vs_$300-500=NO
+B      short  short_gap15|control           39.87       73.44      41  0.585   0.198    -510.24     NO
+       develop $/day=39.87  trades=112  hit=0.491  avgR=0.075  maxDD$=-1130.26
+       holdout $/day=73.44  trades=41  hit=0.585  avgR=0.198  maxDD$=-510.24  vs_$200=NO  vs_$300-500=NO
+B      short  short_gap15|2R                49.47       72.32      41  0.585   0.195    -510.24     NO
+       develop $/day=49.47  trades=113  hit=0.496  avgR=0.092  maxDD$=-1130.26
+       holdout $/day=72.32  trades=41  hit=0.585  avgR=0.195  maxDD$=-510.24  vs_$200=NO  vs_$300-500=NO
+B      short  short_gap15|c5_ema9           57.16      164.18      63  0.460   0.267   -1100.02     NO
+       develop $/day=57.16  trades=158  hit=0.538  avgR=0.066  maxDD$=-1787.64
+       holdout $/day=164.18  trades=63  hit=0.460  avgR=0.267  maxDD$=-1100.02  vs_$200=NO  vs_$300-500=NO
+B      long   long_pb_mid_ema9            -189.03     -175.13     135  0.141  -0.859   -3852.92     NO
+       develop $/day=-189.03  trades=283  hit=0.166  avgR=-1.076  maxDD$=-8406.87
+       holdout $/day=-175.13  trades=135  hit=0.141  avgR=-0.859  maxDD$=-3852.92  vs_$200=NO  vs_$300-500=NO
+B      long   long_vwap_reclaim           -131.24     -151.58     132  0.167  -1.986   -4389.29     NO
+       develop $/day=-131.24  trades=271  hit=0.166  avgR=-1.170  maxDD$=-7245.62
+       holdout $/day=-151.58  trades=132  hit=0.167  avgR=-1.986  maxDD$=-4389.29  vs_$200=NO  vs_$300-500=NO
+B      long   long_quiet_or15              -87.83     -141.04      84  0.357  -0.215   -3916.34     NO
+       develop $/day=-87.83  trades=150  hit=0.400  avgR=-0.153  maxDD$=-5478.06
+       holdout $/day=-141.04  trades=84  hit=0.357  avgR=-0.215  maxDD$=-3916.34  vs_$200=NO  vs_$300-500=NO

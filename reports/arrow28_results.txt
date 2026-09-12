@@ -1,0 +1,62 @@
+Arrow 28 — B-short on data/full; afternoon exits; SSR=B_uptick10
+VERDICT: HOLD OUT CLEARS $200 WITH NON-RED DEVELOP — B_uptick10|atr1559
+No rocket rings. No $500/idea. No virgin pull. No cap3-vs-cap8 on flush. No Arrow 29.
+Row 0 counts vs A27 B_uptick10: develop 212/204 (1.04x) holdout 94/75 (1.25x) — DRIFT beyond ±10%. Likely causes: data/full 04:00-16:00 tape adds premarket 15m bars to the EMA stitch (Lab A started 07:30), and ssr_active session-low now includes 04:00-07:30 prints; harness ATR/0.6pct floor is on (A27 B-short did not use it) which changes size not skips.
+Honesty: combined develop is the combine_books number. Combined holdout is not EV. Do not write that the account is one improvement from $200.
+account=100000  target=300-500/day  failure_line=200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap=True  tape=C:\Users\james\Money\data\full\bars
+Entry: Track B [$10,$50] cap400, dv_rank>=0.80, gap-down>=1.5%, OR>2.5%, first 5-min close below ema9 after 09:45, ema9<ema21. cap8 $200/idea, borrow on, uptick10. Harness ATR/0.6pct stop floor on. Flatten per id.
+
+id                        dev $/day  hold $/day  hold n    avgR     PF  t_hold  peak  meanC  >=200
+B_uptick10|flat1159           14.62      148.24      94   0.202  1.629    1.06     8   3.79     NO
+  develop $/day=14.62  trades=212  hit=0.514  avgR=0.020  maxDD$=-3042.51  std=594.28  se=91.70  t=0.16  ci95=[-174.37,188.53]
+    PF=1.047  peak_conc=8  mean_conc=4.12  ssr_share=0.222  ssr_nofill=3
+  holdout $/day=148.24  trades=94  hit=0.511  avgR=0.202  maxDD$=-1570.42  std=657.52  se=140.18  t=1.06  ci95=[-117.01,443.94]  vs_$200=NO  vs_$300-500=NO
+    PF=1.629  peak_conc=8  mean_conc=3.79  IWM alpha hold $90.45 (n=94 skip=0)
+    pre_dv_0929 mean develop=21327374 holdout=21716987  rel0929 mean develop=10.30 holdout=27.08  (report-only, no gate)
+    id0 time-exits >=+0.5R develop=0.257 holdout=0.420  MFE after 11:59 if held to 15:59 meanR develop=0.793 holdout=1.033
+B_uptick10|flat1559          -12.99      293.68      95   0.382  2.319    2.05     8   3.70    NO*
+  develop $/day=-12.99  trades=212  hit=0.462  avgR=-0.029  maxDD$=-2389.97  std=736.16  se=113.59  t=-0.11  ci95=[-238.32,200.63]
+    PF=0.970  peak_conc=8  mean_conc=3.76  ssr_share=0.224  ssr_nofill=3
+  holdout $/day=293.68  trades=95  hit=0.589  avgR=0.382  maxDD$=-1028.03  std=670.37  se=142.92  t=2.05  ci95=[30.37,558.39]  vs_$200=YES  vs_$300-500=NO
+    PF=2.319  peak_conc=8  mean_conc=3.70  IWM alpha hold $-109.23 (n=13 skip=82)
+    pre_dv_0929 mean develop=21327374 holdout=22273594  rel0929 mean develop=10.30 holdout=26.86  (report-only, no gate)
+B_uptick10|hold05             -2.80      166.89      94   0.217  1.677    1.12     8   3.03     NO
+  develop $/day=-2.80  trades=212  hit=0.476  avgR=0.001  maxDD$=-2775.95  std=649.68  se=100.25  t=-0.03  ci95=[-203.74,192.25]
+    PF=0.992  peak_conc=8  mean_conc=3.12  ssr_share=0.222  ssr_nofill=3
+  holdout $/day=166.89  trades=94  hit=0.479  avgR=0.217  maxDD$=-1296.64  std=697.59  se=148.73  t=1.12  ci95=[-106.90,460.88]  vs_$200=NO  vs_$300-500=NO
+    PF=1.677  peak_conc=8  mean_conc=3.03  IWM alpha hold $-231.38 (n=59 skip=35)
+    pre_dv_0929 mean develop=21327374 holdout=21716987  rel0929 mean develop=10.30 holdout=27.08  (report-only, no gate)
+B_uptick10|atr1559            82.65      233.20      95   0.292  2.198    2.19     8   3.13   BOTH
+  develop $/day=82.65  trades=213  hit=0.545  avgR=0.069  maxDD$=-1989.27  std=690.39  se=106.53  t=0.78  ci95=[-124.48,283.34]
+    PF=1.243  peak_conc=8  mean_conc=2.88  ssr_share=0.224  ssr_nofill=3
+  holdout $/day=233.20  trades=95  hit=0.632  avgR=0.292  maxDD$=-850.66  std=500.11  se=106.62  t=2.19  ci95=[31.33,431.14]  vs_$200=YES  vs_$300-500=NO
+    PF=2.198  peak_conc=8  mean_conc=3.13  IWM alpha hold $-19.81 (n=25 skip=70)
+    pre_dv_0929 mean develop=21282636 holdout=22273594  rel0929 mean develop=10.26 holdout=26.86  (report-only, no gate)
+B_uptick10|flat1330          -61.99      199.10      95   0.256  1.896    1.36     8   3.77     NO
+  develop $/day=-61.99  trades=212  hit=0.467  avgR=-0.077  maxDD$=-3401.48  std=674.61  se=104.09  t=-0.60  ci95=[-262.42,138.34]
+    PF=0.838  peak_conc=8  mean_conc=4.00  ssr_share=0.224  ssr_nofill=3
+  holdout $/day=199.10  trades=95  hit=0.516  avgR=0.256  maxDD$=-1161.23  std=685.09  se=146.06  t=1.36  ci95=[-54.00,488.59]  vs_$200=NO  vs_$300-500=NO
+    PF=1.896  peak_conc=8  mean_conc=3.77  IWM alpha hold $-109.23 (n=13 skip=82)
+    pre_dv_0929 mean develop=21327374 holdout=22273594  rel0929 mean develop=10.30 holdout=26.86  (report-only, no gate)
+B_uptick10|hold05_1430       -36.72      175.18      94   0.228  1.730    1.09     8   3.16     NO
+  develop $/day=-36.72  trades=212  hit=0.481  avgR=-0.041  maxDD$=-2706.42  std=570.29  se=88.00  t=-0.42  ci95=[-208.72,128.25]
+    PF=0.888  peak_conc=8  mean_conc=3.30  ssr_share=0.222  ssr_nofill=3
+  holdout $/day=175.18  trades=94  hit=0.489  avgR=0.228  maxDD$=-1487.01  std=753.18  se=160.58  t=1.09  ci95=[-115.57,492.38]  vs_$200=NO  vs_$300-500=NO
+    PF=1.730  peak_conc=8  mean_conc=3.16  IWM alpha hold $-231.38 (n=59 skip=35)
+    pre_dv_0929 mean develop=21327374 holdout=21716987  rel0929 mean develop=10.30 holdout=27.08  (report-only, no gate)
+B_reject|flat1159            -43.56       83.66      80   0.147  1.367    0.60     8   3.22     NO
+  develop $/day=-43.56  trades=181  hit=0.475  avgR=-0.038  maxDD$=-2930.95  std=576.94  se=89.02  t=-0.49  ci95=[-218.18,114.03]
+    PF=0.850  peak_conc=8  mean_conc=3.50  ssr_share=0.222  ssr_nofill=0
+  holdout $/day=83.66  trades=80  hit=0.487  avgR=0.147  maxDD$=-2206.87  std=658.20  se=140.33  t=0.60  ci95=[-161.08,377.74]  vs_$200=NO  vs_$300-500=NO
+    PF=1.367  peak_conc=8  mean_conc=3.22  IWM alpha hold $31.96 (n=80 skip=0)
+    pre_dv_0929 mean develop=17376122 holdout=14830415  rel0929 mean develop=3.03 holdout=3.57  (report-only, no gate)
+
+flush|max6 (COMBINED input) develop $12.18/day holdout $116.77/day n_hold=23
+
+COMBINED B_uptick10|atr1559 + flush|max6  (best develop-not-red B row this file + flush|max6)
+  develop $/day=94.83  std=668.99  se=103.23  t=0.92  ci95=[-96.98,288.27]  maxDD$=-1853.39  corr=-0.258
+  holdout $/day=349.97  std=582.75  se=124.24  t=2.82  ci95=[121.80,577.83]  maxDD$=-728.51  corr=-0.046  NOT EV
+NO* = holdout >= 200 but develop is red — not a pass. Combined holdout is not EV.

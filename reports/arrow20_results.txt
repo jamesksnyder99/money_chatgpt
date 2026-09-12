@@ -1,0 +1,99 @@
+Arrow 20 — first long swing at 09:29 hot engines (data/full)
+VERDICT: FAIL — no Arrow 20 book has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass. First swing, not EV.
+First look at this recipe. Holdout is not a tuner from Arrows 10-16. Not EV.
+Long only. No B-short rescore. Did not touch data/bars. No Track B cap. No Arrow 21.
+account=100000  target=300-500/day  failure_line=200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8
+Hot gate at 09:29: prior_close [$1,$20], pre_dv>=250k, pre_dv_rel>=3, ext in [0.03, 0.15).
+cap8=8/16/1600 RISK_PER_IDEA=200. Fills=next tradeable open. Leak-fixed flatten.
+
+hot name-days develop: n_sess=42 total=501 mean=11.93 median=10.0 max=55
+hot name-days holdout: n_sess=22 total=473 mean=21.50 median=19.0 max=63
+develop hot/session:
+  2026-06-01 20
+  2026-06-02 13
+  2026-06-03 13
+  2026-06-04 10
+  2026-06-05 5
+  2026-06-08 18
+  2026-06-09 10
+  2026-06-10 6
+  2026-06-11 10
+  2026-06-12 9
+  2026-06-15 55
+  2026-06-16 10
+  2026-06-17 10
+  2026-06-18 17
+  2026-06-22 20
+  2026-06-23 4
+  2026-06-24 7
+  2026-06-25 6
+  2026-06-26 2
+  2026-06-29 17
+  2026-06-30 18
+  2026-07-01 7
+  2026-07-02 18
+  2026-07-06 9
+  2026-07-07 8
+  2026-07-08 11
+  2026-07-09 12
+  2026-07-10 8
+  2026-07-13 11
+  2026-07-14 18
+  2026-07-15 16
+  2026-07-16 14
+  2026-07-17 5
+  2026-07-20 4
+  2026-07-21 10
+  2026-07-22 9
+  2026-07-23 7
+  2026-07-24 4
+  2026-07-27 14
+  2026-07-28 8
+  2026-07-29 13
+  2026-07-30 15
+holdout hot/session:
+  2026-07-31 16
+  2026-08-03 15
+  2026-08-04 33
+  2026-08-05 31
+  2026-08-06 21
+  2026-08-07 63
+  2026-08-10 18
+  2026-08-11 19
+  2026-08-12 34
+  2026-08-13 20
+  2026-08-14 21
+  2026-08-17 19
+  2026-08-18 9
+  2026-08-19 32
+  2026-08-20 30
+  2026-08-21 30
+  2026-08-24 16
+  2026-08-25 6
+  2026-08-26 6
+  2026-08-27 13
+  2026-08-28 10
+  2026-08-31 11
+
+id                dev $/day  hold $/day  hold n    hit    avgR  t_hold              ci95 hold  >=200
+open|flat1159        -46.90     -238.29     171  0.368  -0.183   -1.70          [-490.4,36.5]     NO
+       develop $/day=-46.90  trades=302  hit=0.417  avgR=-0.050  maxDD$=-3352.65  std=744.03  se=114.81  t=-0.41  ci95=[-260.89,193.41]
+       holdout $/day=-238.29  trades=171  hit=0.368  avgR=-0.183  maxDD$=-5851.27  std=657.88  se=140.26  t=-1.70  ci95=[-490.41,36.47]  vs_$200=NO  vs_$300-500=NO
+open|flat1559        -42.70     -256.88     171  0.339  -0.196   -1.51          [-574.7,99.1]     NO
+       develop $/day=-42.70  trades=302  hit=0.404  avgR=-0.043  maxDD$=-4688.70  std=988.41  se=152.51  t=-0.28  ci95=[-304.49,289.65]
+       holdout $/day=-256.88  trades=171  hit=0.339  avgR=-0.196  maxDD$=-6874.72  std=797.73  se=170.08  t=-1.51  ci95=[-574.73,99.10]  vs_$200=NO  vs_$300-500=NO
+strong5             -178.88     -652.47     214  0.304  -0.506   -4.42        [-950.4,-360.6]     NO
+       develop $/day=-178.88  trades=289  hit=0.343  avgR=-0.171  maxDD$=-9566.85  std=843.41  se=130.14  t=-1.37  ci95=[-421.49,85.95]
+       holdout $/day=-652.47  trades=214  hit=0.304  avgR=-0.506  maxDD$=-14354.27  std=691.84  se=147.50  t=-4.42  ci95=[-950.39,-360.64]  vs_$200=NO  vs_$300-500=NO
+newhigh             -236.53     -498.29     157  0.280  -0.432   -3.77        [-760.5,-224.4]     NO
+       develop $/day=-236.53  trades=167  hit=0.251  avgR=-0.534  maxDD$=-10141.29  std=460.25  se=71.02  t=-3.33  ci95=[-379.10,-96.62]
+       holdout $/day=-498.29  trades=157  hit=0.280  avgR=-0.432  maxDD$=-11277.33  std=620.67  se=132.33  t=-3.77  ci95=[-760.53,-224.38]  vs_$200=NO  vs_$300-500=NO
+open|lt10            -30.39     -334.41     166  0.325  -0.255   -2.60         [-571.5,-77.7]     NO
+       develop $/day=-30.39  trades=277  hit=0.422  avgR=-0.040  maxDD$=-3582.47  std=794.98  se=122.67  t=-0.25  ci95=[-258.30,227.33]
+       holdout $/day=-334.41  trades=166  hit=0.325  avgR=-0.255  maxDD$=-8390.92  std=604.23  se=128.82  t=-2.60  ci95=[-571.50,-77.74]  vs_$200=NO  vs_$300-500=NO
+open|2R              -62.55     -220.09     171  0.386  -0.168   -1.57          [-478.1,62.7]     NO
+       develop $/day=-62.55  trades=302  hit=0.444  avgR=-0.054  maxDD$=-4381.04  std=590.46  se=91.11  t=-0.69  ci95=[-243.62,117.37]
+       holdout $/day=-220.09  trades=171  hit=0.386  avgR=-0.168  maxDD$=-5210.87  std=656.82  se=140.03  t=-1.57  ci95=[-478.11,62.71]  vs_$200=NO  vs_$300-500=NO

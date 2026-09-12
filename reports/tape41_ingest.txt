@@ -1,0 +1,24 @@
+Arrow 41 — virgin 04:00-16:00 1-minute tape (ingest, not a book)
+No fills. No $200 verdict. Did not score engines. Did not touch data/full or Lab A data/bars. No Arrow 42.
+venue=utp_cta interval=1m window=04:00-16:00ET last_bar=15:59
+eligibility: common stock + ETP denylist, prior_close [$1, $80], prior DV >= $1M, $10M is a filter column not an ingest wall, no 400 cap
+warmup n=10 2025-12-17..2025-12-31 (last 10 NYSE 2025; not scored)
+study n=102 2026-01-02..2026-05-29 (first 2026 session through last full May; all of January in study)
+workers=8 theta_concurrency=8 cpu_count=8
+output bars=C:\Users\james\Money\data\virgin\bars eligibility=C:\Users\james\Money\data\virgin\eligibility.parquet manifest=C:\Users\james\Money\data\virgin\manifest.parquet iwm=C:\Users\james\Money\data\virgin\bench\IWM
+
+sessions_attempted=112
+name_days_eligible=340057
+unique_symbols=5328
+1m_rows=244841040
+mean_bars_per_name_day=720.0
+name_days_pdv_ge_10m=181614
+name_days_prior_close_gt_50=48400
+manifest pulled=340057 empty=0 missing=0
+failures=0
+iwm_sessions_on_disk=112 iwm_ok=112 iwm_fail=0
+wall_s=9341.1 wall_min=155.7
+after_first_5_study_sessions elapsed_s=308.3 name_days=15359 rows=11058480 remaining_name_days=324698 eta_min=108.6 (estimate)
+name_days_with_04:00_print=340057
+name_days_first_print_after_07:30=0
+

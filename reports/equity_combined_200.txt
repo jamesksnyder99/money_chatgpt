@@ -1,0 +1,3 @@
+start=$100000.00  end=$108907.40  min_equity=$100101.21
+max_daily_close_DD=$-3267.84  develop_ending_equity=$103308.33  holdout_ending_equity=$108907.40
+B n develop=228 holdout=93  flush n develop=21 holdout=19  cut=2026-07-31 stained holdout (not EV)

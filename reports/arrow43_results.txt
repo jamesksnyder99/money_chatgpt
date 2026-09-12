@@ -1,0 +1,61 @@
+Arrow 43 — clock split (IS / OOS)
+VERDICT: FAIL — no Arrow 43 clock book has OOS >= $100/day AND non-red IS. Slate $200 is not this arrow's job.
+Overnight has no stop. $2,000 × 25 is $50k deployed. Costs on a 25-name overnight book can dominate the gap. Did not glue on_long and rth_long into always-in. Did not retune B|conj|atr1559|lock or flush|max6|repaired. Combined of the three is a side line only (same names, different clocks — not a diversified slate). Odd months IS, even months OOS, split on entry session. Combined dollars are not EV. No Arrow 44.
+Acronyms: IS = in-sample; OOS = out-of-sample; PDV = prior-day dollar volume; EV = expected value; RTH = regular trading hours (09:30–16:00 ET); IWM = iShares Russell 2000 ETF; SSR = Short Sale Restriction.
+account=100000  slate_floor=200/day  seat_floor=100/day  target=300-500/day
+study n=166 2026-01-02..2026-08-31  IS n=84 odd months  OOS n=82 even months
+workers=8 cpu_count=8  jan_tape=C:\Users\james\Money\data\virgin\bars  jul_tape=C:\Users\james\Money\data\full\bars
+eligibility: common stock, prior_close [$10, $80], PDV >= $10000000  rank PDV cap 25  $2000 notional/name (no stop-based $200 size)
+on_long: buy last tradeable RTH minute close; sell next 09:30 open. on_short: opposite; borrow proxy. rth_long: buy 09:30 open; sell last RTH close; fuse −8% from fill (shop fuse, not a trade stop).
+No FLY cell. No 08:00 hot gate. No conjunction. No flush wash. No new ingest.
+
+character IS only (eligible universe, not the 25-name cap). Description. Does not pick a book.
+  close→open  n=105339 mean=-0.00010 hit=0.489
+  09:30→close n=106472 mean=0.00024 hit=0.492
+  2026-01  close→open n=26698 mean=0.00027 hit=0.486  09:30→close n=26889 mean=0.00070 hit=0.512
+  2026-03  close→open n=30384 mean=-0.00143 hit=0.444  09:30→close n=30552 mean=0.00046 hit=0.490
+  2026-05  close→open n=27020 mean=0.00018 hit=0.501  09:30→close n=27578 mean=0.00065 hit=0.487
+  2026-07  close→open n=21237 mean=0.00095 hit=0.543  09:30→close n=21453 mean=-0.00116 hit=0.477
+
+id           split     $/day      n    hit      PF      t     IWM$  seat
+on_long      IS      -45.25   1849  0.433   0.879  -0.84   -54.65    IS
+    n=1849  n/sess=22.01  hit=0.433  avgR=n/a (no stop)  PF=0.879
+    avgWin$=34.59  avgLoss$=-30.06  $/day=-45.25  std=494.92  se=54.00  t=-0.84  ci95=[-145.25,57.47]
+    daily-close DD$=-6736.17  trough$=-1666.28  peak_conc=25  mean_conc=22.01  worst_day$=-1666.28
+    IWM alpha $/day=-54.65 (n=1849 skip=0)  overnight trough = close-to-open gap (no mark while shut)
+    months: 2026-01 n=20 $/day=-72.27; 2026-03 n=22 $/day=-147.38; 2026-05 n=20 $/day=-21.27; 2026-07 n=22 $/day=59.66
+on_long      OOS     -53.71   1598  0.410   0.842  -1.01  -106.23    NO
+    n=1598  n/sess=19.49  hit=0.410  avgR=n/a (no stop)  PF=0.842
+    avgWin$=35.78  avgLoss$=-29.52  $/day=-53.71  std=483.58  se=53.40  t=-1.01  ci95=[-150.85,46.62]
+    daily-close DD$=-6550.67  trough$=-1409.79  peak_conc=25  mean_conc=19.49  worst_day$=-1409.79
+    IWM alpha $/day=-106.23 (n=1598 skip=0)  overnight trough = close-to-open gap (no mark while shut)
+    months: 2026-02 n=19 $/day=-223.36; 2026-04 n=21 $/day=114.21; 2026-06 n=21 $/day=-56.30; 2026-08 n=21 $/day=-65.52
+on_short     IS     -158.58   1849  0.394   0.636  -2.93  -149.17    IS
+    n=1849  n/sess=22.01  hit=0.394  avgR=n/a (no stop)  PF=0.636
+    avgWin$=31.95  avgLoss$=-32.69  $/day=-158.58  std=495.44  se=54.06  t=-2.93  ci95=[-261.89,-60.82]
+    daily-close DD$=-13320.54  trough$=-1253.10  peak_conc=25  mean_conc=22.01  worst_day$=-1253.10
+    IWM alpha $/day=-149.17 (n=1849 skip=0)  overnight trough = close-to-open gap (no mark while shut)
+    months: 2026-01 n=20 $/day=-152.75; 2026-03 n=22 $/day=-75.50; 2026-05 n=20 $/day=-199.09; 2026-07 n=22 $/day=-210.13
+on_short     OOS    -127.00   1598  0.410   0.663  -2.35   -74.48    NO
+    n=1598  n/sess=19.49  hit=0.410  avgR=n/a (no stop)  PF=0.663
+    avgWin$=31.24  avgLoss$=-32.74  $/day=-127.00  std=489.26  se=54.03  t=-2.35  ci95=[-229.72,-31.25]
+    daily-close DD$=-11395.75  trough$=-1564.91  peak_conc=25  mean_conc=19.49  worst_day$=-1564.91
+    IWM alpha $/day=-74.48 (n=1598 skip=0)  overnight trough = close-to-open gap (no mark while shut)
+    months: 2026-02 n=19 $/day=4.96; 2026-04 n=21 $/day=-334.11; 2026-06 n=21 $/day=-90.76; 2026-08 n=21 $/day=-75.53
+rth_long     IS      -79.04   1887  0.438   0.878  -1.02   -89.44    IS
+    n=1887  n/sess=22.46  hit=0.438  avgR=n/a (no stop)  PF=0.878
+    avgWin$=57.64  avgLoss$=-51.13  $/day=-79.04  std=713.12  se=77.81  t=-1.02  ci95=[-215.98,62.88]
+    daily-close DD$=-9505.09  trough$=-250.24  peak_conc=25  mean_conc=22.46  worst_day$=-1527.68
+    IWM alpha $/day=-89.44 (n=1887 skip=0)  intraday trough = marked RTH low vs 09:30 fill
+    months: 2026-01 n=20 $/day=-104.38; 2026-03 n=22 $/day=-142.69; 2026-05 n=20 $/day=64.37; 2026-07 n=22 $/day=-122.74
+rth_long     OOS    -109.62   1644  0.471   0.801  -1.62  -140.90    NO
+    n=1644  n/sess=20.05  hit=0.471  avgR=n/a (no stop)  PF=0.801
+    avgWin$=46.81  avgLoss$=-52.09  $/day=-109.62  std=611.25  se=67.50  t=-1.62  ci95=[-239.49,10.83]
+    daily-close DD$=-10038.32  trough$=-276.69  peak_conc=25  mean_conc=20.05  worst_day$=-1475.99
+    IWM alpha $/day=-140.90 (n=1644 skip=0)  intraday trough = marked RTH low vs 09:30 fill
+    months: 2026-02 n=19 $/day=-59.91; 2026-04 n=21 $/day=-48.99; 2026-06 n=21 $/day=-290.60; 2026-08 n=21 $/day=-34.23
+
+combined of the three (side line, not a slate):
+  all-session $/day=-286.55  n_days=166  maxDD$=-49978.46  NOT EV
+  corr daily PnL  on_long vs on_short=-0.997  on_long vs rth_long=-0.009  on_short vs rth_long=0.012
+

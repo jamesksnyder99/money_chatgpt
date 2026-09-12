@@ -1,0 +1,131 @@
+Rocket scan — diagnostic (not a book, not Arrow 16, not a $200 pass/fail)
+account n/a  no fills  no cap8  no shorts  no 12:00-16:00  no new pull
+universe: eligibility.parquet (full file, not Track A/B)
+price: prior_close in [$1, $20]
+rocket: tradeable session high 07:30-11:59 >= 1.10 * prior_close
+rel_vol: today 07:30-11:59 volume / median of that window over prior 10 sessions on disk; skip if fewer than 5 priors
+study n=64 2026-06-01..2026-08-31
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8
+
+STUDY-WIDE
+eligible $1-$20 name-days with enough history (>=5 prior windows): 96915
+skipped for <5 prior sessions (no invented rel vol): 4830
+max_ext >= 10%: 3444 (3.55%)
+max_ext >= 15%: 1349 (1.39%)
+max_ext >= 20%: 736 (0.76%)
+max_ext >= 50%: 135 (0.14%)
+rel_vol >= 3x (among enough-history): 4534
+rel_vol >= 5x (among enough-history): 1870
+rocket ∩ rel_vol>=3x: 1214
+rocket ∩ rel_vol>=5x: 714
+
+launch-clock histogram (rockets ∩ rel_vol>=3x):
+  07: 374
+  08: 122
+  09: 471
+  10: 172
+  11: 75
+pre / 09:30-09:44 / after 09:45 (rockets ∩ rel_vol>=3x):
+  pre: 569
+  first15: 301
+  after0945: 344
+
+all rockets (max_ext>=10%):
+  max_ext: n=3444 median=0.1345 p90=0.2908
+  minutes_to_peak: n=3444 median=12.5000 p90=124.0000
+  end_ext: n=3444 median=0.0904 p90=0.1881
+  still >= +10% at 11:59: 1435/3444 (0.417)
+  gave_back (end_ext < 0.5*max_ext): 1254/3444 (0.364)
+
+rockets ∩ rel_vol>=3x:
+  max_ext: n=1214 median=0.1855 p90=0.5018
+  minutes_to_peak: n=1214 median=39.0000 p90=150.7000
+  end_ext: n=1214 median=0.1124 p90=0.3118
+  still >= +10% at 11:59: 701/1214 (0.577)
+  gave_back (end_ext < 0.5*max_ext): 432/1214 (0.356)
+Track A gate (prior_close $10-30, $5M ADV, eligible): 283/1214 of >=3x rockets
+Track B gate (prior_close $10-50, $5M ADV, 400/day cap): 73/1214 of >=3x rockets
+
+DEVELOP (through 2026-07-30)
+eligible $1-$20 name-days with enough history (>=5 prior windows): 64043
+skipped for <5 prior sessions (no invented rel vol): 3694
+max_ext >= 10%: 2195 (3.43%)
+max_ext >= 15%: 838 (1.31%)
+max_ext >= 20%: 429 (0.67%)
+max_ext >= 50%: 74 (0.12%)
+rel_vol >= 3x (among enough-history): 2484
+rel_vol >= 5x (among enough-history): 951
+rocket ∩ rel_vol>=3x: 631
+rocket ∩ rel_vol>=5x: 363
+
+launch-clock histogram (rockets ∩ rel_vol>=3x):
+  07: 191
+  08: 68
+  09: 248
+  10: 86
+  11: 38
+pre / 09:30-09:44 / after 09:45 (rockets ∩ rel_vol>=3x):
+  pre: 292
+  first15: 153
+  after0945: 186
+
+all rockets (max_ext>=10%):
+  max_ext: n=2195 median=0.1330 p90=0.2696
+  minutes_to_peak: n=2195 median=11.0000 p90=121.6000
+  end_ext: n=2195 median=0.0886 p90=0.1795
+  still >= +10% at 11:59: 893/2195 (0.407)
+  gave_back (end_ext < 0.5*max_ext): 802/2195 (0.365)
+
+rockets ∩ rel_vol>=3x:
+  max_ext: n=631 median=0.1902 p90=0.5040
+  minutes_to_peak: n=631 median=39.0000 p90=155.0000
+  end_ext: n=631 median=0.1127 p90=0.3088
+  still >= +10% at 11:59: 361/631 (0.572)
+  gave_back (end_ext < 0.5*max_ext): 237/631 (0.376)
+Track A gate (prior_close $10-30, $5M ADV, eligible): 151/631 of >=3x rockets
+Track B gate (prior_close $10-50, $5M ADV, 400/day cap): 35/631 of >=3x rockets
+
+HOLDOUT (from 2026-07-31)
+eligible $1-$20 name-days with enough history (>=5 prior windows): 32872
+skipped for <5 prior sessions (no invented rel vol): 1136
+max_ext >= 10%: 1249 (3.80%)
+max_ext >= 15%: 511 (1.55%)
+max_ext >= 20%: 307 (0.93%)
+max_ext >= 50%: 61 (0.19%)
+rel_vol >= 3x (among enough-history): 2050
+rel_vol >= 5x (among enough-history): 919
+rocket ∩ rel_vol>=3x: 583
+rocket ∩ rel_vol>=5x: 351
+
+launch-clock histogram (rockets ∩ rel_vol>=3x):
+  07: 183
+  08: 54
+  09: 223
+  10: 86
+  11: 37
+pre / 09:30-09:44 / after 09:45 (rockets ∩ rel_vol>=3x):
+  pre: 277
+  first15: 148
+  after0945: 158
+
+all rockets (max_ext>=10%):
+  max_ext: n=1249 median=0.1368 p90=0.3207
+  minutes_to_peak: n=1249 median=15.0000 p90=130.0000
+  end_ext: n=1249 median=0.0931 p90=0.2053
+  still >= +10% at 11:59: 542/1249 (0.434)
+  gave_back (end_ext < 0.5*max_ext): 452/1249 (0.362)
+
+rockets ∩ rel_vol>=3x:
+  max_ext: n=583 median=0.1803 p90=0.4869
+  minutes_to_peak: n=583 median=40.0000 p90=144.0000
+  end_ext: n=583 median=0.1123 p90=0.3181
+  still >= +10% at 11:59: 340/583 (0.583)
+  gave_back (end_ext < 0.5*max_ext): 195/583 (0.334)
+Track A gate (prior_close $10-30, $5M ADV, eligible): 132/583 of >=3x rockets
+Track B gate (prior_close $10-50, $5M ADV, 400/day cap): 38/583 of >=3x rockets
+
+Are they in the file, and when do they launch in our window:
+They are in the file: 3444 name-days (3.55% of 96915 $1-$20 eligible with >=5 prior windows) print a session high >= +10% vs prior close between 07:30 and 11:59, and 1214 of those also print >=3x relative volume. The >=3x rockets launch mostly in hour 09 ET (pre=569, 09:30-09:44=301, after 09:45=344). Develop (through 2026-07-30) has 2195 rockets / 64043 name-days; holdout (from 2026-07-31) has 1249 / 32872. Lab tracks delete most of this field: Track A keeps 283/1214 of the >=3x rockets and Track B's $10+/ $5M / 400-cap keeps 73/1214 — the rest are under $10 or lack ADV, which is why Arrow 3-15 never saw them. This is a count, not a book.
+

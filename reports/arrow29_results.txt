@@ -1,0 +1,157 @@
+Arrow 29 — FLY cell as population; new rocket radii (data/full)
+VERDICT: FAIL — no Arrow 29 book has holdout >= $200/day AND non-red develop. Combined holdout is not EV.
+No flush|max6 synonyms. No B-short rescore. No $500/idea. No virgin pull. No Arrow 30.
+Honesty: combined develop is the combine_books number. Combined holdout is not EV. Do not write that the account is one improvement from $200. Holdout Part A is PEEK.
+account=100000  target=300-500/day  failure_line=200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  cost_skips=21  cell-buy GATE=YES
+
+PART A — develop-only forward from 09:44 close (holdout PEEK)
+Forward from 09:44 close (not prior close), develop FLY $5-20 n=261: median ext_1159=0.0187. Gate requires median ext_1159>0 and frac reaching +1 ATR before OR-low >=0.35 (got 0.651). GATE=YES. FLY members still have leftover extension after 09:44 if median ext_1159>0 (median=0.0187); OR-low stop is tagged by 28% by 11:59.
+Gate inputs: develop FLY $5-20 n=261 median_ext1159_vs_0944=0.0187 frac_1atr_before_or=0.651 GATE=YES
+
+develop cell $3-20
+  cell $3-20 n=974
+    FLY=399 FAIL=119 other=456
+    all n=974
+      median ext vs 09:44 close  11:59=-0.00851550338879814  13:30=-0.008157763853336997  15:59=-0.013023384562840079
+      mean ext vs 09:44 close    11:59=-0.009769070952943529  13:30=-0.0065626789764777465  15:59=-0.010576230982234359
+      MAE to 11:59 vs OR-low (ATR) median=1.4375415417243436 mean=1.7297121285821722
+      frac +1ATR before OR-low=0.495  frac tagged OR-low=0.335
+    FLY n=399
+      median ext vs 09:44 close  11:59=0.016840019811787954  13:30=0.025357607282184613  15:59=0.026131591227251727
+      mean ext vs 09:44 close    11:59=0.00843434883860631  13:30=0.015794912628649314  15:59=0.017046080652322798
+      MAE to 11:59 vs OR-low (ATR) median=1.059408106503327 mean=1.4266446610442625
+      frac +1ATR before OR-low=0.632  frac tagged OR-low=0.316
+    FAIL n=119
+      median ext vs 09:44 close  11:59=-0.02726281352235549  13:30=-0.028083028083028094  15:59=-0.03484995159728943
+      mean ext vs 09:44 close    11:59=-0.03238739523273496  13:30=-0.03493922448711329  15:59=-0.04911726092960284
+      MAE to 11:59 vs OR-low (ATR) median=1.9484649122807016 mean=2.0477260269357918
+      frac +1ATR before OR-low=0.445  frac tagged OR-low=0.454
+    FLY max_ext clock: before 09:44=126 (32%)  09:44-11:59=104 (26%)  after 11:59=169 (42%)
+develop cell $5-20
+  cell $5-20 n=696
+    FLY=261 FAIL=90 other=345
+    all n=696
+      median ext vs 09:44 close  11:59=-0.008287265717354997  13:30=-0.007212497235161097  15:59=-0.012164828623294544
+      mean ext vs 09:44 close    11:59=-0.009219663419724232  13:30=-0.004681321357367892  15:59=-0.009611464916156217
+      MAE to 11:59 vs OR-low (ATR) median=1.4550938028173506 mean=1.693845271734217
+      frac +1ATR before OR-low=0.497  frac tagged OR-low=0.313
+    FLY n=261
+      median ext vs 09:44 close  11:59=0.018662519440124425  13:30=0.028310502283104944  15:59=0.0290292614955876
+      mean ext vs 09:44 close    11:59=0.011919357573727023  13:30=0.022423812479197506  15:59=0.02099166400368153
+      MAE to 11:59 vs OR-low (ATR) median=0.9397908640616419 mean=1.2949290660721338
+      frac +1ATR before OR-low=0.651  frac tagged OR-low=0.276
+    FAIL n=90
+      median ext vs 09:44 close  11:59=-0.027176754228786737  13:30=-0.024982144833066766  15:59=-0.03567790930581549
+      mean ext vs 09:44 close    11:59=-0.0300016501631689  13:30=-0.030617565107655627  15:59=-0.04295899210416546
+      MAE to 11:59 vs OR-low (ATR) median=1.962192019162596 mean=1.9570687264604951
+      frac +1ATR before OR-low=0.467  frac tagged OR-low=0.456
+    FLY max_ext clock: before 09:44=78 (30%)  09:44-11:59=61 (23%)  after 11:59=122 (47%)
+holdout cell $5-20 PEEK
+  cell $5-20 PEEK n=353
+    FLY=165 FAIL=34 other=154
+    all n=353
+      median ext vs 09:44 close  11:59=0.0009784735812132794  13:30=0.00302780071566211  15:59=0.003039513677811412
+      mean ext vs 09:44 close    11:59=-0.0001338506452020514  13:30=0.00021126457788448496  15:59=0.0019337448621720818
+      MAE to 11:59 vs OR-low (ATR) median=1.1746987951807204 mean=1.3482750084730994
+      frac +1ATR before OR-low=0.470  frac tagged OR-low=0.297
+    FLY n=165
+      median ext vs 09:44 close  11:59=0.01699751355317325  13:30=0.020458265139116305  15:59=0.03007958986692838
+      mean ext vs 09:44 close    11:59=0.01291630952266242  13:30=0.01315250062813052  15:59=0.01983754590917698
+      MAE to 11:59 vs OR-low (ATR) median=0.8004446914952762 mean=1.0878505053399175
+      frac +1ATR before OR-low=0.576  frac tagged OR-low=0.255
+    FAIL n=34
+      median ext vs 09:44 close  11:59=-0.023925516214070575  13:30=-0.023109283905423994  15:59=-0.02651219315448361
+      mean ext vs 09:44 close    11:59=-0.02483702891136783  13:30=-0.029166406497728357  15:59=-0.0340944394863194
+      MAE to 11:59 vs OR-low (ATR) median=1.6874303374006718 mean=1.8601972400204383
+      frac +1ATR before OR-low=0.235  frac tagged OR-low=0.559
+    FLY max_ext clock: before 09:44=51 (31%)  09:44-11:59=32 (19%)  after 11:59=82 (50%)
+
+PART B — longs, harness on, cap8, $200/idea, ranked by run_rel_vol
+id                        dev $/day  hold $/day  hold n    avgR     PF  t_hold  peak  meanC  >=200
+cell0945|flat1159           -133.88      -36.66     144  -0.029  0.928   -0.30     8   5.36     NO
+  develop
+    n=211  trades/sess=5.02  hit=0.389  avgR=-0.132  medR=-0.182  p10R=-1.071  p90R=1.022
+    avgWin$=142.63  avgLoss$=-134.25  PF=0.675  stop%=29.9  time%=70.1  other%=0.0  medMin=134.0
+    $/day=-133.88  std=393.45  se=60.71  t=-2.21  ci95=[-249.50,-19.03]  maxDD$=-6963.87
+    flight mean_ext=0.0484  reached_1R=0.265
+    peak_conc=8  mean_conc=3.95
+  holdout
+    n=144  trades/sess=6.55  hit=0.403  avgR=-0.029  medR=-0.168  p10R=-1.048  p90R=0.857
+    avgWin$=178.18  avgLoss$=-129.55  PF=0.928  stop%=25.7  time%=74.3  other%=0.0  medMin=134.0
+    $/day=-36.66  std=577.62  se=123.15  t=-0.30  ci95=[-258.06,212.89]  maxDD$=-3129.80
+    flight mean_ext=0.0618  reached_1R=0.271
+    peak_conc=8  mean_conc=5.36
+cell0945|hold05             -120.10     -152.37     144  -0.118  0.721   -1.57     8   3.16     NO
+  develop
+    n=211  trades/sess=5.02  hit=0.355  avgR=-0.118  medR=-0.237  p10R=-1.079  p90R=1.121
+    avgWin$=172.01  avgLoss$=-131.95  PF=0.719  stop%=30.3  time%=69.7  other%=0.0  medMin=134.0
+    $/day=-120.10  std=444.99  se=68.66  t=-1.75  ci95=[-240.31,13.36]  maxDD$=-6031.34
+    flight mean_ext=0.0573  reached_1R=0.284
+    peak_conc=8  mean_conc=2.60
+  holdout
+    n=144  trades/sess=6.55  hit=0.368  avgR=-0.118  medR=-0.243  p10R=-1.060  p90R=1.089
+    avgWin$=163.56  avgLoss$=-132.10  PF=0.721  stop%=28.5  time%=71.5  other%=0.0  medMin=134.0
+    $/day=-152.37  std=455.57  se=97.13  t=-1.57  ci95=[-349.06,41.02]  maxDD$=-3886.63
+    flight mean_ext=0.0695  reached_1R=0.312
+    peak_conc=8  mean_conc=3.16
+cell0945|atr1559            -141.29       -4.81     144  -0.005  0.991   -0.05     8   3.78     NO
+  develop
+    n=211  trades/sess=5.02  hit=0.403  avgR=-0.140  medR=-0.256  p10R=-1.083  p90R=1.051
+    avgWin$=155.68  avgLoss$=-152.12  PF=0.690  stop%=63.5  time%=36.5  other%=0.0  medMin=166.0
+    $/day=-141.29  std=382.99  se=59.10  t=-2.39  ci95=[-251.29,-28.22]  maxDD$=-7860.72
+    flight mean_ext=0.0500  reached_1R=0.332
+    peak_conc=8  mean_conc=2.81
+  holdout
+    n=144  trades/sess=6.55  hit=0.472  avgR=-0.005  medR=-0.109  p10R=-1.091  p90R=1.125
+    avgWin$=168.96  avgLoss$=-152.56  PF=0.991  stop%=61.1  time%=38.9  other%=0.0  medMin=237.0
+    $/day=-4.81  std=468.91  se=99.97  t=-0.05  ci95=[-191.49,199.25]  maxDD$=-1637.30
+    flight mean_ext=0.0568  reached_1R=0.354
+    peak_conc=8  mean_conc=3.78
+flush_0944|flat1159            7.55        0.79      17   0.027  1.012    0.02     2   0.62     NO
+  develop
+    n=9  trades/sess=0.21  hit=0.444  avgR=0.272  medR=-0.139  p10R=-1.109  p90R=2.050
+    avgWin$=299.02  avgLoss$=-175.79  PF=1.361  stop%=44.4  time%=55.6  other%=0.0  medMin=84.0
+    $/day=7.55  std=133.97  se=20.67  t=0.37  ci95=[-27.94,51.73]  maxDD$=-656.56
+    flight mean_ext=0.0270  reached_1R=0.556
+    peak_conc=2  mean_conc=0.21
+  holdout
+    n=17  trades/sess=0.77  hit=0.471  avgR=0.027  medR=-0.283  p10R=-1.089  p90R=1.467
+    avgWin$=189.55  avgLoss$=-166.56  PF=1.012  stop%=35.3  time%=64.7  other%=0.0  medMin=64.0
+    $/day=0.79  std=193.90  se=41.34  t=0.02  ci95=[-77.12,92.66]  maxDD$=-737.96
+    flight mean_ext=0.0229  reached_1R=0.294
+    peak_conc=2  mean_conc=0.62
+flush_orh|flat1159             0.00        0.00       0   0.000      0    0.00     0   0.00     NO
+  develop
+    n=0  trades/sess=0.00  hit=0.000  avgR=0.000  medR=0.000  p10R=0.000  p90R=0.000
+    avgWin$=0.00  avgLoss$=0.00  PF=0  stop%=0.0  time%=0.0  other%=0.0  medMin=0.0
+    $/day=0.00  std=0.00  se=0.00  t=0.00  ci95=[0.00,0.00]  maxDD$=0.00
+    flight mean_ext=0.0000  reached_1R=0.000
+    peak_conc=0  mean_conc=0.00
+  holdout
+    n=0  trades/sess=0.00  hit=0.000  avgR=0.000  medR=0.000  p10R=0.000  p90R=0.000
+    avgWin$=0.00  avgLoss$=0.00  PF=0  stop%=0.0  time%=0.0  other%=0.0  medMin=0.0
+    $/day=0.00  std=0.00  se=0.00  t=0.00  ci95=[0.00,0.00]  maxDD$=0.00
+    flight mean_ext=0.0000  reached_1R=0.000
+    peak_conc=0  mean_conc=0.00
+launch_compat|flat1159        -8.19      -31.68      11  -0.315  0.441   -0.94     2   0.43 SHELVE
+  develop
+    n=11  trades/sess=0.26  hit=0.273  avgR=-0.157  medR=-0.249  p10R=-0.925  p90R=0.690
+    avgWin$=129.95  avgLoss$=-91.72  PF=0.531  stop%=18.2  time%=81.8  other%=0.0  medMin=103.0
+    $/day=-8.19  std=60.75  se=9.37  t=-0.87  ci95=[-26.64,10.09]  maxDD$=-591.95
+    flight mean_ext=0.0341  reached_1R=0.273
+    peak_conc=2  mean_conc=0.26
+  holdout
+    n=11  trades/sess=0.50  hit=0.273  avgR=-0.315  medR=-0.543  p10R=-1.129  p90R=0.297
+    avgWin$=183.03  avgLoss$=-155.75  PF=0.441  stop%=45.5  time%=54.5  other%=0.0  medMin=103.0
+    $/day=-31.68  std=158.48  se=33.79  t=-0.94  ci95=[-94.44,31.80]  maxDD$=-755.74
+    flight mean_ext=0.1195  reached_1R=0.182
+    peak_conc=2  mean_conc=0.43
+  SHELVE: develop n<40 on id 6 — not closed, not promoted.
+
+COMBINED B_uptick10|atr1559 + flush_0944|flat1159  (frozen A28 short, not rescored, + best develop-not-red rocket)
+  develop $/day=90.20  std=699.25  se=107.90  t=0.84  ci95=[-112.02,290.82]  maxDD$=-1989.27  corr=-0.030
+  holdout $/day=233.99  std=535.98  se=114.27  t=2.05  ci95=[15.90,452.03]  maxDD$=-1027.79  corr=-0.002  NOT EV
+NO* = holdout >= 200 but develop is red — not a pass. Combined holdout is not EV.

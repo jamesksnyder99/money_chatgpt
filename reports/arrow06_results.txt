@@ -1,0 +1,81 @@
+Arrow 6 — engine repair + optional trend stance
+VERDICT: FAIL — no Arrow 6 rule has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass (Arrow 5 B/down_day_then_trend warning).
+account=$100000  target=$300-$500/day  failure_line=$200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap file=True
+avgR = mean(pnl/risk) on Trade.risk (not pnl/200). Next-open stop fills unchanged (slippage through stop is intended).
+RTH VWAP helper ignores premarket. Queue: sort |score| desc, can_enter before staging rth_open_entries.
+With-trend (skip flat): trend_open, gap_with_trend, down_day_then_trend, late_with_trend, channel_position.
+Free (ignore 10d trend): session_pullback, yday_level_break, compression_expansion, rs_vs_book, adv_expanding.
+Do not promote Arrow 5 B/down_day_then_trend (develop -$185 / holdout +$217 is not a pass).
+No 10d-trend fade book. No 11th rule.
+
+name-days (study sessions, tradable book):
+  Track A up=22420 down=18951 flat=7974
+  Track B up=11670 down=9970 flat=3960
+
+track  rule                     stance       dev $/day  hold $/day  hold n    hit    avgR      maxDD  >=200
+A      trend_open               with-trend      700.06     -620.24     107  0.187  -1.273  -13645.36     NO
+       develop $/day=700.06  trades=207  hit=0.324  avgR=1.430  maxDD$=-2247.51
+       holdout $/day=-620.24  trades=107  hit=0.187  avgR=-1.273  maxDD$=-13645.36  vs_$200=NO  vs_$300-500=NO
+A      gap_with_trend           with-trend     -133.56       62.45     105  0.371   0.416   -3908.74     NO
+       develop $/day=-133.56  trades=201  hit=0.318  avgR=-0.346  maxDD$=-5609.49
+       holdout $/day=62.45  trades=105  hit=0.371  avgR=0.416  maxDD$=-3908.74  vs_$200=NO  vs_$300-500=NO
+A      down_day_then_trend      with-trend      -37.20       26.06     108  0.315   0.055   -1413.74     NO
+       develop $/day=-37.20  trades=203  hit=0.227  avgR=-0.074  maxDD$=-11515.81
+       holdout $/day=26.06  trades=108  hit=0.315  avgR=0.055  maxDD$=-1413.74  vs_$200=NO  vs_$300-500=NO
+A      late_with_trend          with-trend      -34.18      -89.64     103  0.320  -0.096   -1972.03     NO
+       develop $/day=-34.18  trades=193  hit=0.404  avgR=-0.037  maxDD$=-1631.10
+       holdout $/day=-89.64  trades=103  hit=0.320  avgR=-0.096  maxDD$=-1972.03  vs_$200=NO  vs_$300-500=NO
+A      channel_position         with-trend       13.37       11.36      98  0.459   0.013    -200.45     NO
+       develop $/day=13.37  trades=194  hit=0.515  avgR=0.015  maxDD$=-380.32
+       holdout $/day=11.36  trades=98  hit=0.459  avgR=0.013  maxDD$=-200.45  vs_$200=NO  vs_$300-500=NO
+A      session_pullback         free           -290.63     -540.78     218  0.156  -1.475  -11897.06     NO
+       develop $/day=-290.63  trades=409  hit=0.188  avgR=-1.138  maxDD$=-13499.70
+       holdout $/day=-540.78  trades=218  hit=0.156  avgR=-1.475  maxDD$=-11897.06  vs_$200=NO  vs_$300-500=NO
+A      yday_level_break         free            -97.72     -161.12     131  0.374  -0.657   -3618.05     NO
+       develop $/day=-97.72  trades=268  hit=0.369  avgR=-0.437  maxDD$=-4432.69
+       holdout $/day=-161.12  trades=131  hit=0.374  avgR=-0.657  maxDD$=-3618.05  vs_$200=NO  vs_$300-500=NO
+A      compression_expansion    free            -27.28      -27.53      37  0.405  -0.100    -636.10     NO
+       develop $/day=-27.28  trades=58  hit=0.397  avgR=-0.142  maxDD$=-1535.67
+       holdout $/day=-27.53  trades=37  hit=0.405  avgR=-0.100  maxDD$=-636.10  vs_$200=NO  vs_$300-500=NO
+A      rs_vs_book               free           -338.21     -227.08     109  0.165  -0.438   -5722.79     NO
+       develop $/day=-338.21  trades=204  hit=0.137  avgR=-0.687  maxDD$=-15763.03
+       holdout $/day=-227.08  trades=109  hit=0.165  avgR=-0.438  maxDD$=-5722.79  vs_$200=NO  vs_$300-500=NO
+A      adv_expanding            free           -422.11     -162.49     108  0.213  -0.310   -3971.57     NO
+       develop $/day=-422.11  trades=206  hit=0.160  avgR=-0.852  maxDD$=-17728.75
+       holdout $/day=-162.49  trades=108  hit=0.213  avgR=-0.310  maxDD$=-3971.57  vs_$200=NO  vs_$300-500=NO
+B      trend_open               with-trend     -135.20     -250.88     110  0.227  -0.502   -6461.41     NO
+       develop $/day=-135.20  trades=209  hit=0.249  avgR=-0.264  maxDD$=-6684.74
+       holdout $/day=-250.88  trades=110  hit=0.227  avgR=-0.502  maxDD$=-6461.41  vs_$200=NO  vs_$300-500=NO
+B      gap_with_trend           with-trend       -8.48     -331.52     104  0.288  -0.716   -7803.38     NO
+       develop $/day=-8.48  trades=199  hit=0.372  avgR=0.461  maxDD$=-2508.01
+       holdout $/day=-331.52  trades=104  hit=0.288  avgR=-0.716  maxDD$=-7803.38  vs_$200=NO  vs_$300-500=NO
+B      down_day_then_trend      with-trend     -185.04      216.79     110  0.318   0.434   -1848.32    NO*
+       develop $/day=-185.04  trades=210  hit=0.224  avgR=-0.366  maxDD$=-7771.89
+       holdout $/day=216.79  trades=110  hit=0.318  avgR=0.434  maxDD$=-1848.32  vs_$200=YES  vs_$300-500=NO
+B      late_with_trend          with-trend        7.92      -57.81     108  0.435  -0.059   -1505.66     NO
+       develop $/day=7.92  trades=209  hit=0.483  avgR=0.008  maxDD$=-836.09
+       holdout $/day=-57.81  trades=108  hit=0.435  avgR=-0.059  maxDD$=-1505.66  vs_$200=NO  vs_$300-500=NO
+B      channel_position         with-trend       34.32      -14.64     104  0.452  -0.016    -360.82     NO
+       develop $/day=34.32  trades=209  hit=0.512  avgR=0.035  maxDD$=-335.59
+       holdout $/day=-14.64  trades=104  hit=0.452  avgR=-0.016  maxDD$=-360.82  vs_$200=NO  vs_$300-500=NO
+B      session_pullback         free           -135.45     -376.61     219  0.146  -1.437   -8452.01     NO
+       develop $/day=-135.45  trades=417  hit=0.163  avgR=-0.950  maxDD$=-7162.02
+       holdout $/day=-376.61  trades=219  hit=0.146  avgR=-1.437  maxDD$=-8452.01  vs_$200=NO  vs_$300-500=NO
+B      yday_level_break         free            -69.32     -171.96     142  0.324  -0.509   -3783.08     NO
+       develop $/day=-69.32  trades=301  hit=0.372  avgR=-0.678  maxDD$=-3444.83
+       holdout $/day=-171.96  trades=142  hit=0.324  avgR=-0.509  maxDD$=-3783.08  vs_$200=NO  vs_$300-500=NO
+B      compression_expansion    free            -12.00      -11.79      23  0.435  -0.083    -347.59     NO
+       develop $/day=-12.00  trades=25  hit=0.520  avgR=-0.114  maxDD$=-629.02
+       holdout $/day=-11.79  trades=23  hit=0.435  avgR=-0.083  maxDD$=-347.59  vs_$200=NO  vs_$300-500=NO
+B      rs_vs_book               free           -148.74     -182.30     110  0.227  -0.340   -4557.60     NO
+       develop $/day=-148.74  trades=210  hit=0.200  avgR=-0.293  maxDD$=-11372.60
+       holdout $/day=-182.30  trades=110  hit=0.227  avgR=-0.340  maxDD$=-4557.60  vs_$200=NO  vs_$300-500=NO
+B      adv_expanding            free           -105.15     -144.26     110  0.209  -0.249   -5811.57     NO
+       develop $/day=-105.15  trades=208  hit=0.236  avgR=-0.204  maxDD$=-8184.84
+       holdout $/day=-144.26  trades=110  hit=0.209  avgR=-0.249  maxDD$=-5811.57  vs_$200=NO  vs_$300-500=NO
+
+NO* = holdout >= $200 but develop is red — not a pass:
+  B/down_day_then_trend: develop $-185.04/day holdout $216.79/day

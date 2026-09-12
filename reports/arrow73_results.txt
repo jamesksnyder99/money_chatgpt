@@ -1,0 +1,35 @@
+Arrow 73 — IWM-up skip, one-look Sep–Dec 2025
+VERDICT: LOOK — not a $200 slate pass. Sep–Dec 2025 is one slice, not IS/OOS for promotion.
+Id 1 sat out 3/18 Wednesdays (kept 15). September always -553.56 vs iwm_up -553.56 (less red=no). October always 878.51 vs iwm_up 878.51. December always -190.66 vs iwm_up -216.73 (less red=no). Total MTM$ always 1462.96 vs iwm_up 5996.38 (cut=no). Parametric follow-up is not on the table from this look: iwm_up did not cut September/December redness. Id 0 Sep MTM $/day=-553.56 vs Arrow 68 -553.56 (hole=yes). Oct MTM $/day=878.51 vs Arrow 68 878.51 (fat=yes n=23).
+Two frozen books. Parent: Wednesday H10, every Wednesday, next last-RTH, $4,000, hold 10. Skip: same, but no new fills on a Wednesday whose IWM 15-session close-to-close return is < 0. Names already on still ride to day 10. Rank is still the eight largest 15-session name returns. Field $10–$80 PDV >= $10M ETP denylist. MTM as Arrow 65. Did not retune. Did not invent a new cutoff. Did not walk width/crowd/vol. Did not mix 2026 signals. Lookback may read August 2025. Did not treat Sep/Oct/Nov/Dec as IS/OOS. Did not drop a month after seeing it. No new ingest. Did not touch Lab A data/bars/ or data/full/. Do not call a CI that includes 0 EV. Do not call this window a $200 slate pass. No Arrow 74.
+Acronyms: IS = in-sample; OOS = out-of-sample; PDV = prior-day dollar volume; IWM = iShares Russell 2000 ETF; RTH = regular trading hours; EV = expected value; SSR = Short Sale Restriction; CI = confidence interval; MTM = mark-to-market.
+account=100000  slate_floor=200/day  target=300-500/day
+score n=85 2025-09-02..2025-12-31  wednesday signals=18 first=2025-09-03 last=2025-12-31  always usable=18 iwm_up usable=15 sat_out=3
+workers=8 cpu_count=8  sep_tape=C:\Users\james\Money\data\virgin\bars  jan_tape=C:\Users\james\Money\data\virgin\bars  aug_on_virgin=yes
+eligibility: prior_close [$10, $80], PDV >= $10000000  Wednesday signal  n=8  lb=15 hold=10 from fill  fill=nextrth $4000
+Peak live = |shares × last|. Skipped Wednesday = no new fills that week. Two ids only. One look. Not IS/OOS.
+
+id           slice         entry$      MTM$      n  weds  sat    hit      t
+always       look           17.21     15.40    139    18    0  0.424   0.09
+    n=139  n/week=7.72  hit=0.424  wins=59  losses=80  avgR=n/a (no stop)  PF=1.032
+    avgWin$=799.83  avgLoss$=-571.59  $/day=15.40  std=1754.28  se=179.99  t=0.09  ci95=[-324.69,374.75]
+    daily-close DD$=-17404.26  worst_day$=-3996.44  peak_conc=8  mean_conc=7.72  weeks=18
+    entry $/day=17.21 (total PnL / n=85 sessions 2025-09-02..2025-12-31)  MTM $/day=17.21 (total PnL / those sessions)  MTM $/day=15.40 (total PnL / n=95 2025-09-03..2026-01-16)  IWM alpha $/day=81.96 (n=139 skip=0)  weds=18 sat_out=0  skips=2  CI includes 0 — not EV  last hold exits 2026-01-16 on January 2026 virgin (not a 2026 signal).
+    truncated Sep–Dec MTM daily mean $113.66 t=0.61  CI includes 0 — not EV  — not total PnL / 85.
+    peak live |shares×last| $99497  fits_100k=yes  total MTM$=1462.96
+    MTM months (score 2025-09-02..2025-12-31): 2025-09 n=21 $/day=-553.56; 2025-10 n=23 $/day=878.51; 2025-11 n=19 $/day=277.60; 2025-12 n=22 $/day=-190.66
+    MTM months (first signal through last exit): 2025-09 n=20 $/day=-581.24; 2025-10 n=23 $/day=878.51; 2025-11 n=19 $/day=277.60; 2025-12 n=22 $/day=-190.66; 2026-01 n=11 $/day=-745.26
+    Span MTM CI includes 0 — not EV.
+iwm_up       look           70.55     65.89    117    15    3  0.444   0.37
+    n=117  n/week=7.80  hit=0.444  wins=52  losses=65  avgR=n/a (no stop)  PF=1.169
+    avgWin$=799.21  avgLoss$=-547.11  $/day=65.89  std=1676.85  se=175.78  t=0.37  ci95=[-261.16,426.73]
+    daily-close DD$=-15096.46  worst_day$=-3244.38  peak_conc=8  mean_conc=7.80  weeks=15
+    entry $/day=70.55 (total PnL / n=85 sessions 2025-09-02..2025-12-31)  MTM $/day=70.55 (total PnL / those sessions)  MTM $/day=65.89 (total PnL / n=91 2025-09-03..2026-01-12)  IWM alpha $/day=96.91 (n=117 skip=0)  weds=15 sat_out=3  skips=1  CI includes 0 — not EV  last hold exits 2026-01-12 on January 2026 virgin (not a 2026 signal).
+    truncated Sep–Dec MTM daily mean $106.94 t=0.59  CI includes 0 — not EV  — not total PnL / 85.
+    peak live |shares×last| $99497  fits_100k=yes  total MTM$=5996.38
+    MTM months (score 2025-09-02..2025-12-31): 2025-09 n=21 $/day=-553.56; 2025-10 n=23 $/day=878.51; 2025-11 n=19 $/day=277.76; 2025-12 n=22 $/day=-216.73
+    MTM months (first signal through last exit): 2025-09 n=20 $/day=-581.24; 2025-10 n=23 $/day=878.51; 2025-11 n=19 $/day=277.76; 2025-12 n=22 $/day=-216.73; 2026-01 n=7 $/day=-441.97
+    Span MTM CI includes 0 — not EV.
+    Sep less red=no  Dec less red=no  total $ cut=no.
+    Did not call this window a $200 slate pass. No Arrow 74.
+

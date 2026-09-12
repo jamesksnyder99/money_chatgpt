@@ -1,0 +1,26 @@
+Arrow 61 — rest of December 2025 into data/virgin/ (ingest, not a book)
+No fills. No $200 verdict. Did not score engines. Did not touch data/full or Lab A data/bars. Did not rebuild 2025-12-17..2025-12-31. No Arrow 62.
+venue=utp_cta interval=1m window=04:00-16:00ET last_bar=15:59
+eligibility: common stock + ETP denylist, prior_close [$1, $80], prior DV >= $1M, $10M is a filter column not an ingest wall, no 400 cap
+window NYSE 2025-12-01..2025-12-16 sessions=12 2025-12-01..2025-12-16 (not scored)
+dates_pulled=2025-12-01, 2025-12-02, 2025-12-03, 2025-12-04, 2025-12-05, 2025-12-08, 2025-12-09, 2025-12-10, 2025-12-11, 2025-12-12, 2025-12-15, 2025-12-16
+dates_skipped_already_on_disk=none
+dates_skipped_not_a_session=none
+workers=8 theta_concurrency=8 cpu_count=8
+output bars=C:\Users\james\Money\data\virgin\bars eligibility=C:\Users\james\Money\data\virgin\eligibility.parquet manifest=C:\Users\james\Money\data\virgin\manifest.parquet iwm=C:\Users\james\Money\data\virgin\bench\IWM
+
+sessions_attempted=12
+name_days_eligible=36776
+unique_symbols=3933
+1m_rows=26478720
+mean_bars_per_name_day=720.0
+name_days_pdv_ge_10m=18985
+manifest pulled=36776 empty=0 missing=0
+failures=0
+iwm_sessions=12 iwm_ok=12 iwm_fail=0
+wall_s=1205.3 wall_min=20.1
+after_first_5_sessions elapsed_s=334.4 name_days=15040 rows=10828800 remaining_name_days=21736 eta_min=8.1 (estimate)
+name_days_with_04:00_print=36776
+name_days_first_print_after_07:30=0
+December 2025 on virgin is now complete (first December session 2025-12-01 through 2025-12-31).
+

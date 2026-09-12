@@ -1,0 +1,32 @@
+Arrow 18 — leak-fixed engine, SSR/borrow proxies, dispersion, IWM alpha; kernel only
+Not a discovery grid. Not a 190-book rerun. No 09:31. No longs.
+HONESTY:
+Holdout has been used to pick rings (or25 -> c5_ema9 -> cap8). +179/day is not an expected value. It is a contaminated holdout print.
+Arithmetic: 200 risk x avgR x trades/day. Develop avgR ~0.05 and ~5 fills/day ~ 50/day. Holdout avgR ~0.23 x ~3.5 ~ 160/day.
+300/day on this cell needs more R, more fills, or more dollars at risk — not another 5-min pattern.
+SSR/borrow were unmodelled before this arrow. Flatten leak: a zero-volume 11:59 bar no longer orphans a live position.
+account=100000  target=300-500/day  failure_line=200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap file=True
+cap8=8/16/1600 RISK_PER_IDEA=200 flatten=11:59. IWM bench 07:30-11:59 same-window next-open-to-exit-open.
+Borrow proxy is crude (gap<=-5% and prior DV < 10M). SSR proxy is last close <= 0.90 * prior_close.
+No Arrow 19.
+
+track  id                   filt    dev $/day  hold $/day  hold n    avgR  t_hold              ci95 hold     a_hold
+B      kernel|nofilter      off         68.05      178.85      76   0.233    1.39          [-63.0,440.0]     127.30
+       develop $/day=68.05  trades=204  hit=0.529  avgR=0.057  maxDD$=-3080.64  std=638.72  se=98.56  t=0.69  ci95=[-129.92,254.20]
+       holdout $/day=178.85  trades=76  hit=0.474  avgR=0.233  maxDD$=-1286.34  std=605.56  se=129.11  t=1.39  ci95=[-63.02,439.98]  vs_$200=NO  vs_$300-500=NO
+       IWM alpha develop $/day=51.92 (n=204 skip=0) holdout $/day=127.30 (n=76 skip=0)
+B      kernel|ssr_borrow    on          59.13       79.27      67   0.117    0.66         [-147.6,328.2]      31.51
+       develop $/day=59.13  trades=197  hit=0.528  avgR=0.053  maxDD$=-2657.51  std=643.09  se=99.23  t=0.60  ci95=[-136.51,244.20]
+       holdout $/day=79.27  trades=67  hit=0.463  avgR=0.117  maxDD$=-1597.20  std=562.65  se=119.96  t=0.66  ci95=[-147.58,328.15]  vs_$200=NO  vs_$300-500=NO
+       IWM alpha develop $/day=43.16 (n=197 skip=0) holdout $/day=31.51 (n=67 skip=0)
+A      kernel|nofilter      off        -40.34      -93.60     120  -0.149   -0.67         [-334.8,184.6]    -129.23
+       develop $/day=-40.34  trades=280  hit=0.446  avgR=-0.097  maxDD$=-5521.17  std=699.96  se=108.01  t=-0.37  ci95=[-243.25,155.48]
+       holdout $/day=-93.60  trades=120  hit=0.350  avgR=-0.149  maxDD$=-3532.95  std=651.62  se=138.93  t=-0.67  ci95=[-334.85,184.55]  vs_$200=NO  vs_$300-500=NO
+       IWM alpha develop $/day=-66.85 (n=280 skip=0) holdout $/day=-129.23 (n=120 skip=0)
+A      kernel|ssr_borrow    on         -48.36     -118.89     109  -0.176   -0.96         [-349.5,121.6]    -153.08
+       develop $/day=-48.36  trades=271  hit=0.439  avgR=-0.111  maxDD$=-6230.74  std=762.42  se=117.64  t=-0.41  ci95=[-273.64,168.52]
+       holdout $/day=-118.89  trades=109  hit=0.349  avgR=-0.176  maxDD$=-3472.54  std=579.36  se=123.52  t=-0.96  ci95=[-349.47,121.60]  vs_$200=NO  vs_$300-500=NO
+       IWM alpha develop $/day=-70.30 (n=271 skip=0) holdout $/day=-153.08 (n=109 skip=0)

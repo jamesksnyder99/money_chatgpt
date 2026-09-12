@@ -1,0 +1,52 @@
+Arrow 8 — wide-stop opening range + selection
+VERDICT: FAIL — no Arrow 8 experiment has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass.
+account=$100000  target=$300-$500/day  failure_line=$200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap file=True
+Pass = holdout >= $200/day AND develop not red. Do not promote develop-red / holdout-green.
+orb_wide: 09:30-09:44 range, W in 1%-4%, stop = other side of range. Free of 10d trend.
+Reuse Arrow 7 book flags (take_2r, trail_after_1r). Did not rerun channel|2R or channel|trail.
+No retry of exact dead Arrow 6/7 pairs. No 12:00-16:00. No Arrow 9.
+
+orb_wide width band (study name-days with an opening range):
+  Track A: or_names=49187 width_fail=16714 width_ok=32473 fired=29476
+  Track B: or_names=25578 width_fail=8259 width_ok=17319 fired=15685
+
+track  id                            dev $/day  hold $/day  hold n    hit    avgR      maxDD  >=200
+A      orb_wide|baseline               -188.48     -150.24     108  0.435  -0.231   -3780.78     NO
+       develop $/day=-188.48  trades=225  hit=0.387  avgR=-0.163  maxDD$=-8771.05
+       holdout $/day=-150.24  trades=108  hit=0.435  avgR=-0.231  maxDD$=-3780.78  vs_$200=NO  vs_$300-500=NO
+A      orb_wide|2R                     -164.49     -147.65     110  0.427  -0.224   -3791.80     NO
+       develop $/day=-164.49  trades=240  hit=0.408  avgR=-0.138  maxDD$=-8093.26
+       holdout $/day=-147.65  trades=110  hit=0.427  avgR=-0.224  maxDD$=-3791.80  vs_$200=NO  vs_$300-500=NO
+A      orb_wide|trail                  -189.67     -111.02     129  0.450  -0.145   -2986.82     NO
+       develop $/day=-189.67  trades=274  hit=0.412  avgR=-0.156  maxDD$=-8754.40
+       holdout $/day=-111.02  trades=129  hit=0.450  avgR=-0.145  maxDD$=-2986.82  vs_$200=NO  vs_$300-500=NO
+A      orb_wide|breadth                -254.18     -104.75     102  0.402  -0.228   -3765.02     NO
+       develop $/day=-254.18  trades=233  hit=0.356  avgR=-0.250  maxDD$=-11123.56
+       holdout $/day=-104.75  trades=102  hit=0.402  avgR=-0.228  maxDD$=-3765.02  vs_$200=NO  vs_$300-500=NO
+A      orb_wide|cost_gate              -188.48     -150.24     108  0.435  -0.231   -3780.78     NO
+       develop $/day=-188.48  trades=225  hit=0.387  avgR=-0.163  maxDD$=-8771.05
+       holdout $/day=-150.24  trades=108  hit=0.435  avgR=-0.231  maxDD$=-3780.78  vs_$200=NO  vs_$300-500=NO
+A      three_day_hl|2R                 -128.56     -150.18     106  0.396  -0.312   -3998.12     NO
+       develop $/day=-128.56  trades=197  hit=0.330  avgR=-0.274  maxDD$=-5919.86
+       holdout $/day=-150.18  trades=106  hit=0.396  avgR=-0.312  maxDD$=-3998.12  vs_$200=NO  vs_$300-500=NO
+B      orb_wide|baseline                -87.28     -126.85     134  0.418  -0.114   -2992.73     NO
+       develop $/day=-87.28  trades=241  hit=0.456  avgR=-0.085  maxDD$=-5685.83
+       holdout $/day=-126.85  trades=134  hit=0.418  avgR=-0.114  maxDD$=-2992.73  vs_$200=NO  vs_$300-500=NO
+B      orb_wide|2R                      -81.02     -136.38     138  0.420  -0.119   -3229.17     NO
+       develop $/day=-81.02  trades=246  hit=0.459  avgR=-0.078  maxDD$=-5510.35
+       holdout $/day=-136.38  trades=138  hit=0.420  avgR=-0.119  maxDD$=-3229.17  vs_$200=NO  vs_$300-500=NO
+B      orb_wide|trail                  -122.08     -152.86     157  0.420  -0.122   -3516.25     NO
+       develop $/day=-122.08  trades=271  hit=0.450  avgR=-0.110  maxDD$=-6316.92
+       holdout $/day=-152.86  trades=157  hit=0.420  avgR=-0.122  maxDD$=-3516.25  vs_$200=NO  vs_$300-500=NO
+B      orb_wide|breadth                -154.99        9.27     121  0.537   0.009   -1965.92     NO
+       develop $/day=-154.99  trades=245  hit=0.416  avgR=-0.160  maxDD$=-7104.26
+       holdout $/day=9.27  trades=121  hit=0.537  avgR=0.009  maxDD$=-1965.92  vs_$200=NO  vs_$300-500=NO
+B      orb_wide|cost_gate               -87.28     -126.85     134  0.418  -0.114   -2992.73     NO
+       develop $/day=-87.28  trades=241  hit=0.456  avgR=-0.085  maxDD$=-5685.83
+       holdout $/day=-126.85  trades=134  hit=0.418  avgR=-0.114  maxDD$=-2992.73  vs_$200=NO  vs_$300-500=NO
+B      three_day_hl|2R                  -25.60       -3.90     109  0.459  -0.007    -959.03     NO
+       develop $/day=-25.60  trades=209  hit=0.416  avgR=-0.051  maxDD$=-1941.44
+       holdout $/day=-3.90  trades=109  hit=0.459  avgR=-0.007  maxDD$=-959.03  vs_$200=NO  vs_$300-500=NO

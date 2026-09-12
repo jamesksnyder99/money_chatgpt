@@ -1,0 +1,47 @@
+Arrow 9 — Q5 liquid names with a real OR and/or gap
+VERDICT: FAIL — no Arrow 9 book has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass.
+account=$100000  target=$300-$500/day  failure_line=$200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap file=True
+Pass = holdout >= $200/day AND develop not red. Character used develop only.
+Six frozen books: orb_q5 baseline/2R/trail-gapsign/flat1100; gap_q5 2R continuation; three_day_q5 2R.
+No 7th id. No ML. No Arrow 8 cost_gate rerun. No 12:00-16:00. No Arrow 10.
+
+track  id                        dev $/day  hold $/day  hold n    hit    avgR      maxDD  >=200
+A      orb_q5|baseline              -44.75     -125.12     139  0.453  -0.122   -3067.51     NO
+       develop $/day=-44.75  trades=248  hit=0.444  avgR=-0.051  maxDD$=-4516.25
+       holdout $/day=-125.12  trades=139  hit=0.453  avgR=-0.122  maxDD$=-3067.51  vs_$200=NO  vs_$300-500=NO
+A      orb_q5|2R                    -53.39     -128.31     142  0.444  -0.121   -3151.00     NO
+       develop $/day=-53.39  trades=254  hit=0.437  avgR=-0.057  maxDD$=-4520.64
+       holdout $/day=-128.31  trades=142  hit=0.444  avgR=-0.121  maxDD$=-3151.00  vs_$200=NO  vs_$300-500=NO
+A      gap_q5|2R                    -99.62     -301.55     110  0.336  -0.228   -7338.43     NO
+       develop $/day=-99.62  trades=208  hit=0.361  avgR=-0.397  maxDD$=-7190.76
+       holdout $/day=-301.55  trades=110  hit=0.336  avgR=-0.228  maxDD$=-7338.43  vs_$200=NO  vs_$300-500=NO
+A      orb_q5_gapsign|trail         -67.03      -68.74     132  0.508  -0.065   -2238.60     NO
+       develop $/day=-67.03  trades=263  hit=0.418  avgR=-0.065  maxDD$=-5075.88
+       holdout $/day=-68.74  trades=132  hit=0.508  avgR=-0.065  maxDD$=-2238.60  vs_$200=NO  vs_$300-500=NO
+A      three_day_q5|2R              -87.88      -99.34     109  0.358  -0.201   -2935.38     NO
+       develop $/day=-87.88  trades=209  hit=0.373  avgR=-0.177  maxDD$=-4863.75
+       holdout $/day=-99.34  trades=109  hit=0.358  avgR=-0.201  maxDD$=-2935.38  vs_$200=NO  vs_$300-500=NO
+A      orb_q5|flat1100             -119.44     -151.47     135  0.496  -0.142   -3770.85     NO
+       develop $/day=-119.44  trades=236  hit=0.415  avgR=-0.117  maxDD$=-6224.73
+       holdout $/day=-151.47  trades=135  hit=0.496  avgR=-0.142  maxDD$=-3770.85  vs_$200=NO  vs_$300-500=NO
+B      orb_q5|baseline             -120.90     -159.98     131  0.374  -0.154   -3878.80     NO
+       develop $/day=-120.90  trades=245  hit=0.429  avgR=-0.117  maxDD$=-6964.60
+       holdout $/day=-159.98  trades=131  hit=0.374  avgR=-0.154  maxDD$=-3878.80  vs_$200=NO  vs_$300-500=NO
+B      orb_q5|2R                   -121.45     -182.27     132  0.371  -0.172   -4369.38     NO
+       develop $/day=-121.45  trades=246  hit=0.431  avgR=-0.118  maxDD$=-7146.72
+       holdout $/day=-182.27  trades=132  hit=0.371  avgR=-0.172  maxDD$=-4369.38  vs_$200=NO  vs_$300-500=NO
+B      gap_q5|2R                    -77.34     -329.31     109  0.321  -0.519   -7244.80     NO
+       develop $/day=-77.34  trades=206  hit=0.350  avgR=-0.350  maxDD$=-5067.85
+       holdout $/day=-329.31  trades=109  hit=0.321  avgR=-0.519  maxDD$=-7244.80  vs_$200=NO  vs_$300-500=NO
+B      orb_q5_gapsign|trail         -46.97     -107.88     124  0.460  -0.125   -2823.15     NO
+       develop $/day=-46.97  trades=239  hit=0.439  avgR=-0.047  maxDD$=-3760.55
+       holdout $/day=-107.88  trades=124  hit=0.460  avgR=-0.125  maxDD$=-2823.15  vs_$200=NO  vs_$300-500=NO
+B      three_day_q5|2R              -67.94        6.54     110  0.473   0.016   -1085.59     NO
+       develop $/day=-67.94  trades=210  hit=0.405  avgR=-0.134  maxDD$=-3944.26
+       holdout $/day=6.54  trades=110  hit=0.473  avgR=0.016  maxDD$=-1085.59  vs_$200=NO  vs_$300-500=NO
+B      orb_q5|flat1100             -142.44     -195.09     125  0.344  -0.191   -4321.76     NO
+       develop $/day=-142.44  trades=239  hit=0.402  avgR=-0.143  maxDD$=-7038.92
+       holdout $/day=-195.09  trades=125  hit=0.344  avgR=-0.191  maxDD$=-4321.76  vs_$200=NO  vs_$300-500=NO

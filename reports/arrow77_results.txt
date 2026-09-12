@@ -1,0 +1,271 @@
+Arrow 77 — open leftover short: H10 overlap + weekdays
+Id 0 all odd $/day=125.39 vs Arrow 76 h1029_n8 125.39 n=336 — within ±15%. Mean overlap vs H10 (live at 09:30) /8: odd=0.429 even=0.516. Daily Pearson day-book vs H10 MTM: odd=0.239 n=42 even=0.523 n=40. Description: a second pulse. Weekdays that print on both slices: mon, tue, wed, thu, fri. Fired-day lift both vs id 0: wed.
+VERDICT: SNIFF — weekday rings on four months are still a sniff for promotion. Did not use April to pick a weekday. Did not treat this window as a $200 slate pass. Did not score May–August.
+Frozen day book: eight largest 15-session close-to-close, fill first print ≥ 09:30, exit last print at 10:29, $3,000. Short only. Did not retune Wednesday H10. Did not change the 10:29 exit. H10 = Wednesday signal, next last-RTH fill, $4,000, hold 10, drop missing exits. Split leftover lookback did not change (2025-12-17). A weekday beats id 0 only if it lifts $/day on both odd and even using the fired-day denominator. Do not call a CI that includes 0 EV. No new ingest. Did not touch Lab A data/bars/. No Arrow 78.
+Acronyms: IS = in-sample; OOS = out-of-sample; PDV = prior-day dollar volume; IWM = iShares Russell 2000 ETF; RTH = regular trading hours; EV = expected value; SSR = Short Sale Restriction; CI = confidence interval; MTM = mark-to-market.
+account=100000  slate_floor=200/day  seat_floor=100/day  target=300-500/day
+window n=82 2026-01-02..2026-04-30  odd n=42  even n=40  (May not scored)
+workers=8 cpu_count=8  jan_tape=C:\Users\james\Money\data\virgin\bars  apr_tape=C:\Users\james\Money\data\virgin\bars
+eligibility: prior_close [$10, $80], PDV >= $10000000  left=15 n=8 $3000 exit=10:29  H10 nextrth hold=10 $4000
+Peak live = |shares × entry| (same-session day book). $/day slice = total PnL / NYSE sessions in that slice. $/day fired = total PnL / sessions that weekday fired. Odd=Jan+Mar IS. Even=Feb+Apr OOS.
+
+CHARACTER id 0 vs H10. Description. Does not pick an id. Did not use April to pick a weekday.
+  overlap count of the eight also on H10 live at 09:30: odd mean=3.429 /8=0.429 n=42 h10_live_days=32; even mean=4.125 /8=0.516 n=40 h10_live_days=40.
+  daily Pearson day-book PnL vs H10 MTM (sessions both exist): odd=0.239 n=42; even=0.523 n=40. a second pulse.
+  H10 trades n=121 weds_ranked=16. H10 fill is nextrth last-RTH, not the day-book 09:30 fill.
+
+id       slice      slice$    fired$      n   nf    hit      t
+all      odd        125.39    125.39    336   42  0.464   0.98
+    n=336  n/sess=8.00  hit=0.464  wins=156  losses=180  avgR=n/a (no stop)  PF=1.259
+    avgWin$=164.12  avgLoss$=-112.98  $/day=125.39  std=825.02  se=127.30  t=0.98  ci95=[-134.89,370.02]
+    daily-close DD$=-3662.79  worst_day$=-1895.70  peak_conc=8  mean_conc=8.00  weeks=42
+    slice $/day=125.39 (total / n=42 sessions)  fired $/day=125.39 (total / n=42 fired)  days=all exit=1029 $3000  peak live $23961  all $23961  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=268.33; 2026-03 n=22 $/day=-4.55
+    odd fired CI includes 0 — not EV.
+all      even       199.23    199.23    319   40  0.445   2.16
+    n=319  n/sess=7.97  hit=0.445  wins=142  losses=177  avgR=n/a (no stop)  PF=1.613
+    avgWin$=147.75  avgLoss$=-73.51  $/day=199.23  std=584.38  se=92.40  t=2.16  ci95=[27.02,368.66]
+    daily-close DD$=-1286.33  worst_day$=-908.98  peak_conc=8  mean_conc=7.97  weeks=40
+    slice $/day=199.23 (total / n=40 sessions)  fired $/day=199.23 (total / n=40 fired)  days=all exit=1029 $3000  peak live $23948  all $23961  CI excludes 0
+    months: 2026-02 n=19 $/day=45.42; 2026-04 n=21 $/day=338.39
+    even fired CI excludes 0.
+all      2026-01    268.33    268.33    160   20  0.500   1.13
+    n=160  n/sess=8.00  hit=0.500  wins=80  losses=80  avgR=n/a (no stop)  PF=1.470
+    avgWin$=209.88  avgLoss$=-142.79  $/day=268.33  std=1057.48  se=236.46  t=1.13  ci95=[-203.97,707.79]
+    daily-close DD$=-3662.79  worst_day$=-1895.70  peak_conc=8  mean_conc=8.00  weeks=20
+    slice $/day=268.33 (total / n=20 sessions)  fired $/day=268.33 (total / n=20 fired)  days=all exit=1029 $3000  peak live $23927  all $23961  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=268.33
+    2026-01 fired CI includes 0 — not EV.
+all      2026-02     45.42     45.42    152   19  0.441   0.34
+    n=152  n/sess=8.00  hit=0.441  wins=67  losses=85  avgR=n/a (no stop)  PF=1.117
+    avgWin$=122.97  avgLoss$=-86.78  $/day=45.42  std=583.14  se=133.78  t=0.34  ci95=[-190.39,325.39]
+    daily-close DD$=-1177.10  worst_day$=-908.98  peak_conc=8  mean_conc=8.00  weeks=19
+    slice $/day=45.42 (total / n=19 sessions)  fired $/day=45.42 (total / n=19 fired)  days=all exit=1029 $3000  peak live $23933  all $23961  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=45.42
+    2026-02 fired CI includes 0 — not EV.
+all      2026-03     -4.55     -4.55    176   22  0.432  -0.04
+    n=176  n/sess=8.00  hit=0.432  wins=76  losses=100  avgR=n/a (no stop)  PF=0.989
+    avgWin$=115.95  avgLoss$=-89.12  $/day=-4.55  std=529.14  se=112.81  t=-0.04  ci95=[-211.07,231.64]
+    daily-close DD$=-2104.61  worst_day$=-1144.93  peak_conc=8  mean_conc=8.00  weeks=22
+    slice $/day=-4.55 (total / n=22 sessions)  fired $/day=-4.55 (total / n=22 fired)  days=all exit=1029 $3000  peak live $23961  all $23961  CI includes 0 — not EV
+    months: 2026-03 n=22 $/day=-4.55
+    2026-03 fired CI includes 0 — not EV.
+all      2026-04    338.39    338.39    167   21  0.449   2.75
+    n=167  n/sess=7.95  hit=0.449  wins=75  losses=92  avgR=n/a (no stop)  PF=2.261
+    avgWin$=169.88  avgLoss$=-61.25  $/day=338.39  std=563.08  se=122.87  t=2.75  ci95=[108.63,584.64]
+    daily-close DD$=-620.51  worst_day$=-499.02  peak_conc=8  mean_conc=7.95  weeks=21
+    slice $/day=338.39 (total / n=21 sessions)  fired $/day=338.39 (total / n=21 fired)  days=all exit=1029 $3000  peak live $23948  all $23961  CI excludes 0
+    months: 2026-04 n=21 $/day=338.39
+    2026-04 fired CI excludes 0.
+mon      odd         94.17    494.38     64    8  0.625   1.68
+    n=64  n/sess=8.00  hit=0.625  wins=40  losses=24  avgR=n/a (no stop)  PF=2.622
+    avgWin$=159.85  avgLoss$=-101.63  $/day=494.38  std=832.39  se=294.29  t=1.68  ci95=[-25.54,1079.53]
+    daily-close DD$=-520.74  worst_day$=-520.74  peak_conc=8  mean_conc=8.00  weeks=8
+    slice $/day=94.17 (total / n=42 sessions)  fired $/day=494.38 (total / n=8 fired)  days=mon exit=1029 $3000  peak live $23961  all $23961  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=117.05; 2026-03 n=22 $/day=73.36
+    odd fired CI includes 0 — not EV.
+mon      even        28.01    160.04     56    7  0.411   0.87
+    n=56  n/sess=8.00  hit=0.411  wins=23  losses=33  avgR=n/a (no stop)  PF=1.485
+    avgWin$=149.10  avgLoss$=-69.97  $/day=160.04  std=488.73  se=184.72  t=0.87  ci95=[-133.41,521.98]
+    daily-close DD$=-313.32  worst_day$=-313.32  peak_conc=8  mean_conc=8.00  weeks=7
+    slice $/day=28.01 (total / n=40 sessions)  fired $/day=160.04 (total / n=7 fired)  days=mon exit=1029 $3000  peak live $23948  all $23961  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=1.27; 2026-04 n=21 $/day=52.20
+    even fired CI includes 0 — not EV.
+mon      2026-01    117.05    780.36     24    3  0.667   1.10
+    n=24  n/sess=8.00  hit=0.667  wins=16  losses=8  avgR=n/a (no stop)  PF=3.088
+    avgWin$=216.39  avgLoss$=-140.15  $/day=780.36  std=1228.32  se=709.17  t=1.10  ci95=[-520.74,1919.90]
+    daily-close DD$=-520.74  worst_day$=-520.74  peak_conc=8  mean_conc=8.00  weeks=3
+    slice $/day=117.05 (total / n=20 sessions)  fired $/day=780.36 (total / n=3 fired)  days=mon exit=1029 $3000  peak live $23924  all $23961  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=117.05
+    2026-01 fired CI includes 0 — not EV.
+mon      2026-02      1.27      8.05     24    3  0.417   0.07
+    n=24  n/sess=8.00  hit=0.417  wins=10  losses=14  avgR=n/a (no stop)  PF=1.025
+    avgWin$=98.12  avgLoss$=-68.36  $/day=8.05  std=207.95  se=120.06  t=0.07  ci95=[-222.25,182.07]
+    daily-close DD$=-222.25  worst_day$=-222.25  peak_conc=8  mean_conc=8.00  weeks=3
+    slice $/day=1.27 (total / n=19 sessions)  fired $/day=8.05 (total / n=3 fired)  days=mon exit=1029 $3000  peak live $23873  all $23961  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=1.27
+    2026-02 fired CI includes 0 — not EV.
+mon      2026-03     73.36    322.79     40    5  0.600   1.20
+    n=40  n/sess=8.00  hit=0.600  wins=24  losses=16  avgR=n/a (no stop)  PF=2.225
+    avgWin$=122.16  avgLoss$=-82.37  $/day=322.79  std=599.99  se=268.32  t=1.20  ci95=[-106.99,860.61]
+    daily-close DD$=-324.34  worst_day$=-324.34  peak_conc=8  mean_conc=8.00  weeks=5
+    slice $/day=73.36 (total / n=22 sessions)  fired $/day=322.79 (total / n=5 fired)  days=mon exit=1029 $3000  peak live $23961  all $23961  CI includes 0 — not EV
+    months: 2026-03 n=22 $/day=73.36
+    2026-03 fired CI includes 0 — not EV.
+mon      2026-04     52.20    274.04     32    4  0.406   0.86
+    n=32  n/sess=8.00  hit=0.406  wins=13  losses=19  avgR=n/a (no stop)  PF=1.811
+    avgWin$=188.32  avgLoss$=-71.15  $/day=274.04  std=639.10  se=319.55  t=0.86  ci95=[-201.17,828.65]
+    daily-close DD$=-313.32  worst_day$=-313.32  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=52.20 (total / n=21 sessions)  fired $/day=274.04 (total / n=4 fired)  days=mon exit=1029 $3000  peak live $23948  all $23961  CI includes 0 — not EV
+    months: 2026-04 n=21 $/day=52.20
+    2026-04 fired CI includes 0 — not EV.
+tue      odd          4.15     19.36     72    9  0.375   0.11
+    n=72  n/sess=8.00  hit=0.375  wins=27  losses=45  avgR=n/a (no stop)  PF=1.035
+    avgWin$=191.25  avgLoss$=-110.88  $/day=19.36  std=539.90  se=179.97  t=0.11  ci95=[-299.63,344.89]
+    daily-close DD$=-1298.07  worst_day$=-512.71  peak_conc=8  mean_conc=8.00  weeks=9
+    slice $/day=4.15 (total / n=42 sessions)  fired $/day=19.36 (total / n=9 fired)  days=tue exit=1029 $3000  peak live $23958  all $23958  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=73.62; 2026-03 n=22 $/day=-59.00
+    odd fired CI includes 0 — not EV.
+tue      even        53.88    269.41     64    8  0.375   1.38
+    n=64  n/sess=8.00  hit=0.375  wins=24  losses=40  avgR=n/a (no stop)  PF=1.987
+    avgWin$=180.80  avgLoss$=-54.60  $/day=269.41  std=551.07  se=194.83  t=1.38  ci95=[-49.83,687.59]
+    daily-close DD$=-450.19  worst_day$=-450.19  peak_conc=8  mean_conc=8.00  weeks=8
+    slice $/day=53.88 (total / n=40 sessions)  fired $/day=269.41 (total / n=8 fired)  days=tue exit=1029 $3000  peak live $23933  all $23958  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-7.43; 2026-04 n=21 $/day=109.35
+    even fired CI includes 0 — not EV.
+tue      2026-01     73.62    368.08     32    4  0.500   1.09
+    n=32  n/sess=8.00  hit=0.500  wins=16  losses=16  avgR=n/a (no stop)  PF=1.680
+    avgWin$=227.37  avgLoss$=-135.35  $/day=368.08  std=674.74  se=337.37  t=1.09  ci95=[-108.89,901.98]
+    daily-close DD$=-512.71  worst_day$=-512.71  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=73.62 (total / n=20 sessions)  fired $/day=368.08 (total / n=4 fired)  days=tue exit=1029 $3000  peak live $23888  all $23958  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=73.62
+    2026-01 fired CI includes 0 — not EV.
+tue      2026-02     -7.43    -35.29     32    4  0.344  -0.24
+    n=32  n/sess=8.00  hit=0.344  wins=11  losses=21  avgR=n/a (no stop)  PF=0.883
+    avgWin$=96.68  avgLoss$=-57.36  $/day=-35.29  std=290.49  se=145.25  t=-0.24  ci95=[-320.31,172.22]
+    daily-close DD$=-450.19  worst_day$=-450.19  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=-7.43 (total / n=19 sessions)  fired $/day=-35.29 (total / n=4 fired)  days=tue exit=1029 $3000  peak live $23933  all $23958  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-7.43
+    2026-02 fired CI includes 0 — not EV.
+tue      2026-03    -59.00   -259.61     40    5  0.275  -3.86
+    n=40  n/sess=8.00  hit=0.275  wins=11  losses=29  avgR=n/a (no stop)  PF=0.540
+    avgWin$=138.71  avgLoss$=-97.37  $/day=-259.61  std=150.47  se=67.29  t=-3.86  ci95=[-377.05,-150.33]
+    daily-close DD$=-1298.07  worst_day$=-452.65  peak_conc=8  mean_conc=8.00  weeks=5
+    slice $/day=-59.00 (total / n=22 sessions)  fired $/day=-259.61 (total / n=5 fired)  days=tue exit=1029 $3000  peak live $23958  all $23958  CI excludes 0
+    months: 2026-03 n=22 $/day=-59.00
+    2026-03 fired CI excludes 0.
+tue      2026-04    109.35    574.10     32    4  0.406   1.87
+    n=32  n/sess=8.00  hit=0.406  wins=13  losses=19  avgR=n/a (no stop)  PF=3.345
+    avgWin$=251.98  avgLoss$=-51.55  $/day=574.10  std=613.70  se=306.85  t=1.87  ci95=[146.69,1140.86]
+    daily-close DD$=0.00  worst_day$=16.79  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=109.35 (total / n=21 sessions)  fired $/day=574.10 (total / n=4 fired)  days=tue exit=1029 $3000  peak live $23920  all $23958  CI excludes 0
+    months: 2026-04 n=21 $/day=109.35
+    2026-04 fired CI excludes 0.
+wed      odd         37.19    195.25     64    8  0.453   0.58
+    n=64  n/sess=8.00  hit=0.453  wins=29  losses=35  avgR=n/a (no stop)  PF=1.366
+    avgWin$=201.23  avgLoss$=-122.10  $/day=195.25  std=960.16  se=339.47  t=0.58  ci95=[-404.24,847.41]
+    daily-close DD$=-870.41  worst_day$=-735.73  peak_conc=8  mean_conc=8.00  weeks=8
+    slice $/day=37.19 (total / n=42 sessions)  fired $/day=195.25 (total / n=8 fired)  days=wed exit=1029 $3000  peak live $23927  all $23927  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=63.31; 2026-03 n=22 $/day=13.45
+    odd fired CI includes 0 — not EV.
+wed      even        66.55    295.78     72    9  0.458   1.32
+    n=72  n/sess=8.00  hit=0.458  wins=33  losses=39  avgR=n/a (no stop)  PF=2.058
+    avgWin$=156.91  avgLoss$=-64.51  $/day=295.78  std=673.36  se=224.45  t=1.32  ci95=[-77.52,717.55]
+    daily-close DD$=-446.57  worst_day$=-374.97  peak_conc=8  mean_conc=8.00  weeks=9
+    slice $/day=66.55 (total / n=40 sessions)  fired $/day=295.78 (total / n=9 fired)  days=wed exit=1029 $3000  peak live $23921  all $23927  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=34.50; 2026-04 n=21 $/day=95.55
+    even fired CI includes 0 — not EV.
+wed      2026-01     63.31    316.55     32    4  0.500   0.48
+    n=32  n/sess=8.00  hit=0.500  wins=16  losses=16  avgR=n/a (no stop)  PF=1.473
+    avgWin$=246.50  avgLoss$=-167.37  $/day=316.55  std=1324.70  se=662.35  t=0.48  ci95=[-729.30,1362.40]
+    daily-close DD$=-735.73  worst_day$=-735.73  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=63.31 (total / n=20 sessions)  fired $/day=316.55 (total / n=4 fired)  days=wed exit=1029 $3000  peak live $23927  all $23927  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=63.31
+    2026-01 fired CI includes 0 — not EV.
+wed      2026-02     34.50    163.86     32    4  0.469   0.43
+    n=32  n/sess=8.00  hit=0.469  wins=15  losses=17  avgR=n/a (no stop)  PF=1.472
+    avgWin$=136.30  avgLoss$=-81.71  $/day=163.86  std=753.84  se=376.92  t=0.43  ci95=[-355.41,847.81]
+    daily-close DD$=-374.97  worst_day$=-374.97  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=34.50 (total / n=19 sessions)  fired $/day=163.86 (total / n=4 fired)  days=wed exit=1029 $3000  peak live $23889  all $23927  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=34.50
+    2026-02 fired CI includes 0 — not EV.
+wed      2026-03     13.45     73.96     32    4  0.406   0.25
+    n=32  n/sess=8.00  hit=0.406  wins=13  losses=19  avgR=n/a (no stop)  PF=1.185
+    avgWin$=145.51  avgLoss$=-83.99  $/day=73.96  std=597.53  se=298.76  t=0.25  ci95=[-415.25,563.17]
+    daily-close DD$=-648.68  worst_day$=-648.68  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=13.45 (total / n=22 sessions)  fired $/day=73.96 (total / n=4 fired)  days=wed exit=1029 $3000  peak live $23912  all $23927  CI includes 0 — not EV
+    months: 2026-03 n=22 $/day=13.45
+    2026-03 fired CI includes 0 — not EV.
+wed      2026-04     95.55    401.32     40    5  0.450   1.34
+    n=40  n/sess=8.00  hit=0.450  wins=18  losses=22  avgR=n/a (no stop)  PF=2.780
+    avgWin$=174.09  avgLoss$=-51.23  $/day=401.32  std=670.29  se=299.76  t=1.34  ci95=[-14.67,981.50]
+    daily-close DD$=-234.60  worst_day$=-234.60  peak_conc=8  mean_conc=8.00  weeks=5
+    slice $/day=95.55 (total / n=21 sessions)  fired $/day=401.32 (total / n=5 fired)  days=wed exit=1029 $3000  peak live $23921  all $23927  CI includes 0 — not EV
+    months: 2026-04 n=21 $/day=95.55
+    2026-04 fired CI includes 0 — not EV.
+thu      odd        -10.72    -56.30     64    8  0.375  -0.16
+    n=64  n/sess=8.00  hit=0.375  wins=24  losses=40  avgR=n/a (no stop)  PF=0.914
+    avgWin$=199.04  avgLoss$=-130.68  $/day=-56.30  std=1014.47  se=358.67  t=-0.16  ci95=[-636.25,669.32]
+    daily-close DD$=-1633.93  worst_day$=-1275.98  peak_conc=8  mean_conc=8.00  weeks=8
+    slice $/day=-10.72 (total / n=42 sessions)  fired $/day=-56.30 (total / n=8 fired)  days=thu exit=1029 $3000  peak live $23909  all $23909  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=19.22; 2026-03 n=22 $/day=-37.94
+    odd fired CI includes 0 — not EV.
+thu      even        30.03    133.49     71    9  0.535   0.63
+    n=71  n/sess=7.89  hit=0.535  wins=38  losses=33  avgR=n/a (no stop)  PF=1.331
+    avgWin$=127.00  avgLoss$=-109.83  $/day=133.49  std=639.93  se=213.31  t=0.63  ci95=[-221.59,568.71]
+    daily-close DD$=-736.79  worst_day$=-633.40  peak_conc=8  mean_conc=7.89  weeks=9
+    slice $/day=30.03 (total / n=40 sessions)  fired $/day=133.49 (total / n=9 fired)  days=thu exit=1029 $3000  peak live $23891  all $23909  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=58.26; 2026-04 n=21 $/day=4.50
+    even fired CI includes 0 — not EV.
+thu      2026-01     19.22     96.08     32    4  0.312   0.14
+    n=32  n/sess=8.00  hit=0.312  wins=10  losses=22  avgR=n/a (no stop)  PF=1.118
+    avgWin$=362.85  avgLoss$=-147.46  $/day=96.08  std=1388.67  se=694.33  t=0.14  ci95=[-959.68,1426.89]
+    daily-close DD$=-1633.93  worst_day$=-1275.98  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=19.22 (total / n=20 sessions)  fired $/day=96.08 (total / n=4 fired)  days=thu exit=1029 $3000  peak live $23909  all $23909  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=19.22
+    2026-01 fired CI includes 0 — not EV.
+thu      2026-02     58.26    276.71     32    4  0.656   0.66
+    n=32  n/sess=8.00  hit=0.656  wins=21  losses=11  avgR=n/a (no stop)  PF=1.654
+    avgWin$=133.31  avgLoss$=-153.87  $/day=276.71  std=839.15  se=419.58  t=0.66  ci95=[-368.40,959.56]
+    daily-close DD$=-736.79  worst_day$=-633.40  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=58.26 (total / n=19 sessions)  fired $/day=276.71 (total / n=4 fired)  days=thu exit=1029 $3000  peak live $23864  all $23909  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=58.26
+    2026-02 fired CI includes 0 — not EV.
+thu      2026-03    -37.94   -208.67     32    4  0.438  -0.65
+    n=32  n/sess=8.00  hit=0.438  wins=14  losses=18  avgR=n/a (no stop)  PF=0.579
+    avgWin$=82.04  avgLoss$=-110.18  $/day=-208.67  std=641.13  se=320.56  t=-0.65  ci95=[-848.05,219.57]
+    daily-close DD$=-1144.93  worst_day$=-1144.93  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=-37.94 (total / n=22 sessions)  fired $/day=-208.67 (total / n=4 fired)  days=thu exit=1029 $3000  peak live $23902  all $23909  CI includes 0 — not EV
+    months: 2026-03 n=22 $/day=-37.94
+    2026-03 fired CI includes 0 — not EV.
+thu      2026-04      4.50     18.91     39    5  0.436   0.08
+    n=39  n/sess=7.80  hit=0.436  wins=17  losses=22  avgR=n/a (no stop)  PF=1.049
+    avgWin$=119.20  avgLoss$=-87.81  $/day=18.91  std=503.94  se=225.37  t=0.08  ci95=[-365.42,403.23]
+    daily-close DD$=-630.22  worst_day$=-499.02  peak_conc=8  mean_conc=7.80  weeks=5
+    slice $/day=4.50 (total / n=21 sessions)  fired $/day=18.91 (total / n=5 fired)  days=thu exit=1029 $3000  peak live $23891  all $23909  CI includes 0 — not EV
+    months: 2026-04 n=21 $/day=4.50
+    2026-04 fired CI includes 0 — not EV.
+fri      odd          0.61      2.83     72    9  0.500   0.01
+    n=72  n/sess=8.00  hit=0.500  wins=36  losses=36  avgR=n/a (no stop)  PF=1.007
+    avgWin$=95.32  avgLoss$=-94.61  $/day=2.83  std=824.53  se=274.84  t=0.01  ci95=[-513.92,443.26]
+    daily-close DD$=-1895.70  worst_day$=-1895.70  peak_conc=8  mean_conc=8.00  weeks=9
+    slice $/day=0.61 (total / n=42 sessions)  fired $/day=2.83 (total / n=9 fired)  days=fri exit=1029 $3000  peak live $23943  all $23943  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=-4.87; 2026-03 n=22 $/day=5.58
+    odd fired CI includes 0 — not EV.
+fri      even        20.76    118.61     56    7  0.429   0.47
+    n=56  n/sess=8.00  hit=0.429  wins=24  losses=32  avgR=n/a (no stop)  PF=1.349
+    avgWin$=133.65  avgLoss$=-74.29  $/day=118.61  std=663.04  se=250.61  t=0.47  ci95=[-366.79,556.62]
+    daily-close DD$=-1574.80  worst_day$=-908.98  peak_conc=8  mean_conc=8.00  weeks=7
+    slice $/day=20.76 (total / n=40 sessions)  fired $/day=118.61 (total / n=7 fired)  days=fri exit=1029 $3000  peak live $23929  all $23943  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-41.17; 2026-04 n=21 $/day=76.79
+    even fired CI includes 0 — not EV.
+fri      2026-01     -4.87    -19.47     40    5  0.550  -0.04
+    n=40  n/sess=8.00  hit=0.550  wins=22  losses=18  avgR=n/a (no stop)  PF=0.956
+    avgWin$=96.24  avgLoss$=-123.03  $/day=-19.47  std=1054.21  se=471.46  t=-0.04  ci95=[-978.86,518.65]
+    daily-close DD$=-1895.70  worst_day$=-1895.70  peak_conc=8  mean_conc=8.00  weeks=5
+    slice $/day=-4.87 (total / n=20 sessions)  fired $/day=-19.47 (total / n=5 fired)  days=fri exit=1029 $3000  peak live $23927  all $23943  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=-4.87
+    2026-01 fired CI includes 0 — not EV.
+fri      2026-02    -41.17   -195.57     32    4  0.312  -0.57
+    n=32  n/sess=8.00  hit=0.312  wins=10  losses=22  avgR=n/a (no stop)  PF=0.633
+    avgWin$=135.07  avgLoss$=-96.95  $/day=-195.57  std=690.73  se=345.37  t=-0.57  ci95=[-787.40,396.26]
+    daily-close DD$=-1574.80  worst_day$=-908.98  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=-41.17 (total / n=19 sessions)  fired $/day=-195.57 (total / n=4 fired)  days=fri exit=1029 $3000  peak live $23929  all $23943  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-41.17
+    2026-02 fired CI includes 0 — not EV.
+fri      2026-03      5.58     30.70     32    4  0.438   0.11
+    n=32  n/sess=8.00  hit=0.438  wins=14  losses=18  avgR=n/a (no stop)  PF=1.103
+    avgWin$=93.87  avgLoss$=-66.19  $/day=30.70  std=573.81  se=286.90  t=0.11  ci95=[-368.27,558.74]
+    daily-close DD$=-449.42  worst_day$=-449.42  peak_conc=8  mean_conc=8.00  weeks=4
+    slice $/day=5.58 (total / n=22 sessions)  fired $/day=30.70 (total / n=4 fired)  days=fri exit=1029 $3000  peak live $23943  all $23943  CI includes 0 — not EV
+    months: 2026-03 n=22 $/day=5.58
+    2026-03 fired CI includes 0 — not EV.
+fri      2026-04     76.79    537.52     24    3  0.583   2.47
+    n=24  n/sess=8.00  hit=0.583  wins=14  losses=10  avgR=n/a (no stop)  PF=7.598
+    avgWin$=132.64  avgLoss$=-24.44  $/day=537.52  std=377.58  se=217.99  t=2.47  ci95=[121.50,858.49]
+    daily-close DD$=0.00  worst_day$=121.50  peak_conc=8  mean_conc=8.00  weeks=3
+    slice $/day=76.79 (total / n=21 sessions)  fired $/day=537.52 (total / n=3 fired)  days=fri exit=1029 $3000  peak live $23928  all $23943  CI excludes 0
+    months: 2026-04 n=21 $/day=76.79
+    2026-04 fired CI excludes 0.
+    Weekdays that lift both odd and even on the fired-day denominator vs id 0: wed. Did not use April to pick a weekday. Still a sniff, not a seat. No Arrow 78.
+

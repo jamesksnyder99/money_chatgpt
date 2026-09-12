@@ -1,0 +1,106 @@
+Arrow 55 — Friday and Wednesday as a pair (IS / OOS)
+VERDICT: SEAT — fri_6k, wed_6k, pair_6k, pair_3k, pair_3k_net, pair_3k_thu (OOS >= $100/day and IS not red).
+Id 0 fri_6k IS $/day=495.38/495.38 n=121/121 — within ±10% of Arrow 54 plain. Id 1 wed_6k IS $/day=583.07/583.07 n=118/118 — within ±10% of Arrow 52 wed_h10.
+Pearson daily PnL fri_6k vs wed_6k IS=-0.052 OOS=-0.072 (entry-session series from ids 0 and 1).
+$3k net pair (pair_3k_net) is a slate that fits $100k (OOS $224.73/day peak_live $80650).
+Friday and Wednesday eights are not the same eight names (mean overlap 3.18/8).
+Id 2 pair_6k peak live notional $239501 misses the $100k cap — diagnostic paper stack, allowed to miss.
+Ids that lift $/day versus fri_6k on both IS and OOS and fit $100k (stacked) or lift both (id 1): wed_6k.
+Ids that clear seat $100/day on OOS with IS not red: fri_6k, wed_6k, pair_6k, pair_3k, pair_3k_net, pair_3k_thu.
+Ids that clear slate $200/day on OOS with IS not red and peak live <= $100k: pair_3k_net.
+Short only. Stacked Friday and Wednesday leftover vs IWM. Rings locked from IS; OOS is one look for the family. Did not drop an id after seeing OOS. Did not use an OOS month to pick a threshold. Did not add a long leg. Did not retune Arrow 43 clocks or B|conj|atr1559|lock or flush|max6|repaired. No fade filter. No sector map. A stacked id counts as better than id 0 only if it lifts $/day on both IS and OOS and fits $100k. Slate needs OOS >= $200/day, IS not red, and peak live notional <= $100k. Id 2 is allowed to miss the $100k cap — diagnostic. Do not call a CI that includes 0 EV. Odd months IS, even months OOS, split on entry session. Combined dollars are not EV. No Arrow 56.
+Acronyms: IS = in-sample; OOS = out-of-sample; PDV = prior-day dollar volume; IWM = iShares Russell 2000 ETF; RTH = regular trading hours; EV = expected value; SSR = Short Sale Restriction; CI = confidence interval.
+account=100000  slate_floor=200/day  seat_floor=100/day  target=300-500/day
+study n=166 2026-01-02..2026-08-31  IS n=84  OOS n=82  friday rebalances=29  wednesday rebalances=31  thursday rebalances=31
+workers=8 cpu_count=8  jan_tape=C:\Users\james\Money\data\virgin\bars  jul_tape=C:\Users\james\Money\data\full\bars
+eligibility: same wall as Arrow 44–54, prior_close [$10, $80], PDV >= $10000000  short residual winners  n=8  lb=15  hold=10
+Skip a rebalance if fewer than 16 eligible names have a residual. Skip a name if a required close is missing. Holiday weekday: skip; do not roll. pair_6k / pair_3k allow two tickets in the same name. pair_3k_net and pair_3k_thu skip the later ticket.
+
+IS character: mean names in common Friday eight vs nearest Wednesday eight 3.18/8 (n_pairs=17). Description. Does not pick an id.
+
+id             split     $/day      n    hit      PF      t     IWM$    vs0  seat
+fri_6k         IS      495.38    121  0.554   1.779   1.90   594.05   ctrl    IS
+    n=121  n/week=7.12  hit=0.554  wins=67  losses=54  avgR=n/a (no stop)  PF=1.779
+    avgWin$=1418.08  avgLoss$=-988.88  $/day=495.38  std=2394.43  se=261.25  t=1.90  ci95=[20.29,1015.89]
+    daily-close DD$=-12061.11  worst_day$=-9736.34  peak_conc=8  mean_conc=7.12  weeks=17
+    IWM alpha $/day=594.05 (n=121 skip=0)  n_short=8 notional=$6000  Fri  lb=15 hold=10  CI excludes 0
+    peak live notional $143697  two-cohort×legs $96000  fits_100k=NO  rebalances=29
+    months: 2026-01 n=20 $/day=811.16; 2026-03 n=22 $/day=894.25; 2026-05 n=20 $/day=167.41; 2026-07 n=22 $/day=107.58
+fri_6k         OOS     276.17     91  0.626   2.113   2.69   277.05   ctrl  SEAT
+    n=91  n/week=7.58  hit=0.626  wins=57  losses=34  avgR=n/a (no stop)  PF=2.113
+    avgWin$=754.13  avgLoss$=-598.24  $/day=276.17  std=931.01  se=102.81  t=2.69  ci95=[91.66,485.52]
+    daily-close DD$=-1579.31  worst_day$=-1579.31  peak_conc=8  mean_conc=7.58  weeks=12
+    IWM alpha $/day=277.05 (n=91 skip=0)  n_short=8 notional=$6000  Fri  lb=15 hold=10  CI excludes 0
+    peak live notional $143684  two-cohort×legs $96000  fits_100k=NO  rebalances=29
+    months: 2026-02 n=19 $/day=70.84; 2026-04 n=21 $/day=268.07; 2026-06 n=21 $/day=429.92; 2026-08 n=21 $/day=316.28
+wed_6k         IS      583.07    118  0.619   2.225   2.28   586.06  +87.7    IS
+    n=118  n/week=7.38  hit=0.619  wins=73  losses=45  avgR=n/a (no stop)  PF=2.225
+    avgWin$=1218.56  avgLoss$=-888.38  $/day=583.07  std=2340.56  se=255.38  t=2.28  ci95=[157.89,1072.98]
+    daily-close DD$=-4107.07  worst_day$=-2442.11  peak_conc=8  mean_conc=7.38  weeks=16
+    IWM alpha $/day=586.06 (n=118 skip=0)  n_short=8 notional=$6000  Wed  lb=15 hold=10  CI excludes 0
+    peak live notional $143695  two-cohort×legs $96000  fits_100k=NO  rebalances=31
+    months: 2026-01 n=20 $/day=628.64; 2026-03 n=22 $/day=531.85; 2026-05 n=20 $/day=476.86; 2026-07 n=22 $/day=689.42
+wed_6k         OOS     417.12    113  0.540   1.935   2.16   571.93 +141.0  SEAT
+    n=113  n/week=7.53  hit=0.540  wins=61  losses=52  avgR=n/a (no stop)  PF=1.935
+    avgWin$=1160.42  avgLoss$=-703.49  $/day=417.12  std=1749.99  se=193.25  t=2.16  ci95=[82.64,828.46]
+    daily-close DD$=-2537.35  worst_day$=-2369.28  peak_conc=8  mean_conc=7.53  weeks=15
+    IWM alpha $/day=571.93 (n=113 skip=0)  n_short=8 notional=$6000  Wed  lb=15 hold=10  CI excludes 0
+    peak live notional $137690  two-cohort×legs $96000  fits_100k=NO  rebalances=31
+    months: 2026-02 n=19 $/day=42.20; 2026-04 n=21 $/day=410.24; 2026-06 n=21 $/day=1138.74; 2026-08 n=21 $/day=41.61
+pair_6k        IS     1078.45    239  0.586   1.970   3.03  1180.11 +583.1    IS
+    n=239  n/week=7.24  hit=0.586  wins=140  losses=99  avgR=n/a (no stop)  PF=1.970
+    avgWin$=1314.05  avgLoss$=-943.20  $/day=1078.45  std=3259.89  se=355.68  t=3.03  ci95=[423.48,1734.57]
+    daily-close DD$=-14308.26  worst_day$=-9736.34  peak_conc=8  mean_conc=7.24  weeks=33
+    IWM alpha $/day=1180.11 (n=239 skip=0)  n_short=8 notional=$6000  Fri/Wed  lb=15 hold=10  CI excludes 0
+    peak live notional $239501  two-cohort×legs $192000  fits_100k=NO  rebalances=60
+    months: 2026-01 n=20 $/day=1439.80; 2026-03 n=22 $/day=1426.11; 2026-05 n=20 $/day=644.27; 2026-07 n=22 $/day=797.00
+pair_6k        OOS     693.29    204  0.578   1.999   3.27   848.98 +417.1  DIAG
+    n=204  n/week=7.56  hit=0.578  wins=118  losses=86  avgR=n/a (no stop)  PF=1.999
+    avgWin$=964.16  avgLoss$=-661.88  $/day=693.29  std=1922.50  se=212.30  t=3.27  ci95=[304.43,1143.47]
+    daily-close DD$=-3410.97  worst_day$=-2369.28  peak_conc=8  mean_conc=7.56  weeks=27
+    IWM alpha $/day=848.98 (n=204 skip=0)  n_short=8 notional=$6000  Fri/Wed  lb=15 hold=10  CI excludes 0
+    peak live notional $233358  two-cohort×legs $192000  fits_100k=NO  rebalances=60
+    months: 2026-02 n=19 $/day=113.04; 2026-04 n=21 $/day=678.31; 2026-06 n=21 $/day=1568.66; 2026-08 n=21 $/day=357.89
+pair_3k        IS      537.94    239  0.586   1.970   3.03   588.64  +42.6    IS
+    n=239  n/week=7.24  hit=0.586  wins=140  losses=99  avgR=n/a (no stop)  PF=1.970
+    avgWin$=655.49  avgLoss$=-470.51  $/day=537.94  std=1626.26  se=177.44  t=3.03  ci95=[210.67,865.01]
+    daily-close DD$=-7134.32  worst_day$=-4862.45  peak_conc=8  mean_conc=7.24  weeks=33
+    IWM alpha $/day=588.64 (n=239 skip=0)  n_short=8 notional=$3000  Fri/Wed  lb=15 hold=10  CI excludes 0
+    peak live notional $119451  two-cohort×legs $96000  fits_100k=NO  rebalances=60
+    months: 2026-01 n=20 $/day=717.47; 2026-03 n=22 $/day=711.87; 2026-05 n=20 $/day=322.00; 2026-07 n=22 $/day=397.13
+pair_3k        OOS     345.26    204  0.578   1.996   3.26   422.88  +69.1  SEAT
+    n=204  n/week=7.56  hit=0.578  wins=118  losses=86  avgR=n/a (no stop)  PF=1.996
+    avgWin$=480.74  avgLoss$=-330.41  $/day=345.26  std=958.34  se=105.83  t=3.26  ci95=[151.31,568.80]
+    daily-close DD$=-1710.15  worst_day$=-1183.75  peak_conc=8  mean_conc=7.56  weeks=27
+    IWM alpha $/day=422.88 (n=204 skip=0)  n_short=8 notional=$3000  Fri/Wed  lb=15 hold=10  CI excludes 0
+    peak live notional $116371  two-cohort×legs $96000  fits_100k=NO  rebalances=60
+    months: 2026-02 n=19 $/day=55.50; 2026-04 n=21 $/day=337.29; 2026-06 n=21 $/day=782.91; 2026-08 n=21 $/day=177.75
+pair_3k_net    IS      291.47    156  0.571   1.710   1.94   327.16 -203.9    IS
+    n=156  n/week=4.73  hit=0.571  wins=89  losses=67  avgR=n/a (no stop)  PF=1.710
+    avgWin$=662.46  avgLoss$=-514.56  $/day=291.47  std=1377.07  se=150.25  t=1.94  ci95=[-3.22,586.34]
+    daily-close DD$=-7062.31  worst_day$=-4862.45  peak_conc=8  mean_conc=4.73  weeks=33
+    IWM alpha $/day=327.16 (n=156 skip=0)  n_short=8 notional=$3000  Fri/Wed net  lb=15 hold=10  CI includes 0 — not EV
+    peak live notional $80650  two-cohort×legs $96000  fits_100k=yes  rebalances=60
+    months: 2026-01 n=20 $/day=351.03; 2026-03 n=22 $/day=325.76; 2026-05 n=20 $/day=125.89; 2026-07 n=22 $/day=353.57
+pair_3k_net    OOS     224.73    138  0.572   1.852   2.39   288.62  -51.4 SLATE
+    n=138  n/week=5.11  hit=0.572  wins=79  losses=59  avgR=n/a (no stop)  PF=1.852
+    avgWin$=506.92  avgLoss$=-366.42  $/day=224.73  std=852.56  se=94.15  t=2.39  ci95=[65.20,416.27]
+    daily-close DD$=-1247.30  worst_day$=-976.73  peak_conc=8  mean_conc=5.11  weeks=27
+    IWM alpha $/day=288.62 (n=138 skip=0)  n_short=8 notional=$3000  Fri/Wed net  lb=15 hold=10  CI excludes 0
+    peak live notional $80523  two-cohort×legs $96000  fits_100k=yes  rebalances=60
+    months: 2026-02 n=19 $/day=72.58; 2026-04 n=21 $/day=111.67; 2026-06 n=21 $/day=522.84; 2026-08 n=21 $/day=177.35
+pair_3k_thu    IS      285.63    146  0.582   1.865   2.13   282.82 -209.7    IS
+    n=146  n/week=4.56  hit=0.582  wins=85  losses=61  avgR=n/a (no stop)  PF=1.865
+    avgWin$=608.47  avgLoss$=-454.55  $/day=285.63  std=1231.63  se=134.38  t=2.13  ci95=[47.49,540.40]
+    daily-close DD$=-4832.47  worst_day$=-2979.79  peak_conc=8  mean_conc=4.56  weeks=32
+    IWM alpha $/day=282.82 (n=146 skip=0)  n_short=8 notional=$3000  Wed/Thu net  lb=15 hold=10  CI excludes 0
+    peak live notional $77656  two-cohort×legs $96000  fits_100k=yes  rebalances=62
+    months: 2026-01 n=20 $/day=358.79; 2026-03 n=22 $/day=140.65; 2026-05 n=20 $/day=258.17; 2026-07 n=22 $/day=389.06
+pair_3k_thu    OOS     130.58    141  0.496   1.364   1.14   229.29 -145.6  SEAT
+    n=141  n/week=4.70  hit=0.496  wins=70  losses=71  avgR=n/a (no stop)  PF=1.364
+    avgWin$=573.33  avgLoss$=-414.45  $/day=130.58  std=1040.16  se=114.87  t=1.14  ci95=[-88.72,358.89]
+    daily-close DD$=-6565.99  worst_day$=-3969.32  peak_conc=8  mean_conc=4.70  weeks=30
+    IWM alpha $/day=229.29 (n=141 skip=0)  n_short=8 notional=$3000  Wed/Thu net  lb=15 hold=10  CI includes 0 — not EV
+    peak live notional $80723  two-cohort×legs $96000  fits_100k=yes  rebalances=62
+    months: 2026-02 n=19 $/day=45.91; 2026-04 n=21 $/day=-163.03; 2026-06 n=21 $/day=645.87; 2026-08 n=21 $/day=-14.49
+

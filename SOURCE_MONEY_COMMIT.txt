@@ -1,0 +1,3 @@
+Source: jamesksnyder99/money
+Commit: 594743b25a88ba16e1637f6a9ccbddf9fdbeb9ef
+Copied: 2026-09-12T14:58:17.5623728-04:00

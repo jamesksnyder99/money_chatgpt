@@ -1,0 +1,66 @@
+Arrow 32 — B-short: first full conjunction, trail rings, unarmed-red cut
+VERDICT: HOLD OUT CLEARS $200 WITH NON-RED DEVELOP — B|atr150|lock
+Id 0 is the A31 lock reprint. B|atr150|lock is the $200 pass (develop not red). COMBINED uses the brief's best develop-not-red B (B|conj|atr1559|lock, develop $73.03/day), not the pass book. Combined holdout is not EV.
+Combined holdout is not expected value (EV). Do not write that the account is one improvement from $200.
+A1-A5 on. last_entry_at=11:59. Flatten 15:59 on trail rows. SSR=uptick10. No flush rings. No $500/idea. No virgin pull. No cell-buy. No Arrow 33.
+Acronyms: EMA = exponential moving average; ATR = Average True Range; MFE = maximum favorable excursion; RVOL = relative volume; IWM = iShares Russell 2000 ETF; SSR = Short Sale Restriction.
+account=100000  target=300-500/day  failure_line=200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap=True  tape=C:\Users\james\Money\data\full\bars
+Door: frozen repaired leader (5-min close below EMA9). Id 1 waits for close<EMA9 and EMA9<EMA21 at the same bar_end. Ids 2-5 locked cohort (same admits as id 0).
+Id 0 vs A31 B|uptick10|atr1559|lock: develop 216/216 holdout 94/94 — within ±10%.
+
+Id 1 ledger: name-days scanned=590 conjunction=518 delayed=182 veto=close_not_below_ema9=195, regime_not_short=59
+Id 1 vs id 0 filled names: develop added=7 dropped=0  holdout added=0 dropped=0  trades develop 244 vs 216 holdout 98 vs 94  cap8-displace sessions (peak>=8 and both add and drop)=1
+
+id                            dev $/day  hold $/day  hold n    avgR     PF  t_hold  MFE-cap  >=200
+B|uptick10|atr1559|lock           70.09      169.55      94   0.203  1.768    1.70    0.217     NO
+  develop $/day=70.09  trades=216  hit=0.565  avgR=0.056  maxDD$=-2496.80  std=675.79  se=104.28  t=0.67  ci95=[-130.98,264.68]
+    PF=1.199  peak_conc=8  mean_conc=2.99  ssr_share=0.220  ssr_nofill=3  MFE-capture=0.080  unarmed_red=0
+    marked equity: daily-close DD$=-2496.80  intraday peak-to-trough$=-1961.82
+  holdout $/day=169.55  trades=94  hit=0.585  avgR=0.203  maxDD$=-972.10  std=467.49  se=99.67  t=1.70  ci95=[-25.93,354.19]  vs_$200=NO  vs_$300-500=NO
+    PF=1.768  peak_conc=8  mean_conc=3.04  MFE-capture=0.217  unarmed_red=0  IWM alpha hold $118.73 (n=94 skip=0)
+    marked equity: daily-close DD$=-972.10  intraday peak-to-trough$=-1091.76
+B|conj|atr1559|lock               73.03      177.63      98   0.200  1.770    1.76    0.220     NO
+  develop $/day=73.03  trades=244  hit=0.566  avgR=0.045  maxDD$=-2906.54  std=746.53  se=115.19  t=0.63  ci95=[-153.53,296.09]
+    PF=1.191  peak_conc=8  mean_conc=3.38  ssr_share=0.224  ssr_nofill=3  MFE-capture=0.077  unarmed_red=0
+    marked equity: daily-close DD$=-2906.54  intraday peak-to-trough$=-2121.66
+  holdout $/day=177.63  trades=98  hit=0.582  avgR=0.200  maxDD$=-972.10  std=473.34  se=100.92  t=1.76  ci95=[-23.99,364.33]  vs_$200=NO  vs_$300-500=NO
+    PF=1.770  peak_conc=8  mean_conc=3.08  MFE-capture=0.220  unarmed_red=0  IWM alpha hold $125.65 (n=98 skip=0)
+    marked equity: daily-close DD$=-972.10  intraday peak-to-trough$=-1091.76
+B|atr075|lock                     54.04      160.90      95   0.186  1.702    1.65    0.214     NO
+  develop $/day=54.04  trades=216  hit=0.574  avgR=0.043  maxDD$=-2543.54  std=658.05  se=101.54  t=0.53  ci95=[-142.08,239.89]
+    PF=1.154  peak_conc=8  mean_conc=2.91  ssr_share=0.220  ssr_nofill=3  MFE-capture=0.066  unarmed_red=0
+    marked equity: daily-close DD$=-2543.54  intraday peak-to-trough$=-1888.09
+  holdout $/day=160.90  trades=95  hit=0.579  avgR=0.186  maxDD$=-972.10  std=456.40  se=97.31  t=1.65  ci95=[-29.33,344.30]  vs_$200=NO  vs_$300-500=NO
+    PF=1.702  peak_conc=8  mean_conc=2.97  MFE-capture=0.214  unarmed_red=0  IWM alpha hold $111.71 (n=95 skip=0)
+    marked equity: daily-close DD$=-972.10  intraday peak-to-trough$=-1091.76
+B|atr150|lock                     26.46      206.64      94   0.247  1.929    1.79    0.246   BOTH
+  develop $/day=26.46  trades=216  hit=0.519  avgR=0.013  maxDD$=-2820.00  std=667.18  se=102.95  t=0.26  ci95=[-170.29,222.27]
+    PF=1.074  peak_conc=8  mean_conc=3.22  ssr_share=0.220  ssr_nofill=3  MFE-capture=0.029  unarmed_red=0
+    marked equity: daily-close DD$=-2820.00  intraday peak-to-trough$=-2039.65
+  holdout $/day=206.64  trades=94  hit=0.564  avgR=0.247  maxDD$=-972.10  std=541.82  se=115.52  t=1.79  ci95=[-22.16,429.29]  vs_$200=YES  vs_$300-500=NO
+    PF=1.929  peak_conc=8  mean_conc=3.30  MFE-capture=0.246  unarmed_red=0  IWM alpha hold $149.88 (n=94 skip=0)
+    marked equity: daily-close DD$=-972.10  intraday peak-to-trough$=-1091.76
+B|arm05|lock                      65.30      134.80      96   0.166  1.721    1.76    0.187     NO
+  develop $/day=65.30  trades=218  hit=0.583  avgR=0.060  maxDD$=-2198.44  std=612.55  se=94.52  t=0.69  ci95=[-128.10,247.56]
+    PF=1.223  peak_conc=8  mean_conc=2.29  ssr_share=0.220  ssr_nofill=3  MFE-capture=0.080  unarmed_red=0
+    marked equity: daily-close DD$=-2198.44  intraday peak-to-trough$=-1807.58
+  holdout $/day=134.80  trades=96  hit=0.562  avgR=0.166  maxDD$=-640.36  std=359.76  se=76.70  t=1.76  ci95=[-18.54,275.43]  vs_$200=NO  vs_$300-500=NO
+    PF=1.721  peak_conc=8  mean_conc=2.59  MFE-capture=0.187  unarmed_red=0  IWM alpha hold $94.76 (n=96 skip=0)
+    marked equity: daily-close DD$=-640.36  intraday peak-to-trough$=-916.56
+B|unarmed20|lock                 -30.84       65.52      97   0.076  1.294    0.71    0.105     NO
+  develop $/day=-30.84  trades=220  hit=0.355  avgR=-0.032  maxDD$=-3019.51  std=527.08  se=81.33  t=-0.38  ci95=[-188.53,133.22]
+    PF=0.894  peak_conc=8  mean_conc=2.19  ssr_share=0.220  ssr_nofill=3  MFE-capture=-0.049  unarmed_red=116
+    marked equity: daily-close DD$=-3019.51  intraday peak-to-trough$=-1554.33
+  holdout $/day=65.52  trades=97  hit=0.454  avgR=0.076  maxDD$=-1742.67  std=431.53  se=92.00  t=0.71  ci95=[-113.05,246.42]  vs_$200=NO  vs_$300-500=NO
+    PF=1.294  peak_conc=8  mean_conc=2.15  MFE-capture=0.105  unarmed_red=39  IWM alpha hold $35.05 (n=97 skip=0)
+    marked equity: daily-close DD$=-1742.67  intraday peak-to-trough$=-899.38
+
+flush|max6|repaired (A31 reprint, not rescored) develop $6.20/day holdout $79.10/day
+
+COMBINED B|conj|atr1559|lock + flush|max6|repaired  (best develop-not-red B this file + A31 flush)
+  develop $/day=79.23  std=731.46  se=112.87  t=0.70  ci95=[-135.76,293.34]  maxDD$=-3021.32  corr=-0.218  joint_peak_risk_B$=2135.37
+  holdout $/day=256.74  std=553.91  se=118.09  t=2.17  ci95=[30.13,480.24]  maxDD$=-972.10  corr=-0.056  joint_peak_risk_B$=1911.84  NOT EV
+NO* = holdout >= 200 but develop is red — not a pass. Combined holdout is not EV.

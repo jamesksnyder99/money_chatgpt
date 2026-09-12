@@ -1,0 +1,118 @@
+Arrow 66 — Wednesday hold path 5 / 10 / 15 (IS / OOS)
+VERDICT: SLATE — h10_4k (OOS MTM >= $200/day, IS MTM not red, peak live <= $100000).
+Id 0 h10_4k IS MTM $/day=401.16/401.16 n=116/116 — within ±10% of Arrow 65 nextrth_4k. IS path mean mark peaks at fill+15 ($361.01/name, n=116). Slate $200: h10_4k. Seat $100: h10_4k, h15_4k, h10_3k, h15_4k_keep, h5_4k_keep. Hold 15 fits $100k: NO (peak $127595). Hold 15 lifts both slices vs id 0: no.
+Engines that clear seat $100/day OOS MTM with IS MTM not red: h10_4k, h15_4k, h10_3k, h15_4k_keep, h5_4k_keep.
+Engines that clear slate $200/day OOS MTM with IS MTM not red and peak live fit: h10_4k.
+Ids that lift MTM $/day versus h10_4k on both IS and OOS: none.
+Wednesday hold path 5/10/15. Same leftover short as Arrow 65 nextrth_4k: Wednesday signal, lb=15 vs IWM, short eight, fill next session last-RTH, $4,000. Split on the signal session. Did not retune rank, weekday, or n. This is the path, not keep/cash and not replace. Did not pick a hold from the OOS path. Did not print the OOS path. Did not use an OOS month to pick a threshold. Did not drop an id after seeing OOS. Did not retune Friday+Wednesday pair, SIC group, MAX, or frozen B/flush. A ring beats id 0 only if it lifts MTM $/day on both IS and OOS. Seat uses OOS MTM $/day. Equity, DD, and worst day are MTM. Do not call a CI that includes 0 EV. Combined dollars are not EV. No Arrow 67.
+Acronyms: IS = in-sample; OOS = out-of-sample; PDV = prior-day dollar volume; IWM = iShares Russell 2000 ETF; RTH = regular trading hours; EV = expected value; SSR = Short Sale Restriction; CI = confidence interval; MTM = mark-to-market.
+account=100000  slate_floor=200/day  seat_floor=100/day  target=300-500/day
+study n=166 2026-01-02..2026-08-31  IS n=84  OOS n=82  wednesday signals=33
+workers=8 cpu_count=8  jan_tape=C:\Users\james\Money\data\virgin\bars  jul_tape=C:\Users\james\Money\data\full\bars
+eligibility: prior_close [$10, $80], PDV >= $10000000  Wednesday signal  n=8  lb=15 fill=nextrth  hold after fill  $4,000/$3,000
+Peak live = |shares × last|. Hold 15 stacks more cohorts.
+
+IS path on id 0 fills (fill+1..+15). Description. Does not pick an id. Did not print the OOS path. Did not pick a hold from OOS.
+hold_day     n    mean_MTM$   mean_res_IWM  frac_top8
+       1   116        86.27       -0.01521      0.603
+       2   116       148.62       -0.03221      0.509
+       3   116       114.83       -0.02955      0.466
+       4   116        96.86       -0.02440      0.379
+       5   116       121.60       -0.02746      0.353
+       6   116       201.08       -0.04274      0.284
+       7   116       195.79       -0.04612      0.276
+       8   116       251.02       -0.06607      0.181
+       9   116       287.76       -0.07518      0.164
+      10   116       272.34       -0.06710      0.121
+      11   116       261.83       -0.06893      0.078
+      12   116       256.09       -0.07327      0.043
+      13   116       323.03       -0.09287      0.009
+      14   116       317.04       -0.09263      0.009
+      15   116       361.01       -0.10453      0.009
+
+id               split    entry$      MTM$      n    hit      t  hold  seat
+h10_4k           IS      369.55    401.16    116  0.578   1.81    10    IS
+    n=116  n/week=7.25  hit=0.578  wins=67  losses=49  avgR=n/a (no stop)  PF=2.349
+    avgWin$=806.69  avgLoss$=-469.51  $/day=401.16  std=2031.31  se=221.63  t=1.81  ci95=[-3.13,839.48]
+    daily-close DD$=-9356.32  worst_day$=-4001.37  peak_conc=8  mean_conc=7.25  weeks=16
+    entry $/day=369.55  MTM $/day=401.16  IWM alpha $/day=356.85 (n=116 skip=0)  hold=10 notional=$4000 keep=False  skips=2 exit_partial=0  CI includes 0 — not EV
+    peak live |shares×last| $88858  all-sessions $91206  fits_100k=yes  signals=33
+    MTM months: 2026-01 n=20 $/day=645.48; 2026-03 n=22 $/day=291.12; 2026-05 n=20 $/day=67.42; 2026-07 n=22 $/day=592.51
+h10_4k           OOS     292.74    260.36    113  0.558   1.16    10 SLATE
+    n=113  n/week=7.53  hit=0.558  wins=63  losses=50  avgR=n/a (no stop)  PF=2.098
+    avgWin$=728.10  avgLoss$=-437.31  $/day=260.36  std=2030.66  se=224.25  t=1.16  ci95=[-161.84,711.66]
+    daily-close DD$=-8013.49  worst_day$=-6607.31  peak_conc=8  mean_conc=7.53  weeks=15
+    entry $/day=292.74  MTM $/day=260.36  IWM alpha $/day=357.41 (n=113 skip=0)  hold=10 notional=$4000 keep=False  skips=2 exit_partial=0  CI includes 0 — not EV
+    peak live |shares×last| $91206  all-sessions $91206  fits_100k=yes  signals=33
+    MTM months: 2026-02 n=19 $/day=33.20; 2026-04 n=21 $/day=47.69; 2026-06 n=21 $/day=942.32; 2026-08 n=21 $/day=-3.40
+h5_4k            IS      157.21    181.20    121  0.537   1.36     5    IS
+    n=121  n/week=7.56  hit=0.537  wins=65  losses=56  avgR=n/a (no stop)  PF=1.495
+    avgWin$=613.81  avgLoss$=-476.64  $/day=181.20  std=1221.81  se=133.31  t=1.36  ci95=[-63.33,450.73]
+    daily-close DD$=-10295.89  worst_day$=-2943.06  peak_conc=8  mean_conc=7.56  weeks=16
+    entry $/day=157.21  MTM $/day=181.20  IWM alpha $/day=137.15 (n=121 skip=0)  hold=5 notional=$4000 keep=False  skips=2 exit_partial=0  CI includes 0 — not EV
+    peak live |shares×last| $61572  all-sessions $64794  fits_100k=yes  signals=33
+    MTM months: 2026-01 n=20 $/day=448.38; 2026-03 n=22 $/day=156.55; 2026-05 n=20 $/day=-215.93; 2026-07 n=22 $/day=323.99
+h5_4k            OOS      98.45     73.87    123  0.496   0.52     5    NO
+    n=123  n/week=7.69  hit=0.496  wins=61  losses=62  avgR=n/a (no stop)  PF=1.328
+    avgWin$=536.12  avgLoss$=-397.27  $/day=73.87  std=1293.99  se=142.90  t=0.52  ci95=[-200.70,361.16]
+    daily-close DD$=-9642.92  worst_day$=-3791.36  peak_conc=8  mean_conc=7.69  weeks=16
+    entry $/day=98.45  MTM $/day=73.87  IWM alpha $/day=150.45 (n=123 skip=0)  hold=5 notional=$4000 keep=False  skips=2 exit_partial=0  CI includes 0 — not EV
+    peak live |shares×last| $64794  all-sessions $64794  fits_100k=yes  signals=33
+    MTM months: 2026-02 n=19 $/day=4.70; 2026-04 n=21 $/day=-320.71; 2026-06 n=21 $/day=458.51; 2026-08 n=21 $/day=146.40
+h15_4k           IS      462.57    368.06    111  0.631   1.33    15    IS
+    n=111  n/week=6.94  hit=0.631  wins=70  losses=41  avgR=n/a (no stop)  PF=2.481
+    avgWin$=929.89  avgLoss$=-639.92  $/day=368.06  std=2536.37  se=276.74  t=1.33  ci95=[-143.58,906.45]
+    daily-close DD$=-15452.94  worst_day$=-5129.77  peak_conc=8  mean_conc=6.94  weeks=16
+    entry $/day=462.57  MTM $/day=368.06  IWM alpha $/day=529.87 (n=111 skip=0)  hold=15 notional=$4000 keep=False  skips=2 exit_partial=0  CI includes 0 — not EV
+    peak live |shares×last| $127595  all-sessions $127595  fits_100k=NO  signals=33
+    MTM months: 2026-01 n=20 $/day=476.86; 2026-03 n=22 $/day=53.65; 2026-05 n=20 $/day=-22.55; 2026-07 n=22 $/day=938.68
+h15_4k           OOS      96.09    192.89    103  0.553   0.65    15  SEAT
+    n=103  n/week=7.36  hit=0.553  wins=57  losses=46  avgR=n/a (no stop)  PF=1.206
+    avgWin$=810.53  avgLoss$=-833.07  $/day=192.89  std=2671.29  se=295.00  t=0.65  ci95=[-378.03,777.80]
+    daily-close DD$=-21342.22  worst_day$=-7645.40  peak_conc=8  mean_conc=7.36  weeks=14
+    entry $/day=96.09  MTM $/day=192.89  IWM alpha $/day=141.64 (n=103 skip=0)  hold=15 notional=$4000 keep=False  skips=2 exit_partial=0  CI includes 0 — not EV
+    peak live |shares×last| $123770  all-sessions $127595  fits_100k=NO  signals=33
+    MTM months: 2026-02 n=19 $/day=-32.79; 2026-04 n=21 $/day=-244.43; 2026-06 n=21 $/day=1239.27; 2026-08 n=21 $/day=-211.98
+h10_3k           IS      276.63    300.36    116  0.578   1.81    10    IS
+    n=116  n/week=7.25  hit=0.578  wins=67  losses=49  avgR=n/a (no stop)  PF=2.349
+    avgWin$=603.95  avgLoss$=-351.59  $/day=300.36  std=1523.04  se=166.18  t=1.81  ci95=[-2.73,629.15]
+    daily-close DD$=-7029.77  worst_day$=-3001.53  peak_conc=8  mean_conc=7.25  weeks=16
+    entry $/day=276.63  MTM $/day=300.36  IWM alpha $/day=267.14 (n=116 skip=0)  hold=10 notional=$3000 keep=False  skips=2 exit_partial=0  CI includes 0 — not EV
+    peak live |shares×last| $66555  all-sessions $68298  fits_100k=yes  signals=33
+    MTM months: 2026-01 n=20 $/day=483.51; 2026-03 n=22 $/day=217.40; 2026-05 n=20 $/day=50.33; 2026-07 n=22 $/day=444.13
+h10_3k           OOS     219.20    194.90    113  0.558   1.16    10  SEAT
+    n=113  n/week=7.53  hit=0.558  wins=63  losses=50  avgR=n/a (no stop)  PF=2.096
+    avgWin$=545.57  avgLoss$=-327.93  $/day=194.90  std=1521.38  se=168.01  t=1.16  ci95=[-121.34,532.86]
+    daily-close DD$=-6029.71  worst_day$=-4949.46  peak_conc=8  mean_conc=7.53  weeks=15
+    entry $/day=219.20  MTM $/day=194.90  IWM alpha $/day=267.68 (n=113 skip=0)  hold=10 notional=$3000 keep=False  skips=2 exit_partial=0  CI includes 0 — not EV
+    peak live |shares×last| $68298  all-sessions $68298  fits_100k=yes  signals=33
+    MTM months: 2026-02 n=19 $/day=24.35; 2026-04 n=21 $/day=34.71; 2026-06 n=21 $/day=706.71; 2026-08 n=21 $/day=-2.42
+h15_4k_keep      IS      492.51    395.12    126  0.587   1.37    15    IS
+    n=126  n/week=7.88  hit=0.587  wins=74  losses=52  avgR=n/a (no stop)  PF=2.267
+    avgWin$=1000.42  avgLoss$=-628.08  $/day=395.12  std=2648.73  se=289.00  t=1.37  ci95=[-131.23,969.66]
+    daily-close DD$=-17107.43  worst_day$=-5460.79  peak_conc=8  mean_conc=7.88  weeks=16
+    entry $/day=492.51  MTM $/day=395.12  IWM alpha $/day=570.85 (n=126 skip=0)  hold=15 notional=$4000 keep=True  skips=2 exit_partial=15  CI includes 0 — not EV
+    peak live |shares×last| $127595  all-sessions $127753  fits_100k=NO  signals=33
+    MTM months: 2026-01 n=20 $/day=647.31; 2026-03 n=22 $/day=201.89; 2026-05 n=20 $/day=-156.12; 2026-07 n=22 $/day=860.22
+h15_4k_keep      OOS     122.76    222.58    134  0.537   0.71    15  SEAT
+    n=134  n/week=7.88  hit=0.537  wins=72  losses=62  avgR=n/a (no stop)  PF=1.205
+    avgWin$=821.98  avgLoss$=-792.20  $/day=222.58  std=2834.68  se=313.04  t=0.71  ci95=[-405.80,877.20]
+    daily-close DD$=-23411.43  worst_day$=-7649.80  peak_conc=8  mean_conc=7.88  weeks=17
+    entry $/day=122.76  MTM $/day=222.58  IWM alpha $/day=148.75 (n=134 skip=0)  hold=15 notional=$4000 keep=True  skips=2 exit_partial=31  CI includes 0 — not EV
+    peak live |shares×last| $127753  all-sessions $127753  fits_100k=NO  signals=33
+    MTM months: 2026-02 n=19 $/day=-18.19; 2026-04 n=21 $/day=-544.56; 2026-06 n=21 $/day=1364.83; 2026-08 n=21 $/day=65.30
+h5_4k_keep       IS      152.43    169.10    126  0.532   1.28     5    IS
+    n=126  n/week=7.88  hit=0.532  wins=67  losses=59  avgR=n/a (no stop)  PF=1.463
+    avgWin$=603.66  avgLoss$=-468.50  $/day=169.10  std=1210.73  se=132.10  t=1.28  ci95=[-70.90,440.99]
+    daily-close DD$=-10434.56  worst_day$=-2192.97  peak_conc=8  mean_conc=7.88  weeks=16
+    entry $/day=152.43  MTM $/day=169.10  IWM alpha $/day=132.10 (n=126 skip=0)  hold=5 notional=$4000 keep=True  skips=2 exit_partial=5  CI includes 0 — not EV
+    peak live |shares×last| $61572  all-sessions $64794  fits_100k=yes  signals=33
+    MTM months: 2026-01 n=20 $/day=448.38; 2026-03 n=22 $/day=156.55; 2026-05 n=20 $/day=-240.90; 2026-07 n=22 $/day=300.48
+h5_4k_keep       OOS     147.64    130.62    134  0.500   0.85     5  SEAT
+    n=134  n/week=7.88  hit=0.500  wins=67  losses=67  avgR=n/a (no stop)  PF=1.469
+    avgWin$=565.74  avgLoss$=-385.04  $/day=130.62  std=1390.71  se=153.58  t=0.85  ci95=[-170.06,429.63]
+    daily-close DD$=-9647.12  worst_day$=-3791.36  peak_conc=8  mean_conc=7.88  weeks=17
+    entry $/day=147.64  MTM $/day=130.62  IWM alpha $/day=193.29 (n=134 skip=0)  hold=5 notional=$4000 keep=True  skips=2 exit_partial=11  CI includes 0 — not EV
+    peak live |shares×last| $64794  all-sessions $64794  fits_100k=yes  signals=33
+    MTM months: 2026-02 n=19 $/day=4.70; 2026-04 n=21 $/day=-321.11; 2026-06 n=21 $/day=615.08; 2026-08 n=21 $/day=211.81
+

@@ -1,0 +1,85 @@
+Arrow 23 — orthogonal rocket logics; advanced flight stats (data/full)
+VERDICT: FAIL — no Arrow 23 book has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass. Did not rerun 08:00/09:29 buy-the-open, A21 pullback, strong5, newhigh, or fade-the-hot-open.
+Did not rerun 09:29/08:00 buy-the-open of an already-extended name, A21 pullback, strong5, newhigh, or fade-the-hot-open. No B-short rescore. Did not touch data/bars. No Arrow 24.
+account=100000  target=300-500/day  failure_line=200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8
+cap8=8/16/1600 RISK_PER_IDEA=200. Fills=next tradeable open. Leak-fixed flatten.
+ids: coil_break long flatten 11:59; am_high_pm long flatten 15:59; fail_rocket short; flush_hl long; vs_iwm long; climax short.
+
+coil name-days develop: n_sess=42 total=538 mean=12.81 median=13.0 max=24
+coil name-days holdout: n_sess=22 total=381 mean=17.32 median=17.5 max=30
+08:00 hot name-days develop: n_sess=42 total=328 mean=7.81 median=6.0 max=31
+08:00 hot name-days holdout: n_sess=22 total=279 mean=12.68 median=11.0 max=27
+id5 IWM window skips develop=0 holdout=0
+
+STAT BLOCK
+coil_break  holdout>=200=NO
+  develop
+    n=252  trades/sess=6.00  hit=0.381  avgR=-0.135  medR=-0.147  p10R=-1.124  p90R=0.799
+    avgWin$=107.06  avgLoss$=-96.91  PF=0.680  stop%=15.9  time%=84.1  other%=0.0  medMin=138.0
+    $/day=-115.22  std=410.90  se=63.40  t=-1.82  ci95=[-230.74,25.66]  maxDD$=-5075.48
+    flight mean_ext=0.0146  reached_1R=0.190
+  holdout
+    n=153  trades/sess=6.95  hit=0.346  avgR=-0.210  medR=-0.257  p10R=-1.197  p90R=0.755
+    avgWin$=113.63  avgLoss$=-112.21  PF=0.537  stop%=20.3  time%=79.7  other%=0.0  medMin=139.0
+    $/day=-236.32  std=415.61  se=88.61  t=-2.67  ci95=[-396.05,-53.72]  maxDD$=-5198.97
+    flight mean_ext=0.0150  reached_1R=0.209
+am_high_pm  holdout>=200=NO
+  develop
+    n=42  trades/sess=1.00  hit=0.357  avgR=-0.236  medR=-1.174  p10R=-1.981  p90R=2.026
+    avgWin$=181.77  avgLoss$=-109.96  PF=0.918  stop%=59.5  time%=40.5  other%=0.0  medMin=34.5
+    $/day=-5.77  std=235.19  se=36.29  t=-0.16  ci95=[-73.58,66.76]  maxDD$=-1249.28
+    flight mean_ext=0.0278  reached_1R=0.500
+  holdout
+    n=49  trades/sess=2.23  hit=0.367  avgR=-0.375  medR=-1.200  p10R=-1.760  p90R=1.938
+    avgWin$=130.66  avgLoss$=-141.51  PF=0.536  stop%=59.2  time%=40.8  other%=0.0  medMin=45.0
+    $/day=-92.51  std=215.84  se=46.02  t=-2.01  ci95=[-184.38,-2.69]  maxDD$=-2044.60
+    flight mean_ext=0.0145  reached_1R=0.592
+fail_rocket  holdout>=200=NO
+  develop
+    n=271  trades/sess=6.45  hit=0.461  avgR=-0.066  medR=-0.035  p10R=-1.075  p90R=0.649
+    avgWin$=88.00  avgLoss$=-100.34  PF=0.751  stop%=14.4  time%=85.6  other%=0.0  medMin=129.0
+    $/day=-86.90  std=379.24  se=58.52  t=-1.49  ci95=[-200.80,20.11]  maxDD$=-3915.62
+    flight mean_ext=0.0581  reached_1R=0.096
+  holdout
+    n=184  trades/sess=8.36  hit=0.478  avgR=-0.085  medR=-0.017  p10R=-1.145  p90R=0.738
+    avgWin$=90.63  avgLoss$=-115.31  PF=0.720  stop%=17.9  time%=82.1  other%=0.0  medMin=129.0
+    $/day=-140.66  std=425.16  se=90.65  t=-1.55  ci95=[-318.28,37.84]  maxDD$=-3431.60
+    flight mean_ext=0.0501  reached_1R=0.136
+flush_hl  holdout>=200=NO
+  develop
+    n=195  trades/sess=4.64  hit=0.333  avgR=-0.104  medR=-0.479  p10R=-1.500  p90R=1.650
+    avgWin$=258.73  avgLoss$=-152.88  PF=0.846  stop%=34.9  time%=65.1  other%=0.0  medMin=99.0
+    $/day=-72.79  std=701.01  se=108.17  t=-0.67  ci95=[-272.15,138.73]  maxDD$=-6496.81
+    flight mean_ext=0.0377  reached_1R=0.385
+  holdout
+    n=159  trades/sess=7.23  hit=0.384  avgR=-0.062  medR=-0.285  p10R=-1.327  p90R=1.729
+    avgWin$=207.40  avgLoss$=-143.27  PF=0.901  stop%=30.2  time%=69.8  other%=0.0  medMin=92.0
+    $/day=-63.13  std=782.24  se=166.77  t=-0.38  ci95=[-359.22,291.25]  maxDD$=-5822.15
+    flight mean_ext=0.0412  reached_1R=0.403
+vs_iwm  holdout>=200=NO
+  develop
+    n=520  trades/sess=12.38  hit=0.250  avgR=-0.600  medR=-0.710  p10R=-1.995  p90R=0.952
+    avgWin$=107.31  avgLoss$=-111.34  PF=0.321  stop%=45.8  time%=54.2  other%=0.0  medMin=43.0
+    $/day=-701.72  std=621.88  se=95.96  t=-7.31  ci95=[-879.51,-510.43]  maxDD$=-29525.04
+    flight mean_ext=0.0103  reached_1R=0.313
+  holdout
+    n=265  trades/sess=12.05  hit=0.309  avgR=-0.482  medR=-0.625  p10R=-2.001  p90R=0.954
+    avgWin$=102.34  avgLoss$=-113.38  PF=0.404  stop%=44.2  time%=55.8  other%=0.0  medMin=45.0
+    $/day=-561.71  std=479.09  se=102.14  t=-5.50  ci95=[-752.52,-361.69]  maxDD$=-12357.67
+    flight mean_ext=0.0166  reached_1R=0.343
+climax  holdout>=200=NO
+  develop
+    n=479  trades/sess=11.40  hit=0.344  avgR=-0.308  medR=-0.481  p10R=-1.807  p90R=1.364
+    avgWin$=141.33  avgLoss$=-130.22  PF=0.570  stop%=37.6  time%=62.4  other%=0.0  medMin=85.0
+    $/day=-418.33  std=766.94  se=118.34  t=-3.53  ci95=[-659.54,-181.25]  maxDD$=-18413.61
+    flight mean_ext=0.0183  reached_1R=0.382
+  holdout
+    n=266  trades/sess=12.09  hit=0.327  avgR=-0.443  medR=-0.560  p10R=-1.734  p90R=1.020
+    avgWin$=113.26  avgLoss$=-133.09  PF=0.414  stop%=37.6  time%=62.4  other%=0.0  medMin=84.5
+    $/day=-634.97  std=581.38  se=123.95  t=-5.12  ci95=[-866.88,-412.76]  maxDD$=-13969.39
+    flight mean_ext=0.0184  reached_1R=0.342
+
+Shape vs Arrows 20-22: those books were ~30% hit, negative avgR, stop-driven losses from buying an already-extended open. Three jobs here are a different shape even though none clear $200. fail_rocket shorts print 48% holdout hit and PF 0.720 with 82% time-flattens and avgR near zero — a slow bleed, not a chase wash. am_high_pm is almost flat on develop (-6/day) and 59% of holdout trades tag +1R, then give it back (medR -1.2, 59% stopped). flush_hl is the least-bad holdout (-63/day, PF 0.901) with a fat right tail (p90R 1.73) and 40% reaching +1R; still negative EV. coil_break is ~80% time-flatten dead money (mean extension ~1.5%). vs_iwm and climax are the same wreck as 20-22, only larger.

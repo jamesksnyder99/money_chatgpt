@@ -1,0 +1,60 @@
+Arrow 44 — weekly residual vs IWM (IS / OOS)
+VERDICT: FAIL — res_ls does not have OOS >= $100/day AND non-red IS. Legs are diagnostics. Slate $200 is not this arrow's job.
+No stop for a five-session hold. 30 names × $2,000 is $60k deployed. Costs on a weekly book are smaller than Arrow 43 overnight but still real. Residual = name return − IWM return (not a regression, not 09:30). Did not retune Arrow 43 clocks or B|conj|atr1559|lock or flush|max6|repaired. Odd months IS, even months OOS, split on entry session. Combined dollars are not EV. No Arrow 45.
+Acronyms: IS = in-sample; OOS = out-of-sample; PDV = prior-day dollar volume; IWM = iShares Russell 2000 ETF; RTH = regular trading hours; EV = expected value; SSR = Short Sale Restriction.
+account=100000  slate_floor=200/day  seat_floor=100/day  target=300-500/day
+study n=166 2026-01-02..2026-08-31  IS n=84 odd months  OOS n=82 even months  rebalance weeks=34 thin_skips=0
+workers=8 cpu_count=8  jan_tape=C:\Users\james\Money\data\virgin\bars  jul_tape=C:\Users\james\Money\data\full\bars
+eligibility: same wall as Arrow 43, prior_close [$10, $80], PDV >= $10000000  rank residual  long 15 worst / short 15 best  $2000 notional/name  hold 5 sessions
+Fills at last tradeable RTH minute of the rebalance session; exit last RTH five sessions later. Skip week if < 40 names have a residual. No FLY. No 08:00. No conjunction. No new ingest.
+
+character IS rebalance weeks only (full eligible universe, not the 15+15). This-week residual bottom vs top; next-week residual. Description. Does not pick a book.
+  bottom (worst this-week residual) next-week residual n=11368 mean=-0.00181 hit=0.494
+  top (best this-week residual) next-week residual n=11250 mean=-0.00478 hit=0.460
+  spread bottom-top=0.00297
+  2026-01  bottom n=3267 mean=-0.00755 hit=0.469  top n=3255 mean=-0.00422 hit=0.491
+  2026-03  bottom n=2676 mean=-0.00222 hit=0.484  top n=2657 mean=-0.00263 hit=0.466
+  2026-05  bottom n=3038 mean=-0.00002 hit=0.499  top n=2975 mean=-0.00819 hit=0.399
+  2026-07  bottom n=2387 mean=0.00422 hit=0.535  top n=2363 mean=-0.00368 hit=0.490
+
+id           split     $/day      n    hit      PF      t     IWM$  seat
+res_long     IS      -67.52    283  0.452   0.803  -0.79   -97.72    IS
+    n=283  n/week=14.89  hit=0.452  avgR=n/a (no stop)  PF=0.803
+    avgWin$=180.95  avgLoss$=-186.02  $/day=-67.52  std=783.95  se=85.54  t=-0.79  ci95=[-240.97,95.50]
+    daily-close DD$=-10884.45  worst_day$=-4004.43  peak_conc=15  mean_conc=14.89  weeks=19
+    IWM alpha $/day=-97.72 (n=283 skip=0)
+    months: 2026-01 n=20 $/day=-80.10; 2026-03 n=22 $/day=-66.90; 2026-05 n=20 $/day=-56.14; 2026-07 n=22 $/day=-67.02
+res_long     OOS     -71.20    224  0.406   0.773  -1.04  -103.50    NO
+    n=224  n/week=14.93  hit=0.406  avgR=n/a (no stop)  PF=0.773
+    avgWin$=218.99  avgLoss$=-193.74  $/day=-71.20  std=620.53  se=68.53  t=-1.04  ci95=[-209.18,66.21]
+    daily-close DD$=-9643.11  worst_day$=-2662.99  peak_conc=15  mean_conc=14.93  weeks=15
+    IWM alpha $/day=-103.50 (n=224 skip=0)
+    months: 2026-02 n=19 $/day=96.32; 2026-04 n=21 $/day=63.60; 2026-06 n=21 $/day=-277.42; 2026-08 n=21 $/day=-151.35
+res_short    IS      246.77    272  0.577   2.018   2.39   277.61    IS
+    n=272  n/week=14.32  hit=0.577  avgR=n/a (no stop)  PF=2.018
+    avgWin$=261.70  avgLoss$=-177.03  $/day=246.77  std=946.27  se=103.25  t=2.39  ci95=[62.98,456.90]
+    daily-close DD$=-2545.26  worst_day$=-2545.26  peak_conc=15  mean_conc=14.32  weeks=19
+    IWM alpha $/day=277.61 (n=272 skip=0)
+    months: 2026-01 n=20 $/day=273.30; 2026-03 n=22 $/day=148.54; 2026-05 n=20 $/day=299.81; 2026-07 n=22 $/day=272.67
+res_short    OOS      -1.37    218  0.500   0.994  -0.03    28.60    NO
+    n=218  n/week=14.53  hit=0.500  avgR=n/a (no stop)  PF=0.994
+    avgWin$=177.81  avgLoss$=-178.84  $/day=-1.37  std=450.20  se=49.72  t=-0.03  ci95=[-100.51,92.60]
+    daily-close DD$=-3932.40  worst_day$=-2140.13  peak_conc=15  mean_conc=14.53  weeks=15
+    IWM alpha $/day=28.60 (n=218 skip=0)
+    months: 2026-02 n=19 $/day=29.53; 2026-04 n=21 $/day=-53.10; 2026-06 n=21 $/day=-45.23; 2026-08 n=21 $/day=66.27
+res_ls       IS      179.26    555  0.514   1.306   1.74   179.89    IS
+    n=555  n/week=29.21  hit=0.514  avgR=n/a (no stop)  PF=1.306
+    avgWin$=225.43  avgLoss$=-182.19  $/day=179.26  std=942.82  se=102.87  t=1.74  ci95=[-15.40,398.16]
+    daily-close DD$=-3673.84  worst_day$=-3673.84  peak_conc=30  mean_conc=29.21  weeks=19
+    IWM alpha $/day=179.89 (n=555 skip=0)
+    months: 2026-01 n=20 $/day=193.19; 2026-03 n=22 $/day=81.64; 2026-05 n=20 $/day=243.67; 2026-07 n=22 $/day=205.65
+res_ls       OOS     -72.57    442  0.452   0.869  -1.05   -74.90    NO
+    n=442  n/week=29.47  hit=0.452  avgR=n/a (no stop)  PF=0.869
+    avgWin$=196.55  avgLoss$=-187.03  $/day=-72.57  std=628.18  se=69.37  t=-1.05  ci95=[-205.53,62.26]
+    daily-close DD$=-9243.58  worst_day$=-2643.74  peak_conc=30  mean_conc=29.47  weeks=15
+    IWM alpha $/day=-74.90 (n=442 skip=0)
+    months: 2026-02 n=19 $/day=125.84; 2026-04 n=21 $/day=10.50; 2026-06 n=21 $/day=-322.66; 2026-08 n=21 $/day=-85.08
+
+legs are diagnostics; res_ls is the seat candidate
+  corr daily PnL  res_long vs res_short=-0.383
+

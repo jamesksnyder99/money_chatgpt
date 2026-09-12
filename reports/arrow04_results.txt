@@ -1,0 +1,42 @@
+Arrow 4 — tighter Lab A + liquid 10-50 field
+VERDICT: FAIL — no Arrow 4 track/rule printed ≥ $200/day net on holdout
+account=$100000  target=$300-$500/day  failure_line=$200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8
+same harness as Arrow 3 (next-bar open, costs, $200 risk, 5 pos, 10 entries, $1000 risk cap)
+no gap-fade; open_drive frozen Y=2.0; vwap_reclaim frozen min_price=10
+Track B cap used=True gap_jobs=1476 gap_fails=0
+swing: signal 11:30-11:50, fill next session 09:30; skip if next session out of slice or last day
+
+track  rule           param     dev $/day  hold $/day  hold n    hit      maxDD  >=200
+A      cash           None           0.00        0.00       0  0.000       0.00     NO
+       develop $/day=0.00  trades=0  hit=0.000  avgR=0.000  maxDD$=0.00
+       holdout $/day=0.00  trades=0  hit=0.000  avgR=0.000  maxDD$=0.00  vs_$200=NO  vs_$300-500=NO
+A      or_break       None        -200.34     -169.07      97  0.351   -3719.62     NO
+       develop $/day=-200.34  trades=235  hit=0.387  avgR=-0.179  maxDD$=-8866.43
+       holdout $/day=-169.07  trades=97  hit=0.351  avgR=-0.192  maxDD$=-3719.62  vs_$200=NO  vs_$300-500=NO
+A      swing          None         -35.38     -266.41      97  0.268   -6256.72     NO
+       develop $/day=-35.38  trades=193  hit=0.316  avgR=-0.039  maxDD$=-3234.81
+       holdout $/day=-266.41  trades=97  hit=0.268  avgR=-0.302  maxDD$=-6256.72  vs_$200=NO  vs_$300-500=NO
+A      open_drive     2.0          -45.59       47.19     104  0.490   -1649.14     NO
+       develop $/day=-45.59  trades=187  hit=0.374  avgR=-0.051  maxDD$=-4298.02
+       holdout $/day=47.19  trades=104  hit=0.490  avgR=0.050  maxDD$=-1649.14  vs_$200=NO  vs_$300-500=NO
+A      vwap_reclaim   10.0         -80.19     -380.62     189  0.243   -8381.31     NO
+       develop $/day=-80.19  trades=335  hit=0.316  avgR=-0.050  maxDD$=-6279.50
+       holdout $/day=-380.62  trades=189  hit=0.243  avgR=-0.222  maxDD$=-8381.31  vs_$200=NO  vs_$300-500=NO
+B      cash           None           0.00        0.00       0  0.000       0.00     NO
+       develop $/day=0.00  trades=0  hit=0.000  avgR=0.000  maxDD$=0.00
+       holdout $/day=0.00  trades=0  hit=0.000  avgR=0.000  maxDD$=0.00  vs_$200=NO  vs_$300-500=NO
+B      or_break       None         -80.68     -148.21     133  0.406   -3357.81     NO
+       develop $/day=-80.68  trades=243  hit=0.453  avgR=-0.070  maxDD$=-5599.74
+       holdout $/day=-148.21  trades=133  hit=0.406  avgR=-0.123  maxDD$=-3357.81  vs_$200=NO  vs_$300-500=NO
+B      swing          None         -94.93      -53.74     105  0.333   -1346.31     NO
+       develop $/day=-94.93  trades=203  hit=0.296  avgR=-0.098  maxDD$=-4851.86
+       holdout $/day=-53.74  trades=105  hit=0.333  avgR=-0.056  maxDD$=-1346.31  vs_$200=NO  vs_$300-500=NO
+B      open_drive     2.0            4.80     -123.79     109  0.422   -3811.16     NO
+       develop $/day=4.80  trades=206  hit=0.408  avgR=0.005  maxDD$=-3577.33
+       holdout $/day=-123.79  trades=109  hit=0.422  avgR=-0.125  maxDD$=-3811.16  vs_$200=NO  vs_$300-500=NO
+B      vwap_reclaim   10.0         -62.21     -265.95     202  0.272   -6133.67     NO
+       develop $/day=-62.21  trades=381  hit=0.302  avgR=-0.034  maxDD$=-4530.23
+       holdout $/day=-265.95  trades=202  hit=0.272  avgR=-0.145  maxDD$=-6133.67  vs_$200=NO  vs_$300-500=NO

@@ -1,0 +1,115 @@
+Arrow 16 — denser rings on the B-short kernel (short only)
+VERDICT: FAIL — no Arrow 16 book has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass.
+account=$100000  target=$300-$500/day  failure_line=$200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap file=True
+Pass = holdout >= $200/day AND develop not red. RISK_PER_IDEA=200. cap8=8/16/1600.
+Id 1 = exact B/c5_ema9|cap8 (5-min close below ema9 after 09:45, ema9<ema21).
+Did not rerun 09:31 early 1-min, Arrow 13/15 longs, Q4, cap10-as-idea, 11:30 flatten, or union.
+No Arrow 17.
+
+n vs id 1:
+  A/c5_ema9|cap8: develop n=277 vs id1 277 (1.00x) holdout n=117 vs id1 117 (1.00x)
+  A/c5_ema9|mem: develop n=214 vs id1 277 (0.77x) holdout n=95 vs id1 117 (0.81x)
+  A/c5_ema9|3down: develop n=144 vs id1 277 (0.52x) holdout n=34 vs id1 117 (0.29x)
+  A/c5_ema9|avwap: develop n=217 vs id1 277 (0.78x) holdout n=82 vs id1 117 (0.70x)
+  A/c5_ema9|rv3: develop n=42 vs id1 277 (0.15x) holdout n=35 vs id1 117 (0.30x)
+  A/c5_ema9|pdhigh: develop n=251 vs id1 277 (0.91x) holdout n=112 vs id1 117 (0.96x)
+  A/c5_ema9|1000: develop n=281 vs id1 277 (1.01x) holdout n=112 vs id1 117 (0.96x)
+  A/c5_ema9|nopre: develop n=277 vs id1 277 (1.00x) holdout n=117 vs id1 117 (1.00x)
+  A/c5_ema9|expand: develop n=168 vs id1 277 (0.61x) holdout n=60 vs id1 117 (0.51x)
+  A/c5_ema9|mem_avwap: develop n=182 vs id1 277 (0.66x) holdout n=70 vs id1 117 (0.60x)
+  B/c5_ema9|cap8: develop n=203 vs id1 203 (1.00x) holdout n=76 vs id1 76 (1.00x)
+  B/c5_ema9|mem: develop n=159 vs id1 203 (0.78x) holdout n=56 vs id1 76 (0.74x)
+  B/c5_ema9|3down: develop n=102 vs id1 203 (0.50x) holdout n=27 vs id1 76 (0.36x)
+  B/c5_ema9|avwap: develop n=168 vs id1 203 (0.83x) holdout n=58 vs id1 76 (0.76x)
+  B/c5_ema9|rv3: develop n=21 vs id1 203 (0.10x) holdout n=16 vs id1 76 (0.21x)
+  B/c5_ema9|pdhigh: develop n=192 vs id1 203 (0.95x) holdout n=73 vs id1 76 (0.96x)
+  B/c5_ema9|1000: develop n=216 vs id1 203 (1.06x) holdout n=75 vs id1 76 (0.99x)
+  B/c5_ema9|nopre: develop n=203 vs id1 203 (1.00x) holdout n=76 vs id1 76 (1.00x)
+  B/c5_ema9|expand: develop n=114 vs id1 203 (0.56x) holdout n=33 vs id1 76 (0.43x)
+  B/c5_ema9|mem_avwap: develop n=141 vs id1 203 (0.69x) holdout n=45 vs id1 76 (0.59x)
+
+vs control on both slices:
+  A/c5_ema9|mem: develop $-45.27 vs control $-50.73 (BEATS); holdout $-43.20 vs control $-99.65 (BEATS); both_slices=YES
+  A/c5_ema9|3down: develop $-32.04 vs control $-50.73 (BEATS); holdout $26.10 vs control $-99.65 (BEATS); both_slices=YES
+  A/c5_ema9|avwap: develop $23.72 vs control $-50.73 (BEATS); holdout $-4.91 vs control $-99.65 (BEATS); both_slices=YES
+  A/c5_ema9|rv3: develop $-41.24 vs control $-50.73 (BEATS); holdout $34.84 vs control $-99.65 (BEATS); both_slices=YES
+  A/c5_ema9|pdhigh: develop $28.11 vs control $-50.73 (BEATS); holdout $-68.63 vs control $-99.65 (BEATS); both_slices=YES
+  A/c5_ema9|1000: develop $18.11 vs control $-50.73 (BEATS); holdout $-84.96 vs control $-99.65 (BEATS); both_slices=YES
+  A/c5_ema9|nopre: develop $-50.73 vs control $-50.73 (no); holdout $-99.65 vs control $-99.65 (no); both_slices=NO
+  A/c5_ema9|expand: develop $42.50 vs control $-50.73 (BEATS); holdout $-104.40 vs control $-99.65 (no); both_slices=NO
+  A/c5_ema9|mem_avwap: develop $2.35 vs control $-50.73 (BEATS); holdout $-4.36 vs control $-99.65 (BEATS); both_slices=YES
+  B/c5_ema9|mem: develop $103.32 vs control $59.06 (BEATS); holdout $139.90 vs control $178.85 (no); both_slices=NO
+  B/c5_ema9|3down: develop $17.83 vs control $59.06 (no); holdout $18.05 vs control $178.85 (no); both_slices=NO
+  B/c5_ema9|avwap: develop $85.35 vs control $59.06 (BEATS); holdout $122.88 vs control $178.85 (no); both_slices=NO
+  B/c5_ema9|rv3: develop $0.30 vs control $59.06 (no); holdout $102.97 vs control $178.85 (no); both_slices=NO
+  B/c5_ema9|pdhigh: develop $14.53 vs control $59.06 (no); holdout $46.99 vs control $178.85 (no); both_slices=NO
+  B/c5_ema9|1000: develop $54.21 vs control $59.06 (no); holdout $102.76 vs control $178.85 (no); both_slices=NO
+  B/c5_ema9|nopre: develop $59.06 vs control $59.06 (no); holdout $178.85 vs control $178.85 (no); both_slices=NO
+  B/c5_ema9|expand: develop $93.06 vs control $59.06 (BEATS); holdout $42.81 vs control $178.85 (no); both_slices=NO
+  B/c5_ema9|mem_avwap: develop $113.75 vs control $59.06 (BEATS); holdout $121.32 vs control $178.85 (no); both_slices=NO
+Ids that beat control on BOTH slices: A/c5_ema9|mem, A/c5_ema9|3down, A/c5_ema9|avwap, A/c5_ema9|rv3, A/c5_ema9|pdhigh, A/c5_ema9|1000, A/c5_ema9|mem_avwap
+
+track  id                    dev $/day  hold $/day  hold n    hit    avgR      maxDD  >=200
+A      c5_ema9|cap8             -50.73      -99.65     117  0.342  -0.159   -3665.90     NO
+       develop $/day=-50.73  trades=277  hit=0.444  avgR=-0.108  maxDD$=-5898.69
+       holdout $/day=-99.65  trades=117  hit=0.342  avgR=-0.159  maxDD$=-3665.90  vs_$200=NO  vs_$300-500=NO
+A      c5_ema9|mem              -45.27      -43.20      95  0.379  -0.073   -2300.60     NO
+       develop $/day=-45.27  trades=214  hit=0.477  avgR=-0.059  maxDD$=-3733.20
+       holdout $/day=-43.20  trades=95  hit=0.379  avgR=-0.073  maxDD$=-2300.60  vs_$200=NO  vs_$300-500=NO
+A      c5_ema9|3down            -32.04       26.10      34  0.412   0.086   -1149.26     NO
+       develop $/day=-32.04  trades=144  hit=0.479  avgR=-0.053  maxDD$=-2103.43
+       holdout $/day=26.10  trades=34  hit=0.412  avgR=0.086  maxDD$=-1149.26  vs_$200=NO  vs_$300-500=NO
+A      c5_ema9|avwap             23.72       -4.91      82  0.402  -0.035   -1949.44     NO
+       develop $/day=23.72  trades=217  hit=0.502  avgR=0.044  maxDD$=-3587.58
+       holdout $/day=-4.91  trades=82  hit=0.402  avgR=-0.035  maxDD$=-1949.44  vs_$200=NO  vs_$300-500=NO
+A      c5_ema9|rv3              -41.24       34.84      35  0.429   0.059    -809.00     NO
+       develop $/day=-41.24  trades=42  hit=0.357  avgR=-0.396  maxDD$=-1864.03
+       holdout $/day=34.84  trades=35  hit=0.429  avgR=0.059  maxDD$=-809.00  vs_$200=NO  vs_$300-500=NO
+A      c5_ema9|pdhigh            28.11      -68.63     112  0.384  -0.070   -2224.32     NO
+       develop $/day=28.11  trades=251  hit=0.526  avgR=0.025  maxDD$=-975.53
+       holdout $/day=-68.63  trades=112  hit=0.384  avgR=-0.070  maxDD$=-2224.32  vs_$200=NO  vs_$300-500=NO
+A      c5_ema9|1000              18.11      -84.96     112  0.402  -0.194   -2118.27     NO
+       develop $/day=18.11  trades=281  hit=0.438  avgR=-0.022  maxDD$=-2055.80
+       holdout $/day=-84.96  trades=112  hit=0.402  avgR=-0.194  maxDD$=-2118.27  vs_$200=NO  vs_$300-500=NO
+A      c5_ema9|nopre            -50.73      -99.65     117  0.342  -0.159   -3665.90     NO
+       develop $/day=-50.73  trades=277  hit=0.444  avgR=-0.108  maxDD$=-5898.69
+       holdout $/day=-99.65  trades=117  hit=0.342  avgR=-0.159  maxDD$=-3665.90  vs_$200=NO  vs_$300-500=NO
+A      c5_ema9|expand            42.50     -104.40      60  0.267  -0.247   -2388.43     NO
+       develop $/day=42.50  trades=168  hit=0.512  avgR=-0.057  maxDD$=-2812.96
+       holdout $/day=-104.40  trades=60  hit=0.267  avgR=-0.247  maxDD$=-2388.43  vs_$200=NO  vs_$300-500=NO
+A      c5_ema9|mem_avwap          2.35       -4.36      70  0.414  -0.035   -1763.56     NO
+       develop $/day=2.35  trades=182  hit=0.500  avgR=0.030  maxDD$=-2440.81
+       holdout $/day=-4.36  trades=70  hit=0.414  avgR=-0.035  maxDD$=-1763.56  vs_$200=NO  vs_$300-500=NO
+B      c5_ema9|cap8              59.06      178.85      76  0.474   0.233   -1286.34     NO
+       develop $/day=59.06  trades=203  hit=0.527  avgR=0.047  maxDD$=-3080.64
+       holdout $/day=178.85  trades=76  hit=0.474  avgR=0.233  maxDD$=-1286.34  vs_$200=NO  vs_$300-500=NO
+B      c5_ema9|mem              103.32      139.90      56  0.518   0.316    -644.59     NO
+       develop $/day=103.32  trades=159  hit=0.572  avgR=0.173  maxDD$=-1199.08
+       holdout $/day=139.90  trades=56  hit=0.518  avgR=0.316  maxDD$=-644.59  vs_$200=NO  vs_$300-500=NO
+B      c5_ema9|3down             17.83       18.05      27  0.444   0.073    -854.32     NO
+       develop $/day=17.83  trades=102  hit=0.549  avgR=0.031  maxDD$=-1852.62
+       holdout $/day=18.05  trades=27  hit=0.444  avgR=0.073  maxDD$=-854.32  vs_$200=NO  vs_$300-500=NO
+B      c5_ema9|avwap             85.35      122.88      58  0.517   0.236    -717.24     NO
+       develop $/day=85.35  trades=168  hit=0.577  avgR=0.137  maxDD$=-2557.39
+       holdout $/day=122.88  trades=58  hit=0.517  avgR=0.236  maxDD$=-717.24  vs_$200=NO  vs_$300-500=NO
+B      c5_ema9|rv3                0.30      102.97      16  0.500   0.663    -455.98     NO
+       develop $/day=0.30  trades=21  hit=0.476  avgR=0.071  maxDD$=-704.64
+       holdout $/day=102.97  trades=16  hit=0.500  avgR=0.663  maxDD$=-455.98  vs_$200=NO  vs_$300-500=NO
+B      c5_ema9|pdhigh            14.53       46.99      73  0.548   0.068    -580.39     NO
+       develop $/day=14.53  trades=192  hit=0.552  avgR=0.012  maxDD$=-805.12
+       holdout $/day=46.99  trades=73  hit=0.548  avgR=0.068  maxDD$=-580.39  vs_$200=NO  vs_$300-500=NO
+B      c5_ema9|1000              54.21      102.76      75  0.493   0.103    -797.43     NO
+       develop $/day=54.21  trades=216  hit=0.481  avgR=-0.016  maxDD$=-3003.12
+       holdout $/day=102.76  trades=75  hit=0.493  avgR=0.103  maxDD$=-797.43  vs_$200=NO  vs_$300-500=NO
+B      c5_ema9|nopre             59.06      178.85      76  0.474   0.233   -1286.34     NO
+       develop $/day=59.06  trades=203  hit=0.527  avgR=0.047  maxDD$=-3080.64
+       holdout $/day=178.85  trades=76  hit=0.474  avgR=0.233  maxDD$=-1286.34  vs_$200=NO  vs_$300-500=NO
+B      c5_ema9|expand            93.06       42.81      33  0.303   0.087    -616.01     NO
+       develop $/day=93.06  trades=114  hit=0.561  avgR=0.184  maxDD$=-2647.18
+       holdout $/day=42.81  trades=33  hit=0.303  avgR=0.087  maxDD$=-616.01  vs_$200=NO  vs_$300-500=NO
+B      c5_ema9|mem_avwap        113.75      121.32      45  0.556   0.298    -525.55     NO
+       develop $/day=113.75  trades=141  hit=0.596  avgR=0.211  maxDD$=-1217.04
+       holdout $/day=121.32  trades=45  hit=0.556  avgR=0.298  maxDD$=-525.55  vs_$200=NO  vs_$300-500=NO

@@ -1,0 +1,49 @@
+Arrow 1 — warmup pull timing
+start_utc: 2026-09-07T21:18:00+00:00
+end_utc:   2026-09-07T21:30:29+00:00
+start_et:  2026-09-07T17:18:00-04:00
+end_et:    2026-09-07T17:30:29-04:00
+wall_seconds: 749.0
+wall_hours: 0.2080
+cpu_count: 8
+workers: 8
+theta_concurrency_start: 8
+theta_concurrency_end: 8
+sessions_attempted: 10
+sessions_ok: 10
+sessions_fail: 0
+eligible_mean: 2756.8
+eligible_min: 2687
+eligible_max: 2814
+eligible_per_session:
+  2026-05-15: eligible=2769 1m_rows=747630
+  2026-05-18: eligible=2795 1m_rows=754650
+  2026-05-19: eligible=2783 1m_rows=751410
+  2026-05-20: eligible=2753 1m_rows=743310
+  2026-05-21: eligible=2707 1m_rows=730890
+  2026-05-22: eligible=2704 1m_rows=730080
+  2026-05-26: eligible=2687 1m_rows=725490
+  2026-05-27: eligible=2811 1m_rows=758970
+  2026-05-28: eligible=2745 1m_rows=741150
+  2026-05-29: eligible=2814 1m_rows=759780
+1m_rows_total: 7443360
+mean_seconds_per_1m_request: 0.4611
+failures_count: 2
+failures (class/message, no secrets):
+  CON eod ComputeError: parquet: File out of specification: underlying IO error: The handle is invalid. (os error 6)
+  PRN eod FileNotFoundError: The system cannot find the file specified. (os error 2): C:/Users/james/Money/data/eod/warmup/PRN.parquet
+
+extrapolation (estimate, not a promise):
+  N_warmup=10  N_study=64  N_full=74
+  est_full_hours = 0.2080 * (74) / 10 = 1.54
+  est_full_hours_scaled_by_eligible = 1.54  (assumed mean_eligible_study / mean_eligible_warmup = 1.0; study eligibility was not observed)
+
+assumptions:
+  - Jun–Aug 2026 trading days use the official NYSE calendar (closed 2026-06-19 Juneteenth and 2026-07-03 Independence observed).
+  - 2026-07-03 is a full holiday, not an early close (NYSE/Nasdaq 2026 schedule).
+  - Warmup mean eligible count holds in the study window.
+  - Same workers / theta_concurrency / venue=utp_cta / 07:30–12:00 1m OHLC.
+  - Wall time scales with session count (eligibility + 1m pulls).
+  - No tick/quotes/options/flat files.
+  - Splits endpoint is not in thetadata v3 SDK; 1m prints left unadjusted.
+  - validation: no issues on warmup checks

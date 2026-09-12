@@ -1,0 +1,214 @@
+Arrow 19 — full-tape rocket and already-moving survey (04:00-16:00)
+Diagnostic only. No fills. No $200 verdict. Did not touch data/bars. Did not rescore the kernel. No Arrow 20.
+tape=C:\Users\james\Money\data\full\bars eligibility=C:\Users\james\Money\data\full\eligibility.parquet
+rockets: prior_close [$1, $20], high >= 1.10 * prior_close, rel_vol vs prior 10 full 04:00-15:59 windows
+snapshots: 08:00 and 09:29 last tradeable bar, eligible prior_close [$1, $50]
+study n=64 2026-06-01..2026-08-31
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8
+
+A — ROCKETS STUDY-WIDE
+eligible $1-$20 name-days with enough history (>=5 prior full windows): 97038
+skipped for <5 prior sessions: 4707
+max_ext >= 10%: 5683 (5.86%)
+max_ext >= 15%: 2226 (2.29%)
+max_ext >= 20%: 1160 (1.20%)
+max_ext >= 50%: 201 (0.21%)
+rel_vol >= 3x (among enough-history): 3139
+rel_vol >= 5x (among enough-history): 1282
+rocket ∩ rel_vol>=3x: 1200
+rocket ∩ rel_vol>=5x: 618
+
+launch-clock histogram (rockets ∩ rel_vol>=3x), hours 04-15:
+  04: 320
+  05: 32
+  06: 53
+  07: 104
+  08: 80
+  09: 297
+  10: 109
+  11: 52
+  12: 51
+  13: 50
+  14: 19
+  15: 33
+buckets (rockets ∩ rel_vol>=3x):
+  pre-07:30: 461
+  07:30-09:29: 174
+  09:30-09:44: 192
+  09:45-15:59: 373
+
+all rockets (max_ext>=10%):
+  max_ext: n=5683 median=0.1352 p90=0.2811
+  minutes_to_peak: n=5683 median=13.0000 p90=314.0000
+  ext_0930: n=5679 median=0.0189 p90=0.0988
+  ext_1559: n=5683 median=0.0778 p90=0.1742
+  still >= +10% at 09:30: 557/5683 (0.098)
+  still >= +10% at 15:59: 2054/5683 (0.361)
+  gave_back by 15:59 (end_ext < 0.5*max_ext): 2588/5683 (0.455)
+
+rockets ∩ rel_vol>=3x:
+  max_ext: n=1200 median=0.2173 p90=0.6433
+  minutes_to_peak: n=1200 median=80.0000 p90=385.0000
+  ext_0930: n=1200 median=0.0462 p90=0.2424
+  ext_1559: n=1200 median=0.1146 p90=0.3228
+  still >= +10% at 09:30: 347/1200 (0.289)
+  still >= +10% at 15:59: 679/1200 (0.566)
+  gave_back by 15:59 (end_ext < 0.5*max_ext): 506/1200 (0.422)
+Track A gate (prior_close $10-30, $5M ADV, eligible): 239/1200 of >=3x rockets
+Track B gate (prior_close $10-50, $5M ADV, 400/day cap): 60/1200 of >=3x rockets
+
+A — ROCKETS DEVELOP (through 2026-07-30)
+eligible $1-$20 name-days with enough history (>=5 prior full windows): 64112
+skipped for <5 prior sessions: 3625
+max_ext >= 10%: 3710 (5.79%)
+max_ext >= 15%: 1401 (2.19%)
+max_ext >= 20%: 697 (1.09%)
+max_ext >= 50%: 117 (0.18%)
+rel_vol >= 3x (among enough-history): 1678
+rel_vol >= 5x (among enough-history): 667
+rocket ∩ rel_vol>=3x: 631
+rocket ∩ rel_vol>=5x: 327
+
+launch-clock histogram (rockets ∩ rel_vol>=3x), hours 04-15:
+  04: 170
+  05: 16
+  06: 27
+  07: 55
+  08: 47
+  09: 151
+  10: 53
+  11: 23
+  12: 34
+  13: 28
+  14: 5
+  15: 22
+buckets (rockets ∩ rel_vol>=3x):
+  pre-07:30: 242
+  07:30-09:29: 93
+  09:30-09:44: 92
+  09:45-15:59: 204
+
+all rockets (max_ext>=10%):
+  max_ext: n=3710 median=0.1333 p90=0.2652
+  minutes_to_peak: n=3710 median=11.0000 p90=300.1000
+  ext_0930: n=3707 median=0.0169 p90=0.0900
+  ext_1559: n=3710 median=0.0756 p90=0.1660
+  still >= +10% at 09:30: 303/3710 (0.082)
+  still >= +10% at 15:59: 1278/3710 (0.344)
+  gave_back by 15:59 (end_ext < 0.5*max_ext): 1711/3710 (0.461)
+
+rockets ∩ rel_vol>=3x:
+  max_ext: n=631 median=0.2227 p90=0.6544
+  minutes_to_peak: n=631 median=68.0000 p90=380.0000
+  ext_0930: n=631 median=0.0370 p90=0.2170
+  ext_1559: n=631 median=0.1099 p90=0.3274
+  still >= +10% at 09:30: 167/631 (0.265)
+  still >= +10% at 15:59: 342/631 (0.542)
+  gave_back by 15:59 (end_ext < 0.5*max_ext): 283/631 (0.448)
+Track A gate (prior_close $10-30, $5M ADV, eligible): 128/631 of >=3x rockets
+Track B gate (prior_close $10-50, $5M ADV, 400/day cap): 31/631 of >=3x rockets
+
+A — ROCKETS HOLDOUT (from 2026-07-31)
+eligible $1-$20 name-days with enough history (>=5 prior full windows): 32926
+skipped for <5 prior sessions: 1082
+max_ext >= 10%: 1973 (5.99%)
+max_ext >= 15%: 825 (2.51%)
+max_ext >= 20%: 463 (1.41%)
+max_ext >= 50%: 84 (0.26%)
+rel_vol >= 3x (among enough-history): 1461
+rel_vol >= 5x (among enough-history): 615
+rocket ∩ rel_vol>=3x: 569
+rocket ∩ rel_vol>=5x: 291
+
+launch-clock histogram (rockets ∩ rel_vol>=3x), hours 04-15:
+  04: 150
+  05: 16
+  06: 26
+  07: 49
+  08: 33
+  09: 146
+  10: 56
+  11: 29
+  12: 17
+  13: 22
+  14: 14
+  15: 11
+buckets (rockets ∩ rel_vol>=3x):
+  pre-07:30: 219
+  07:30-09:29: 81
+  09:30-09:44: 100
+  09:45-15:59: 169
+
+all rockets (max_ext>=10%):
+  max_ext: n=1973 median=0.1387 p90=0.3105
+  minutes_to_peak: n=1973 median=20.0000 p90=331.0000
+  ext_0930: n=1972 median=0.0225 p90=0.1185
+  ext_1559: n=1973 median=0.0839 p90=0.1907
+  still >= +10% at 09:30: 254/1973 (0.129)
+  still >= +10% at 15:59: 776/1973 (0.393)
+  gave_back by 15:59 (end_ext < 0.5*max_ext): 877/1973 (0.445)
+
+rockets ∩ rel_vol>=3x:
+  max_ext: n=569 median=0.2097 p90=0.6277
+  minutes_to_peak: n=569 median=104.0000 p90=388.4000
+  ext_0930: n=569 median=0.0546 p90=0.2537
+  ext_1559: n=569 median=0.1190 p90=0.3186
+  still >= +10% at 09:30: 180/569 (0.316)
+  still >= +10% at 15:59: 337/569 (0.592)
+  gave_back by 15:59 (end_ext < 0.5*max_ext): 223/569 (0.392)
+Track A gate (prior_close $10-30, $5M ADV, eligible): 111/569 of >=3x rockets
+Track B gate (prior_close $10-50, $5M ADV, 400/day cap): 29/569 of >=3x rockets
+
+B — SNAPSHOT 08:00 STUDY-WIDE
+eligible $1-$50 name-days scored: 164064
+movers: 40629 (24.76% of scored)
+overlap with §A rocket∩>=3x: 888/40629
+movers prior_close <$10: 14201
+movers prior_close $10-50: 26428
+movers Track B eligible that day: 5769/40629
+
+B — SNAPSHOT 08:00 DEVELOP
+eligible $1-$50 name-days scored: 108710
+movers: 26427 (24.31% of scored)
+overlap with §A rocket∩>=3x: 450/26427
+movers prior_close <$10: 9040
+movers prior_close $10-50: 17387
+movers Track B eligible that day: 3675/26427
+
+B — SNAPSHOT 08:00 HOLDOUT
+eligible $1-$50 name-days scored: 55354
+movers: 14202 (25.66% of scored)
+overlap with §A rocket∩>=3x: 438/14202
+movers prior_close <$10: 5161
+movers prior_close $10-50: 9041
+movers Track B eligible that day: 2094/14202
+
+B — SNAPSHOT 09:29 STUDY-WIDE
+eligible $1-$50 name-days scored: 164064
+movers: 39573 (24.12% of scored)
+overlap with §A rocket∩>=3x: 962/39573
+movers prior_close <$10: 13188
+movers prior_close $10-50: 26385
+movers Track B eligible that day: 5322/39573
+
+B — SNAPSHOT 09:29 DEVELOP
+eligible $1-$50 name-days scored: 108710
+movers: 25259 (23.24% of scored)
+overlap with §A rocket∩>=3x: 485/25259
+movers prior_close <$10: 8264
+movers prior_close $10-50: 16995
+movers Track B eligible that day: 3369/25259
+
+B — SNAPSHOT 09:29 HOLDOUT
+eligible $1-$50 name-days scored: 55354
+movers: 14314 (25.86% of scored)
+overlap with §A rocket∩>=3x: 477/14314
+movers prior_close <$10: 4924
+movers prior_close $10-50: 9390
+movers Track B eligible that day: 1953/14314
+
+Did 04:00 move the launch clock; is 09:29 already-moving the rocket set or wider:
+04:00 moved the launch clock vs the stub scan: 461/1200 of full-tape >=3x rockets print +10% before 07:30 (stub had 569/1214 in 07:30-09:29 premarket, none before 07:30). Peak launch hour is 04. Already-moving at 09:29 is a wider field than the rocket set: 39573 movers vs 1200 >=3x rockets, overlap 962 (2.4% of movers).
+

@@ -1,0 +1,74 @@
+Arrow 31 — integrity repairs; rescore flush|max6 and B_uptick10 lock vs full
+VERDICT: FAIL — no Arrow 31 book has holdout >= $200/day AND non-red develop. Combined holdout is not expected value (EV).
+Honesty: repaired flush and locked trail are both-green on the printed slices.
+Combined holdout is not expected value (EV). Do not write that the account is one improvement from $200.
+No new engine. No rocket rings. No $500/idea. No virgin pull. No cell-buy. No cap12. No Arrow 32.
+Acronyms: EMA = exponential moving average; ATR = Average True Range; SSR = Short Sale Restriction; RVOL = relative volume; MFE = maximum favorable excursion; IWM = iShares Russell 2000 ETF.
+account=100000  target=300-500/day  failure_line=200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap=True  tape=C:\Users\james\Money\data\full\bars
+A1-A5 on. FLY cell available_at=09:45. last_entry_at distinct from flatten_at. Trail-through-close queues next-event. Flatten fills at or after the clock. RVOL calendar = last ten NYSE sessions (explicit zero vs missing).
+
+A1 look-ahead (historical flush|max6 entries that would be rejected: signal_ts < 09:45 using 09:44 cell)
+  n=18 (develop 7 holdout 11)  PnL$=1473.78 (develop 81.23 holdout 1392.55)
+
+C-R3 EMA stitch n vs A27 B_uptick10 (develop 204 / holdout 75). Neither stitch is a new champion.
+  04:00 flat1159|lock n develop=214 holdout=94  vs A27 214/204=1.05x  94/75=1.25x
+  07:30 flat1159|lock n develop=223 holdout=92  vs A27 223/204=1.09x  92/75=1.23x
+  04:00 atr1559|lock n develop=216 holdout=94
+  07:30 atr1559|lock n develop=225 holdout=94
+
+population develop (hot-08:00 $5-20 scan): n_all=238  FLY/n_all=0.134 (32)  FAIL/n_all=0.126 (30)  other/n_all=0.739 (176)  FLY-cell=54
+population holdout (hot-08:00 $5-20 scan): n_all=185  FLY/n_all=0.141 (26)  FAIL/n_all=0.103 (19)  other/n_all=0.757 (140)  FLY-cell=39
+A6 RVOL calendar windows=117881 missing_name_days=185820 explicit_zeros=0  (calendar enforced; zeros are zeros, missings excluded from median)
+
+id                            dev $/day  hold $/day  hold n    avgR     PF  t_hold  MFE-cap  >=200
+B|uptick10|flat1159|lock           8.36      160.35      94   0.214  1.681    1.05    0.234     NO
+  develop $/day=8.36  trades=214  hit=0.528  avgR=0.012  maxDD$=-3364.18  std=609.32  se=94.02  t=0.09  ci95=[-172.93,189.66]
+    PF=1.026  peak_conc=8  mean_conc=4.14  ssr_share=0.220  ssr_nofill=3  MFE-capture=0.011
+    marked equity: daily-close DD$=-3364.18  intraday peak-to-trough$=-1844.49  crossed_at_creation=0  unresolved_flatten=0  backdate_avoided=0  liq_req=170 liq_fill=170
+  holdout $/day=160.35  trades=94  hit=0.511  avgR=0.214  maxDD$=-1511.93  std=718.32  se=153.15  t=1.05  ci95=[-124.26,484.63]  vs_$200=NO  vs_$300-500=NO
+    PF=1.681  peak_conc=8  mean_conc=3.79  MFE-capture=0.234  IWM alpha hold $101.85 (n=94 skip=0)
+    marked equity: daily-close DD$=-1511.93  intraday peak-to-trough$=-1147.09  crossed_at_creation=0  unresolved_flatten=0  backdate_avoided=0
+B|uptick10|atr1559|lock           70.09      169.55      94   0.203  1.768    1.70    0.217     NO
+  develop $/day=70.09  trades=216  hit=0.565  avgR=0.056  maxDD$=-2496.80  std=675.79  se=104.28  t=0.67  ci95=[-130.98,264.68]
+    PF=1.199  peak_conc=8  mean_conc=2.99  ssr_share=0.220  ssr_nofill=3  MFE-capture=0.080
+    marked equity: daily-close DD$=-2496.80  intraday peak-to-trough$=-1961.82  crossed_at_creation=0  unresolved_flatten=0  backdate_avoided=0  liq_req=83 liq_fill=83
+  holdout $/day=169.55  trades=94  hit=0.585  avgR=0.203  maxDD$=-972.10  std=467.49  se=99.67  t=1.70  ci95=[-25.93,354.19]  vs_$200=NO  vs_$300-500=NO
+    PF=1.768  peak_conc=8  mean_conc=3.04  MFE-capture=0.217  IWM alpha hold $118.73 (n=94 skip=0)
+    marked equity: daily-close DD$=-972.10  intraday peak-to-trough$=-1091.76  crossed_at_creation=0  unresolved_flatten=0  backdate_avoided=0
+B|uptick10|atr1559|full           70.09      171.24      95   0.206  1.776    1.72    0.218     NO
+  develop $/day=70.09  trades=216  hit=0.565  avgR=0.056  maxDD$=-2496.80  std=675.79  se=104.28  t=0.67  ci95=[-130.98,264.68]
+    PF=1.199  peak_conc=8  mean_conc=2.99  ssr_share=0.221  ssr_nofill=3  MFE-capture=0.080
+    marked equity: daily-close DD$=-2496.80  intraday peak-to-trough$=-1961.82  crossed_at_creation=0  unresolved_flatten=0  backdate_avoided=0  liq_req=83 liq_fill=83
+  holdout $/day=171.24  trades=95  hit=0.589  avgR=0.206  maxDD$=-972.10  std=466.20  se=99.39  t=1.72  ci95=[-25.17,355.56]  vs_$200=NO  vs_$300-500=NO
+    PF=1.776  peak_conc=8  mean_conc=3.05  MFE-capture=0.218  IWM alpha hold $119.94 (n=95 skip=0)
+    marked equity: daily-close DD$=-972.10  intraday peak-to-trough$=-1091.76  crossed_at_creation=0  unresolved_flatten=0  backdate_avoided=0
+flush|max6|repaired                6.20       79.10      19   0.457  3.680    1.18    0.369     NO
+  develop
+    n=21  trades/sess=0.50  hit=0.429  avgR=0.062  medR=-0.046  p10R=-0.736  p90R=0.659
+    avgWin$=120.09  avgLoss$=-68.36  PF=1.318  stop%=4.8  time%=95.2  other%=0.0  medMin=119.0
+    $/day=6.20  std=97.85  se=15.10  t=0.41  ci95=[-23.10,36.11]  maxDD$=-341.37
+    flight mean_ext=0.0330  reached_1R=0.143
+    MFE-capture=0.101  daily-close DD$=-341.37  intraday peak-to-trough$=-372.89  crossed_at_creation=0  unresolved_flatten=0  backdate_avoided=0
+  holdout
+    n=19  trades/sess=0.86  hit=0.579  avgR=0.457  medR=0.220  p10R=-0.470  p90R=0.953
+    avgWin$=217.24  avgLoss$=-81.16  PF=3.680  stop%=10.5  time%=89.5  other%=0.0  medMin=124.0
+    $/day=79.10  std=315.57  se=67.28  t=1.18  ci95=[-9.75,221.10]  maxDD$=-159.42
+    flight mean_ext=0.0514  reached_1R=0.263
+    MFE-capture=0.369  daily-close DD$=-159.42  intraday peak-to-trough$=-1212.08  vs_$200=NO
+
+A29 ids 4/5 diagnostic only (undercut of 09:44 close; undercut of OR high). Not a pass candidate.
+  flush_0944: develop $-48.41/day n=44  holdout $85.91/day n=43
+  flush_orhigh: develop $-83.89/day n=66  holdout $-89.70/day n=65
+
+C-R7 harvestable_altitude develop n=85 mean=0.1153 median=0.1122 frac>0=0.953  (confirm+5m, RTH/09:45, vol>=2000; not a full field scan)
+
+COMBINED lock  B|uptick10|atr1559|lock + flush|max6|repaired  (apples-to-apples morning book)
+  develop $/day=76.30  std=660.37  se=101.90  t=0.75  ci95=[-121.06,265.04]  maxDD$=-2611.59  corr=-0.228  joint_peak_risk$=1935.87
+  holdout $/day=248.65  std=547.98  se=116.83  t=2.13  ci95=[26.95,475.22]  maxDD$=-972.10  corr=-0.060  joint_peak_risk$=1883.80  NOT EV
+FULL  B|uptick10|atr1559|full + flush|max6|repaired  (afternoon admits allowed; not EV)
+  develop $/day=76.30  std=660.37  se=101.90  t=0.75  ci95=[-121.06,265.04]  maxDD$=-2611.59  corr=-0.228  joint_peak_risk$=1935.87
+  holdout $/day=250.35  std=546.62  se=116.54  t=2.15  ci95=[26.95,475.22]  maxDD$=-972.10  corr=-0.062  joint_peak_risk$=1883.80  NOT EV
+NO* = holdout >= 200 but develop is red — not a pass. Combined holdout is not EV.

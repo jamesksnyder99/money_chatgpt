@@ -1,0 +1,187 @@
+Arrow 24 — FLY vs FAIL, harness, 100-book grid (data/full)
+VERDICT: FAIL — no Arrow 24 book has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass. Holdout is not a tuner. Did not rerun 08:00/09:29 buy-the-extended-open, A21 pullback, strong5, newhigh, fade, vs_iwm, climax.
+Holdout is not a tuner. Did not rerun 08:00/09:29 buy-the-extended-open, A21 pullback, strong5, newhigh, fade-the-hot-open, vs_iwm, climax. No B-short rescore. Did not touch data/bars. No Arrow 25.
+account=100000  target=300-500/day  failure_line=200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8
+grid ids=100  cost_skips=2261  price_floor=3.0
+
+PART A — FLY vs FAIL (develop only; holdout is PEEK and was not used to pick the cell)
+confirmed launch: first 1-min close >= 1.10*pc whose next tradeable low >= 1.08*pc
+n FLY=1152  n FAIL=1335  n other=61113  n scored=63600
+launch hour FLY:  4=187 5=32 6=31 7=53 8=50 9=293 10=190 11=104 12=85 13=79 14=42 15=6
+launch hour FAIL: 4=308 5=109 6=86 7=140 8=104 9=203 10=130 11=72 12=42 13=37 14=21 15=83
+
+09:29 features FLY vs FAIL
+  FLY 09:29 n=1152
+    feat             mean        q20        q40        q60        q80
+    ext0929        0.0739    -0.0012     0.0169     0.0392     0.0875
+    rel0929      347.6470     0.5369     1.2971     3.2434    24.9337
+    dv0929     7987261.3769 19465.1434 137397.5295 669077.1683 4656262.9300
+    rng            0.1396     0.0413     0.0615     0.0986     0.2163
+    gap0929        0.0739    -0.0012     0.0169     0.0392     0.0875
+    px0929         7.3774     2.5560     4.3980     7.2980    12.3300
+    was_rocket_prev     0.0634     0.0000     0.0000     0.0000     0.0000
+  FAIL 09:29 n=1335
+    feat             mean        q20        q40        q60        q80
+    ext0929        0.0176    -0.0068     0.0057     0.0191     0.0453
+    rel0929       66.9140     0.3805     0.9019     1.8761     5.6678
+    dv0929     932115.7173  3654.3253 19589.6880 81989.8236 380663.7069
+    rng            0.1111     0.0446     0.0879     0.1208     0.1583
+    gap0929        0.0176    -0.0068     0.0057     0.0191     0.0453
+    px0929         6.8101     2.5160     4.2419     6.6000    10.7070
+    was_rocket_prev     0.0419     0.0000     0.0000     0.0000     0.0000
+09:44 features FLY vs FAIL
+  FLY 09:44 n=1152
+    feat             mean        q20        q40        q60        q80
+    ext0944        0.1017     0.0174     0.0479     0.0770     0.1256
+    rel0944       28.2016     0.7573     1.4265     2.9489    10.1296
+    dv0944     14708399.2067 293284.5702 955332.3808 2615439.0064 12735900.6267
+    orw            0.0804     0.0378     0.0550     0.0766     0.1120
+    gap0944        0.0725    -0.0000     0.0150     0.0360     0.0849
+    px0944         7.6049     2.6399     4.5900     7.5490    12.7950
+  FAIL 09:44 n=1335
+    feat             mean        q20        q40        q60        q80
+    ext0944        0.0157    -0.0109     0.0063     0.0247     0.0502
+    rel0944       45.2617     0.5218     0.8753     1.4439     2.5968
+    dv0944     3159617.3432 96439.5159 228518.3864 545415.0176 1742020.6784
+    orw            0.0502     0.0234     0.0357     0.0491     0.0703
+    gap0944        0.0084    -0.0075     0.0020     0.0115     0.0286
+    px0944         6.8440     2.4640     4.2730     6.6040    10.8220
+
+2x2x2 winning octant (develop): orw >= 0.0510, dv0929 >= 98028.1104, ext0944 >= 0.0337
+  n=569 n_fly=431 fly_rate=0.757 base=0.463 gaps=[0.613, 0.376, 0.373]
+Cell (develop-locked, holdout PEEK): orw >= 0.0510, dv0929 >= 98028.1104, ext0944 >= 0.0337. n=569 FLY=431 rate=0.757 vs baseline 0.463. Applied as an extra population cut on every long door.
+
+PART B — harness controls (same A23 entries, new stops/gates)
+flush_hl|harness  holdout>=200=NO
+  develop
+    n=37  trades/sess=0.88  hit=0.378  avgR=-0.111  medR=-0.174  p10R=-1.101  p90R=0.900
+    avgWin$=146.80  avgLoss$=-125.14  PF=0.714  stop%=24.3  time%=75.7  other%=0.0  medMin=119.0
+    $/day=-19.60  std=145.94  se=22.52  t=-0.87  ci95=[-62.58,25.20]  maxDD$=-1378.58
+    flight mean_ext=0.0401  reached_1R=0.243
+  holdout
+    n=28  trades/sess=1.27  hit=0.607  avgR=0.549  medR=0.273  p10R=-0.936  p90R=1.572
+    avgWin$=255.39  avgLoss$=-111.67  PF=3.535  stop%=17.9  time%=82.1  other%=0.0  medMin=134.0
+    $/day=141.51  std=336.58  se=71.76  t=1.97  ci95=[29.59,298.74]  maxDD$=-260.84
+    flight mean_ext=0.1085  reached_1R=0.464
+am_high_pm|harness  holdout>=200=NO
+  develop
+    n=3  trades/sess=0.07  hit=0.667  avgR=0.705  medR=0.367  p10R=-0.481  p90R=2.027
+    avgWin$=280.47  avgLoss$=-106.63  PF=5.261  stop%=33.3  time%=66.7  other%=0.0  medMin=11.0
+    $/day=10.82  std=78.05  se=12.04  t=0.90  ci95=[-5.87,38.33]  maxDD$=-106.63
+    flight mean_ext=0.0254  reached_1R=0.333
+  holdout
+    n=3  trades/sess=0.14  hit=0.000  avgR=-0.936  medR=-0.883  p10R=-1.017  p90R=-0.876
+    avgWin$=0.00  avgLoss$=-186.89  PF=0.000  stop%=100.0  time%=0.0  other%=0.0  medMin=16.0
+    $/day=-25.48  std=65.92  se=14.05  t=-1.81  ci95=[-58.92,0.00]  maxDD$=-560.66
+    flight mean_ext=0.0120  reached_1R=0.000
+
+PART C — 100-book grid sorted by holdout $/day (holdout is not a tuner)
+id                           side  dev $/day  hold $/day  hold n    hit    avgR     PF  t_hold     1R  >=200
+flush|flat1159|px5              L      -6.31      146.05      27  0.630   0.588  3.847    2.05  0.481     NO
+flush|flat1159|cap3             L     -18.28      145.33      27  0.630   0.591  3.794    1.98  0.519     NO
+flush|flat1159|cost             L     -19.60      141.51      28  0.607   0.549  3.535    1.97  0.464     NO
+flush|t15R|cap3                 L     -33.50      121.23      32  0.656   0.414  2.501    2.11  0.562     NO
+flush|t15R|base                 L     -31.80      119.90      34  0.647   0.385  2.343    2.10  0.559     NO
+flush|t15R|nocluster            L     -31.80      119.90      34  0.647   0.385  2.343    2.10  0.559     NO
+flush|flat1159|base             L     -19.15      118.42      30  0.567   0.428  2.500    1.57  0.500     NO
+flush|flat1159|nocluster        L     -19.15      118.42      30  0.567   0.428  2.500    1.57  0.500     NO
+flush|t15R|px5                  L     -10.13      117.17      30  0.667   0.455  2.573    2.09  0.567     NO
+flush|half1R_trail|cap3         L     -31.36      112.01      52  0.788   0.635  2.387    1.89  0.731     NO
+flush|half1R_trail|px5          L      -8.66      107.25      47  0.787   0.684  2.440    1.89  0.723     NO
+flush|t15R|cost                 L     -38.28      105.61      30  0.633   0.385  2.275    1.85  0.533     NO
+flush|atr_1559|px5              L     -51.11      103.72      30  0.500   0.420  1.758    1.43  0.700     NO
+flush|half1R_trail|base         L     -29.66      103.50      53  0.774   0.606  2.159    1.79  0.717     NO
+flush|half1R_trail|nocluster    L     -29.66      103.50      53  0.774   0.606  2.159    1.79  0.717     NO
+flush|atr_1559|cost             L     -54.51      102.68      24  0.500   0.481  1.858    1.37  0.667     NO
+flush|half1R_trail|cost         L     -33.62       96.31      46  0.761   0.637  2.163    1.66  0.696     NO
+flush|flat1559|px5              L     -21.80       79.36      30  0.533   0.329  1.804    1.49  0.567     NO
+flush|atr_1559|cap3             L     -68.84       78.77      32  0.469   0.255  1.487    1.03  0.719     NO
+flush|flat1559|cap3             L     -45.01       74.86      30  0.533   0.317  1.725    1.32  0.600     NO
+volfirst|half1R_trail|cap3      L     -30.12       68.76      60  0.733   0.527  1.539    1.26  0.783     NO
+flush|flat1559|cost             L     -36.71       66.04      30  0.500   0.237  1.617    1.23  0.533     NO
+flush|atr_1559|base             L     -68.84       63.47      34  0.441   0.186  1.358    0.78  0.676     NO
+flush|atr_1559|nocluster        L     -68.84       63.47      34  0.441   0.186  1.358    0.78  0.676     NO
+volfirst|half1R_trail|cost      L     -35.72       63.14      38  0.737   0.558  1.897    1.12  0.789     NO
+volfirst|t15R|cap3              L     -18.13       44.11      38  0.526   0.115  1.283    0.70  0.658     NO
+volfirst|t15R|cost              L     -22.24       42.35      24  0.542   0.204  1.460    0.69  0.667     NO
+flush|flat1559|base             L     -43.31       41.48      34  0.471   0.143  1.304    0.72  0.559     NO
+flush|flat1559|nocluster        L     -43.31       41.48      34  0.471   0.143  1.304    0.72  0.559     NO
+volfirst|half1R_trail|px5       L     -20.20       41.10      48  0.667   0.515  1.338    0.72  0.708     NO
+volfirst|half1R_trail|base      L     -30.12       39.87      63  0.698   0.451  1.255    0.54  0.746     NO
+volfirst|half1R_trail|nocluster    L     -30.12       39.87      63  0.698   0.451  1.255    0.54  0.746     NO
+volfirst|atr_1559|px5           L     -35.24       31.34      32  0.406   0.063  1.195    0.40  0.625     NO
+volfirst|flat1159|cost          L     -36.07       29.06      21  0.667   0.155  1.826    1.04  0.571     NO
+volfirst|flat1159|px5           L     -29.10       20.26      25  0.560   0.092  1.272    0.42  0.480     NO
+volfirst|flat1559|px5           L     -27.92       16.41      32  0.375   0.029  1.098    0.20  0.562     NO
+volfirst|t15R|base              L     -18.13       15.22      41  0.488   0.029  1.082    0.19  0.610     NO
+volfirst|t15R|nocluster         L     -18.13       15.22      41  0.488   0.029  1.082    0.19  0.610     NO
+volfirst|atr_1559|cost          L     -57.56       13.45      22  0.500   0.078  1.134    0.35  0.727     NO
+volfirst|flat1159|cap3          L     -33.90       11.74      31  0.516   0.042  1.120    0.26  0.613     NO
+volfirst|atr_1559|cap3          L     -27.92       11.27      39  0.385  -0.009  1.054    0.14  0.692     NO
+volfirst|t15R|px5               L     -14.12        4.14      32  0.469  -0.005  1.030    0.07  0.562     NO
+volfirst|flat1559|cost          L     -49.54        3.52      24  0.458   0.026  1.031    0.08  0.667     NO
+giveback|flat1159|base          S       0.00        0.00       0  0.000   0.000      0    0.00  0.000     NO
+giveback|flat1159|cost          S       0.00        0.00       0  0.000   0.000      0    0.00  0.000     NO
+giveback|flat1159|px5           S       0.00        0.00       0  0.000   0.000      0    0.00  0.000     NO
+giveback|flat1159|cap3          S       0.00        0.00       0  0.000   0.000      0    0.00  0.000     NO
+giveback|flat1159|nocluster     S       0.00        0.00       0  0.000   0.000      0    0.00  0.000     NO
+volfirst|flat1559|cap3          L     -20.97       -2.38      38  0.368  -0.033  0.989   -0.03  0.658     NO
+launch|t15R|cost                L      15.51       -2.41       4  0.500  -0.067  0.855   -0.14  0.250     NO
+launch|flat1159|cost            L       6.45       -4.13       4  0.500  -0.114  0.752   -0.31  0.250     NO
+volfirst|flat1159|base          L     -33.90       -8.52      34  0.500  -0.027  0.928   -0.16  0.559     NO
+volfirst|flat1159|nocluster     L     -33.90       -8.52      34  0.500  -0.027  0.928   -0.16  0.559     NO
+launch|half1R_trail|cost        L      20.36       -8.53       5  0.600  -0.039  0.488   -0.65  0.400     NO
+volfirst|atr_1559|base          L     -27.92       -9.24      41  0.366  -0.063  0.960   -0.10  0.659     NO
+volfirst|atr_1559|nocluster     L     -27.92       -9.24      41  0.366  -0.063  0.960   -0.10  0.659     NO
+launch|t15R|base                L      15.87      -11.64       8  0.375  -0.238  0.593   -0.60  0.375     NO
+launch|t15R|px5                 L      12.10      -11.64       8  0.375  -0.238  0.593   -0.60  0.375     NO
+launch|t15R|cap3                L      15.87      -11.64       8  0.375  -0.238  0.593   -0.60  0.375     NO
+launch|t15R|nocluster           L      15.87      -11.64       8  0.375  -0.238  0.593   -0.60  0.375     NO
+launch|flat1559|cost            L      -3.36      -13.52       4  0.500  -0.373  0.188   -1.21  0.250     NO
+launch|atr_1559|cost            L      -3.36      -13.52       4  0.500  -0.373  0.188   -1.21  0.250     NO
+launch|flat1159|base            L      -0.57      -16.08       7  0.286  -0.429  0.438   -1.04  0.286     NO
+launch|flat1159|px5             L       3.04      -16.08       7  0.286  -0.429  0.438   -1.04  0.286     NO
+launch|flat1159|cap3            L      -0.57      -16.08       7  0.286  -0.429  0.438   -1.04  0.286     NO
+launch|flat1159|nocluster       L      -0.57      -16.08       7  0.286  -0.429  0.438   -1.04  0.286     NO
+launch|half1R_trail|base        L      19.08      -17.05      11  0.455  -0.133  0.380   -1.12  0.545     NO
+launch|half1R_trail|px5         L      16.95      -17.05      11  0.455  -0.133  0.380   -1.12  0.545     NO
+launch|half1R_trail|cap3        L      19.08      -17.05      11  0.455  -0.133  0.380   -1.12  0.545     NO
+launch|half1R_trail|nocluster    L      19.08      -17.05      11  0.455  -0.133  0.380   -1.12  0.545     NO
+volfirst|flat1559|base          L     -20.97      -31.27      41  0.341  -0.108  0.869   -0.34  0.610     NO
+volfirst|flat1559|nocluster     L     -20.97      -31.27      41  0.341  -0.108  0.869   -0.34  0.610     NO
+giveback|atr_1559|cost          S      -4.20      -31.39      50  0.340  -0.069  0.895   -0.38  0.460     NO
+launch|flat1559|base            L     -14.20      -31.60       8  0.250  -0.759  0.090   -2.27  0.375     NO
+launch|flat1559|px5             L      -6.77      -31.60       8  0.250  -0.759  0.090   -2.27  0.375     NO
+launch|flat1559|cap3            L     -14.20      -31.60       8  0.250  -0.759  0.090   -2.27  0.375     NO
+launch|flat1559|nocluster       L     -14.20      -31.60       8  0.250  -0.759  0.090   -2.27  0.375     NO
+launch|atr_1559|base            L     -14.20      -31.60       8  0.250  -0.759  0.090   -2.27  0.375     NO
+launch|atr_1559|px5             L      -6.77      -31.60       8  0.250  -0.759  0.090   -2.27  0.375     NO
+launch|atr_1559|cap3            L     -14.20      -31.60       8  0.250  -0.759  0.090   -2.27  0.375     NO
+launch|atr_1559|nocluster       L     -14.20      -31.60       8  0.250  -0.759  0.090   -2.27  0.375     NO
+giveback|t15R|cost              S     -21.32      -67.09      65  0.400  -0.128  0.798   -1.00  0.385     NO
+giveback|half1R_trail|cost      S     -29.58      -88.81      87  0.563   0.186  0.727   -1.36  0.540     NO
+giveback|atr_1559|cap3          S    -161.86     -121.74     116  0.216  -0.501  0.799   -0.71  0.440     NO
+giveback|flat1559|cap3          S    -128.08     -165.13     110  0.218  -0.453  0.715   -1.01  0.409     NO
+giveback|flat1559|cost          S     -10.87     -165.55      65  0.292  -0.291  0.591   -2.16  0.385     NO
+giveback|t15R|px5               S    -151.93     -250.37     158  0.361  -0.442  0.614   -2.53  0.424     NO
+giveback|half1R_trail|px5       S    -180.64     -251.48     217  0.521  -0.042  0.595   -2.38  0.581     NO
+giveback|half1R_trail|cap3      S    -275.31     -263.31     166  0.470  -0.179  0.519   -2.49  0.560     NO
+giveback|t15R|cap3              S    -212.43     -282.38     126  0.333  -0.611  0.505   -3.21  0.405     NO
+giveback|atr_1559|px5           S    -213.47     -294.69     157  0.217  -0.577  0.617   -1.87  0.452     NO
+giveback|t15R|nocluster         S    -393.98     -317.15     141  0.355  -0.601  0.526   -3.19  0.397     NO
+giveback|flat1559|px5           S    -197.01     -345.48     157  0.229  -0.509  0.548   -2.32  0.427     NO
+giveback|half1R_trail|nocluster    S    -429.32     -351.78     192  0.490  -0.234  0.458   -3.59  0.557     NO
+giveback|atr_1559|nocluster     S    -463.59     -357.37     140  0.207  -0.693  0.571   -2.45  0.421     NO
+giveback|flat1559|nocluster     S    -435.19     -379.06     139  0.223  -0.627  0.530   -2.68  0.396     NO
+giveback|t15R|base              S    -412.62     -533.53     228  0.342  -0.617  0.503   -3.30  0.425     NO
+giveback|half1R_trail|base      S    -457.11     -546.14     310  0.477  -0.210  0.468   -3.54  0.574     NO
+giveback|atr_1559|base          S    -478.14     -638.23     222  0.194  -0.757  0.503   -3.59  0.450     NO
+giveback|flat1559|base          S    -441.21     -665.65     218  0.206  -0.687  0.466   -3.69  0.422     NO
+
+both-green (holdout>=200 and develop not red): 0 / 100
+flush family beating flush_hl|harness on develop: 6 / 25
+
+FLY vs FAIL named a develop-locked cell (wide 09:30-09:44 OR, pre_dv_0929 >= ~98k, ext_0944 >= 3.4%) with 76% FLY rate vs 46% baseline; it was applied to every long door and holdout was not used to pick it. Door families vs Arrows 20-22 (those were ~30% hit chasing an already-extended open): flush is a different shape — holdout hit ~60% and PF ~3.5 on the harness control and on flush|flat1159|*, but develop is still slightly red so not a pass (closest flush|flat1159|px5 -6/+146). volfirst|half1R_trail hits ~70% and often tags +1R, still sub-$200. launch is sparse after the cell cut. giveback is a wreck, and giveback|flat1159 is structurally zero (entry after 13:00 vs flatten 11:59). both-green=0 of 100. Holdout was not a tuner.

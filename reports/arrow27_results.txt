@@ -1,0 +1,62 @@
+Arrow 27 — repairs, combined scoreboard, SSR as a fill (Lab A B-short + data/full flush)
+VERDICT: FAIL — no Arrow 27 book has holdout >= $200/day AND non-red develop. Combined holdout is not EV. Combined develop is the helper print, not '$200 minus one improvement'.
+R1 ssr_active = session low at or before ts <= 0.90*prior_close OR prior session tripped the same rule.
+R2 giveback|flat1159 STRUCTURAL=True (flatten 11:59 <= entry 13:00); excluded from both-green. Not rerun.
+R4 untradeable flatten bar exits at last tradeable close, not open.
+R5 peak_conc/mean_conc on every id. Do not spend ids on cap3 vs cap8 unless peak_conc > 3.
+R6 skipped beta-IWM this arrow. IWM alpha on B rows only if bench already on disk (no virgin pull).
+No rocket rings. No $500/idea. No 100-grid. No Arrow 28.
+Honesty: A18 SSR-on (~+$59) plus A26 flush (~+$11) was ~+$70 before this helper. combine_books this file: develop $80.37/day. Do not write that the account is one improvement from $200. Combined holdout is two contaminated/cluster prints and is not EV.
+account=100000  target=300-500/day  failure_line=200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap file=True  flush_cost_skips=4
+
+B-short c5_ema9|cap8 SSR policy (Lab A tape, borrow on)
+id                dev $/day  hold $/day  hold n    avgR  t_hold   ssr%  nofill  peak  meanC   a_hold  >=200
+B_reject              30.96       68.29      63   0.094    0.56  19.3%       0     8   2.33    24.12     NO
+  develop $/day=30.96  trades=177  hit=0.520  avgR=0.025  maxDD$=-2680.90  std=593.76  se=91.62  t=0.34  ci95=[-145.27,198.98]
+    peak_conc=8  mean_conc=3.32  ssr_share=0.193  ssr_nofill=0
+  holdout $/day=68.29  trades=63  hit=0.444  avgR=0.094  maxDD$=-1859.74  std=571.44  se=121.83  t=0.56  ci95=[-163.80,316.46]  vs_$200=NO  vs_$300-500=NO
+    peak_conc=8  mean_conc=2.33  IWM alpha develop $22.79 (n=177 skip=0) holdout $24.12 (n=63 skip=0)
+B_nofilter            68.19      178.85      76   0.233    1.39  19.3%       0     8   2.90   127.30     NO
+  develop $/day=68.19  trades=204  hit=0.529  avgR=0.057  maxDD$=-3080.64  std=638.60  se=98.54  t=0.69  ci95=[-129.92,254.49]
+    peak_conc=8  mean_conc=3.82  ssr_share=0.193  ssr_nofill=0
+  holdout $/day=178.85  trades=76  hit=0.474  avgR=0.233  maxDD$=-1286.34  std=605.56  se=129.11  t=1.39  ci95=[-63.02,439.98]  vs_$200=NO  vs_$300-500=NO
+    peak_conc=8  mean_conc=2.90  IWM alpha develop $52.06 (n=204 skip=0) holdout $127.30 (n=76 skip=0)
+B_uptick10            58.59      129.86      75   0.166    1.09  19.3%       1     8   2.85    79.87     NO
+  develop $/day=58.59  trades=204  hit=0.529  avgR=0.052  maxDD$=-3086.93  std=635.44  se=98.05  t=0.60  ci95=[-137.82,246.40]
+    peak_conc=8  mean_conc=3.81  ssr_share=0.193  ssr_nofill=1
+  holdout $/day=129.86  trades=75  hit=0.467  avgR=0.166  maxDD$=-1653.13  std=559.71  se=119.33  t=1.09  ci95=[-96.73,373.17]  vs_$200=NO  vs_$300-500=NO
+    peak_conc=8  mean_conc=2.85  IWM alpha develop $43.50 (n=204 skip=0) holdout $79.87 (n=75 skip=0)
+B_uptick5             50.95      117.14      73   0.148    0.95  19.3%       9     8   2.72    69.07     NO
+  develop $/day=50.95  trades=199  hit=0.523  avgR=0.046  maxDD$=-3086.93  std=643.68  se=99.32  t=0.51  ci95=[-143.97,239.02]
+    peak_conc=8  mean_conc=3.71  ssr_share=0.193  ssr_nofill=9
+  holdout $/day=117.14  trades=73  hit=0.452  avgR=0.148  maxDD$=-1916.59  std=576.28  se=122.86  t=0.95  ci95=[-110.97,368.71]  vs_$200=NO  vs_$300-500=NO
+    peak_conc=8  mean_conc=2.72  IWM alpha develop $36.28 (n=199 skip=0) holdout $69.07 (n=73 skip=0)
+B_uptick10_cap        55.05      132.75      73   0.175    1.12  19.3%       4     8   2.76    83.67     NO
+  develop $/day=55.05  trades=203  hit=0.527  avgR=0.049  maxDD$=-3086.93  std=635.27  se=98.02  t=0.56  ci95=[-140.54,240.70]
+    peak_conc=8  mean_conc=3.79  ssr_share=0.193  ssr_nofill=4
+  holdout $/day=132.75  trades=73  hit=0.479  avgR=0.175  maxDD$=-1602.28  std=558.18  se=119.01  t=1.12  ci95=[-93.85,375.32]  vs_$200=NO  vs_$300-500=NO
+    peak_conc=8  mean_conc=2.76  IWM alpha develop $39.90 (n=203 skip=0) holdout $83.67 (n=73 skip=0)
+
+flush|max6 reprint (data/full, FLY cell, harness on, R4 close fallback)
+flush|max6            12.18      116.77      23   0.550    1.70                    4   0.84              NO
+  develop
+    n=25  trades/sess=0.60  hit=0.520  avgR=0.102  medR=0.000  p10R=-0.942  p90R=0.944
+    avgWin$=138.26  avgLoss$=-107.14  PF=1.398  stop%=12.0  time%=88.0  other%=0.0  medMin=124.0
+    $/day=12.18  std=126.12  se=19.46  t=0.63  ci95=[-26.12,51.15]  maxDD$=-664.50
+    flight mean_ext=0.0440  reached_1R=0.280
+    peak_conc=3  mean_conc=0.53
+  holdout
+    n=23  trades/sess=1.05  hit=0.609  avgR=0.550  medR=0.326  p10R=-0.937  p90R=1.512
+    avgWin$=261.15  avgLoss$=-120.80  PF=3.363  stop%=21.7  time%=78.3  other%=0.0  medMin=124.0
+    $/day=116.77  std=323.00  se=68.86  t=1.70  ci95=[14.19,271.21]  maxDD$=-167.97
+    flight mean_ext=0.1178  reached_1R=0.522
+    peak_conc=4  mean_conc=0.84
+
+COMBINED B_nofilter + flush|max6  (B-short best develop row this file + flush|max6)
+  develop $/day=80.37  std=627.03  se=96.75  t=0.83  ci95=[-101.73,272.77]  maxDD$=-3023.40  corr=-0.190
+  holdout $/day=295.62  std=672.46  se=143.37  t=2.06  ci95=[30.36,574.26]  maxDD$=-1004.14  corr=-0.048  NOT EV
+Peak concurrent risk is not jointly modelled across books (separate tapes). Missing engine-day is $0, not a dropped session.
+NO* = holdout >= 200 but develop is red — not a pass. Combined holdout is not EV.

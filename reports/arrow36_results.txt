@@ -1,0 +1,105 @@
+Arrow 36 — ungated RTH confirmed-launch birth by hour
+VERDICT: FAIL — no Arrow 36 birth book has holdout >= $200/day AND non-red develop (ids with develop n < 40 are SHELVED). Combined holdout is not expected value (EV).
+Ungated RTH confirmed launch. No cell. No score gate. No RVOL floor. B-short not rescored; COMBINED uses A33 B|conj|atr1559|lock reprint (develop $72.57/day) + A31 flush control reprint (flush|max6|repaired) because no develop-not-red birth id with n>=40. Combined holdout is not EV.
+Combined holdout is not expected value (EV). Do not write that the account is one improvement from $200.
+No cell. No FLY label. No 08:00 hot. No score decile gate. No RVOL floor. No B-short rescore. No $500/idea. No virgin pull. No Arrow 37.
+Acronyms: ATR = Average True Range; RVOL = relative volume; MFE = maximum favorable excursion; IWM = iShares Russell 2000 ETF.
+account=100000  target=300-500/day  failure_line=200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  tape=C:\Users\james\Money\data\full\bars
+Population: prior_close [$3,$20], >=5 prior sessions, confirmed 1-min launch (close>=1.10*pc, next tradeable low>=1.08*pc). Entry=next 1-min open. Stop=max(15-min lookback low, 1.0x ATR, 0.6% of price). Cap8, $200/idea, rank by run_rel_vol at signal. A1: launch close complete before the order. SHELVE if develop n<40.
+
+id                            dev $/day  hold $/day  dev n  hold n    avgR     PF  t_hold  MFE-cap     1R  >=200
+birth|0945-1159|flat1159         -23.03     -181.09    323     167  -0.125  0.694   -2.17   -0.155  0.281     NO
+  develop
+    n=323  trades/sess=7.69  hit=0.421  avgR=-0.014  medR=-0.128  p10R=-1.066  p90R=0.953
+    avgWin$=153.65  avgLoss$=-116.92  PF=0.956  stop%=20.1  time%=68.1  other%=11.8  medMin=105.0
+    $/day=-23.03  std=641.89  se=99.05  t=-0.23  ci95=[-198.35,172.96]  maxDD$=-5662.78
+    flight mean_ext=0.0410  reached_1R=0.266
+    MFE-capture=-0.019  reached_1R=0.266  stop%=20.1  time%=68.1  peak_conc=8  mean_conc=5.26
+    harvestable captured/bucket=1055.71pp/1910.36pp (55.3%)  name-days 323/721
+    marked equity: daily-close DD$=-5662.78  intraday peak-to-trough$=-1576.64
+  holdout PEEK
+    n=167  trades/sess=7.59  hit=0.413  avgR=-0.125  medR=-0.154  p10R=-1.103  p90R=1.067
+    avgWin$=131.17  avgLoss$=-133.01  PF=0.694  stop%=26.3  time%=60.5  other%=13.2  medMin=98.0
+    $/day=-181.09  std=391.25  se=83.42  t=-2.17  ci95=[-338.19,-28.06]  maxDD$=-4744.97
+    flight mean_ext=0.0420  reached_1R=0.281
+    MFE-capture=-0.155  reached_1R=0.281  stop%=26.3  time%=60.5  peak_conc=8  mean_conc=4.80  IWM alpha hold $-171.18 (n=167 skip=0)
+    harvestable captured/bucket=627.96pp/1092.71pp (57.5%)  name-days 167/334  PEEK
+    marked equity: daily-close DD$=-4744.97  intraday peak-to-trough$=-1279.00
+birth|0945-1159|atr1559         -176.93       49.60    370     189   0.025  1.066    0.34    0.031  0.429     NO
+  develop
+    n=370  trades/sess=8.81  hit=0.441  avgR=-0.100  medR=-0.162  p10R=-1.163  p90R=0.969
+    avgWin$=154.74  avgLoss$=-157.75  PF=0.772  stop%=63.0  time%=36.2  other%=0.8  medMin=157.5
+    $/day=-176.93  std=640.74  se=98.87  t=-1.79  ci95=[-365.84,3.91]  maxDD$=-8427.76
+    flight mean_ext=0.0391  reached_1R=0.368
+    MFE-capture=-0.127  reached_1R=0.368  stop%=63.0  time%=36.2  peak_conc=8  mean_conc=4.51
+    harvestable captured/bucket=1142.40pp/1910.36pp (59.8%)  name-days 370/721
+    marked equity: daily-close DD$=-8427.76  intraday peak-to-trough$=-1553.63
+  holdout PEEK
+    n=189  trades/sess=8.59  hit=0.481  avgR=0.025  medR=-0.136  p10R=-1.133  p90R=1.290
+    avgWin$=192.85  avgLoss$=-167.94  PF=1.066  stop%=74.6  time%=22.8  other%=2.6  medMin=107.0
+    $/day=49.60  std=693.74  se=147.91  t=0.34  ci95=[-228.06,339.17]  maxDD$=-2062.27
+    flight mean_ext=0.0435  reached_1R=0.429
+    MFE-capture=0.031  reached_1R=0.429  stop%=74.6  time%=22.8  peak_conc=8  mean_conc=3.82  IWM alpha hold $50.05 (n=189 skip=0)
+    harvestable captured/bucket=733.97pp/1092.71pp (67.2%)  name-days 189/334  PEEK
+    marked equity: daily-close DD$=-2062.27  intraday peak-to-trough$=-1436.61
+birth|0945-1029|flat1159         -45.62     -114.77    241     123  -0.108  0.734   -1.39   -0.126  0.293     NO
+  develop
+    n=241  trades/sess=5.74  hit=0.432  avgR=-0.040  medR=-0.128  p10R=-1.066  p90R=0.941
+    avgWin$=143.95  avgLoss$=-123.26  PF=0.887  stop%=21.2  time%=67.6  other%=11.2  medMin=117.0
+    $/day=-45.62  std=517.60  se=79.87  t=-0.57  ci95=[-192.51,108.14]  maxDD$=-4781.88
+    flight mean_ext=0.0434  reached_1R=0.270
+    MFE-capture=-0.051  reached_1R=0.270  stop%=21.2  time%=67.6  peak_conc=8  mean_conc=4.55
+    harvestable captured/bucket=698.09pp/1037.02pp (67.3%)  name-days 241/368
+    marked equity: daily-close DD$=-4781.88  intraday peak-to-trough$=-1436.95
+  holdout PEEK
+    n=123  trades/sess=5.59  hit=0.415  avgR=-0.108  medR=-0.140  p10R=-1.101  p90R=1.070
+    avgWin$=136.77  avgLoss$=-131.95  PF=0.734  stop%=26.8  time%=60.2  other%=13.0  medMin=109.0
+    $/day=-114.77  std=385.90  se=82.27  t=-1.39  ci95=[-276.46,39.52]  maxDD$=-3052.87
+    flight mean_ext=0.0485  reached_1R=0.293
+    MFE-capture=-0.126  reached_1R=0.293  stop%=26.8  time%=60.2  peak_conc=8  mean_conc=4.15  IWM alpha hold $-98.80 (n=123 skip=0)
+    harvestable captured/bucket=512.07pp/628.93pp (81.4%)  name-days 123/169  PEEK
+    marked equity: daily-close DD$=-3052.87  intraday peak-to-trough$=-1279.11
+birth|1030-1159|flat1159        -137.13     -192.99    206      96  -0.233  0.431   -2.38   -0.417  0.188     NO
+  develop
+    n=206  trades/sess=4.90  hit=0.335  avgR=-0.142  medR=-0.219  p10R=-1.103  p90R=0.694
+    avgWin$=136.07  avgLoss$=-110.57  PF=0.620  stop%=19.4  time%=67.0  other%=13.6  medMin=44.0
+    $/day=-137.13  std=464.95  se=71.74  t=-1.91  ci95=[-274.77,16.23]  maxDD$=-6301.84
+    flight mean_ext=0.0223  reached_1R=0.170
+    MFE-capture=-0.224  reached_1R=0.170  stop%=19.4  time%=67.0  peak_conc=8  mean_conc=2.85
+    harvestable captured/bucket=560.88pp/873.34pp (64.2%)  name-days 206/353
+    marked equity: daily-close DD$=-6301.84  intraday peak-to-trough$=-1792.93
+  holdout PEEK
+    n=96  trades/sess=4.36  hit=0.354  avgR=-0.233  medR=-0.234  p10R=-1.107  p90R=0.646
+    avgWin$=94.46  avgLoss$=-120.28  PF=0.431  stop%=24.0  time%=62.5  other%=13.5  medMin=39.5
+    $/day=-192.99  std=380.16  se=81.05  t=-2.38  ci95=[-356.26,-55.63]  maxDD$=-4245.70
+    flight mean_ext=0.0186  reached_1R=0.188
+    MFE-capture=-0.417  reached_1R=0.188  stop%=24.0  time%=62.5  peak_conc=8  mean_conc=2.41  IWM alpha hold $-200.22 (n=96 skip=0)
+    harvestable captured/bucket=191.11pp/463.77pp (41.2%)  name-days 96/165  PEEK
+    marked equity: daily-close DD$=-4245.70  intraday peak-to-trough$=-1222.34
+birth|1200-1500|atr1559         -199.56       39.07    225      97   0.059  1.128    0.56    0.051  0.464     NO
+  develop
+    n=225  trades/sess=5.36  hit=0.413  avgR=-0.197  medR=-0.391  p10R=-1.212  p90R=1.052
+    avgWin$=145.58  avgLoss$=-166.06  PF=0.618  stop%=64.9  time%=32.4  other%=2.7  medMin=86.0
+    $/day=-199.56  std=314.37  se=48.51  t=-4.11  ci95=[-299.87,-112.93]  maxDD$=-8381.53
+    flight mean_ext=0.0242  reached_1R=0.320
+    MFE-capture=-0.279  reached_1R=0.320  stop%=64.9  time%=32.4  peak_conc=8  mean_conc=2.41
+    harvestable captured/bucket=469.88pp/824.42pp (57.0%)  name-days 225/427
+    marked equity: daily-close DD$=-8381.53  intraday peak-to-trough$=-1542.91
+  holdout PEEK
+    n=97  trades/sess=4.41  hit=0.526  avgR=0.059  medR=0.052  p10R=-1.090  p90R=1.184
+    avgWin$=148.14  avgLoss$=-145.56  PF=1.128  stop%=66.0  time%=29.9  other%=4.1  medMin=69.0
+    $/day=39.07  std=327.28  se=69.78  t=0.56  ci95=[-94.10,167.63]  maxDD$=-733.39
+    flight mean_ext=0.0367  reached_1R=0.464
+    MFE-capture=0.051  reached_1R=0.464  stop%=66.0  time%=29.9  peak_conc=6  mean_conc=1.84  IWM alpha hold $38.06 (n=97 skip=0)
+    harvestable captured/bucket=362.09pp/509.31pp (71.1%)  name-days 97/201  PEEK
+    marked equity: daily-close DD$=-733.39  intraday peak-to-trough$=-823.88
+
+A33 B|conj|atr1559|lock reprint (not rescored) develop $72.57/day holdout $175.40/day n_hold=93
+
+COMBINED B|conj|atr1559|lock + flush|max6|repaired  (A33 B lock reprint + A31 flush control; no birth id qualified)
+  develop $/day=78.77  std=752.67  se=116.14  t=0.68  ci95=[-142.76,297.17]  maxDD$=-2953.13  corr=-0.236  joint_peak_risk$=2135.37
+  holdout $/day=254.50  std=555.62  se=118.46  t=2.15  ci95=[29.03,476.84]  maxDD$=-972.10  corr=-0.058  joint_peak_risk$=1911.84  NOT EV
+NO* = holdout >= 200 but develop is red — not a pass. SHELVE = develop n<40. Combined holdout is not EV.

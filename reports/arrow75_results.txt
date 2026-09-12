@@ -1,0 +1,98 @@
+Arrow 75 — home hour, January / February 2026
+January home-hour distribution (name-days n=26343): 0930=26198, 1030=21, 1130=20, 1230=9, 1330=0, 1430=95. Last bucket 14:30–15:59 is 90 minutes; others 60. Mean fraction of that day's RTH range in estimated home hour=0.717 (naive 60/390=0.154). Clock concentrated: yes. Description. Does not pick an id. Did not use February to pick a bucket. January prints: short_left, long_left, short_morn, long_morn, short_left_wed, short_left_open. January green: short_left, short_morn, short_left_wed, short_left_open. February green (survive): short_left, short_morn, short_left_wed, short_left_open. Long_left Jan $-81.66 Feb $-46.94 vs short_left Jan $319.39 Feb $31.08.
+VERDICT: SNIFF — two months is not a seat. February is one look, not a $200 slate pass. Did not treat January/February as the shop IS/OOS split. Did not score March–August.
+Home hour. Each name has a usual RTH hour from the prior 10 sessions, not T. Score = sum of (high−low)/open in the bucket. Ties: earlier bucket. Skip the name if fewer than 8 of the 10 days have that bucket. Last bucket 14:30–15:59 is 90 minutes. Long and short are separate engines. Did not retune Wednesday H10. left = 15-session close-to-close ending prior session. morn = 09:30 first RTH to last print before H; for 09:30, morn is prior-close to 09:30 (gap). Did not use a stamp from inside H to rank morn. Fill = first print at or after bucket open. Exit = last print of that bucket. $3,000. Did not use February to pick a bucket or n. Do not call a CI that includes 0 EV. Do not call February a $200 slate pass. No new ingest. Did not touch Lab A data/bars/ or data/full/. No Arrow 76.
+Acronyms: IS = in-sample; OOS = out-of-sample; PDV = prior-day dollar volume; IWM = iShares Russell 2000 ETF; RTH = regular trading hours; EV = expected value; SSR = Short Sale Restriction; CI = confidence interval.
+account=100000  slate_floor=200/day  seat_floor=100/day  target=300-500/day
+window n=39 2026-01-02..2026-02-27  jan n=20  feb n=19  (March not scored)
+workers=8 cpu_count=8  jan_tape=C:\Users\james\Money\data\virgin\bars  feb_tape=C:\Users\james\Money\data\virgin\bars
+eligibility: prior_close [$10, $80], PDV >= $10000000  home look=10 min_days=8 n=8 $3000
+Peak live = |shares × entry| per hour (hours do not overlap). $/day = total PnL / NYSE sessions in that month.
+
+id               month     $/day      n   hrs    hit      t
+short_left       Jan     319.39    176    22  0.472   1.42
+    n=176  n/sess=8.80  hit=0.472  wins=83  losses=93  avgR=n/a (no stop)  PF=1.596
+    avgWin$=206.18  avgLoss$=-115.32  $/day=319.39  std=1008.72  se=225.56  t=1.42  ci95=[-125.13,737.89]
+    daily-close DD$=-3662.79  worst_day$=-1895.70  peak_conc=16  mean_conc=8.80  weeks=20
+    $/day=319.39 (total PnL / n=20 sessions)  rank=left side=short days=all hours=all  n_hours=22  peak live $23937  all $23937  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=319.39
+    Jan CI includes 0 — not EV.
+short_left       Feb      31.08    151    19  0.437   0.24
+    n=151  n/sess=7.95  hit=0.437  wins=66  losses=85  avgR=n/a (no stop)  PF=1.080
+    avgWin$=120.71  avgLoss$=-86.78  $/day=31.08  std=553.07  se=126.88  t=0.24  ci95=[-200.22,285.41]
+    daily-close DD$=-1177.10  worst_day$=-908.98  peak_conc=8  mean_conc=7.95  weeks=19
+    $/day=31.08 (total PnL / n=19 sessions)  rank=left side=short days=all hours=all  n_hours=19  peak live $23933  all $23937  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=31.08
+    Feb CI includes 0 — not EV.
+long_left        Jan     -81.66    176    22  0.420  -0.95
+    n=176  n/sess=8.80  hit=0.420  wins=74  losses=102  avgR=n/a (no stop)  PF=0.770
+    avgWin$=73.84  avgLoss$=-69.58  $/day=-81.66  std=383.84  se=85.83  t=-0.95  ci95=[-231.39,94.52]
+    daily-close DD$=-2514.78  worst_day$=-613.91  peak_conc=16  mean_conc=8.80  weeks=20
+    $/day=-81.66 (total PnL / n=20 sessions)  rank=left side=long days=all hours=all  n_hours=22  peak live $23948  all $23972  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=-81.66
+    Jan CI includes 0 — not EV.
+long_left        Feb     -46.94    152    19  0.493  -0.41
+    n=152  n/sess=8.00  hit=0.493  wins=75  losses=77  avgR=n/a (no stop)  PF=0.879
+    avgWin$=86.48  avgLoss$=-95.81  $/day=-46.94  std=494.05  se=113.34  t=-0.41  ci95=[-258.92,173.04]
+    daily-close DD$=-1549.00  worst_day$=-982.32  peak_conc=8  mean_conc=8.00  weeks=19
+    $/day=-46.94 (total PnL / n=19 sessions)  rank=left side=long days=all hours=all  n_hours=19  peak live $23972  all $23972  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-46.94
+    Feb CI includes 0 — not EV.
+short_morn       Jan     119.02    176    22  0.506   1.06
+    n=176  n/sess=8.80  hit=0.506  wins=89  losses=87  avgR=n/a (no stop)  PF=1.240
+    avgWin$=138.22  avgLoss$=-114.03  $/day=119.02  std=502.64  se=112.39  t=1.06  ci95=[-95.19,343.00]
+    daily-close DD$=-876.96  worst_day$=-671.23  peak_conc=16  mean_conc=8.80  weeks=20
+    $/day=119.02 (total PnL / n=20 sessions)  rank=morn side=short days=all hours=all  n_hours=22  peak live $23937  all $23937  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=119.02
+    Jan CI includes 0 — not EV.
+short_morn       Feb      33.48    152    19  0.533   0.24
+    n=152  n/sess=8.00  hit=0.533  wins=81  losses=71  avgR=n/a (no stop)  PF=1.064
+    avgWin$=130.16  avgLoss$=-139.54  $/day=33.48  std=596.45  se=136.83  t=0.24  ci95=[-248.09,298.21]
+    daily-close DD$=-2323.77  worst_day$=-1306.77  peak_conc=8  mean_conc=8.00  weeks=19
+    $/day=33.48 (total PnL / n=19 sessions)  rank=morn side=short days=all hours=all  n_hours=19  peak live $23925  all $23937  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=33.48
+    Feb CI includes 0 — not EV.
+long_morn        Jan    -216.72    176    22  0.426  -1.42
+    n=176  n/sess=8.80  hit=0.426  wins=75  losses=101  avgR=n/a (no stop)  PF=0.672
+    avgWin$=118.66  avgLoss$=-131.03  $/day=-216.72  std=680.58  se=152.18  t=-1.42  ci95=[-511.61,64.18]
+    daily-close DD$=-5861.73  worst_day$=-1779.89  peak_conc=16  mean_conc=8.80  weeks=20
+    $/day=-216.72 (total PnL / n=20 sessions)  rank=morn side=long days=all hours=all  n_hours=22  peak live $23946  all $23946  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=-216.72
+    Jan CI includes 0 — not EV.
+long_morn        Feb    -113.62    152    19  0.467  -0.84
+    n=152  n/sess=8.00  hit=0.467  wins=71  losses=81  avgR=n/a (no stop)  PF=0.817
+    avgWin$=135.33  avgLoss$=-145.28  $/day=-113.62  std=587.53  se=134.79  t=-0.84  ci95=[-362.04,147.05]
+    daily-close DD$=-3017.91  worst_day$=-1087.10  peak_conc=8  mean_conc=8.00  weeks=19
+    $/day=-113.62 (total PnL / n=19 sessions)  rank=morn side=long days=all hours=all  n_hours=19  peak live $23946  all $23946  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-113.62
+    Feb CI includes 0 — not EV.
+short_left_wed   Jan      63.31     32     4  0.500   0.52
+    n=32  n/sess=8.00  hit=0.500  wins=16  losses=16  avgR=n/a (no stop)  PF=1.473
+    avgWin$=246.50  avgLoss$=-167.37  $/day=63.31  std=542.18  se=121.23  t=0.52  ci95=[-145.86,305.25]
+    daily-close DD$=-735.73  worst_day$=-735.73  peak_conc=8  mean_conc=8.00  weeks=4
+    $/day=63.31 (total PnL / n=20 sessions)  rank=left side=short days=wed hours=all  n_hours=4  peak live $23927  all $23927  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=63.31
+    Jan CI includes 0 — not EV.
+short_left_wed   Feb      34.33     31     4  0.452   0.47
+    n=31  n/sess=7.75  hit=0.452  wins=14  losses=17  avgR=n/a (no stop)  PF=1.470
+    avgWin$=145.81  avgLoss$=-81.71  $/day=34.33  std=315.27  se=72.33  t=0.47  ci95=[-70.53,191.19]
+    daily-close DD$=-374.97  worst_day$=-374.97  peak_conc=8  mean_conc=7.75  weeks=4
+    $/day=34.33 (total PnL / n=19 sessions)  rank=left side=short days=wed hours=all  n_hours=4  peak live $23889  all $23927  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=34.33
+    Feb CI includes 0 — not EV.
+short_left_open  Jan     334.93    160    20  0.512   1.46
+    n=160  n/sess=8.00  hit=0.512  wins=82  losses=78  avgR=n/a (no stop)  PF=1.644
+    avgWin$=208.53  avgLoss$=-133.35  $/day=334.93  std=1027.98  se=229.86  t=1.46  ci95=[-116.57,767.80]
+    daily-close DD$=-3662.79  worst_day$=-1895.70  peak_conc=8  mean_conc=8.00  weeks=20
+    $/day=334.93 (total PnL / n=20 sessions)  rank=left side=short days=all hours=open  n_hours=20  peak live $23935  all $23935  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=334.93
+    Jan CI includes 0 — not EV.
+short_left_open  Feb      31.08    151    19  0.437   0.24
+    n=151  n/sess=7.95  hit=0.437  wins=66  losses=85  avgR=n/a (no stop)  PF=1.080
+    avgWin$=120.71  avgLoss$=-86.78  $/day=31.08  std=553.07  se=126.88  t=0.24  ci95=[-200.22,285.41]
+    daily-close DD$=-1177.10  worst_day$=-908.98  peak_conc=8  mean_conc=7.95  weeks=19
+    $/day=31.08 (total PnL / n=19 sessions)  rank=left side=short days=all hours=open  n_hours=19  peak live $23933  all $23935  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=31.08
+    Feb CI includes 0 — not EV.
+    Did not call February a $200 slate pass. Two months is a sniff, not a seat. No Arrow 76.
+

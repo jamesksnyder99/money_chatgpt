@@ -1,0 +1,84 @@
+Arrow 30 — rocket altitude rollup (diagnostic, no book)
+No fills that change a verdict. No $200 pass line. No B-short rescore. No cell-buy. No $500/idea. No virgin pull. No Arrow 31.
+Rocket-day = confirmed launch (close>=1.10*pc and next tradeable low>=1.08*pc), prior_close [$1,$20], >=5 prior sessions. Sea level = prior close. Gross altitude = max(0, max_ext_after_launch − 1R). Depths ignored.
+account=100000  tape=C:\Users\james\Money\data\full\bars
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8
+
+On develop, confirmed-launch rocket-days (n=2809, prior_close $1-20, sea=prior close) posted 51457.4 pct-points of gross altitude after a 1R haircut (median 12.35pp). flush|max6 sat on 18 of those name-days (0.6%) and captured 110.0 pct-points of MFE from its own entries (0.2% of field altitude points — % from entry, not from sea). 53% of develop field altitude launched in hours this specialist never sits (04-07 and after 12:00). Holdout coverage 18/1541=1.2% and 270.8pp captured vs 31378.1pp field; holdout is not EV. The A19 high-based ∩ rel_vol>=3× field is larger (study n=1183 vs confirmed-launch n=4350).
+
+SIDE TABLE — A19 survey field (high>=1.10*pc ∩ rel_vol>=3×, >=5 prior windows)
+  develop n=615  holdout n=568  study n=1183
+  confirmed-launch field: develop n=2809  holdout n=1541  study n=4350
+
+DEVELOP (honest in-sample)
+  confirmed-launch rocket-days n=2809
+  sum altitude=51457.37 pct-points  median=12.346pp  p90=27.783pp
+  flush|max6 trades n=25  unique name-days=25
+  view1 name-day coverage: 18/2809 = 0.64% of rocket-days
+  view2 extension points: field 51457.37pp vs flush MFE-from-entry 110.05pp (on rocket-days 91.78pp)
+  flush captured MFE_R dollars (n * $200 * MFE_R) sum=$4606.85  (not the same unit as pct-points)
+  altitude share in hours we never sit (04-07 and after 12:00): 53.3% (27440.22pp of 51457.37pp)
+  altitude by launch hour:
+    04: n=304  alt=10733.93pp
+    05: n=87  alt=1595.49pp
+    06: n=74  alt=1807.10pp
+    07: n=132  alt=2736.64pp
+    08: n=92  alt=2428.88pp
+    09: n=610  alt=12062.21pp
+    10: n=436  alt=6011.41pp
+    11: n=277  alt=3514.65pp
+    12: n=213  alt=2799.17pp
+    13: n=211  alt=3470.70pp
+    14: n=136  alt=1619.04pp
+    15: n=237  alt=2678.16pp
+  FLY n=1152 alt=32965.10pp  FAIL n=494 alt=4964.27pp  other n=1163
+
+HOLDOUT (not EV)
+  confirmed-launch rocket-days n=1541
+  sum altitude=31378.13 pct-points  median=12.926pp  p90=32.576pp
+  flush|max6 trades n=23  unique name-days=23
+  view1 name-day coverage: 18/1541 = 1.17% of rocket-days
+  view2 extension points: field 31378.13pp vs flush MFE-from-entry 270.83pp (on rocket-days 251.38pp)
+  flush captured MFE_R dollars (n * $200 * MFE_R) sum=$15335.14  (not the same unit as pct-points)
+  altitude share in hours we never sit (04-07 and after 12:00): 55.7% (17485.81pp of 31378.13pp)
+  altitude by launch hour:
+    04: n=211  alt=8890.75pp
+    05: n=37  alt=663.53pp
+    06: n=58  alt=1271.57pp
+    07: n=74  alt=1479.45pp
+    08: n=79  alt=1515.83pp
+    09: n=315  alt=6843.00pp
+    10: n=241  alt=3660.98pp
+    11: n=138  alt=1872.50pp
+    12: n=99  alt=1678.29pp
+    13: n=94  alt=1175.45pp
+    14: n=75  alt=946.23pp
+    15: n=120  alt=1380.54pp
+  FLY n=744 alt=22391.98pp  FAIL n=227 alt=2331.60pp  other n=570
+
+STUDY (develop+holdout)
+  confirmed-launch rocket-days n=4350
+  sum altitude=82835.49 pct-points  median=12.552pp  p90=29.585pp
+  flush|max6 trades n=48  unique name-days=48
+  view1 name-day coverage: 36/4350 = 0.83% of rocket-days
+  view2 extension points: field 82835.49pp vs flush MFE-from-entry 380.88pp (on rocket-days 343.16pp)
+  flush captured MFE_R dollars (n * $200 * MFE_R) sum=$19941.99  (not the same unit as pct-points)
+  altitude share in hours we never sit (04-07 and after 12:00): 54.2% (44926.03pp of 82835.49pp)
+  altitude by launch hour:
+    04: n=515  alt=19624.68pp
+    05: n=124  alt=2259.02pp
+    06: n=132  alt=3078.66pp
+    07: n=206  alt=4216.09pp
+    08: n=171  alt=3944.71pp
+    09: n=925  alt=18905.21pp
+    10: n=677  alt=9672.39pp
+    11: n=415  alt=5387.15pp
+    12: n=312  alt=4477.46pp
+    13: n=305  alt=4646.15pp
+    14: n=211  alt=2565.27pp
+    15: n=357  alt=4058.69pp
+  FLY n=1896 alt=55357.08pp  FAIL n=721 alt=7295.87pp  other n=1733
+
+Holdout is not expected value. Coverage is not a $200 verdict.

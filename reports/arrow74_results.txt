@@ -1,0 +1,98 @@
+Arrow 74 — intradaily leftover, January / February 2026
+VERDICT: SNIFF — two months is not a seat. February is one look, not a $200 slate pass. Did not treat January/February as the shop IS/OOS split. Did not score March–August.
+January character (11:01→15:59 of the eight morning winners / laggards). Description. Does not pick an id. winners n=160 mean=0.00488 hit=0.531  laggards n=160 mean=0.01787 hit=0.537. Afternoon fade of morning winners: no. 11:01 fill still prints: yes (id 0 Jan n=160; id 3 11:00-fill Jan n=160). Wednesday-only Jan $/day=-96.51 vs every-session -174.92. Long Jan $/day=363.53 vs short -174.92.
+Intradaily leftover. Jersey = who already ran this morning, not three weeks. Long and short are separate engines. Did not retune Wednesday H10. Did not keep/cash. Did not IWM-up skip the swing book. Morning return = last print at or before 11:00 ÷ first RTH print at or after 09:30 − 1. IWM morning return uses the same stamps (scalar). Short the 8 largest morning returns. Long buys the 8 smallest. Did not fill the 11:00 rank bar except id 3 (old lie). Fill = first print at or after 11:01. Exit = last RTH 15:59 same session. $3,000 a name. January is character / first look. February is one look. Did not use February to pick a threshold. Do not call a CI that includes 0 EV. Do not call February a $200 slate pass. No new ingest. Did not touch Lab A data/bars/ or data/full/. No Arrow 75.
+Acronyms: IS = in-sample; OOS = out-of-sample; PDV = prior-day dollar volume; IWM = iShares Russell 2000 ETF; RTH = regular trading hours; EV = expected value; SSR = Short Sale Restriction; CI = confidence interval; MTM = mark-to-market.
+account=100000  slate_floor=200/day  seat_floor=100/day  target=300-500/day
+window n=39 2026-01-02..2026-02-27  jan n=20  feb n=19  (March not scored)
+workers=8 cpu_count=8  jan_tape=C:\Users\james\Money\data\virgin\bars  feb_tape=C:\Users\james\Money\data\virgin\bars
+eligibility: prior_close [$10, $80], PDV >= $10000000  n=8  fill>=11:01  exit 15:59  $3000
+Peak live = |shares × entry| same session. $/day = total PnL / NYSE sessions in that month.
+
+id           month     $/day      n    hit      t  days
+short_all    Jan    -174.92    160  0.425  -1.64    20
+    n=160  n/sess=8.00  hit=0.425  wins=68  losses=92  avgR=n/a (no stop)  PF=0.674
+    avgWin$=106.59  avgLoss$=-116.81  $/day=-174.92  std=477.79  se=106.84  t=-1.64  ci95=[-361.90,35.24]
+    daily-close DD$=-4609.41  worst_day$=-879.17  peak_conc=8  mean_conc=8.00  weeks=20
+    $/day=-174.92 (total PnL / n=20 sessions)  side=short days=all iwm=any fill=1101  skips=0 partial=0  peak live $23945  all $23945  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=-174.92
+    Jan CI includes 0 — not EV.
+short_all    Feb    -129.05    152  0.474  -1.24    19
+    n=152  n/sess=8.00  hit=0.474  wins=72  losses=80  avgR=n/a (no stop)  PF=0.698
+    avgWin$=78.69  avgLoss$=-101.47  $/day=-129.05  std=452.64  se=103.84  t=-1.24  ci95=[-348.25,53.55]
+    daily-close DD$=-2836.92  worst_day$=-1173.09  peak_conc=8  mean_conc=8.00  weeks=19
+    $/day=-129.05 (total PnL / n=19 sessions)  side=short days=all iwm=any fill=1101  skips=0 partial=0  peak live $23920  all $23945  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-129.05
+    Feb CI includes 0 — not EV.
+long_all     Jan     363.53    160  0.512   0.99    20
+    n=160  n/sess=8.00  hit=0.512  wins=82  losses=78  avgR=n/a (no stop)  PF=1.575
+    avgWin$=242.75  avgLoss$=-161.99  $/day=363.53  std=1649.17  se=368.77  t=0.99  ci95=[-259.03,1117.59]
+    daily-close DD$=-4902.44  worst_day$=-2072.67  peak_conc=8  mean_conc=8.00  weeks=20
+    $/day=363.53 (total PnL / n=20 sessions)  side=long days=all iwm=any fill=1101  skips=0 partial=0  peak live $23955  all $23955  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=363.53
+    Jan CI includes 0 — not EV.
+long_all     Feb    -125.99    152  0.461  -0.92    19
+    n=152  n/sess=8.00  hit=0.461  wins=70  losses=82  avgR=n/a (no stop)  PF=0.762
+    avgWin$=109.51  avgLoss$=-122.67  $/day=-125.99  std=598.60  se=137.33  t=-0.92  ci95=[-401.31,105.51]
+    daily-close DD$=-2393.84  worst_day$=-1760.00  peak_conc=8  mean_conc=8.00  weeks=19
+    $/day=-125.99 (total PnL / n=19 sessions)  side=long days=all iwm=any fill=1101  skips=0 partial=2  peak live $23943  all $23955  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-125.99
+    Feb CI includes 0 — not EV.
+short_wed    Jan     -96.51     32  0.406  -1.57     4
+    n=32  n/sess=8.00  hit=0.406  wins=13  losses=19  avgR=n/a (no stop)  PF=0.475
+    avgWin$=134.27  avgLoss$=-193.46  $/day=-96.51  std=274.51  se=61.38  t=-1.57  ci95=[-214.80,10.15]
+    daily-close DD$=-2133.31  worst_day$=-879.17  peak_conc=8  mean_conc=8.00  weeks=4
+    $/day=-96.51 (total PnL / n=20 sessions)  side=short days=wed iwm=any fill=1101  skips=0 partial=0  peak live $23918  all $23918  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=-96.51
+    Jan CI includes 0 — not EV.
+short_wed    Feb     -74.01     32  0.375  -1.19     4
+    n=32  n/sess=8.00  hit=0.375  wins=12  losses=20  avgR=n/a (no stop)  PF=0.352
+    avgWin$=63.58  avgLoss$=-108.46  $/day=-74.01  std=270.06  se=61.96  t=-1.19  ci95=[-204.16,1.84]
+    daily-close DD$=-1406.11  worst_day$=-1173.09  peak_conc=8  mean_conc=8.00  weeks=4
+    $/day=-74.01 (total PnL / n=19 sessions)  side=short days=wed iwm=any fill=1101  skips=0 partial=0  peak live $23895  all $23918  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-74.01
+    Feb CI includes 0 — not EV.
+short_1100   Jan    -155.59    160  0.431  -1.43    20
+    n=160  n/sess=8.00  hit=0.431  wins=69  losses=91  avgR=n/a (no stop)  PF=0.714
+    avgWin$=112.42  avgLoss$=-119.43  $/day=-155.59  std=485.26  se=108.51  t=-1.43  ci95=[-348.08,56.40]
+    daily-close DD$=-4486.73  worst_day$=-862.99  peak_conc=8  mean_conc=8.00  weeks=20
+    $/day=-155.59 (total PnL / n=20 sessions)  side=short days=all iwm=any fill=1100  skips=0 partial=0  peak live $23948  all $23948  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=-155.59
+    Jan CI includes 0 — not EV.
+short_1100   Feb    -119.44    152  0.493  -1.17    19
+    n=152  n/sess=8.00  hit=0.493  wins=75  losses=77  avgR=n/a (no stop)  PF=0.718
+    avgWin$=77.01  avgLoss$=-104.48  $/day=-119.44  std=444.31  se=101.93  t=-1.17  ci95=[-338.82,61.33]
+    daily-close DD$=-2671.24  worst_day$=-1182.13  peak_conc=8  mean_conc=8.00  weeks=19
+    $/day=-119.44 (total PnL / n=19 sessions)  side=short days=all iwm=any fill=1100  skips=0 partial=0  peak live $23912  all $23948  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-119.44
+    Feb CI includes 0 — not EV.
+short_up     Jan     -54.55     80  0.450  -0.80    10
+    n=80  n/sess=8.00  hit=0.450  wins=36  losses=44  avgR=n/a (no stop)  PF=0.735
+    avgWin$=84.02  avgLoss$=-93.54  $/day=-54.55  std=305.72  se=68.36  t=-0.80  ci95=[-197.82,73.04]
+    daily-close DD$=-1176.04  worst_day$=-720.49  peak_conc=8  mean_conc=8.00  weeks=10
+    $/day=-54.55 (total PnL / n=20 sessions)  side=short days=all iwm=up fill=1101  skips=0 partial=0  peak live $23945  all $23945  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=-54.55
+    Jan CI includes 0 — not EV.
+short_up     Feb       0.31     88  0.545   0.00    11
+    n=88  n/sess=8.00  hit=0.545  wins=48  losses=40  avgR=n/a (no stop)  PF=1.002
+    avgWin$=77.24  avgLoss$=-92.54  $/day=0.31  std=314.41  se=72.13  t=0.00  ci95=[-154.62,129.65]
+    daily-close DD$=-1293.19  worst_day$=-987.10  peak_conc=8  mean_conc=8.00  weeks=11
+    $/day=0.31 (total PnL / n=19 sessions)  side=short days=all iwm=up fill=1101  skips=0 partial=0  peak live $23920  all $23945  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=0.31
+    Feb CI includes 0 — not EV.
+short_dn     Jan    -120.36     80  0.400  -1.40    10
+    n=80  n/sess=8.00  hit=0.400  wins=32  losses=48  avgR=n/a (no stop)  PF=0.637
+    avgWin$=131.99  avgLoss$=-138.14  $/day=-120.36  std=385.55  se=86.21  t=-1.40  ci95=[-280.93,44.08]
+    daily-close DD$=-3518.31  worst_day$=-879.17  peak_conc=8  mean_conc=8.00  weeks=10
+    $/day=-120.36 (total PnL / n=20 sessions)  side=short days=all iwm=dn fill=1101  skips=0 partial=0  peak live $23942  all $23942  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=-120.36
+    Jan CI includes 0 — not EV.
+short_dn     Feb    -129.36     64  0.375  -1.73     8
+    n=64  n/sess=8.00  hit=0.375  wins=24  losses=40  avgR=n/a (no stop)  PF=0.443
+    avgWin$=81.59  avgLoss$=-110.40  $/day=-129.36  std=325.50  se=74.67  t=-1.73  ci95=[-292.88,-9.04]
+    daily-close DD$=-2614.57  worst_day$=-1173.09  peak_conc=8  mean_conc=8.00  weeks=8
+    $/day=-129.36 (total PnL / n=19 sessions)  side=short days=all iwm=dn fill=1101  skips=0 partial=0  peak live $23895  all $23942  CI excludes 0
+    months: 2026-02 n=19 $/day=-129.36
+    Feb CI excludes 0.
+    Did not call February a $200 slate pass. Two months is a sniff, not a seat. No Arrow 75.
+

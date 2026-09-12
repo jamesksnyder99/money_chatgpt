@@ -1,0 +1,11 @@
+Theta Data smoke test — after Pro key refresh
+Python: 3.12.10
+thetadata: 1.0.10
+auth_mode: api_key
+
+=== Theta Data smoke test ===
+auth_mode: api_key
+LIST: count=26640 first5=['.PR.I.PR.A', '.PR.I.PR.B', '.PR.S/WI', 'A', 'AA']
+HISTORY: rows=5 last_date=2026-09-04 17:15:14.922000-04:00 close=319.97
+SNAPSHOT: {'bid': 320.01, 'ask': 320.1, 'timestamp': datetime.datetime(2026, 9, 4, 20, 0, tzinfo=zoneinfo.ZoneInfo(key='America/New_York'))}
+RESULT: PASS

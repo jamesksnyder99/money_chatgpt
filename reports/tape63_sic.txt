@@ -1,0 +1,17 @@
+Arrow 63 — SEC SIC map into data/meta/ (ingest only)
+B pulled SEC directly (urllib to www.sec.gov / data.sec.gov) and did not use a paid EDGAR wrapper.
+Did not score engines. Did not touch data/full, data/virgin bars, or Lab A data/bars. No Arrow 64.
+asof=2026-09-11 (UTC date of the pull; frozen).
+user_agent=ProjectMoney research jks.michigan@gmail.com
+symbols_on_disk=15322
+symbols_mapped=6021
+symbols_no_cik=8850
+symbols_cik_no_sic=451
+unique_ciks=6100
+unique_sic2_buckets=71
+median_names_per_sic2=28.0 (among mapped symbols)
+http_failures=0 (this_run_new_fails=0 cached_non_200=0)
+sleep_s=0.2 serial=1 retries_on=429,503
+wrote=C:\Users\james\Money\data\meta\sector_sic.parquet csv=C:\Users\james\Money\data\meta\sector_sic.csv
+wall_min=48.2
+Acronyms: SIC = Standard Industrial Classification; CIK = Central Index Key; SEC = U.S. Securities and Exchange Commission; EDGAR = Electronic Data Gathering, Analysis, and Retrieval; IS = in-sample; OOS = out-of-sample.

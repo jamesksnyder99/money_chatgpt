@@ -1,0 +1,48 @@
+Arrow 7 — manage/exit lab (same population, no new hours)
+VERDICT: FAIL — no Arrow 7 experiment has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass.
+account=$100000  target=$300-$500/day  failure_line=$200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap file=True
+Pass = holdout >= $200/day AND develop not red. Do not promote develop-red / holdout-green.
+avgR = mean(pnl/risk) on Trade.risk. 2R and trail trigger on bar H/L, fill next open.
+Chassis: channel_position (with-trend), yday_level_break (free), failed_yday_break (new, free).
+Six experiments only. No retry of exact dead Arrow 6 (track, rule, stance) pairs. No 12:00-16:00. No Arrow 8.
+
+track  id                                dev $/day  hold $/day  hold n    hit    avgR      maxDD  >=200
+A      failed_yday_break|baseline          -335.28     -111.86     155  0.387  -0.184   -4382.52     NO
+       develop $/day=-335.28  trades=310  hit=0.326  avgR=-0.387  maxDD$=-14081.62
+       holdout $/day=-111.86  trades=155  hit=0.387  avgR=-0.184  maxDD$=-4382.52  vs_$200=NO  vs_$300-500=NO
+A      failed_yday_break|2R                -312.60      -49.81     181  0.431  -0.142   -2813.82     NO
+       develop $/day=-312.60  trades=339  hit=0.375  avgR=-0.318  maxDD$=-13129.23
+       holdout $/day=-49.81  trades=181  hit=0.431  avgR=-0.142  maxDD$=-2813.82  vs_$200=NO  vs_$300-500=NO
+A      failed_yday_break|time_box          -233.27      -56.46     171  0.427  -0.091   -3070.37     NO
+       develop $/day=-233.27  trades=330  hit=0.385  avgR=-0.263  maxDD$=-9797.38
+       holdout $/day=-56.46  trades=171  hit=0.427  avgR=-0.091  maxDD$=-3070.37  vs_$200=NO  vs_$300-500=NO
+A      channel_position|2R                   14.34       11.36      98  0.459   0.013    -200.45     NO
+       develop $/day=14.34  trades=195  hit=0.513  avgR=0.015  maxDD$=-380.32
+       holdout $/day=11.36  trades=98  hit=0.459  avgR=0.013  maxDD$=-200.45  vs_$200=NO  vs_$300-500=NO
+A      channel_position|trail                14.34       11.36      98  0.459   0.013    -200.45     NO
+       develop $/day=14.34  trades=195  hit=0.513  avgR=0.015  maxDD$=-380.32
+       holdout $/day=11.36  trades=98  hit=0.459  avgR=0.013  maxDD$=-200.45  vs_$200=NO  vs_$300-500=NO
+A      yday_level_break|tight_2R            -31.63      -60.98      50  0.380  -0.373   -1376.50     NO
+       develop $/day=-31.63  trades=91  hit=0.451  avgR=-0.175  maxDD$=-1582.79
+       holdout $/day=-60.98  trades=50  hit=0.380  avgR=-0.373  maxDD$=-1376.50  vs_$200=NO  vs_$300-500=NO
+B      failed_yday_break|baseline          -154.40      -59.57     156  0.423  -0.181   -3762.28     NO
+       develop $/day=-154.40  trades=344  hit=0.337  avgR=-0.217  maxDD$=-7935.55
+       holdout $/day=-59.57  trades=156  hit=0.423  avgR=-0.181  maxDD$=-3762.28  vs_$200=NO  vs_$300-500=NO
+B      failed_yday_break|2R                -215.57      -62.95     174  0.402  -0.224   -2801.00     NO
+       develop $/day=-215.57  trades=381  hit=0.381  avgR=-0.231  maxDD$=-9349.95
+       holdout $/day=-62.95  trades=174  hit=0.402  avgR=-0.224  maxDD$=-2801.00  vs_$200=NO  vs_$300-500=NO
+B      failed_yday_break|time_box          -151.30      -57.66     158  0.418  -0.203   -3065.48     NO
+       develop $/day=-151.30  trades=335  hit=0.358  avgR=-0.246  maxDD$=-6354.41
+       holdout $/day=-57.66  trades=158  hit=0.418  avgR=-0.203  maxDD$=-3065.48  vs_$200=NO  vs_$300-500=NO
+B      channel_position|2R                   36.51      -14.64     104  0.452  -0.016    -360.82     NO
+       develop $/day=36.51  trades=210  hit=0.510  avgR=0.037  maxDD$=-335.59
+       holdout $/day=-14.64  trades=104  hit=0.452  avgR=-0.016  maxDD$=-360.82  vs_$200=NO  vs_$300-500=NO
+B      channel_position|trail                34.11      -14.64     104  0.452  -0.016    -360.82     NO
+       develop $/day=34.11  trades=210  hit=0.514  avgR=0.035  maxDD$=-335.59
+       holdout $/day=-14.64  trades=104  hit=0.452  avgR=-0.016  maxDD$=-360.82  vs_$200=NO  vs_$300-500=NO
+B      yday_level_break|tight_2R             -6.20      -70.50      48  0.312  -0.311   -1551.11     NO
+       develop $/day=-6.20  trades=107  hit=0.467  avgR=-0.187  maxDD$=-840.90
+       holdout $/day=-70.50  trades=48  hit=0.312  avgR=-0.311  maxDD$=-1551.11  vs_$200=NO  vs_$300-500=NO

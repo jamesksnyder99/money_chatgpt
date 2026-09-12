@@ -1,0 +1,34 @@
+Arrow 2 — universe filter funnel
+theta_type_column: (none — Theta stock_list_symbols returned no type field)
+raw_list_count: 26640
+regex_kept: 20994
+type_dropped: 0
+etp_dropped: 5672
+final_candidates: 15322
+warmup_eligible_mean: 2084.8
+warmup_eligible_min: 2038
+warmup_eligible_max: 2134
+warmup_eligible_per_session:
+  2026-05-15: 2118
+  2026-05-18: 2109
+  2026-05-19: 2090
+  2026-05-20: 2070
+  2026-05-21: 2046
+  2026-05-22: 2038
+  2026-05-26: 2043
+  2026-05-27: 2134
+  2026-05-28: 2070
+  2026-05-29: 2130
+
+arrow1_eligible_mean: 2756.8
+delta_vs_arrow1: -672.0
+
+notes:
+  - ETP denylist: src/ingest/etp_tickers.txt from NASDAQ Trader symbol directories.
+  - Warmup eligibility recomputed from existing EOD parquet (plus CON/PRN retry).
+  - Zero-volume 1m bars (full 270-minute grid) are stored as Theta returned them;
+    later research must not treat zero-volume minutes as trades.
+  - 2026-07-03 and 2026-06-19 are NYSE full closes; not study sessions.
+  - reserved CON eod ok=True file=_CON.parquet
+  - reserved PRN eod ok=True file=_PRN.parquet
+  - pulled warmup 1m for eligible reserved names n=10

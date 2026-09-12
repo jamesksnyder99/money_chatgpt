@@ -1,0 +1,56 @@
+Arrow 42 — one-look score of frozen books on virgin tape
+VERDICT: FAIL — combined frozen books do not print >= $200/day on the virgin window. This window is the first unstained look; it is still one sample of weather, not EV.
+One look. No rings. No new door. No parameter search. Did not split Jan–May into develop/holdout and pick. Jun–Aug holdout is not this window. Combined dollars here are still one calendar, not a printer. Did not touch data/full or Lab A data/bars. No Arrow 43.
+Frozen $200/$200: A33 B|conj|atr1559|lock + A31 flush|max6|repaired. Side tables are filters, not tuners.
+Do not write that the account is one improvement from $200. Combined dollars are not EV.
+Acronyms: ATR = Average True Range; MFE = maximum favorable excursion; PDV = prior-day dollar volume; IWM = iShares Russell 2000 ETF; SSR = Short Sale Restriction; EMA = exponential moving average.
+account=100000  target=300-500/day  failure_line=200/day
+score n=102 2026-01-02..2026-05-29  (one window; warmup 2025-12-17..2025-12-31 features only)
+workers=8 cpu_count=8  tape=C:\Users\james\Money\data\virgin\bars
+Track B cap=True  pdv10 cap=True  nice-houses cap=True
+B: conjunction lock, 1.0x ATR after +1R, last_entry_at=11:59, flatten 15:59, cap8, SSR uptick10. Flush: max6 repaired, flatten 11:59. Risk $200/idea.
+
+id                                $/day      n    hit    avgR      PF      t     MFE  >=200
+B|conj|atr1559|lock             -160.29    469  0.418  -0.200   0.627  -2.62  -0.234     NO
+    n=469  trades/sess=4.60  hit=0.418  avgR=-0.200  medR=-0.271  p10R=-1.166  p90R=0.912
+    avgWin$=140.40  avgLoss$=-160.69  PF=0.627  stop%=64.8  time%=35.2  other%=0.0  medMin=147.0
+    $/day=-160.29  std=617.32  se=61.12  t=-2.62  ci95=[-277.99,-50.07]  maxDD$=-16776.44
+    flight mean_ext=0.0272  reached_1R=0.318
+    peak_conc=8  mean_conc=2.60  daily-close DD$=-16776.44  intraday trough$=-2290.75
+flush|max6|repaired              -12.23     89  0.371  -0.082   0.840  -0.51  -0.090     NO
+    n=89  trades/sess=0.87  hit=0.371  avgR=-0.082  medR=-0.276  p10R=-1.153  p90R=1.010
+    avgWin$=198.22  avgLoss$=-139.09  PF=0.840  stop%=30.3  time%=64.0  other%=5.6  medMin=104.0
+    $/day=-12.23  std=242.66  se=24.03  t=-0.51  ci95=[-54.04,38.05]  maxDD$=-3851.78
+    flight mean_ext=0.0334  reached_1R=0.247
+    peak_conc=6  mean_conc=0.74  daily-close DD$=-3851.78  intraday trough$=-779.82
+COMBINED $200/$200              -172.52    558  0.410  -0.181   0.659  -2.78  -0.210     NO
+    n=558  trades/sess=5.47  hit=0.410  avgR=-0.181  medR=-0.273  p10R=-1.165  p90R=0.937
+    avgWin$=148.73  avgLoss$=-157.01  PF=0.659  stop%=59.3  time%=39.8  other%=0.9  medMin=115.0
+    $/day=-172.52  std=625.67  se=61.95  t=-2.78  ci95=[-284.89,-57.34]  maxDD$=-17709.63
+    flight mean_ext=0.0282  reached_1R=0.306
+    corr(B,flush)=-0.162  joint_peak_risk$=1992.69  worst_day$=-1685.31
+    daily-close DD$=-17709.63  intraday trough$=-2278.85  peak_conc=8  mean_conc=1.67
+    IWM alpha $/day=-155.55 (n=558 skip=0)  vs_$200=NO  vs_$300-500=NO  NOT EV
+
+side tables (not tuners):
+B|pdv>=$10M                     -160.29    469  0.418  -0.200   0.627  -2.62  -0.234     NO
+    n=469  trades/sess=4.60  hit=0.418  avgR=-0.200  medR=-0.271  p10R=-1.166  p90R=0.912
+    avgWin$=140.40  avgLoss$=-160.69  PF=0.627  stop%=64.8  time%=35.2  other%=0.0  medMin=147.0
+    $/day=-160.29  std=617.32  se=61.12  t=-2.62  ci95=[-277.99,-50.07]  maxDD$=-16776.44
+    flight mean_ext=0.0272  reached_1R=0.318
+    daily-close DD$=-16776.44  intraday trough$=-2290.75  peak_conc=8  mean_conc=2.60
+B|$20-80|pdv>=$10M               -52.82    368  0.478  -0.084   0.823  -1.01  -0.090     NO
+    n=368  trades/sess=3.61  hit=0.478  avgR=-0.084  medR=-0.063  p10R=-1.152  p90R=1.081
+    avgWin$=142.62  avgLoss$=-158.80  PF=0.823  stop%=64.7  time%=35.3  other%=0.0  medMin=154.0
+    $/day=-52.82  std=529.32  se=52.41  t=-1.01  ci95=[-156.18,46.81]  maxDD$=-8722.57
+    flight mean_ext=0.0281  reached_1R=0.364
+    daily-close DD$=-8722.57  intraday trough$=-2275.83  peak_conc=8  mean_conc=2.18
+
+monthly combined $/day (description, not a pick):
+  2026-01 n=20  $/day=-179.73  sum$=-3594.57
+  2026-02 n=19  $/day=-200.23  sum$=-3804.39
+  2026-03 n=22  $/day=-260.25  sum$=-5725.47
+  2026-04 n=21  $/day=-57.66  sum$=-1210.87
+  2026-05 n=20  $/day=-163.11  sum$=-3262.17
+
+wrote C:\Users\james\Money\reports\equity_virgin_200.csv

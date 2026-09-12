@@ -1,0 +1,124 @@
+Arrow 40 — session risk budget on the two standing books
+VERDICT: HOLD OUT CLEARS $200 WITH NON-RED DEVELOP — B200|F200, B200|F400, B200|F600, B400|F400, Bbud|Fbud|1600, Bbud|Fbud|2400
+Frozen doors only (A33 B|conj|atr1559|lock + A31 flush|max6|repaired). Sized off intraday peak-to-trough, not daily-close DD. Good-look (combined develop>=$150 and joint intraday maxDD<3% of $100k, not the pass line): none. Do not write that $400 flush is safe because daily-close DD was small. Combined holdout is not EV.
+Combined holdout is not expected value (EV). Do not write that the account is one improvement from $200.
+No new door. No Arrow 39. No atr150. No cap12. No virgin pull. No Arrow 41.
+Acronyms: ATR = Average True Range; MFE = maximum favorable excursion; SSR = Short Sale Restriction.
+account=100000  target=300-500/day  failure_line=200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  tape=C:\Users\james\Money\data\full\bars
+B: conjunction lock, 1.0x ATR after +1R, last_entry_at=11:59, flatten 15:59, cap8, SSR uptick10. Flush: max6 repaired, flatten 11:59. Budget rows: risk_per_idea=clamp(BUDGET/expected_signals, $200, $600); expected = 08:00 hot count (flush) and 09:29 Track-B gap-down-with-wide-OR count (short). Joint outstanding never exceeds BUDGET on budget rows.
+Id 0 B n develop 228/228 holdout 93/93 — within ±10%. Id 0 flush n develop 21/21 holdout 19/19 — within ±3.
+
+id                dev $/day  hold $/day   B n   F n   jPeak$   inDD%   clDD%     MFE  >=200
+B200|F200             78.77      254.50    93    19     1912   1.59%   0.97%   0.260   BOTH
+  develop
+    n=249  trades/sess=5.93  hit=0.554  avgR=0.048  medR=0.110  p10R=-1.144  p90R=1.064
+    avgWin$=139.18  avgLoss$=-143.23  PF=1.208  stop%=53.4  time%=46.2  other%=0.4  medMin=195.0
+    $/day=78.77  std=752.67  se=116.14  t=0.68  ci95=[-142.76,297.17]  maxDD$=-2953.13
+    flight mean_ext=0.0306  reached_1R=0.337
+    B n=228 $/day=72.57  flush n=21 $/day=6.20  mean R$ B=200 flush=200
+    MFE-capture=0.081  joint_peak_risk$=2135.37  days_at_joint_cap=0  worst_day$=-1903.87
+    marked equity: daily-close DD$=-2953.13 (2.95% of account)  intraday peak-to-trough$=-2121.66 (2.12% of account)
+  holdout PEEK
+    n=112  trades/sess=5.09  hit=0.589  avgR=0.250  medR=0.222  p10R=-1.136  p90R=1.398
+    avgWin$=164.92  avgLoss$=-114.91  PF=2.059  stop%=40.2  time%=59.8  other%=0.0  medMin=215.5
+    $/day=254.50  std=555.62  se=118.46  t=2.15  ci95=[29.03,476.84]  maxDD$=-972.10
+    flight mean_ext=0.0326  reached_1R=0.357
+    B n=93 $/day=175.40  flush n=19 $/day=79.10
+    MFE-capture=0.260  joint_peak_risk$=1911.84  days_at_joint_cap=0  worst_day$=-662.53  IWM alpha hold $203.21 (n=112 skip=0)
+    marked equity: daily-close DD$=-972.10 (0.97% of account)  intraday peak-to-trough$=-1589.38 (1.59% of account)
+  COMBINED B200|F200  develop $78.77/day  holdout $254.50/day  NOT EV
+B200|F400             77.14      338.96    93    19     2312   2.61%   0.97%   0.292   BOTH
+  develop
+    n=249  trades/sess=5.93  hit=0.554  avgR=0.048  medR=0.110  p10R=-1.144  p90R=1.064
+    avgWin$=144.01  avgLoss$=-149.86  PF=1.195  stop%=53.4  time%=46.2  other%=0.4  medMin=195.0
+    $/day=77.14  std=747.50  se=115.34  t=0.67  ci95=[-148.23,296.86]  maxDD$=-3068.20
+    flight mean_ext=0.0306  reached_1R=0.337
+    B n=228 $/day=72.57  flush n=21 $/day=4.57  mean R$ B=200 flush=400
+    MFE-capture=0.076  joint_peak_risk$=2735.00  days_at_joint_cap=0  worst_day$=-1904.22
+    marked equity: daily-close DD$=-3068.20 (3.07% of account)  intraday peak-to-trough$=-2121.66 (2.12% of account)
+  holdout PEEK
+    n=112  trades/sess=5.09  hit=0.589  avgR=0.250  medR=0.222  p10R=-1.136  p90R=1.398
+    avgWin$=197.08  avgLoss$=-120.65  PF=2.344  stop%=40.2  time%=59.8  other%=0.0  medMin=215.5
+    $/day=338.96  std=762.52  se=162.57  t=2.09  ci95=[53.77,660.34]  maxDD$=-972.10
+    flight mean_ext=0.0326  reached_1R=0.357
+    B n=93 $/day=175.40  flush n=19 $/day=163.56
+    MFE-capture=0.292  joint_peak_risk$=2312.27  days_at_joint_cap=0  worst_day$=-662.53  IWM alpha hold $292.08 (n=112 skip=0)
+    marked equity: daily-close DD$=-972.10 (0.97% of account)  intraday peak-to-trough$=-2605.91 (2.61% of account)
+  COMBINED B200|F400  develop $77.14/day  holdout $338.96/day  NOT EV
+B200|F600             77.69      346.61    93    19     2379   2.71%   0.97%   0.289   BOTH
+  develop
+    n=249  trades/sess=5.93  hit=0.554  avgR=0.048  medR=0.110  p10R=-1.144  p90R=1.064
+    avgWin$=146.90  avgLoss$=-153.24  PF=1.192  stop%=53.4  time%=46.2  other%=0.4  medMin=195.0
+    $/day=77.69  std=748.70  se=115.53  t=0.67  ci95=[-147.68,300.30]  maxDD$=-3183.10
+    flight mean_ext=0.0306  reached_1R=0.337
+    B n=228 $/day=72.57  flush n=21 $/day=5.12  mean R$ B=200 flush=600
+    MFE-capture=0.075  joint_peak_risk$=3175.11  days_at_joint_cap=0  worst_day$=-1904.57
+    marked equity: daily-close DD$=-3183.10 (3.18% of account)  intraday peak-to-trough$=-2121.66 (2.12% of account)
+  holdout PEEK
+    n=112  trades/sess=5.09  hit=0.589  avgR=0.250  medR=0.222  p10R=-1.136  p90R=1.398
+    avgWin$=202.79  avgLoss$=-125.19  PF=2.324  stop%=40.2  time%=59.8  other%=0.0  medMin=215.5
+    $/day=346.61  std=799.48  se=170.45  t=2.03  ci95=[46.31,687.26]  maxDD$=-972.10
+    flight mean_ext=0.0326  reached_1R=0.357
+    B n=93 $/day=175.40  flush n=19 $/day=171.21
+    MFE-capture=0.289  joint_peak_risk$=2379.43  days_at_joint_cap=0  worst_day$=-662.53  IWM alpha hold $300.94 (n=112 skip=0)
+    marked equity: daily-close DD$=-972.10 (0.97% of account)  intraday peak-to-trough$=-2705.56 (2.71% of account)
+  COMBINED B200|F600  develop $77.69/day  holdout $346.61/day  NOT EV
+B400|F400            174.95      431.69    93    19     2916   2.69%   1.29%   0.297   BOTH
+  develop
+    n=249  trades/sess=5.93  hit=0.554  avgR=0.048  medR=0.110  p10R=-1.144  p90R=1.064
+    avgWin$=214.37  avgLoss$=-200.32  PF=1.330  stop%=53.4  time%=46.2  other%=0.4  medMin=195.0
+    $/day=174.95  std=1116.95  se=172.35  t=1.02  ci95=[-144.82,507.12]  maxDD$=-3734.31
+    flight mean_ext=0.0306  reached_1R=0.337
+    B n=228 $/day=170.38  flush n=21 $/day=4.57  mean R$ B=400 flush=400
+    MFE-capture=0.121  joint_peak_risk$=3583.95  days_at_joint_cap=0  worst_day$=-2397.08
+    marked equity: daily-close DD$=-3734.31 (3.73% of account)  intraday peak-to-trough$=-3021.67 (3.02% of account)
+  holdout PEEK
+    n=112  trades/sess=5.09  hit=0.589  avgR=0.250  medR=0.222  p10R=-1.136  p90R=1.398
+    avgWin$=247.40  avgLoss$=-148.50  PF=2.390  stop%=40.2  time%=59.8  other%=0.0  medMin=215.5
+    $/day=431.69  std=858.56  se=183.04  t=2.36  ci95=[85.37,792.21]  maxDD$=-1287.43
+    flight mean_ext=0.0326  reached_1R=0.357
+    B n=93 $/day=268.12  flush n=19 $/day=163.56
+    MFE-capture=0.297  joint_peak_risk$=2916.17  days_at_joint_cap=0  worst_day$=-804.89  IWM alpha hold $361.65 (n=112 skip=0)
+    marked equity: daily-close DD$=-1287.43 (1.29% of account)  intraday peak-to-trough$=-2686.26 (2.69% of account)
+  COMBINED B400|F400  develop $174.95/day  holdout $431.69/day  NOT EV
+Bbud|Fbud|1600        70.29      297.28    91    18     1596   1.09%   1.15%   0.290   BOTH
+  develop
+    n=237  trades/sess=5.64  hit=0.553  avgR=0.042  medR=0.107  p10R=-1.139  p90R=1.057
+    avgWin$=150.60  avgLoss$=-158.27  PF=1.176  stop%=54.0  time%=45.6  other%=0.4  medMin=208.0
+    $/day=70.29  std=797.04  se=122.99  t=0.57  ci95=[-168.75,302.91]  maxDD$=-2914.67
+    flight mean_ext=0.0301  reached_1R=0.333
+    B n=221 $/day=71.56  flush n=16 $/day=-1.26  mean R$ B=289 flush=367
+    MFE-capture=0.071  joint_peak_risk$=1595.16  days_at_joint_cap=7  worst_day$=-1904.22
+    marked equity: daily-close DD$=-2914.67 (2.91% of account)  intraday peak-to-trough$=-2121.66 (2.12% of account)
+  holdout PEEK
+    n=109  trades/sess=4.95  hit=0.596  avgR=0.264  medR=0.242  p10R=-1.137  p90R=1.411
+    avgWin$=187.63  avgLoss$=-128.54  PF=2.156  stop%=40.4  time%=59.6  other%=0.0  medMin=226.0
+    $/day=297.28  std=598.78  se=127.66  t=2.33  ci95=[52.65,544.02]  maxDD$=-1145.07
+    flight mean_ext=0.0309  reached_1R=0.349
+    B n=91 $/day=216.42  flush n=18 $/day=80.86
+    MFE-capture=0.290  joint_peak_risk$=1596.30  days_at_joint_cap=2  worst_day$=-662.53  IWM alpha hold $253.15 (n=109 skip=0)
+    marked equity: daily-close DD$=-1145.07 (1.15% of account)  intraday peak-to-trough$=-1091.76 (1.09% of account)
+  COMBINED Bbud|Fbud|1600  develop $70.29/day  holdout $297.28/day  NOT EV
+Bbud|Fbud|2400        96.69      342.43    93    19     2152   2.75%   1.20%   0.271   BOTH
+  develop
+    n=248  trades/sess=5.90  hit=0.556  avgR=0.051  medR=0.120  p10R=-1.144  p90R=1.065
+    avgWin$=161.69  avgLoss$=-165.93  PF=1.222  stop%=53.6  time%=46.0  other%=0.4  medMin=197.5
+    $/day=96.69  std=789.85  se=121.88  t=0.79  ci95=[-141.01,329.10]  maxDD$=-2898.10
+    flight mean_ext=0.0306  reached_1R=0.339
+    B n=228 $/day=86.71  flush n=20 $/day=9.98  mean R$ B=343 flush=448
+    MFE-capture=0.086  joint_peak_risk$=2265.82  days_at_joint_cap=1  worst_day$=-1904.57
+    marked equity: daily-close DD$=-2898.10 (2.90% of account)  intraday peak-to-trough$=-2121.66 (2.12% of account)
+  holdout PEEK
+    n=112  trades/sess=5.09  hit=0.589  avgR=0.250  medR=0.222  p10R=-1.136  p90R=1.398
+    avgWin$=207.42  avgLoss$=-133.84  PF=2.224  stop%=40.2  time%=59.8  other%=0.0  medMin=215.5
+    $/day=342.43  std=674.14  se=143.73  t=2.38  ci95=[67.09,638.80]  maxDD$=-1204.19
+    flight mean_ext=0.0326  reached_1R=0.357
+    B n=93 $/day=243.77  flush n=19 $/day=98.66
+    MFE-capture=0.271  joint_peak_risk$=2151.74  days_at_joint_cap=0  worst_day$=-686.95  IWM alpha hold $293.79 (n=112 skip=0)
+    marked equity: daily-close DD$=-1204.19 (1.20% of account)  intraday peak-to-trough$=-2750.78 (2.75% of account)
+  COMBINED Bbud|Fbud|2400  develop $96.69/day  holdout $342.43/day  NOT EV
+
+NO* = holdout >= 200 but develop is red — not a pass. Combined holdout is not EV.

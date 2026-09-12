@@ -1,0 +1,109 @@
+Arrow 70 — compounded twelve-month Wednesday H10
+VERDICT: LOOK — not a $200 slate pass. This year is size-on-equity of the frozen book, not a new IS/OOS split. Jan–Aug 2026 already had that look.
+Start equity $100000 on 2025-09-02. Compound end equity $159567. Flat end equity $151856. Flat-year MTM $/day=206.60 vs compound-year MTM $/day=237.32 (total / 251 sessions 2025-09-02..2026-08-31). Max MTM DD flat $-20033.68 compound $-21670.68. Fall 2025 still has the September hole: yes (Sep -553.56/day, Oct 878.51/day). Id 0 Sep MTM $/day=-553.56 vs Arrow 68 -553.56 (hole=yes). Oct MTM $/day=878.51 vs Arrow 68 878.51 (fat=yes n=23).
+Frozen paper book: Wednesday signal, eight largest 15-session close-to-close returns (IWM subtract is a scalar), fill next session last-RTH, hold 10, drop missing exits. Field $10–$80 PDV >= $10M ETP denylist. Start equity $100000 on 2025-09-02. Id 0 flat $4,000 every signal. Id 1 ticket = 4000 × (MTM equity at signal last-RTH before new fills / 100000). Did not resize names already on. Clipped ticket at $0 if equity <= 0. Did not add cash. Did not withdraw. Did not retune rank, n, weekday, hold, fill, or base ticket. Did not walk rings. Did not treat this year as a new IS/OOS split. Did not drop a month after seeing it. Did not use an OOS month to pick a threshold. A hold may cross the virgin/full seam; did not drop it. IWM alpha is flat $4k only. No new ingest. Did not touch Lab A data/bars/. Do not call a CI that includes 0 EV. Do not call the year a $200 slate pass. No Arrow 71.
+Acronyms: IS = in-sample; OOS = out-of-sample; PDV = prior-day dollar volume; IWM = iShares Russell 2000 ETF; RTH = regular trading hours; EV = expected value; SSR = Short Sale Restriction; CI = confidence interval; MTM = mark-to-market.
+account=100000  slate_floor=200/day  target=300-500/day  start_equity=100000
+score n=251 2025-09-02..2026-08-31  wednesday signals=52 first=2025-09-03 last=2026-08-26  usable=52
+workers=8 cpu_count=8  sep_tape=C:\Users\james\Money\data\virgin\bars  may_tape=C:\Users\james\Money\data\virgin\bars  jun_tape=C:\Users\james\Money\data\full\bars  jul_tape=C:\Users\james\Money\data\full\bars
+eligibility: prior_close [$10, $80], PDV >= $10000000  Wednesday signal  n=8  lb=15 hold=10 from fill  fill=nextrth  base $4000
+holds crossing virgin/full seam: flat n=12 compound n=12 (did not drop). Peak live = |shares × last|.
+
+2025-09..12 (Arrow 68 window, not a new IS) vs 2026-01..08 (Arrow 65/66 window, not a new OOS).
+  fall 2025 n=85 flat MTM $/day=113.66 compound $/day=85.12
+  2026 Jan–Aug n=166 flat MTM $/day=254.19 compound $/day=315.25
+
+12 months 2025-09 through 2026-08. end_eq_1 is compound equity after that month.
+month       n    flat_MTM$    flat$/d    comp_MTM$    comp$/d     end_eq_1  peak_live_f  peak_live_c
+2025-09   21    -11624.81    -553.56    -11140.57    -530.50     88859.43        67044        65976
+2025-10   23     20205.67     878.51     17819.72     774.77    106679.16        70333        63718
+2025-11   19      5274.46     277.60      5275.54     277.66    111954.70        61587        69988
+2025-12   22     -4194.55    -190.66     -4719.52    -214.52    107235.17        99497       111588
+2026-01   20        57.30       2.86      -505.50     -25.28    106729.67       102922       108168
+2026-02   19       630.75      33.20       534.66      28.14    107264.33        91206        99278
+2026-03   22      6404.67     291.12      6857.88     311.72    114122.20        69166        75034
+2026-04   21      1001.48      47.69      1026.79      48.89    115148.99        89131       101812
+2026-05   20      1348.35      67.42      1392.08      69.60    116541.08        72269        82563
+2026-06   21     19788.66     942.32     24849.34    1183.30    141390.42        80450       107827
+2026-07   22     13035.11     592.51     18371.03     835.05    159761.44        85448       123215
+2026-08   21       -71.38      -3.40      -194.67      -9.27    159566.77        64936       101902
+
+ISO weeks Monday–Sunday that contain a NYSE session in 2025-09-02..2026-08-31. Not NYSE weeks ending Friday.
+week          n         MTM$     end_eq_1
+ 2025-W36     4      -867.89     99132.11
+ 2025-W37     5     -1458.86     97673.25
+ 2025-W38     5     -2985.83     94687.42
+ 2025-W39     5     -1094.36     93593.06
+ 2025-W40     5     -6625.59     86967.47
+ 2025-W41     5      4337.25     91304.72
+ 2025-W42     5      1378.59     92683.31
+ 2025-W43     5      6494.00     99177.30
+ 2025-W44     5      7501.86    106679.16
+ 2025-W45     5      6058.93    112738.09
+ 2025-W46     5       892.84    113630.93
+ 2025-W47     5      4014.01    117644.93
+ 2025-W48     4     -5690.24    111954.70
+ 2025-W49     5      2444.63    114399.32
+ 2025-W50     5     -5594.57    108804.75
+ 2025-W51     5       677.18    109481.94
+ 2025-W52     4     -3530.23    105951.71
+ 2026-W01     4      1871.56    107823.27
+ 2026-W02     5     -5016.00    102807.27
+ 2026-W03     5     -6833.01     95974.25
+ 2026-W04     4      1498.98     97473.23
+ 2026-W05     5      9256.43    106729.67
+ 2026-W06     5      2246.56    108976.23
+ 2026-W07     5       250.09    109226.32
+ 2026-W08     4      1490.79    110717.11
+ 2026-W09     5     -3452.78    107264.33
+ 2026-W10     5      1003.19    108267.52
+ 2026-W11     5       561.73    108829.25
+ 2026-W12     5      1179.39    110008.64
+ 2026-W13     5      3181.66    113190.30
+ 2026-W14     4      1111.80    114302.10
+ 2026-W15     5     -1036.91    113265.19
+ 2026-W16     5     -2184.08    111081.11
+ 2026-W17     5       988.11    112069.22
+ 2026-W18     5       -33.13    112036.09
+ 2026-W19     5      5197.60    117233.69
+ 2026-W20     5     -2645.34    114588.35
+ 2026-W21     5     -1556.54    113031.82
+ 2026-W22     4      3509.26    116541.08
+ 2026-W23     5     14930.18    131471.26
+ 2026-W24     5     -2321.59    129149.67
+ 2026-W25     4     -2383.24    126766.43
+ 2026-W26     5     17151.94    143918.37
+ 2026-W27     4      2963.93    146882.30
+ 2026-W28     5      4570.49    151452.80
+ 2026-W29     5      6890.43    158343.23
+ 2026-W30     5      7567.08    165910.32
+ 2026-W31     5     -6148.87    159761.44
+ 2026-W32     5     -3834.32    155927.12
+ 2026-W33     5        27.24    155954.37
+ 2026-W34     5      2892.74    158847.11
+ 2026-W35     5       719.66    159566.77
+ 2026-W36     1         0.00    159566.77
+
+start_equity=100000.00  end_equity_flat=151855.71  end_equity_comp=159566.77
+total MTM$ flat=51855.71  compound=59566.77
+MTM $/day flat=206.60  compound=237.32  (total / n=251 NYSE sessions 2025-09-02..2026-08-31)
+peak live flat $102922  compound $123215  fits_100k_flat=NO  fits_100k_comp=NO
+IWM alpha $/day flat only=251.88 (n=376 skip=0). Did not pretend a growing short of IWM.
+
+id              entry$      MTM$      n    hit      t
+flat_4k         206.60    206.60    376  0.508   1.61
+    n=376  n/week=7.52  hit=0.508  wins=191  losses=185  avgR=n/a (no stop)  PF=1.533
+    avgWin$=780.61  avgLoss$=-525.62  $/day=206.60  std=2026.89  se=127.94  t=1.61  ci95=[-36.45,435.81]
+    daily-close DD$=-20033.68  worst_day$=-6607.31  peak_conc=8  mean_conc=7.52  weeks=50
+    entry $/day=206.60  MTM $/day=206.60  IWM alpha $/day=251.88 (n=376 skip=0)  ticket=$4000 always  skips=6  peak live $102922  CI includes 0 — not EV
+comp_4k         237.32    237.32    376  0.508   1.66
+    n=376  n/week=7.52  hit=0.508  wins=191  losses=185  avgR=n/a (no stop)  PF=1.548
+    avgWin$=880.66  avgLoss$=-587.24  $/day=237.32  std=2270.58  se=143.32  t=1.66  ci95=[-31.21,504.93]
+    daily-close DD$=-21670.68  worst_day$=-7714.38  peak_conc=8  mean_conc=7.52  weeks=50
+    entry $/day=237.32  MTM $/day=237.32  ticket at first signal $4000.00  later Wednesday ticket example $3865.32  skips=6  peak live $123215  CI includes 0 — not EV
+    MTM months flat: 2025-09 n=21 $/day=-553.56; 2025-10 n=23 $/day=878.51; 2025-11 n=19 $/day=277.60; 2025-12 n=22 $/day=-190.66; 2026-01 n=20 $/day=2.86; 2026-02 n=19 $/day=33.20; 2026-03 n=22 $/day=291.12; 2026-04 n=21 $/day=47.69; 2026-05 n=20 $/day=67.42; 2026-06 n=21 $/day=942.32; 2026-07 n=22 $/day=592.51; 2026-08 n=21 $/day=-3.40
+    MTM months compound: 2025-09 n=21 $/day=-530.50; 2025-10 n=23 $/day=774.77; 2025-11 n=19 $/day=277.66; 2025-12 n=22 $/day=-214.52; 2026-01 n=20 $/day=-25.28; 2026-02 n=19 $/day=28.14; 2026-03 n=22 $/day=311.72; 2026-04 n=21 $/day=48.89; 2026-05 n=20 $/day=69.60; 2026-06 n=21 $/day=1183.30; 2026-07 n=22 $/day=835.05; 2026-08 n=21 $/day=-9.27
+    Flat MTM CI includes 0 — not EV.
+    Compound MTM CI includes 0 — not EV.
+    Did not call the year a $200 slate pass. No Arrow 71.
+

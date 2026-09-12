@@ -1,0 +1,27 @@
+Arrow 67 — September–November 2025 into data/virgin/ (ingest, not a book)
+No fills. No $200 verdict. Did not score engines. Did not touch data/full or Lab A data/bars. Did not rebuild December 2025 or January–May 2026 already on virgin. No Arrow 68.
+venue=utp_cta interval=1m window=04:00-16:00ET last_bar=15:59
+eligibility: common stock + ETP denylist, prior_close [$1, $80], prior DV >= $1M, $10M is a filter column not an ingest wall, no 400 cap
+window NYSE 2025-09-02..2025-11-28 sessions=63 2025-09-02..2025-11-28 (not scored)
+dates_pulled=2025-09-02, 2025-09-03, 2025-09-04, 2025-09-05, 2025-09-08, 2025-09-09, 2025-09-10, 2025-09-11, 2025-09-12, 2025-09-15, 2025-09-16, 2025-09-17, 2025-09-18, 2025-09-19, 2025-09-22, 2025-09-23, 2025-09-24, 2025-09-25, 2025-09-26, 2025-09-29, 2025-09-30, 2025-10-01, 2025-10-02, 2025-10-03, 2025-10-06, 2025-10-07, 2025-10-08, 2025-10-09, 2025-10-10, 2025-10-13, 2025-10-14, 2025-10-15, 2025-10-16, 2025-10-17, 2025-10-20, 2025-10-21, 2025-10-22, 2025-10-23, 2025-10-24, 2025-10-27, 2025-10-28, 2025-10-29, 2025-10-30, 2025-10-31, 2025-11-03, 2025-11-04, 2025-11-05, 2025-11-06, 2025-11-07, 2025-11-10, 2025-11-11, 2025-11-12, 2025-11-13, 2025-11-14, 2025-11-17, 2025-11-18, 2025-11-19, 2025-11-20, 2025-11-21, 2025-11-24, 2025-11-25, 2025-11-26, 2025-11-28
+dates_skipped_already_on_disk=none
+dates_skipped_not_a_session=2025-11-27
+labor_day=2025-09-01 thanksgiving=2025-11-27 (not sessions; not pulled)
+workers=8 theta_concurrency=8 cpu_count=8
+output bars=C:\Users\james\Money\data\virgin\bars eligibility=C:\Users\james\Money\data\virgin\eligibility.parquet manifest=C:\Users\james\Money\data\virgin\manifest.parquet iwm=C:\Users\james\Money\data\virgin\bench\IWM
+
+sessions_attempted=63
+name_days_eligible=195355
+unique_symbols=5138
+1m_rows=140655600
+mean_bars_per_name_day=720.0
+name_days_pdv_ge_10m=102649
+manifest pulled=195355 empty=0 missing=0
+failures=0
+iwm_sessions=63 iwm_ok=63 iwm_fail=0
+wall_s=5264.3 wall_min=87.7
+after_first_5_sessions elapsed_s=296.1 name_days=15225 rows=10962000 remaining_name_days=180130 eta_min=58.4 (estimate)
+name_days_with_04:00_print=195355
+name_days_first_print_after_07:30=0
+virgin+full now cover 2025-09 through 2026-08 (Sep–Nov 2025 + Dec 2025 + Jan–May 2026 on virgin; Jun–Aug 2026 on data/full).
+

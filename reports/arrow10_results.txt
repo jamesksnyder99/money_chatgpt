@@ -1,0 +1,55 @@
+Arrow 10 — hot cell, 15m EMA trend, asymmetric long vs short
+VERDICT: FAIL — no Arrow 10 book has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass.
+account=$100000  target=$300-$500/day  failure_line=$200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap file=True
+Pass = holdout >= $200/day AND develop not red.
+ema15 = 9/21 on stitched 15m closes, last completed bar before the decision. eod10 is a tag.
+Long ids emit only longs. Short ids emit only shorts. No Arrow 9 Q5+1-4% rerun. No Arrow 11.
+
+hot cell (dv_rank>=0.80 and |gap|>=2% and OR width>4%):
+  Track A: hot=870 gap_up=415 gap_down=455
+  Track B: hot=511 gap_up=258 gap_down=253
+
+ema15 vs eod10 on develop (descriptive; not an entry filter):
+  Track A: n=27393 agree=15680 (57.2%) ema_long=13829 ema_short=13564 eod_up=12200 eod_down=10839 eod_flat=4354
+  Track B: n=16281 agree=9158 (56.2%) ema_long=8140 ema_short=8141 eod_up=7209 eod_down=6478 eod_flat=2594
+
+track  side   id                            dev $/day  hold $/day  hold n    hit    avgR      maxDD  >=200
+A      long   long_hot_or15|ema                 -5.17      -78.39      53  0.358  -0.163   -2126.13     NO
+       develop $/day=-5.17  trades=74  hit=0.500  avgR=-0.015  maxDD$=-1886.10
+       holdout $/day=-78.39  trades=53  hit=0.358  avgR=-0.163  maxDD$=-2126.13  vs_$200=NO  vs_$300-500=NO
+A      long   long_hot_or15|ema_hhhl|2R        -10.10        8.46      14  0.500   0.068    -329.71     NO
+       develop $/day=-10.10  trades=16  hit=0.500  avgR=-0.133  maxDD$=-1014.43
+       holdout $/day=8.46  trades=14  hit=0.500  avgR=0.068  maxDD$=-329.71  vs_$200=NO  vs_$300-500=NO
+A      long   long_q5_orbr5|ema               -179.48     -196.33     137  0.292  -0.303   -4388.46     NO
+       develop $/day=-179.48  trades=272  hit=0.382  avgR=-0.193  maxDD$=-9619.65
+       holdout $/day=-196.33  trades=137  hit=0.292  avgR=-0.303  maxDD$=-4388.46  vs_$200=NO  vs_$300-500=NO
+A      short  short_hot_or15|ema               -20.48      -21.16      28  0.321  -0.083   -1146.82     NO
+       develop $/day=-20.48  trades=92  hit=0.413  avgR=-0.047  maxDD$=-1560.06
+       holdout $/day=-21.16  trades=28  hit=0.321  avgR=-0.083  maxDD$=-1146.82  vs_$200=NO  vs_$300-500=NO
+A      short  short_hot_or15|ema_hhhl|2R        -0.07      -18.24       8  0.250  -0.252    -455.12     NO
+       develop $/day=-0.07  trades=31  hit=0.516  avgR=-0.001  maxDD$=-850.25
+       holdout $/day=-18.24  trades=8  hit=0.250  avgR=-0.252  maxDD$=-455.12  vs_$200=NO  vs_$300-500=NO
+A      short  short_q5_orbr5|ema               -48.03     -153.50     132  0.348  -0.204   -5074.78     NO
+       develop $/day=-48.03  trades=259  hit=0.448  avgR=-0.083  maxDD$=-5172.75
+       holdout $/day=-153.50  trades=132  hit=0.348  avgR=-0.204  maxDD$=-5074.78  vs_$200=NO  vs_$300-500=NO
+B      long   long_hot_or15|ema                 20.42      -17.23      26  0.423  -0.073    -786.71     NO
+       develop $/day=20.42  trades=54  hit=0.593  avgR=0.079  maxDD$=-648.77
+       holdout $/day=-17.23  trades=26  hit=0.423  avgR=-0.073  maxDD$=-786.71  vs_$200=NO  vs_$300-500=NO
+B      long   long_hot_or15|ema_hhhl|2R         -8.22        4.01       8  0.375   0.055      -7.31     NO
+       develop $/day=-8.22  trades=12  hit=0.500  avgR=-0.146  maxDD$=-757.00
+       holdout $/day=4.01  trades=8  hit=0.375  avgR=0.055  maxDD$=-7.31  vs_$200=NO  vs_$300-500=NO
+B      long   long_q5_orbr5|ema                -70.99     -117.72     129  0.426  -0.178   -3006.69     NO
+       develop $/day=-70.99  trades=262  hit=0.447  avgR=-0.123  maxDD$=-4954.09
+       holdout $/day=-117.72  trades=129  hit=0.426  avgR=-0.178  maxDD$=-3006.69  vs_$200=NO  vs_$300-500=NO
+B      short  short_hot_or15|ema                 5.58       21.53      16  0.438   0.149    -193.80     NO
+       develop $/day=5.58  trades=58  hit=0.552  avgR=0.020  maxDD$=-975.73
+       holdout $/day=21.53  trades=16  hit=0.438  avgR=0.149  maxDD$=-193.80  vs_$200=NO  vs_$300-500=NO
+B      short  short_hot_or15|ema_hhhl|2R        -3.29        0.37       2  0.500   0.020     -20.22     NO
+       develop $/day=-3.29  trades=20  hit=0.550  avgR=-0.035  maxDD$=-887.35
+       holdout $/day=0.37  trades=2  hit=0.500  avgR=0.020  maxDD$=-20.22  vs_$200=NO  vs_$300-500=NO
+B      short  short_q5_orbr5|ema                35.73     -103.77     132  0.409  -0.205   -3590.43     NO
+       develop $/day=35.73  trades=244  hit=0.475  avgR=0.005  maxDD$=-2978.82
+       holdout $/day=-103.77  trades=132  hit=0.409  avgR=-0.205  maxDD$=-3590.43  vs_$200=NO  vs_$300-500=NO

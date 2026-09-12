@@ -1,0 +1,61 @@
+Arrow 12 — exits and one tight ring on B/short_hot|or25 (short only)
+VERDICT: FAIL — no Arrow 12 book has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass.
+account=$100000  target=$300-$500/day  failure_line=$200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap file=True
+Pass = holdout >= $200/day AND develop not red. Do not promote develop-red / holdout-green.
+Kernel: short only, Q5, gap-down>=2%, OR width>2.5%, 15m downside break, ema15 short-stack, stop=OR high.
+No long mirror. No Q4. No two-close. No 5-min ORBR. No VWAP entry. No Arrow 13.
+
+n_vs_control (trade counts vs exact kernel on that track):
+  A/short_or25|control: develop n=131 vs control 131 (1.00x) holdout n=43 vs control 43 (1.00x)
+  A/short_or25|2R: develop n=132 vs control 131 (1.01x) holdout n=43 vs control 43 (1.00x)
+  A/short_or25|trail: develop n=139 vs control 131 (1.06x) holdout n=44 vs control 43 (1.02x)
+  A/short_or25|flat1130: develop n=127 vs control 131 (0.97x) holdout n=43 vs control 43 (1.00x)
+  A/short_or25|bearish_or: develop n=109 vs control 131 (0.83x) holdout n=32 vs control 43 (0.74x)
+  A/short_or25|gap15: develop n=149 vs control 131 (1.14x) holdout n=52 vs control 43 (1.21x)
+  B/short_or25|control: develop n=97 vs control 97 (1.00x) holdout n=37 vs control 37 (1.00x)
+  B/short_or25|2R: develop n=98 vs control 97 (1.01x) holdout n=37 vs control 37 (1.00x)
+  B/short_or25|trail: develop n=102 vs control 97 (1.05x) holdout n=38 vs control 37 (1.03x)
+  B/short_or25|flat1130: develop n=95 vs control 97 (0.98x) holdout n=35 vs control 37 (0.95x)
+  B/short_or25|bearish_or: develop n=78 vs control 97 (0.80x) holdout n=27 vs control 37 (0.73x)
+  B/short_or25|gap15: develop n=112 vs control 97 (1.15x) holdout n=41 vs control 37 (1.11x)
+
+track  id                        dev $/day  hold $/day  hold n    hit    avgR      maxDD  >=200
+A      short_or25|control           -24.57       29.10      43  0.488   0.075    -760.75     NO
+       develop $/day=-24.57  trades=131  hit=0.397  avgR=-0.040  maxDD$=-1830.41
+       holdout $/day=29.10  trades=43  hit=0.488  avgR=0.075  maxDD$=-760.75  vs_$200=NO  vs_$300-500=NO
+A      short_or25|2R                -19.92       27.98      43  0.488   0.072    -760.75     NO
+       develop $/day=-19.92  trades=132  hit=0.402  avgR=-0.032  maxDD$=-1830.41
+       holdout $/day=27.98  trades=43  hit=0.488  avgR=0.072  maxDD$=-760.75  vs_$200=NO  vs_$300-500=NO
+A      short_or25|trail             -16.65       26.59      44  0.500   0.067    -612.13     NO
+       develop $/day=-16.65  trades=139  hit=0.432  avgR=-0.025  maxDD$=-1633.25
+       holdout $/day=26.59  trades=44  hit=0.500  avgR=0.067  maxDD$=-612.13  vs_$200=NO  vs_$300-500=NO
+A      short_or25|flat1130          -29.90       -3.94      43  0.465  -0.010    -742.13     NO
+       develop $/day=-29.90  trades=127  hit=0.449  avgR=-0.050  maxDD$=-1595.67
+       holdout $/day=-3.94  trades=43  hit=0.465  avgR=-0.010  maxDD$=-742.13  vs_$200=NO  vs_$300-500=NO
+A      short_or25|bearish_or        -48.03       29.05      32  0.531   0.100    -584.34     NO
+       develop $/day=-48.03  trades=109  hit=0.367  avgR=-0.093  maxDD$=-2049.36
+       holdout $/day=29.05  trades=32  hit=0.531  avgR=0.100  maxDD$=-584.34  vs_$200=NO  vs_$300-500=NO
+A      short_or25|gap15             -31.01       22.54      52  0.462   0.048    -770.99     NO
+       develop $/day=-31.01  trades=149  hit=0.376  avgR=-0.044  maxDD$=-1888.65
+       holdout $/day=22.54  trades=52  hit=0.462  avgR=0.048  maxDD$=-770.99  vs_$200=NO  vs_$300-500=NO
+B      short_or25|control            19.36       81.56      37  0.622   0.243    -540.70     NO
+       develop $/day=19.36  trades=97  hit=0.505  avgR=0.042  maxDD$=-946.99
+       holdout $/day=81.56  trades=37  hit=0.622  avgR=0.243  maxDD$=-540.70  vs_$200=NO  vs_$300-500=NO
+B      short_or25|2R                 28.28       80.45      37  0.622   0.240    -540.70     NO
+       develop $/day=28.28  trades=98  hit=0.510  avgR=0.061  maxDD$=-946.99
+       holdout $/day=80.45  trades=37  hit=0.622  avgR=0.240  maxDD$=-540.70  vs_$200=NO  vs_$300-500=NO
+B      short_or25|trail              31.27       71.33      38  0.605   0.207    -540.70     NO
+       develop $/day=31.27  trades=102  hit=0.539  avgR=0.064  maxDD$=-873.69
+       holdout $/day=71.33  trades=38  hit=0.605  avgR=0.207  maxDD$=-540.70  vs_$200=NO  vs_$300-500=NO
+B      short_or25|flat1130            8.90       46.97      35  0.629   0.148    -626.83     NO
+       develop $/day=8.90  trades=95  hit=0.537  avgR=0.020  maxDD$=-806.26
+       holdout $/day=46.97  trades=35  hit=0.629  avgR=0.148  maxDD$=-626.83  vs_$200=NO  vs_$300-500=NO
+B      short_or25|bearish_or          2.09       64.66      27  0.667   0.264    -540.70     NO
+       develop $/day=2.09  trades=78  hit=0.487  avgR=0.006  maxDD$=-899.18
+       holdout $/day=64.66  trades=27  hit=0.667  avgR=0.264  maxDD$=-540.70  vs_$200=NO  vs_$300-500=NO
+B      short_or25|gap15              39.87       73.44      41  0.585   0.198    -510.24     NO
+       develop $/day=39.87  trades=112  hit=0.491  avgR=0.075  maxDD$=-1130.26
+       holdout $/day=73.44  trades=41  hit=0.585  avgR=0.198  maxDD$=-510.24  vs_$200=NO  vs_$300-500=NO

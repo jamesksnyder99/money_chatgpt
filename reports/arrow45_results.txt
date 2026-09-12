@@ -1,0 +1,108 @@
+Arrow 45 — residual-short rings (IS / OOS)
+VERDICT: FAIL — no Arrow 45 short ring has OOS >= $100/day AND non-red IS. Slate $200 is not this arrow's job.
+Id 0 n15_h5 IS $/day=246.77/246.77 n=272/272 — within ±10% of Arrow 44 res_short.
+Ids that lift $/day versus control on both IS and OOS: n15_h10.
+Short only. Rings locked from IS; OOS is one look for the whole family. Did not drop an id after seeing OOS. Did not use June, August, or any OOS month to pick a threshold. Did not bring back res_long. Did not retune Arrow 43 clocks or B|conj|atr1559|lock or flush|max6|repaired. An id that lifts IS and cuts OOS is not an improvement. An id that lifts OOS and turns IS red is not a seat. Odd months IS, even months OOS, split on entry session. Combined dollars are not EV. No Arrow 46.
+Acronyms: IS = in-sample; OOS = out-of-sample; PDV = prior-day dollar volume; IWM = iShares Russell 2000 ETF; RTH = regular trading hours; EV = expected value; SSR = Short Sale Restriction.
+account=100000  slate_floor=200/day  seat_floor=100/day  target=300-500/day
+study n=166 2026-01-02..2026-08-31  IS n=84  OOS n=82  rebalance weeks=34
+workers=8 cpu_count=8  jan_tape=C:\Users\james\Money\data\virgin\bars  jul_tape=C:\Users\james\Money\data\full\bars
+eligibility: same wall as Arrow 44, prior_close [$10, $80], PDV >= $10000000  $2000 notional/name  short residual winners only
+Skip week if fewer than 2×n_short names have a residual. Threshold ids take only residual ≥ bar; do not fill the seat under the bar.
+
+IS character for rings that change the population (n10, n8, r04, r08). Mean next-hold residual of names that would be shorted. Description. Does not pick an id.
+  n10_h5 next-hold residual n=180 mean=-0.06261 hit=0.328
+    2026-01 n=50 mean=-0.07949 hit=0.320
+    2026-03 n=39 mean=-0.03799 hit=0.359
+    2026-05 n=44 mean=-0.06792 hit=0.295
+    2026-07 n=47 mean=-0.06013 hit=0.340
+  n8_h5 next-hold residual n=143 mean=-0.06216 hit=0.315
+    2026-01 n=40 mean=-0.07955 hit=0.325
+    2026-03 n=31 mean=-0.03780 hit=0.323
+    2026-05 n=35 mean=-0.06213 hit=0.286
+    2026-07 n=37 mean=-0.06379 hit=0.324
+  n15_h5_r04 next-hold residual n=272 mean=-0.04552 hit=0.364
+    2026-01 n=75 mean=-0.05137 hit=0.360
+    2026-03 n=59 mean=-0.03244 hit=0.373
+    2026-05 n=67 mean=-0.04891 hit=0.388
+    2026-07 n=71 mean=-0.04700 hit=0.338
+  n15_h5_r08 next-hold residual n=272 mean=-0.04552 hit=0.364
+    2026-01 n=75 mean=-0.05137 hit=0.360
+    2026-03 n=59 mean=-0.03244 hit=0.373
+    2026-05 n=67 mean=-0.04891 hit=0.388
+    2026-07 n=71 mean=-0.04700 hit=0.338
+
+id             split     $/day      n    hit      PF      t     IWM$    vs0  seat
+n15_h5         IS      246.77    272  0.577   2.018   2.39   277.61   ctrl    IS
+    n=272  n/week=14.32  hit=0.577  avgR=n/a (no stop)  PF=2.018
+    avgWin$=261.70  avgLoss$=-177.03  $/day=246.77  std=946.27  se=103.25  t=2.39  ci95=[62.98,456.90]
+    daily-close DD$=-2545.26  worst_day$=-2545.26  peak_conc=15  mean_conc=14.32  weeks=19
+    IWM alpha $/day=277.61 (n=272 skip=0)  n_short=15 hold=5
+    months: 2026-01 n=20 $/day=273.30; 2026-03 n=22 $/day=148.54; 2026-05 n=20 $/day=299.81; 2026-07 n=22 $/day=272.67
+n15_h5         OOS      -1.37    218  0.500   0.994  -0.03    28.60   ctrl    NO
+    n=218  n/week=14.53  hit=0.500  avgR=n/a (no stop)  PF=0.994
+    avgWin$=177.81  avgLoss$=-178.84  $/day=-1.37  std=450.20  se=49.72  t=-0.03  ci95=[-100.51,92.60]
+    daily-close DD$=-3932.40  worst_day$=-2140.13  peak_conc=15  mean_conc=14.53  weeks=15
+    IWM alpha $/day=28.60 (n=218 skip=0)  n_short=15 hold=5
+    months: 2026-02 n=19 $/day=29.53; 2026-04 n=21 $/day=-53.10; 2026-06 n=21 $/day=-45.23; 2026-08 n=21 $/day=66.27
+n10_h5         IS      235.76    180  0.583   2.583   3.08   256.71  -11.0    IS
+    n=180  n/week=9.47  hit=0.583  avgR=n/a (no stop)  PF=2.583
+    avgWin$=307.78  avgLoss$=-166.84  $/day=235.76  std=700.52  se=76.43  t=3.08  ci95=[104.34,395.69]
+    daily-close DD$=-884.75  worst_day$=-884.75  peak_conc=10  mean_conc=9.47  weeks=19
+    IWM alpha $/day=256.71 (n=180 skip=0)  n_short=10 hold=5
+    months: 2026-01 n=20 $/day=322.21; 2026-03 n=22 $/day=117.24; 2026-05 n=20 $/day=280.64; 2026-07 n=22 $/day=234.88
+n10_h5         OOS      29.26    145  0.517   1.187   0.63    49.93  +30.6    NO
+    n=145  n/week=9.67  hit=0.517  avgR=n/a (no stop)  PF=1.187
+    avgWin$=203.10  avgLoss$=-183.32  $/day=29.26  std=421.13  se=46.51  t=0.63  ci95=[-56.61,120.31]
+    daily-close DD$=-1875.11  worst_day$=-1875.11  peak_conc=10  mean_conc=9.67  weeks=15
+    IWM alpha $/day=49.93 (n=145 skip=0)  n_short=10 hold=5
+    months: 2026-02 n=19 $/day=-24.61; 2026-04 n=21 $/day=70.03; 2026-06 n=21 $/day=34.02; 2026-08 n=21 $/day=32.47
+n8_h5          IS      186.11    143  0.594   2.494   3.24   202.24  -60.7    IS
+    n=143  n/week=7.53  hit=0.594  avgR=n/a (no stop)  PF=2.494
+    avgWin$=307.02  avgLoss$=-180.42  $/day=186.11  std=526.38  se=57.43  t=3.24  ci95=[84.45,304.11]
+    daily-close DD$=-403.72  worst_day$=-403.72  peak_conc=8  mean_conc=7.53  weeks=19
+    IWM alpha $/day=202.24 (n=143 skip=0)  n_short=8 hold=5
+    months: 2026-01 n=20 $/day=257.55; 2026-03 n=22 $/day=92.15; 2026-05 n=20 $/day=205.67; 2026-07 n=22 $/day=197.34
+n8_h5          OOS      52.43    116  0.552   1.455   1.20    68.37  +53.8    NO
+    n=116  n/week=7.73  hit=0.552  avgR=n/a (no stop)  PF=1.455
+    avgWin$=214.80  avgLoss$=-181.69  $/day=52.43  std=397.30  se=43.87  t=1.20  ci95=[-29.53,143.68]
+    daily-close DD$=-1633.90  worst_day$=-1633.90  peak_conc=8  mean_conc=7.73  weeks=15
+    IWM alpha $/day=68.37 (n=116 skip=0)  n_short=8 hold=5
+    months: 2026-02 n=19 $/day=-13.57; 2026-04 n=21 $/day=109.03; 2026-06 n=21 $/day=55.16; 2026-08 n=21 $/day=52.82
+n15_h5_r04     IS      246.77    272  0.577   2.018   2.39   277.61   +0.0    IS
+    n=272  n/week=14.32  hit=0.577  avgR=n/a (no stop)  PF=2.018
+    avgWin$=261.70  avgLoss$=-177.03  $/day=246.77  std=946.27  se=103.25  t=2.39  ci95=[62.98,456.90]
+    daily-close DD$=-2545.26  worst_day$=-2545.26  peak_conc=15  mean_conc=14.32  weeks=19
+    IWM alpha $/day=277.61 (n=272 skip=0)  n_short=15 hold=5  residual>=0.04
+    months: 2026-01 n=20 $/day=273.30; 2026-03 n=22 $/day=148.54; 2026-05 n=20 $/day=299.81; 2026-07 n=22 $/day=272.67
+n15_h5_r04     OOS      -1.37    218  0.500   0.994  -0.03    28.60   +0.0    NO
+    n=218  n/week=14.53  hit=0.500  avgR=n/a (no stop)  PF=0.994
+    avgWin$=177.81  avgLoss$=-178.84  $/day=-1.37  std=450.20  se=49.72  t=-0.03  ci95=[-100.51,92.60]
+    daily-close DD$=-3932.40  worst_day$=-2140.13  peak_conc=15  mean_conc=14.53  weeks=15
+    IWM alpha $/day=28.60 (n=218 skip=0)  n_short=15 hold=5  residual>=0.04
+    months: 2026-02 n=19 $/day=29.53; 2026-04 n=21 $/day=-53.10; 2026-06 n=21 $/day=-45.23; 2026-08 n=21 $/day=66.27
+n15_h5_r08     IS      246.77    272  0.577   2.018   2.39   277.61   +0.0    IS
+    n=272  n/week=14.32  hit=0.577  avgR=n/a (no stop)  PF=2.018
+    avgWin$=261.70  avgLoss$=-177.03  $/day=246.77  std=946.27  se=103.25  t=2.39  ci95=[62.98,456.90]
+    daily-close DD$=-2545.26  worst_day$=-2545.26  peak_conc=15  mean_conc=14.32  weeks=19
+    IWM alpha $/day=277.61 (n=272 skip=0)  n_short=15 hold=5  residual>=0.08
+    months: 2026-01 n=20 $/day=273.30; 2026-03 n=22 $/day=148.54; 2026-05 n=20 $/day=299.81; 2026-07 n=22 $/day=272.67
+n15_h5_r08     OOS      -1.37    218  0.500   0.994  -0.03    28.60   +0.0    NO
+    n=218  n/week=14.53  hit=0.500  avgR=n/a (no stop)  PF=0.994
+    avgWin$=177.81  avgLoss$=-178.84  $/day=-1.37  std=450.20  se=49.72  t=-0.03  ci95=[-100.51,92.60]
+    daily-close DD$=-3932.40  worst_day$=-2140.13  peak_conc=15  mean_conc=14.53  weeks=15
+    IWM alpha $/day=28.60 (n=218 skip=0)  n_short=15 hold=5  residual>=0.08
+    months: 2026-02 n=19 $/day=29.53; 2026-04 n=21 $/day=-53.10; 2026-06 n=21 $/day=-45.23; 2026-08 n=21 $/day=66.27
+n15_h10        IS      281.72    262  0.569   1.867   2.01   358.09  +34.9    IS
+    n=262  n/week=13.79  hit=0.569  avgR=n/a (no stop)  PF=1.867
+    avgWin$=342.06  avgLoss$=-241.62  $/day=281.72  std=1281.87  se=139.86  t=2.01  ci95=[20.86,568.61]
+    daily-close DD$=-4345.99  worst_day$=-4345.99  peak_conc=15  mean_conc=13.79  weeks=19
+    IWM alpha $/day=358.09 (n=262 skip=0)  n_short=15 hold=10
+    months: 2026-01 n=20 $/day=366.55; 2026-03 n=22 $/day=5.07; 2026-05 n=20 $/day=562.28; 2026-07 n=22 $/day=226.20
+n15_h10        OOS      19.64    198  0.540   1.062   0.26    52.37  +21.0    NO
+    n=198  n/week=14.14  hit=0.540  avgR=n/a (no stop)  PF=1.062
+    avgWin$=255.92  avgLoss$=-283.22  $/day=19.64  std=696.77  se=76.95  t=0.26  ci95=[-136.59,170.15]
+    daily-close DD$=-8682.27  worst_day$=-2398.04  peak_conc=15  mean_conc=14.14  weeks=14
+    IWM alpha $/day=52.37 (n=198 skip=0)  n_short=15 hold=10
+    months: 2026-02 n=19 $/day=127.85; 2026-04 n=21 $/day=-265.57; 2026-06 n=21 $/day=-20.36; 2026-08 n=21 $/day=246.96
+

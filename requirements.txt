@@ -1,0 +1,3 @@
+thetadata
+python-dotenv
+polars

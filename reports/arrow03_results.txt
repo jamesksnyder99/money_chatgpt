@@ -1,0 +1,29 @@
+Arrow 3 — costed 1m replay (Lab A)
+VERDICT: FAIL — no named rule printed ≥ $200/day net on holdout
+account=$100000  target=$300-$500/day  failure_line=$200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8
+fills: next tradeable bar OPEN after signal close (no same-bar OHLC fills)
+costs: $0.005/share + 1x spread proxy max($0.01, 0.10% of price) PER SIDE; round trip = both sides
+size: risk $200 / stop_distance, notional cap min(10% of $100k, 2% prior-day dollar volume)
+book: max 5 positions, 10 entries/session, $1000 risk outstanding
+entries RTH 09:30-12:00; premarket features only; warmup has no PnL
+zero-volume / non-finite OHLC bars are not trades
+
+=== cash  chosen_param=None  grid=[None] ===
+  develop  $/day=0.00  trades=0  hit=0.000  avgR=0.000  maxDD$=0.00
+  holdout  $/day=0.00  trades=0  hit=0.000  avgR=0.000  maxDD$=0.00  vs_$200=NO  vs_$300-500=NO
+
+=== gap_fade  chosen_param=3.0  grid=[3.0, 5.0, 8.0] ===
+  develop  $/day=-134.86  trades=206  hit=0.330  avgR=-0.137  maxDD$=-12015.68
+  holdout  $/day=-446.50  trades=105  hit=0.276  avgR=-0.468  maxDD$=-11877.50  vs_$200=NO  vs_$300-500=NO
+
+=== open_drive  chosen_param=1.5  grid=[1.5, 2.0, 3.0] ===
+  develop  $/day=-254.10  trades=182  hit=0.324  avgR=-0.293  maxDD$=-11483.92
+  holdout  $/day=-187.46  trades=105  hit=0.333  avgR=-0.196  maxDD$=-4482.04  vs_$200=NO  vs_$300-500=NO
+
+=== vwap_reclaim  chosen_param=8.0  grid=[3.0, 5.0, 8.0] ===
+  develop  $/day=-111.01  trades=298  hit=0.322  avgR=-0.078  maxDD$=-6189.44
+  holdout  $/day=-342.01  trades=178  hit=0.258  avgR=-0.211  maxDD$=-7524.29  vs_$200=NO  vs_$300-500=NO
+

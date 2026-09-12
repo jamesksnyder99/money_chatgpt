@@ -1,0 +1,26 @@
+Arrow 69 — August 2025 warmup into data/virgin/ (ingest, not a book)
+No fills. No $200 verdict. Did not score engines. Did not touch data/full or Lab A data/bars. Did not rebuild September 2025 or later. No Arrow 70.
+venue=utp_cta interval=1m window=04:00-16:00ET last_bar=15:59
+eligibility: common stock + ETP denylist, prior_close [$1, $80], prior DV >= $1M, $10M is a filter column not an ingest wall, no 400 cap
+window NYSE 2025-08-01..2025-08-29 sessions=21 2025-08-01..2025-08-29 (not scored)
+dates_pulled=2025-08-01, 2025-08-04, 2025-08-05, 2025-08-06, 2025-08-07, 2025-08-08, 2025-08-11, 2025-08-12, 2025-08-13, 2025-08-14, 2025-08-15, 2025-08-18, 2025-08-19, 2025-08-20, 2025-08-21, 2025-08-22, 2025-08-25, 2025-08-26, 2025-08-27, 2025-08-28, 2025-08-29
+dates_skipped_already_on_disk=none
+dates_skipped_not_a_session=none
+workers=8 theta_concurrency=8 cpu_count=8
+output bars=C:\Users\james\Money\data\virgin\bars eligibility=C:\Users\james\Money\data\virgin\eligibility.parquet manifest=C:\Users\james\Money\data\virgin\manifest.parquet iwm=C:\Users\james\Money\data\virgin\bench\IWM
+
+sessions_attempted=21
+name_days_eligible=63302
+unique_symbols=4178
+1m_rows=45577440
+mean_bars_per_name_day=720.0
+name_days_pdv_ge_10m=32981
+manifest pulled=63302 empty=0 missing=0
+failures=0
+iwm_sessions=21 iwm_ok=21 iwm_fail=0
+wall_s=1794.1 wall_min=29.9
+after_first_5_sessions elapsed_s=313.5 name_days=15046 rows=10833120 remaining_name_days=48256 eta_min=16.8 (estimate)
+name_days_with_04:00_print=63302
+name_days_first_print_after_07:30=0
+August 2025 warmup is on virgin so September 2025 leftover lookback is complete.
+

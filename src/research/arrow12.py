@@ -1,0 +1,337 @@
+from __future__ import annotations
+
+import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import date, datetime, timezone
+from zoneinfo import ZoneInfo
+
+import polars as pl
+
+from ingest.calendar import WARMUP_SESSIONS, study_sessions
+from ingest.paths import ELIGIBILITY, REPORTS, ensure_dirs
+from ingest.progress import Progress
+from research.arrow3 import _fmt, _read_session_bars, _split_by_symbol, _summarize
+from research.arrow4 import _filter_track_a, _filter_track_b
+from research.arrow5 import _maps_from_elig
+from research.arrow10 import _build_bars15
+from research.book import replay_session
+from research.character import dv_ranks
+from research.costs import FAILURE_LINE, TARGET_HI, TARGET_LO
+from research.ema15 import ema_stack, stitch_15m
+from research.signals import MINUTE_1130
+from research.split import develop_holdout
+from research.strategies8 import opening_range
+from research.strategies10 import or15_break_short, session_gap
+from research.strategies11 import short_kernel_pop
+from research.strategies12 import bearish_or
+
+ET = ZoneInfo("America/New_York")
+
+# Kernel = Arrow 11 B/short_hot|or25. Short only. No Q4, two-close, 5m ORBR, or VWAP entry.
+IDS = (
+    "short_or25|control",
+    "short_or25|2R",
+    "short_or25|trail",
+    "short_or25|flat1130",
+    "short_or25|bearish_or",
+    "short_or25|gap15",
+)
+KERNEL_POP = {"dv_min": 0.80, "gap_min": 0.02, "or_w_min": 0.025}
+GAP15_POP = {"dv_min": 0.80, "gap_min": 0.015, "or_w_min": 0.025}
+MANAGE = {
+    "short_or25|control": {},
+    "short_or25|2R": {"take_2r": True},
+    "short_or25|trail": {"trail_after_1r": True},
+    "short_or25|flat1130": {"flatten_at": MINUTE_1130},
+    "short_or25|bearish_or": {},
+    "short_or25|gap15": {},
+}
+
+
+def _replay_one(args: tuple) -> dict:
+    session_iso, track, elig_path, bars15, sess_order = args
+    session = date.fromisoformat(session_iso)
+    elig_df = pl.read_parquet(elig_path).filter(pl.col("session_date") == session)
+    empty_rows = [
+        {"session": session_iso, "track": track, "name": n, "pnl": 0.0, "trades": []}
+        for n in IDS
+    ]
+    if elig_df.height == 0:
+        return {"rows": empty_rows}
+    bars = _read_session_bars(session)
+    if bars.height == 0:
+        return {"rows": empty_rows}
+    keep = set(elig_df["symbol"].to_list())
+    bars = bars.filter(pl.col("symbol").is_in(list(keep)))
+    by_sym = _split_by_symbol(bars)
+    meta = {
+        r["symbol"]: r
+        for r in elig_df.select("symbol", "prior_close", "prior_dollar_volume").iter_rows(named=True)
+    }
+    prior_dv = {s: float(m["prior_dollar_volume"] or 0.0) for s, m in meta.items()}
+    ranks = dv_ranks(prior_dv)
+
+    buckets: dict[str, list] = {n: [] for n in IDS}
+    for sym, sdf in by_sym.items():
+        m = meta.get(sym) or {}
+        prior_c = m.get("prior_close")
+        prior_c = float(prior_c) if prior_c is not None else None
+        rank = ranks.get(sym, 0.0)
+        rng = opening_range(sdf)
+        or_w = rng[2] if rng else None
+        gap = session_gap(sdf, prior_c)
+        kern = short_kernel_pop(rank, gap, or_w, **KERNEL_POP)
+        gap15 = short_kernel_pop(rank, gap, or_w, **GAP15_POP)
+        if not (kern or gap15):
+            continue
+        stitched = stitch_15m(sym, session_iso, sess_order, bars15)
+        brk = [s for s in or15_break_short(sdf) if s.side == -1]
+        kept = []
+        for sig in brk:
+            if ema_stack(stitched, sig.signal_ts) != "short":
+                continue
+            kept.append(sig)
+        if not kept:
+            continue
+        if kern:
+            for n in (
+                "short_or25|control",
+                "short_or25|2R",
+                "short_or25|trail",
+                "short_or25|flat1130",
+            ):
+                buckets[n].extend(kept)
+            if bearish_or(sdf):
+                buckets["short_or25|bearish_or"].extend(kept)
+        if gap15:
+            buckets["short_or25|gap15"].extend(kept)
+
+    rows = []
+    for exp_id in IDS:
+        sigs = [s for s in buckets[exp_id] if s.side == -1]
+        trades = replay_session(by_sym, sigs, prior_dv, **MANAGE[exp_id])
+        rows.append(
+            {
+                "session": session_iso,
+                "track": track,
+                "name": exp_id,
+                "pnl": sum(t.pnl for t in trades),
+                "trades": [{"pnl": t.pnl, "win": t.pnl > 0, "risk": t.risk} for t in trades],
+            }
+        )
+    return {"rows": rows}
+
+
+def run_arrow12(*, workers: int | None = None) -> int:
+    ensure_dirs()
+    cpu = os.cpu_count() or 1
+    workers = max(1, workers or min(8, cpu))
+    develop, holdout = develop_holdout()
+    all_sess = list(WARMUP_SESSIONS) + study_sessions()
+    sess_order = [d.isoformat() for d in all_sess]
+    print(
+        f"research start mode=arrow12 workers={workers} cpu={cpu} "
+        f"develop={develop[0]}..{develop[-1]} holdout={holdout[0]}..{holdout[-1]}",
+        flush=True,
+    )
+    print(
+        "kernel=B/short_hot|or25; short only; 2R/trail/flat1130/bearish-OR/gap1.5. No Arrow 13.",
+        flush=True,
+    )
+    elig_all = pl.read_parquet(ELIGIBILITY)
+    a_path = ELIGIBILITY.parent / "eligibility_a.parquet"
+    b_path = ELIGIBILITY.parent / "eligibility_b.parquet"
+    if a_path.exists():
+        track_a = pl.read_parquet(a_path)
+    else:
+        track_a = _filter_track_a(elig_all)
+        track_a.write_parquet(a_path)
+    if b_path.exists():
+        track_b = pl.read_parquet(b_path)
+        capped = True
+    else:
+        track_b, capped = _filter_track_b(elig_all)
+        track_b.write_parquet(b_path)
+    print(f"Track A rows={track_a.height} Track B rows={track_b.height}", flush=True)
+    _pc, _dv = _maps_from_elig(elig_all)
+    print("precompute 15m closes for ema15 stitch", flush=True)
+    bars15 = _build_bars15(all_sess, workers)
+    print(f"bars15 keys={len(bars15)}", flush=True)
+
+    jobs = []
+    for track, path in (("A", str(a_path)), ("B", str(b_path))):
+        for d in develop + holdout:
+            jobs.append((d.isoformat(), track, path, bars15, sess_order))
+    prog = Progress(len(jobs), "arrow12")
+    prog.start_heartbeat()
+    rows: list[dict] = []
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futs = [pool.submit(_replay_one, job) for job in jobs]
+        for i, fut in enumerate(as_completed(futs), 1):
+            chunk = fut.result()
+            rows.extend(chunk["rows"])
+            prog.mark(chunk["rows"][0]["session"] if chunk["rows"] else "", rows=len(chunk["rows"]))
+            if i % 8 == 0:
+                prog.heartbeat()
+    prog.stop_heartbeat()
+    prog.heartbeat()
+    _write_reports(rows, workers, cpu, develop, holdout, capped)
+    return 0
+
+
+def _write_reports(rows, workers, cpu, develop, holdout, capped) -> None:
+    develop_set = {d.isoformat() for d in develop}
+    holdout_set = {d.isoformat() for d in holdout}
+    results = []
+    for track in ("A", "B"):
+        for exp_id in IDS:
+            subset = [r for r in rows if r["track"] == track and r["name"] == exp_id]
+            pnl_map = {r["session"]: r for r in subset}
+            daily_dev = [pnl_map.get(d.isoformat(), {}).get("pnl", 0.0) for d in develop]
+            daily_hol = [pnl_map.get(d.isoformat(), {}).get("pnl", 0.0) for d in holdout]
+            tr_dev = [t for iso, r in pnl_map.items() if iso in develop_set for t in r["trades"]]
+            tr_hol = [t for iso, r in pnl_map.items() if iso in holdout_set for t in r["trades"]]
+            results.append(
+                {
+                    "track": track,
+                    "name": exp_id,
+                    "develop": _summarize(daily_dev, tr_dev, len(develop)),
+                    "holdout": _summarize(daily_hol, tr_hol, len(holdout)),
+                }
+            )
+
+    def _promotable(r) -> bool:
+        return r["holdout"]["clears_200"] and r["develop"]["per_day"] >= 0
+
+    promo = [r for r in results if _promotable(r)]
+    false_green = [
+        r for r in results if r["holdout"]["clears_200"] and r["develop"]["per_day"] < 0
+    ]
+    if promo:
+        verdict = "VERDICT: HOLD OUT CLEARS $200 WITH NON-RED DEVELOP — " + ", ".join(
+            f"{r['track']}/{r['name']}" for r in promo
+        )
+    else:
+        verdict = (
+            "VERDICT: FAIL — no Arrow 12 book has holdout >= $200/day AND non-red develop. "
+            "Develop-red / holdout-green is not a pass."
+        )
+
+    ctrl = {
+        trk: next(r for r in results if r["track"] == trk and r["name"] == "short_or25|control")
+        for trk in ("A", "B")
+    }
+
+    def _n_line(r) -> str:
+        c = ctrl[r["track"]]
+        hd, hh = c["develop"]["n_trades"], c["holdout"]["n_trades"]
+        nd, nh = r["develop"]["n_trades"], r["holdout"]["n_trades"]
+
+        def _rat(n, b):
+            if b <= 0:
+                return "n/a"
+            return f"{n / b:.2f}x"
+
+        return (
+            f"  {r['track']}/{r['name']}: develop n={nd} vs control {hd} ({_rat(nd, hd)}) "
+            f"holdout n={nh} vs control {hh} ({_rat(nh, hh)})"
+        )
+
+    b_ctrl = ctrl["B"]
+    preserved = []
+    for r in results:
+        if r["track"] != "B":
+            continue
+        if r["develop"]["per_day"] >= 0 and r["holdout"]["per_day"] >= 0:
+            preserved.append(
+                f"{r['name']} (dev ${r['develop']['per_day']:.2f} hold ${r['holdout']['per_day']:.2f}"
+                f" vs control ${b_ctrl['develop']['per_day']:.2f}/${b_ctrl['holdout']['per_day']:.2f})"
+            )
+
+    lines = [
+        "Arrow 12 — exits and one tight ring on B/short_hot|or25 (short only)",
+        verdict,
+        f"account=$100000  target=${TARGET_LO:.0f}-${TARGET_HI:.0f}/day  failure_line=${FAILURE_LINE:.0f}/day",
+        f"develop n={len(develop)} {develop[0]}..{develop[-1]}",
+        f"holdout n={len(holdout)} {holdout[0]}..{holdout[-1]}",
+        f"workers={workers} cpu_count={cpu}  Track B cap file={capped}",
+        "Pass = holdout >= $200/day AND develop not red. Do not promote develop-red / holdout-green.",
+        "Kernel: short only, Q5, gap-down>=2%, OR width>2.5%, 15m downside break, ema15 short-stack, stop=OR high.",
+        "No long mirror. No Q4. No two-close. No 5-min ORBR. No VWAP entry. No Arrow 13.",
+        "",
+        "n_vs_control (trade counts vs exact kernel on that track):",
+    ]
+    for r in results:
+        lines.append(_n_line(r))
+    lines.append("")
+    lines.append(
+        f"{'track':<6} {'id':<24} {'dev $/day':>10} {'hold $/day':>11} {'hold n':>7} {'hit':>6} {'avgR':>7} {'maxDD':>10} {'>=200':>6}"
+    )
+    for r in results:
+        h = r["holdout"]
+        flag = "YES" if h["clears_200"] else "NO"
+        if h["clears_200"] and r["develop"]["per_day"] < 0:
+            flag = "NO*"
+        lines.append(
+            f"{r['track']:<6} {r['name']:<24} {r['develop']['per_day']:10.2f} {h['per_day']:11.2f} "
+            f"{h['n_trades']:7d} {h['hit_rate']:6.3f} {h['avg_r']:7.3f} {h['max_dd']:10.2f} {flag:>6}"
+        )
+        lines.append(f"       develop {_fmt(r['develop'], holdout=False)}")
+        lines.append(f"       holdout {_fmt(r['holdout'], holdout=True)}")
+    if false_green:
+        lines.append("")
+        lines.append("NO* = holdout >= $200 but develop is red — not a pass:")
+        for r in false_green:
+            lines.append(
+                f"  {r['track']}/{r['name']}: develop ${r['develop']['per_day']:.2f}/day holdout ${r['holdout']['per_day']:.2f}/day"
+            )
+    text = "\n".join(lines) + "\n"
+    REPORTS.mkdir(parents=True, exist_ok=True)
+    (REPORTS / "arrow12_results.txt").write_text(text, encoding="utf-8")
+    print(text, flush=True)
+
+    log_path = REPORTS / "RESEARCH_LOG.md"
+    stamp = datetime.now(timezone.utc).astimezone(ET).isoformat(timespec="seconds")
+    near = [
+        r
+        for r in results
+        if r["track"] == "B" and r["holdout"]["per_day"] >= 0 and r["develop"]["per_day"] >= 0
+    ]
+    near_txt = ", ".join(
+        f"{r['name']} hold ${r['holdout']['per_day']:.2f}/day (vs $200)"
+        for r in near
+    ) or "none"
+    bits = [
+        f"## {stamp} — Arrow 12",
+        "",
+        verdict,
+        "",
+        "Kernel: Arrow 11 B/short_hot|or25 (develop +$19.36, holdout +$81.56, 97/37 trades). "
+        "Short only. Did not mirror into longs. Did not rerun Q4, two-close, 5-min ORBR, or VWAP entry. "
+        "Six ids: control; 2R; trail after 1R; flatten 11:30; bearish OR (09:44 close in lower half); "
+        "gap-down >= 1.5% with OR > 2.5% still.",
+        "",
+        "B two-sided green preserved: " + ("; ".join(preserved) if preserved else "none") + ".",
+        "Approach to $200 on B green books: " + near_txt + ".",
+        "",
+        "n_vs_control:",
+    ]
+    for r in results:
+        bits.append(_n_line(r))
+    bits.append("")
+    bits.append("What died (holdout < $200, or holdout green with red develop):")
+    for r in results:
+        if _promotable(r):
+            continue
+        bits.append(
+            f"- Track {r['track']} {r['name']}: "
+            f"holdout ${r['holdout']['per_day']:.2f}/day develop ${r['develop']['per_day']:.2f}/day "
+            f"trades_holdout={r['holdout']['n_trades']} avgR={r['holdout']['avg_r']:.3f}. "
+            "Do not retry this exact (track, id) without a new costed reason."
+        )
+    if promo:
+        bits.append("")
+        bits.append("Promotable: " + ", ".join(f"{r['track']}/{r['name']}" for r in promo))
+    bits.append("")
+    prev = log_path.read_text(encoding="utf-8") if log_path.exists() else "# Research log\n\n"
+    log_path.write_text(prev.rstrip() + "\n\n" + "\n".join(bits) + "\n", encoding="utf-8")

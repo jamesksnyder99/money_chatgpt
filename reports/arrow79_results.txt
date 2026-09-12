@@ -1,0 +1,271 @@
+Arrow 79 — complement × gap, skip Tuesday
+Id 0 all_0931 odd $/day=122.61 vs Arrow 78 all_0931 122.61 n=336 — within ±15%. Id 1 comp odd $66.97 even $135.37 (Arrow 78 complement reprint). comp×gap_dn lifts both vs complement: no (odd $13.09 even $73.00). Skipping Tuesday lifts both vs un-skipped parent: all_not_tue vs all_0931 no (odd $129.23 even $141.37); comp_not_tue vs comp no (odd $93.81 even $77.59). Crosses that lift both vs id 1: all_not_tue.
+VERDICT: SNIFF — complement × gap and skip-Tuesday on four months is still a sniff for promotion. Did not use April to pick a cross. Did not treat this window as a $200 slate pass. Did not score May–August.
+Frozen chassis: 15-session leftover, fill ≥ 09:31, exit 10:29, $3,000. Short only. Did not retune Wednesday H10. Complement = leftover eight minus H10 live at 09:30. Gap = 09:30 first / prior last-RTH − 1. Sit out if the filter leaves 0 names. Do not backfill from leftover 9–16. A cross beats id 1 only if it lifts $/day on both odd and even. Do not call a CI that includes 0 EV. No new ingest. Did not touch Lab A data/bars/. No Arrow 80.
+Acronyms: IS = in-sample; OOS = out-of-sample; PDV = prior-day dollar volume; IWM = iShares Russell 2000 ETF; RTH = regular trading hours; EV = expected value; SSR = Short Sale Restriction; CI = confidence interval; MTM = mark-to-market.
+account=100000  slate_floor=200/day  seat_floor=100/day  target=300-500/day
+window n=82 2026-01-02..2026-04-30  odd n=42  even n=40  (May not scored)
+workers=8 cpu_count=8  jan_tape=C:\Users\james\Money\data\virgin\bars  apr_tape=C:\Users\james\Money\data\virgin\bars
+eligibility: prior_close [$10, $80], PDV >= $10000000  left=15 n=8 $3000 fill>=09:31 exit=10:29  H10 nextrth hold=10 $4000
+Peak live = |shares × entry| (same-session day book). $/day = total PnL / NYSE sessions in that slice. Odd=Jan+Mar IS. Even=Feb+Apr OOS.
+
+CHARACTER odd-only mean n for ids 2 and 3. Description. Does not pick an id. Did not use April to pick a cross.
+  comp_gap_dn mean n=2.238  comp_gap_up mean n=2.286  odd sessions=42.
+  complement-family daily Pearson vs H10 MTM: comp odd=0.113 n=42 even=0.236 n=40; comp_gap_dn odd=0.009 n=42 even=0.367 n=40; comp_gap_up odd=0.098 n=42 even=-0.121 n=40; comp_not_tue odd=0.149 n=42 even=0.117 n=40.
+  H10 trades n=121 weds_ranked=16. Did not retune H10.
+
+id             slice       $/day      n    hit      t
+all_0931       odd        122.61    336  0.473   1.03
+    n=336  n/sess=8.00  hit=0.473  wins=159  losses=177  avgR=n/a (no stop)  PF=1.264
+    avgWin$=155.23  avgLoss$=-110.34  $/day=122.61  std=768.88  se=118.64  t=1.03  ci95=[-112.86,354.41]
+    daily-close DD$=-3311.80  worst_day$=-1678.54  peak_conc=8  mean_conc=8.00  weeks=42
+    $/day=122.61 (total PnL / n=42 sessions)  base=all gap=None skip_tue=False $3000  peak live $23940  all $23940  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=258.74; 2026-03 n=22 $/day=-1.13
+    odd CI includes 0 — not EV.
+all_0931       even       186.25    319  0.448   2.11
+    n=319  n/sess=7.97  hit=0.448  wins=143  losses=176  avgR=n/a (no stop)  PF=1.584
+    avgWin$=141.34  avgLoss$=-72.51  $/day=186.25  std=557.94  se=88.22  t=2.11  ci95=[13.27,351.91]
+    daily-close DD$=-1428.12  worst_day$=-847.13  peak_conc=8  mean_conc=7.97  weeks=40
+    $/day=186.25 (total PnL / n=40 sessions)  base=all gap=None skip_tue=False $3000  peak live $23934  all $23940  CI excludes 0
+    months: 2026-02 n=19 $/day=33.99; 2026-04 n=21 $/day=324.01
+    even CI excludes 0.
+all_0931       2026-01    258.74    160  0.512   1.16
+    n=160  n/sess=8.00  hit=0.512  wins=82  losses=78  avgR=n/a (no stop)  PF=1.469
+    avgWin$=197.58  avgLoss$=-141.37  $/day=258.74  std=997.48  se=223.04  t=1.16  ci95=[-179.94,677.52]
+    daily-close DD$=-3311.80  worst_day$=-1678.54  peak_conc=8  mean_conc=8.00  weeks=20
+    $/day=258.74 (total PnL / n=20 sessions)  base=all gap=None skip_tue=False $3000  peak live $23937  all $23940  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=258.74
+    2026-01 CI includes 0 — not EV.
+all_0931       2026-02     33.99    152  0.434   0.26
+    n=152  n/sess=8.00  hit=0.434  wins=66  losses=86  avgR=n/a (no stop)  PF=1.094
+    avgWin$=114.38  avgLoss$=-80.27  $/day=33.99  std=564.97  se=129.61  t=0.26  ci95=[-205.77,303.84]
+    daily-close DD$=-1213.04  worst_day$=-847.13  peak_conc=8  mean_conc=8.00  weeks=19
+    $/day=33.99 (total PnL / n=19 sessions)  base=all gap=None skip_tue=False $3000  peak live $23934  all $23940  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=33.99
+    2026-02 CI includes 0 — not EV.
+all_0931       2026-03     -1.13    176  0.438  -0.01
+    n=176  n/sess=8.00  hit=0.438  wins=77  losses=99  avgR=n/a (no stop)  PF=0.997
+    avgWin$=110.12  avgLoss$=-85.90  $/day=-1.13  std=469.36  se=100.07  t=-0.01  ci95=[-183.57,203.97]
+    daily-close DD$=-1706.50  worst_day$=-1006.77  peak_conc=8  mean_conc=8.00  weeks=22
+    $/day=-1.13 (total PnL / n=22 sessions)  base=all gap=None skip_tue=False $3000  peak live $23940  all $23940  CI includes 0 — not EV
+    months: 2026-03 n=22 $/day=-1.13
+    2026-03 CI includes 0 — not EV.
+all_0931       2026-04    324.01    167  0.461   2.82
+    n=167  n/sess=7.95  hit=0.461  wins=77  losses=90  avgR=n/a (no stop)  PF=2.162
+    avgWin$=164.44  avgLoss$=-65.09  $/day=324.01  std=527.07  se=115.02  t=2.82  ci95=[105.01,552.36]
+    daily-close DD$=-666.73  worst_day$=-440.89  peak_conc=8  mean_conc=7.95  weeks=21
+    $/day=324.01 (total PnL / n=21 sessions)  base=all gap=None skip_tue=False $3000  peak live $23910  all $23940  CI excludes 0
+    months: 2026-04 n=21 $/day=324.01
+    2026-04 CI excludes 0.
+comp           odd         66.97    192  0.479   0.61
+    n=192  n/sess=4.57  hit=0.479  wins=92  losses=100  avgR=n/a (no stop)  PF=1.211
+    avgWin$=175.65  avgLoss$=-133.47  $/day=66.97  std=714.18  se=110.20  t=0.61  ci95=[-146.72,291.95]
+    daily-close DD$=-3311.80  worst_day$=-1678.54  peak_conc=8  mean_conc=4.57  weeks=42
+    $/day=66.97 (total PnL / n=42 sessions)  base=complement gap=None skip_tue=False $3000  peak live $23936  all $23936  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=181.01; 2026-03 n=22 $/day=-36.70
+    odd CI includes 0 — not EV.
+comp           even       135.37    154  0.481   2.18
+    n=154  n/sess=3.95  hit=0.481  wins=74  losses=80  avgR=n/a (no stop)  PF=1.872
+    avgWin$=157.10  avgLoss$=-77.63  $/day=135.37  std=392.44  se=62.05  t=2.18  ci95=[22.82,256.38]
+    daily-close DD$=-927.92  worst_day$=-476.68  peak_conc=7  mean_conc=3.95  weeks=39
+    $/day=135.37 (total PnL / n=40 sessions)  base=complement gap=None skip_tue=False $3000  peak live $20929  all $23936  CI excludes 0
+    months: 2026-02 n=19 $/day=-10.66; 2026-04 n=21 $/day=267.48
+    even CI excludes 0.
+comp           2026-01    181.01    117  0.496   0.84
+    n=117  n/sess=5.85  hit=0.496  wins=58  losses=59  avgR=n/a (no stop)  PF=1.387
+    avgWin$=223.74  avgLoss$=-158.59  $/day=181.01  std=965.30  se=215.85  t=0.84  ci95=[-230.69,596.76]
+    daily-close DD$=-3311.80  worst_day$=-1678.54  peak_conc=8  mean_conc=5.85  weeks=20
+    $/day=181.01 (total PnL / n=20 sessions)  base=complement gap=None skip_tue=False $3000  peak live $23936  all $23936  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=181.01
+    2026-01 CI includes 0 — not EV.
+comp           2026-02    -10.66     56  0.411  -0.18
+    n=56  n/sess=3.11  hit=0.411  wins=23  losses=33  avgR=n/a (no stop)  PF=0.929
+    avgWin$=115.87  avgLoss$=-86.89  $/day=-10.66  std=252.38  se=57.90  t=-0.18  ci95=[-122.59,98.51]
+    daily-close DD$=-721.00  worst_day$=-433.89  peak_conc=6  mean_conc=3.11  weeks=18
+    $/day=-10.66 (total PnL / n=19 sessions)  base=complement gap=None skip_tue=False $3000  peak live $17883  all $23936  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-10.66
+    2026-02 CI includes 0 — not EV.
+comp           2026-03    -36.70     75  0.453  -0.48
+    n=75  n/sess=3.41  hit=0.453  wins=34  losses=41  avgR=n/a (no stop)  PF=0.798
+    avgWin$=93.61  avgLoss$=-97.32  $/day=-36.70  std=359.33  se=76.61  t=-0.48  ci95=[-189.81,99.69]
+    daily-close DD$=-1500.30  worst_day$=-844.13  peak_conc=5  mean_conc=3.41  weeks=22
+    $/day=-36.70 (total PnL / n=22 sessions)  base=complement gap=None skip_tue=False $3000  peak live $14963  all $23936  CI includes 0 — not EV
+    months: 2026-03 n=22 $/day=-36.70
+    2026-03 CI includes 0 — not EV.
+comp           2026-04    267.48     98  0.520   2.71
+    n=98  n/sess=4.67  hit=0.520  wins=51  losses=47  avgR=n/a (no stop)  PF=2.680
+    avgWin$=175.69  avgLoss$=-71.13  $/day=267.48  std=452.11  se=98.66  t=2.71  ci95=[90.76,471.81]
+    daily-close DD$=-684.25  worst_day$=-476.68  peak_conc=7  mean_conc=4.67  weeks=21
+    $/day=267.48 (total PnL / n=21 sessions)  base=complement gap=None skip_tue=False $3000  peak live $20929  all $23936  CI excludes 0
+    months: 2026-04 n=21 $/day=267.48
+    2026-04 CI excludes 0.
+comp_gap_dn    odd         13.09     94  0.468   0.19
+    n=94  n/sess=2.41  hit=0.468  wins=44  losses=50  avgR=n/a (no stop)  PF=1.088
+    avgWin$=154.99  avgLoss$=-125.40  $/day=13.09  std=454.50  se=70.13  t=0.19  ci95=[-115.62,159.07]
+    daily-close DD$=-2557.73  worst_day$=-1424.79  peak_conc=6  mean_conc=2.41  weeks=39
+    $/day=13.09 (total PnL / n=42 sessions)  base=complement gap=dn skip_tue=False $3000  peak live $17938  all $20929  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=39.11; 2026-03 n=22 $/day=-10.58
+    odd CI includes 0 — not EV.
+comp_gap_dn    even        73.00     76  0.474   1.43
+    n=76  n/sess=2.45  hit=0.474  wins=36  losses=40  avgR=n/a (no stop)  PF=1.799
+    avgWin$=182.67  avgLoss$=-91.40  $/day=73.00  std=322.93  se=51.06  t=1.43  ci95=[-10.50,185.05]
+    daily-close DD$=-675.62  worst_day$=-401.55  peak_conc=7  mean_conc=2.45  weeks=31
+    $/day=73.00 (total PnL / n=40 sessions)  base=complement gap=dn skip_tue=False $3000  peak live $20929  all $20929  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-15.65; 2026-04 n=21 $/day=153.20
+    even CI includes 0 — not EV.
+comp_gap_dn    2026-01     39.11     53  0.491   0.29
+    n=53  n/sess=2.94  hit=0.491  wins=26  losses=27  avgR=n/a (no stop)  PF=1.182
+    avgWin$=195.53  avgLoss$=-159.32  $/day=39.11  std=610.55  se=136.52  t=0.29  ci95=[-207.07,324.58]
+    daily-close DD$=-2557.73  worst_day$=-1424.79  peak_conc=6  mean_conc=2.94  weeks=18
+    $/day=39.11 (total PnL / n=20 sessions)  base=complement gap=dn skip_tue=False $3000  peak live $17938  all $20929  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=39.11
+    2026-01 CI includes 0 — not EV.
+comp_gap_dn    2026-02    -15.65     28  0.464  -0.48
+    n=28  n/sess=2.00  hit=0.464  wins=13  losses=15  avgR=n/a (no stop)  PF=0.817
+    avgWin$=102.14  avgLoss$=-108.34  $/day=-15.65  std=140.78  se=32.30  t=-0.48  ci95=[-82.56,42.86]
+    daily-close DD$=-562.73  worst_day$=-401.55  peak_conc=4  mean_conc=2.00  weeks=14
+    $/day=-15.65 (total PnL / n=19 sessions)  base=complement gap=dn skip_tue=False $3000  peak live $11856  all $20929  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-15.65
+    2026-02 CI includes 0 — not EV.
+comp_gap_dn    2026-03    -10.58     41  0.439  -0.19
+    n=41  n/sess=1.95  hit=0.439  wins=18  losses=23  avgR=n/a (no stop)  PF=0.882
+    avgWin$=96.44  avgLoss$=-85.59  $/day=-10.58  std=254.56  se=54.27  t=-0.19  ci95=[-115.19,87.06]
+    daily-close DD$=-778.04  worst_day$=-697.55  peak_conc=5  mean_conc=1.95  weeks=21
+    $/day=-10.58 (total PnL / n=22 sessions)  base=complement gap=dn skip_tue=False $3000  peak live $14952  all $20929  CI includes 0 — not EV
+    months: 2026-03 n=22 $/day=-10.58
+    2026-03 CI includes 0 — not EV.
+comp_gap_dn    2026-04    153.20     48  0.479   1.70
+    n=48  n/sess=2.82  hit=0.479  wins=23  losses=25  avgR=n/a (no stop)  PF=2.584
+    avgWin$=228.18  avgLoss$=-81.24  $/day=153.20  std=413.87  se=90.31  t=1.70  ci95=[-5.42,343.59]
+    daily-close DD$=-371.00  worst_day$=-332.13  peak_conc=7  mean_conc=2.82  weeks=17
+    $/day=153.20 (total PnL / n=21 sessions)  base=complement gap=dn skip_tue=False $3000  peak live $20929  all $20929  CI includes 0 — not EV
+    months: 2026-04 n=21 $/day=153.20
+    2026-04 CI includes 0 — not EV.
+comp_gap_up    odd         14.54     96  0.479   0.21
+    n=96  n/sess=2.67  hit=0.479  wins=46  losses=50  avgR=n/a (no stop)  PF=1.086
+    avgWin$=167.11  avgLoss$=-141.53  $/day=14.54  std=442.24  se=68.24  t=0.21  ci95=[-112.69,154.20]
+    daily-close DD$=-1464.40  worst_day$=-1096.61  peak_conc=6  mean_conc=2.67  weeks=36
+    $/day=14.54 (total PnL / n=42 sessions)  base=complement gap=up skip_tue=False $3000  peak live $17957  all $17957  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=60.39; 2026-03 n=22 $/day=-27.15
+    odd CI includes 0 — not EV.
+comp_gap_up    even        62.37     78  0.487   1.86
+    n=78  n/sess=2.52  hit=0.487  wins=38  losses=40  avgR=n/a (no stop)  PF=1.977
+    avgWin$=132.87  avgLoss$=-63.86  $/day=62.37  std=212.34  se=33.57  t=1.86  ci95=[-7.07,125.27]
+    daily-close DD$=-644.45  worst_day$=-592.68  peak_conc=6  mean_conc=2.52  weeks=31
+    $/day=62.37 (total PnL / n=40 sessions)  base=complement gap=up skip_tue=False $3000  peak live $17932  all $17957  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=4.99; 2026-04 n=21 $/day=114.28
+    even CI includes 0 — not EV.
+comp_gap_up    2026-01     60.39     63  0.492   0.44
+    n=63  n/sess=3.50  hit=0.492  wins=31  losses=32  avgR=n/a (no stop)  PF=1.239
+    avgWin$=202.03  avgLoss$=-157.97  $/day=60.39  std=614.76  se=137.46  t=0.44  ci95=[-186.06,319.68]
+    daily-close DD$=-1269.64  worst_day$=-1096.61  peak_conc=6  mean_conc=3.50  weeks=18
+    $/day=60.39 (total PnL / n=20 sessions)  base=complement gap=up skip_tue=False $3000  peak live $17957  all $17957  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=60.39
+    2026-01 CI includes 0 — not EV.
+comp_gap_up    2026-02      4.99     28  0.357   0.13
+    n=28  n/sess=2.00  hit=0.357  wins=10  losses=18  avgR=n/a (no stop)  PF=1.076
+    avgWin$=133.72  avgLoss$=-69.02  $/day=4.99  std=171.98  se=39.45  t=0.13  ci95=[-71.61,79.80]
+    daily-close DD$=-644.45  worst_day$=-433.89  peak_conc=4  mean_conc=2.00  weeks=14
+    $/day=4.99 (total PnL / n=19 sessions)  base=complement gap=up skip_tue=False $3000  peak live $11914  all $17957  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=4.99
+    2026-02 CI includes 0 — not EV.
+comp_gap_up    2026-03    -27.15     33  0.455  -0.67
+    n=33  n/sess=1.83  hit=0.455  wins=15  losses=18  avgR=n/a (no stop)  PF=0.705
+    avgWin$=94.96  avgLoss$=-112.31  $/day=-27.15  std=189.94  se=40.50  t=-0.67  ci95=[-107.74,46.71]
+    daily-close DD$=-950.70  worst_day$=-476.20  peak_conc=4  mean_conc=1.83  weeks=18
+    $/day=-27.15 (total PnL / n=22 sessions)  base=complement gap=up skip_tue=False $3000  peak live $11975  all $17957  CI includes 0 — not EV
+    months: 2026-03 n=22 $/day=-27.15
+    2026-03 CI includes 0 — not EV.
+comp_gap_up    2026-04    114.28     50  0.560   2.23
+    n=50  n/sess=2.94  hit=0.560  wins=28  losses=22  avgR=n/a (no stop)  PF=2.829
+    avgWin$=132.57  avgLoss$=-59.64  $/day=114.28  std=235.27  se=51.34  t=2.23  ci95=[13.99,208.36]
+    daily-close DD$=-592.68  worst_day$=-592.68  peak_conc=6  mean_conc=2.94  weeks=17
+    $/day=114.28 (total PnL / n=21 sessions)  base=complement gap=up skip_tue=False $3000  peak live $17932  all $17957  CI excludes 0
+    months: 2026-04 n=21 $/day=114.28
+    2026-04 CI excludes 0.
+all_not_tue    odd        129.23    264  0.492   1.14
+    n=264  n/sess=8.00  hit=0.492  wins=130  losses=134  avgR=n/a (no stop)  PF=1.372
+    avgWin$=153.93  avgLoss$=-108.83  $/day=129.23  std=736.14  se=113.59  t=1.14  ci95=[-95.04,354.26]
+    daily-close DD$=-2614.19  worst_day$=-1678.54  peak_conc=8  mean_conc=8.00  weeks=33
+    $/day=129.23 (total PnL / n=42 sessions)  base=all gap=None skip_tue=True $3000  peak live $23940  all $23940  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=217.55; 2026-03 n=22 $/day=48.94
+    odd CI includes 0 — not EV.
+all_not_tue    even       141.37    255  0.463   1.75
+    n=255  n/sess=7.97  hit=0.463  wins=118  losses=137  avgR=n/a (no stop)  PF=1.545
+    avgWin$=135.84  avgLoss$=-75.72  $/day=141.37  std=510.67  se=80.74  t=1.75  ci95=[-3.94,292.40]
+    daily-close DD$=-1472.80  worst_day$=-847.13  peak_conc=8  mean_conc=7.97  weeks=32
+    $/day=141.37 (total PnL / n=40 sessions)  base=all gap=None skip_tue=True $3000  peak live $23934  all $23940  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=58.99; 2026-04 n=21 $/day=215.90
+    even CI includes 0 — not EV.
+all_not_tue    2026-01    217.55    128  0.516   1.01
+    n=128  n/sess=8.00  hit=0.516  wins=66  losses=62  avgR=n/a (no stop)  PF=1.496
+    avgWin$=198.83  avgLoss$=-141.48  $/day=217.55  std=964.63  se=215.70  t=1.01  ci95=[-196.49,627.62]
+    daily-close DD$=-2614.19  worst_day$=-1678.54  peak_conc=8  mean_conc=8.00  weeks=16
+    $/day=217.55 (total PnL / n=20 sessions)  base=all gap=None skip_tue=True $3000  peak live $23937  all $23940  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=217.55
+    2026-01 CI includes 0 — not EV.
+all_not_tue    2026-02     58.99    120  0.450   0.46
+    n=120  n/sess=8.00  hit=0.450  wins=54  losses=66  avgR=n/a (no stop)  PF=1.204
+    avgWin$=122.64  avgLoss$=-83.36  $/day=58.99  std=553.05  se=126.88  t=0.46  ci95=[-171.36,324.07]
+    daily-close DD$=-852.55  worst_day$=-847.13  peak_conc=8  mean_conc=8.00  weeks=15
+    $/day=58.99 (total PnL / n=19 sessions)  base=all gap=None skip_tue=True $3000  peak live $23934  all $23940  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=58.99
+    2026-02 CI includes 0 — not EV.
+all_not_tue    2026-03     48.94    136  0.471   0.51
+    n=136  n/sess=8.00  hit=0.471  wins=64  losses=72  avgR=n/a (no stop)  PF=1.185
+    avgWin$=107.63  avgLoss$=-80.72  $/day=48.94  std=449.35  se=95.80  t=0.51  ci95=[-130.32,247.63]
+    daily-close DD$=-1387.66  worst_day$=-1006.77  peak_conc=8  mean_conc=8.00  weeks=17
+    $/day=48.94 (total PnL / n=22 sessions)  base=all gap=None skip_tue=True $3000  peak live $23940  all $23940  CI includes 0 — not EV
+    months: 2026-03 n=22 $/day=48.94
+    2026-03 CI includes 0 — not EV.
+all_not_tue    2026-04    215.90    135  0.474   2.10
+    n=135  n/sess=7.94  hit=0.474  wins=64  losses=71  avgR=n/a (no stop)  PF=1.931
+    avgWin$=146.97  avgLoss$=-68.63  $/day=215.90  std=470.07  se=102.58  t=2.10  ci95=[28.81,430.59]
+    daily-close DD$=-715.27  worst_day$=-440.89  peak_conc=8  mean_conc=7.94  weeks=17
+    $/day=215.90 (total PnL / n=21 sessions)  base=all gap=None skip_tue=True $3000  peak live $23910  all $23940  CI excludes 0
+    months: 2026-04 n=21 $/day=215.90
+    2026-04 CI excludes 0.
+comp_not_tue   odd         93.81    153  0.510   0.91
+    n=153  n/sess=4.64  hit=0.510  wins=78  losses=75  avgR=n/a (no stop)  PF=1.383
+    avgWin$=182.53  avgLoss$=-137.30  $/day=93.81  std=669.80  se=103.35  t=0.91  ci95=[-105.01,302.63]
+    daily-close DD$=-2614.19  worst_day$=-1678.54  peak_conc=8  mean_conc=4.64  weeks=33
+    $/day=93.81 (total PnL / n=42 sessions)  base=complement gap=None skip_tue=True $3000  peak live $23936  all $23936  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=170.97; 2026-03 n=22 $/day=23.66
+    odd CI includes 0 — not EV.
+comp_not_tue   even        77.59    124  0.476   1.52
+    n=124  n/sess=4.00  hit=0.476  wins=59  losses=65  avgR=n/a (no stop)  PF=1.569
+    avgWin$=145.07  avgLoss$=-83.94  $/day=77.59  std=323.13  se=51.09  t=1.52  ci95=[-12.82,175.74]
+    daily-close DD$=-1104.23  worst_day$=-476.68  peak_conc=7  mean_conc=4.00  weeks=31
+    $/day=77.59 (total PnL / n=40 sessions)  base=complement gap=None skip_tue=True $3000  peak live $20929  all $23936  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-22.10; 2026-04 n=21 $/day=167.78
+    even CI includes 0 — not EV.
+comp_not_tue   2026-01    170.97     95  0.495   0.82
+    n=95  n/sess=5.94  hit=0.495  wins=47  losses=48  avgR=n/a (no stop)  PF=1.436
+    avgWin$=239.64  avgLoss$=-163.41  $/day=170.97  std=928.36  se=207.59  t=0.82  ci95=[-225.16,551.89]
+    daily-close DD$=-2614.19  worst_day$=-1678.54  peak_conc=8  mean_conc=5.94  weeks=16
+    $/day=170.97 (total PnL / n=20 sessions)  base=complement gap=None skip_tue=True $3000  peak live $23936  all $23936  CI includes 0 — not EV
+    months: 2026-01 n=20 $/day=170.97
+    2026-01 CI includes 0 — not EV.
+comp_not_tue   2026-02    -22.10     43  0.395  -0.39
+    n=43  n/sess=3.07  hit=0.395  wins=17  losses=26  avgR=n/a (no stop)  PF=0.833
+    avgWin$=123.62  avgLoss$=-96.98  $/day=-22.10  std=244.47  se=56.09  t=-0.39  ci95=[-128.37,85.48]
+    daily-close DD$=-977.05  worst_day$=-433.89  peak_conc=6  mean_conc=3.07  weeks=14
+    $/day=-22.10 (total PnL / n=19 sessions)  base=complement gap=None skip_tue=True $3000  peak live $17883  all $23936  CI includes 0 — not EV
+    months: 2026-02 n=19 $/day=-22.10
+    2026-02 CI includes 0 — not EV.
+comp_not_tue   2026-03     23.66     58  0.534   0.38
+    n=58  n/sess=3.41  hit=0.534  wins=31  losses=27  avgR=n/a (no stop)  PF=1.212
+    avgWin$=95.95  avgLoss$=-90.89  $/day=23.66  std=292.05  se=62.26  t=0.38  ci95=[-95.60,141.64]
+    daily-close DD$=-951.40  worst_day$=-631.57  peak_conc=5  mean_conc=3.41  weeks=17
+    $/day=23.66 (total PnL / n=22 sessions)  base=complement gap=None skip_tue=True $3000  peak live $14963  all $23936  CI includes 0 — not EV
+    months: 2026-03 n=22 $/day=23.66
+    2026-03 CI includes 0 — not EV.
+comp_not_tue   2026-04    167.78     81  0.519   2.12
+    n=81  n/sess=4.76  hit=0.519  wins=42  losses=39  avgR=n/a (no stop)  PF=2.201
+    avgWin$=153.76  avgLoss$=-75.24  $/day=167.78  std=363.08  se=79.23  t=2.12  ci95=[34.38,334.84]
+    daily-close DD$=-684.25  worst_day$=-476.68  peak_conc=7  mean_conc=4.76  weeks=17
+    $/day=167.78 (total PnL / n=21 sessions)  base=complement gap=None skip_tue=True $3000  peak live $20929  all $23936  CI excludes 0
+    months: 2026-04 n=21 $/day=167.78
+    2026-04 CI excludes 0.
+    Crosses that lift both odd and even vs id 1 comp: all_not_tue. Did not use April to pick a cross. Still a sniff, not a seat. No Arrow 80.
+

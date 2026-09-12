@@ -1,0 +1,20 @@
+Arrow 17 — contiguous 04:00-16:00 1-minute tape (ingest, not a book)
+No fills. No $200 verdict. Did not overwrite data/bars (07:30-12:00). No Arrow 18.
+venue=utp_cta interval=1m window=04:00-16:00ET last_bar=15:59
+eligibility: common stock + ETP denylist, prior_close [$1, $50], prior DV >= $1M, no 400 cap
+sessions warmup=10 2026-05-15..2026-05-29 study=64 2026-06-01..2026-08-31 (Jul 3 closed as contract)
+workers=8 theta_concurrency=8 cpu_count=8
+output bars=C:\Users\james\Money\data\full\bars eligibility=C:\Users\james\Money\data\full\eligibility.parquet manifest=C:\Users\james\Money\data\full\manifest.parquet
+
+sessions_attempted=74
+name_days_eligible=190209
+unique_symbols=4527
+1m_rows=136950480
+mean_bars_per_name_day=720.0
+manifest pulled=190209 empty=0 missing=0
+failures=0
+wall_s=5357.9 wall_min=89.3
+after_first_5_study_sessions elapsed_s=276.8 name_days=13279 rows=9560880 remaining_name_days=176930 eta_min=61.5 (estimate)
+name_days_with_04:00_print=190209
+name_days_first_print_after_07:30=0
+

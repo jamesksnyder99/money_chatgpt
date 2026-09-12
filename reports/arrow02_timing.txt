@@ -1,0 +1,108 @@
+Arrow 2 — study pull timing (Jun–Aug 2026)
+start_utc: 2026-09-07T21:46:45+00:00
+end_utc:   2026-09-07T22:35:26+00:00
+start_et:  2026-09-07T17:46:45-04:00
+end_et:    2026-09-07T18:35:26-04:00
+wall_seconds: 2921.5
+wall_hours: 0.8115
+cpu_count: 8
+workers: 8
+theta_concurrency_start: 8
+theta_concurrency_end: 8
+sessions_attempted: 64
+sessions_ok: 64
+sessions_fail: 0
+eligible_mean: 2019.6
+eligible_min: 1906
+eligible_max: 2245
+eligible_per_session:
+  2026-06-01: eligible=2142 1m_rows=578340
+  2026-06-02: eligible=2152 1m_rows=581040
+  2026-06-03: eligible=2102 1m_rows=567540
+  2026-06-04: eligible=2146 1m_rows=579420
+  2026-06-05: eligible=2044 1m_rows=551880
+  2026-06-08: eligible=2098 1m_rows=566460
+  2026-06-09: eligible=2055 1m_rows=554850
+  2026-06-10: eligible=2124 1m_rows=573480
+  2026-06-11: eligible=2098 1m_rows=566460
+  2026-06-12: eligible=2069 1m_rows=558630
+  2026-06-15: eligible=1984 1m_rows=535680
+  2026-06-16: eligible=2093 1m_rows=565110
+  2026-06-17: eligible=2090 1m_rows=564300
+  2026-06-18: eligible=2110 1m_rows=569700
+  2026-06-22: eligible=2185 1m_rows=589950
+  2026-06-23: eligible=2115 1m_rows=571050
+  2026-06-24: eligible=2076 1m_rows=560520
+  2026-06-25: eligible=2145 1m_rows=579150
+  2026-06-26: eligible=2103 1m_rows=567810
+  2026-06-29: eligible=2197 1m_rows=593190
+  2026-06-30: eligible=2155 1m_rows=581850
+  2026-07-01: eligible=2245 1m_rows=606150
+  2026-07-02: eligible=2090 1m_rows=564300
+  2026-07-06: eligible=2033 1m_rows=548910
+  2026-07-07: eligible=2027 1m_rows=547290
+  2026-07-08: eligible=2018 1m_rows=544860
+  2026-07-09: eligible=2045 1m_rows=552150
+  2026-07-10: eligible=1971 1m_rows=532170
+  2026-07-13: eligible=1923 1m_rows=519210
+  2026-07-14: eligible=2045 1m_rows=552150
+  2026-07-15: eligible=1963 1m_rows=530010
+  2026-07-16: eligible=1943 1m_rows=524610
+  2026-07-17: eligible=1967 1m_rows=531090
+  2026-07-20: eligible=1933 1m_rows=521910
+  2026-07-21: eligible=1942 1m_rows=524340
+  2026-07-22: eligible=1933 1m_rows=521910
+  2026-07-23: eligible=1937 1m_rows=522990
+  2026-07-24: eligible=1985 1m_rows=535950
+  2026-07-27: eligible=1913 1m_rows=516510
+  2026-07-28: eligible=1927 1m_rows=520290
+  2026-07-29: eligible=1946 1m_rows=525420
+  2026-07-30: eligible=1957 1m_rows=528390
+  2026-07-31: eligible=1923 1m_rows=519210
+  2026-08-03: eligible=1981 1m_rows=534870
+  2026-08-04: eligible=1968 1m_rows=531360
+  2026-08-05: eligible=1984 1m_rows=535680
+  2026-08-06: eligible=1933 1m_rows=521910
+  2026-08-07: eligible=1934 1m_rows=522180
+  2026-08-10: eligible=1978 1m_rows=534060
+  2026-08-11: eligible=2025 1m_rows=546750
+  2026-08-12: eligible=2004 1m_rows=541080
+  2026-08-13: eligible=1982 1m_rows=535140
+  2026-08-14: eligible=1973 1m_rows=532710
+  2026-08-17: eligible=1954 1m_rows=527580
+  2026-08-18: eligible=1999 1m_rows=539730
+  2026-08-19: eligible=1978 1m_rows=534060
+  2026-08-20: eligible=2014 1m_rows=543780
+  2026-08-21: eligible=1976 1m_rows=533520
+  2026-08-24: eligible=1975 1m_rows=533250
+  2026-08-25: eligible=1947 1m_rows=525690
+  2026-08-26: eligible=1951 1m_rows=526770
+  2026-08-27: eligible=1917 1m_rows=517590
+  2026-08-28: eligible=1927 1m_rows=520290
+  2026-08-31: eligible=1906 1m_rows=514620
+1m_rows_total: 34898850
+mean_seconds_per_1m_request: 0.8647
+failures_count: 0
+failures (class/message, no secrets):
+  (none)
+
+extrapolation (estimate, not a promise):
+  N_warmup=10  N_study=64  N_full=74
+  est_full_hours = 0.8115 * (74) / 10 = 6.01
+  est_full_hours_scaled_by_eligible = 6.01 * (2019.6/2084.8) = 5.82
+  (study eligibility WAS observed: mean 2019.6 vs warmup mean 2084.8)
+
+assumptions:
+  - Jun–Aug 2026 trading days use the official NYSE calendar (closed 2026-06-19 Juneteenth and 2026-07-03 Independence observed).
+  - 2026-07-03 is a full holiday, not an early close (NYSE/Nasdaq 2026 schedule).
+  - Warmup mean eligible count holds in the study window.
+  - Same workers / theta_concurrency / venue=utp_cta / 07:30–12:00 1m OHLC.
+  - Wall time scales with session count (eligibility + 1m pulls).
+  - No tick/quotes/options/flat files.
+  - Splits endpoint is not in thetadata v3 SDK; 1m prints left unadjusted.
+  - did not pull 2026-07-03 or 2026-06-19 (full closes)
+  - zero-volume 1m minutes stored as Theta sent them; not trades
+  - validation: no issues
+
+comparison to Arrow 1 1.54h estimate:
+  wall_hours=0.8115 vs est 1.54h (estimate included warmup+study; this run is study EOD+1m only)

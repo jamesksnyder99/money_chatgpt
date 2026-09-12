@@ -1,0 +1,61 @@
+Arrow 11 — concentric expansion of B/short_hot_or15|ema (short only)
+VERDICT: FAIL — no Arrow 11 book has holdout >= $200/day AND non-red develop. Develop-red / holdout-green is not a pass.
+account=$100000  target=$300-$500/day  failure_line=$200/day
+develop n=42 2026-06-01..2026-07-30
+holdout n=22 2026-07-31..2026-08-31
+workers=8 cpu_count=8  Track B cap file=True
+Pass = holdout >= $200/day AND develop not red.
+Kernel: short only, Q5, gap-down>=2%, OR width>4%, 15m downside break, ema15 short-stack, flatten 11:59.
+No long mirror. No 5-min ORBR. No HH/HL stack. No Arrow 12.
+
+n_vs_control (trade counts vs exact kernel on that track):
+  A/short_hot|control: develop n=92 vs control 92 (1.00x) holdout n=28 vs control 28 (1.00x)
+  A/short_hot|gap1: develop n=116 vs control 92 (1.26x) holdout n=40 vs control 28 (1.43x)
+  A/short_hot|or25: develop n=131 vs control 92 (1.42x) holdout n=43 vs control 28 (1.54x)
+  A/short_hot|dv60: develop n=114 vs control 92 (1.24x) holdout n=48 vs control 28 (1.71x)
+  A/short_hot|two_close: develop n=202 vs control 92 (2.20x) holdout n=97 vs control 28 (3.46x)
+  A/short_hot|vwap: develop n=220 vs control 92 (2.39x) holdout n=108 vs control 28 (3.86x)
+  B/short_hot|control: develop n=58 vs control 58 (1.00x) holdout n=16 vs control 16 (1.00x)
+  B/short_hot|gap1: develop n=72 vs control 58 (1.24x) holdout n=25 vs control 16 (1.56x)
+  B/short_hot|or25: develop n=97 vs control 58 (1.67x) holdout n=37 vs control 16 (2.31x)
+  B/short_hot|dv60: develop n=85 vs control 58 (1.47x) holdout n=27 vs control 16 (1.69x)
+  B/short_hot|two_close: develop n=161 vs control 58 (2.78x) holdout n=85 vs control 16 (5.31x)
+  B/short_hot|vwap: develop n=191 vs control 58 (3.29x) holdout n=98 vs control 16 (6.12x)
+
+track  id                      dev $/day  hold $/day  hold n    hit    avgR      maxDD  >=200
+A      short_hot|control          -20.48      -21.16      28  0.321  -0.083   -1146.82     NO
+       develop $/day=-20.48  trades=92  hit=0.413  avgR=-0.047  maxDD$=-1560.06
+       holdout $/day=-21.16  trades=28  hit=0.321  avgR=-0.083  maxDD$=-1146.82  vs_$200=NO  vs_$300-500=NO
+A      short_hot|gap1             -14.28      -18.37      40  0.375  -0.051   -1248.99     NO
+       develop $/day=-14.28  trades=116  hit=0.414  avgR=-0.026  maxDD$=-1383.37
+       holdout $/day=-18.37  trades=40  hit=0.375  avgR=-0.051  maxDD$=-1248.99  vs_$200=NO  vs_$300-500=NO
+A      short_hot|or25             -24.57       29.10      43  0.488   0.075    -760.75     NO
+       develop $/day=-24.57  trades=131  hit=0.397  avgR=-0.040  maxDD$=-1830.41
+       holdout $/day=29.10  trades=43  hit=0.488  avgR=0.075  maxDD$=-760.75  vs_$200=NO  vs_$300-500=NO
+A      short_hot|dv60              -3.64      -28.73      48  0.438  -0.066   -1315.76     NO
+       develop $/day=-3.64  trades=114  hit=0.421  avgR=-0.007  maxDD$=-1535.11
+       holdout $/day=-28.73  trades=48  hit=0.438  avgR=-0.066  maxDD$=-1315.76  vs_$200=NO  vs_$300-500=NO
+A      short_hot|two_close        -40.80      -25.89      97  0.433  -0.061   -1423.24     NO
+       develop $/day=-40.80  trades=202  hit=0.406  avgR=-0.051  maxDD$=-3456.89
+       holdout $/day=-25.89  trades=97  hit=0.433  avgR=-0.061  maxDD$=-1423.24  vs_$200=NO  vs_$300-500=NO
+A      short_hot|vwap             -25.79      -41.56     108  0.444  -0.089   -3315.37     NO
+       develop $/day=-25.79  trades=220  hit=0.473  avgR=-0.074  maxDD$=-3824.36
+       holdout $/day=-41.56  trades=108  hit=0.444  avgR=-0.089  maxDD$=-3315.37  vs_$200=NO  vs_$300-500=NO
+B      short_hot|control            5.58       21.53      16  0.438   0.149    -193.80     NO
+       develop $/day=5.58  trades=58  hit=0.552  avgR=0.020  maxDD$=-975.73
+       holdout $/day=21.53  trades=16  hit=0.438  avgR=0.149  maxDD$=-193.80  vs_$200=NO  vs_$300-500=NO
+B      short_hot|gap1               0.15        3.43      25  0.360   0.015    -633.42     NO
+       develop $/day=0.15  trades=72  hit=0.500  avgR=0.000  maxDD$=-1172.76
+       holdout $/day=3.43  trades=25  hit=0.360  avgR=0.015  maxDD$=-633.42  vs_$200=NO  vs_$300-500=NO
+B      short_hot|or25              19.36       81.56      37  0.622   0.243    -540.70     NO
+       develop $/day=19.36  trades=97  hit=0.505  avgR=0.042  maxDD$=-946.99
+       holdout $/day=81.56  trades=37  hit=0.622  avgR=0.243  maxDD$=-540.70  vs_$200=NO  vs_$300-500=NO
+B      short_hot|dv60              -3.32       -6.62      27  0.370  -0.027    -685.75     NO
+       develop $/day=-3.32  trades=85  hit=0.506  avgR=-0.008  maxDD$=-874.58
+       holdout $/day=-6.62  trades=27  hit=0.370  avgR=-0.027  maxDD$=-685.75  vs_$200=NO  vs_$300-500=NO
+B      short_hot|two_close         23.84      -19.51      85  0.435  -0.075   -1045.12     NO
+       develop $/day=23.84  trades=161  hit=0.447  avgR=0.026  maxDD$=-2018.10
+       holdout $/day=-19.51  trades=85  hit=0.435  avgR=-0.075  maxDD$=-1045.12  vs_$200=NO  vs_$300-500=NO
+B      short_hot|vwap              69.71       61.62      98  0.459  -0.084   -1972.24     NO
+       develop $/day=69.71  trades=191  hit=0.513  avgR=0.064  maxDD$=-2560.88
+       holdout $/day=61.62  trades=98  hit=0.459  avgR=-0.084  maxDD$=-1972.24  vs_$200=NO  vs_$300-500=NO
