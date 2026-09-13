@@ -1,0 +1,25 @@
+[
+  {
+    "id": "A11_R5_LATE_ALL_PARTICIPATION",
+    "family": "R5",
+    "base": 8300,
+    "origin": "ASTRA",
+    "mechanism": "Replication of completed R4 low-volume-filter ablation on R5: one earned-ATR price-upturn half-cover from day6 regardless of initial participation; compare profit sacrificed for improved monthly downside against AR2 and original R5",
+    "control": "R5",
+    "volume": "mean",
+    "momentum": "switch",
+    "pacing": false,
+    "cover": "earned_rebound",
+    "volume_power": 0.5,
+    "penalty": 0.5,
+    "min_hold": 6,
+    "fade_atr": 1.0,
+    "state": "none",
+    "state_cut": 0.05,
+    "shuffle_seed": null,
+    "scale": 1.0,
+    "share_sizing": "fill",
+    "momentum_missing": "neutral",
+    "cover_clock": "checkpoint"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "candidate": "AR9_R5_LATE_COVER_PACED",
+    "control": "MATCH_AR9_R5_LATE_COVER_PACED",
+    "fixed_base": 8175,
+    "is_candidate_average_gross": 39924.16342803984,
+    "calibration": "Original base times candidate IS average gross / original IS average gross; round nearest25 once, no iterative retarget"
+  },
+  {
+    "candidate": "AR10_R4_CONSERVATIVE_COVER_PACED",
+    "control": "MATCH_AR10_R4_CONSERVATIVE_COVER_PACED",
+    "fixed_base": 4575,
+    "is_candidate_average_gross": 35695.84729540239,
+    "calibration": "Original base times candidate IS average gross / original IS average gross; round nearest25 once, no iterative retarget"
+  }
+]

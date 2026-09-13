@@ -4,7 +4,7 @@ import math
 import shutil
 
 from research.cg_arrow003_data import ROOT,REPO_ROOT,read,dump,digest,stamp
-from research.cg_arrow003_lab import Spec,run_is,authorize,ledger,code_identity
+from research.cg_arrow003_lab import Spec,run_is,authorize,ledger,code_identity,input_identity
 
 
 def compare(old,new,path="root",differences=None):
@@ -28,6 +28,7 @@ def compare(old,new,path="root",differences=None):
 
 def main():
     authorize("IS")
+    inputs=input_identity()
     paths=sorted((ROOT/"results").glob("*_IS.json"))
     before={p.stem[:-3]:read(p) for p in paths}
     archived={}
@@ -55,7 +56,9 @@ def main():
         if diff:mismatches[name]=diff
     payload={"timestamp":stamp(),"books":len(before),"origins":dict(Counter(r["spec"]["origin"] for r in before.values())),
              "tolerance_absolute":1e-7,"mismatches":mismatches,"archives":archived,
-             "code_sha256":code_identity(),"interpretation":"Every prior metric, entry/cover/terminal field, daily row and feature value recursively preserved; new explanatory fields permitted. This is verification, not additional hypotheses."}
+             "code_sha256":code_identity(),"input_sha256":inputs,
+             "interpretation":"Every prior metric, entry/cover/terminal field, daily row and feature value recursively preserved; new explanatory fields permitted. This is verification, not additional hypotheses."}
+    if inputs!=input_identity():raise RuntimeError("Input identity changed during exact replay")
     dump(REPO_ROOT/"reports/cg_arrow003_exact_replay.json",payload)
     ledger({"event":"EXACT_IDENTITY_REPLAY_COMPLETE","books":len(before),"mismatch_books":len(mismatches),
             "result_file":"reports/cg_arrow003_exact_replay.json"})

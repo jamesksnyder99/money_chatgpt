@@ -1,0 +1,269 @@
+{
+  "timestamp": "2026-09-13T19:24:47+00:00",
+  "mode": "IS completed-policy attribution",
+  "interactions": {
+    "unpaced": {
+      "books": [
+        "R5",
+        "A6_R5_STALL_VOTES",
+        "AR2_R5_LATE_WEAK_PART_COVER",
+        "AR5_R5_VOTES_LATE_COVER"
+      ],
+      "votes_increment": 3122.850245000005,
+      "cover_increment": 2061.7670400000025,
+      "combined_increment": 4597.075330000003,
+      "interaction": -587.5419550000042,
+      "buckets": {
+        "unchanged_not_covered": {
+          "tickets": 150,
+          "interaction": 0.0
+        },
+        "upsized_not_covered": {
+          "tickets": 20,
+          "interaction": 0.0
+        },
+        "unchanged_covered": {
+          "tickets": 18,
+          "interaction": 1.7053025658242404e-13
+        },
+        "downsized_not_covered": {
+          "tickets": 5,
+          "interaction": 0.0
+        },
+        "downsized_covered": {
+          "tickets": 2,
+          "interaction": -428.71829000000025
+        },
+        "upsized_covered": {
+          "tickets": 2,
+          "interaction": -158.82366500000057
+        }
+      },
+      "largest_interaction_symbols": [
+        [
+          "GGAL",
+          -270.14988000000017
+        ],
+        [
+          "GRPN",
+          -158.5684100000001
+        ],
+        [
+          "FIGS",
+          -97.6976000000002
+        ],
+        [
+          "HYMC",
+          -61.12606500000038
+        ],
+        [
+          "VELO",
+          1.1368683772161603e-13
+        ],
+        [
+          "PACS",
+          2.842170943040401e-14
+        ],
+        [
+          "SUPV",
+          2.842170943040401e-14
+        ],
+        [
+          "QUIK",
+          0.0
+        ]
+      ],
+      "interpretation": "Combined benefit is not the sum of independent edges. Changes to covered share quantities and, for paced books, capacity interactions create non-additivity."
+    },
+    "paced": {
+      "books": [
+        "C1_R5_PACED",
+        "AR4_R5_VOTES_PACED",
+        "AR9_R5_LATE_COVER_PACED",
+        "AR6_R5_VOTES_COVER_PACED"
+      ],
+      "votes_increment": 2908.889245000002,
+      "cover_increment": 1845.2354100000011,
+      "combined_increment": 4400.819080000001,
+      "interaction": -353.30557500000214,
+      "buckets": {
+        "unchanged_not_covered": {
+          "tickets": 143,
+          "interaction": 0.0
+        },
+        "upsized_not_covered": {
+          "tickets": 27,
+          "interaction": 187.4900200000005
+        },
+        "unchanged_covered": {
+          "tickets": 18,
+          "interaction": -2.1316282072803006e-13
+        },
+        "downsized_not_covered": {
+          "tickets": 5,
+          "interaction": 46.74635999999998
+        },
+        "downsized_covered": {
+          "tickets": 2,
+          "interaction": -428.71829000000025
+        },
+        "upsized_covered": {
+          "tickets": 2,
+          "interaction": -158.82366500000012
+        }
+      },
+      "largest_interaction_symbols": [
+        [
+          "GGAL",
+          -270.14988000000017
+        ],
+        [
+          "GRPN",
+          -158.5684100000001
+        ],
+        [
+          "CDNA",
+          109.38630000000057
+        ],
+        [
+          "FIGS",
+          -97.6976000000002
+        ],
+        [
+          "HYMC",
+          -61.126064999999926
+        ],
+        [
+          "TRAX",
+          54.05939000000012
+        ],
+        [
+          "COAG",
+          46.74635999999998
+        ],
+        [
+          "RHI",
+          22.86856000000006
+        ]
+      ],
+      "interpretation": "Combined benefit is not the sum of independent edges. Changes to covered share quantities and, for paced books, capacity interactions create non-additivity."
+    }
+  },
+  "votes_missingness": {
+    "vol20": {
+      "available": {
+        "tickets": 182,
+        "increment": 1118.311045000004,
+        "candidate_pnl": 15217.118833699991
+      },
+      "missing": {
+        "tickets": 15,
+        "increment": 2004.5391999999993,
+        "candidate_pnl": 9567.7705658
+      }
+    },
+    "volume_ratio": {
+      "available": {
+        "tickets": 182,
+        "increment": 1118.311045000004,
+        "candidate_pnl": 15217.118833699991
+      },
+      "missing": {
+        "tickets": 15,
+        "increment": 2004.5391999999993,
+        "candidate_pnl": 9567.7705658
+      }
+    },
+    "ret3": {
+      "available": {
+        "tickets": 194,
+        "increment": 3122.8502450000033,
+        "candidate_pnl": 26256.7748745
+      },
+      "missing": {
+        "tickets": 3,
+        "increment": 0.0,
+        "candidate_pnl": -1471.8854749999987
+      }
+    }
+  },
+  "borrow_increments": {
+    "A6_R5_STALL_VOTES": {
+      "control": "R5",
+      "scenario_profit_increments": {
+        "borrow_0_spread_1": 3122.850245000005,
+        "borrow_0_spread_2": 2972.595490000007,
+        "borrow_10_spread_1": 2940.0843793287713,
+        "borrow_10_spread_2": 2789.829624328773,
+        "borrow_30_spread_1": 2574.5526479863056,
+        "borrow_30_spread_2": 2424.2978929863048
+      }
+    },
+    "AR2_R5_LATE_WEAK_PART_COVER": {
+      "control": "R5",
+      "scenario_profit_increments": {
+        "borrow_0_spread_1": 2061.7670400000025,
+        "borrow_0_spread_2": 2064.5490800000043,
+        "borrow_10_spread_1": 2112.798977281098,
+        "borrow_10_spread_2": 2115.5810172811,
+        "borrow_30_spread_1": 2214.8628518432906,
+        "borrow_30_spread_2": 2217.6448918432898
+      }
+    },
+    "AR5_R5_VOTES_LATE_COVER": {
+      "control": "R5",
+      "scenario_profit_increments": {
+        "borrow_0_spread_1": 4597.075330000003,
+        "borrow_0_spread_2": 4449.015660000005,
+        "borrow_10_spread_1": 4464.134931746852,
+        "borrow_10_spread_2": 4316.075261746853,
+        "borrow_30_spread_1": 4198.2541352405515,
+        "borrow_30_spread_2": 4050.194465240552
+      }
+    },
+    "C1_R5_PACED": {
+      "control": "R5",
+      "scenario_profit_increments": {
+        "borrow_0_spread_1": 158.7253679000023,
+        "borrow_0_spread_2": 166.3836358000044,
+        "borrow_10_spread_1": 168.60675847534367,
+        "borrow_10_spread_2": 176.26502637534395,
+        "borrow_30_spread_1": 188.36953962603184,
+        "borrow_30_spread_2": 196.0278075260312
+      }
+    },
+    "AR4_R5_VOTES_PACED": {
+      "control": "C1_R5_PACED",
+      "scenario_profit_increments": {
+        "borrow_0_spread_1": 2908.889245000002,
+        "borrow_0_spread_2": 2755.3634899999997,
+        "borrow_10_spread_1": 2716.563468260276,
+        "borrow_10_spread_2": 2563.0377132602753,
+        "borrow_30_spread_1": 2331.9119147808233,
+        "borrow_30_spread_2": 2178.3861597808245
+      }
+    },
+    "AR9_R5_LATE_COVER_PACED": {
+      "control": "C1_R5_PACED",
+      "scenario_profit_increments": {
+        "borrow_0_spread_1": 1845.2354100000011,
+        "borrow_0_spread_2": 1842.4808200000007,
+        "borrow_10_spread_1": 1884.9042241304123,
+        "borrow_10_spread_2": 1882.1496341304137,
+        "borrow_30_spread_1": 1964.241852391231,
+        "borrow_30_spread_2": 1961.4872623912306
+      }
+    },
+    "AR6_R5_VOTES_COVER_PACED": {
+      "control": "C1_R5_PACED",
+      "scenario_profit_increments": {
+        "borrow_0_spread_1": 4400.819080000001,
+        "borrow_0_spread_2": 4249.498159999999,
+        "borrow_10_spread_1": 4258.226602130413,
+        "borrow_10_spread_2": 4106.905682130413,
+        "borrow_30_spread_1": 3973.0416463912316,
+        "borrow_30_spread_2": 3821.7207263912314
+      }
+    }
+  }
+}

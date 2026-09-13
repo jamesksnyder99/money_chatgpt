@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-13T19:05:16+00:00",
+  "timestamp": "2026-09-13T19:41:26+00:00",
   "mode": "IS diagnostic only",
   "shocks": [
     0.0,
@@ -20,6 +20,10 @@
           "completed_leg_pnl": 15676.620313399995,
           "terminal_net_mtm": -1598.1717950000007,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 15676.6203134,
+          "open_ticket_lifecycle_pnl": -1598.1717950000007,
+          "fully_completed_signal_cohort_pnl": 5507.428304600003,
+          "partly_open_signal_cohort_pnl": 8571.020213799995,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 24545.29,
@@ -244,6 +248,10 @@
           "completed_leg_pnl": 15676.620313399995,
           "terminal_net_mtm": -4052.700795000003,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 15676.6203134,
+          "open_ticket_lifecycle_pnl": -4052.7007950000025,
+          "fully_completed_signal_cohort_pnl": 5507.428304600003,
+          "partly_open_signal_cohort_pnl": 6116.491213799994,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 26999.819000000003,
@@ -468,6 +476,10 @@
           "completed_leg_pnl": 15676.620313399995,
           "terminal_net_mtm": -13870.816795000002,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 15676.6203134,
+          "open_ticket_lifecycle_pnl": -13870.816795000002,
+          "fully_completed_signal_cohort_pnl": 5507.428304600003,
+          "partly_open_signal_cohort_pnl": -3701.6247862000037,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 36817.935000000005,
@@ -692,6 +704,10 @@
           "completed_leg_pnl": 15676.620313399995,
           "terminal_net_mtm": -26143.461795000003,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 15676.620313399999,
+          "open_ticket_lifecycle_pnl": -26143.461795000003,
+          "fully_completed_signal_cohort_pnl": 5507.428304600002,
+          "partly_open_signal_cohort_pnl": -15974.26978620001,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 49090.58,
@@ -920,6 +936,10 @@
           "completed_leg_pnl": 23160.4578845,
           "terminal_net_mtm": -1498.41873,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 23160.457884499996,
+          "open_ticket_lifecycle_pnl": -1498.41873,
+          "fully_completed_signal_cohort_pnl": 9857.105259,
+          "partly_open_signal_cohort_pnl": 11804.933895499995,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 24072.920000000002,
@@ -1144,6 +1164,10 @@
           "completed_leg_pnl": 23160.4578845,
           "terminal_net_mtm": -3905.7107300000025,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 23160.457884499996,
+          "open_ticket_lifecycle_pnl": -3905.710730000002,
+          "fully_completed_signal_cohort_pnl": 9857.105259,
+          "partly_open_signal_cohort_pnl": 9397.641895499994,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 26480.212000000003,
@@ -1368,6 +1392,10 @@
           "completed_leg_pnl": 23160.4578845,
           "terminal_net_mtm": -13534.87873,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 23160.457884499996,
+          "open_ticket_lifecycle_pnl": -13534.87873,
+          "fully_completed_signal_cohort_pnl": 9857.105258999998,
+          "partly_open_signal_cohort_pnl": -231.52610450000066,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 36109.380000000005,
@@ -1594,6 +1622,10 @@
           "completed_leg_pnl": 23160.4578845,
           "terminal_net_mtm": -25571.33873,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 23160.457884500003,
+          "open_ticket_lifecycle_pnl": -25571.338730000003,
+          "fully_completed_signal_cohort_pnl": 9857.105259000004,
+          "partly_open_signal_cohort_pnl": -12267.986104500005,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 48145.840000000004,
@@ -1823,6 +1855,10 @@
           "completed_leg_pnl": 15691.617885799997,
           "terminal_net_mtm": -1598.1717950000007,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 15691.617885799997,
+          "open_ticket_lifecycle_pnl": -1598.1717950000007,
+          "fully_completed_signal_cohort_pnl": 5517.791997,
+          "partly_open_signal_cohort_pnl": 8575.654093799996,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 24545.29,
@@ -2048,6 +2084,10 @@
           "completed_leg_pnl": 15691.617885799997,
           "terminal_net_mtm": -4052.700795000003,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 15691.617885799998,
+          "open_ticket_lifecycle_pnl": -4052.7007950000025,
+          "fully_completed_signal_cohort_pnl": 5517.791997,
+          "partly_open_signal_cohort_pnl": 6121.125093799992,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 26999.819000000003,
@@ -2273,6 +2313,10 @@
           "completed_leg_pnl": 16027.764410799997,
           "terminal_net_mtm": -13870.816795000002,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 16027.764410799999,
+          "open_ticket_lifecycle_pnl": -13870.816795000002,
+          "fully_completed_signal_cohort_pnl": 5853.938522000001,
+          "partly_open_signal_cohort_pnl": -3696.9909062,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 36817.935000000005,
@@ -2498,6 +2542,10 @@
           "completed_leg_pnl": 16531.381385799996,
           "terminal_net_mtm": -24503.803245000003,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 16531.3813858,
+          "open_ticket_lifecycle_pnl": -24503.803245000003,
+          "fully_completed_signal_cohort_pnl": 6346.644077000003,
+          "partly_open_signal_cohort_pnl": -14319.065936200008,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 46148.82000000001,
@@ -2725,6 +2773,10 @@
           "completed_leg_pnl": 23322.2618474,
           "terminal_net_mtm": -1501.497325,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 23322.2618474,
+          "open_ticket_lifecycle_pnl": -1501.497325,
+          "fully_completed_signal_cohort_pnl": 10069.838436900001,
+          "partly_open_signal_cohort_pnl": 11750.926085499996,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 24154.510000000002,
@@ -2950,6 +3002,10 @@
           "completed_leg_pnl": 23575.7376374,
           "terminal_net_mtm": -3916.948325000002,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 23575.7376374,
+          "open_ticket_lifecycle_pnl": -3916.948325000002,
+          "fully_completed_signal_cohort_pnl": 10323.3142269,
+          "partly_open_signal_cohort_pnl": 9335.475085499993,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 26569.961000000003,
@@ -3175,6 +3231,10 @@
           "completed_leg_pnl": 24502.8884274,
           "terminal_net_mtm": -13454.032525,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 24502.8884274,
+          "open_ticket_lifecycle_pnl": -13454.032525,
+          "fully_completed_signal_cohort_pnl": 11210.320381900001,
+          "partly_open_signal_cohort_pnl": -161.46447950000402,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 35927.445,
@@ -3400,6 +3460,10 @@
           "completed_leg_pnl": 24999.9534174,
           "terminal_net_mtm": -23846.728925,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 24999.953417400004,
+          "open_ticket_lifecycle_pnl": -23846.728925000003,
+          "fully_completed_signal_cohort_pnl": 11445.044636900002,
+          "partly_open_signal_cohort_pnl": -10291.820144500009,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 45062.94,
@@ -3627,6 +3691,10 @@
           "completed_leg_pnl": 16048.258653599998,
           "terminal_net_mtm": -1441.1452050000005,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 16048.2586536,
+          "open_ticket_lifecycle_pnl": -1441.1452050000005,
+          "fully_completed_signal_cohort_pnl": 7644.641823300001,
+          "partly_open_signal_cohort_pnl": 6962.471625299994,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 22169.06,
@@ -3852,6 +3920,10 @@
           "completed_leg_pnl": 16048.258653599998,
           "terminal_net_mtm": -3658.0512050000025,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 16048.2586536,
+          "open_ticket_lifecycle_pnl": -3658.0512050000025,
+          "fully_completed_signal_cohort_pnl": 7644.641823300001,
+          "partly_open_signal_cohort_pnl": 4745.565625299995,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 24385.966000000004,
@@ -4077,6 +4149,10 @@
           "completed_leg_pnl": 16048.258653599998,
           "terminal_net_mtm": -12525.675205000001,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 16048.2586536,
+          "open_ticket_lifecycle_pnl": -12525.675205000001,
+          "fully_completed_signal_cohort_pnl": 7644.641823300002,
+          "partly_open_signal_cohort_pnl": -4122.058374700008,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 33253.590000000004,
@@ -4302,6 +4378,10 @@
           "completed_leg_pnl": 16048.258653599998,
           "terminal_net_mtm": -23610.205205000002,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 16048.258653599996,
+          "open_ticket_lifecycle_pnl": -23610.205205000002,
+          "fully_completed_signal_cohort_pnl": 7644.6418233,
+          "partly_open_signal_cohort_pnl": -15206.588374700012,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 44338.12,
@@ -4529,6 +4609,10 @@
           "completed_leg_pnl": 27723.080927400002,
           "terminal_net_mtm": -1501.497325,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 27723.080927400002,
+          "open_ticket_lifecycle_pnl": -1501.497325,
+          "fully_completed_signal_cohort_pnl": 15602.722656900005,
+          "partly_open_signal_cohort_pnl": 10618.860945499993,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 24154.510000000002,
@@ -4755,6 +4839,10 @@
           "completed_leg_pnl": 27723.080927400002,
           "terminal_net_mtm": -3916.948325000002,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 27723.080927400002,
+          "open_ticket_lifecycle_pnl": -3916.948325000002,
+          "fully_completed_signal_cohort_pnl": 15602.722656900003,
+          "partly_open_signal_cohort_pnl": 8203.409945499994,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 26569.961000000003,
@@ -4981,6 +5069,10 @@
           "completed_leg_pnl": 27961.893282400004,
           "terminal_net_mtm": -13578.752325,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 27961.893282400004,
+          "open_ticket_lifecycle_pnl": -13578.752325000001,
+          "fully_completed_signal_cohort_pnl": 15841.535011900005,
+          "partly_open_signal_cohort_pnl": -1458.3940545000078,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 36231.765,
@@ -5207,6 +5299,10 @@
           "completed_leg_pnl": 27403.228955000002,
           "terminal_net_mtm": -24768.979425,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 27403.228955000002,
+          "open_ticket_lifecycle_pnl": -24768.979425,
+          "fully_completed_signal_cohort_pnl": 16627.427336900004,
+          "partly_open_signal_cohort_pnl": -13993.177806900003,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 46679.9,
@@ -5435,6 +5531,10 @@
           "completed_leg_pnl": 17754.066563799995,
           "terminal_net_mtm": -1598.1717950000007,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 17754.0665638,
+          "open_ticket_lifecycle_pnl": -1598.1717950000007,
+          "fully_completed_signal_cohort_pnl": 8453.420920000002,
+          "partly_open_signal_cohort_pnl": 7702.473848799997,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 24545.29,
@@ -5661,6 +5761,10 @@
           "completed_leg_pnl": 17754.066563799995,
           "terminal_net_mtm": -4052.700795000003,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 17754.0665638,
+          "open_ticket_lifecycle_pnl": -4052.7007950000025,
+          "fully_completed_signal_cohort_pnl": 8453.420920000002,
+          "partly_open_signal_cohort_pnl": 5247.9448487999925,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 26999.819000000003,
@@ -5887,6 +5991,10 @@
           "completed_leg_pnl": 17754.066563799995,
           "terminal_net_mtm": -13870.816795000002,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 17754.0665638,
+          "open_ticket_lifecycle_pnl": -13870.816795000002,
+          "fully_completed_signal_cohort_pnl": 8453.420920000002,
+          "partly_open_signal_cohort_pnl": -4570.171151200002,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 36817.935000000005,
@@ -6113,6 +6221,10 @@
           "completed_leg_pnl": 18017.405803799997,
           "terminal_net_mtm": -24843.042945,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 18017.4058038,
+          "open_ticket_lifecycle_pnl": -24843.042945,
+          "fully_completed_signal_cohort_pnl": 8752.125585000003,
+          "partly_open_signal_cohort_pnl": -15577.762726200006,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 46757.46000000001,
@@ -6343,6 +6455,10 @@
           "completed_leg_pnl": 23360.0107374,
           "terminal_net_mtm": -1252.01512,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 23360.010737400007,
+          "open_ticket_lifecycle_pnl": -1252.01512,
+          "fully_completed_signal_cohort_pnl": 13149.593489900006,
+          "partly_open_signal_cohort_pnl": 8958.402127499994,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 20161.84,
@@ -6569,6 +6685,10 @@
           "completed_leg_pnl": 23360.0107374,
           "terminal_net_mtm": -3268.1991200000016,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 23360.010737400007,
+          "open_ticket_lifecycle_pnl": -3268.1991200000016,
+          "fully_completed_signal_cohort_pnl": 13149.593489900006,
+          "partly_open_signal_cohort_pnl": 6942.218127499993,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 22178.024,
@@ -6795,6 +6915,10 @@
           "completed_leg_pnl": 23360.0107374,
           "terminal_net_mtm": -11332.93512,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 23360.010737400004,
+          "open_ticket_lifecycle_pnl": -11332.93512,
+          "fully_completed_signal_cohort_pnl": 13149.593489900006,
+          "partly_open_signal_cohort_pnl": -1122.5178725000114,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 30242.760000000002,
@@ -7021,6 +7145,10 @@
           "completed_leg_pnl": 23360.0107374,
           "terminal_net_mtm": -21413.85512,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 23360.0107374,
+          "open_ticket_lifecycle_pnl": -21413.85512,
+          "fully_completed_signal_cohort_pnl": 13149.593489900002,
+          "partly_open_signal_cohort_pnl": -11203.4378725,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 40323.68,
@@ -7249,6 +7377,10 @@
           "completed_leg_pnl": 25222.224924500002,
           "terminal_net_mtm": -1498.41873,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 25222.2249245,
+          "open_ticket_lifecycle_pnl": -1498.41873,
+          "fully_completed_signal_cohort_pnl": 12816.678334000002,
+          "partly_open_signal_cohort_pnl": 10907.127860499995,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 24072.920000000002,
@@ -7474,6 +7606,10 @@
           "completed_leg_pnl": 25222.224924500002,
           "terminal_net_mtm": -3905.7107300000025,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 25222.2249245,
+          "open_ticket_lifecycle_pnl": -3905.710730000002,
+          "fully_completed_signal_cohort_pnl": 12816.678334000002,
+          "partly_open_signal_cohort_pnl": 8499.835860499994,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 26480.212000000003,
@@ -7699,6 +7835,10 @@
           "completed_leg_pnl": 25222.224924500002,
           "terminal_net_mtm": -13534.87873,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 25222.2249245,
+          "open_ticket_lifecycle_pnl": -13534.87873,
+          "fully_completed_signal_cohort_pnl": 12816.678334,
+          "partly_open_signal_cohort_pnl": -1129.3321395000057,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 36109.380000000005,
@@ -7924,6 +8064,10 @@
           "completed_leg_pnl": 25222.224924500002,
           "terminal_net_mtm": -25571.33873,
           "exit_legs": 213,
+          "fully_closed_ticket_pnl": 25222.224924500006,
+          "open_ticket_lifecycle_pnl": -25571.338730000003,
+          "fully_completed_signal_cohort_pnl": 12816.678334000006,
+          "partly_open_signal_cohort_pnl": -13165.79213950001,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 48145.840000000004,
@@ -8154,6 +8298,10 @@
           "completed_leg_pnl": 32409.883496899998,
           "terminal_net_mtm": -1818.2637650000004,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 32409.8834969,
+          "open_ticket_lifecycle_pnl": -1818.2637650000004,
+          "fully_completed_signal_cohort_pnl": 18571.3383867,
+          "partly_open_signal_cohort_pnl": 12020.281345200001,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 27839.04,
@@ -8379,6 +8527,10 @@
           "completed_leg_pnl": 32372.0698948,
           "terminal_net_mtm": -4490.7825550000025,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 32372.0698948,
+          "open_ticket_lifecycle_pnl": -4490.7825550000025,
+          "fully_completed_signal_cohort_pnl": 18932.9911167,
+          "partly_open_signal_cohort_pnl": 8948.296223100002,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 30030.880000000005,
@@ -8604,6 +8756,10 @@
           "completed_leg_pnl": 31598.8739278,
           "terminal_net_mtm": -14090.912535000001,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 31598.8739278,
+          "open_ticket_lifecycle_pnl": -14090.912535000001,
+          "fully_completed_signal_cohort_pnl": 19762.825056,
+          "partly_open_signal_cohort_pnl": -2254.863663200009,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 37658.16,
@@ -8829,6 +8985,10 @@
           "completed_leg_pnl": 30145.389307600002,
           "terminal_net_mtm": -24138.820854999998,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 30145.389307600002,
+          "open_ticket_lifecycle_pnl": -24138.820855,
+          "fully_completed_signal_cohort_pnl": 20348.4831242,
+          "partly_open_signal_cohort_pnl": -14341.914671600003,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 45656.64,
@@ -9056,6 +9216,10 @@
           "completed_leg_pnl": 11503.794785799995,
           "terminal_net_mtm": -1211.8516400000005,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 11503.794785799997,
+          "open_ticket_lifecycle_pnl": -1211.8516400000005,
+          "fully_completed_signal_cohort_pnl": 3796.773817,
+          "partly_open_signal_cohort_pnl": 6495.169328799995,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 17695.7,
@@ -9281,6 +9445,10 @@
           "completed_leg_pnl": 11503.794785799995,
           "terminal_net_mtm": -2981.421640000002,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 11503.794785799997,
+          "open_ticket_lifecycle_pnl": -2981.421640000002,
+          "fully_completed_signal_cohort_pnl": 3796.773817,
+          "partly_open_signal_cohort_pnl": 4725.599328799994,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 19465.270000000004,
@@ -9506,6 +9674,10 @@
           "completed_leg_pnl": 2157.543921899996,
           "terminal_net_mtm": -7499.396270000001,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 2157.5439218999977,
+          "open_ticket_lifecycle_pnl": -7499.396270000001,
+          "fully_completed_signal_cohort_pnl": -1936.4411230000007,
+          "partly_open_signal_cohort_pnl": -3405.4112251000024,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 20122.11,
@@ -9731,6 +9903,10 @@
           "completed_leg_pnl": 5694.188525899997,
           "terminal_net_mtm": -12940.77662,
           "exit_legs": 191,
+          "fully_closed_ticket_pnl": 5694.188525899999,
+          "open_ticket_lifecycle_pnl": -12940.77662,
+          "fully_completed_signal_cohort_pnl": 660.568176,
+          "partly_open_signal_cohort_pnl": -7907.156270100002,
           "fully_closed_tickets": 191,
           "terminal_tickets": 6,
           "terminal_gross": 24300.18,
@@ -9945,6 +10121,3694 @@
         "intended_notional_change": -139050.0,
         "filled_ticket_change": 0
       }
+    },
+    "AR9_R5_LATE_COVER_PACED": {
+      "0.0": {
+        "id": "AR9_R5_LATE_COVER_PACED",
+        "shock": 0.0,
+        "metrics": {
+          "total_pnl": 23665.9999324,
+          "per_day": 190.8548381645161,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 25167.4972574,
+          "terminal_net_mtm": -1501.497325,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 25167.4972574,
+          "open_ticket_lifecycle_pnl": -1501.497325,
+          "fully_completed_signal_cohort_pnl": 12806.369881900002,
+          "partly_open_signal_cohort_pnl": 10859.630050499996,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 24154.510000000002,
+          "terminal_stale_gross": 24154.510000000002,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": -910.2925359999956,
+          "opposite_split_calendar_absolute_mtm": 50777.687226,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -17295.837495199958,
+          "max_dd_percent": -0.17295837495199962,
+          "worst_day": -5322.092694999999,
+          "time_underwater_sessions": 225,
+          "longest_underwater_sessions": 131,
+          "red_months": 2,
+          "red_loss_sum": -15134.20925619999,
+          "worst_month": -9170.010135199995,
+          "median_month": 6034.257672550001,
+          "months": {
+            "2025-09": -9170.010135199995,
+            "2025-11": -5964.199120999996,
+            "2026-01": 12517.559880900013,
+            "2026-03": 14214.133962600006,
+            "2026-05": 10473.306410100002,
+            "2026-07": 1595.2089350000008
+          },
+          "best_month_concentration": 0.6006141301107717,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -4721.1624752000025,
+              "return": -0.047211624752000025,
+              "ending_equity": 95278.8375248
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 95278.8375248,
+              "pnl": -4448.8476599999985,
+              "return": -0.04669292547615324,
+              "ending_equity": 90829.9898648
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 90829.9898648,
+              "pnl": -3360.973659999998,
+              "return": -0.03700290691436596,
+              "ending_equity": 87469.01620479999
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 87469.01620479999,
+              "pnl": -2603.225460999998,
+              "return": -0.029761686754368025,
+              "ending_equity": 84865.7907438
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 84865.7907438,
+              "pnl": 10545.856520899997,
+              "return": 0.12426510645186489,
+              "ending_equity": 95411.64726469999
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 95411.64726469999,
+              "pnl": 1971.7033600000025,
+              "return": 0.02066522711351914,
+              "ending_equity": 97383.35062469999
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 97383.35062469999,
+              "pnl": 13924.830477599997,
+              "return": 0.14298984773346,
+              "ending_equity": 111308.18110229999
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 111308.18110229999,
+              "pnl": 289.3034849999998,
+              "return": 0.002599121485366019,
+              "ending_equity": 111597.48458729999
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 111597.48458729999,
+              "pnl": 3234.3146650999993,
+              "return": 0.02898196744362884,
+              "ending_equity": 114831.79925239999
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 114831.79925239999,
+              "pnl": 5301.273864999998,
+              "return": 0.04616555605253395,
+              "ending_equity": 120133.07311739998
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 120133.07311739998,
+              "pnl": 4953.426939999999,
+              "return": 0.04123283298646049,
+              "ending_equity": 125086.50005739999
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 125086.50005739999,
+              "pnl": -1420.5001249999993,
+              "return": -0.011356142544144708,
+              "ending_equity": 123665.99993239998
+            }
+          ],
+          "calendar_red_months": 5,
+          "calendar_red_loss_sum": -16554.709381199995,
+          "calendar_worst_month": -4721.1624752000025,
+          "calendar_median_month": 1130.503422500001,
+          "calendar_best_month_concentration": 0.5883896948100711,
+          "avg_exposure": 39924.16342803984,
+          "p95_exposure": 88583.46500000001,
+          "peak_exposure": 117957.96,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 0.9860567983808197,
+          "largest_symbol_gross": 16638.75,
+          "largest_symbol_equity_fraction": 0.19022450145137124,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.5927738467220759,
+          "intended_notional": 800950.0,
+          "borrow_base": 39663.8972386685,
+          "extra_spread_cost": 1587.0315676,
+          "scenarios": {
+            "borrow_0_spread_1": 23665.9999324,
+            "borrow_0_spread_2": 22078.9683648,
+            "borrow_10_spread_1": 19699.610208533148,
+            "borrow_10_spread_2": 18112.57864093315,
+            "borrow_30_spread_1": 11766.830760799448,
+            "borrow_30_spread_2": 10179.799193199447
+          },
+          "stress_short_10pct": -11795.796000000002,
+          "stress_largest_name_50pct": -8319.375,
+          "stress_joint_others10_largest50": -17277.292,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              11694.570060000002
+            ],
+            [
+              "NBY",
+              7067.980740000001
+            ],
+            [
+              "MRAM",
+              3368.173055099999
+            ],
+            [
+              "BNAI",
+              3017.222644999998
+            ],
+            [
+              "NCI",
+              1984.9818899999998
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "INOD",
+              -1802.409540000001
+            ],
+            [
+              "IREN",
+              -2276.4454051999996
+            ],
+            [
+              "HYMC",
+              -2796.388405000001
+            ],
+            [
+              "TRAX",
+              -3163.9903000000018
+            ],
+            [
+              "TERN",
+              -5406.362830000001
+            ]
+          ],
+          "top_symbol_concentration": 0.4941506842476375,
+          "stale_exposure_dollar_sessions": 2853101.6232000003,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR9_R5_LATE_COVER_PACED_0.json",
+        "detail_sha256": "67ff9980064bc7384f85b978cf324f950fc04975653d8d1c5e6ee14d45030a8d",
+        "increment_vs_common_shock_control": 2003.9607779000034,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      },
+      "0.1": {
+        "id": "AR9_R5_LATE_COVER_PACED",
+        "shock": 0.1,
+        "metrics": {
+          "total_pnl": 21250.548932399994,
+          "per_day": 171.37539461612897,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 25167.4972574,
+          "terminal_net_mtm": -3916.948325000002,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 25167.4972574,
+          "open_ticket_lifecycle_pnl": -3916.948325000002,
+          "fully_completed_signal_cohort_pnl": 12806.3698819,
+          "partly_open_signal_cohort_pnl": 8444.179050499994,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 26569.961000000003,
+          "terminal_stale_gross": 26569.961000000003,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": -558.7242959999951,
+          "opposite_split_calendar_absolute_mtm": 57032.253076000015,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -17498.181495199955,
+          "max_dd_percent": -0.1749818149519996,
+          "worst_day": -5322.092694999999,
+          "time_underwater_sessions": 230,
+          "longest_underwater_sessions": 131,
+          "red_months": 2,
+          "red_loss_sum": -15336.55325619999,
+          "worst_month": -9372.354135199992,
+          "median_month": 5359.8921725499995,
+          "months": {
+            "2025-09": -9372.354135199992,
+            "2025-11": -5964.199120999998,
+            "2026-01": 12517.559880900013,
+            "2026-03": 13349.757962600006,
+            "2026-05": 9591.199410099998,
+            "2026-07": 1128.584935
+          },
+          "best_month_concentration": 0.6282076761907115,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -4923.506475200003,
+              "return": -0.04923506475200003,
+              "ending_equity": 95076.4935248
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 95076.4935248,
+              "pnl": -4448.8476599999985,
+              "return": -0.04679229844377412,
+              "ending_equity": 90627.6458648
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 90627.6458648,
+              "pnl": -4734.61866,
+              "return": -0.052242542712222624,
+              "ending_equity": 85893.02720479999
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 85893.02720479999,
+              "pnl": -1229.580460999997,
+              "return": -0.01431525353121195,
+              "ending_equity": 84663.4467438
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 84663.4467438,
+              "pnl": 10545.856520899997,
+              "return": 0.12456209765251829,
+              "ending_equity": 95209.30326469999
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 95209.30326469999,
+              "pnl": 1971.7033600000025,
+              "return": 0.020709145980391135,
+              "ending_equity": 97181.00662469999
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 97181.00662469999,
+              "pnl": 13924.830477599997,
+              "return": 0.14328757193651867,
+              "ending_equity": 111105.83710229999
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 111105.83710229999,
+              "pnl": -575.0725150000011,
+              "return": -0.00517589831459986,
+              "ending_equity": 110530.76458729999
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 110530.76458729999,
+              "pnl": 2054.6284250999975,
+              "return": 0.018588747058536814,
+              "ending_equity": 112585.39301239999
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 112585.39301239999,
+              "pnl": 5143.573104999999,
+              "return": 0.045685971930954604,
+              "ending_equity": 117728.96611739999
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 117728.96611739999,
+              "pnl": 4942.082940000001,
+              "return": 0.04197847906921843,
+              "ending_equity": 122671.0490574
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 122671.0490574,
+              "pnl": -1420.5001249999993,
+              "return": -0.011579750364206323,
+              "ending_equity": 121250.5489324
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -17332.1258962,
+          "calendar_worst_month": -4923.506475200003,
+          "calendar_median_month": 698.3154225000008,
+          "calendar_best_month_concentration": 0.6552692131340324,
+          "avg_exposure": 41060.857301824704,
+          "p95_exposure": 91315.6876,
+          "peak_exposure": 120362.06700000001,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 0.9908330591414821,
+          "largest_symbol_gross": 16638.75,
+          "largest_symbol_equity_fraction": 0.19371479317322465,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.5175378774046113,
+          "intended_notional": 800950.0,
+          "borrow_base": 40789.20438935343,
+          "extra_spread_cost": 1587.0315676,
+          "scenarios": {
+            "borrow_0_spread_1": 21250.548932399994,
+            "borrow_0_spread_2": 19663.517364799995,
+            "borrow_10_spread_1": 17171.62849346465,
+            "borrow_10_spread_2": 15584.596925864651,
+            "borrow_30_spread_1": 9013.787615593965,
+            "borrow_30_spread_2": 7426.756047993965
+          },
+          "stress_short_10pct": -12036.206700000002,
+          "stress_largest_name_50pct": -8319.375,
+          "stress_joint_others10_largest50": -17517.7027,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              11694.570060000002
+            ],
+            [
+              "NBY",
+              7067.980740000001
+            ],
+            [
+              "MRAM",
+              3368.173055099999
+            ],
+            [
+              "BNAI",
+              3017.222644999998
+            ],
+            [
+              "NCI",
+              1984.9818899999998
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "INOD",
+              -1802.4095400000012
+            ],
+            [
+              "IREN",
+              -2276.4454051999996
+            ],
+            [
+              "HYMC",
+              -2796.388405000001
+            ],
+            [
+              "TRAX",
+              -3163.9903000000018
+            ],
+            [
+              "TERN",
+              -5406.362830000001
+            ]
+          ],
+          "top_symbol_concentration": 0.5503184928164225,
+          "stale_exposure_dollar_sessions": 3138411.7855200004,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR9_R5_LATE_COVER_PACED_10.json",
+        "detail_sha256": "e562fc755a0da32c9512ea3cadcb5b3acd681ec9a5b8749cc21391d12225b079",
+        "increment_vs_common_shock_control": 1995.8017779000002,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      },
+      "0.5": {
+        "id": "AR9_R5_LATE_COVER_PACED",
+        "shock": 0.5,
+        "metrics": {
+          "total_pnl": 12517.813577399998,
+          "per_day": 100.95010949516127,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 26096.5659024,
+          "terminal_net_mtm": -13578.752325,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 26096.5659024,
+          "open_ticket_lifecycle_pnl": -13578.752325000001,
+          "fully_completed_signal_cohort_pnl": 13735.438526900003,
+          "partly_open_signal_cohort_pnl": -1217.6249495000047,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 36231.765,
+          "terminal_stale_gross": 36231.765,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": 1106.5720240000055,
+          "opposite_split_calendar_absolute_mtm": 87345.54211600001,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -23299.65757619997,
+          "max_dd_percent": -0.23299657576199972,
+          "worst_day": -9316.926950000001,
+          "time_underwater_sessions": 237,
+          "longest_underwater_sessions": 132,
+          "red_months": 2,
+          "red_loss_sum": -16145.929256199988,
+          "worst_month": -10181.730135199996,
+          "median_month": 3126.9644950499987,
+          "months": {
+            "2025-09": -10181.730135199996,
+            "2025-11": -5964.199120999992,
+            "2026-01": 12517.559880900013,
+            "2026-03": 9892.253962600005,
+            "2026-05": 6062.771410099998,
+            "2026-07": 191.15757999999943
+          },
+          "best_month_concentration": 0.9999797331619922,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -5732.882475200004,
+              "return": -0.05732882475200004,
+              "ending_equity": 94267.11752479999
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 94267.11752479999,
+              "pnl": -4448.847659999998,
+              "return": -0.047194056388003856,
+              "ending_equity": 89818.2698648
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 89818.2698648,
+              "pnl": -10229.198659999998,
+              "return": -0.11388772769056474,
+              "ending_equity": 79589.0712048
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 79589.0712048,
+              "pnl": 4264.999539000002,
+              "return": 0.053587753625434706,
+              "ending_equity": 83854.0707438
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 83854.0707438,
+              "pnl": 10545.856520899997,
+              "return": 0.12576439554283342,
+              "ending_equity": 94399.92726469999
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 94399.92726469999,
+              "pnl": 1971.7033600000025,
+              "return": 0.020886704228820982,
+              "ending_equity": 96371.63062469999
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 96371.63062469999,
+              "pnl": 13924.830477599999,
+              "return": 0.14449097091474422,
+              "ending_equity": 110296.46110229999
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 110296.46110229999,
+              "pnl": -4032.576515,
+              "return": -0.03656125024047494,
+              "ending_equity": 106263.8845873
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 106263.8845873,
+              "pnl": -2664.116534900002,
+              "return": -0.025070761766772462,
+              "ending_equity": 103599.76805239999
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 103599.76805239999,
+              "pnl": 4512.770064999999,
+              "return": 0.04355965413665283,
+              "ending_equity": 108112.53811739999
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 108112.53811739999,
+              "pnl": 5566.752225,
+              "return": 0.05149034813108387,
+              "ending_equity": 113679.2903424
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 113679.2903424,
+              "pnl": -1161.4767650000006,
+              "return": -0.010217135957672267,
+              "ending_equity": 112517.8135774
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -28269.0986101,
+          "calendar_worst_month": -10229.198659999998,
+          "calendar_median_month": 405.11329750000095,
+          "calendar_best_month_concentration": 1.1124011706597283,
+          "avg_exposure": 45136.12432246215,
+          "p95_exposure": 100046.37860000001,
+          "peak_exposure": 129978.49500000001,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.1420494068433213,
+          "largest_symbol_gross": 18508.500000000004,
+          "largest_symbol_equity_fraction": 0.22182702180904143,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.27733470175618213,
+          "intended_notional": 790376.63,
+          "borrow_base": 44828.3112466137,
+          "extra_spread_cost": 1565.1179226000002,
+          "scenarios": {
+            "borrow_0_spread_1": 12517.813577399998,
+            "borrow_0_spread_2": 10952.695654799998,
+            "borrow_10_spread_1": 8034.982452738628,
+            "borrow_10_spread_2": 6469.864530138628,
+            "borrow_30_spread_1": -930.6797965841124,
+            "borrow_30_spread_2": -2495.797719184113
+          },
+          "stress_short_10pct": -12997.849500000002,
+          "stress_largest_name_50pct": -9254.250000000002,
+          "stress_joint_others10_largest50": -18479.345500000003,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              11694.570060000002
+            ],
+            [
+              "NBY",
+              7067.980740000001
+            ],
+            [
+              "MRAM",
+              3368.173055099999
+            ],
+            [
+              "BNAI",
+              3017.222644999998
+            ],
+            [
+              "NCI",
+              1984.9818899999998
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "HYMC",
+              -2796.388405000001
+            ],
+            [
+              "FBRX",
+              -2868.555400000001
+            ],
+            [
+              "TRAX",
+              -2940.029970000002
+            ],
+            [
+              "DNTH",
+              -4641.257689999999
+            ],
+            [
+              "TERN",
+              -5406.362830000001
+            ]
+          ],
+          "top_symbol_concentration": 0.9342342404837932,
+          "stale_exposure_dollar_sessions": 4268835.8748,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 2,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR9_R5_LATE_COVER_PACED_50.json",
+        "detail_sha256": "b586b2662bfe0457fbde3afe80fa5b9f9dbba419b9880a1634b4493fd71d9e09",
+        "increment_vs_common_shock_control": 2892.234422900001,
+        "intended_notional_change": -10573.369999999995,
+        "filled_ticket_change": 0
+      },
+      "1.0": {
+        "id": "AR9_R5_LATE_COVER_PACED",
+        "shock": 1.0,
+        "metrics": {
+          "total_pnl": 2345.131122399988,
+          "per_day": 18.912347761290224,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 26418.0198474,
+          "terminal_net_mtm": -24072.888725,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 26418.0198474,
+          "open_ticket_lifecycle_pnl": -24072.888725,
+          "fully_completed_signal_cohort_pnl": 13882.8296769,
+          "partly_open_signal_cohort_pnl": -11537.698554500013,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 45468.700000000004,
+          "terminal_stale_gross": 45468.700000000004,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": 2906.1855390000046,
+          "opposite_split_calendar_absolute_mtm": 131210.617241,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -33857.98053489998,
+          "max_dd_percent": -0.3117960257619997,
+          "worst_day": -15486.426950000001,
+          "time_underwater_sessions": 242,
+          "longest_underwater_sessions": 132,
+          "red_months": 3,
+          "red_loss_sum": -17395.039131199996,
+          "worst_month": -11193.45013519999,
+          "median_month": 707.4232675499956,
+          "months": {
+            "2025-09": -11193.45013519999,
+            "2025-11": -5964.1991210000015,
+            "2026-01": 12517.559880900013,
+            "2026-03": 5570.3739626,
+            "2026-05": 1652.2364100999957,
+            "2026-07": -237.38987500000462
+          },
+          "best_month_concentration": 5.3376801669365275,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -6744.602475200006,
+              "return": -0.06744602475200005,
+              "ending_equity": 93255.39752479999
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 93255.39752479999,
+              "pnl": -4448.847659999996,
+              "return": -0.047706060754466095,
+              "ending_equity": 88806.54986479999
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 88806.54986479999,
+              "pnl": -17097.42366,
+              "return": -0.19252435418366431,
+              "ending_equity": 71709.12620479999
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 71709.12620479999,
+              "pnl": 11133.224539000003,
+              "return": 0.1552553367782465,
+              "ending_equity": 82842.3507438
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 82842.3507438,
+              "pnl": 10545.856520899997,
+              "return": 0.127300305051873,
+              "ending_equity": 93388.20726469999
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 93388.20726469999,
+              "pnl": 1971.7033600000025,
+              "return": 0.021112980083356745,
+              "ending_equity": 95359.91062469999
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 95359.91062469999,
+              "pnl": 13924.830477599997,
+              "return": 0.14602394639821745,
+              "ending_equity": 109284.74110229999
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 109284.74110229999,
+              "pnl": -8354.456515,
+              "return": -0.07644668808044762,
+              "ending_equity": 100930.28458729999
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 100930.28458729999,
+              "pnl": -8562.547734900003,
+              "return": -0.084836258709781,
+              "ending_equity": 92367.73685239999
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 92367.73685239999,
+              "pnl": 3724.2662649999975,
+              "return": 0.040319990419936655,
+              "ending_equity": 96092.00311739999
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 96092.00311739999,
+              "pnl": 7372.832454999997,
+              "return": 0.07672680572588617,
+              "ending_equity": 103464.83557239998
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 103464.83557239998,
+              "pnl": -1119.7044500000009,
+              "return": -0.010822077315499938,
+              "ending_equity": 102345.13112239998
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -46327.5824951,
+          "calendar_worst_month": -17097.42366,
+          "calendar_median_month": 425.9994550000008,
+          "calendar_best_month_concentration": 5.93776200596811,
+          "avg_exposure": 49984.045028438246,
+          "p95_exposure": 105112.84640000001,
+          "peak_exposure": 129968.85,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.5961259690109724,
+          "largest_symbol_gross": 24678.0,
+          "largest_symbol_equity_fraction": 0.32362292392450726,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.046917593825504395,
+          "intended_notional": 776842.665,
+          "borrow_base": 49653.138029079455,
+          "extra_spread_cost": 1538.8303776,
+          "scenarios": {
+            "borrow_0_spread_1": 2345.131122399988,
+            "borrow_0_spread_2": 806.3007447999878,
+            "borrow_10_spread_1": -2620.1826805079577,
+            "borrow_10_spread_2": -4159.0130581079575,
+            "borrow_30_spread_1": -12550.81028632385,
+            "borrow_30_spread_2": -14089.640663923848
+          },
+          "stress_short_10pct": -12996.885000000002,
+          "stress_largest_name_50pct": -12339.0,
+          "stress_joint_others10_largest50": -19911.893000000004,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              11694.570060000002
+            ],
+            [
+              "NBY",
+              7067.980740000001
+            ],
+            [
+              "MRAM",
+              3368.173055099999
+            ],
+            [
+              "BNAI",
+              3017.222644999998
+            ],
+            [
+              "NCI",
+              1984.9818899999998
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "FBRX",
+              -3618.5568000000007
+            ],
+            [
+              "AGL",
+              -4487.4355350000005
+            ],
+            [
+              "AMBQ",
+              -4875.77722
+            ],
+            [
+              "TERN",
+              -5406.362830000001
+            ],
+            [
+              "DNTH",
+              -8963.13769
+            ]
+          ],
+          "top_symbol_concentration": 4.986744642249204,
+          "stale_exposure_dollar_sessions": 5605899.4264,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 2,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR9_R5_LATE_COVER_PACED_100.json",
+        "detail_sha256": "ff2447d3a3f08a80a2f6b0f360e7972e91d207eeb1e2af70ce02a3da6f3fda79",
+        "increment_vs_common_shock_control": 4756.011967899989,
+        "intended_notional_change": -24107.334999999963,
+        "filled_ticket_change": 0
+      }
+    },
+    "AR10_R4_CONSERVATIVE_COVER_PACED": {
+      "0.0": {
+        "id": "AR10_R4_CONSERVATIVE_COVER_PACED",
+        "shock": 0.0,
+        "metrics": {
+          "total_pnl": 14662.597621600002,
+          "per_day": 118.24675501290324,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 16103.742826599999,
+          "terminal_net_mtm": -1441.1452050000005,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 16103.7428266,
+          "open_ticket_lifecycle_pnl": -1441.1452050000005,
+          "fully_completed_signal_cohort_pnl": 7705.209041300001,
+          "partly_open_signal_cohort_pnl": 6957.3885803,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 22169.06,
+          "terminal_stale_gross": 22169.06,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": -1711.5084266999959,
+          "opposite_split_calendar_absolute_mtm": 46841.19128670001,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -18613.089977099982,
+          "max_dd_percent": -0.18613089977099984,
+          "worst_day": -4291.556479999998,
+          "time_underwater_sessions": 231,
+          "longest_underwater_sessions": 139,
+          "red_months": 2,
+          "red_loss_sum": -16187.037223099993,
+          "worst_month": -9564.935421399996,
+          "median_month": 5938.755435549994,
+          "months": {
+            "2025-09": -9564.935421399996,
+            "2025-11": -6622.101801699997,
+            "2026-01": 8856.763164,
+            "2026-03": 10115.3608096,
+            "2026-05": 7612.838071099996,
+            "2026-07": 4264.672799999993
+          },
+          "best_month_concentration": 0.6898750869831344,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -5706.161131400002,
+              "return": -0.05706161131400002,
+              "ending_equity": 94293.8388686
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 94293.8388686,
+              "pnl": -3858.7742899999976,
+              "return": -0.04092286766876956,
+              "ending_equity": 90435.0645786
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 90435.0645786,
+              "pnl": -3206.228934999999,
+              "return": -0.03545338248985672,
+              "ending_equity": 87228.8356436
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 87228.8356436,
+              "pnl": -3415.8728666999996,
+              "return": -0.03915990442262223,
+              "ending_equity": 83812.9627769
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 83812.9627769,
+              "pnl": 7374.003688999999,
+              "return": 0.087981661125961,
+              "ending_equity": 91186.96646590001
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 91186.96646590001,
+              "pnl": 1482.7594750000017,
+              "return": 0.016260651411783608,
+              "ending_equity": 92669.72594090001
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 92669.72594090001,
+              "pnl": 9095.9697746,
+              "return": 0.09815470675289298,
+              "ending_equity": 101765.69571550001
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 101765.69571550001,
+              "pnl": 1019.3910349999998,
+              "return": 0.010017039905567467,
+              "ending_equity": 102785.0867505
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 102785.0867505,
+              "pnl": 1160.4825500999996,
+              "return": 0.011290378660835779,
+              "ending_equity": 103945.56930060001
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 103945.56930060001,
+              "pnl": 4265.502485,
+              "return": 0.041035924029283063,
+              "ending_equity": 108211.07178560001
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 108211.07178560001,
+              "pnl": 7656.040101000002,
+              "return": 0.07075098670281182,
+              "ending_equity": 115867.11188660002
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 115867.11188660002,
+              "pnl": -1204.5142649999998,
+              "return": -0.010395652790404119,
+              "ending_equity": 114662.59762160001
+            }
+          ],
+          "calendar_red_months": 5,
+          "calendar_red_loss_sum": -17391.551488099998,
+          "calendar_worst_month": -5706.161131400002,
+          "calendar_median_month": 1089.9367925499996,
+          "calendar_best_month_concentration": 0.6203518646109745,
+          "avg_exposure": 35695.84729540239,
+          "p95_exposure": 75538.98000000001,
+          "peak_exposure": 101421.07,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.0123055387827005,
+          "largest_symbol_gross": 14568.690000000002,
+          "largest_symbol_equity_fraction": 0.17133238985968896,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.4107648013019301,
+          "intended_notional": 716100.0,
+          "borrow_base": 35408.85390256986,
+          "extra_spread_cost": 1435.7343784000002,
+          "scenarios": {
+            "borrow_0_spread_1": 14662.597621600002,
+            "borrow_0_spread_2": 13226.863243200001,
+            "borrow_10_spread_1": 11121.712231343015,
+            "borrow_10_spread_2": 9685.977852943015,
+            "borrow_30_spread_1": 4039.941450829043,
+            "borrow_30_spread_2": 2604.2070724290425
+          },
+          "stress_short_10pct": -10142.107000000002,
+          "stress_largest_name_50pct": -7284.345000000001,
+          "stress_joint_others10_largest50": -14135.155000000002,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              6918.055619999999
+            ],
+            [
+              "NBY",
+              3955.475460000001
+            ],
+            [
+              "BNAI",
+              3480.998970000001
+            ],
+            [
+              "MRAM",
+              2520.347995099999
+            ],
+            [
+              "NCI",
+              2222.9633699999995
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "BKKT",
+              -1724.5074759999989
+            ],
+            [
+              "TRAX",
+              -2060.3434700000003
+            ],
+            [
+              "IREN",
+              -2538.286766400001
+            ],
+            [
+              "HYMC",
+              -3129.8657000000007
+            ],
+            [
+              "TERN",
+              -6040.028580000002
+            ]
+          ],
+          "top_symbol_concentration": 0.47181650881619785,
+          "stale_exposure_dollar_sessions": 2507415.2228,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 0,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR10_R4_CONSERVATIVE_COVER_PACED_0.json",
+        "detail_sha256": "96df2d3a3d7d39618fa7974ab2ef4d58407f9b069b170d4da24d2fca5249b5c2",
+        "increment_vs_common_shock_control": 584.1491032000031,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      },
+      "0.1": {
+        "id": "AR10_R4_CONSERVATIVE_COVER_PACED",
+        "shock": 0.1,
+        "metrics": {
+          "total_pnl": 12445.691621599999,
+          "per_day": 100.36848081935483,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 16103.742826599999,
+          "terminal_net_mtm": -3658.0512050000025,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 16103.7428266,
+          "open_ticket_lifecycle_pnl": -3658.0512050000025,
+          "fully_completed_signal_cohort_pnl": 7705.209041300001,
+          "partly_open_signal_cohort_pnl": 4740.482580299998,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 24385.966000000004,
+          "terminal_stale_gross": 24385.966000000004,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": -1367.1944666999957,
+          "opposite_split_calendar_absolute_mtm": 50749.47908670001,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -18840.726977099985,
+          "max_dd_percent": -0.18840726977099986,
+          "worst_day": -4291.556479999998,
+          "time_underwater_sessions": 236,
+          "longest_underwater_sessions": 139,
+          "red_months": 2,
+          "red_loss_sum": -16414.67422309999,
+          "worst_month": -9792.572421399997,
+          "median_month": 5187.488935549996,
+          "months": {
+            "2025-09": -9792.572421399997,
+            "2025-11": -6622.101801699995,
+            "2026-01": 8856.763164,
+            "2026-03": 9628.6248096,
+            "2026-05": 6632.721071099995,
+            "2026-07": 3742.256799999998
+          },
+          "best_month_concentration": 0.773651244330137,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -5933.798131400002,
+              "return": -0.05933798131400002,
+              "ending_equity": 94066.2018686
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 94066.2018686,
+              "pnl": -3858.7742899999985,
+              "return": -0.0410218996126821,
+              "ending_equity": 90207.42757859999
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 90207.42757859999,
+              "pnl": -4217.631934999999,
+              "return": -0.04675481884598772,
+              "ending_equity": 85989.7956436
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 85989.7956436,
+              "pnl": -2404.4698666999984,
+              "return": -0.027962269810080157,
+              "ending_equity": 83585.32577689999
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 83585.32577689999,
+              "pnl": 7374.003688999999,
+              "return": 0.08822127114371923,
+              "ending_equity": 90959.3294659
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 90959.3294659,
+              "pnl": 1482.7594750000017,
+              "return": 0.01630134570809339,
+              "ending_equity": 92442.0889409
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 92442.0889409,
+              "pnl": 9095.9697746,
+              "return": 0.09839641097266018,
+              "ending_equity": 101538.0587155
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 101538.0587155,
+              "pnl": 532.655034999999,
+              "return": 0.0052458658530438115,
+              "ending_equity": 102070.7137505
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 102070.7137505,
+              "pnl": -153.09740990000137,
+              "return": -0.001499915149748342,
+              "ending_equity": 101917.6163406
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 101917.6163406,
+              "pnl": 4085.149445,
+              "return": 0.04008285899611092,
+              "ending_equity": 106002.7657856
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 106002.7657856,
+              "pnl": 7647.440101000002,
+              "return": 0.0721437789318406,
+              "ending_equity": 113650.2058866
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 113650.2058866,
+              "pnl": -1204.514265,
+              "return": -0.010598434517592185,
+              "ending_equity": 112445.6916216
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -17772.285898,
+          "calendar_worst_month": -5933.798131400002,
+          "calendar_median_month": 189.7788125499988,
+          "calendar_best_month_concentration": 0.7308528968220278,
+          "avg_exposure": 36694.81750368924,
+          "p95_exposure": 77747.28600000001,
+          "peak_exposure": 103629.376,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.0179130398437326,
+          "largest_symbol_gross": 14568.690000000002,
+          "largest_symbol_equity_fraction": 0.17179229207134392,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.33916755739005183,
+          "intended_notional": 716100.0,
+          "borrow_base": 36394.819688871234,
+          "extra_spread_cost": 1435.7343784000002,
+          "scenarios": {
+            "borrow_0_spread_1": 12445.691621599999,
+            "borrow_0_spread_2": 11009.957243199999,
+            "borrow_10_spread_1": 8806.209652712876,
+            "borrow_10_spread_2": 7370.475274312876,
+            "borrow_30_spread_1": 1527.24571493863,
+            "borrow_30_spread_2": 91.51133653862985
+          },
+          "stress_short_10pct": -10362.937600000001,
+          "stress_largest_name_50pct": -7284.345000000001,
+          "stress_joint_others10_largest50": -14355.985600000002,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              6918.055619999999
+            ],
+            [
+              "NBY",
+              3955.475460000001
+            ],
+            [
+              "BNAI",
+              3480.998970000001
+            ],
+            [
+              "MRAM",
+              2520.347995099999
+            ],
+            [
+              "NCI",
+              2222.9633699999995
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "BKKT",
+              -1724.5074759999989
+            ],
+            [
+              "TRAX",
+              -2060.3434700000003
+            ],
+            [
+              "IREN",
+              -2538.286766400001
+            ],
+            [
+              "HYMC",
+              -3129.8657000000007
+            ],
+            [
+              "TERN",
+              -6040.028580000002
+            ]
+          ],
+          "top_symbol_concentration": 0.5558594757396556,
+          "stale_exposure_dollar_sessions": 2758156.7450800003,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 0,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR10_R4_CONSERVATIVE_COVER_PACED_10.json",
+        "detail_sha256": "cde5083f2790e0c1de8086cfd6529e06e3ed3d65fa006f54cebb95a69aaa781c",
+        "increment_vs_common_shock_control": 821.7721032000027,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      },
+      "0.5": {
+        "id": "AR10_R4_CONSERVATIVE_COVER_PACED",
+        "shock": 0.5,
+        "metrics": {
+          "total_pnl": 3578.067621599995,
+          "per_day": 28.85538404516125,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 16103.742826599999,
+          "terminal_net_mtm": -12525.675205000001,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 16103.7428266,
+          "open_ticket_lifecycle_pnl": -12525.675205000001,
+          "fully_completed_signal_cohort_pnl": 7705.209041300001,
+          "partly_open_signal_cohort_pnl": -4127.141419700007,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 33253.590000000004,
+          "terminal_stale_gross": 33253.590000000004,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": 10.061373300004815,
+          "opposite_split_calendar_absolute_mtm": 71654.24304670001,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -22534.87139309998,
+          "max_dd_percent": -0.22534871393099976,
+          "worst_day": -6854.71487,
+          "time_underwater_sessions": 242,
+          "longest_underwater_sessions": 143,
+          "red_months": 2,
+          "red_loss_sum": -17325.222223099983,
+          "worst_month": -10703.120421399992,
+          "median_month": 2182.4229355500006,
+          "months": {
+            "2025-09": -10703.120421399992,
+            "2025-11": -6622.1018016999915,
+            "2026-01": 8856.763164,
+            "2026-03": 7681.680809600005,
+            "2026-05": 2712.253071100005,
+            "2026-07": 1652.592799999996
+          },
+          "best_month_concentration": 2.4752922808204345,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -6844.3461314000015,
+              "return": -0.06844346131400002,
+              "ending_equity": 93155.6538686
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 93155.6538686,
+              "pnl": -3858.7742899999985,
+              "return": -0.0414228673167059,
+              "ending_equity": 89296.8795786
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 89296.8795786,
+              "pnl": -8263.243935,
+              "return": -0.09253676023165637,
+              "ending_equity": 81033.63564359999
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 81033.63564359999,
+              "pnl": 1641.1421333000008,
+              "return": 0.02025260399913474,
+              "ending_equity": 82674.7777769
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 82674.7777769,
+              "pnl": 7374.003688999999,
+              "return": 0.08919290607467899,
+              "ending_equity": 90048.7814659
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 90048.7814659,
+              "pnl": 1482.7594750000017,
+              "return": 0.016466180339836118,
+              "ending_equity": 91531.5409409
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 91531.5409409,
+              "pnl": 9095.969774599998,
+              "return": 0.09937525011703972,
+              "ending_equity": 100627.5107155
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 100627.5107155,
+              "pnl": -1414.2889650000002,
+              "return": -0.014054694933262942,
+              "ending_equity": 99213.2217505
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 99213.2217505,
+              "pnl": -5407.417249900003,
+              "return": -0.05450299017099253,
+              "ending_equity": 93805.8045006
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 93805.8045006,
+              "pnl": 3363.737285000002,
+              "return": 0.03585851966099269,
+              "ending_equity": 97169.5417856
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 97169.5417856,
+              "pnl": 7613.040100999999,
+              "return": 0.07834800865684652,
+              "ending_equity": 104782.5818866
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 104782.5818866,
+              "pnl": -1204.5142650000005,
+              "return": -0.011495367295907779,
+              "ending_equity": 103578.0676216
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -26992.584836300004,
+          "calendar_worst_month": -8263.243935,
+          "calendar_median_month": 139.1226050000006,
+          "calendar_best_month_concentration": 2.5421458554024134,
+          "avg_exposure": 40690.69833683666,
+          "p95_exposure": 86428.415,
+          "peak_exposure": 112462.6,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.0887008014235782,
+          "largest_symbol_gross": 14568.690000000002,
+          "largest_symbol_equity_fraction": 0.17365685891830113,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.0879333058376348,
+          "intended_notional": 716100.0,
+          "borrow_base": 40338.68283407672,
+          "extra_spread_cost": 1435.7343784000002,
+          "scenarios": {
+            "borrow_0_spread_1": 3578.067621599995,
+            "borrow_0_spread_2": 2142.333243199995,
+            "borrow_10_spread_1": -455.80066180767653,
+            "borrow_10_spread_2": -1891.5350402076767,
+            "borrow_30_spread_1": -8523.53722862302,
+            "borrow_30_spread_2": -9959.27160702302
+          },
+          "stress_short_10pct": -11246.260000000002,
+          "stress_largest_name_50pct": -7284.345000000001,
+          "stress_joint_others10_largest50": -15239.308000000003,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              6918.055619999999
+            ],
+            [
+              "NBY",
+              3955.475460000001
+            ],
+            [
+              "BNAI",
+              3480.998970000001
+            ],
+            [
+              "MRAM",
+              2520.347995099999
+            ],
+            [
+              "NCI",
+              2222.9633699999995
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "AGL",
+              -2588.5421050000004
+            ],
+            [
+              "AMBQ",
+              -2913.817100000001
+            ],
+            [
+              "HYMC",
+              -3129.8657000000007
+            ],
+            [
+              "FBRX",
+              -3211.534850000001
+            ],
+            [
+              "TERN",
+              -6040.028580000002
+            ]
+          ],
+          "top_symbol_concentration": 1.9334613963797784,
+          "stale_exposure_dollar_sessions": 3761122.8342,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 0,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR10_R4_CONSERVATIVE_COVER_PACED_50.json",
+        "detail_sha256": "d7e3d84e852619cb2635793c43e7e282f19091812f4c52813400d251d7f8f4b2",
+        "increment_vs_common_shock_control": 1772.264103199996,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      },
+      "1.0": {
+        "id": "AR10_R4_CONSERVATIVE_COVER_PACED",
+        "shock": 1.0,
+        "metrics": {
+          "total_pnl": -7506.462378400007,
+          "per_day": -60.5359869225807,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 16103.742826599999,
+          "terminal_net_mtm": -23610.205205000002,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 16103.742826599997,
+          "open_ticket_lifecycle_pnl": -23610.205205000002,
+          "fully_completed_signal_cohort_pnl": 7705.2090413,
+          "partly_open_signal_cohort_pnl": -15211.671419700007,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 44338.12,
+          "terminal_stale_gross": 44338.12,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": 1731.6311732999998,
+          "opposite_split_calendar_absolute_mtm": 104738.34284670002,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -29895.91546439998,
+          "max_dd_percent": -0.2989591546439998,
+          "worst_day": -11221.437765000002,
+          "time_underwater_sessions": 249,
+          "longest_underwater_sessions": 249,
+          "red_months": 4,
+          "red_loss_sum": -21611.226352000034,
+          "worst_month": -11841.305421400004,
+          "median_month": -1573.909564450008,
+          "months": {
+            "2025-09": -11841.305421400004,
+            "2025-11": -6622.101801700012,
+            "2026-01": 8856.763164,
+            "2026-03": 5248.0008096000065,
+            "2026-05": -2188.33192890001,
+            "2026-07": -959.4872000000059
+          },
+          "best_month_concentration": null,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -7982.531131400002,
+              "return": -0.07982531131400002,
+              "ending_equity": 92017.4688686
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 92017.4688686,
+              "pnl": -3858.7742899999976,
+              "return": -0.04193523618336305,
+              "ending_equity": 88158.6945786
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 88158.6945786,
+              "pnl": -13320.258934999998,
+              "return": -0.1510941036351667,
+              "ending_equity": 74838.43564360001
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 74838.43564360001,
+              "pnl": 6698.157133300001,
+              "return": 0.08950156528121937,
+              "ending_equity": 81536.59277690001
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 81536.59277690001,
+              "pnl": 7374.003688999999,
+              "return": 0.09043796702637193,
+              "ending_equity": 88910.59646590002
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 88910.59646590002,
+              "pnl": 1482.7594750000017,
+              "return": 0.01667697140653742,
+              "ending_equity": 90393.35594090002
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 90393.35594090002,
+              "pnl": 9095.969774600002,
+              "return": 0.10062653034529472,
+              "ending_equity": 99489.32571550002
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 99489.32571550002,
+              "pnl": -3847.9689650000005,
+              "return": -0.03867720418574013,
+              "ending_equity": 95641.35675050001
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 95641.35675050001,
+              "pnl": -11975.3170499,
+              "return": -0.12521065631827097,
+              "ending_equity": 83666.03970060001
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 83666.03970060001,
+              "pnl": 2461.9720849999976,
+              "return": 0.029426181683873124,
+              "ending_equity": 86128.01178560001
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 86128.01178560001,
+              "pnl": 7570.040100999999,
+              "return": 0.08789289273092979,
+              "ending_equity": 93698.0518866
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 93698.0518866,
+              "pnl": -1204.514265,
+              "return": -0.012855275437933205,
+              "ending_equity": 92493.5376216
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -42189.3646363,
+          "calendar_worst_month": -13320.258934999998,
+          "calendar_median_month": 139.12260500000082,
+          "calendar_best_month_concentration": null,
+          "avg_exposure": 45685.549378270916,
+          "p95_exposure": 99695.5746,
+          "peak_exposure": 123504.13,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.4701918908542504,
+          "largest_symbol_gross": 16452.0,
+          "largest_symbol_equity_fraction": 0.20618796869256045,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": -0.16430714920920378,
+          "intended_notional": 716100.0,
+          "borrow_base": 45268.511765583564,
+          "extra_spread_cost": 1435.7343784000002,
+          "scenarios": {
+            "borrow_0_spread_1": -7506.462378400007,
+            "borrow_0_spread_2": -8942.196756800007,
+            "borrow_10_spread_1": -12033.313554958364,
+            "borrow_10_spread_2": -13469.047933358364,
+            "borrow_30_spread_1": -21087.015908075075,
+            "borrow_30_spread_2": -22522.750286475075
+          },
+          "stress_short_10pct": -12350.413,
+          "stress_largest_name_50pct": -8226.0,
+          "stress_joint_others10_largest50": -17537.275,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              6918.055619999999
+            ],
+            [
+              "NBY",
+              3955.475460000001
+            ],
+            [
+              "BNAI",
+              3480.998970000001
+            ],
+            [
+              "MRAM",
+              2520.347995099999
+            ],
+            [
+              "NCI",
+              2222.9633699999995
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "DNTH",
+              -4989.1929199999995
+            ],
+            [
+              "AGL",
+              -4995.447105000001
+            ],
+            [
+              "AMBQ",
+              -5407.4971000000005
+            ],
+            [
+              "FBRX",
+              -5823.614850000001
+            ],
+            [
+              "TERN",
+              -6040.028580000002
+            ]
+          ],
+          "top_symbol_concentration": null,
+          "stale_exposure_dollar_sessions": 5014830.4456,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 0,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR10_R4_CONSERVATIVE_COVER_PACED_100.json",
+        "detail_sha256": "f8675986b6b6b99796fd09eddca821665290175bf1dc595fbdf11eaa43bdd7d3",
+        "increment_vs_common_shock_control": 2960.379103200001,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      }
+    },
+    "AR11_R5_OBSERVED_VOTES_COVER": {
+      "0.0": {
+        "id": "AR11_R5_OBSERVED_VOTES_COVER",
+        "shock": 0.0,
+        "metrics": {
+          "total_pnl": 24207.7157324,
+          "per_day": 195.22351397096773,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 25709.213057400004,
+          "terminal_net_mtm": -1501.497325,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 25709.213057400004,
+          "open_ticket_lifecycle_pnl": -1501.497325,
+          "fully_completed_signal_cohort_pnl": 13588.854786900005,
+          "partly_open_signal_cohort_pnl": 10618.860945499995,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 24154.510000000002,
+          "terminal_stale_gross": 24154.510000000002,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": -462.2437759999923,
+          "opposite_split_calendar_absolute_mtm": 54885.256556,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -17893.580130200004,
+          "max_dd_percent": -0.17893580130200004,
+          "worst_day": -5868.412695,
+          "time_underwater_sessions": 227,
+          "longest_underwater_sessions": 131,
+          "red_months": 2,
+          "red_loss_sum": -15347.698031199998,
+          "worst_month": -8939.858550200002,
+          "median_month": 6003.117965050003,
+          "months": {
+            "2025-09": -8939.858550200002,
+            "2025-11": -6407.8394809999945,
+            "2026-01": 14338.775005900003,
+            "2026-03": 13210.402827599995,
+            "2026-05": 10049.569085100002,
+            "2026-07": 1956.6668450000038
+          },
+          "best_month_concentration": 0.5923225125577939,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -4241.6964102,
+              "return": -0.042416964102,
+              "ending_equity": 95758.3035898
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 95758.3035898,
+              "pnl": -4698.162139999998,
+              "return": -0.0490627127243766,
+              "ending_equity": 91060.1414498
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 91060.1414498,
+              "pnl": -3370.0218699999978,
+              "return": -0.0370087484638692,
+              "ending_equity": 87690.1195798
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 87690.1195798,
+              "pnl": -3037.817610999998,
+              "return": -0.034642644183367946,
+              "ending_equity": 84652.3019688
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 84652.3019688,
+              "pnl": 12778.333500899995,
+              "return": 0.15095080941342456,
+              "ending_equity": 97430.6354697
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 97430.6354697,
+              "pnl": 1560.4415050000025,
+              "return": 0.016015922481438447,
+              "ending_equity": 98991.0769747
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 98991.0769747,
+              "pnl": 12402.7114226,
+              "return": 0.12529120605254013,
+              "ending_equity": 111393.7883973
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 111393.7883973,
+              "pnl": 807.691405,
+              "return": 0.007250775977914197,
+              "ending_equity": 112201.4798023
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 112201.4798023,
+              "pnl": 1990.9174150999993,
+              "return": 0.01774412796166337,
+              "ending_equity": 114192.39721740001
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 114192.39721740001,
+              "pnl": 6120.93379,
+              "return": 0.05360193794992269,
+              "ending_equity": 120313.3310074
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 120313.3310074,
+              "pnl": 5109.715449999999,
+              "return": 0.04247006883788896,
+              "ending_equity": 125423.0464574
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 125423.0464574,
+              "pnl": -1215.3307249999996,
+              "return": -0.009689851740387978,
+              "ending_equity": 124207.71573240001
+            }
+          ],
+          "calendar_red_months": 5,
+          "calendar_red_loss_sum": -16563.028756199994,
+          "calendar_worst_month": -4698.162139999998,
+          "calendar_median_month": 1184.0664550000013,
+          "calendar_best_month_concentration": 0.5278620106975754,
+          "avg_exposure": 41218.82758939442,
+          "p95_exposure": 86157.5604,
+          "peak_exposure": 111290.46,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.08033073473683,
+          "largest_symbol_gross": 16638.75,
+          "largest_symbol_equity_fraction": 0.18974486612323938,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.5872975324176525,
+          "intended_notional": 836225.0,
+          "borrow_base": 40920.00720990137,
+          "extra_spread_cost": 1656.7857676,
+          "scenarios": {
+            "borrow_0_spread_1": 24207.7157324,
+            "borrow_0_spread_2": 22550.9299648,
+            "borrow_10_spread_1": 20115.715011409862,
+            "borrow_10_spread_2": 18458.929243809864,
+            "borrow_30_spread_1": 11931.713569429588,
+            "borrow_30_spread_2": 10274.927801829588
+          },
+          "stress_short_10pct": -11129.046000000002,
+          "stress_largest_name_50pct": -8319.375,
+          "stress_joint_others10_largest50": -16610.542,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              11694.570060000002
+            ],
+            [
+              "NBY",
+              7067.980740000001
+            ],
+            [
+              "MRAM",
+              3368.173055099999
+            ],
+            [
+              "BNAI",
+              3017.222644999998
+            ],
+            [
+              "VELO",
+              2506.5544800000007
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "IREN",
+              -2276.4454051999996
+            ],
+            [
+              "AXTI",
+              -2399.907862399999
+            ],
+            [
+              "FSLY",
+              -2467.2132800000013
+            ],
+            [
+              "TRAX",
+              -3163.9903000000018
+            ],
+            [
+              "TERN",
+              -5406.362830000001
+            ]
+          ],
+          "top_symbol_concentration": 0.483092671331554,
+          "stale_exposure_dollar_sessions": 2794420.1832,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR11_R5_OBSERVED_VOTES_COVER_0.json",
+        "detail_sha256": "6db9fff9dc5e3b50241842924660363e29027359c8793d1d79893aad0d3bf7a3",
+        "increment_vs_common_shock_control": 2545.676577900005,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      },
+      "0.1": {
+        "id": "AR11_R5_OBSERVED_VOTES_COVER",
+        "shock": 0.1,
+        "metrics": {
+          "total_pnl": 21792.2647324,
+          "per_day": 175.74407042258065,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 25709.213057400004,
+          "terminal_net_mtm": -3916.948325000002,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 25709.2130574,
+          "open_ticket_lifecycle_pnl": -3916.948325000002,
+          "fully_completed_signal_cohort_pnl": 13588.854786900003,
+          "partly_open_signal_cohort_pnl": 8203.409945499996,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 26569.961000000003,
+          "terminal_stale_gross": 26569.961000000003,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": -110.6755359999918,
+          "opposite_split_calendar_absolute_mtm": 59194.78920600001,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -18095.924130200015,
+          "max_dd_percent": -0.18095924130200014,
+          "worst_day": -5868.412695,
+          "time_underwater_sessions": 231,
+          "longest_underwater_sessions": 131,
+          "red_months": 2,
+          "red_loss_sum": -15550.0420312,
+          "worst_month": -9142.2025502,
+          "median_month": 5328.752465050002,
+          "months": {
+            "2025-09": -9142.2025502,
+            "2025-11": -6407.839481000001,
+            "2026-01": 14338.775005900003,
+            "2026-03": 12346.026827599999,
+            "2026-05": 9167.462085099996,
+            "2026-07": 1490.042845000007
+          },
+          "best_month_concentration": 0.657975441376756,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -4444.040410200001,
+              "return": -0.04444040410200001,
+              "ending_equity": 95555.9595898
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 95555.9595898,
+              "pnl": -4698.162139999998,
+              "return": -0.04916660520357013,
+              "ending_equity": 90857.7974498
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 90857.7974498,
+              "pnl": -4743.666869999999,
+              "return": -0.05220979380026168,
+              "ending_equity": 86114.1305798
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 86114.1305798,
+              "pnl": -1664.1726109999968,
+              "return": -0.019325197848427976,
+              "ending_equity": 84449.9579688
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 84449.9579688,
+              "pnl": 12778.333500899995,
+              "return": 0.15131249095021393,
+              "ending_equity": 97228.2914697
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 97228.2914697,
+              "pnl": 1560.4415050000025,
+              "return": 0.016049253580541368,
+              "ending_equity": 98788.73297469999
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 98788.73297469999,
+              "pnl": 12402.711422600001,
+              "return": 0.1255478337370352,
+              "ending_equity": 111191.44439729999
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 111191.44439729999,
+              "pnl": -56.68459500000108,
+              "return": -0.0005097927750399609,
+              "ending_equity": 111134.75980229999
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 111134.75980229999,
+              "pnl": 811.2311750999979,
+              "return": 0.007299526957570381,
+              "ending_equity": 111945.99097739998
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 111945.99097739998,
+              "pnl": 5963.23303,
+              "return": 0.05326883953534233,
+              "ending_equity": 117909.22400739999
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 117909.22400739999,
+              "pnl": 5098.37145,
+              "return": 0.04323980157549019,
+              "ending_equity": 123007.59545739999
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 123007.59545739999,
+              "pnl": -1215.3307249999993,
+              "return": -0.009880127487094022,
+              "ending_equity": 121792.2647324
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -16822.057351199994,
+          "calendar_worst_month": -4743.666869999999,
+          "calendar_median_month": 377.2732900499984,
+          "calendar_best_month_concentration": 0.5863701482068361,
+          "avg_exposure": 42332.14240341833,
+          "p95_exposure": 88573.0114,
+          "peak_exposure": 113694.56700000001,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.0849677916307645,
+          "largest_symbol_gross": 16638.75,
+          "largest_symbol_equity_fraction": 0.19321741841870257,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.5147923893084199,
+          "intended_notional": 836225.0,
+          "borrow_base": 42021.27494140822,
+          "extra_spread_cost": 1656.7857676,
+          "scenarios": {
+            "borrow_0_spread_1": 21792.2647324,
+            "borrow_0_spread_2": 20135.4789648,
+            "borrow_10_spread_1": 17590.137238259176,
+            "borrow_10_spread_2": 15933.351470659176,
+            "borrow_30_spread_1": 9185.882249977532,
+            "borrow_30_spread_2": 7529.096482377532
+          },
+          "stress_short_10pct": -11369.456700000002,
+          "stress_largest_name_50pct": -8319.375,
+          "stress_joint_others10_largest50": -16850.9527,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              11694.570060000002
+            ],
+            [
+              "NBY",
+              7067.980740000001
+            ],
+            [
+              "MRAM",
+              3368.173055099999
+            ],
+            [
+              "BNAI",
+              3017.222644999998
+            ],
+            [
+              "VELO",
+              2506.5544800000007
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "IREN",
+              -2276.4454051999996
+            ],
+            [
+              "AXTI",
+              -2399.907862399999
+            ],
+            [
+              "FSLY",
+              -2467.2132800000013
+            ],
+            [
+              "TRAX",
+              -3163.9903000000018
+            ],
+            [
+              "TERN",
+              -5406.362830000001
+            ]
+          ],
+          "top_symbol_concentration": 0.5366385827083365,
+          "stale_exposure_dollar_sessions": 3073862.2015200006,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR11_R5_OBSERVED_VOTES_COVER_10.json",
+        "detail_sha256": "b24873df696248b53e6d1c7c754390bd1f5c08e24bcec4f7ee234b562005613f",
+        "increment_vs_common_shock_control": 2537.5175779000056,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      },
+      "0.5": {
+        "id": "AR11_R5_OBSERVED_VOTES_COVER",
+        "shock": 0.5,
+        "metrics": {
+          "total_pnl": 12369.273087399999,
+          "per_day": 99.75220231774193,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 25948.025412400002,
+          "terminal_net_mtm": -13578.752325,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 25948.025412400002,
+          "open_ticket_lifecycle_pnl": -13578.752325000001,
+          "fully_completed_signal_cohort_pnl": 13827.667141900005,
+          "partly_open_signal_cohort_pnl": -1458.394054500006,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 36231.765,
+          "terminal_stale_gross": 36231.765,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": 1355.8571140000079,
+          "opposite_split_calendar_absolute_mtm": 83684.937596,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -23513.14635120002,
+          "max_dd_percent": -0.2351314635120002,
+          "worst_day": -7307.674785,
+          "time_underwater_sessions": 237,
+          "longest_underwater_sessions": 131,
+          "red_months": 3,
+          "red_loss_sum": -16497.05883119999,
+          "worst_month": -9951.578550199998,
+          "median_month": 2750.696642550003,
+          "months": {
+            "2025-09": -9951.578550199998,
+            "2025-11": -6407.839480999994,
+            "2026-01": 14338.775005900003,
+            "2026-03": 8888.522827600003,
+            "2026-05": 5639.034085100004,
+            "2026-07": -137.64079999999754
+          },
+          "best_month_concentration": 1.1592253566223099,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -5253.416410200001,
+              "return": -0.052534164102000014,
+              "ending_equity": 94746.5835898
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 94746.5835898,
+              "pnl": -4698.162139999999,
+              "return": -0.04958661264600767,
+              "ending_equity": 90048.4214498
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 90048.4214498,
+              "pnl": -10238.246869999999,
+              "return": -0.11369712766933505,
+              "ending_equity": 79810.17457979999
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 79810.17457979999,
+              "pnl": 3830.4073890000022,
+              "return": 0.04799397331439344,
+              "ending_equity": 83640.58196879999
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 83640.58196879999,
+              "pnl": 12778.333500899995,
+              "return": 0.15277671675774124,
+              "ending_equity": 96418.91546969999
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 96418.91546969999,
+              "pnl": 1560.4415050000025,
+              "return": 0.016183976944756002,
+              "ending_equity": 97979.3569747
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 97979.3569747,
+              "pnl": 12402.711422600001,
+              "return": 0.12658494406941861,
+              "ending_equity": 110382.0683973
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 110382.0683973,
+              "pnl": -3514.188595,
+              "return": -0.031836589457187224,
+              "ending_equity": 106867.8798023
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 106867.8798023,
+              "pnl": -3907.513784900001,
+              "return": -0.03656396844523067,
+              "ending_equity": 102960.3660174
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 102960.3660174,
+              "pnl": 5332.429989999999,
+              "return": 0.05179109395453037,
+              "ending_equity": 108292.7960074
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 108292.7960074,
+              "pnl": 5231.548114999999,
+              "return": 0.0483092902564129,
+              "ending_equity": 113524.3441224
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 113524.3441224,
+              "pnl": -1155.0710349999986,
+              "return": -0.0101746549951843,
+              "ending_equity": 112369.2730874
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -28766.598835099998,
+          "calendar_worst_month": -10238.246869999999,
+          "calendar_median_month": 202.68523500000197,
+          "calendar_best_month_concentration": 1.0330706914310661,
+          "avg_exposure": 46666.97122843825,
+          "p95_exposure": 99300.51,
+          "peak_exposure": 123310.99500000001,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.154383256214443,
+          "largest_symbol_gross": 16638.75,
+          "largest_symbol_equity_fraction": 0.20847905780939466,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.2650541220438648,
+          "intended_notional": 833512.26,
+          "borrow_base": 46311.454831271236,
+          "extra_spread_cost": 1651.1084126,
+          "scenarios": {
+            "borrow_0_spread_1": 12369.273087399999,
+            "borrow_0_spread_2": 10718.164674799998,
+            "borrow_10_spread_1": 7738.127604272875,
+            "borrow_10_spread_2": 6087.0191916728745,
+            "borrow_30_spread_1": -1524.163361981371,
+            "borrow_30_spread_2": -3175.271774581371
+          },
+          "stress_short_10pct": -12331.099500000002,
+          "stress_largest_name_50pct": -8319.375,
+          "stress_joint_others10_largest50": -17812.595500000003,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              11694.570060000002
+            ],
+            [
+              "NBY",
+              7067.980740000001
+            ],
+            [
+              "MRAM",
+              3368.173055099999
+            ],
+            [
+              "BNAI",
+              3017.222644999998
+            ],
+            [
+              "VELO",
+              2506.5544800000007
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "AMBQ",
+              -2627.377220000001
+            ],
+            [
+              "FBRX",
+              -2868.555400000001
+            ],
+            [
+              "TRAX",
+              -3102.208140000001
+            ],
+            [
+              "DNTH",
+              -4641.257689999999
+            ],
+            [
+              "TERN",
+              -5406.362830000001
+            ]
+          ],
+          "top_symbol_concentration": 0.9454533000740937,
+          "stale_exposure_dollar_sessions": 4190052.8598,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 1,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR11_R5_OBSERVED_VOTES_COVER_50.json",
+        "detail_sha256": "3e51193d122a157c5306aa2517fc4bd6484ca729d476e4ab3a10e0037880cdee",
+        "increment_vs_common_shock_control": 2743.6939329000015,
+        "intended_notional_change": -2712.7399999999907,
+        "filled_ticket_change": 0
+      },
+      "1.0": {
+        "id": "AR11_R5_OBSERVED_VOTES_COVER",
+        "shock": 1.0,
+        "metrics": {
+          "total_pnl": 1976.728907399999,
+          "per_day": 15.941362156451603,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 26841.1769324,
+          "terminal_net_mtm": -24864.448024999998,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 26841.1769324,
+          "open_ticket_lifecycle_pnl": -24864.448025,
+          "fully_completed_signal_cohort_pnl": 14595.363626900005,
+          "partly_open_signal_cohort_pnl": -12618.634719500007,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 46888.86,
+          "terminal_stale_gross": 46888.86,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": 3300.392259000008,
+          "opposite_split_calendar_absolute_mtm": 118153.75529100001,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -34048.37636490002,
+          "max_dd_percent": -0.3139309135120003,
+          "worst_day": -14097.969785,
+          "time_underwater_sessions": 243,
+          "longest_underwater_sessions": 132,
+          "red_months": 3,
+          "red_loss_sum": -18157.188011199978,
+          "worst_month": -10963.298550199988,
+          "median_month": 221.2245525499942,
+          "months": {
+            "2025-09": -10963.298550199988,
+            "2025-11": -6407.839480999988,
+            "2026-01": 14338.775005900003,
+            "2026-03": 4566.642827599998,
+            "2026-05": 1228.4990850999902,
+            "2026-07": -786.0499800000018
+          },
+          "best_month_concentration": 7.253789304250052,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -6265.1364102000025,
+              "return": -0.06265136410200002,
+              "ending_equity": 93734.86358979999
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 93734.86358979999,
+              "pnl": -4698.162139999998,
+              "return": -0.050121821914202266,
+              "ending_equity": 89036.70144979999
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 89036.70144979999,
+              "pnl": -17106.471869999994,
+              "return": -0.19212832002367963,
+              "ending_equity": 71930.2295798
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 71930.2295798,
+              "pnl": 10698.632389000002,
+              "return": 0.14873624693677434,
+              "ending_equity": 82628.8619688
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 82628.8619688,
+              "pnl": 12778.333500899995,
+              "return": 0.15464733746091033,
+              "ending_equity": 95407.1954697
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 95407.1954697,
+              "pnl": 1560.4415050000025,
+              "return": 0.016355595584984752,
+              "ending_equity": 96967.6369747
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 96967.6369747,
+              "pnl": 12402.711422600001,
+              "return": 0.127905678735226,
+              "ending_equity": 109370.3483973
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 109370.3483973,
+              "pnl": -7836.068595000001,
+              "return": -0.0716471028009768,
+              "ending_equity": 101534.27980229999
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 101534.27980229999,
+              "pnl": -9805.944984900005,
+              "return": -0.09657767804128234,
+              "ending_equity": 91728.33481739998
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 91728.33481739998,
+              "pnl": 4543.926189999999,
+              "return": 0.0495367783471205,
+              "ending_equity": 96272.26100739998
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 96272.26100739998,
+              "pnl": 6672.84499,
+              "return": 0.0693122288827006,
+              "ending_equity": 102945.10599739998
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 102945.10599739998,
+              "pnl": -968.3770900000001,
+              "return": -0.009406732652492074,
+              "ending_equity": 101976.72890739999
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -46680.1610901,
+          "calendar_worst_month": -17106.471869999994,
+          "calendar_median_month": 296.0322075000012,
+          "calendar_best_month_concentration": 6.464383382599184,
+          "avg_exposure": 51498.371875450204,
+          "p95_exposure": 105951.04000000001,
+          "peak_exposure": 129960.82,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.6352319844602392,
+          "largest_symbol_gross": 18603.6,
+          "largest_symbol_equity_fraction": 0.27116219585453366,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.03838429906445888,
+          "intended_notional": 819628.5599999999,
+          "borrow_base": 51108.7870526411,
+          "extra_spread_cost": 1623.0475926000001,
+          "scenarios": {
+            "borrow_0_spread_1": 1976.728907399999,
+            "borrow_0_spread_2": 353.68131479999875,
+            "borrow_10_spread_1": -3134.149797864111,
+            "borrow_10_spread_2": -4757.197390464111,
+            "borrow_30_spread_1": -13355.907208392331,
+            "borrow_30_spread_2": -14978.954800992331
+          },
+          "stress_short_10pct": -12996.082000000002,
+          "stress_largest_name_50pct": -9301.8,
+          "stress_joint_others10_largest50": -19911.090000000004,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              11694.570060000002
+            ],
+            [
+              "NBY",
+              7067.980740000001
+            ],
+            [
+              "MRAM",
+              3368.173055099999
+            ],
+            [
+              "BNAI",
+              3017.222644999998
+            ],
+            [
+              "VELO",
+              2506.5544800000007
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "FBRX",
+              -4410.1161
+            ],
+            [
+              "AGL",
+              -4487.4355350000005
+            ],
+            [
+              "AMBQ",
+              -4875.77722
+            ],
+            [
+              "TERN",
+              -5406.362830000001
+            ],
+            [
+              "DNTH",
+              -8963.13769
+            ]
+          ],
+          "top_symbol_concentration": 5.916122345467151,
+          "stale_exposure_dollar_sessions": 5538237.7664,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 2,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR11_R5_OBSERVED_VOTES_COVER_100.json",
+        "detail_sha256": "bcbe9c06fe422ea8434c3479e1ef06c4bce68a067a2d8a1cebc79b28c861b8b3",
+        "increment_vs_common_shock_control": 4387.609752900001,
+        "intended_notional_change": -16596.44000000006,
+        "filled_ticket_change": 0
+      }
+    },
+    "AR12_R5_OBSERVED_CONSERVATIVE": {
+      "0.0": {
+        "id": "AR12_R5_OBSERVED_CONSERVATIVE",
+        "shock": 0.0,
+        "metrics": {
+          "total_pnl": 20406.0219774,
+          "per_day": 164.56469336612903,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 21658.0370974,
+          "terminal_net_mtm": -1252.01512,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 21658.037097400003,
+          "open_ticket_lifecycle_pnl": -1252.01512,
+          "fully_completed_signal_cohort_pnl": 11447.619849900006,
+          "partly_open_signal_cohort_pnl": 8958.402127499994,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 20161.84,
+          "terminal_stale_gross": 20161.84,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": -370.08946099999434,
+          "opposite_split_calendar_absolute_mtm": 46295.685460999994,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -15089.033221500009,
+          "max_dd_percent": -0.15089033221500014,
+          "worst_day": -4943.664669999998,
+          "time_underwater_sessions": 227,
+          "longest_underwater_sessions": 131,
+          "red_months": 2,
+          "red_loss_sum": -12942.567399499996,
+          "worst_month": -7553.477920499997,
+          "median_month": 5066.2211753,
+          "months": {
+            "2025-09": -7553.477920499997,
+            "2025-11": -5389.089478999998,
+            "2026-01": 12095.384527499997,
+            "2026-03": 11120.762498799997,
+            "2026-05": 8474.714475600002,
+            "2026-07": 1657.7278749999982
+          },
+          "best_month_concentration": 0.5927360335540083,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -3593.7483105000024,
+              "return": -0.03593748310500002,
+              "ending_equity": 96406.2516895
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 96406.2516895,
+              "pnl": -3959.7296099999985,
+              "return": -0.041073369627037046,
+              "ending_equity": 92446.5220795
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 92446.5220795,
+              "pnl": -2831.537244999997,
+              "return": -0.0306289212542252,
+              "ending_equity": 89614.9848345
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 89614.9848345,
+              "pnl": -2557.552233999998,
+              "return": -0.028539336794212018,
+              "ending_equity": 87057.4326005
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 87057.4326005,
+              "pnl": 10775.9033895,
+              "return": 0.12377924627010088,
+              "ending_equity": 97833.33599
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 97833.33599,
+              "pnl": 1319.4811380000017,
+              "return": 0.01348703000513927,
+              "ending_equity": 99152.81712800001
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 99152.81712800001,
+              "pnl": 10440.4038188,
+              "return": 0.1052960886156376,
+              "ending_equity": 109593.22094680001
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 109593.22094680001,
+              "pnl": 680.3586799999991,
+              "return": 0.00620803617342597,
+              "ending_equity": 110273.57962680001
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 110273.57962680001,
+              "pnl": 1668.4472645999977,
+              "return": 0.015130072590792288,
+              "ending_equity": 111942.0268914
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 111942.0268914,
+              "pnl": 5173.047854999999,
+              "return": 0.04621184731645609,
+              "ending_equity": 117115.0747464
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 117115.0747464,
+              "pnl": 4316.642520999999,
+              "return": 0.0368581288988392,
+              "ending_equity": 121431.7172674
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 121431.7172674,
+              "pnl": -1025.6952899999992,
+              "return": -0.008446683560781373,
+              "ending_equity": 120406.0219774
+            }
+          ],
+          "calendar_red_months": 5,
+          "calendar_red_loss_sum": -13968.262689499996,
+          "calendar_worst_month": -3959.7296099999985,
+          "calendar_median_month": 999.9199090000004,
+          "calendar_best_month_concentration": 0.5280746733211641,
+          "avg_exposure": 34688.209260446216,
+          "p95_exposure": 72414.8284,
+          "peak_exposure": 93662.26000000001,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 0.8963150305541147,
+          "largest_symbol_gross": 14020.920000000002,
+          "largest_symbol_equity_fraction": 0.15645731599345453,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.5882696862264462,
+          "intended_notional": 705250.0,
+          "borrow_base": 34436.434044701375,
+          "extra_spread_cost": 1396.6189226000001,
+          "scenarios": {
+            "borrow_0_spread_1": 20406.0219774,
+            "borrow_0_spread_2": 19009.4030548,
+            "borrow_10_spread_1": 16962.37857292986,
+            "borrow_10_spread_2": 15565.759650329861,
+            "borrow_30_spread_1": 10075.091763989587,
+            "borrow_30_spread_2": 8678.472841389586
+          },
+          "stress_short_10pct": -9366.226,
+          "stress_largest_name_50pct": -7010.460000000001,
+          "stress_joint_others10_largest50": -13989.002,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              9854.71538
+            ],
+            [
+              "NBY",
+              5954.827810000002
+            ],
+            [
+              "MRAM",
+              2841.101809599999
+            ],
+            [
+              "BNAI",
+              2544.821064
+            ],
+            [
+              "VELO",
+              2109.337660000001
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "IREN",
+              -1921.1424104999999
+            ],
+            [
+              "AXTI",
+              -2022.9493551999997
+            ],
+            [
+              "FSLY",
+              -2084.369840000001
+            ],
+            [
+              "TRAX",
+              -2665.05903
+            ],
+            [
+              "TERN",
+              -4551.713070000001
+            ]
+          ],
+          "top_symbol_concentration": 0.4829317243171774,
+          "stale_exposure_dollar_sessions": 2341344.8224,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR12_R5_OBSERVED_CONSERVATIVE_0.json",
+        "detail_sha256": "629530696b29c4c93b7691b66702489c3c0ba71463f71947370a2b796f93e221",
+        "increment_vs_common_shock_control": -1256.017177099995,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      },
+      "0.1": {
+        "id": "AR12_R5_OBSERVED_CONSERVATIVE",
+        "shock": 0.1,
+        "metrics": {
+          "total_pnl": 18389.8379774,
+          "per_day": 148.30514497903224,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 21658.0370974,
+          "terminal_net_mtm": -3268.1991200000016,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 21658.037097400003,
+          "open_ticket_lifecycle_pnl": -3268.1991200000016,
+          "fully_completed_signal_cohort_pnl": 11447.619849900006,
+          "partly_open_signal_cohort_pnl": 6942.218127499993,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 22178.024,
+          "terminal_stale_gross": 22178.024,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": -74.31478099999353,
+          "opposite_split_calendar_absolute_mtm": 49944.760021,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -15257.653221500019,
+          "max_dd_percent": -0.15257653221500023,
+          "worst_day": -4943.664669999998,
+          "time_underwater_sessions": 231,
+          "longest_underwater_sessions": 131,
+          "red_months": 2,
+          "red_loss_sum": -13111.187399499997,
+          "worst_month": -7722.097920499999,
+          "median_month": 4507.4911753,
+          "months": {
+            "2025-09": -7722.097920499999,
+            "2025-11": -5389.0894789999975,
+            "2026-01": 12095.384527499997,
+            "2026-03": 10390.658498799994,
+            "2026-05": 7747.7984756000005,
+            "2026-07": 1267.1838749999988
+          },
+          "best_month_concentration": 0.6577211034901175,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -3762.3683105000023,
+              "return": -0.03762368310500002,
+              "ending_equity": 96237.63168949999
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 96237.63168949999,
+              "pnl": -3959.729609999999,
+              "return": -0.04114533515096907,
+              "ending_equity": 92277.9020795
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 92277.9020795,
+              "pnl": -3990.155244999999,
+              "return": -0.04324063676222687,
+              "ending_equity": 88287.7468345
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 88287.7468345,
+              "pnl": -1398.934233999997,
+              "return": -0.01584516860105596,
+              "ending_equity": 86888.8126005
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 86888.8126005,
+              "pnl": 10775.9033895,
+              "return": 0.12401945736151067,
+              "ending_equity": 97664.71599
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 97664.71599,
+              "pnl": 1319.4811380000017,
+              "return": 0.013510315620383363,
+              "ending_equity": 98984.197128
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 98984.197128,
+              "pnl": 10440.4038188,
+              "return": 0.10547546094958107,
+              "ending_equity": 109424.6009468
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 109424.6009468,
+              "pnl": -49.74532000000113,
+              "return": -0.0004546081920297455,
+              "ending_equity": 109374.8556268
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 109374.8556268,
+              "pnl": 690.5345845999973,
+              "return": 0.006313467392873032,
+              "ending_equity": 110065.3902114
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 110065.3902114,
+              "pnl": 5040.308534999997,
+              "return": 0.04579376428247968,
+              "ending_equity": 115105.6987464
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 115105.6987464,
+              "pnl": 4309.834521,
+              "return": 0.03744240787326607,
+              "ending_equity": 119415.5332674
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 119415.5332674,
+              "pnl": -1025.6952899999992,
+              "return": -0.008589295395124366,
+              "ending_equity": 118389.83797739999
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -14186.628009499998,
+          "calendar_worst_month": -3990.155244999999,
+          "calendar_median_month": 320.3946322999981,
+          "calendar_best_month_concentration": 0.5859705454035503,
+          "avg_exposure": 35621.01596259761,
+          "p95_exposure": 74436.12948,
+          "peak_exposure": 95671.63600000001,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 0.899782334596802,
+          "largest_symbol_gross": 14020.920000000002,
+          "largest_symbol_equity_fraction": 0.15880935353671388,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.5162637134412308,
+          "intended_notional": 705250.0,
+          "borrow_base": 35359.1505844274,
+          "extra_spread_cost": 1396.6189226000001,
+          "scenarios": {
+            "borrow_0_spread_1": 18389.8379774,
+            "borrow_0_spread_2": 16993.2190548,
+            "borrow_10_spread_1": 14853.922918957258,
+            "borrow_10_spread_2": 13457.303996357257,
+            "borrow_30_spread_1": 7782.092802071778,
+            "borrow_30_spread_2": 6385.473879471778
+          },
+          "stress_short_10pct": -9567.163600000002,
+          "stress_largest_name_50pct": -7010.460000000001,
+          "stress_joint_others10_largest50": -14189.939600000002,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              9854.71538
+            ],
+            [
+              "NBY",
+              5954.827810000002
+            ],
+            [
+              "MRAM",
+              2841.101809599999
+            ],
+            [
+              "BNAI",
+              2544.821064
+            ],
+            [
+              "VELO",
+              2109.337660000001
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "IREN",
+              -1921.1424104999999
+            ],
+            [
+              "AXTI",
+              -2022.9493551999997
+            ],
+            [
+              "FSLY",
+              -2084.369840000001
+            ],
+            [
+              "TRAX",
+              -2665.05903
+            ],
+            [
+              "TERN",
+              -4551.713070000001
+            ]
+          ],
+          "top_symbol_concentration": 0.5358783145403918,
+          "stale_exposure_dollar_sessions": 2575479.30464,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR12_R5_OBSERVED_CONSERVATIVE_10.json",
+        "detail_sha256": "19e503b8a9fb01e37939a2732b47f2f263825d6d0b5d8c909772a67f4bf83556",
+        "increment_vs_common_shock_control": -864.9091770999948,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      },
+      "0.5": {
+        "id": "AR12_R5_OBSERVED_CONSERVATIVE",
+        "shock": 0.5,
+        "metrics": {
+          "total_pnl": 10325.101977399996,
+          "per_day": 83.26695143064514,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 21658.0370974,
+          "terminal_net_mtm": -11332.93512,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 21658.037097400003,
+          "open_ticket_lifecycle_pnl": -11332.93512,
+          "fully_completed_signal_cohort_pnl": 11447.619849900004,
+          "partly_open_signal_cohort_pnl": -1122.5178725000078,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 30242.760000000002,
+          "terminal_stale_gross": 30242.760000000002,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": 1108.7839390000026,
+          "opposite_split_calendar_absolute_mtm": 71145.38270100001,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -19820.665159499986,
+          "max_dd_percent": -0.19820665159499984,
+          "worst_day": -6173.4466600000005,
+          "time_underwater_sessions": 236,
+          "longest_underwater_sessions": 131,
+          "red_months": 3,
+          "red_loss_sum": -14080.659524499993,
+          "worst_month": -8396.5779205,
+          "median_month": 2272.5711753000037,
+          "months": {
+            "2025-09": -8396.5779205,
+            "2025-11": -5389.089478999994,
+            "2026-01": 12095.384527499997,
+            "2026-03": 7470.242498799997,
+            "2026-05": 4840.134475600007,
+            "2026-07": -294.99212499999936
+          },
+          "best_month_concentration": 1.1714542436457158,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -4436.848310500002,
+              "return": -0.04436848310500002,
+              "ending_equity": 95563.1516895
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 95563.1516895,
+              "pnl": -3959.729609999999,
+              "return": -0.041435736892246874,
+              "ending_equity": 91603.4220795
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 91603.4220795,
+              "pnl": -8624.627245,
+              "return": -0.09415180185642989,
+              "ending_equity": 82978.7948345
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 82978.7948345,
+              "pnl": 3235.537766000001,
+              "return": 0.03899234464001597,
+              "ending_equity": 86214.3326005
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 86214.3326005,
+              "pnl": 10775.9033895,
+              "return": 0.12498969793611213,
+              "ending_equity": 96990.23599
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 96990.23599,
+              "pnl": 1319.4811380000017,
+              "return": 0.013604267734084536,
+              "ending_equity": 98309.717128
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 98309.717128,
+              "pnl": 10440.4038188,
+              "return": 0.10619910344372686,
+              "ending_equity": 108750.1209468
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 108750.1209468,
+              "pnl": -2970.16132,
+              "return": -0.027311797854946643,
+              "ending_equity": 105779.9596268
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 105779.9596268,
+              "pnl": -3221.116135400002,
+              "return": -0.030451100064363346,
+              "ending_equity": 102558.8434914
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 102558.8434914,
+              "pnl": 4509.351254999998,
+              "return": 0.0439684292596194,
+              "ending_equity": 107068.1947464
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 107068.1947464,
+              "pnl": 4282.602520999999,
+              "return": 0.03999883000870335,
+              "ending_equity": 111350.79726739999
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 111350.79726739999,
+              "pnl": -1025.6952899999992,
+              "return": -0.009211387032432955,
+              "ending_equity": 110325.10197739999
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -24238.1779109,
+          "calendar_worst_month": -8624.627245,
+          "calendar_median_month": 146.89292400000124,
+          "calendar_best_month_concentration": 1.0436607224884302,
+          "avg_exposure": 39352.242771203186,
+          "p95_exposure": 83652.89,
+          "peak_exposure": 103709.14,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 0.9695979594587828,
+          "largest_symbol_gross": 14020.920000000002,
+          "largest_symbol_equity_fraction": 0.1689699160847602,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.26237645557918754,
+          "intended_notional": 705250.0,
+          "borrow_base": 39050.01674333151,
+          "extra_spread_cost": 1396.6189226000001,
+          "scenarios": {
+            "borrow_0_spread_1": 10325.101977399996,
+            "borrow_0_spread_2": 8928.483054799995,
+            "borrow_10_spread_1": 6420.100303066845,
+            "borrow_10_spread_2": 5023.481380466845,
+            "borrow_30_spread_1": -1389.9030455994562,
+            "borrow_30_spread_2": -2786.5219681994563
+          },
+          "stress_short_10pct": -10370.914,
+          "stress_largest_name_50pct": -7010.460000000001,
+          "stress_joint_others10_largest50": -14993.690000000002,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              9854.71538
+            ],
+            [
+              "NBY",
+              5954.827810000002
+            ],
+            [
+              "MRAM",
+              2841.101809599999
+            ],
+            [
+              "BNAI",
+              2544.821064
+            ],
+            [
+              "VELO",
+              2109.337660000001
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "AMBQ",
+              -2149.9774200000006
+            ],
+            [
+              "FBRX",
+              -2400.8561500000005
+            ],
+            [
+              "TRAX",
+              -2665.05903
+            ],
+            [
+              "DNTH",
+              -3919.5492099999988
+            ],
+            [
+              "TERN",
+              -4551.713070000001
+            ]
+          ],
+          "top_symbol_concentration": 0.9544424259993172,
+          "stale_exposure_dollar_sessions": 3512017.2336000004,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR12_R5_OBSERVED_CONSERVATIVE_50.json",
+        "detail_sha256": "b18e7241d9042634c9d3455333b975be2a8106a7ee0470696f747f3df4873ca0",
+        "increment_vs_common_shock_control": 699.5228228999986,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      },
+      "1.0": {
+        "id": "AR12_R5_OBSERVED_CONSERVATIVE",
+        "shock": 1.0,
+        "metrics": {
+          "total_pnl": 244.18197739999994,
+          "per_day": 1.9692094951612897,
+          "sessions": 124,
+          "trades": 197,
+          "completed_leg_pnl": 21658.0370974,
+          "terminal_net_mtm": -21413.85512,
+          "exit_legs": 213,
+          "fully_closed_ticket_pnl": 21658.0370974,
+          "open_ticket_lifecycle_pnl": -21413.85512,
+          "fully_completed_signal_cohort_pnl": 11447.619849900002,
+          "partly_open_signal_cohort_pnl": -11203.437872500002,
+          "fully_closed_tickets": 191,
+          "terminal_tickets": 6,
+          "terminal_gross": 40323.68,
+          "terminal_stale_gross": 40323.68,
+          "terminal_max_stale_sessions": 243,
+          "cross_signal_month_lifecycle_tickets": 101,
+          "opposite_split_calendar_mtm": 2587.657339000005,
+          "opposite_split_calendar_absolute_mtm": 102906.646101,
+          "opposite_split_sessions_with_inventory": 127,
+          "max_dd": -28601.18401540001,
+          "max_dd_percent": -0.26505396742905973,
+          "worst_day": -11906.87666,
+          "time_underwater_sessions": 243,
+          "longest_underwater_sessions": 132,
+          "red_months": 3,
+          "red_loss_sum": -16876.4795245,
+          "worst_month": -9239.677920499997,
+          "median_month": -521.0788246999969,
+          "months": {
+            "2025-09": -9239.677920499997,
+            "2025-11": -5389.089479000006,
+            "2026-01": 12095.384527499997,
+            "2026-03": 3819.7224987999934,
+            "2026-05": 1205.5544756000045,
+            "2026-07": -2247.712124999998
+          },
+          "best_month_concentration": 49.53430493228531,
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -5279.948310500003,
+              "return": -0.052799483105000024,
+              "ending_equity": 94720.0516895
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 94720.0516895,
+              "pnl": -3959.7296099999985,
+              "return": -0.041804554995180036,
+              "ending_equity": 90760.32207950001
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 90760.32207950001,
+              "pnl": -14417.717245000002,
+              "return": -0.1588548488443115,
+              "ending_equity": 76342.6048345
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 76342.6048345,
+              "pnl": 9028.627766000001,
+              "return": 0.11826460186383203,
+              "ending_equity": 85371.2326005
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 85371.2326005,
+              "pnl": 10775.9033895,
+              "return": 0.12622405769782555,
+              "ending_equity": 96147.13599000001
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 96147.13599000001,
+              "pnl": 1319.4811380000017,
+              "return": 0.013723561543603723,
+              "ending_equity": 97466.61712800001
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 97466.61712800001,
+              "pnl": 10440.4038188,
+              "return": 0.10711774068334523,
+              "ending_equity": 107907.02094680001
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 107907.02094680001,
+              "pnl": -6620.681319999999,
+              "return": -0.06135542675452144,
+              "ending_equity": 101286.3396268
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 101286.3396268,
+              "pnl": -8110.679535400002,
+              "return": -0.08007673655978328,
+              "ending_equity": 93175.6600914
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 93175.6600914,
+              "pnl": 3845.6546549999985,
+              "return": 0.04127316781257714,
+              "ending_equity": 97021.31474639999
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 97021.31474639999,
+              "pnl": 4248.5625210000035,
+              "return": 0.04378999122105432,
+              "ending_equity": 101269.87726739999
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 101269.87726739999,
+              "pnl": -1025.6952899999983,
+              "return": -0.010128335470296675,
+              "ending_equity": 100244.18197739999
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -39414.4513109,
+          "calendar_worst_month": -14417.717245000002,
+          "calendar_median_month": 146.8929240000017,
+          "calendar_best_month_concentration": 44.13062546318786,
+          "avg_exposure": 44016.27628196016,
+          "p95_exposure": 94432.37730000001,
+          "peak_exposure": 113756.02,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_sessions_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.306448353727385,
+          "largest_symbol_gross": 15754.4,
+          "largest_symbol_equity_fraction": 0.21421983019855978,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 10.422310756972111,
+          "peak_live_symbols": 22,
+          "mean_live_symbols": 8.9800796812749,
+          "profit_per_avg_exposure": 0.005547538275064777,
+          "intended_notional": 705250.0,
+          "borrow_base": 43663.59944196165,
+          "extra_spread_cost": 1396.6189226000001,
+          "scenarios": {
+            "borrow_0_spread_1": 244.18197739999994,
+            "borrow_0_spread_2": -1152.4369452,
+            "borrow_10_spread_1": -4122.1779667961655,
+            "borrow_10_spread_2": -5518.796889396166,
+            "borrow_30_spread_1": -12854.897855188494,
+            "borrow_30_spread_2": -14251.516777788494
+          },
+          "stress_short_10pct": -11375.602,
+          "stress_largest_name_50pct": -7877.2,
+          "stress_joint_others10_largest50": -17216.434,
+          "top_symbol_profit": [
+            [
+              "BATL",
+              9854.71538
+            ],
+            [
+              "NBY",
+              5954.827810000002
+            ],
+            [
+              "MRAM",
+              2841.101809599999
+            ],
+            [
+              "BNAI",
+              2544.821064
+            ],
+            [
+              "VELO",
+              2109.337660000001
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "AGL",
+              -3725.41818
+            ],
+            [
+              "AMBQ",
+              -3989.5774200000005
+            ],
+            [
+              "FBRX",
+              -4353.576150000001
+            ],
+            [
+              "TERN",
+              -4551.713070000001
+            ],
+            [
+              "DNTH",
+              -7570.06921
+            ]
+          ],
+          "top_symbol_concentration": 40.358078368153976,
+          "stale_exposure_dollar_sessions": 4682689.6448,
+          "counters": {
+            "missing_volume_neutral": 17,
+            "missing_momentum_neutral": 4,
+            "entry_update_fallback": 0,
+            "paced_batches": 0,
+            "stale_position_sessions": 724,
+            "half_covers": 22,
+            "missing_scheduled_exit": 15,
+            "delayed_exit_fills": 9,
+            "delayed_exit_sessions": 95,
+            "missed_late_entry": 3
+          },
+          "valuation": "cg003_common_partial_actions_v1; raw fills; partial split/dividend/loan coverage",
+          "exposure_sampling": "synchronized EOD; minute peak audit separate"
+        },
+        "detail_path": "data/tmp/cg_arrow003/stale_counterfactual/AR12_R5_OBSERVED_CONSERVATIVE_100.json",
+        "detail_sha256": "a55e7270fa990ee86ab4772adbbddb35eeb079c3f8797a36bbaf5707d106e1d0",
+        "increment_vs_common_shock_control": 2655.0628229000017,
+        "intended_notional_change": 0.0,
+        "filled_ticket_change": 0
+      }
     }
   },
   "code_sha256": {
@@ -10079,12 +13943,16 @@
     "src/research/strategies9.py": "596d470ab73ab3be9e945ee04deb9d4e36b0f237676a39511e65f2ccee22cb57",
     "src/research/trend.py": "d6c849fbc5a3ac38ecc57848fee3e7dfb9239e1bae261f196675d83ad06a4dca",
     "src/research/cg_arrow003_data.py": "632b82c29c657ad0c3e46d84a15d6d288b8163064a0cbfc8504d544b68ee72ba",
-    "src/research/cg_arrow003_lab.py": "5f4875075344218d6b4fe9a44bcd4bc1a70882df0630e017e836a2fca850959b",
-    "src/research/cg_arrow003_audit.py": "c48a77cb4c49556ac1b210a28fd427ca52236cc96aaefff3b5ae45b684ff431d",
-    "src/research/cg_arrow003_confirmation.py": "58002b2c4fcf22a9dc970684bbcde86c936bc5fd253e39e436365038e4d6f926",
-    "src/research/cg_arrow003_minute.py": "a7550675375565200f3f0201df7cb76ebfd852cbb5ce4b87fd131dfa26cd5f25",
-    "src/research/cg_arrow003_provenance.py": "38616364f474128a0ed48fd70728145eb9068bd094a22a5083c9eb540a23a4da"
+    "src/research/cg_arrow003_lab.py": "a9bd6ed9060998366cc2909401728bd0c509c64f5f94d843e3265c63b5667b14",
+    "src/research/cg_arrow003_audit.py": "b32f1fc634a1dfa3b529ea08f12964ac4a944e3d18d078532fe11baebffc191e",
+    "src/research/cg_arrow003_confirmation.py": "a170222b459582155b3161e1a15ec41324d9d9e6c322d3c14e3ac876be8e2118",
+    "src/research/cg_arrow003_minute.py": "9a6f0ea4c4f0ee337e8383e88aff3f4a3a9ad9643445850c7c66c1542e0243fa",
+    "src/research/cg_arrow003_provenance.py": "38616364f474128a0ed48fd70728145eb9068bd094a22a5083c9eb540a23a4da",
+    "src/research/cg_arrow003_falsification.py": "17e05bc0770f5f2cea4ada041c3b008d62ab4f1f0db2259a976b24ed7f259ba8",
+    "src/research/cg_arrow003_oracle.py": "0d70ade3f77a28ade8c24c0b759fd9044f095384a012f4c532ea01244fcf0420",
+    "scripts/cg_arrow003_report.py": "fa4e71e08f79d88ebf10e51951e94e345084b5bee273cbf277a2defb6ae43cc3",
+    "scripts/cg_arrow003_replay.py": "14fe83866dfcbe5e4b5a02cb0fcbc3ff75931d64b2ba54eedced7cb22d729294"
   },
-  "wall_seconds": 8.43281620000198,
+  "wall_seconds": 10.78857920000155,
   "limitations": "Uniform non-compounding hypothetical adverse valuation errors. No distributions, probability bounds, actual missing-price estimates, or new executable bars. Signals/ranking/management features unchanged; current capacity and drawdown state respond to stressed marks. No OOS diagnostic tuning."
 }

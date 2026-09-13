@@ -1,7 +1,37 @@
 {
-  "timestamp": "2026-09-13T19:09:54+00:00",
+  "timestamp": "2026-09-13T20:05:16+00:00",
   "mode": "IS",
   "books": [
+    {
+      "book": "A10_R4_LATE_ALL_PARTICIPATION",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 432,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.6007106751203537e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "a7ec9ad11f208abceeaa3fa090372e6cde56f96275dfb16f5694661879ddfc03"
+    },
+    {
+      "book": "A11_R5_LATE_ALL_PARTICIPATION",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 432,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "8f91b2e9999589501e33588b3ac64e23b48c15d463fad4304bb42ec75c944b77"
+    },
+    {
+      "book": "A12_R5_OBSERVED_HISTORY_VOTES",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "02be4b11b5338ce741fb1bf5b1c70370179f60c1c8925bc590a21695fa9937d4"
+    },
     {
       "book": "A1_R4_ORDINAL_PARTICIPATION",
       "mode": "IS",
@@ -10,7 +40,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.3096723705530167e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "50756c0f92fcb45004abebda8fdf0bfb626a9a4eabb93f1e6d06057c34882acd"
+      "detail_sha256": "dafb8dcb176bf653ec1c1bea1ffb5dbb8591a548a17c39399467fc8c281920a3"
     },
     {
       "book": "A2_R4_LATE_PARTICIPATION",
@@ -20,7 +50,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.0186340659856796e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "dc1b750801e0513af3d149d3c92f9e1f3a7625b393de7e18d7ac5b44fa8ef6b5"
+      "detail_sha256": "aeb057e90c74cea2145bfc5bb5633b336e5eec0aa683c88cd509061956052156"
     },
     {
       "book": "A3_R4_DRAWDOWN_NEW",
@@ -30,7 +60,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.8917489796876907e-10,
       "max_marked_gross_error": 1.4551915228366852e-11,
-      "detail_sha256": "21f894acb7ba771cbe01258809ab2f212d2dca511c349cf6199ea9f948c4599a"
+      "detail_sha256": "ada24cb65f7dd81965285926d24057749d75c20cfbfcf9d85a1f47dcc1ba4bba"
     },
     {
       "book": "A4",
@@ -40,7 +70,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.3096723705530167e-10,
       "max_marked_gross_error": 2.1827872842550278e-11,
-      "detail_sha256": "a2b5ae728b30bcbee286fa65f7b4cce14200d06ba6006278f621a0fce9a84887"
+      "detail_sha256": "df6eb4318e6f9d98153814a8c9326ab78d305b956db0d2eab92c27f8ee22bee3"
     },
     {
       "book": "A4_R5_SYMBOL_BUDGET",
@@ -50,7 +80,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.1641532182693481e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "a70de39457158963bc969b10c78ae3b2c3b14e497dddfc942cbe14f698685182"
+      "detail_sha256": "6e818f72715d2388b723ca142461ee91a44f10c4c851ab605fabcb2b6e6e23c7"
     },
     {
       "book": "A5_R4_LATE_WEAK_PART_COVER",
@@ -60,7 +90,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.473825588822365e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "50764b864023186c2fbd4da45017802912fdf9e108948296ded1269a4d2e89e3"
+      "detail_sha256": "3f742e59bc2a241dfdc03ae96bb8480f8d171876b16eee05b39cf9be1bab6e75"
     },
     {
       "book": "A6_R5_STALL_VOTES",
@@ -70,7 +100,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.4551915228366852e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "76f79d529a3409e818b4046e56c79164f9c02a8d75c56ada9b76236132a7a053"
+      "detail_sha256": "dfa53879577a66c3b2cf664bfa8480f27daa41d1c4f661982dfe489a9383c7ac"
     },
     {
       "book": "A7_R4_MINUTE_LATE_COVER",
@@ -80,7 +110,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.6193447411060333e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "4ae13f77bbf65c2e7e6689593f0f327a4328451ba71cc2c50d24dc98b33eadef"
+      "detail_sha256": "6d090a5377ce6f22e57ee47833db68c2304bc85021241b654dde5ef5d8318089"
     },
     {
       "book": "A8_R5_MINUTE_LATE_COVER",
@@ -90,7 +120,47 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.0372681319713593e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "7c91c48e5ffb2e20de673feeb8675b3b00eb2ce236e1b735d2c158922ca2bbd0"
+      "detail_sha256": "6e4ed23cb7fbc3f34da2254f1a0b1abbdee4ef8f08fc291786c574777dcfd31b"
+    },
+    {
+      "book": "A9_R5_ADVERSE_OPEN_BOOK",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.1827872842550278e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "5f65e5262e49bec4ecb461e82a8896a229bc6e34bf6ce0ec8972dbaa1a75265d"
+    },
+    {
+      "book": "AR10_R4_CONSERVATIVE_COVER_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 410,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.4551915228366852e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "96df2d3a3d7d39618fa7974ab2ef4d58407f9b069b170d4da24d2fca5249b5c2"
+    },
+    {
+      "book": "AR11_R5_OBSERVED_VOTES_COVER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 410,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "6db9fff9dc5e3b50241842924660363e29027359c8793d1d79893aad0d3bf7a3"
+    },
+    {
+      "book": "AR12_R5_OBSERVED_CONSERVATIVE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 410,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.3283064365386963e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "629530696b29c4c93b7691b66702489c3c0ba71463f71947370a2b796f93e221"
     },
     {
       "book": "AR1_R4_LATE_COVER_DAY7",
@@ -100,7 +170,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.1827872842550278e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "101e8500938f1ad8c90098868cfdaca32e9342fd8e4941c3def8f3d69ff9d62c"
+      "detail_sha256": "ec4114a20ce18d4c3a04d6dc8d12770102482ac5431af328ffb9e7b2ef254a10"
     },
     {
       "book": "AR2_R5_LATE_WEAK_PART_COVER",
@@ -110,7 +180,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.6007106751203537e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "860cb47e39a98a0d0b06fe5eca4c051f746daf666b996909b797606dc6b06ae2"
+      "detail_sha256": "6ac186f1564abcf5c696dbff7e6bbc2786722615a3f890c21be1d858f14c2500"
     },
     {
       "book": "AR3_R4_LATE_COVER_CONSERVATIVE",
@@ -120,7 +190,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.3096723705530167e-10,
       "max_marked_gross_error": 2.1827872842550278e-11,
-      "detail_sha256": "7d9333fb975b1cb167c3db0dbe00468968f2a7b25d998173f383c439be2d41c1"
+      "detail_sha256": "363789d8cbe4a4826fda724fcb427f71f898a93b5b861a398828fa778cb3a99d"
     },
     {
       "book": "AR4_R5_VOTES_PACED",
@@ -130,7 +200,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.7462298274040222e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "115a971e307dcf625e0066d2f2c4d29cc8f90350087677d401d8d7ab5cc434b3"
+      "detail_sha256": "1c0b5a48cac1bf221b166884237c91551c2f43fc4aba06b5fa3cf0f55cc05d09"
     },
     {
       "book": "AR5_R5_VOTES_LATE_COVER",
@@ -140,7 +210,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.8917489796876907e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "9f0d6887c56c314bb6308ec462d5367d3cf8f18c711c897bdfd2bda1a431dac4"
+      "detail_sha256": "009afd1e13d324c066fcd9570fe2e268f1efc5efcc9bb0d67cb7f1a88db4756a"
     },
     {
       "book": "AR6_R5_VOTES_COVER_PACED",
@@ -150,7 +220,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.8917489796876907e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "e94a06a1982d18d5435dde6c33777f59861c325d8760897c3f2bb1176d8a5693"
+      "detail_sha256": "5b793ef3c14e416e64756864603e7676c50ca0413a55b43ebd4566b746964dd3"
     },
     {
       "book": "AR7_R4_LATE_COVER_PACED",
@@ -160,7 +230,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.3096723705530167e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "493ca238b5d212731ecf7eaa3c34e91e5dd91cf0653f6c2f15ac684a5389b64f"
+      "detail_sha256": "5ad98c130d139c013578624b010e772f9cd35bbc036c01464f58363dee183eb8"
     },
     {
       "book": "AR8_R5_VOTES_COVER_CONSERVATIVE",
@@ -170,7 +240,17 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.3283064365386963e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "f90a7b2d861d3ff8e1865dfe50edb4fa0b4fbfecf99cbc40b060fe9be7445254"
+      "detail_sha256": "73bb7cb3e158f62403c59debd24ade1b74a42557069bb3c49fc26dbd06f6758e"
+    },
+    {
+      "book": "AR9_R5_LATE_COVER_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 410,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.4551915228366852e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "67ff9980064bc7384f85b978cf324f950fc04975653d8d1c5e6ee14d45030a8d"
     },
     {
       "book": "C1_R4_PACED",
@@ -180,7 +260,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.6193447411060333e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "9900b147ecce99c01032c0e4dd21f2ef6c6ded225e72dfe3c7177e2aafca7511"
+      "detail_sha256": "268d47b9964ae5bb47599b26eb503fa5da6a1d300c98ccd9481dff6a5d1cc3f0"
     },
     {
       "book": "C1_R4_PREORDER",
@@ -190,7 +270,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.6193447411060333e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "9900b147ecce99c01032c0e4dd21f2ef6c6ded225e72dfe3c7177e2aafca7511"
+      "detail_sha256": "268d47b9964ae5bb47599b26eb503fa5da6a1d300c98ccd9481dff6a5d1cc3f0"
     },
     {
       "book": "C1_R5_PACED",
@@ -200,7 +280,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.0186340659856796e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "94810e6cc2485ac1a5fb0531395129eb6d35470cb37d2c044990de5c4b2b6111"
+      "detail_sha256": "e91e182de77fd05327ff8fb6b034b0d43451eeb77a846b6846ea52fc6cdbb59c"
     },
     {
       "book": "C1_R5_PREORDER",
@@ -210,7 +290,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.0186340659856796e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "c9ed7728cf75dc74394c2bc55bbb7e400ea5984c1892face0789d9582b8298ef"
+      "detail_sha256": "0e0a774d403005a68e5fd850e6ff42cc8094ab7b6ef9d52cf1a56b2a160a8fe3"
     },
     {
       "book": "C2_R4_MEDIAN",
@@ -220,7 +300,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.473825588822365e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "1e2615a095cedf7f8f4df0499289fe05e8c7d913a143243bbed6728572f9a1c7"
+      "detail_sha256": "f211f3647eb322431f76878ab19c6ecdef7c359234e89811e70710ca039018b7"
     },
     {
       "book": "C2_R4_PERSIST3",
@@ -230,7 +310,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.3096723705530167e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "9ac297acbd252b326f487461fe11d21d6f102beb538f8889f23cd4ec267fb815"
+      "detail_sha256": "0e69e67c94e5c93ab953435d82ddd5cb321aee06787e9891b5a5f16d21d6c51c"
     },
     {
       "book": "C2_R5_MEDIAN",
@@ -240,7 +320,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.6193447411060333e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "b5aa6d567d82334346cd63fd55f3243a6175ea26585e92e65ec5fda3e0539a5e"
+      "detail_sha256": "4b3dce922fd4ea915b92304385e0cadca25cc9df01d6a320566dfe2ade7c5f23"
     },
     {
       "book": "C3_R4_VOLUME_TAPER",
@@ -250,7 +330,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.8917489796876907e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "a485ae6a53e9ba158f333ebd13b2d4bbd29919a31a5d58997207c68c8231cee1"
+      "detail_sha256": "bb4a7c8887df64dcd318e6284dec0912240de1f52e5b92916f12cd31a6033cab"
     },
     {
       "book": "C3_R5_MOMENTUM_TAPER",
@@ -260,7 +340,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.9103830456733704e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "c030cc1fe992a15181d41dfb82db70aaccc42d768048d39a7dd3bb46e4e1b167"
+      "detail_sha256": "e8f1f2d3dc4c2d140902434998ca5498957e45531a129e8e696945423f9c65df"
     },
     {
       "book": "C3_R5_TAPER_PACED",
@@ -270,7 +350,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.4551915228366852e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "c6e460f393e91325265338c50a16f5031b2e7cce97ba704168755e2bb7c6c782"
+      "detail_sha256": "e59a62b3334b978d068ff5e8a967efc17079a84a1d0b46ecbff508995e52db8f"
     },
     {
       "book": "C3_R5_TAPER_SWITCH_FALLBACK",
@@ -280,7 +360,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.8917489796876907e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "161f55b980f006ab0be6b751fda506f4f4b05c461accef0f5cf5b319707090bc"
+      "detail_sha256": "5ce3e32a15c503fd67ad48e359b713aa9c6a42612b30c4e20a3fc771e86b113f"
     },
     {
       "book": "C3_R5_VOLUME_TAPER",
@@ -290,7 +370,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.0186340659856796e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "819f4362918937a3b7cdf6ff18e746e31c56044a3a5a16412ae828b54d779d7a"
+      "detail_sha256": "dfe8ae5ab33f7bfd5bb2654d919b2fc2a13ff5198066eec60ce6090dece453eb"
     },
     {
       "book": "C4_R4_ENTRY_UPDATE",
@@ -300,7 +380,17 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.3096723705530167e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "9186c5f25254a14999e47ca22aed0c0e5f36ea93d4692300acbfdb1753001f2d"
+      "detail_sha256": "28aaa4380306090c86ab633e8648e760d385a2e31276073def2a02f74e7f42d8"
+    },
+    {
+      "book": "C5_R4_DAY6_UPTURN",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 393,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.6007106751203537e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "af7b07600db2f336f3f4044b4fb939e17362ddbd43c61241139954403ab98f86"
     },
     {
       "book": "C5_R4_EARNED_FADE",
@@ -310,7 +400,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.0372681319713593e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "cdae61f66810c19925859aaa5bd2618c467d14a461dc3ab7043baaac7f02a9aa"
+      "detail_sha256": "126e90246513be4eee4d2066fb50c3d89c3e14fedc852b107230cb0642997b95"
     },
     {
       "book": "C5_R4_FADE_ATR15",
@@ -320,7 +410,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.6007106751203537e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "f9cc387a8d3f0a009174b3fb538e8447310462c46364d83d1ada44c62455f89f"
+      "detail_sha256": "f00c03c92f8a4573b3c1579aa990423014abeea73bf798093f8dfb13684dd73e"
     },
     {
       "book": "C5_R4_FADE_CONSERVATIVE",
@@ -330,7 +420,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 8.731149137020111e-11,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "a956bd693c937345c9c61268fd7ab1f029d95f6e6d4218ba8cf015f974c356e0"
+      "detail_sha256": "2b964ec1c6a82e1b68d965439f77db05323f3b95ecbbe7222bd37901de01b7a1"
     },
     {
       "book": "C5_R4_FADE_PACED",
@@ -340,7 +430,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.3283064365386963e-10,
       "max_marked_gross_error": 1.4551915228366852e-11,
-      "detail_sha256": "ddc1dabcfbfa9875b36dd5de5fbba28cd69cdb1d7e9a1ea2ca1d9847b376ab6e"
+      "detail_sha256": "2878605ea119be7ebf0d9dc16547844ed8a5da6336c889009dae20aaa5551d8e"
     },
     {
       "book": "C5_R4_SIZE_CONSERVATIVE",
@@ -350,7 +440,17 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.0186340659856796e-10,
       "max_marked_gross_error": 2.1827872842550278e-11,
-      "detail_sha256": "04a3f2df9858c86886e10c0b092fa5ef1fb341485ae0c23b4baaf92a41522307"
+      "detail_sha256": "20ce5cd863f326fbc8d0c849d77ec785867e38ab8d0ae9633c49a2792bbac6ac"
+    },
+    {
+      "book": "C5_R4_THROUGH_H10",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 402,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "2759a603b8d29300c06feb00b969f1acfd222eaa6d5ff1e6b600048e18526f9e"
     },
     {
       "book": "C5_R5_EARNED_FADE",
@@ -360,7 +460,17 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.3096723705530167e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "316514daecd94c947840647cc7dd6aced8ed5a63156162845aec8d74ac0c4464"
+      "detail_sha256": "aa715bb5bc0b6a6fa528346caff3b89d0a7d0ab4f4cadf2d2d58069af9badb62"
+    },
+    {
+      "book": "C5_R5_THROUGH_H10",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 402,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "dbc6c855b5488c8064dab9173dec57ba66282901793e6d9ed1477db368ae72a3"
     },
     {
       "book": "C6_BLEND_PACED",
@@ -370,7 +480,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 4.0745362639427185e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "54efc1e5e61d53b2d76456ef9c504677cbbed1b4cc68b9d0c1dc65c52aac059c"
+      "detail_sha256": "7a6217cd70da4d77fb395452587c7e9481bd7393cb41cd1dcd8fcf18213a7cc5"
     },
     {
       "book": "MATCH_A3_R4_DRAWDOWN_NEW",
@@ -380,7 +490,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.9103830456733704e-10,
       "max_marked_gross_error": 2.1827872842550278e-11,
-      "detail_sha256": "b5c6b4025152827d7d54ee82e20a43cfa12111df5ea7bc8f4059a15ae31e69d5"
+      "detail_sha256": "3bd138289f187d54da4896924d7b3ff6816f844da5354f746281a31ace2ab71a"
     },
     {
       "book": "MATCH_A4_R5_SYMBOL_BUDGET",
@@ -390,7 +500,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.3096723705530167e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "ed396d3f90bdbbbe5caac88761884489e63630407097d695eb02984100e1800c"
+      "detail_sha256": "39f8d23eca007aa7ad5fdd87bd83a52c4140170fe7734d6b5e3cdfa42c4a5c01"
     },
     {
       "book": "MATCH_A5_R4_LATE_WEAK_PART_COVER",
@@ -400,7 +510,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.6007106751203537e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "3ffa582d03228d05e03a65258e5963663f7ffee1ff99a9017629a1e2ca5f8ee5"
+      "detail_sha256": "f57b00f2798a55799eefc64b4db1acca924138afe825b44397c4824c583ca7c0"
     },
     {
       "book": "MATCH_A6_R5_STALL_VOTES",
@@ -410,7 +520,37 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.4551915228366852e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "988225dc0a2dfb5682f734db99df64fc75556f818524c3aa33736681a13780be"
+      "detail_sha256": "ea225c8412d9ac815d47b3fc0dac641b3d9e46ede1fd0e823c6cb8606952ad3c"
+    },
+    {
+      "book": "MATCH_AR10_R4_CONSERVATIVE_COVER_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 3.2014213502407074e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "cee6ecd1bd8da4f5caf7fbfc77f79a2d1924f4284c566cfc69297b8c7e594a6f"
+    },
+    {
+      "book": "MATCH_AR11_R5_OBSERVED_VOTES_COVER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.6007106751203537e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "cb8f79be31cc7bb000654121d62b3100a9049fe065f8dce11dfeed41c99668b0"
+    },
+    {
+      "book": "MATCH_AR12_R5_OBSERVED_CONSERVATIVE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.9103830456733704e-10,
+      "max_marked_gross_error": 1.4551915228366852e-11,
+      "detail_sha256": "9397c99aa06e05e781db094812e46bb651120a2c2b8dca11800f02a75ae5a629"
     },
     {
       "book": "MATCH_AR2_R5_LATE_WEAK_PART_COVER",
@@ -420,7 +560,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.7462298274040222e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "1adcef8dd3c5d2296b47e5018abb81914c9d828550d0b87475ef96d202936d81"
+      "detail_sha256": "c35271d4dc4566476040f18aab22aec7c3838b14bfc5960b2cc5785297ccc8f5"
     },
     {
       "book": "MATCH_AR3_R4_LATE_COVER_CONSERVATIVE",
@@ -430,7 +570,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 3.2014213502407074e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "f7d1d62b4bc287eac1a8291df6bd915f11e4081d660b3d5d7b9cc8afb1e64b98"
+      "detail_sha256": "cee6ecd1bd8da4f5caf7fbfc77f79a2d1924f4284c566cfc69297b8c7e594a6f"
     },
     {
       "book": "MATCH_AR6_R5_VOTES_COVER_PACED",
@@ -440,7 +580,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.0186340659856796e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "16bb21ce4f27aa8af00dd1e7f0ef6286dda0e63520e214d51f80f9ae7261747e"
+      "detail_sha256": "70db597b3a48e081402f7f564c1c5643ae44c8c5bf23c7cd3ac59ad19b155cfd"
     },
     {
       "book": "MATCH_AR7_R4_LATE_COVER_PACED",
@@ -450,7 +590,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.6007106751203537e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "7c62ff6fb2b4c428d76a2df6ebb9b4b2f23bcc8bdb322407d1d615a0819ecb72"
+      "detail_sha256": "f57b00f2798a55799eefc64b4db1acca924138afe825b44397c4824c583ca7c0"
     },
     {
       "book": "MATCH_AR8_R5_VOTES_COVER_CONSERVATIVE",
@@ -460,7 +600,17 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.4551915228366852e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "b83aa0e261ba85a64b07a59868a90b671eabab05688e1d2b8a2c35bc3b0bb359"
+      "detail_sha256": "1972913dbf120b5b3d80e46acb70eb0f6069fdddd60bd47caff8dc67254ead47"
+    },
+    {
+      "book": "MATCH_AR9_R5_LATE_COVER_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.7462298274040222e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "c35271d4dc4566476040f18aab22aec7c3838b14bfc5960b2cc5785297ccc8f5"
     },
     {
       "book": "MATCH_C2_R4_MEDIAN",
@@ -470,7 +620,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.0186340659856796e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "d20b3f6312cdd31f4834f5d07b0b0214b8138b7cc6e3ee4701068a38bb5aa3f4"
+      "detail_sha256": "4d484164877f3c9a6eca0f765fca3228a6ef5d5e0cd07194d891540f6652eef5"
     },
     {
       "book": "MATCH_C3_R4_VOLUME_TAPER",
@@ -480,7 +630,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.3096723705530167e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "e102507c59db2cfa5cf58fe6ee03f40b6a3f78a180689a0452c3478c4769af1f"
+      "detail_sha256": "edda349fd0f2636ef359a46f211190c076ece1b2d99d78cc209f9a91c0652664"
     },
     {
       "book": "MATCH_C3_R5_MOMENTUM_TAPER",
@@ -490,7 +640,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.473825588822365e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "0fdb719df8f21a5b6f68a799fc3f3453fff3889582c712483ed80befc99c82c8"
+      "detail_sha256": "3c78dcb94681ea605000e3df6651e6b868e426d80506990b50e7de6d7c331b0d"
     },
     {
       "book": "MATCH_C3_R5_TAPER_PACED",
@@ -500,7 +650,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.1827872842550278e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "82b9c54de42137fe1bdf4038b8dd1c14faf0ba6ea619a08829ff088cc7fd6ae5"
+      "detail_sha256": "9d87cab7045e7f4dbc1aacfc1e450d1c0df0f23a4fee5211d08c17d9e51dba0c"
     },
     {
       "book": "MATCH_C3_R5_VOLUME_TAPER",
@@ -510,7 +660,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.7462298274040222e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "25f795f27e712846cd9f5fdbb7cea3292c7d9737c1c9d9e38aabe2bc694dd3c0"
+      "detail_sha256": "7a7d40095bf44d7eb7fc849671756924c060d08fda64ffc3bc13111eedd668e3"
     },
     {
       "book": "MATCH_C5_R4_EARNED_FADE",
@@ -520,7 +670,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.0186340659856796e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "2278351b449407aebcc6d2203fa2dcc395af13c364069b55007ac07a35c276b3"
+      "detail_sha256": "e2879e0f81abdd4488bab6b201f4f39e049f388b91358864efd02f5ef537ae28"
     },
     {
       "book": "MATCH_C6_BLEND_PACED",
@@ -530,7 +680,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.4551915228366852e-10,
       "max_marked_gross_error": 1.4551915228366852e-11,
-      "detail_sha256": "9983e4082eb5771c11e9cb33691b67dc9c84ccfc3f9414388420083fa09d8ceb"
+      "detail_sha256": "cc634a0a291b9f5b364cf4cc4f7745ea8bae9efff2c6ca03b4e041e3fd86ac8d"
     },
     {
       "book": "PARENT",
@@ -540,7 +690,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.4551915228366852e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "b6f8c92191cc0020c9af4bde4ffc6e7873f87fb4bd9c4c218d1c3481ad018b89"
+      "detail_sha256": "723a67329dab502d0ec6a91a8eb6fc6c137f2f70b78c19066c645796135fd366"
     },
     {
       "book": "PARENT_MATCH_R4",
@@ -550,7 +700,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.0186340659856796e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "4b1ad1863df7f8b9f9868cc644a64a98b8a376e40be446cfa3a159e6fd3c12fa"
+      "detail_sha256": "9eeb61319a862633ef4246145fa99906316ed48987937302e4b163cf0c7745b9"
     },
     {
       "book": "PARENT_MATCH_R5",
@@ -560,7 +710,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.8917489796876907e-10,
       "max_marked_gross_error": 2.1827872842550278e-11,
-      "detail_sha256": "bb10b243a1b4d890f411375a9f8eb82de57b48dfbd6da00efc12152f96660efa"
+      "detail_sha256": "3e7020a592201404735b8b3ef00f22e29966fcbcf3389d247d373c912a985161"
     },
     {
       "book": "R1",
@@ -570,7 +720,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.6007106751203537e-10,
       "max_marked_gross_error": 1.4551915228366852e-11,
-      "detail_sha256": "9ff599fc8e893fa505adc903c071db8c7bec4e603cee18daf1fab48cb2ec59bf"
+      "detail_sha256": "e5d035e0cd6c10f3e9779845446e31ef656d45797a96c4e76f43a0aaa8500c09"
     },
     {
       "book": "R4",
@@ -580,7 +730,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.1827872842550278e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "a6a53fcf7f3760d4574898c08f018fd3dc8c30872f3bdc5de165af607edd68aa"
+      "detail_sha256": "7af2e2f5bb5abc5ec0e4241cdc47982bff0440b0d15320e22d7f7632d98e4fc7"
     },
     {
       "book": "R4_FIXED_BASE",
@@ -590,7 +740,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.6007106751203537e-10,
       "max_marked_gross_error": 4.3655745685100555e-11,
-      "detail_sha256": "ebd990283f7859047cab88ec87b8458021e0757a6b19fbb1dbde58ef7f1f733f"
+      "detail_sha256": "cf5022e88b2d244e089dc0ef4734f4ae528003d4ae823dedfab14ad30574a9c5"
     },
     {
       "book": "R5",
@@ -600,7 +750,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 1.1641532182693481e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "9177d8b899c730ea6c271cc41e14cada42e7ae29acb62457db611cfd3cbb090c"
+      "detail_sha256": "1a672e042ec513b499cc9f3cf45229bc8e64145f2785df978b02ab04367ac8ed"
     },
     {
       "book": "R5_CONSERVATIVE_7000",
@@ -610,7 +760,7 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.6193447411060333e-10,
       "max_marked_gross_error": 2.9103830456733704e-11,
-      "detail_sha256": "c00daf8d72d475d916b18750940a69bfa769527f81f8583cf013a65d5ec7656d"
+      "detail_sha256": "50cd8f0e60d9fca0590593f15a4c462cc69eca1c9a3568d3be1cfcb49b9048f3"
     },
     {
       "book": "R5_FIXED_BASE",
@@ -620,10 +770,10 @@
       "terminal_tickets": 6,
       "max_cash_equity_error": 2.6193447411060333e-10,
       "max_marked_gross_error": 5.820766091346741e-11,
-      "detail_sha256": "0414155d02a9ff4e67b194bc01a2677751f78f2d225425ec87c86d08690c4a5e"
+      "detail_sha256": "1b62de03f008d700094d1d9e86192b96861d7ef5a0e132019f156d8353397557"
     }
   ],
-  "wall_seconds": 5.6843826999975136,
+  "wall_seconds": 8.491543299998739,
   "method": "Entry sale proceeds minus cover cash and independent per-side cost formula, less open short liabilities; verify every saved fill against its actual observation and timing. Same input data, independent accounting identity.",
   "limitation": "Agreement cannot certify unobserved prices, corporate-action completeness, stock loans, dividends, actual fills or economic edge."
 }

@@ -10,7 +10,7 @@ import statistics
 import subprocess
 
 from research.cg_arrow003_data import ROOT,REPO_ROOT,SCORE,read,dump,digest,stamp
-from research.cg_arrow003_lab import FREEZE,LEDGER,elapsed,classify
+from research.cg_arrow003_lab import FREEZE,LEDGER,elapsed,classify,code_identity,input_identity
 
 REPORTS=REPO_ROOT/"reports"
 
@@ -60,6 +60,7 @@ def repetition(train,confirm,train_control,confirm_control,priority):
     is_delta_day=train["per_day"]-train_control["per_day"]
     oos_delta_day=confirm["per_day"]-confirm_control["per_day"]
     return {"assessment":verdict,"numeric_assessment":numerical,"control":priority["control"],
+        "assessment_scope":"Relative numerical repetition under the common incomplete-tape convention; absolute complete economics remain data-limited",
         "primary_kind":kind,"is_comparison":is_cmp,"oos_comparison":oos_cmp,
         "is_increment_per_session":is_delta_day,"oos_increment_per_session":oos_delta_day,
         "increment_per_session_ratio":oos_delta_day/is_delta_day if is_delta_day>0 else None,
@@ -131,6 +132,8 @@ def run():
     if not (ROOT/"investor_complete.json").exists():
         raise RuntimeError("Report requires the frozen chronological all-signal replay")
     freeze=read(FREEZE)
+    if freeze["code_sha256"]!=code_identity() or freeze["input_sha256"]!=input_identity():
+        raise RuntimeError("Reporting must use the frozen code and input convention")
     freeze_sha=digest(FREEZE)
     for p in (ROOT/"oos_complete.json",ROOT/"investor_complete.json"):
         if read(p)["freeze_sha256"]!=freeze_sha:raise RuntimeError("Outcome/freeze identity mismatch")
@@ -143,6 +146,8 @@ def run():
         provenance[name]={}
         for mode in ("IS","OOS","ALL"):
             record=read(ROOT/"results"/(name+f"_{mode}.json"))
+            if record["code_sha256"]!=freeze["code_sha256"] or record["spec"] not in freeze["specs"]:
+                raise RuntimeError("Outcome does not belong to the frozen policy/code")
             path=REPO_ROOT/record["detail_path"]
             if digest(path)!=record["detail_sha256"]:raise RuntimeError("Detailed output was modified")
             detail=read(path)
@@ -166,19 +171,23 @@ def run():
     searched={p.stem[:-3]:read(p) for p in (ROOT/"results").glob("*_IS.json")}
     hypotheses={n:r for n,r in searched.items() if r["spec"]["origin"] not in {"CONTROL","DIAGNOSTIC"}}
     origins=Counter(r["spec"]["origin"] for r in hypotheses.values())
-    comparisons={n:{mode:{c:classify(results[n][mode],results[c][mode]) for c in ("PARENT","R4","R5")}
+    comparisons={n:{mode:{c:classify(results[n][mode],results[c][mode],calendar=mode=="ALL") for c in freeze["controls"]}
                     for mode in ("IS","OOS","ALL")} for n in ids}
+    pair_comparisons={n:{mode:{c:classify(results[n][mode],results[c][mode],calendar=mode=="ALL") for c in ids if c!=n}
+                        for mode in ("IS","OOS","ALL")} for n in ids}
     command=REPORTS/"cg_arrow003_commands.txt"
     payload={"timestamp":stamp(),"status":"COMPLETE research; final public-safety review/push recorded in command log",
         "freeze_sha256":freeze_sha,"freeze":freeze,"results":results,"assessments":assessments,
+        "absolute_economics_status":"INCONCLUSIVE/DATA-LIMITED: incomplete held-position price paths, actions and loans",
         "comparisons":comparisons,"all_signal_daily_correlations":correlations,
+        "finalist_pair_comparisons":pair_comparisons,
         "synchronized_minute_risk":{n:{k:v for k,v in minute["books"][n].items() if k!="days"} for n in focus},
         "is_search":{n:{"spec":r["spec"],"metrics":r["metrics"]} for n,r in searched.items()},
         "hypotheses_completed":len(hypotheses),"origins":dict(origins),"is_controls":len(searched)-len(hypotheses),
         "detailed_local_provenance":provenance,"confirmation_invalidated":False,
         "confirmation_resume":read(ROOT/"oos_complete.json")["resumed_identical_job"],
         "elapsed_minutes_at_report":elapsed()/60,"historical_confirmation_reuse":True,
-        "limitations":["Partial corporate-action coverage","Stale terminal and internal marks","Unknown dividends, stock loans, broker financing and cash-in-lieu",
+        "limitations":["Partial corporate-action coverage","Stale terminal and internal marks; acquisition price bands make missingness potentially adverse","Unknown dividends, stock loans, broker financing and cash-in-lieu",
                         "Actual borrow availability and fills not certified","Same R4/R5 family; not independent engines","Repeated even months are internal confirmation"]}
     csv_path=REPORTS/"cg_arrow003_daily.csv"
     csv_export(csv_path,daily)
@@ -188,7 +197,7 @@ def run():
         "IS = in-sample (odd signal months); OOS = out-of-sample (even signal months); PnL = profit and loss; MTM = marked-to-market; DD = drawdown; RTH = regular trading hours; EOD = end of day; ATR = Average True Range.","",
         "## Verdict","",
         f"Completed {len(hypotheses)} new policy hypotheses ({', '.join(f'{v} {k.lower()}' for k,v in origins.items())}), with {len(searched)-len(hypotheses)} IS controls and separate diagnostics. All directed C1–C6 core tests closed. {len(ids)} distinct new finalists were frozen before the single confirmation batch. No Arrow 004 or unrelated engine was started.","",
-        "These are conditional research results. Eight documented reverse splits received common as-of repairs; the split reference is still incomplete. Missing future exits no longer erase entries: unresolved positions remain in the book with stale valuations. Starting equity is $100,000, intended ticket sizes do not compound, and approximately $130,000 gross is a soft planning range, not a deposit or margin guarantee.","",
+        "These are conditional research results. Eight documented reverse splits received common as-of repairs; the split reference is still incomplete. Missing future exits no longer erase entries: unresolved positions remain in the book with stale valuations. Copied acquisition price bands caused known lifecycle gaps, potentially associated with adverse short moves; **absolute complete economics are not established**. Starting equity is $100,000, intended ticket sizes do not compound, and approximately $130,000 gross is a soft planning range, not a deposit or margin guarantee.","",
         "| Finalist | Plain-English policy | Same comparator | Primary objective | Confirmation |",
         "|---|---|---|---|---|"]
     for p in freeze["finalists"]:
@@ -199,10 +208,13 @@ def run():
               "[Repair reconciliation](cg_arrow003_repairs.md) separates legacy, accounting-only, and action-adjusted working controls. The original PARENT/R4/R5 daily legacy curves reproduced exactly; earlier reports, tests and freeze evidence remain unchanged. All new comparisons use the working convention.","",
               "The median-volume reference and three-session participation persistence lost useful profit. Smooth volume penalties generally raised exposure and worsened the measured tradeoff. Updating volume at entry weakened R4; the observed loss was mainly from upgrading tickets after the signal. Relative participation ranks and final-hour volume-share sizing were weaker than the relevant controls. Drawdown-sensitive new allocations reduced losses but sacrificed substantial rebound profit. Profitable dominated variants remain in the ledger and frontier; they are not erased or called universal mechanism failures.","",
               "The apparent momentum-taper improvement was driven by neutral sizing when 20-session volatility was unavailable. On the 182 trades with usable volatility, the taper lost $1,837.98 versus R5; the 15 missing-history trades added $8,554.73. Preserving the original momentum switch on missing history removed the apparent improvement. This dependency is distinct from evidence that a smooth momentum curve helps.","",
+              "The advancing-day-vote rule also depended partly on sparse histories: $2,004.54 of its $3,122.85 IS increment came from 15 missing-history tickets, while 182 observed histories added $1,118.31. The final observed-history versions retain original R5 sizing on sparse histories. Votes and covers are not independent edges: the unpaced combined increment was $587.54 below the sum of their separate increments. After the history fallback and pacing, the full-size combination adds only about $542 beyond the simpler paced cover policy, with a worse worst day. This modest extra benefit is a material qualification of the return challenger.","",
               "The second-half half-cover for low initial participation was more useful than the original high-volume-upturn overlay. A one-session-later neighbor preserved the IS direction. The every-minute trigger comparison lost profit and slightly worsened DD relative to the 15:55 checkpoint for both R4 and R5; this supports the checkpoint's anti-twitch role on this IS sample while retaining one-minute executable prices.","",
+              "Further ablations showed that removing the low-initial-participation restriction still improved both R4 and R5: it sacrificed some profit for slightly better downside. Moving the original high-current-participation C5 rule to day 6 also improved profit. The evidence therefore supports a late management tradeoff; it does not establish that the low-volume clause uniquely causes the benefit. Halving new R5 orders when the current open book was losing sacrificed too much profit, like the earlier high-water-mark rule.","",
+              "Holding age is indexed from zero on entry. The original exploratory overlays managed through age 9 and retained the age-10 backstop. A separate literal directed C5 test allowed the half-cover through age 10 inclusive: R4/R5 IS profits were $14,837.74/$22,025.08, slightly below the earlier age-9-ending versions. The frozen Astra-derived covers explicitly retain their tested ages 6–9; no boundary convention is changed after reveal.","",
               "The deterministic within-signal-batch size shuffles were diagnostics, not strategies or independent statistical validation. None of 64 shuffles per family reached the actual R4/R5 IS profit. This association does not certify corporate-action completeness, borrow economics or future returns.","",
               "## Signal-cohort training and confirmation","",
-              "These totals include each signal cohort's complete observed lifecycle and terminal MTM through August 31. They are **not actual calendar-month account returns**. Profit/session divides by the 124 IS or 127 OOS signal-month sessions; drawdown and exposure walk the full uninterrupted 251-session calendar.","","### IS"]
+              "These totals include each signal cohort's complete observed lifecycle and terminal MTM through August 31. They are **not actual calendar-month account returns**. Profit/session divides by the 124 IS or 127 OOS signal-month sessions; drawdown and exposure walk the full uninterrupted 251-session calendar. Unless labeled minute-sampled, drawdown uses consecutive end-of-day marked equity, including all intervening sessions.","","### IS"]
     performance_table(lines,focus,results,"IS",labels)
     lines += ["","### OOS — one frozen batch"]
     performance_table(lines,focus,results,"OOS",labels)
@@ -228,21 +240,34 @@ def run():
     for name in focus:
         m=results[name]["ALL"]
         lines.append(f"| {labels.get(name,name)} | {percent(m['max_dd_percent'])} | {m['time_underwater_sessions']} / {m['longest_underwater_sessions']} | {money(m['p95_exposure'])} / {money(m['peak_exposure'])} | {m['above_130k_sessions']} / {m['longest_above_130k']} | {money(m['exposure_dollar_days_above_130k'])} | {m['peak_gross_to_equity']:.3f} | {percent(m['largest_symbol_equity_fraction'])} | {m['terminal_tickets']} / {money(m['terminal_stale_gross'])} |")
-    lines += ["","Dollar-days use calendar duration to the next session; dollar-session excess is also supplied in JSON. Excursion cause labels distinguish sessions with new allocation from existing-inventory drift; they are descriptive, not retroactive order rejection. Pacing uses last pre-order marks, reserves all open cohorts and due-but-unfilled closing orders, and scales a simultaneous batch pro rata. There is no minimum-size top-up or forced liquidation at a small overshoot.","",
-              "Stale terminal price-shock arithmetic is shown in `cg_arrow003_stale_dependency.json`. It holds quantities fixed; the effect of changed historical missing marks on earlier pacing/drawdown choices is not quantified. Absolute account economics remain uncertain. A carried mark is never treated as an executable exit.","",
+    lines += ["","| Book | Fully closed ticket PnL | Realized exit-leg PnL | Terminal net unrealized MTM | Maximum terminal staleness (sessions) |",
+              "|---|---:|---:|---:|---:|"]
+    for name in focus:
+        m=results[name]["ALL"]
+        lines.append(f"| {labels.get(name,name)} | {money(m['fully_closed_ticket_pnl'])} | {money(m['completed_leg_pnl'])} | {money(m['terminal_net_mtm'])} | {m['terminal_max_stale_sessions']} |")
+    lines += ["","Realized exit legs plus terminal net unrealized MTM reconcile to total profit. Fully closed tickets are a separate view; realized partial covers can belong to tickets still open at the boundary. Completed versus partly open signal-batch cohort PnL is also explicit in JSON. No future terminal cover fee or post-boundary loan charge is invented.","",
+              "Dollar-days use calendar duration to the next session; dollar-session excess is also supplied in JSON. Excursion cause labels distinguish sessions with new allocation from existing-inventory drift; they are descriptive, not retroactive order rejection. Pacing uses last pre-order marks, reserves all open cohorts and due-but-unfilled closing orders, and scales a simultaneous batch pro rata. There is no minimum-size top-up or forced liquidation at a small overshoot.","",
+              "Five of six unresolved IS R4 tickets were last marked above $80. Across its full lifecycle, **720 of 724 stale position-sessions** have a documented price-range exclusion in at least one copied acquisition table; the remaining four have other documented exclusions. Missing rows in one source are distinguished from known exclusions in the other in `cg_arrow003_lifecycle_coverage.json`. The old acquisition bounds do not provide a complete held-position lifecycle service. A modeled delay means a missing local executable observation; it does not assert a market halt or actual inability to exit.","",
+              "Fixed-quantity terminal shocks are in `cg_arrow003_stale_dependency.json`. The separate `cg_arrow003_dynamic_stale.json` diagnostic replays causal IS capacity/drawdown state under common non-compounding +10%, +50% and +100% missing-valuation errors. At +50%, original R4/R5 profits fall to $1,805.80/$9,625.58. These are hypothetical stresses, not estimates or probability bounds; actual missing prices and absolute account economics remain uncertain. A carried or stressed mark is never an executable exit.","",
+              "An independent cash-minus-short-liability audit checks sale proceeds, cover payments, remaining quantities and observed execution identity. It agrees with the scorer's daily MTM accounting; agreement cannot repair missing prices, actions or loan economics. Cover-only additional execution-cost sensitivity is in `cg_arrow003_cover_execution.json`; combined-policy increments are not attributed entirely to covers.","",
               "| Book | 10% adverse move in all shorts | 50% adverse move in largest name | Joint: other names +10%, largest +50% | Best calendar month / total profit |",
               "|---|---:|---:|---:|---:|"]
     for name in focus:
         m=results[name]["ALL"]
         lines.append(f"| {labels.get(name,name)} | {money(m['stress_short_10pct'])} | {money(m['stress_largest_name_50pct'])} | {money(m['stress_joint_others10_largest50'])} | {percent(m['calendar_best_month_concentration'])} |")
     lines += ["","### Synchronized minute risk audit","",
-              "Every calendar session was checked using concurrent one-minute closes and the actual execution clock. Missing intraday prices carry the last known mark. These are minute-close marked peaks, not tick-by-tick maxima or independent-high sums.","",
+              "Every calendar session was checked using concurrent one-minute closes. Each close sample includes close fills and precedes the next bar's open executions at the same time boundary. Cash credits entry proceeds and debits cover cash plus costs. Missing intraday prices carry the last known mark. These are minute-close marked peaks, not tick-by-tick maxima or independent-high sums.","",
               "| Book | Minute peak gross | Peak time | Stale gross at peak | Minutes above $130k | Excess dollar-minutes |",
               "|---|---:|---|---:|---:|---:|"]
     for name in focus:
         a=minute["books"][name]
         p=a["synchronized_minute_peak"]
         lines.append(f"| {labels.get(name,name)} | {money(p['gross'])} | {p['timestamp']} | {money(p['stale_since_prior_session_gross'])} | {a['minutes_above_130k']} | {money(a['dollar_minutes_above_130k'])} |")
+    lines += ["","| Book | Minute-sampled DD (dollars / %) | Peak minute gross/equity | Largest name/equity |",
+              "|---|---:|---:|---:|"]
+    for name in focus:
+        a=minute["books"][name]
+        lines.append(f"| {labels.get(name,name)} | {money(a['minute_sampled_max_drawdown'])} / {percent(a['minute_sampled_max_drawdown_percent'])} | {a['peak_gross_to_equity']:.3f} | {percent(a['largest_symbol_equity_fraction'])} |")
     lines += ["","Stress amounts are arithmetic, not forecasts, margin certification or new stop rules. Largest-name and broad-book maxima can occur on different dates; the joint stress is evaluated concurrently per day. Top-symbol and top/bottom-month contribution details remain in the aggregate JSON.","",
               "## Borrow and execution-cost scenarios","",
               "Baseline commission is $0.005 per share each side plus a one-side spread proxy of max($0.01, 0.10% of price). Borrow scenarios charge 0%, 10%, or 30% annualized on preceding EOD marked gross for actual calendar holding days. Spread stress doubles only the spread proxy; commissions remain unchanged. These are sensitivities, not observed loan fees.","",

@@ -18,7 +18,9 @@ from research.cg_arrow003_lab import Spec,score,authorize,ledger,code_identity
 
 BOOKS=["R4","R5","C1_R4_PACED","C1_R5_PACED","AR3_R4_LATE_COVER_CONSERVATIVE",
        "AR6_R5_VOTES_COVER_PACED","AR7_R4_LATE_COVER_PACED","AR8_R5_VOTES_COVER_CONSERVATIVE",
-       "AR2_R5_LATE_WEAK_PART_COVER","C3_R5_TAPER_PACED","A3_R4_DRAWDOWN_NEW"]
+       "AR2_R5_LATE_WEAK_PART_COVER","C3_R5_TAPER_PACED","A3_R4_DRAWDOWN_NEW",
+       "AR9_R5_LATE_COVER_PACED","AR10_R4_CONSERVATIVE_COVER_PACED",
+       "AR11_R5_OBSERVED_VOTES_COVER","AR12_R5_OBSERVED_CONSERVATIVE"]
 SHOCKS=[0.,.1,.5,1.]
 
 
@@ -162,6 +164,35 @@ def coverage():
             "source_counts":source_counts,"missing_backstops":missing,"terminal_symbols":terminal,
             "terminal_tickets":len(detail["terminal"]),"terminal_tickets_last_mark_above_80":sum(p["mark"]>80 for p in detail["terminal"]),
             "interpretation":"Copied acquisition eligibility was bounded ($80 virgin/$50 full), unlike a complete held-position lifecycle service. Missingness can therefore be associated with rising prices adverse to shorts. This table describes coverage, not actual unobserved returns or executable prices. Conditional mechanism increments do not certify absolute profitability."}
+    from research.cg_arrow003_minute import remaining_shares,ET
+    from research.cg_arrow003_data import adjustment_factor,close_time
+    from datetime import datetime
+    legs=defaultdict(list)
+    for leg in detail["legs"]:legs[leg["ticket_id"]].append(leg)
+    marks={}
+    missing_sessions=defaultdict(lambda:{"position_sessions":0,"gross_dollar_sessions":0.})
+    for d in SCORE:
+        iso=d.isoformat()
+        for sym in symbols:
+            if sym in marks:marks[sym]*=adjustment_factor(sym,FEATS[INDEX[d]-1],d)
+            rec=caches[iso].get(sym)
+            if rec:marks[sym]=rec["close"]
+        for p in detail["positions"]:
+            q=remaining_shares(p,legs[p["id"]],datetime.combine(d,close_time(d),ET))
+            if q<=0 or caches[iso].get(p["symbol"]):continue
+            states=[eligibility[source].get((iso,p["symbol"])) for source in eligibility]
+            if any(e and e["eligible"] for e in states):bucket="eligible_but_no_usable_minute_tape"
+            elif any(e and e["exclude_reason"]=="prior_close_out_of_range" for e in states):bucket="documented_price_range_exclusion"
+            elif any(states):bucket="other_documented_exclusion"
+            else:bucket="no_copied_eligibility_row"
+            missing_sessions[bucket]["position_sessions"]+=1
+            missing_sessions[bucket]["gross_dollar_sessions"]+=q*marks[p["symbol"]]
+    m=read(ROOT/"results/R4_IS.json")["metrics"]
+    if sum(v["position_sessions"] for v in missing_sessions.values())!=m["counters"]["stale_position_sessions"]:
+        raise AssertionError("Stale coverage counts do not reconcile")
+    if abs(sum(v["gross_dollar_sessions"] for v in missing_sessions.values())-m["stale_exposure_dollar_sessions"])>1e-6:
+        raise AssertionError("Stale coverage gross does not reconcile")
+    output["all_stale_position_sessions_by_source_status"]=dict(missing_sessions)
     dump(REPO_ROOT/"reports/cg_arrow003_lifecycle_coverage.json",output)
     ledger({"event":"DIAGNOSTIC_COMPLETE","id":"C1_MISSING_LIFECYCLE_COVERAGE",
             "missing_backstops":len(missing),"terminal_symbols":len(terminal),
@@ -170,13 +201,72 @@ def coverage():
           "terminal tickets last marked above80:",output["terminal_tickets_last_mark_above_80"])
     for row in terminal:
         print(row["symbol"],row["source_status"]["virgin"])
+    print("All stale lifecycle coverage:",dict(missing_sessions))
+
+
+def interaction():
+    authorize("IS")
+    ledger({"event":"PREDECLARE_DIAGNOSTIC","id":"VOTES_COVER_INTERACTION_AND_MISSINGNESS",
+        "purpose":"Attribute already-completed policies, with no new trading rule: base, votes-only, cover-only and combined policy. Check non-additivity and whether advancing-day-vote gains also exist on complete histories."})
+    names=["R5","A6_R5_STALL_VOTES","AR2_R5_LATE_WEAK_PART_COVER","AR5_R5_VOTES_LATE_COVER",
+           "C1_R5_PACED","AR4_R5_VOTES_PACED","AR9_R5_LATE_COVER_PACED","AR6_R5_VOTES_COVER_PACED"]
+    records={n:read(ROOT/"results"/(n+"_IS.json")) for n in names}
+    details={n:read(ROOT/"details"/(n+"_IS.json")) for n in names}
+    out={"timestamp":stamp(),"mode":"IS completed-policy attribution","interactions":{},"votes_missingness":{},"borrow_increments":{}}
+    for key,ids in {"unpaced":names[:4],"paced":names[4:]}.items():
+        b,v,c,both=ids
+        profits=[records[n]["metrics"]["total_pnl"] for n in ids]
+        delta=profits[3]-profits[1]-profits[2]+profits[0]
+        tickets=set().union(*(details[n]["ticket_pnl"] for n in ids))
+        symbols=defaultdict(float)
+        buckets=defaultdict(lambda:{"tickets":0,"interaction":0.})
+        base_positions={p["id"]:p for p in details[b]["positions"]}
+        vote_positions={p["id"]:p for p in details[v]["positions"]}
+        cover_ids={leg["ticket_id"] for leg in details[c]["legs"] if leg["reason"]=="half_cover"}
+        for t in tickets:
+            values=[details[n]["ticket_pnl"].get(t,0.) for n in ids]
+            interaction=values[3]-values[1]-values[2]+values[0]
+            symbols[t.split("/",1)[1]]+=interaction
+            q0=base_positions.get(t,{}).get("initial_shares",0)
+            q1=vote_positions.get(t,{}).get("initial_shares",0)
+            state=("upsized" if q1>q0 else "downsized" if q1<q0 else "unchanged")
+            bucket=state+("_covered" if t in cover_ids else "_not_covered")
+            buckets[bucket]["tickets"]+=1
+            buckets[bucket]["interaction"]+=interaction
+        if abs(sum(symbols.values())-delta)>1e-7:raise AssertionError("Interaction attribution does not reconcile")
+        out["interactions"][key]={"books":ids,"votes_increment":profits[1]-profits[0],
+             "cover_increment":profits[2]-profits[0],"combined_increment":profits[3]-profits[0],
+             "interaction":delta,"buckets":dict(buckets),
+             "largest_interaction_symbols":sorted(symbols.items(),key=lambda x:abs(x[1]),reverse=True)[:8],
+             "interpretation":"Combined benefit is not the sum of independent edges. Changes to covered share quantities and, for paced books, capacity interactions create non-additivity."}
+    b=details["R5"]
+    v=details["A6_R5_STALL_VOTES"]
+    for feature in ("vol20","volume_ratio","ret3"):
+        buckets=defaultdict(lambda:{"tickets":0,"increment":0.,"candidate_pnl":0.})
+        for p in v["positions"]:
+            state="missing" if p["feature"].get(feature) is None else "available"
+            buckets[state]["tickets"]+=1
+            buckets[state]["increment"]+=v["ticket_pnl"][p["id"]]-b["ticket_pnl"].get(p["id"],0.)
+            buckets[state]["candidate_pnl"]+=v["ticket_pnl"][p["id"]]
+        out["votes_missingness"][feature]=dict(buckets)
+    for n in names[1:]:
+        c="C1_R5_PACED" if n in names[5:] else "R5"
+        out["borrow_increments"][n]={"control":c,"scenario_profit_increments":{
+            k:value-records[c]["metrics"]["scenarios"][k] for k,value in records[n]["metrics"]["scenarios"].items()}}
+    dump(REPO_ROOT/"reports/cg_arrow003_interaction.json",out)
+    ledger({"event":"DIAGNOSTIC_COMPLETE","id":"VOTES_COVER_INTERACTION_AND_MISSINGNESS",
+            "result_file":"reports/cg_arrow003_interaction.json","votes_missingness":out["votes_missingness"],
+            "interaction":{k:v["interaction"] for k,v in out["interactions"].items()}})
+    print("Interactions:",{k:round(v["interaction"],2) for k,v in out["interactions"].items()})
+    print("Votes history attribution:",out["votes_missingness"])
 
 
 if __name__=="__main__":
     p=argparse.ArgumentParser()
-    p.add_argument("command",choices=["stale","execution","coverage"])
+    p.add_argument("command",choices=["stale","execution","coverage","interaction"])
     p.add_argument("--workers",type=int,default=8)
     a=p.parse_args()
     if a.command=="stale":dynamic_stale(a.workers)
     elif a.command=="execution":execution()
-    else:coverage()
+    elif a.command=="coverage":coverage()
+    else:interaction()

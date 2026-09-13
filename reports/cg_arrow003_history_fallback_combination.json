@@ -1,0 +1,25 @@
+[
+  {
+    "id": "AR11_R5_OBSERVED_VOTES_COVER",
+    "family": "R5",
+    "base": 8300,
+    "origin": "DERIVED",
+    "mechanism": "AR6 votes plus low-participation day6 half-cover and causal130k pacing, retaining original ret3 switch when20-session history is missing; no new threshold or excluded entry",
+    "control": "R5",
+    "volume": "mean",
+    "momentum": "votes",
+    "pacing": true,
+    "cover": "low_participation",
+    "volume_power": 0.5,
+    "penalty": 0.5,
+    "min_hold": 6,
+    "fade_atr": 1.0,
+    "state": "none",
+    "state_cut": 0.05,
+    "shuffle_seed": null,
+    "scale": 1.0,
+    "share_sizing": "fill",
+    "momentum_missing": "original_switch",
+    "cover_clock": "checkpoint"
+  }
+]

@@ -22,6 +22,18 @@ from research.cg_arrow003_lab import authorize,ledger
 ET=ZoneInfo("America/New_York")
 
 
+def equity_drawdown(paths):
+    """Chronological global HWM, including negative-equity stress paths."""
+    high=100000.
+    dollars=percent=0.
+    for path in paths:
+        for equity in path:
+            high=max(high,equity)
+            dollars=min(dollars,equity-high)
+            percent=min(percent,equity/high-1)
+    return dollars,percent
+
+
 def effective_entry(p):
     """Entry timestamps in the inherited ledger name a bar START; fill is its close."""
     return datetime.fromisoformat(p["entry_ts"])+timedelta(minutes=1)
@@ -38,14 +50,18 @@ def remaining_shares(position,legs,when):
     d=when.date()
     q=position.get("original_shares",position["initial_shares"])/adjustment_factor(position["symbol"],entry_d,d)
     for leg in legs:
-        if effective_exit(leg)<=when:
+        # A minute-close sample includes close executions, immediately BEFORE
+        # an open execution at the next bar's identically labeled boundary.
+        passed=effective_exit(leg)<=when if leg["reason"]=="backstop" else effective_exit(leg)<when
+        if passed:
             ld=effective_exit(leg).date()
             q-=leg["shares"]/adjustment_factor(position["symbol"],ld,d)
     return max(0.0,q)
 
 
 def day_job(job):
-    iso,books,prior_marks=job
+    iso,books,prior_marks=job[:3]
+    accounts=job[3] if len(job)>3 else {}
     d=date.fromisoformat(iso)
     # Books contain only positions overlapping this day, not future entries.
     symbols=sorted({p["symbol"] for b in books.values() for p,_ in b})
@@ -70,12 +86,34 @@ def day_job(job):
     marks=dict(prior_marks)
     last_update={sym:None for sym in symbols}
     records={name:[] for name in books}
+    cash={name:accounts[name]["cash"] if name in accounts else None for name in books}
+    events={}
+    cursors={name:0 for name in books}
+    for name,positions in books.items():
+        flow=[]
+        for p,legs in positions:
+            if effective_entry(p).date()==d:
+                q=p.get("original_shares",p["initial_shares"])
+                px=p.get("original_entry",p["entry"])
+                flow.append((effective_entry(p),0,q*(px-(.005+max(.01,.001*px)))))
+            for leg in legs:
+                if effective_exit(leg).date()==d:
+                    px=leg["exit"]
+                    flow.append((effective_exit(leg),0 if leg["reason"]=="backstop" else 1,
+                                 -leg["shares"]*(px+.005+max(.01,.001*px))))
+        events[name]=sorted(flow)
     for when in times:
         for sym in symbols:
             if when in tapes[sym]:
                 marks[sym]=tapes[sym][when]
                 last_update[sym]=when
         for name,positions in books.items():
+            if cash[name] is not None:
+                while cursors[name]<len(events[name]):
+                    ts,phase,amount=events[name][cursors[name]]
+                    if ts>when or (ts==when and phase==1):break
+                    cash[name]+=amount
+                    cursors[name]+=1
             gross=0.0
             symbol_gross=defaultdict(float)
             stale=0.0
@@ -97,14 +135,30 @@ def day_job(job):
                 if last_update[sym] is None:stale+=value
                 if last_update[sym]==when:fresh+=value
             largest=max(symbol_gross.values(),default=0.0)
+            equity=cash[name]-gross if cash[name] is not None else None
             records[name].append({"timestamp":when.isoformat(),"gross":gross,"largest_symbol_gross":largest,
+                     "equity":equity,"gross_to_equity":gross/equity if equity is not None and equity>0 else None,
+                     "largest_symbol_equity_fraction":largest/equity if equity is not None and equity>0 else None,
                      "stale_since_prior_session_gross":stale,"fresh_current_minute_gross":fresh,
                      "tickets":tickets,"symbols":len(symbol_gross),
                      "joint_stress_others10_largest50":-.1*gross-.4*largest})
     out={}
     for name,rows in records.items():
         peak=max(rows,key=lambda r:r["gross"])
+        eq=[r["equity"] for r in rows if r["equity"] is not None]
+        hwm=accounts[name]["equity"] if name in accounts else None
+        dd=ddpct=0.
+        for value in eq:
+            hwm=max(hwm,value)
+            dd=min(dd,value-hwm)
+            if hwm>0:ddpct=min(ddpct,value/hwm-1)
         out[name]={"date":iso,"minute_peak":peak,"end_of_session_gross":rows[-1]["gross"],
+                   "_equity_path":eq,"nonpositive_equity_minutes":sum(value<=0 for value in eq),
+                   "end_of_session_equity":rows[-1]["equity"],
+                   "max_intraday_equity":max(eq) if eq else None,"min_intraday_equity":min(eq) if eq else None,
+                   "within_day_max_drawdown":dd if eq else None,"within_day_max_drawdown_percent":ddpct if eq else None,
+                   "peak_gross_to_equity":max((r["gross_to_equity"] for r in rows if r["gross_to_equity"] is not None),default=None),
+                   "largest_symbol_equity_fraction":max((r["largest_symbol_equity_fraction"] for r in rows if r["largest_symbol_equity_fraction"] is not None),default=None),
                    "minutes_above_130k":sum(r["gross"]>130000 for r in rows),
                    "exposure_dollar_minutes_above_130k":sum(max(0,r["gross"]-130000) for r in rows),
                    "max_symbol_gross":max(r["largest_symbol_gross"] for r in rows),
@@ -162,7 +216,12 @@ def audit(mode,ids,workers=8,all_days=False):
                 if effective_entry(p)<=end and (remaining_shares(p,ls,start)>1e-9 or effective_entry(p).date()==d):
                     positions.append((p,ls))
             books[name]=positions
-        jobs.append((d.isoformat(),books,previous_by_day[d]))
+        accounts={}
+        for name,detail in details.items():
+            i=SCORE.index(d)
+            previous=detail["daily"][i-1] if i else {"equity":100000.,"gross":0.}
+            accounts[name]={"cash":previous["equity"]+previous["gross"],"equity":previous["equity"]}
+        jobs.append((d.isoformat(),books,previous_by_day[d],accounts))
     combined={name:[] for name in ids}
     local=[]
     import time as timer
@@ -176,6 +235,9 @@ def audit(mode,ids,workers=8,all_days=False):
                 expected=next(r["gross"] for r in details[name]["daily"] if r["date"]==iso)
                 if abs(row["end_of_session_gross"]-expected)>1e-6:
                     raise AssertionError(f"Synchronized minute/EOD mismatch {name} {iso}: {row['end_of_session_gross']-expected}")
+                expected_eq=next(r["equity"] for r in details[name]["daily"] if r["date"]==iso)
+                if abs(row["end_of_session_equity"]-expected_eq)>1e-6:
+                    raise AssertionError(f"Minute cash/EOD equity mismatch {name} {iso}")
                 combined[name].append(row)
             if n%16==0 or n==len(fs):
                 spent=timer.monotonic()-started
@@ -184,13 +246,18 @@ def audit(mode,ids,workers=8,all_days=False):
     for name,rows in combined.items():
         rows.sort(key=lambda r:r["date"])
         peak=max(rows,key=lambda r:r["minute_peak"]["gross"])["minute_peak"]
+        dd,ddpct=equity_drawdown(r.pop("_equity_path") for r in rows)
         aggregate[name]={"synchronized_minute_peak":peak,"sessions_audited":len(rows),
+                         "minute_sampled_max_drawdown":dd,"minute_sampled_max_drawdown_percent":ddpct,
+                         "peak_gross_to_equity":max((r["peak_gross_to_equity"] for r in rows if r["peak_gross_to_equity"] is not None),default=None),
+                         "largest_symbol_equity_fraction":max((r["largest_symbol_equity_fraction"] for r in rows if r["largest_symbol_equity_fraction"] is not None),default=None),
+                         "nonpositive_equity_minutes":sum(r["nonpositive_equity_minutes"] for r in rows),
                          "minutes_above_130k":sum(r["minutes_above_130k"] for r in rows),
                          "dollar_minutes_above_130k":sum(r["exposure_dollar_minutes_above_130k"] for r in rows),
                          "max_symbol_gross":max(r["max_symbol_gross"] for r in rows),
                          "worst_joint_stress":min(r["worst_joint_stress"] for r in rows),"days":rows}
     payload={"timestamp":stamp(),"mode":mode,"all_calendar_sessions":all_days,"books":aggregate,
-             "clock":"Synchronized minute closes and known executions; missing intraday observations carry last-known marks",
+             "clock":"Synchronized minute closes including close fills, immediately before next-open executions at the same boundary; missing intraday observations carry last-known marks. Cash credits short-sale proceeds and debits actual cover cash plus baseline costs.",
              "limitation":"Minute-close marked peak is not tick-by-tick maximum; stale positions remain valuations. Peak-period sample is not full-calendar maximum unless all_calendar_sessions is true.",
              "local_provenance":local,"wall_seconds":timer.monotonic()-started}
     dump(REPO_ROOT/"reports"/f"cg_arrow003_minute_{mode.lower()}.json",payload)

@@ -275,7 +275,9 @@ def test_minute_share_clock_distinguishes_close_and_open_executions():
     assert minute.remaining_shares(p,[],before)==0
     assert minute.remaining_shares(p,[],after)==100
     leg={"exit_ts":"2026-01-08T15:56:00-05:00","reason":"half_cover","shares":50}
-    assert minute.remaining_shares(p,[leg],datetime.fromisoformat(leg["exit_ts"]))==50
+    # The close sample at15:56 is immediately before the next-open cover there.
+    assert minute.remaining_shares(p,[leg],datetime.fromisoformat(leg["exit_ts"]))==100
+    assert minute.remaining_shares(p,[leg],datetime.fromisoformat("2026-01-08T15:57:00-05:00"))==50
 
 
 def test_minute_management_causal_next_print_and_state(monkeypatch):
@@ -305,6 +307,9 @@ def test_stall_votes_different_from_net_return_without_long_history():
     assert lab.intended_amount(spec,f)==8300
     assert lab.intended_amount(replace(spec,momentum="switch"),f)==4150
     assert lab.intended_amount(spec,{**f,"positive_days3":2})==4150
+    cautious=replace(spec,momentum_missing="original_switch")
+    assert lab.intended_amount(cautious,f)==4150
+    assert lab.intended_amount(cautious,{**f,"vol20":.01})==8300
 
 
 def test_stale_counterfactual_is_not_compounded_and_reverses_at_real_print():
@@ -415,3 +420,118 @@ def test_independent_cash_oracle_detects_a_balanced_ledger_error(tmp_path,monkey
     data.dump(tmp_path/"results/PARENT_IS.json",record)
     with pytest.raises(AssertionError,match="cash/liability mismatch"):
         oracle.verify("PARENT","IS")
+
+
+def test_minute_equity_uses_cover_cash_and_separates_close_from_next_open(tmp_path,monkeypatch):
+    from research import cg_arrow003_minute as minute
+    d=date(2026,1,8)
+    ts=[datetime.combine(d,time(9,m),ZoneInfo("America/New_York")) for m in (30,31)]
+    monkeypatch.setattr(minute,"read_bars",lambda *a:(pl.DataFrame({"bar_start":ts,"close":[20.,20.]}),"synthetic"))
+    monkeypatch.setattr(minute,"ROOT",tmp_path)
+    monkeypatch.setattr(minute,"REPO_ROOT",tmp_path)
+    p={"symbol":"A","fill_date":"2026-01-07","entry_ts":"2026-01-07T15:59:00-05:00","initial_shares":100,"entry":20.}
+    leg={"exit_ts":"2026-01-08T09:31:00-05:00","reason":"half_cover","shares":50,"exit":25.}
+    _,out,provenance=minute.day_job((d.isoformat(),{"TEST":[(p,[leg])]},
+                              {"A":20.},{"TEST":{"cash":102000.,"equity":100000.}}))
+    rows=data.read(tmp_path/provenance["path"])["books"]["TEST"]
+    assert rows[0]["equity"]==100000  # previous minute close before next-open cover
+    assert rows[1]["equity"]==pytest.approx(99748.5)  #250loss plus1.50 exit cost
+    assert out["TEST"]["end_of_session_equity"]==pytest.approx(99748.5)
+    assert out["TEST"]["within_day_max_drawdown"]==pytest.approx(-251.5)
+
+
+def test_zero_share_half_cover_is_not_an_execution():
+    signal=date(2026,1,7)
+    ranks,s=market(signal)
+    d=data.FEATS[data.INDEX[signal]+4]
+    previous=data.FEATS[data.INDEX[d]-1]
+    for i in range(8):
+        s[(previous.isoformat(),str(i))]["close"]=14.
+        s[(d.isoformat(),str(i))].update(checkpoint=15.,next_open=15.,close=15.)
+    spec=lab.Spec("tiny",base=30,cover="low_participation")
+    m,detail=lab.score(spec,"IS",ranks,s,check=False)
+    assert m["counters"].get("half_covers",0)==0
+    assert m["counters"]["zero_share_half_cover_attempts"]==8
+    assert not any(leg["reason"]=="half_cover" for leg in detail["legs"])
+
+
+def test_preorder_fallback_uses_entry_date_share_units(monkeypatch):
+    signal=date(2026,1,7)
+    ranks,s=market(signal)
+    entry=data.FEATS[data.INDEX[signal]+1]
+    for d in data.FEATS[data.INDEX[entry]:]:
+        for i in range(8):s[(d.isoformat(),str(i))]=data.adjusted_record(s[(d.isoformat(),str(i))],5)
+    for i in range(8):s[(entry.isoformat(),str(i))]["preorder"]=None
+    monkeypatch.setattr(data,"action_events",lambda:[{"symbol":str(i),"effective_session":entry.isoformat(),"price_factor":5} for i in range(8)])
+    spec=lab.Spec("preorder_split",family="PARENT",base=4000,pacing=True)
+    m,detail=lab.score(spec,"IS",ranks,s,check=False)
+    assert all(p["original_shares"]==40 for p in detail["positions"])
+    assert next(r for r in detail["daily"] if r["date"]==entry.isoformat())["new_gross"]==32000
+
+
+def test_backstop_day_cover_is_an_explicit_rule_and_remainder_still_exits():
+    signal=date(2026,1,7)
+    ranks,s=market(signal)
+    due=data.FEATS[data.INDEX[signal]+11]
+    prev=data.FEATS[data.INDEX[due]-1]
+    for i in range(8):
+        s[(prev.isoformat(),str(i))]["close"]=14.
+        s[(due.isoformat(),str(i))].update(checkpoint=15.,next_open=15.,entry_px=16.,close=16.)
+    spec=lab.Spec("backstop_cover",family="PARENT",base=4000,cover="low_participation")
+    baseline,bd=lab.score(spec,"IS",ranks,s,check=False)
+    m,detail=lab.score(replace(spec,cover_on_backstop=True),"IS",ranks,s,check=False)
+    assert baseline["exit_legs"]==8 and m["exit_legs"]==16
+    assert m["terminal_tickets"]==0 and m["trades"]==baseline["trades"]==8
+    assert all(leg["exit_ts"][:10]==due.isoformat() for leg in detail["legs"])
+    assert m["total_pnl"]>baseline["total_pnl"]
+
+
+def test_fractional_split_and_partial_cover_pass_independent_cash_and_minute_audits(tmp_path,monkeypatch):
+    from dataclasses import asdict
+    from collections import defaultdict
+    from research import cg_arrow003_oracle as oracle
+    from research import cg_arrow003_minute as minute
+    signal=date(2026,1,7)
+    ranks,s=market(signal)
+    event=date(2026,1,12)
+    for d in data.FEATS[data.INDEX[event]:]:
+        for i in range(8):s[(d.isoformat(),str(i))]=data.adjusted_record(s[(d.isoformat(),str(i))],5)
+    monkeypatch.setattr(data,"action_events",lambda:[{"symbol":str(i),"effective_session":event.isoformat(),"price_factor":5} for i in range(8)])
+    cover_day=data.FEATS[data.INDEX[signal]+7]
+    previous=data.FEATS[data.INDEX[cover_day]-1]
+    for i in range(8):
+        s[(previous.isoformat(),str(i))]["close"]=70.
+        s[(cover_day.isoformat(),str(i))].update(checkpoint=75.,next_open=75.)
+    spec=lab.Spec("fractional_fixture",family="PARENT",base=1050,cover="low_participation",min_hold=6)
+    m,detail=lab.score(spec,"IS",ranks,s,check=False)
+    assert m["counters"]["fractional_split_liabilities"]==8
+    assert m["counters"]["half_covers"]==8
+    assert all(x["shares"]==5 for x in detail["legs"] if x["reason"]=="half_cover")
+    assert all(x["shares"]==pytest.approx(5.4) for x in detail["legs"] if x["reason"]=="backstop")
+    assert m["total_pnl"]==pytest.approx(8*(52*(20-.025)-5*(75+.08)-5.4*(100+.105)))
+    for d in data.SCORE:
+        data.dump(tmp_path/"summaries"/(d.isoformat()+".json"),{str(i):s[(d.isoformat(),str(i))] for i in range(8)})
+    path=tmp_path/"details.json"
+    data.dump(path,detail)
+    data.dump(tmp_path/"results/fractional_fixture_IS.json",{
+        "spec":asdict(spec),"detail_path":"details.json","detail_sha256":data.digest(path)})
+    monkeypatch.setattr(oracle,"ROOT",tmp_path)
+    monkeypatch.setattr(oracle,"REPO_ROOT",tmp_path)
+    assert oracle.verify(spec.id,"IS")["observed_executions_verified"]==24
+    monkeypatch.setattr(minute,"ROOT",tmp_path)
+    monkeypatch.setattr(minute,"REPO_ROOT",tmp_path)
+    ts=[datetime.combine(event,t,ZoneInfo("America/New_York")) for t in (time(9,30),time(15,59))]
+    monkeypatch.setattr(minute,"read_bars",lambda *a:(pl.DataFrame({"bar_start":ts,"close":[100.,100.]}),"synthetic"))
+    legs=defaultdict(list)
+    for leg in detail["legs"]:legs[leg["ticket_id"]].append(leg)
+    prev=detail["daily"][data.SCORE.index(event)-1]
+    _,out,_=minute.day_job((event.isoformat(),{"TEST":[(p,legs[p["id"]]) for p in detail["positions"]]},
+                           {str(i):100. for i in range(8)},{"TEST":{"cash":prev["equity"]+prev["gross"],"equity":prev["equity"]}}))
+    assert out["TEST"]["end_of_session_equity"]==pytest.approx(prev["equity"])
+
+
+def test_minute_drawdown_keeps_global_peak_when_equity_crosses_zero():
+    from research.cg_arrow003_minute import equity_drawdown
+    dollars,percent=equity_drawdown([[100000.,1000.],[500.,-10000.,200000.,-15000.]])
+    assert dollars==-215000.
+    assert percent==pytest.approx(-1.1)

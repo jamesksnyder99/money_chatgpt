@@ -1,0 +1,669 @@
+{
+  "timestamp": "2026-09-13T20:01:42+00:00",
+  "status": "IS shortlist; only the later committed freeze authorizes confirmation",
+  "finalists": [
+    {
+      "id": "AR9_R5_LATE_COVER_PACED",
+      "priority": 1,
+      "control": "R5",
+      "pitch": "Original R5 sizing; one half-cover on a profitable late rebound in low initial participation; causal 130k new-order pacing.",
+      "reason": "Simplest material balanced continuation: higher IS profit and smaller red-month loss/DD versus the same R5. The stronger full-size R4 covers are dominated by smaller original-R5 controls, so they are not forced into a balanced-R4 slot.",
+      "primary_improvement": {
+        "kind": "balanced",
+        "definition": "Profit increment at least max(100dollars,5percent of absolute control profit), at least two5percent downside improvements, no extra red month, remaining monetary regressions within5percent"
+      },
+      "acceptable_tradeoff": {
+        "monetary_downside_worsening": 0.05,
+        "minimum_profit_retention": 1.0,
+        "gross_exposure": "Soft130k planning; report exact drift/allocation excursions, no135k cliff",
+        "data": "Conditional shared partial-action and stale-price convention; no complete-economic or deployment claim"
+      },
+      "missingness_dependency": false,
+      "new_sparse_history_increment": "Original ret3 switch retained on missing20-session history for vote variants; ordinary cover-only variants do not change missing-history sizing",
+      "secondary_comparator": null,
+      "is_comparison": {
+        "classification": "BALANCED",
+        "profit_difference": 2003.9607779000034,
+        "profit_retention": 1.0925102555492199,
+        "downside_differences": {
+          "red_loss_sum": 1468.707408199998,
+          "worst_month": 224.59615499999745,
+          "max_dd": 1466.87092820002,
+          "worst_day": -19.21669000000111
+        },
+        "downside_relative": {
+          "red_loss_sum": 0.08846080709115428,
+          "worst_month": 0.023906925746775096,
+          "max_dd": 0.0781801270423521,
+          "worst_day": -0.0036238241252260083
+        },
+        "metric_changes": {
+          "total_pnl": {
+            "candidate": 23665.9999324,
+            "control": 21662.039154499995,
+            "difference": 2003.9607779000034,
+            "relative_change_abs_control": 0.09251025554921997
+          },
+          "per_day": {
+            "candidate": 190.8548381645161,
+            "control": 174.6938641491935,
+            "difference": 16.16097401532261,
+            "relative_change_abs_control": 0.09251025554921997
+          },
+          "red_months": {
+            "candidate": 2,
+            "control": 2,
+            "difference": 0,
+            "relative_change_abs_control": 0.0
+          },
+          "red_loss_sum": {
+            "candidate": -15134.20925619999,
+            "control": -16602.91666439999,
+            "difference": 1468.707408199998,
+            "relative_change_abs_control": 0.08846080709115428
+          },
+          "worst_month": {
+            "candidate": -9170.010135199995,
+            "control": -9394.606290199992,
+            "difference": 224.59615499999745,
+            "relative_change_abs_control": 0.023906925746775096
+          },
+          "median_month": {
+            "candidate": 6034.257672550001,
+            "control": 5665.042382549998,
+            "difference": 369.2152900000028,
+            "relative_change_abs_control": 0.06517432087309617
+          },
+          "max_dd": {
+            "candidate": -17295.837495199958,
+            "control": -18762.708423399978,
+            "difference": 1466.87092820002,
+            "relative_change_abs_control": 0.0781801270423521
+          },
+          "max_dd_percent": {
+            "candidate": -0.17295837495199962,
+            "control": -0.18762708423399976,
+            "difference": 0.014668709282000147,
+            "relative_change_abs_control": 0.07818012704235182
+          },
+          "worst_day": {
+            "candidate": -5322.092694999999,
+            "control": -5302.876004999998,
+            "difference": -19.21669000000111,
+            "relative_change_abs_control": -0.0036238241252260083
+          },
+          "avg_exposure": {
+            "candidate": 39924.16342803984,
+            "control": 40503.64985111554,
+            "difference": -579.4864230756939,
+            "relative_change_abs_control": -0.0143070173973404
+          },
+          "p95_exposure": {
+            "candidate": 88583.46500000001,
+            "control": 89967.02,
+            "difference": -1383.554999999993,
+            "relative_change_abs_control": -0.015378468687747943
+          },
+          "peak_exposure": {
+            "candidate": 117957.96,
+            "control": 119319.56000000001,
+            "difference": -1361.6000000000058,
+            "relative_change_abs_control": -0.011411372955113191
+          },
+          "time_underwater_sessions": {
+            "candidate": 225,
+            "control": 228,
+            "difference": -3,
+            "relative_change_abs_control": -0.013157894736842105
+          },
+          "longest_underwater_sessions": {
+            "candidate": 131,
+            "control": 132,
+            "difference": -1,
+            "relative_change_abs_control": -0.007575757575757576
+          },
+          "above_130k_sessions": {
+            "candidate": 0,
+            "control": 0,
+            "difference": 0,
+            "relative_change_abs_control": null
+          },
+          "exposure_dollar_days_above_130k": {
+            "candidate": 0,
+            "control": 0,
+            "difference": 0,
+            "relative_change_abs_control": null
+          },
+          "largest_symbol_gross": {
+            "candidate": 16638.75,
+            "control": 16638.75,
+            "difference": 0.0,
+            "relative_change_abs_control": 0.0
+          },
+          "terminal_stale_gross": {
+            "candidate": 24154.510000000002,
+            "control": 24072.920000000002,
+            "difference": 81.59000000000015,
+            "relative_change_abs_control": 0.0033892855540582586
+          }
+        },
+        "monthly_comparison_scope": "signal-cohort ownership; calendar account months reported separately",
+        "return_risk_within_planning_tolerance": true,
+        "exposure_difference": -1361.6000000000058,
+        "soft_exposure_auto_failure": false
+      },
+      "is_fragility": {
+        "positive_profit_difference_months": 3,
+        "min_leave_one_month_out_profit_difference": 759.8495247000008,
+        "increment_without_top_positive_symbol": 849.113922900001
+      }
+    },
+    {
+      "id": "AR12_R5_OBSERVED_CONSERVATIVE",
+      "priority": 2,
+      "control": "R5",
+      "pitch": "Conservative 7000-base R5; advancing-day votes only with observed 20-session history, original switch otherwise; late half-cover and pacing.",
+      "reason": "Retains about94percent of original R5 IS profit while reducing monetary downside and gross substantially. Uses the previously tested conservative size and removes the new votes rule's sparse-history sizing increment. Useful-profit ride is the primary target, not higher raw profit.",
+      "primary_improvement": {
+        "kind": "ride",
+        "definition": "Retain at least85percent of same-control positive profit, with at least two5percent downside improvements and remaining monetary regressions within5percent"
+      },
+      "acceptable_tradeoff": {
+        "monetary_downside_worsening": 0.05,
+        "minimum_profit_retention": 0.85,
+        "gross_exposure": "Soft130k planning; report exact drift/allocation excursions, no135k cliff",
+        "data": "Conditional shared partial-action and stale-price convention; no complete-economic or deployment claim"
+      },
+      "missingness_dependency": false,
+      "new_sparse_history_increment": "Original ret3 switch retained on missing20-session history for vote variants; ordinary cover-only variants do not change missing-history sizing",
+      "secondary_comparator": null,
+      "is_comparison": {
+        "classification": "RIDE-FIRST",
+        "profit_difference": -1256.017177099995,
+        "profit_retention": 0.9420175927048366,
+        "downside_differences": {
+          "red_loss_sum": 3660.3492648999927,
+          "worst_month": 1841.1283696999953,
+          "max_dd": 3673.6752018999687,
+          "worst_day": 359.21133499999996
+        },
+        "downside_relative": {
+          "red_loss_sum": 0.22046423160989068,
+          "worst_month": 0.19597717166929848,
+          "max_dd": 0.19579663655159357,
+          "worst_day": 0.06773896554648935
+        },
+        "metric_changes": {
+          "total_pnl": {
+            "candidate": 20406.0219774,
+            "control": 21662.039154499995,
+            "difference": -1256.017177099995,
+            "relative_change_abs_control": -0.057982407295163366
+          },
+          "per_day": {
+            "candidate": 164.56469336612903,
+            "control": 174.6938641491935,
+            "difference": -10.129170783064467,
+            "relative_change_abs_control": -0.05798240729516332
+          },
+          "red_months": {
+            "candidate": 2,
+            "control": 2,
+            "difference": 0,
+            "relative_change_abs_control": 0.0
+          },
+          "red_loss_sum": {
+            "candidate": -12942.567399499996,
+            "control": -16602.91666439999,
+            "difference": 3660.3492648999927,
+            "relative_change_abs_control": 0.22046423160989068
+          },
+          "worst_month": {
+            "candidate": -7553.477920499997,
+            "control": -9394.606290199992,
+            "difference": 1841.1283696999953,
+            "relative_change_abs_control": 0.19597717166929848
+          },
+          "median_month": {
+            "candidate": 5066.2211753,
+            "control": 5665.042382549998,
+            "difference": -598.8212072499982,
+            "relative_change_abs_control": -0.10570462969430629
+          },
+          "max_dd": {
+            "candidate": -15089.033221500009,
+            "control": -18762.708423399978,
+            "difference": 3673.6752018999687,
+            "relative_change_abs_control": 0.19579663655159357
+          },
+          "max_dd_percent": {
+            "candidate": -0.15089033221500014,
+            "control": -0.18762708423399976,
+            "difference": 0.03673675201899962,
+            "relative_change_abs_control": 0.1957966365515932
+          },
+          "worst_day": {
+            "candidate": -4943.664669999998,
+            "control": -5302.876004999998,
+            "difference": 359.21133499999996,
+            "relative_change_abs_control": 0.06773896554648935
+          },
+          "avg_exposure": {
+            "candidate": 34688.209260446216,
+            "control": 40503.64985111554,
+            "difference": -5815.440590669321,
+            "relative_change_abs_control": -0.14357818646087162
+          },
+          "p95_exposure": {
+            "candidate": 72414.8284,
+            "control": 89967.02,
+            "difference": -17552.191600000006,
+            "relative_change_abs_control": -0.19509584289887566
+          },
+          "peak_exposure": {
+            "candidate": 93662.26000000001,
+            "control": 119319.56000000001,
+            "difference": -25657.300000000003,
+            "relative_change_abs_control": -0.21503012582346095
+          },
+          "time_underwater_sessions": {
+            "candidate": 227,
+            "control": 228,
+            "difference": -1,
+            "relative_change_abs_control": -0.0043859649122807015
+          },
+          "longest_underwater_sessions": {
+            "candidate": 131,
+            "control": 132,
+            "difference": -1,
+            "relative_change_abs_control": -0.007575757575757576
+          },
+          "above_130k_sessions": {
+            "candidate": 0,
+            "control": 0,
+            "difference": 0,
+            "relative_change_abs_control": null
+          },
+          "exposure_dollar_days_above_130k": {
+            "candidate": 0,
+            "control": 0,
+            "difference": 0,
+            "relative_change_abs_control": null
+          },
+          "largest_symbol_gross": {
+            "candidate": 14020.920000000002,
+            "control": 16638.75,
+            "difference": -2617.829999999998,
+            "relative_change_abs_control": -0.15733333333333321
+          },
+          "terminal_stale_gross": {
+            "candidate": 20161.84,
+            "control": 24072.920000000002,
+            "difference": -3911.0800000000017,
+            "relative_change_abs_control": -0.16246803462147513
+          }
+        },
+        "monthly_comparison_scope": "signal-cohort ownership; calendar account months reported separately",
+        "return_risk_within_planning_tolerance": true,
+        "exposure_difference": -25657.300000000003,
+        "soft_exposure_auto_failure": false
+      },
+      "is_fragility": {
+        "positive_profit_difference_months": 3,
+        "min_leave_one_month_out_profit_difference": -3097.145546800026,
+        "increment_without_top_positive_symbol": -3098.173352099995
+      }
+    },
+    {
+      "id": "AR11_R5_OBSERVED_VOTES_COVER",
+      "priority": 3,
+      "control": "R5",
+      "pitch": "Original 8300-base R5 with observed-history advancing-day votes, the same late half-cover, and causal pacing.",
+      "reason": "Higher IS return than original R5 at a disclosed roughly10percent worse worst day. Only about542dollars above the simpler paced cover policy, so added complexity is a serious qualification. Retained as one return challenger, not a claim of dominance.",
+      "primary_improvement": {
+        "kind": "return",
+        "definition": "Profit increment at least max(100dollars,5percent of absolute control profit); frozen acceptable downside regression is15percent; no hard gross-exposure veto"
+      },
+      "acceptable_tradeoff": {
+        "monetary_downside_worsening": 0.15,
+        "minimum_profit_retention": 1.0,
+        "gross_exposure": "Soft130k planning; report exact drift/allocation excursions, no135k cliff",
+        "data": "Conditional shared partial-action and stale-price convention; no complete-economic or deployment claim"
+      },
+      "missingness_dependency": false,
+      "new_sparse_history_increment": "Original ret3 switch retained on missing20-session history for vote variants; ordinary cover-only variants do not change missing-history sizing",
+      "secondary_comparator": "AR9_R5_LATE_COVER_PACED",
+      "is_comparison": {
+        "classification": "RETURN-FIRST",
+        "profit_difference": 2545.676577900005,
+        "profit_retention": 1.1175178643037018,
+        "downside_differences": {
+          "red_loss_sum": 1255.218633199991,
+          "worst_month": 454.7477399999898,
+          "max_dd": 869.128293199974,
+          "worst_day": -565.5366900000017
+        },
+        "downside_relative": {
+          "red_loss_sum": 0.07560229678749358,
+          "worst_month": 0.04840519399672566,
+          "max_dd": 0.04632211264958089,
+          "worst_day": -0.10664716457008727
+        },
+        "metric_changes": {
+          "total_pnl": {
+            "candidate": 24207.7157324,
+            "control": 21662.039154499995,
+            "difference": 2545.676577900005,
+            "relative_change_abs_control": 0.11751786430370179
+          },
+          "per_day": {
+            "candidate": 195.22351397096773,
+            "control": 174.6938641491935,
+            "difference": 20.52964982177423,
+            "relative_change_abs_control": 0.11751786430370174
+          },
+          "red_months": {
+            "candidate": 2,
+            "control": 2,
+            "difference": 0,
+            "relative_change_abs_control": 0.0
+          },
+          "red_loss_sum": {
+            "candidate": -15347.698031199998,
+            "control": -16602.91666439999,
+            "difference": 1255.218633199991,
+            "relative_change_abs_control": 0.07560229678749358
+          },
+          "worst_month": {
+            "candidate": -8939.858550200002,
+            "control": -9394.606290199992,
+            "difference": 454.7477399999898,
+            "relative_change_abs_control": 0.04840519399672566
+          },
+          "median_month": {
+            "candidate": 6003.117965050003,
+            "control": 5665.042382549998,
+            "difference": 338.0755825000042,
+            "relative_change_abs_control": 0.059677502774096926
+          },
+          "max_dd": {
+            "candidate": -17893.580130200004,
+            "control": -18762.708423399978,
+            "difference": 869.128293199974,
+            "relative_change_abs_control": 0.04632211264958089
+          },
+          "max_dd_percent": {
+            "candidate": -0.17893580130200004,
+            "control": -0.18762708423399976,
+            "difference": 0.008691282931999722,
+            "relative_change_abs_control": 0.0463221126495808
+          },
+          "worst_day": {
+            "candidate": -5868.412695,
+            "control": -5302.876004999998,
+            "difference": -565.5366900000017,
+            "relative_change_abs_control": -0.10664716457008727
+          },
+          "avg_exposure": {
+            "candidate": 41218.82758939442,
+            "control": 40503.64985111554,
+            "difference": 715.177738278886,
+            "relative_change_abs_control": 0.017657118331502384
+          },
+          "p95_exposure": {
+            "candidate": 86157.5604,
+            "control": 89967.02,
+            "difference": -3809.459600000002,
+            "relative_change_abs_control": -0.042342845189270485
+          },
+          "peak_exposure": {
+            "candidate": 111290.46,
+            "control": 119319.56000000001,
+            "difference": -8029.100000000006,
+            "relative_change_abs_control": -0.06729072752195872
+          },
+          "time_underwater_sessions": {
+            "candidate": 227,
+            "control": 228,
+            "difference": -1,
+            "relative_change_abs_control": -0.0043859649122807015
+          },
+          "longest_underwater_sessions": {
+            "candidate": 131,
+            "control": 132,
+            "difference": -1,
+            "relative_change_abs_control": -0.007575757575757576
+          },
+          "above_130k_sessions": {
+            "candidate": 0,
+            "control": 0,
+            "difference": 0,
+            "relative_change_abs_control": null
+          },
+          "exposure_dollar_days_above_130k": {
+            "candidate": 0,
+            "control": 0,
+            "difference": 0,
+            "relative_change_abs_control": null
+          },
+          "largest_symbol_gross": {
+            "candidate": 16638.75,
+            "control": 16638.75,
+            "difference": 0.0,
+            "relative_change_abs_control": 0.0
+          },
+          "terminal_stale_gross": {
+            "candidate": 24154.510000000002,
+            "control": 24072.920000000002,
+            "difference": 81.59000000000015,
+            "relative_change_abs_control": 0.0033892855540582586
+          }
+        },
+        "monthly_comparison_scope": "signal-cohort ownership; calendar account months reported separately",
+        "return_risk_within_planning_tolerance": true,
+        "exposure_difference": -8029.100000000006,
+        "soft_exposure_auto_failure": false
+      },
+      "is_fragility": {
+        "positive_profit_difference_months": 5,
+        "min_leave_one_month_out_profit_difference": 793.020473199982,
+        "increment_without_top_positive_symbol": 306.3035829000037
+      }
+    },
+    {
+      "id": "AR10_R4_CONSERVATIVE_COVER_PACED",
+      "priority": 4,
+      "control": "R4",
+      "pitch": "Conservative 4650-base R4 participation sizing; late low-participation half-cover and causal pacing.",
+      "reason": "A distinct R4 sizing/ride option: near-original R4 useful profit with smaller red-month losses, drawdown and worst day. It earns less than the R5 candidates and is retained for that explicit risk tradeoff, not to fill a quota.",
+      "primary_improvement": {
+        "kind": "ride",
+        "definition": "Retain at least85percent of same-control positive profit, with at least two5percent downside improvements and remaining monetary regressions within5percent"
+      },
+      "acceptable_tradeoff": {
+        "monetary_downside_worsening": 0.05,
+        "minimum_profit_retention": 0.85,
+        "gross_exposure": "Soft130k planning; report exact drift/allocation excursions, no135k cliff",
+        "data": "Conditional shared partial-action and stale-price convention; no complete-economic or deployment claim"
+      },
+      "missingness_dependency": false,
+      "new_sparse_history_increment": "Original ret3 switch retained on missing20-session history for vote variants; ordinary cover-only variants do not change missing-history sizing",
+      "secondary_comparator": null,
+      "is_comparison": {
+        "classification": "RIDE-FIRST",
+        "profit_difference": 584.1491032000031,
+        "profit_retention": 1.0414924345134013,
+        "downside_differences": {
+          "red_loss_sum": 2947.1752101000166,
+          "worst_month": 1356.0106362000151,
+          "max_dd": 3202.56910410001,
+          "worst_day": 470.57643500000086
+        },
+        "downside_relative": {
+          "red_loss_sum": 0.15402647066812827,
+          "worst_month": 0.12416604102319065,
+          "max_dd": 0.14680139124744013,
+          "worst_day": 0.09881631684780494
+        },
+        "metric_changes": {
+          "total_pnl": {
+            "candidate": 14662.597621600002,
+            "control": 14078.448518399999,
+            "difference": 584.1491032000031,
+            "relative_change_abs_control": 0.04149243451340127
+          },
+          "per_day": {
+            "candidate": 118.24675501290324,
+            "control": 113.53587514838709,
+            "difference": 4.710879864516144,
+            "relative_change_abs_control": 0.041492434513401184
+          },
+          "red_months": {
+            "candidate": 2,
+            "control": 2,
+            "difference": 0,
+            "relative_change_abs_control": 0.0
+          },
+          "red_loss_sum": {
+            "candidate": -16187.037223099993,
+            "control": -19134.21243320001,
+            "difference": 2947.1752101000166,
+            "relative_change_abs_control": 0.15402647066812827
+          },
+          "worst_month": {
+            "candidate": -9564.935421399996,
+            "control": -10920.946057600011,
+            "difference": 1356.0106362000151,
+            "relative_change_abs_control": 0.12416604102319065
+          },
+          "median_month": {
+            "candidate": 5938.755435549994,
+            "control": 6203.264312850001,
+            "difference": -264.50887730000704,
+            "relative_change_abs_control": -0.04264027195360344
+          },
+          "max_dd": {
+            "candidate": -18613.089977099982,
+            "control": -21815.659081199992,
+            "difference": 3202.56910410001,
+            "relative_change_abs_control": 0.14680139124744013
+          },
+          "max_dd_percent": {
+            "candidate": -0.18613089977099984,
+            "control": -0.2181565908119999,
+            "difference": 0.03202569104100006,
+            "relative_change_abs_control": 0.14680139124743996
+          },
+          "worst_day": {
+            "candidate": -4291.556479999998,
+            "control": -4762.132914999999,
+            "difference": 470.57643500000086,
+            "relative_change_abs_control": 0.09881631684780494
+          },
+          "avg_exposure": {
+            "candidate": 35695.84729540239,
+            "control": 40160.22556839044,
+            "difference": -4464.378272988048,
+            "relative_change_abs_control": -0.11116417325359593
+          },
+          "p95_exposure": {
+            "candidate": 75538.98000000001,
+            "control": 87031.015,
+            "difference": -11492.034999999989,
+            "relative_change_abs_control": -0.13204528293735274
+          },
+          "peak_exposure": {
+            "candidate": 101421.07,
+            "control": 114064.92000000001,
+            "difference": -12643.850000000006,
+            "relative_change_abs_control": -0.11084783998445802
+          },
+          "time_underwater_sessions": {
+            "candidate": 231,
+            "control": 236,
+            "difference": -5,
+            "relative_change_abs_control": -0.0211864406779661
+          },
+          "longest_underwater_sessions": {
+            "candidate": 139,
+            "control": 141,
+            "difference": -2,
+            "relative_change_abs_control": -0.014184397163120567
+          },
+          "above_130k_sessions": {
+            "candidate": 0,
+            "control": 0,
+            "difference": 0,
+            "relative_change_abs_control": null
+          },
+          "exposure_dollar_days_above_130k": {
+            "candidate": 0,
+            "control": 0,
+            "difference": 0,
+            "relative_change_abs_control": null
+          },
+          "largest_symbol_gross": {
+            "candidate": 14568.690000000002,
+            "control": 16044.340000000002,
+            "difference": -1475.6499999999996,
+            "relative_change_abs_control": -0.09197324414715716
+          },
+          "terminal_stale_gross": {
+            "candidate": 22169.06,
+            "control": 24545.29,
+            "difference": -2376.2299999999996,
+            "relative_change_abs_control": -0.09681001935605567
+          }
+        },
+        "monthly_comparison_scope": "signal-cohort ownership; calendar account months reported separately",
+        "return_risk_within_planning_tolerance": true,
+        "exposure_difference": -12643.850000000006,
+        "soft_exposure_auto_failure": false
+      },
+      "is_fragility": {
+        "positive_profit_difference_months": 3,
+        "min_leave_one_month_out_profit_difference": -1007.0154706999738,
+        "increment_without_top_positive_symbol": -672.8588518000055
+      }
+    }
+  ],
+  "controls": [
+    "PARENT",
+    "R4",
+    "R5",
+    "A4",
+    "R1",
+    "R5_CONSERVATIVE_7000",
+    "C5_R4_SIZE_CONSERVATIVE",
+    "C1_R4_PREORDER",
+    "C1_R5_PREORDER",
+    "MATCH_AR9_R5_LATE_COVER_PACED",
+    "MATCH_AR12_R5_OBSERVED_CONSERVATIVE",
+    "MATCH_AR11_R5_OBSERVED_VOTES_COVER",
+    "MATCH_AR10_R4_CONSERVATIVE_COVER_PACED"
+  ],
+  "size_matches": {
+    "AR9_R5_LATE_COVER_PACED": {
+      "id": "MATCH_AR9_R5_LATE_COVER_PACED",
+      "fixed_base": 8175,
+      "method": "One IS average-exposure ratio from original control, nearest25; no OOS scaling or iterative retarget"
+    },
+    "AR12_R5_OBSERVED_CONSERVATIVE": {
+      "id": "MATCH_AR12_R5_OBSERVED_CONSERVATIVE",
+      "fixed_base": 7100,
+      "method": "One IS average-exposure ratio from original control, nearest25; no OOS scaling or iterative retarget"
+    },
+    "AR11_R5_OBSERVED_VOTES_COVER": {
+      "id": "MATCH_AR11_R5_OBSERVED_VOTES_COVER",
+      "fixed_base": 8450,
+      "method": "One IS average-exposure ratio from original control, nearest25; no OOS scaling or iterative retarget"
+    },
+    "AR10_R4_CONSERVATIVE_COVER_PACED": {
+      "id": "MATCH_AR10_R4_CONSERVATIVE_COVER_PACED",
+      "fixed_base": 4575,
+      "method": "One IS average-exposure ratio from original control, nearest25; no OOS scaling or iterative retarget"
+    }
+  },
+  "mix_explanation": "Four policies: a simple balanced R5 overlay, a conservative observed-history smoother, one bounded return challenger, and a conservative R4 alternative. No five-shape sweep. Original/conservative fixed controls remain visible.",
+  "absolute_economics": "Data-limited.720of724ISstale R4 position-sessions have acquisition price-range exclusions; preserving entries fixes erasure but cannot supply actual missing prices."
+}

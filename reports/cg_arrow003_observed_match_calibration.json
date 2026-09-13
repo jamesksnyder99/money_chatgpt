@@ -1,0 +1,14 @@
+[
+  {
+    "candidate": "AR11_R5_OBSERVED_VOTES_COVER",
+    "control": "MATCH_AR11_R5_OBSERVED_VOTES_COVER",
+    "fixed_base": 8450,
+    "calibration": "original base * candidate IS average gross / original IS average gross; nearest25 once, no retarget"
+  },
+  {
+    "candidate": "AR12_R5_OBSERVED_CONSERVATIVE",
+    "control": "MATCH_AR12_R5_OBSERVED_CONSERVATIVE",
+    "fixed_base": 7100,
+    "calibration": "original base * candidate IS average gross / original IS average gross; nearest25 once, no retarget"
+  }
+]

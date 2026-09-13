@@ -1,0 +1,25 @@
+[
+  {
+    "id": "A12_R5_OBSERVED_HISTORY_VOTES",
+    "family": "R5",
+    "base": 8300,
+    "origin": "ASTRA",
+    "mechanism": "Dependency ablation: use advancing-day votes only when signal20-session volatility history is available; otherwise retain original ret3 switch. All entries remain. The completed attribution found1118dollars gain on182observed histories and2005on15missing histories; do not treat missingness as independent alpha.",
+    "control": "R5",
+    "volume": "mean",
+    "momentum": "votes",
+    "pacing": false,
+    "cover": "none",
+    "volume_power": 0.5,
+    "penalty": 0.5,
+    "min_hold": 3,
+    "fade_atr": 1.0,
+    "state": "none",
+    "state_cut": 0.05,
+    "shuffle_seed": null,
+    "scale": 1.0,
+    "share_sizing": "fill",
+    "momentum_missing": "original_switch",
+    "cover_clock": "checkpoint"
+  }
+]

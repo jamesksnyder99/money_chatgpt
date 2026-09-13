@@ -1,0 +1,25 @@
+[
+  {
+    "id": "AR12_R5_OBSERVED_CONSERVATIVE",
+    "family": "R5",
+    "base": 7000,
+    "origin": "DERIVED",
+    "mechanism": "Completed observed-history votes plus low-participation cover and causal130k pacing at the already-tested conservative7000base; retain original switch on sparse history, test whether useful original R5 profit is retained with materially smaller downside",
+    "control": "R5",
+    "volume": "mean",
+    "momentum": "votes",
+    "pacing": true,
+    "cover": "low_participation",
+    "volume_power": 0.5,
+    "penalty": 0.5,
+    "min_hold": 6,
+    "fade_atr": 1.0,
+    "state": "none",
+    "state_cut": 0.05,
+    "shuffle_seed": null,
+    "scale": 1.0,
+    "share_sizing": "fill",
+    "momentum_missing": "original_switch",
+    "cover_clock": "checkpoint"
+  }
+]

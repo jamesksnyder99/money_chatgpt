@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-09-13T20:16:16+00:00",
+  "status": "PASS",
+  "policy_results": 77,
+  "origins": {
+    "ASTRA": 12,
+    "CONTROL": 33,
+    "DERIVED": 18,
+    "DIRECTED": 14
+  },
+  "new_distinct_hypotheses": 44,
+  "completed_events_including_replays": 236,
+  "unclosed_performance_tests": [],
+  "duplicate_new_policy_definitions": [],
+  "materiality_predeclared_unchanged": true,
+  "latest_specs_match_declarations": true,
+  "latest_metrics_match_completion_ledger": true,
+  "all_detail_hashes_match": true,
+  "legacy_evidence_unchanged": true,
+  "new_oos_sealed": true,
+  "interpretation": "Process integrity check, not financial validation or proof of complete input data"
+}

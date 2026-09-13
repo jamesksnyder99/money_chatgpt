@@ -41,16 +41,37 @@ def freeze(selection):
             raise RuntimeError(f"IS details changed for {name}")
         if name in selection["controls"] and r["spec"]["origin"]!="CONTROL":
             raise ValueError("Only declared comparison controls may be frozen as controls")
+        if name in selection["controls"]:
+            s=Spec(**r["spec"])
+            if s.family not in {"PARENT","R4","R5"} or s.volume!="mean" or s.momentum!="switch" or s.pacing or s.cover!="none" or s.state!="none" or s.shuffle_seed is not None:
+                raise ValueError("Control slots are reserved for the original rules and fixed sizing/share-clock comparisons")
+    def policy_fingerprint(record):
+        s=asdict(Spec(**record["spec"]))
+        for k in ("id","origin","mechanism","control"):s.pop(k)
+        return json.dumps(s,sort_keys=True)
+    controls={policy_fingerprint(records[n]) for n in selection["controls"]}
+    seen=set()
+    for name in finalist_ids:
+        fingerprint=policy_fingerprint(records[name])
+        if fingerprint in seen or fingerprint in controls:
+            raise ValueError("Finalist policies must differ economically from controls and each other")
+        seen.add(fingerprint)
     for row in finalists:
         if not all(row.get(k) for k in ("priority","primary_improvement","acceptable_tradeoff","control","reason")):
             raise ValueError("Finalist must specify primary improvement, comparator and acceptable tradeoff")
         if row["control"] not in selection["controls"]:
             raise ValueError("The same primary comparator must be included in the freeze")
+    proof_path=REPO_ROOT/"reports/cg_arrow003_exact_replay.json"
+    if not proof_path.exists():raise RuntimeError("Verified exact IS replay required before freeze")
+    proof=read(proof_path)
+    if proof["code_sha256"]!=code_identity() or proof.get("input_sha256")!=input_identity() or proof["mismatches"] or any(n not in proof["archives"] for n in names):
+        raise RuntimeError("Exact IS replay proof does not cover this current freeze")
     manifest={"status":"FROZEN","timestamp":stamp(),"elapsed_minutes":elapsed()/60,
         "start":read(ROOT/"state.json")["start_utc"],"deadline":read(ROOT/"state.json")["deadline_utc"],
         "signal_rule":"Inherited full point-in-time common-stock field; Wednesday top8 15-session return after documented as-of action repair",
         "entry_rule":"Next session scheduled final RTH minute close; no earlier fallback; integer shares (preorder size under pacing)",
         "exit_rule":"H10 scheduled final minute; missing backstop stays reserved until first later eligible RTH open; terminal inventory marked, not filled",
+        "holding_age_definition":"Entry session is age0; H10 is fill-session-index+10. Cover eligibility begins at min_hold; cover_on_backstop=false ends eligibility at age9, true also permits age10 before the final-minute backstop. One floor(initial shares/2) cover; no zero-share fill.",
         "split_rule":"Odd signal months train; even signal months reused internal confirmation; full lifecycles cross months",
         "finalists":finalists,"controls":selection["controls"],"specs":[r["spec"] for r in records.values()],
         "is_metrics":{name:r["metrics"] for name,r in records.items()},
@@ -89,6 +110,7 @@ def batch(mode,workers=8):
                      "elapsed_minutes":elapsed()/60,"commit":subprocess.check_output(["git","rev-parse","HEAD"],text=True,cwd=REPO_ROOT).strip()})
     state=read(ROOT/"state.json")
     state["oos_exposed"]=True
+    state["frozen_sha256"]=freeze_sha
     dump(ROOT/"state.json",state)
     ledger({"event":"CONFIRMATION_START" if mode=="OOS" else "INVESTOR_START", "mode":mode,
             "freeze_sha256":freeze_sha,"resumed_identical_job":resumed})
@@ -124,6 +146,10 @@ def batch(mode,workers=8):
                "resumed_identical_job":resumed,"cache_sha256_after":cache_identity()})
     ledger({"event":"CONFIRMATION_COMPLETE" if mode=="OOS" else "INVESTOR_COMPLETE",
             "mode":mode,"book_count":len(completed),"wall_seconds":timer.monotonic()-start})
+    state=read(ROOT/"state.json")
+    state["completed_"+mode.lower()]=completed
+    state["elapsed_checkpoint_seconds"]=elapsed()
+    dump(ROOT/"state.json",state)
 
 
 def main():

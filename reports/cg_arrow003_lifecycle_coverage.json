@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-13T19:07:20+00:00",
+  "timestamp": "2026-09-13T19:40:24+00:00",
   "scope": "IS-owned R4 lifecycle; data-quality audit only",
   "source_counts": {
     "virgin": {
@@ -418,5 +418,15 @@
   ],
   "terminal_tickets": 6,
   "terminal_tickets_last_mark_above_80": 5,
-  "interpretation": "Copied acquisition eligibility was bounded ($80 virgin/$50 full), unlike a complete held-position lifecycle service. Missingness can therefore be associated with rising prices adverse to shorts. This table describes coverage, not actual unobserved returns or executable prices. Conditional mechanism increments do not certify absolute profitability."
+  "interpretation": "Copied acquisition eligibility was bounded ($80 virgin/$50 full), unlike a complete held-position lifecycle service. Missingness can therefore be associated with rising prices adverse to shorts. This table describes coverage, not actual unobserved returns or executable prices. Conditional mechanism increments do not certify absolute profitability.",
+  "all_stale_position_sessions_by_source_status": {
+    "documented_price_range_exclusion": {
+      "position_sessions": 720,
+      "gross_dollar_sessions": 2760686.8888000124
+    },
+    "other_documented_exclusion": {
+      "position_sessions": 4,
+      "gross_dollar_sessions": 19758.206400000003
+    }
+  }
 }

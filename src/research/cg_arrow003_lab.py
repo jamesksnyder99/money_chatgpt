@@ -120,6 +120,7 @@ class Spec:
     share_sizing: str = "fill"
     momentum_missing: str = "neutral"
     cover_clock: str = "checkpoint"
+    cover_on_backstop: bool = False
 
     def __post_init__(self):
         import re
@@ -183,6 +184,8 @@ def momentum_multiplier(spec, f):
     if spec.momentum=="none" or not valid(r):
         return 1.0
     if spec.momentum=="votes":
+        if spec.momentum_missing=="original_switch" and not valid(f.get("vol20")):
+            return spec.penalty if r>0 else 1.0
         votes=f.get("positive_days3")
         return spec.penalty if valid(votes) and votes>=2 else 1.0
     if spec.momentum=="taper":
@@ -256,7 +259,14 @@ def cover_observation(spec,p,d,rec,summaries):
     return None
 
 
-def classify(m,c):
+def classify(m,c,*,calendar=False):
+    if calendar:
+        def account_view(x):
+            out=dict(x)
+            for key in ("red_months","red_loss_sum","worst_month","median_month"):
+                out[key]=x["calendar_"+key]
+            return out
+        m,c=account_view(m),account_view(c)
     """One descriptive classifier for IS and confirmation; no gross-exposure veto."""
     fields = ("red_loss_sum","worst_month","max_dd","worst_day")
     improvement = {k:m[k]-c[k] for k in fields}
@@ -283,7 +293,7 @@ def classify(m,c):
              for k in fields if k in m and k in c and m[k] is not None and c[k] is not None}
     return {"classification":label,"profit_difference":profit_gain,"profit_retention":retained,
             "downside_differences":improvement,"downside_relative":rel,
-            "metric_changes":changes,"monthly_comparison_scope":"signal-cohort ownership; calendar account months reported separately",
+            "metric_changes":changes,"monthly_comparison_scope":"calendar account months" if calendar else "signal-cohort ownership; calendar account months reported separately",
             "return_risk_within_planning_tolerance":all(x is None or x>=-MATERIALITY["return_risk_tolerance"] for x in rel.values()),
             "exposure_difference":m["peak_exposure"]-c["peak_exposure"],
             "soft_exposure_auto_failure":False}
@@ -360,16 +370,20 @@ def score(spec, mode, ranks, summaries, *, check=True, stale_shock=None):
         active = [p for p in active if p["shares"]]
         for p in active:
             rec = summaries.get((d.isoformat(),p["symbol"]))
-            trigger=cover_observation(spec,p,d,rec,summaries) if INDEX[d]<p["due_index"] else None
+            eligible_age=INDEX[d]<p["due_index"] or (spec.cover_on_backstop and INDEX[d]==p["due_index"])
+            trigger=cover_observation(spec,p,d,rec,summaries) if eligible_age else None
             if trigger:
                 if trigger.get("next_ts") and trigger.get("next_open"):
                     ts = datetime.fromisoformat(trigger["next_ts"])
                     if spec.cover_clock=="checkpoint" and ts.hour*60+ts.minute<15*60+56:
                         raise RuntimeError("Checkpoint fill must follow completed decision bar")
-                    qty = p["initial_shares"]//2
-                    cover(p,min(qty,p["shares"]),trigger["next_open"],trigger["next_ts"],"half_cover")
-                    p["covered"] = True
-                    counts["half_covers"] += 1
+                    qty = min(p["initial_shares"]//2,p["shares"])
+                    if qty>0:
+                        cover(p,qty,trigger["next_open"],trigger["next_ts"],"half_cover")
+                        p["covered"] = True
+                        counts["half_covers"] += 1
+                    else:
+                        counts["zero_share_half_cover_attempts"] += 1
         active = [p for p in active if p["shares"]]
         # Pre-order state includes due-but-unfilled closing orders; no future exits
         # or future missing observations can manufacture current headroom.
@@ -429,7 +443,8 @@ def score(spec, mode, ranks, summaries, *, check=True, stale_shock=None):
                 prior = rec.get("preorder") if rec else None
                 if not valid(prior):
                     old = summaries.get((signal.isoformat(),h["symbol"]))
-                    prior = old["close"] if old else h["prior_close"]
+                    observed=signal if old else FEATS[INDEX[signal]-1]
+                    prior = (old["close"] if old else h["prior_close"])*adjustment_factor(h["symbol"],observed,d)
                 proposals.append((h,amount,prior,fs[h["symbol"]],signal))
         # Scheduled final-minute covers are after pre-order decisions.
         for p in active:
@@ -504,8 +519,14 @@ def metrics(daily,cohort,legs,active,positions,mode,counts,intended,symbol_pnl,t
     pnl = sum(x["pnl"] for x in daily)
     completed = sum(x["pnl"] for x in legs)
     terminal = sum(p["shares"]*(p["entry"]-p["mark"]-p["entry_cost"]) for p in active)
+    closed_ticket_pnl=sum(ticket_pnl[p["id"]] for p in positions if p["shares"]==0)
+    open_ticket_pnl=sum(ticket_pnl[p["id"]] for p in active)
+    open_signals={p["signal"] for p in active}
+    completed_cohort_pnl=sum(ticket_pnl[p["id"]] for p in positions if p["signal"] not in open_signals)
     if abs(pnl-completed-terminal)>1e-6 or abs(pnl-sum(cohort.values()))>1e-6:
         raise AssertionError("Completed legs + terminal MTM + daily/cohort reconciliation")
+    if abs(pnl-closed_ticket_pnl-open_ticket_pnl)>1e-6:
+        raise AssertionError("Fully closed versus still-open ticket lifecycle reconciliation")
     monthly = defaultdict(float)
     for row in daily:
         monthly[row["date"][:7]] += row["pnl"]
@@ -541,6 +562,9 @@ def metrics(daily,cohort,legs,active,positions,mode,counts,intended,symbol_pnl,t
         crossing+=last.strftime("%Y-%m")!=p["signal"][:7]
     return {"total_pnl":pnl,"per_day":pnl/ndays,"sessions":ndays,"trades":len(positions),
             "completed_leg_pnl":completed,"terminal_net_mtm":terminal,"exit_legs":len(legs),
+            "fully_closed_ticket_pnl":closed_ticket_pnl,"open_ticket_lifecycle_pnl":open_ticket_pnl,
+            "fully_completed_signal_cohort_pnl":completed_cohort_pnl,
+            "partly_open_signal_cohort_pnl":pnl-completed_cohort_pnl,
             "fully_closed_tickets":sum(p["shares"]==0 for p in positions),
             "terminal_tickets":len(active),"terminal_gross":terminal_gross,
             "terminal_stale_gross":sum(p["shares"]*p["mark"] for p in active if p["last_mark_date"]!=SCORE[-1].isoformat()),
@@ -638,6 +662,10 @@ def run_is(specs,workers=8,replay_reason=None):
                   f"terminal={m['terminal_tickets']} {comparison['classification'] if comparison else ''}",flush=True)
     ledger({"event":"BATCH_CHECKPOINT","ids":[s.id for s in specs],"wall_seconds":timer.monotonic()-start,
             "code_sha256":code_identity(),"input_sha256":input_identity(),"oos_exposed":False})
+    state=read(ROOT/"state.json")
+    state.update(last_checkpoint=stamp(),elapsed_checkpoint_seconds=elapsed(),code_sha256=code_identity(),
+                 input_sha256=input_identity(),completed_is=sorted(p.stem[:-3] for p in (ROOT/"results").glob("*_IS.json")))
+    dump(ROOT/"state.json",state)
     return results
 
 

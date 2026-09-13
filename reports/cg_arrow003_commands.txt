@@ -82,3 +82,38 @@ Parked questions, not new work authorization:
   broader corporate actions and historical stock-loan/dividend economics;
   genuinely new-data challenge of fixed policies; sparse-history feature bias.
   Independent models and Arrow 004 remain parked.
+
+Final IS closure (all commands from the lab root, same Python/PYTHONPATH and
+POLARS_MAX_THREADS=1 conventions above):
+  python -m scripts.cg_arrow003_ablation
+  python -m scripts.cg_arrow003_pacing_finish
+  python -m scripts.cg_arrow003_history_fallback
+  python -m research.cg_arrow003_audit robustness
+  python -m research.cg_arrow003_falsification stale --workers 8
+  python -m research.cg_arrow003_falsification coverage --workers 8
+  python -m research.cg_arrow003_falsification interaction --workers 8
+  python -m scripts.cg_arrow003_replay
+    Two final identity replays; final proof timestamp 2026-09-13T20:11:18 UTC.
+    All 77 books, zero existing economic/detail differences; archived originals
+    remain under ignored lab data/tmp. Current code/input hashes verified.
+  python -m research.cg_arrow003_oracle --mode IS --workers 8
+    All 77 books passed independent cash/accounting/execution reconciliation.
+  python -m research.cg_arrow003_provenance --mode IS --workers 8
+    18,306 copied source files; raw source identity unchanged.
+  python -m scripts.cg_arrow003_select
+  python -m scripts.cg_arrow003_protocol_check
+    Final 20:16:16 UTC PASS: 44 distinct new policies, 33 controls, no unclosed
+    tests, constant materiality, legacy evidence unchanged, new OOS sealed.
+  python -m research.cg_arrow003_minute --mode IS --ids PARENT R4 R5 A4 R1 AR9_R5_LATE_COVER_PACED AR12_R5_OBSERVED_CONSERVATIVE AR11_R5_OBSERVED_VOTES_COVER AR10_R4_CONSERVATIVE_COVER_PACED --all-days --workers 8
+  python -m pytest tests/ -q --basetemp=data/tmp/cg_arrow003_tests_prefreeze_final
+    TEMP and TMP set to data/tmp/cg_arrow003_system_tmp; 517 passed in 6.63s.
+
+Retrospective discovery-effort estimate: approximately 57% directed / 43%
+autonomous, roughly 53 and 40 minutes respectively. These are task-attribution
+estimates from timestamped work, not a precise stopwatch or worker-CPU totals.
+Common repairs, infrastructure, shared diagnostics and closure are excluded.
+Wall-clock phases: bounded repairs approximately minutes 0-20; directed cores
+20-38; initial autonomous work 38-55; common engineering 55-71; allocation and
+shared falsification 71-88; mixed recursive completion 88-100; protected own-shop
+continuation and IS challenges 100-130; final replay/identity/risk QA 130-150.
+Exact policy timestamps and elapsed values are retained in the experiment ledger.
