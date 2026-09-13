@@ -1,0 +1,3 @@
+[
+  {"id":"A9_RISK_RANK","origin":"ASTRA","selection_rule":"return_over_vol","rank_pool":0,"mechanism":"Select unusually stretched winners relative to their own prior daily volatility, across the entire eligible field; same equal-dollar budget and lifecycle"}
+]

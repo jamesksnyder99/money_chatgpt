@@ -1,0 +1,7 @@
+[
+  {"id":"A7_CLUSTER","origin":"ASTRA","cluster_cap":8000.0,"cluster_correlation":0.75,"mechanism":"Highly correlated winner clusters are one crowded bet; cap each new connected correlation cluster at $8000"},
+  {"id":"R1_STALL_VOLUME","origin":"DERIVED","feature_rule":"ret3","feature_cut":0.0,"feature_direction":"low","secondary_rule":"volume_ratio","secondary_cut":1.0,"secondary_direction":"low","mechanism":"Combine independently successful stalled momentum and volume exhaustion; multiplicative half-size penalties"},
+  {"id":"R2_REJECT_VOLUME","origin":"DERIVED","feature_rule":"close_location","feature_cut":0.5,"feature_direction":"low","secondary_rule":"volume_ratio","secondary_cut":1.0,"secondary_direction":"low","mechanism":"Combine independently successful daily selling rejection and volume exhaustion; multiplicative half-size penalties"},
+  {"id":"R3_STALL_EQUAL_EXPOSURE","origin":"DERIVED","ticket":6650.0,"feature_rule":"ret3","feature_cut":0.0,"feature_direction":"low","mechanism":"Restore approximately parent average exposure to stalled-momentum policy using one IS-calibrated fixed $6650 base ticket"},
+  {"id":"R4_VOLUME_EQUAL_EXPOSURE","origin":"DERIVED","ticket":5150.0,"feature_rule":"volume_ratio","feature_cut":1.0,"feature_direction":"low","mechanism":"Restore approximately parent average exposure to volume-exhaustion policy using one IS-calibrated fixed $5150 base ticket"}
+]

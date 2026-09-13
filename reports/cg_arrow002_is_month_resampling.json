@@ -1,0 +1,196 @@
+{
+  "timestamp": "2026-09-13T02:50:37+00:00",
+  "warning": "IS-selected strategies, only six months, no multiplicity correction: descriptive fragility diagnostic, NOT a valid post-selection confidence interval or external validation",
+  "method": "All 6^6 ordered draws of six paired IS signal-month profit differences with replacement; no month deleted from a traded strategy; no return thresholds fitted",
+  "candidates": {
+    "A1_STALL": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.5216692386831275,
+      "p025_delta": -15021.218617699997,
+      "median_delta": 679.5789531000019,
+      "p975_delta": 18396.544914199996
+    },
+    "A2_REJECT": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.536522633744856,
+      "p025_delta": -7805.620463499995,
+      "median_delta": 552.3347949000045,
+      "p975_delta": 11110.493767599999
+    },
+    "A3_BURST": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.5285065157750343,
+      "p025_delta": -12145.547769400011,
+      "median_delta": 712.8800259000004,
+      "p975_delta": 14613.7282052
+    },
+    "A4_VOLUME": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.6656592935528121,
+      "p025_delta": -9156.855225699996,
+      "median_delta": 2997.387604200008,
+      "p975_delta": 15984.828037399999
+    },
+    "A5_INVENTORY": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.3794581618655693,
+      "p025_delta": -15194.818427799994,
+      "median_delta": -2271.445988799999,
+      "p975_delta": 12361.064820399995
+    },
+    "A6_CONFIRM": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.19347993827160495,
+      "p025_delta": -15092.2466732,
+      "median_delta": -4822.1227272,
+      "p975_delta": 5774.780466800003
+    },
+    "A7_CLUSTER": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.27038323045267487,
+      "p025_delta": -1638.3565049999993,
+      "median_delta": -299.54528000000073,
+      "p975_delta": 739.7206649999971
+    },
+    "A8_TAPE_PRESSURE": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.49871399176954734,
+      "p025_delta": -7863.328061500005,
+      "median_delta": -41.19290690000253,
+      "p975_delta": 10605.371412099998
+    },
+    "A9_RISK_RANK": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.3553455075445816,
+      "p025_delta": -30825.500599400013,
+      "median_delta": -4365.046965800017,
+      "p975_delta": 13867.595085199975
+    },
+    "D1": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.1461119684499314,
+      "p025_delta": -14236.027234599998,
+      "median_delta": -5134.810759100001,
+      "p975_delta": 4207.355548200001
+    },
+    "D2_CASH": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.0,
+      "p025_delta": -6669.022529999993,
+      "median_delta": -2223.0075099999976,
+      "p975_delta": 0.0
+    },
+    "D2_SUB": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.0,
+      "p025_delta": -5053.174169999994,
+      "median_delta": -1684.391389999998,
+      "p975_delta": 0.0
+    },
+    "D3": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.0866340877914952,
+      "p025_delta": -8079.567457099996,
+      "median_delta": -3615.009547099993,
+      "p975_delta": 1605.0972434000041
+    },
+    "D4": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.2581232853223594,
+      "p025_delta": -15504.457088199983,
+      "median_delta": -3810.0550781999923,
+      "p975_delta": 5475.926299353994
+    },
+    "D5_FULL": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.31787980109739367,
+      "p025_delta": -4980.453489999994,
+      "median_delta": -866.1713099999956,
+      "p975_delta": 1749.0472999999997
+    },
+    "D5_HALF": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.316593792866941,
+      "p025_delta": -2480.35187999999,
+      "median_delta": -435.6131799999948,
+      "p975_delta": 868.0471799999996
+    },
+    "D6_RECYCLE": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.9940843621399177,
+      "p025_delta": 1545.964886800005,
+      "median_delta": 7633.656568400009,
+      "p975_delta": 13137.803367800008
+    },
+    "R10_COMBO_CAP": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.9179955418381345,
+      "p025_delta": -3984.795583700002,
+      "median_delta": 9558.404658799998,
+      "p975_delta": 20636.875761600004
+    },
+    "R1_STALL_VOLUME": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.5597565157750343,
+      "p025_delta": -20425.678433499994,
+      "median_delta": 1750.2135032000037,
+      "p975_delta": 25393.1024042
+    },
+    "R2_REJECT_VOLUME": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.5565414951989026,
+      "p025_delta": -14183.894946499995,
+      "median_delta": 1637.422908099999,
+      "p975_delta": 20788.678130899996
+    },
+    "R3_STALL_EQUAL_EXPOSURE": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.9416795267489712,
+      "p025_delta": -2394.3966249999985,
+      "median_delta": 8231.038585399998,
+      "p975_delta": 15486.476102200006
+    },
+    "R4_VOLUME_EQUAL_EXPOSURE": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.951195987654321,
+      "p025_delta": -1162.9958043999964,
+      "median_delta": 6628.718103700003,
+      "p975_delta": 14191.315608100002
+    },
+    "R5_COMBO_EQUAL_EXPOSURE": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.9517532578875172,
+      "p025_delta": -2446.4543932999914,
+      "median_delta": 15012.030809900014,
+      "p975_delta": 29514.215271500005
+    },
+    "R6_REJECTION_EQUAL_EXPOSURE": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.9984353566529492,
+      "p025_delta": 2768.764364900011,
+      "median_delta": 11085.36896420001,
+      "p975_delta": 20715.800448300004
+    },
+    "R7_SELECT_EXHAUSTION": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.46564214677640603,
+      "p025_delta": -13508.214014499992,
+      "median_delta": -564.8133744999991,
+      "p975_delta": 12774.337320399993
+    },
+    "R8_MINUTE_FULL": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.5041795267489712,
+      "p025_delta": -9298.899417399994,
+      "median_delta": 17.892300000001796,
+      "p975_delta": 6101.524744600007
+    },
+    "R9_MINUTE_HALF": {
+      "exact_resamples": 46656,
+      "positive_fraction": 0.5003215020576132,
+      "p025_delta": -4643.298127199996,
+      "median_delta": 9.697200000000976,
+      "p975_delta": 3030.3586238000025
+    }
+  }
+}

@@ -1,0 +1,8 @@
+[
+  {"id":"A1_STALL","origin":"ASTRA","feature_rule":"ret3","feature_cut":0.0,"feature_direction":"low","mechanism":"Recent acceleration may persist: halve tickets still rising over the last three signal-known sessions"},
+  {"id":"A2_REJECT","origin":"ASTRA","feature_rule":"close_location","feature_cut":0.5,"feature_direction":"low","mechanism":"Signal-session selling rejection may precede a fade: halve tickets closing in the upper half of their daily range"},
+  {"id":"A3_BURST","origin":"ASTRA","feature_rule":"jump_share","feature_cut":0.5,"mechanism":"A gain concentrated in one daily impulse may be less durable: halve gains not at least half explained by their largest daily dollar jump"},
+  {"id":"A4_VOLUME","origin":"ASTRA","feature_rule":"volume_ratio","feature_cut":1.0,"feature_direction":"low","mechanism":"Abating participation may indicate exhaustion: halve tickets with signal volume above their prior-20-session mean"},
+  {"id":"A5_INVENTORY","origin":"ASTRA","portfolio_rule":"underwater_inventory","mechanism":"Do not add full common-factor exposure while existing live short inventory has negative unrealized price PnL at signal close"},
+  {"id":"A6_CONFIRM","origin":"ASTRA","entry_confirmation":true,"mechanism":"Use the existing entry delay to halve unconfirmed fades whose fill-day 15:55 checkpoint is not below signal close"}
+]

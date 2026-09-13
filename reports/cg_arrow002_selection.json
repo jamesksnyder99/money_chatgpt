@@ -1,0 +1,17 @@
+{
+  "status": "IS-only selection rationale; NOT an OOS authorization manifest",
+  "finalists": {
+    "R6_REJECTION_EQUAL_EXPOSURE": "Best strict dual-return/smoothness combination: signal close in lower half of RTH range and abating volume independently reduce unwanted exposure; fixed $7050 base restores parent-like IS average exposure. Strongest balanced IS candidate, with all monetary downside measures improved and five of six monthly profit differences positive.",
+    "R5_COMBO_EQUAL_EXPOSURE": "Highest completed IS profit with much smaller continuous drawdown and better monthly loss/concentration profile at parent-like average exposure. Fixed $8300 base, half for positive ret3, half for above-average volume. Explicit trade-off: worst day is 14% worse than parent, so NOT a strict dual candidate. Preserve this high-return frontier rather than concealing the trade-off.",
+    "R4_VOLUME_EQUAL_EXPOSURE": "Simplest distinct Astra-originated mechanism (A4 descendant): fixed $5150 base, half when signal RTH volume exceeds prior20 mean. Higher IS profit and improved monthly losses/drawdown/concentration at parent-like exposure; worst day is only 2.3% worse under the predeclared 5% materiality tolerance. Avoids redundant unscaled A4 finalist.",
+    "D6_RECYCLE": "Distinct directed capital-recycling mechanism, conditional on independently completed minute-level mature-fade protection. Higher IS profit and better red-month loss/worst month/worst day/concentration with essentially unchanged drawdown and lower average exposure. Although mathematically dominated by R6 on the measured IS axes, it earns a distinct-mechanism confirmation look, not an orthogonality claim. Original-slot lifecycle, one replacement, $8k symbol/$100k new-order account caps; final causal shadow-state audit applied."
+  },
+  "controls": [
+    "MATCH_R6_REJECTION_EQUAL_EXPOSURE",
+    "MATCH_R5_COMBO_EQUAL_EXPOSURE",
+    "MATCH_R4_VOLUME_EQUAL_EXPOSURE",
+    "MATCH_D6_RECYCLE"
+  ],
+  "excluded_redundancy": "Do not freeze R1/R2 low-size versions alongside their R5/R6 exposure-restored identical-rule versions. Do not freeze unscaled A4 beside R4. D6 supplies a distinct early-exit/recycling alternative. Four finalists, not five near-neighbors.",
+  "capital_and_deployment": "All four fit <=$100k on the isolated IS EOD-mark criterion. OOS/all-signal capital fit remains unknown until the fixed confirmation/reporting pass. None is deployment-ready: corporate-action integrity, missing-backstop sampling and live short financing remain unresolved."
+}

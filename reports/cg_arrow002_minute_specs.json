@@ -1,0 +1,5 @@
+[
+  {"id":"A8_TAPE_PRESSURE","origin":"ASTRA","feature_rule":"signed_volume_ratio","feature_cut":0.0,"feature_direction":"low","mechanism":"Distributed intraday selling pressure may anticipate fading: halve when signed minute-volume proxy is positive"},
+  {"id":"R8_MINUTE_FULL","origin":"DERIVED","protection":"full","protection_clock":"all_minutes","mechanism":"Observe mature fade and giveback on every traded RTH minute; same D5 ATR thresholds with next-minute full cover"},
+  {"id":"R9_MINUTE_HALF","origin":"DERIVED","protection":"half","protection_clock":"all_minutes","mechanism":"Observe mature fade and giveback on every traded RTH minute; same D5 ATR thresholds with next-minute one-time half cover"}
+]

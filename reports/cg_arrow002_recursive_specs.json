@@ -1,0 +1,5 @@
+[
+  {"id":"R5_COMBO_EQUAL_EXPOSURE","origin":"DERIVED","ticket":8300.0,"feature_rule":"ret3","feature_cut":0.0,"feature_direction":"low","secondary_rule":"volume_ratio","secondary_cut":1.0,"secondary_direction":"low","mechanism":"Restore approximately parent average exposure to stalled momentum plus volume exhaustion with one IS-calibrated $8300 base ticket"},
+  {"id":"R6_REJECTION_EQUAL_EXPOSURE","origin":"DERIVED","ticket":7050.0,"feature_rule":"close_location","feature_cut":0.5,"feature_direction":"low","secondary_rule":"volume_ratio","secondary_cut":1.0,"secondary_direction":"low","mechanism":"Restore approximately parent average exposure to selling rejection plus volume exhaustion with one IS-calibrated $7050 base ticket"},
+  {"id":"R7_SELECT_EXHAUSTION","origin":"DERIVED","selection_rule":"exhaustion_top16","rank_pool":16,"mechanism":"Choose eight of the first sixteen raw-return leaders by stalled-momentum and volume-exhaustion evidence, preserving full equal-dollar batch exposure"}
+]

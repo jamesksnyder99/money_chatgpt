@@ -1,0 +1,3 @@
+[
+  {"id":"R10_COMBO_CAP","origin":"DERIVED","ticket":8300.0,"feature_rule":"ret3","feature_cut":0.0,"feature_direction":"low","secondary_rule":"volume_ratio","secondary_cut":1.0,"secondary_direction":"low","cap":8000.0,"mechanism":"Combine restored-exposure stall/volume exhaustion with the already tested repeated-symbol $8000 entry-value cap to challenge its worsened worst day"}
+]

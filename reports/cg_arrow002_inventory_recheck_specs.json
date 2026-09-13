@@ -1,0 +1,25 @@
+[
+  {
+    "id": "A5_INVENTORY",
+    "origin": "ASTRA",
+    "mechanism": "Do not add full common-factor exposure while existing live short inventory has negative unrealized price PnL at signal close",
+    "schedule": "wed",
+    "ticket": 4000.0,
+    "sizing": "equal",
+    "width_cut": null,
+    "cap": null,
+    "substitute": false,
+    "protection": "none",
+    "arm_atr": 2.0,
+    "rebound_atr": 1.0,
+    "min_hold": 3,
+    "feature_rule": "none",
+    "feature_cut": null,
+    "feature_low_size": 0.5,
+    "feature_direction": "high",
+    "rank_pool": 8,
+    "account_cap": null,
+    "portfolio_rule": "underwater_inventory",
+    "entry_confirmation": false
+  }
+]

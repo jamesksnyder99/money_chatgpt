@@ -1,0 +1,76 @@
+CG Arrow 002R important commands (PowerShell, only C:\Users\james\money_chatgpt)
+
+git status --short --branch
+git rev-parse --show-toplevel
+git remote -v
+git pull --ff-only origin main
+git rev-parse HEAD
+Starting HEAD: 06eed7bac35f9be3907d0d8ed9963f2765bee335
+Start banner/time: 2026-09-13T01:42:30Z; fresh 180-minute allowance.
+
+Get-Content AGENTS.md
+Get-Content docs/CHATGPT_LAB_PROTOCOL.md
+Get-Content docs/CG_BUILD_ARROW_002.md
+Get-Content docs/CG_BUILD_ARROW_002R.md
+Get-Content docs/CG_BUILD_ARROW_002R_TIME_ADDENDUM.md
+Read the baseline, prior blocked report/ledger/freeze, preflight code/tests,
+SUCCESS.md, DATA_CONTRACT.md, and inherited Arrow 65/66/70/71/72 sources/reports.
+cg_arrow002_ledger.txt absent at start: read cg_arrow002_research_ledger.txt instead.
+
+$env:PYTHONPATH='src'; $env:POLARS_MAX_THREADS='1'; .\.venv\Scripts\python.exe -m research.cg_arrow002_lab prepare --schedule wed --workers 8
+$env:PYTHONPATH='src'; $env:POLARS_MAX_THREADS='1'; .\.venv\Scripts\python.exe -m research.cg_arrow002_lab prepare --schedule daily --workers 8
+.\.venv\Scripts\python.exe -m pytest -q tests/test_cg_arrow002_lab.py --basetemp=data/tmp/cg_arrow002r_test1
+Result: 15 passed in 4.54s.
+
+No new live pulls. No access to the prohibited source repository.
+Generated tape-derived caches and transaction-level payloads remain ignored in data/tmp/cg_arrow002r.
+
+Research runs (same PYTHONPATH=src and POLARS_MAX_THREADS=1 prefix throughout):
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab validate --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab score --specs reports/cg_arrow002_directed_specs.json --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_audit matched D1 D2_CASH D2_SUB D3 D4 D5_FULL D5_HALF
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab score --specs reports/cg_arrow002_matched_specs.json --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab score --specs reports/cg_arrow002_astra_specs.json --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab score --specs reports/cg_arrow002_challenge_specs.json --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab score --specs reports/cg_arrow002_recursive_specs.json --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab score --specs reports/cg_arrow002_minute_specs.json --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab score --specs reports/cg_arrow002_recycle_specs.json --workers 8
+The first D6 run stopped at the DST causal-time assertion; after zone-aware timestamp
+repair, it completed. The later causal shadow-state audit rechecked D6 with the same
+economic rule. Both superseded aggregates remain explicitly archived.
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab score --specs reports/cg_arrow002_risk_rank_specs.json --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab score --specs reports/cg_arrow002_cap_challenge_specs.json --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab score --specs reports/cg_arrow002_inventory_recheck_specs.json --workers 8
+
+All-candidate matched-control generation, executed as a PowerShell single-quoted
+Python here-string piped to .\.venv\Scripts\python.exe -:
+from research.cg_arrow002_audit import rows, matched
+ids = [id for id,r in rows().items() if r['spec'].get('origin','CONTROL') != 'CONTROL']
+matched(ids)
+Then score reports/cg_arrow002_matched_specs.json as above (27 fixed-size controls).
+
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab validate --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab recheck --workers 8
+Final recheck: 56 books, no drift in total PnL, drawdown, worst day, average/peak
+exposure or ticket count; 42.5 seconds, completed 2026-09-13T02:48:25Z.
+.\.venv\Scripts\python.exe -m research.cg_arrow002_audit robustness
+.\.venv\Scripts\python.exe -m research.cg_arrow002_audit resampling
+.\.venv\Scripts\python.exe -m research.cg_arrow002_audit export
+.\.venv\Scripts\python.exe -m research.cg_arrow002_audit ledger
+
+Repeated focused tests used tests/test_cg_arrow002_lab.py and
+tests/test_cg_arrow002_recycle.py, with unique --basetemp=data/tmp/cg_arrow002r_testN.
+Latest pre-freeze full suite:
+.\.venv\Scripts\python.exe -m pytest -q tests --basetemp=data/tmp/cg_arrow002r_test9
+457 passed in 3.47 seconds; no failures/skips.
+
+Planned immutable freeze command (same Python here-string form):
+from research.cg_arrow002_lab import REPORTS, ROOT, read, Spec, freeze_finalists
+plan = read(REPORTS/'cg_arrow002_selection.json')
+controls = [Spec(**read(ROOT/'results'/f'{id}_IS.json')['spec']) for id in plan['controls']]
+freeze_finalists(list(plan['finalists']), controls, plan['finalists'])
+
+After freeze only:
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab confirm --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_lab investor --workers 8
+.\.venv\Scripts\python.exe -m research.cg_arrow002_audit export

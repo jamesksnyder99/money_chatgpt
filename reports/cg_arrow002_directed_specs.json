@@ -1,0 +1,11 @@
+[
+  {"id":"PARENT"},
+  {"id":"CONTROL_3K","ticket":3000.0,"mechanism":"Equal-dollar 75% parent size control"},
+  {"id":"D1","origin":"DIRECTED","sizing":"inverse_vol","mechanism":"Reduce volatile-name dominance using bounded inverse 20-session daily volatility; unchanged batch budget"},
+  {"id":"D2_CASH","origin":"DIRECTED","cap":8000.0,"mechanism":"Clip repeated-symbol accumulation at $8000 entry value; unused capital stays cash"},
+  {"id":"D2_SUB","origin":"DIRECTED","cap":8000.0,"substitute":true,"mechanism":"Clip repeated-symbol accumulation and replace no-capacity names from the fixed signal ranking"},
+  {"id":"D3","origin":"DIRECTED","sizing":"width","width_cut":3.249551296554702,"mechanism":"Halve new exposure below the six-IS-month median rank-one-minus-eight width"},
+  {"id":"D4","origin":"DIRECTED","schedule":"daily","mechanism":"Diversify weekly timing across all actual sessions without increasing the $32000 weekly intended budget"},
+  {"id":"D5_FULL","origin":"DIRECTED","protection":"full","mechanism":"Protect only mature two-ATR fades against a subsequent one-ATR checkpoint rebound; full exit"},
+  {"id":"D5_HALF","origin":"DIRECTED","protection":"half","mechanism":"Protect only mature two-ATR fades against a subsequent one-ATR checkpoint rebound; one-time half exit"}
+]

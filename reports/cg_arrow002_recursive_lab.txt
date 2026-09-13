@@ -1,112 +1,83 @@
-CG Arrow 002 — recursive laboratory blocked at corporate-action integrity gate
+CG Arrow 002R -- recursive hold-short-for-fade laboratory
+PRE-OOS CHECKPOINT -- finalists frozen; confirmation/reporting still to run.
 
-VERDICT: BLOCKED — research session could not proceed beyond preflight.
-IS (in-sample) strict dual improvement: not evaluated.
-OOS (out-of-sample) repetition: not evaluated; confirmation data remain protected.
-Strongest frozen candidate: none. Deployment-ready candidate: none.
-Discovery: 0 completed hypotheses, 0 directed, 0 Astra-originated, 0 derived.
+IS (in-sample) strict dual improvement: YES.
+OOS (out-of-sample) repetition: NOT YET REVEALED at this checkpoint.
+Strongest balanced IS candidate: R6_REJECTION_EQUAL_EXPOSURE.
+Rule: original Wednesday top-eight 15-session winners and next-session last
+regular-hours fill; $7,050 base ticket, multiply by one-half if signal close is
+above the midpoint of its daily range, and independently by one-half if signal
+volume exceeds the prior-20-session mean. Ten-session backstop and inherited costs.
+Parent IS: $9,969.57 / $80.40 per signal-month session, DD -$19,048.26.
+R6 IS: $21,120.61 / $170.33 per session, DD -$15,057.74; worst day -$3,684.91
+versus parent -$4,659.00. IS peak $85,384.38; parent $97,450.49.
+Capital fits the isolated IS end-of-day (EOD) $100k criterion; OOS/all-year unknown.
+Deployment-ready: NO.
+27 completed hypotheses: 8 directed, 9 Astra-originated, 10 derived.
+29 separately scored controls; 56 total books. No pending hypothesis queue.
 
-Evidence and consequence
-------------------------
-data/ref/splits.parquet is 413 bytes with zero rows and schema:
-symbol String, ex_date Date, factor Float64.
-SHA-256: 4160421067b1a4418a0adfe32d1047cee0d36936d5554db4d06c36bdbe29a0ee
-src/ingest/run.py:write_calendar explicitly constructs and writes this empty schema.
-src/ingest/bars.py:normalize_ohlc_full preserves unadjusted one-minute prices.
-src/research/arrow44.py:residual compares raw closes; _last_close reads the tape.
-src/research/arrow65.py:_make_trade and _mtm_and_peak use fixed shares and raw prices.
-No common causal split adjustment is present in this parent execution path.
-A filename search throughout copied data/ found only data/ref/splits.parquet as
-a split/corporate-action/adjustment reference candidate. Local reference and metadata
-inventory also found no alternative event source or coverage evidence.
+Research results under the inherited raw-price convention; corporate-action
+integrity remains unresolved for deployment.
 
-An empty placeholder cannot distinguish 'no splits occurred' from 'splits were never
-acquired.' This does not establish that a particular name or trade is contaminated.
-It prevents the mandatory gate from establishing safety or implementing a factual
-common repair. Inferring split events/factors from large returns would risk replacing
-real economic jumps with invented adjustments. No such heuristic was applied.
+Freeze and governance
+---------------------
+Freeze written 2026-09-13T02:51:43Z, before the confirmation scorer.
+Manifest: reports/cg_arrow002_freeze.txt
+Manifest SHA-256: f0dfdf400889e7691087965c5d6cabf702899c0f4d27f39f0113fd83080e6d84
+Four finalists: R6_REJECTION_EQUAL_EXPOSURE, R5_COMBO_EQUAL_EXPOSURE,
+R4_VOLUME_EQUAL_EXPOSURE, D6_RECYCLE.
+Four IS-calibrated constant-size parent controls are frozen alongside the parent.
+R5 is the highest-return frontier, NOT an IS strict dual result: worse worst day.
+R4 is the simple volume-exhaustion alternative. D6 supplies a distinct recycling
+mechanism; it is dominated by R6 on the measured IS axes, not claimed orthogonal.
+Do not tune, substitute, or open any new branch after this freeze.
 
-Arrow 002 permits NOT TESTED — BLOCKED for genuine data/infrastructure blockers and
-requires the common integrity treatment before recursive search. All five mandatory
-directed corridors therefore closed untested. D6's prerequisite was never met.
-No optimization, finalist selection, or confirmation pass could be completed.
+IS signal months: 2025-09, 2025-11, 2026-01, 2026-03, 2026-05, 2026-07 (124 sessions).
+OOS signal months: 2025-10, 2025-12, 2026-02, 2026-04, 2026-06, 2026-08 (127 sessions).
+All cohort trades are marked through their full calendar lifecycle, including
+cross-month dates. D6 uses validated original-slot lifecycle checkpoint rankings;
+no independent even-month root signal cohort was generated during IS research.
+The even months were seen historically and are internal confirmation, not pristine
+external validation. No new OOS signal-cohort performance has been inspected here.
 
-Repository and control preflight
---------------------------------
-Root: C:/Users/james/money_chatgpt (Windows canonical case Money_ChatGPT).
-Origin: https://github.com/jamesksnyder99/money_chatgpt.git
-Pulled main with --ff-only; starting commit:
-ceed769879df6853dc50af95fa0e34c06099889b
-Inherited src/ Git tree: 47cd22b6f184dfe8fe58deed38b4bd5d5b6723b1
-Preflight source SHA-256:
-54312980e5d46654c2db2c191cf159436bd17f7e9da1fd6be054e2205ce92e34
-Preflight test source SHA-256:
-46581d5b50b2fcd1b1627f7a98276cf7f37e98174728d4dfa3be770cd8bb8afd
-git diff f6878c4 HEAD -- src tests returned no inherited source/test changes.
-Frozen parent parameter/path tests passed. No strategy source was modified.
-No numerical tape replay was run in this arrow because the common integrity gate
-blocked it. Arrow 001's exact reproduction remains historical provenance only:
-251 New York Stock Exchange (NYSE) sessions, $51,855.71 total marked-to-market (MTM)
-profit, $206.60/day, -$20,033.68 maximum drawdown, -$6,607.31 worst day,
-376 completed trades, $102,922 peak marked exposure. These are not clean-split
-baseline measurements from Arrow 002 and cannot serve as its IS/OOS confirmation.
+Audit artifacts
+---------------
+cg_arrow002_ledger.txt: predeclarations, all results, dispositions, parentage, Pareto.
+cg_arrow002_is_results.json: exact aggregate metrics and complete specs for 56 books.
+cg_arrow002_is_robustness.json: all six leave-one-month-out comparisons.
+cg_arrow002_is_month_resampling.json: descriptive paired six-month resampling.
+cg_arrow002_selection.json: pre-OOS selection rationale.
+cg_arrow002_parent_validation.json: 184 IS parent trades match inherited entries,
+exits, shares and PnL exactly; zero daily MTM (marked-to-market) or peak discrepancy.
+cg_arrow002_superseded_is.json: transparent A5/D6 causal-state corrections.
+cg_arrow002_preflight_history.txt: complete archived blocked first-attempt report.
+The old preflight code/tests and cg_arrow002_research_ledger.txt remain unchanged.
 
-Protected split definition
---------------------------
-IS signal months: 2025-09, 2025-11, 2026-01, 2026-03, 2026-05, 2026-07.
-OOS signal months: 2025-10, 2025-12, 2026-02, 2026-04, 2026-06, 2026-08.
-Membership is by signal month, including later lifecycle bars when needed.
-These are historically inspected internal confirmation months, not fresh validation.
-No signal-cohort generator or scorer ran in this arrow. Required inherited reports
-were read as assigned; no newly evaluated even-month cohort results were exposed.
+Independent parquet/date and minute-lifecycle processing used eight workers.
+A9 tested the entire eligible field without a shortlist cap and failed.
+Directed D1-D5 completed without a strict dual winner. Minute-level protection
+subsequently released material capital, so conditional D6 was opened and completed.
+No new pulls, no fabricated splits, no prohibited-source access, no next arrow.
 
-Required research outputs and status
-------------------------------------
-Clean-split parent baseline: NOT TESTED — BLOCKED.
-Directed D1–D5: NOT TESTED — BLOCKED; exact core intent/control/status in ledger.
-Conditional D6: NOT OPENED; qualifying early-exit evidence absent.
-Astra shop: NOT OPENED; same common gate applies.
-Pareto frontier: empty. Rejected/promising/frontier hypotheses: 0/0/0.
-Freeze: reports/cg_arrow002_freeze.txt records NOT FROZEN and zero finalists.
-One-shot OOS table: no rows; no pass performed.
-All-signal continuous investor comparisons: not generated.
-Borrow-cost sensitivity at 0%, 10%, 30%: not applicable, no finalists.
-Negative finding: successful numerical reproduction does not certify corporate-action
-integrity; the copied split reference is a placeholder.
-Unexpected research corridors pursued after OOS: none; OOS was never revealed.
-No pending tested hypotheses or partially scored branch remains.
+Model limitations
+-----------------
+Inherited raw fixed shares, missing-H10 economic-cohort exclusions and transaction
+costs remain common. Causal sizing/capacity state includes filled missing-backstop
+positions; D6 also simulates their early exits and shadow replacement capacity
+before applying common economic exclusions. No hindsight capacity release.
+Missing historical loan fees/dividend obligations and unresolved corporate actions
+preclude deployment claims. EOD gross risk is not a guarantee of intraday margin fit.
+Borrow sensitivities and continuous 12-month investor curves are reserved until
+after the one-shot OOS pass, as descriptive reports rather than optimization inputs.
 
-Tests and scope
-----------------
-Added a read-only preflight command with a nonzero exit for blocked/incomplete review.
-It rejects missing/schema-invalid/invalid-factor input and does not automatically
-approve a nonempty reference: coverage, factor convention and treatment still need review.
-Out-of-lab paths and parent escapes are rejected before the parquet reader is called.
-No code for candidate sizing/exits or an OOS scorer was introduced; their requested
-mechanical tests are inapplicable because research stopped before implementation.
-Focused guards and parent tests: 29 passed in 1.44 seconds.
-Full inherited suite plus new tests: 415 passed, 0 failed, 0 skipped in 3.29 seconds;
-measured process wall time 4.149918 seconds. Explicit tests/ collection avoids walking
-the million-file ignored data tree; all inherited tests were included.
-Temporary test artifacts were directed to ignored data/tmp inside the lab.
-
-Reproduction commands (PowerShell in the lab root)
--------------------------------------------------
-$env:PYTHONPATH='src'; .\.venv\Scripts\python.exe -m research.cg_arrow002_preflight
-Expected exit 2: BLOCKED, zero rows; no cohort scoring.
-.\.venv\Scripts\python.exe -m pytest -q tests/test_cg_arrow002_preflight.py tests/test_cg_arrow001_guard.py tests/test_arrow65.py tests/test_arrow66.py tests/test_arrow70.py --basetemp=data/tmp/cg_arrow002_focused
-.\.venv\Scripts\python.exe -m pytest -q tests --basetemp=data/tmp/cg_arrow002_full
-
-Wall-clock and remaining prerequisite
--------------------------------------
-Session start banner: 2026-09-12T22:55:12Z, after pull.
-Preflight/focused-test completion: 2026-09-12T22:58:09Z.
-Report and audit preparation completed approximately six minutes after start;
-commit/push verification adds only the final Git round trips.
-The 150-minute allocation was curtailed for an actual missing-data gate, not because
-a candidate succeeded or a soft compute budget expired. No overrun.
-To unblock: a documented local corporate-action event history with universe and date
-coverage covering the August 2025 warmup through August 2026, factor semantics and
-provenance, followed by one common causal ranking/position treatment if needed.
-No new data acquisition or access to the prohibited source repository was performed.
-This commit closes the blocked execution attempt; it does not claim mission completion.
+Tests / clock
+-------------
+Latest pre-freeze full suite: 457 passed, 0 failed, 0 skipped in 3.47 seconds.
+Focused tests include causal fills, signal firewall, full-field selection, sizing,
+capacity, missing-backstop shadow state, daylight-saving time and one-shot freeze.
+All 56 books replayed exactly under the frozen code state in 42.5 seconds.
+Start: 2026-09-13T01:42:30Z; fresh 180-minute allowance.
+Freeze: minute 69.2. Search did not stop at the first improvement: independent
+mechanisms, combinations, exposure-restored controls, full-field reranking,
+minute-cadence comparisons and conditional recycling all completed.
+Confirmation, final investor reporting, final tests and final push remain to close.

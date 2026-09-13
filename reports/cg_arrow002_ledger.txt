@@ -1,0 +1,573 @@
+CG Arrow 002R research ledger (live audit trail; final metrics appended at closure)
+Start: 2026-09-13T01:42:30Z. Fresh allowance: 180 minutes.
+IS = in-sample (odd SIGNAL months); OOS = out-of-sample (even SIGNAL months).
+PnL = profit and loss; MTM = marked-to-market; ATR = Average True Range.
+
+HISTORY -- INFRASTRUCTURE CAVEAT, NOT PERFORMANCE EVIDENCE
+The first Arrow 002 attempt (7ea04beb804da63813c4ba62680c1e14af75324b)
+stopped at the empty split reference, with zero hypotheses scored, no freeze and
+no OOS reveal. Its unchanged detailed history remains in
+reports/cg_arrow002_research_ledger.txt and its preflight code/tests remain intact.
+The requested cg_arrow002_ledger.txt did not previously exist; this file supplies
+the requested name and preserves the original ledger by reference, without erasure.
+Arrow 002R demotes the split gate to a nonblocking discovery caveat.
+Research results under the inherited raw-price convention; corporate-action
+integrity remains unresolved for deployment.
+
+PREDECLARATION -- 2026-09-13T01:50Z, before any IS candidate scoring
+PARENT | CONTROL | Wednesday top eight 15-session raw returns, inherited eligible
+field, next-session last regular-hours fill, integer shares of $4,000, hold ten
+sessions after fill, inherited transaction costs and borrow proxy, missing exits
+dropped exactly as inherited. Signal-cohort MTM walks the entire lifecycle calendar.
+
+D1 | DIRECTED | Inverse 20-session sample standard deviation of daily returns;
+21 consecutive session closes ending at signal close. $32,000 batch, initial
+$2,000-$6,000 clip, bounded proportional renormalization. If history is incomplete
+or volatility nonpositive/nonfinite, use median valid selected-name volatility;
+all missing -> equal dollar. This is neutral fallback, not hindsight exclusion.
+Compare parent and average-exposure-matched equal-dollar control.
+
+D2_CASH | DIRECTED | $8,000 aggregate symbol entry-value cap at new fill;
+clip new integer ticket to remaining capacity; cash unused, no substitution.
+D2_SUB | DIRECTED | Same cap; if no whole-share capacity, continue down the
+complete fixed signal-close ranking, to eight slots/$32,000. No universe cap.
+Missing scheduled-exit trades still reserve capital until scheduled expiry so
+future missingness does not decide current cap availability. Same-day backstop
+exits are processed before new close fills. Compare matched parent controls.
+
+D3 | DIRECTED | Width = #1 raw return minus #8. One median from all 25 IS
+Wednesday signals; freeze numeric value before scoring. $4,000 at/above median,
+$2,000 below. Compare $4,000 parent and fixed $3,000 parent control.
+
+D4 | DIRECTED | FULL DAILY core, not approximation. Same top eight, next-session
+last regular-hours fill, hold ten. $32,000 divided by all actual NYSE signal
+sessions of the ISO Monday-Sunday week and eight names; mixed-month weeks retain
+the full calendar divisor, not just the odd-month count. Measure marked exposure.
+
+D5_FULL / D5_HALF | DIRECTED | 20-session arithmetic ATR from true ranges using
+21 consecutive minute-derived daily observations, frozen at signal. Missing ATR
+leaves parent backstop unchanged. From hold day 3 through day 9 observe each
+15:55 bar CLOSE (known 15:56); arm after >=2 ATR favorable, track minimum observed
+checkpoint, on a LATER checkpoint rebound >=1 ATR fill next tradable bar OPEN
+at >=15:56. No checkpoint on early-close days. Full cover vs floor(shares/2)
+one-time cover, remainder fixed day-10 last regular-hours exit. No replacement.
+Same modeled costs per executed share/side; split exit legs count as one ticket.
+
+D6 | CONDITIONAL, NOT OPENED | Requires completed credible material release.
+
+Implementation/measurement notes
+- Eight process workers for local parquet summaries; each date has one cache writer.
+- Raw minute prices remain authoritative; daily features do not change executions.
+- Gross exposure and live counts are end-of-session marks over all 251 sessions,
+  including flat days, for a common denominator across isolated cohort books.
+- No historical stock-loan/dividend claims. Borrow sensitivity is post-freeze only.
+- No OOS signal generation, scoring or diagnosis is authorized by this ledger.
+
+Pre-scoring classification convention (01:55Z)
+Strict dual improvement uses the six stated smoothness measures individually,
+not one score: higher total profit, at least two improvements, no extra red month,
+no monetary downside more than 5% worse, no best-month concentration more than
+0.05 absolute worse, peak marked exposure <=$102,922. Report every component so
+the director can apply a different materiality judgment. These correlated
+smoothness measures are not six independent statistical tests.
+
+DIRECTED CORE COMPLETION -- 2026-09-13T01:58:09Z
+All seven directed specifications across D1-D5 completed. No strict dual improvement.
+Parent: $9,969.57 total / 124 IS sessions = $80.40; 184 completed tickets.
+D1 $4,834.76; D2_CASH $7,746.57; D2_SUB $8,285.18; D3 $6,456.40;
+D4 $5,974.56; D5_FULL $8,944.10; D5_HALF $9,455.40.
+All detailed component metrics and matched controls will be retained in final export.
+D6 NOT OPENED: full protection released 191,143 entry-dollar sessions versus
+roughly 7.3 million parent entry-dollar sessions, reduced average exposure only
+2.2%, and sacrificed 10.3% of parent profit. Half release was only 1.1% average
+exposure. This is not material, credible capital-release economics for recycling.
+
+ASTRA PREDECLARATIONS -- 2026-09-13T02:00Z, BEFORE autonomous scoring
+Each changes one mechanism from the parent, not a parameter grid. Fixed semantic
+cutoffs; no fitted thresholds. Missing history is neutral, not an exclusion.
+A1_STALL | ASTRA | Persistent recent acceleration may resist the fade: retain
+$4k when signal-date last-three-session return <=0, otherwise $2k. Same top eight.
+A2_REJECT | ASTRA | A weak close reveals selling pressure despite a large prior
+gain: $4k when signal close is at/below the midpoint of its RTH high-low range,
+otherwise $2k. Uses completed signal session, next-session entry.
+A3_BURST | ASTRA | A gain dominated by one impulse may be less durable than a
+smooth grind: $4k if largest positive daily dollar close change explains >=50%
+of the net 15-session dollar gain, otherwise $2k. Same rank and holding period.
+A4_VOLUME | ASTRA | Fading participation may signal exhaustion: $4k when signal
+RTH volume <= prior-20-session mean RTH volume, otherwise $2k.
+A5_INVENTORY | ASTRA | Avoid adding full common-factor risk while the existing
+short inventory is underwater: aggregate unrealized price PnL of live shorts
+at signal close <0 -> halve that new batch; otherwise full $4k. No resizing of
+old positions, no account injection, same ten-session backstop.
+A6_CONFIRM | ASTRA | The delayed entry can observe whether selling has begun:
+on fill day use 15:55 minute close, full $4k if below signal close, half otherwise;
+fill remains inherited last RTH but only apply state when that print is >=15:56.
+Missing checkpoint or earlier fallback fill is neutral. No same-bar decisions.
+These branches test different behavioral/state explanations; they are not claimed
+orthogonal engines. Exposure-matched controls and synchronized evidence are required.
+
+FIRST ASTRA RESULTS -- 2026-09-13T02:01:16Z
+A1_STALL, A2_REJECT, A3_BURST, A4_VOLUME all meet the predeclared IS strict dual
+screen. A4 has the largest raw profit ($12,970.17), A1 has the strongest normalized
+profit (0.621 per average exposed dollar) and smallest drawdown (-$8,714.06).
+A5 is smoother but fails the higher-profit requirement. A6 delayed confirmation
+loses almost half parent profit. No OOS look; no finalist yet.
+
+CHALLENGES PREDECLARED -- 2026-09-13T02:03Z, before these results
+A7_CLUSTER | ASTRA | Several strongly correlated winners may really be one bet:
+use prior 20 daily returns of the original eight, connect pairs with Pearson
+correlation >=0.75, cap each connected component's NEW batch allocation at $8,000
+pro rata; unallocated cash stays cash. Missing/constant return series unconnected.
+This is price-based contemporaneous crowd control, not a fitted sector taxonomy.
+R1_STALL_VOLUME | DERIVED from completed A1+A4 | A stalled trend and abating
+participation are complementary exhaustion evidence: multiply the independently
+tested half-size penalties ($4k / $2k / $1k), with each missing feature neutral.
+R2_REJECT_VOLUME | DERIVED from completed A2+A4 | Test the same conjunctive
+evidence using daily selling rejection instead of three-session momentum.
+Both combinations preserve parent selections, entries and backstops.
+R3_STALL_EQUAL_EXPOSURE / R4_VOLUME_EQUAL_EXPOSURE | DERIVED from A1/A4 |
+Challenge whether better profit survives restoring parent average gross exposure:
+one constant ticket = $4k * parent IS average exposure / candidate IS average
+exposure, rounded to nearest $50 BEFORE scoring. No optimized sizing grid.
+Evaluate actual integer-share exposure and reject if it breaches the ceiling;
+do not rescale based on OOS. Full component risk metrics still govern promotion.
+
+CHALLENGE RESULTS -- 2026-09-13T02:03:51Z
+A7_CLUSTER rejected: $9,670.03, DD worse than parent, no exposure benefit at peak.
+R1_STALL_VOLUME: $11,882.31, DD -$4,931.88, average gross $13,931.92.
+R2_REJECT_VOLUME: $11,992.03, DD -$8,510.98, average gross $16,419.37.
+R3_STALL_EQUAL_EXPOSURE (rounded $6,650): $17,929.94; R4_VOLUME_EQUAL_EXPOSURE
+($5,150): $16,598.29. Detailed worst-day checks still apply, not just drawdown.
+
+FURTHER FALSIFICATION PREDECLARED -- 2026-09-13T02:05Z
+R5_COMBO_EQUAL_EXPOSURE | DERIVED R1 | Restore parent average exposure with the
+same single calibration/nearest-$50 rule: $8,300 base ($4,150/$2,075 penalties).
+R6_REJECTION_EQUAL_EXPOSURE | DERIVED R2 | Same calibration: $7,050 base
+($3,525/$1,762.50 penalties). Profit cannot be credited without actual risk guards.
+R7_SELECT_EXHAUSTION | DERIVED A1+A4 | If exhaustion is selection information,
+not just a smaller book, choose eight from the first 16 raw-return leaders:
+score one point each for ret3<=0 and volume_ratio<=1 (missing = half a point),
+descending score then inherited raw-return rank. Equal $4,000 tickets, no soft
+sizing, same entry/hold/cost model. The full eligible field still generates rank.
+
+ROBUSTNESS PLAN (diagnostics, not new strategies)
+For all completed IS policies, retain each signal-month result and show all six
+leave-one-signal-month-out profit differences from the parent. Also compare
+base autonomous policies to constant-ticket exposure matches. No omitted-month
+strategy is traded or promoted; these diagnostics cannot authorize deleting months.
+
+ADDITIONAL MINUTE-TAPE CHALLENGES -- 2026-09-13T02:09Z, before scoring
+A8_TAPE_PRESSURE | ASTRA | Intraday distribution may be visible across all
+minute bars even when a stock finishes high in its daily range: sum volume times
+sign(minute close - minute open), divide by RTH volume. Full $4k for nonpositive
+signed-volume proxy, half for positive. This is a bar-based price/volume proxy,
+not actual buyer/seller trade classification. Known at signal close.
+R8_MINUTE_FULL / R9_MINUTE_HALF | DERIVED D5 | A single daily checkpoint may
+miss earned intraday fades and their givebacks. Compare identical frozen ATR20,
+day-3 maturity, 2-ATR arm / 1-ATR rebound using EVERY tradable RTH minute close
+through hold day 9, with execution at the next tradable minute open (possibly
+next session after a late checkpoint). Original day-10 last-RTH backstop remains.
+This is a scored execution-cadence comparison of finest-tape vs daily checkpoint,
+not an ATR or time-of-day grid. Both full and one-time half covers finish here.
+
+R5 returned $24,628.10 ($198.61/day) at parent-like average exposure, but its
+-$5,309.78 worst day is materially worse than parent's -$4,659.00; NOT strict dual.
+R6 returned $21,120.61 ($170.33/day), improving all monetary smoothness measures
+and best-month concentration, with $85,384.38 IS peak. Strict dual candidate.
+R7 selection substitution returned only $9,404.76; REJECT. Soft sizing evidence
+does not automatically justify reranking a wider pool.
+
+MINUTE RESULTS AND D6 OPENING -- 2026-09-13T02:12Z
+A8_TAPE_PRESSURE $10,256.22; R8_MINUTE_FULL $9,656.25; R9_MINUTE_HALF $9,805.26.
+Every-minute full protection retained 96.86% of parent profit, reduced average
+gross exposure 6.76%, and improved worst day to -$3,816.12. Thirty-four early
+exits versus sixteen with 15:55-only protection. This is now material credible
+release, unlike the original D5 core; the D6 prerequisite is met.
+
+D6_RECYCLE | DIRECTED, conditional now OPENED | Freeze the completed R8_MINUTE_FULL
+cash-exit rule (ATR20; every-minute day3..9, arm2/rebound1, next traded bar open).
+One replacement per original IS slot, at the first daily 15:55 checkpoint after
+the cover, only when >=3 NYSE sessions remain to the ORIGINAL scheduled exit.
+Choose strongest of current checkpoint 15-session top eight with symbol/account
+capacity; fill next traded minute OPEN >=15:56. Size <= freed marked dollars,
+<= $4,000, <= remaining $8,000 symbol ENTRY-value capacity, and <= remaining
+$100,000 marked account capacity. Reserve already-scheduled primary close orders
+at their signal-known $4,000, not future fill prices; reserve earlier replacement
+orders in the same checkpoint batch. No second recycling, no extended horizon.
+Missing replacement exits drop from modeled economics but still reserve capacity.
+All replacement PnL belongs to the original source SIGNAL month. Cross-month
+checkpoint rankings are validated original-IS-slot lifecycle state, not independent
+even-month root signals, books, diagnostics, or training cohorts. Only dates needed
+by actual qualifying IS early exits are ranked, never a free even-month signal scan.
+Control: completed R8_MINUTE_FULL cash book, plus frozen parent and matched controls.
+
+D6 infrastructure interruption -- 02:17Z, no completed D6 performance produced:
+The causal-time guard caught a checkpoint synthesized with the original entry's
+fixed UTC offset across the March daylight-saving transition. Corrected to the
+America/New_York zone on the ACTUAL checkpoint/expiry date and added a regression
+test. This repairs timestamp construction, not a rule or threshold. Resume IS only.
+
+D6 COMPLETED -- 02:18:16Z
+$17,565.47 / $141.66 per IS session, 208 completed tickets including 24 replacements
+from 25 qualifying slots, one missing replacement exit. Eight replacement decisions
+crossed the original signal's odd/even calendar boundary but retained that IS slot.
+Peak $96,048.76, DD -$19,087.18. All mechanics/ranking remain original-slot causal.
+
+A9_RISK_RANK | ASTRA, predeclared 02:21Z, before scoring
+Raw percentage gain may confuse ordinary noise with unusually persistent stretch:
+rank the FULL inherited eligible field by 15-session raw return / prior-20-session
+sample daily-return volatility. Top eight, equal $4k, next-session last RTH, H10.
+No shortlist cap. Require 21 consecutive closes and positive volatility for this
+ranking measure; missing/constant histories are unrankable under a known-at-signal
+rule, not outcome exclusions. At least 16 rankable names required as in parent.
+This challenges selection itself, independently of D1's sizing within the existing
+eight. No threshold grid. Only signal-known full-field histories are prefetched;
+future lifecycle bars are requested AFTER the eight are causally selected.
+
+Additional IS fragility diagnostic, predeclared 02:30Z:
+Enumerate all 6^6 paired resamples of six IS signal-month profit differences from
+parent, for every completed hypothesis, using eight workers. This is descriptive
+training fragility only: six months, selected strategies, no multiplicity correction.
+Do not call the displayed percentiles a valid post-selection confidence interval,
+do not change any rule from this diagnostic, and do not drop any losing month.
+
+R10_COMBO_CAP | DERIVED, predeclared 02:30Z before scoring
+R5's restored exposure worsened worst day despite reducing drawdown; its larger
+qualified tickets can accumulate in repeated names. Combine the completed R5
+stall+volume $8,300 policy with the independently completed D2 cash-only $8,000
+aggregate SYMBOL entry-value cap. No substitutes and no new parameter. This
+tests whether the concentration guard becomes useful specifically after restoring
+exposure to the exhaustion policy. Parent, R5 and D2_CASH remain controls.
+
+A9 completed 02:29:59Z: $4,598.63 / $37.09 per session, three red months; REJECT.
+Full-field historical feature build took 532.2 seconds with eight workers.
+R10 completed 02:30:51Z: $19,160.80, worst day -$5,205.42; still materially worse
+than parent despite a lower peak. Concentration cap did not solve worst-day risk.
+
+A5 causal-state correction -- 02:33Z, BEFORE freeze/OOS
+Audit found the inventory-state calculation used the completed-trade list, which
+omitted positions solely because their later scheduled-exit tape was missing.
+The new calculation uses all causally filled capacity reservations until scheduled
+expiry, including missing-backstop positions. Exact superseded A5 aggregate metrics
+are archived in cg_arrow002_superseded_is.json. Rescore the SAME A5 rule; this is
+a mechanics correction, not a new hypothesis or a threshold change. Other current
+policies do not use this state and are unaffected. No A5-derived strategy had run.
+
+A5 corrected result: $7,855.70 / $63.35 per IS session, three red months; REJECT.
+The audit was extended to D6: simulate early-exit/capacity state for ALL causally
+filled original slots before applying the inherited missing-H10 economic-cohort
+exclusion. Even excluded slots can release/consume capacity in the shadow state;
+their original and child PnL remain excluded together for common-cohort accounting.
+This prevents future backstop availability from deciding whether a lifecycle
+replacement is requested. Preserve the earlier D6 aggregate result before recheck.
+
+D6 corrected result, 02:36:06Z: $17,560.05 ($141.61/session), 207 economic tickets
+(23 completed economic replacements), 26 causal replacement opportunities,
+one shadow child excluded with its missing-H10 root, two missing replacement exits.
+Eight cross-calendar-month lifecycle decisions. Peak/DD unchanged. Strict IS dual
+improvement remains; superseded metrics are not silently erased.
+
+Research closure preparation -- 02:40Z
+All 27 opened hypotheses now have completed IS results: 8 directed, 9 Astra,
+10 derived; controls and mechanics-repair replays are counted separately.
+Next: comprehensive size matches, exact replay under the final code state,
+final Pareto/fragility audit, finalist freeze, one OOS pass. No hypothesis queue.
+Scalar per-book accounting is chronological and serial; independent parquet/date
+and minute-lifecycle work and paired resampling use eight process workers. The
+scalar books take milliseconds/seconds; serial output/cache ownership avoids
+copying the full shared feature cache into dozens of independent score workers.
+
+=== FINAL IS LEDGER AND PARETO BOARD ===
+Generated 2026-09-13T02:50:40+00:00; exact full metrics/specifications: cg_arrow002_is_results.json
+Pnl/day denominator = 124 IS SIGNAL-month sessions. DD/day walk all actual lifecycle days.
+Profit/average exposure and live counts include zero-exposure dates over the common 251-day calendar.
+Run seconds below are per-book scalar replay, excluding shared parallel cache construction.
+Major cache runtimes: Wednesday ranks 110s; daily ranks 451s; full-field A9 532s;
+first D6 lifecycle rank preparation 74s, then cached resumption. Code/QA/research interpretation
+wall time is reported separately. Replays and control sizing are NOT additional hypotheses.
+
+A1_STALL | ASTRA | REJECT
+Mechanism: Recent acceleration may persist: halve tickets still rising over the last three signal-known sessions
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 0.0, "feature_direction": "low", "feature_low_size": 0.5, "feature_rule": "ret3", "id": "A1_STALL", "mechanism": "Recent acceleration may persist: halve tickets still rising over the last three signal-known sessions", "min_hold": 3, "origin": "ASTRA", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_A1_STALL; directed/derived parentage in predeclarations above.
+IS total=10834.59; per_session=87.38; trades=184; red_months=2; red_loss_sum=-7401.04; worst_month=-6053.99; max_DD=-8714.06; worst_day=-3038.37; avg_exposure=17445.90; peak_exposure=56282.44; profit/avg_exposure=0.621039; best_month_concentration=0.639503.
+Signal-month PnL: {"2025-09": -6053.9906417, "2025-11": -1347.0484759999995, "2026-01": 6928.7521896, "2026-03": 6273.9699308, "2026-05": 2658.0852015, "2026-07": 2374.8203749999984}
+Strict dual=True; Dominated by a completed alternative; retained as evidence, not granted an OOS look.
+First score=2026-09-13T02:01:15+00:00; latest exact replay=2026-09-13T02:48:08+00:00; scalar_seconds=0.0669; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+A2_REJECT | ASTRA | REJECT
+Mechanism: Signal-session selling rejection may precede a fade: halve tickets closing in the upper half of their daily range
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 0.5, "feature_direction": "low", "feature_low_size": 0.5, "feature_rule": "close_location", "id": "A2_REJECT", "mechanism": "Signal-session selling rejection may precede a fade: halve tickets closing in the upper half of their daily range", "min_hold": 3, "origin": "ASTRA", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_A2_REJECT; directed/derived parentage in predeclarations above.
+IS total=10710.24; per_session=86.37; trades=184; red_months=2; red_loss_sum=-11579.02; worst_month=-8271.79; max_DD=-13144.78; worst_day=-2902.16; avg_exposure=20867.63; peak_exposure=60160.84; profit/avg_exposure=0.513247; best_month_concentration=0.657279.
+Signal-month PnL: {"2025-09": -8271.788864900001, "2025-11": -3307.228095999998, "2026-01": 7039.616373600001, "2026-03": 6090.5910798, "2026-05": 3566.8469514999997, "2026-07": 5592.205979999999}
+Strict dual=True; Dominated by a completed alternative; retained as evidence, not granted an OOS look.
+First score=2026-09-13T02:01:15+00:00; latest exact replay=2026-09-13T02:48:08+00:00; scalar_seconds=0.0654; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+A3_BURST | ASTRA | REJECT
+Mechanism: A gain concentrated in one daily impulse may be less durable: halve gains not at least half explained by their largest daily dollar jump
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 0.5, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "jump_share", "id": "A3_BURST", "mechanism": "A gain concentrated in one daily impulse may be less durable: halve gains not at least half explained by their largest daily dollar jump", "min_hold": 3, "origin": "ASTRA", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_A3_BURST; directed/derived parentage in predeclarations above.
+IS total=10719.30; per_session=86.45; trades=184; red_months=2; red_loss_sum=-9831.78; worst_month=-7291.44; max_DD=-11421.59; worst_day=-3622.16; avg_exposure=22129.54; peak_exposure=69563.44; profit/avg_exposure=0.484389; best_month_concentration=0.951300.
+Signal-month PnL: {"2025-09": -7291.441281699999, "2025-11": -2540.3436728999986, "2026-01": 10197.263866599998, "2026-03": 4909.2098908, "2026-05": 2583.4904607999997, "2026-07": 2861.117484999996}
+Strict dual=True; Dominated by a completed alternative; retained as evidence, not granted an OOS look.
+First score=2026-09-13T02:01:16+00:00; latest exact replay=2026-09-13T02:48:08+00:00; scalar_seconds=0.0741; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+A4_VOLUME | ASTRA | PROMISING
+Mechanism: Abating participation may indicate exhaustion: halve tickets with signal volume above their prior-20-session mean
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 1.0, "feature_direction": "low", "feature_low_size": 0.5, "feature_rule": "volume_ratio", "id": "A4_VOLUME", "mechanism": "Abating participation may indicate exhaustion: halve tickets with signal volume above their prior-20-session mean", "min_hold": 3, "origin": "ASTRA", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_A4_VOLUME; directed/derived parentage in predeclarations above.
+IS total=12970.17; per_session=104.60; trades=184; red_months=2; red_loss_sum=-9288.67; worst_month=-7394.41; max_DD=-11370.18; worst_day=-3686.85; avg_exposure=22415.41; peak_exposure=71285.16; profit/avg_exposure=0.578627; best_month_concentration=0.606854.
+Signal-month PnL: {"2025-09": -7394.409081699999, "2025-11": -1894.2566728999984, "2026-01": 6473.8690886, "2026-03": 7870.9971798000015, "2026-05": 3243.1141064999997, "2026-07": 4670.857094999998}
+Strict dual=True; Non-dominated IS trade-off; not frozen to avoid redundant sizing neighbors or weaker total economics.
+First score=2026-09-13T02:01:16+00:00; latest exact replay=2026-09-13T02:48:08+00:00; scalar_seconds=0.0624; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+A5_INVENTORY | ASTRA | REJECT
+Mechanism: Do not add full common-factor exposure while existing live short inventory has negative unrealized price PnL at signal close
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "A5_INVENTORY", "mechanism": "Do not add full common-factor exposure while existing live short inventory has negative unrealized price PnL at signal close", "min_hold": 3, "origin": "ASTRA", "portfolio_rule": "underwater_inventory", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_A5_INVENTORY; directed/derived parentage in predeclarations above.
+IS total=7855.70; per_session=63.35; trades=184; red_months=3; red_loss_sum=-10479.41; worst_month=-8141.66; max_DD=-12828.66; worst_day=-3778.04; avg_exposure=23273.90; peak_exposure=82566.23; profit/avg_exposure=0.337533; best_month_concentration=0.864800.
+Signal-month PnL: {"2025-09": -8141.655873400001, "2025-11": -1720.0795278999994, "2026-01": 6793.6166466, "2026-03": 4863.9460798, "2026-05": -617.6746204000021, "2026-07": 6677.55135}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T02:01:16+00:00; latest exact replay=2026-09-13T02:48:08+00:00; scalar_seconds=0.0177; replays=3.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+A6_CONFIRM | ASTRA | REJECT
+Mechanism: Use the existing entry delay to halve unconfirmed fades whose fill-day 15:55 checkpoint is not below signal close
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": true, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "A6_CONFIRM", "mechanism": "Use the existing entry delay to halve unconfirmed fades whose fill-day 15:55 checkpoint is not below signal close", "min_hold": 3, "origin": "ASTRA", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_A6_CONFIRM; directed/derived parentage in predeclarations above.
+IS total=5147.45; per_session=41.51; trades=184; red_months=2; red_loss_sum=-12427.77; worst_month=-10609.55; max_DD=-14991.12; worst_day=-3888.64; avg_exposure=22249.72; peak_exposure=77045.12; profit/avg_exposure=0.231349; best_month_concentration=1.457173.
+Signal-month PnL: {"2025-09": -10609.5546549, "2025-11": -1818.216442899999, "2026-01": 7500.727503699999, "2026-03": 2724.3244229999987, "2026-05": 2573.9002895999997, "2026-07": 4776.268839999998}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T02:01:16+00:00; latest exact replay=2026-09-13T02:48:08+00:00; scalar_seconds=0.0201; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+A7_CLUSTER | ASTRA | REJECT
+Mechanism: Highly correlated winner clusters are one crowded bet; cap each new connected correlation cluster at $8000
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": 8000.0, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "A7_CLUSTER", "mechanism": "Highly correlated winner clusters are one crowded bet; cap each new connected correlation cluster at $8000", "min_hold": 3, "origin": "ASTRA", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_A7_CLUSTER; directed/derived parentage in predeclarations above.
+IS total=9670.03; per_session=77.98; trades=184; red_months=2; red_loss_sum=-16964.25; worst_month=-12394.77; max_DD=-19594.38; worst_day=-4659.00; avg_exposure=28635.41; peak_exposure=97450.49; profit/avg_exposure=0.337695; best_month_concentration=0.981917.
+Signal-month PnL: {"2025-09": -12394.766074899999, "2025-11": -4569.481767899999, "2026-01": 9495.165835699998, "2026-03": 7009.652127, "2026-05": 3205.3323807999977, "2026-07": 6924.124904999999}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T02:03:51+00:00; latest exact replay=2026-09-13T02:48:08+00:00; scalar_seconds=0.1038; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+A8_TAPE_PRESSURE | ASTRA | REJECT
+Mechanism: Distributed intraday selling pressure may anticipate fading: halve when signed minute-volume proxy is positive
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 0.0, "feature_direction": "low", "feature_low_size": 0.5, "feature_rule": "signed_volume_ratio", "id": "A8_TAPE_PRESSURE", "mechanism": "Distributed intraday selling pressure may anticipate fading: halve when signed minute-volume proxy is positive", "min_hold": 3, "origin": "ASTRA", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_A8_TAPE_PRESSURE; directed/derived parentage in predeclarations above.
+IS total=10256.22; per_session=82.71; trades=184; red_months=2; red_loss_sum=-12187.68; worst_month=-8618.36; max_DD=-14519.58; worst_day=-3396.77; avg_exposure=21338.44; peak_exposure=67271.24; profit/avg_exposure=0.480645; best_month_concentration=0.774961.
+Signal-month PnL: {"2025-09": -8618.3603334, "2025-11": -3569.3238959999985, "2026-01": 7948.172100699998, "2026-03": 5790.7356297999995, "2026-05": 3987.214021499999, "2026-07": 4717.784859999998}
+Strict dual=True; Dominated by a completed alternative; retained as evidence, not granted an OOS look.
+First score=2026-09-13T02:09:54+00:00; latest exact replay=2026-09-13T02:48:09+00:00; scalar_seconds=0.0649; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+A9_RISK_RANK | ASTRA | REJECT
+Mechanism: Select unusually stretched winners relative to their own prior daily volatility, across the entire eligible field; same equal-dollar budget and lifecycle
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "A9_RISK_RANK", "mechanism": "Select unusually stretched winners relative to their own prior daily volatility, across the entire eligible field; same equal-dollar budget and lifecycle", "min_hold": 3, "origin": "ASTRA", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 0, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "return_over_vol", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_A9_RISK_RANK; directed/derived parentage in predeclarations above.
+IS total=4598.63; per_session=37.09; trades=184; red_months=3; red_loss_sum=-16399.12; worst_month=-9453.85; max_DD=-19203.09; worst_day=-2612.57; avg_exposure=28859.08; peak_exposure=93509.14; profit/avg_exposure=0.159348; best_month_concentration=2.295921.
+Signal-month PnL: {"2025-09": -9453.846238300002, "2025-11": -5562.670103500002, "2026-01": -1382.6073865000014, "2026-03": 6476.240749799997, "2026-05": 3963.423939999999, "2026-07": 10558.088964999992}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T02:29:59+00:00; latest exact replay=2026-09-13T02:48:16+00:00; scalar_seconds=7.0733; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+D1 | DIRECTED | REJECT
+Mechanism: Reduce volatile-name dominance using bounded inverse 20-session daily volatility; unchanged batch budget
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "D1", "mechanism": "Reduce volatile-name dominance using bounded inverse 20-session daily volatility; unchanged batch budget", "min_hold": 3, "origin": "DIRECTED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "inverse_vol", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_D1; directed/derived parentage in predeclarations above.
+IS total=4834.76; per_session=38.99; trades=184; red_months=2; red_loss_sum=-19183.06; worst_month=-16198.93; max_DD=-22785.32; worst_day=-4333.84; avg_exposure=28889.11; peak_exposure=98957.62; profit/avg_exposure=0.167356; best_month_concentration=1.820226.
+Signal-month PnL: {"2025-09": -16198.930098800001, "2025-11": -2984.1317516999998, "2026-01": 8202.779482299999, "2026-03": 5830.815838999999, "2026-05": 1183.8691408000007, "2026-07": 8800.359315}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T01:58:09+00:00; latest exact replay=2026-09-13T02:48:16+00:00; scalar_seconds=0.0548; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+D2_CASH | DIRECTED | REJECT
+Mechanism: Clip repeated-symbol accumulation at $8000 entry value; unused capital stays cash
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": 8000.0, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "D2_CASH", "mechanism": "Clip repeated-symbol accumulation at $8000 entry value; unused capital stays cash", "min_hold": 3, "origin": "DIRECTED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_D2_CASH; directed/derived parentage in predeclarations above.
+IS total=7746.57; per_session=62.47; trades=182; red_months=2; red_loss_sum=-16418.13; worst_month=-12394.77; max_DD=-19048.26; worst_day=-4649.38; avg_exposure=28450.74; peak_exposure=89512.17; profit/avg_exposure=0.272280; best_month_concentration=0.938759.
+Signal-month PnL: {"2025-09": -12394.766074899999, "2025-11": -4023.362932899999, "2026-01": 7272.1583257, "2026-03": 7009.652127, "2026-05": 3205.3323807999977, "2026-07": 6677.55135}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T01:58:09+00:00; latest exact replay=2026-09-13T02:48:16+00:00; scalar_seconds=0.0232; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+D2_SUB | DIRECTED | REJECT
+Mechanism: Clip repeated-symbol accumulation and replace no-capacity names from the fixed signal ranking
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": 8000.0, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "D2_SUB", "mechanism": "Clip repeated-symbol accumulation and replace no-capacity names from the fixed signal ranking", "min_hold": 3, "origin": "DIRECTED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": true, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_D2_SUB; directed/derived parentage in predeclarations above.
+IS total=8285.18; per_session=66.82; trades=184; red_months=2; red_loss_sum=-16418.13; worst_month=-12394.77; max_DD=-19048.26; worst_day=-4653.95; avg_exposure=28757.96; peak_exposure=93480.57; profit/avg_exposure=0.288100; best_month_concentration=0.942740.
+Signal-month PnL: {"2025-09": -12394.766074899999, "2025-11": -4023.362932899999, "2026-01": 7810.7744457, "2026-03": 7009.652127, "2026-05": 3205.3323807999977, "2026-07": 6677.55135}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T01:58:09+00:00; latest exact replay=2026-09-13T02:48:16+00:00; scalar_seconds=0.0238; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+D3 | DIRECTED | REJECT
+Mechanism: Halve new exposure below the six-IS-month median rank-one-minus-eight width
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "D3", "mechanism": "Halve new exposure below the six-IS-month median rank-one-minus-eight width", "min_hold": 3, "origin": "DIRECTED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "width", "substitute": false, "ticket": 4000.0, "width_cut": 3.249551296554702}
+Control: PARENT; equal-dollar match MATCH_D3; directed/derived parentage in predeclarations above.
+IS total=6456.40; per_session=52.07; trades=184; red_months=2; red_loss_sum=-15218.91; worst_month=-12394.77; max_DD=-16531.93; worst_day=-3244.38; avg_exposure=22310.40; peak_exposure=75168.77; profit/avg_exposure=0.289390; best_month_concentration=1.413332.
+Signal-month PnL: {"2025-09": -12394.766074899999, "2025-11": -2824.1418728999993, "2026-01": 9125.0435096, "2026-03": 5264.919466999999, "2026-05": 1582.8887703, "2026-07": 5702.4587599999995}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T01:58:09+00:00; latest exact replay=2026-09-13T02:48:16+00:00; scalar_seconds=0.0218; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+D4 | DIRECTED | REJECT
+Mechanism: Diversify weekly timing across all actual sessions without increasing the $32000 weekly intended budget
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "D4", "mechanism": "Diversify weekly timing across all actual sessions without increasing the $32000 weekly intended budget", "min_hold": 3, "origin": "DIRECTED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "daily", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_D4; directed/derived parentage in predeclarations above.
+IS total=5974.56; per_session=48.18; trades=900; red_months=2; red_loss_sum=-13798.52; worst_month=-10221.27; max_DD=-16462.22; worst_day=-4988.29; avg_exposure=29296.37; peak_exposure=66629.92; profit/avg_exposure=0.203935; best_month_concentration=1.213020.
+Signal-month PnL: {"2025-09": -10221.266060000004, "2025-11": -3577.2578415, "2026-01": 7247.266075100003, "2026-03": 7035.532701254002, "2026-05": 3416.167893300001, "2026-07": 2074.1199011000003}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T01:58:09+00:00; latest exact replay=2026-09-13T02:48:16+00:00; scalar_seconds=0.0941; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+D5_FULL | DIRECTED | REJECT
+Mechanism: Protect only mature two-ATR fades against a subsequent one-ATR checkpoint rebound; full exit
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "D5_FULL", "mechanism": "Protect only mature two-ATR fades against a subsequent one-ATR checkpoint rebound; full exit", "min_hold": 3, "origin": "DIRECTED", "portfolio_rule": "none", "protection": "full", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_D5_FULL; directed/derived parentage in predeclarations above.
+IS total=8944.10; per_session=72.13; trades=184; red_months=2; red_loss_sum=-16037.23; worst_month=-12317.19; max_DD=-18667.36; worst_day=-4681.65; avg_exposure=28258.25; peak_exposure=94497.52; profit/avg_exposure=0.316513; best_month_concentration=0.865525.
+Signal-month PnL: {"2025-09": -12317.188574899996, "2025-11": -3720.0399128999984, "2026-01": 7741.347765699999, "2026-03": 7479.141147, "2026-05": 2939.266580799996, "2026-07": 6821.575229999999}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T01:58:09+00:00; latest exact replay=2026-09-13T02:48:16+00:00; scalar_seconds=0.0772; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+D5_HALF | DIRECTED | REJECT
+Mechanism: Protect only mature two-ATR fades against a subsequent one-ATR checkpoint rebound; one-time half exit
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "D5_HALF", "mechanism": "Protect only mature two-ATR fades against a subsequent one-ATR checkpoint rebound; one-time half exit", "min_hold": 3, "origin": "DIRECTED", "portfolio_rule": "none", "protection": "half", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_D5_HALF; directed/derived parentage in predeclarations above.
+IS total=9455.40; per_session=76.25; trades=184; red_months=2; red_loss_sum=-16229.08; worst_month=-12356.29; max_DD=-18859.21; worst_day=-4670.32; avg_exposure=28578.83; peak_exposure=95974.00; profit/avg_exposure=0.330853; best_month_concentration=0.912004.
+Signal-month PnL: {"2025-09": -12356.287634899996, "2025-11": -3872.7925128999987, "2026-01": 8623.3669057, "2026-03": 7244.822062, "2026-05": 3066.7289157999967, "2026-07": 6749.56329}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T01:58:09+00:00; latest exact replay=2026-09-13T02:48:16+00:00; scalar_seconds=0.0780; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+D6_RECYCLE | DIRECTED | PROMISING
+Mechanism: Recycle material cash released by completed minute-level mature-fade protection once into a current top-eight candidate, within original slot horizon and symbol/account caps
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "D6_RECYCLE", "mechanism": "Recycle material cash released by completed minute-level mature-fade protection once into a current top-eight candidate, within original slot horizon and symbol/account caps", "min_hold": 3, "origin": "DIRECTED", "portfolio_rule": "none", "protection": "full", "protection_clock": "all_minutes", "rank_pool": 8, "rebound_atr": 1.0, "recycle": true, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_D6_RECYCLE; directed/derived parentage in predeclarations above.
+IS total=17560.05; per_session=141.61; trades=207; red_months=2; red_loss_sum=-14973.89; worst_month=-12060.68; max_DD=-19087.18; worst_day=-3887.87; avg_exposure=28063.52; peak_exposure=96048.76; profit/avg_exposure=0.625725; best_month_concentration=0.703535.
+Signal-month PnL: {"2025-09": -12060.682324899997, "2025-11": -2913.207127899998, "2026-01": 12354.1154341, "2026-03": 8852.312457, "2026-05": 5438.876398799999, "2026-07": 5888.6400896000005}
+Strict dual=True; Distinct directed capital-recycling mechanism, conditional on independently completed minute-level mature-fade protection. Higher IS profit and better red-month loss/worst month/worst day/concentration with essentially unchanged drawdown and lower average exposure. Although mathematically dominated by R6 on the measured IS axes, it earns a distinct-mechanism confirmation look, not an orthogonality claim. Original-slot lifecycle, one replacement, $8k symbol/$100k new-order account caps; final causal shadow-state audit applied.
+First score=2026-09-13T02:18:16+00:00; latest exact replay=2026-09-13T02:48:23+00:00; scalar_seconds=7.1877; replays=3.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+R10_COMBO_CAP | DERIVED | PROMISING
+Mechanism: Combine restored-exposure stall/volume exhaustion with the already tested repeated-symbol $8000 entry-value cap to challenge its worsened worst day
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": 8000.0, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 0.0, "feature_direction": "low", "feature_low_size": 0.5, "feature_rule": "ret3", "id": "R10_COMBO_CAP", "mechanism": "Combine restored-exposure stall/volume exhaustion with the already tested repeated-symbol $8000 entry-value cap to challenge its worsened worst day", "min_hold": 3, "origin": "DERIVED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": 1.0, "secondary_direction": "low", "secondary_rule": "volume_ratio", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 8300.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_R10_COMBO_CAP; directed/derived parentage in predeclarations above.
+IS total=19160.80; per_session=154.52; trades=178; red_months=2; red_loss_sum=-7953.91; worst_month=-7509.33; max_DD=-10113.70; worst_day=-5205.42; avg_exposure=25669.49; peak_exposure=85883.54; profit/avg_exposure=0.746443; best_month_concentration=0.570934.
+Signal-month PnL: {"2025-09": -7509.334264299999, "2025-11": -444.5747741999995, "2026-01": 10939.546656200002, "2026-03": 7967.0634776, "2026-05": 4953.6502477999975, "2026-07": 3254.4470299999994}
+Strict dual=False; Non-dominated IS trade-off; not frozen to avoid redundant sizing neighbors or weaker total economics.
+First score=2026-09-13T02:30:51+00:00; latest exact replay=2026-09-13T02:48:24+00:00; scalar_seconds=0.0724; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+R1_STALL_VOLUME | DERIVED | PROMISING
+Mechanism: Combine independently successful stalled momentum and volume exhaustion; multiplicative half-size penalties
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 0.0, "feature_direction": "low", "feature_low_size": 0.5, "feature_rule": "ret3", "id": "R1_STALL_VOLUME", "mechanism": "Combine independently successful stalled momentum and volume exhaustion; multiplicative half-size penalties", "min_hold": 3, "origin": "DERIVED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": 1.0, "secondary_direction": "low", "secondary_rule": "volume_ratio", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_R1_STALL_VOLUME; directed/derived parentage in predeclarations above.
+IS total=11882.31; per_session=95.83; trades=184; red_months=2; red_loss_sum=-3893.96; worst_month=-3552.30; max_DD=-4931.88; worst_day=-2552.74; avg_exposure=13931.92; peak_exposure=44526.84; profit/avg_exposure=0.852884; best_month_concentration=0.563296.
+Signal-month PnL: {"2025-09": -3552.2972050999997, "2025-11": -341.6652959999988, "2026-01": 4995.560528200001, "2026-03": 6693.2555924, "2026-05": 2724.548986899999, "2026-07": 1362.9074049999995}
+Strict dual=True; Non-dominated IS trade-off; not frozen to avoid redundant sizing neighbors or weaker total economics.
+First score=2026-09-13T02:03:51+00:00; latest exact replay=2026-09-13T02:48:24+00:00; scalar_seconds=0.0753; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+R2_REJECT_VOLUME | DERIVED | PROMISING
+Mechanism: Combine independently successful daily selling rejection and volume exhaustion; multiplicative half-size penalties
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 0.5, "feature_direction": "low", "feature_low_size": 0.5, "feature_rule": "close_location", "id": "R2_REJECT_VOLUME", "mechanism": "Combine independently successful daily selling rejection and volume exhaustion; multiplicative half-size penalties", "min_hold": 3, "origin": "DERIVED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": 1.0, "secondary_direction": "low", "secondary_rule": "volume_ratio", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_R2_REJECT_VOLUME; directed/derived parentage in predeclarations above.
+IS total=11992.03; per_session=96.71; trades=184; red_months=2; red_loss_sum=-7222.42; worst_month=-5240.36; max_DD=-8510.98; worst_day=-2079.91; avg_exposure=16419.37; peak_exposure=48320.96; profit/avg_exposure=0.730359; best_month_concentration=0.578079.
+Signal-month PnL: {"2025-09": -5240.357741700001, "2025-11": -1982.065015999998, "2026-01": 5123.057762200001, "2026-03": 6932.345501400002, "2026-05": 3120.036526899999, "2026-07": 4039.013189999998}
+Strict dual=True; Non-dominated IS trade-off; not frozen to avoid redundant sizing neighbors or weaker total economics.
+First score=2026-09-13T02:03:51+00:00; latest exact replay=2026-09-13T02:48:24+00:00; scalar_seconds=0.0755; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+R3_STALL_EQUAL_EXPOSURE | DERIVED | PROMISING
+Mechanism: Restore approximately parent average exposure to stalled-momentum policy using one IS-calibrated fixed $6650 base ticket
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 0.0, "feature_direction": "low", "feature_low_size": 0.5, "feature_rule": "ret3", "id": "R3_STALL_EQUAL_EXPOSURE", "mechanism": "Restore approximately parent average exposure to stalled-momentum policy using one IS-calibrated fixed $6650 base ticket", "min_hold": 3, "origin": "DERIVED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 6650.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_R3_STALL_EQUAL_EXPOSURE; directed/derived parentage in predeclarations above.
+IS total=17929.94; per_session=144.60; trades=184; red_months=2; red_loss_sum=-12372.99; worst_month=-10119.57; max_DD=-14562.27; worst_day=-5066.93; avg_exposure=29069.13; peak_exposure=93685.25; profit/avg_exposure=0.616804; best_month_concentration=0.641368.
+Signal-month PnL: {"2025-09": -10119.5718549, "2025-11": -2253.421545899998, "2026-01": 11499.693474700001, "2026-03": 10412.735780400002, "2026-05": 4437.421915799997, "2026-07": 3953.0869199999975}
+Strict dual=False; Non-dominated IS trade-off; not frozen to avoid redundant sizing neighbors or weaker total economics.
+First score=2026-09-13T02:03:51+00:00; latest exact replay=2026-09-13T02:48:24+00:00; scalar_seconds=0.0577; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+R4_VOLUME_EQUAL_EXPOSURE | DERIVED | FRONTIER
+Mechanism: Restore approximately parent average exposure to volume-exhaustion policy using one IS-calibrated fixed $5150 base ticket
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 1.0, "feature_direction": "low", "feature_low_size": 0.5, "feature_rule": "volume_ratio", "id": "R4_VOLUME_EQUAL_EXPOSURE", "mechanism": "Restore approximately parent average exposure to volume-exhaustion policy using one IS-calibrated fixed $5150 base ticket", "min_hold": 3, "origin": "DERIVED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 5150.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_R4_VOLUME_EQUAL_EXPOSURE; directed/derived parentage in predeclarations above.
+IS total=16598.29; per_session=133.86; trades=184; red_months=2; red_loss_sum=-11975.29; worst_month=-9537.13; max_DD=-14656.73; worst_day=-4764.93; avg_exposure=28887.47; peak_exposure=91791.22; profit/avg_exposure=0.574584; best_month_concentration=0.608280.
+Signal-month PnL: {"2025-09": -9537.129043599998, "2025-11": -2438.159175599999, "2026-01": 8323.9006589, "2026-03": 10096.405562, "2026-05": 4151.779702699998, "2026-07": 6001.493084999999}
+Strict dual=True; Simplest distinct Astra-originated mechanism (A4 descendant): fixed $5150 base, half when signal RTH volume exceeds prior20 mean. Higher IS profit and improved monthly losses/drawdown/concentration at parent-like exposure; worst day is only 2.3% worse under the predeclared 5% materiality tolerance. Avoids redundant unscaled A4 finalist.
+First score=2026-09-13T02:03:51+00:00; latest exact replay=2026-09-13T02:48:24+00:00; scalar_seconds=0.0681; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+R5_COMBO_EQUAL_EXPOSURE | DERIVED | FRONTIER
+Mechanism: Restore approximately parent average exposure to stalled momentum plus volume exhaustion with one IS-calibrated $8300 base ticket
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 0.0, "feature_direction": "low", "feature_low_size": 0.5, "feature_rule": "ret3", "id": "R5_COMBO_EQUAL_EXPOSURE", "mechanism": "Restore approximately parent average exposure to stalled momentum plus volume exhaustion with one IS-calibrated $8300 base ticket", "min_hold": 3, "origin": "DERIVED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": 1.0, "secondary_direction": "low", "secondary_rule": "volume_ratio", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 8300.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_R5_COMBO_EQUAL_EXPOSURE; directed/derived parentage in predeclarations above.
+IS total=24628.10; per_session=198.61; trades=184; red_months=2; red_loss_sum=-8157.50; worst_month=-7428.85; max_DD=-10317.29; worst_day=-5309.78; avg_exposure=29026.53; peak_exposure=92716.16; profit/avg_exposure=0.848469; best_month_concentration=0.563232.
+Signal-month PnL: {"2025-09": -7428.852818299999, "2025-11": -728.6432191999968, "2026-01": 10388.257976200004, "2026-03": 13871.3438076, "2026-05": 5687.939160099998, "2026-07": 2838.051150000001}
+Strict dual=False; Highest completed IS profit with much smaller continuous drawdown and better monthly loss/concentration profile at parent-like average exposure. Fixed $8300 base, half for positive ret3, half for above-average volume. Explicit trade-off: worst day is 14% worse than parent, so NOT a strict dual candidate. Preserve this high-return frontier rather than concealing the trade-off.
+First score=2026-09-13T02:05:48+00:00; latest exact replay=2026-09-13T02:48:24+00:00; scalar_seconds=0.0727; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+R6_REJECTION_EQUAL_EXPOSURE | DERIVED | FRONTIER
+Mechanism: Restore approximately parent average exposure to selling rejection plus volume exhaustion with one IS-calibrated $7050 base ticket
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": 0.5, "feature_direction": "low", "feature_low_size": 0.5, "feature_rule": "close_location", "id": "R6_REJECTION_EQUAL_EXPOSURE", "mechanism": "Restore approximately parent average exposure to selling rejection plus volume exhaustion with one IS-calibrated $7050 base ticket", "min_hold": 3, "origin": "DERIVED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": 1.0, "secondary_direction": "low", "secondary_rule": "volume_ratio", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 7050.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_R6_REJECTION_EQUAL_EXPOSURE; directed/derived parentage in predeclarations above.
+IS total=21120.61; per_session=170.33; trades=184; red_months=2; red_loss_sum=-12785.28; worst_month=-9268.68; max_DD=-15057.74; worst_day=-3684.91; avg_exposure=29013.87; peak_exposure=85384.38; profit/avg_exposure=0.727949; best_month_concentration=0.577368.
+Signal-month PnL: {"2025-09": -9268.6845483, "2025-11": -3516.5963039999956, "2026-01": 9060.106180499999, "2026-03": 12194.372460800001, "2026-05": 5532.768789799998, "2026-07": 7118.646525000005}
+Strict dual=True; Best strict dual-return/smoothness combination: signal close in lower half of RTH range and abating volume independently reduce unwanted exposure; fixed $7050 base restores parent-like IS average exposure. Strongest balanced IS candidate, with all monetary downside measures improved and five of six monthly profit differences positive.
+First score=2026-09-13T02:05:48+00:00; latest exact replay=2026-09-13T02:48:24+00:00; scalar_seconds=0.0699; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+R7_SELECT_EXHAUSTION | DERIVED | REJECT
+Mechanism: Choose eight of the first sixteen raw-return leaders by stalled-momentum and volume-exhaustion evidence, preserving full equal-dollar batch exposure
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "R7_SELECT_EXHAUSTION", "mechanism": "Choose eight of the first sixteen raw-return leaders by stalled-momentum and volume-exhaustion evidence, preserving full equal-dollar batch exposure", "min_hold": 3, "origin": "DERIVED", "portfolio_rule": "none", "protection": "none", "protection_clock": "daily_1555", "rank_pool": 16, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "exhaustion_top16", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_R7_SELECT_EXHAUSTION; directed/derived parentage in predeclarations above.
+IS total=9404.76; per_session=75.84; trades=186; red_months=2; red_loss_sum=-13548.39; worst_month=-8373.63; max_DD=-16185.91; worst_day=-6162.11; avg_exposure=29325.39; peak_exposure=94244.11; profit/avg_exposure=0.320704; best_month_concentration=1.034053.
+Signal-month PnL: {"2025-09": -8373.629888500001, "2025-11": -5174.759469999998, "2026-01": 9552.1418255, "2026-03": 9725.019846999998, "2026-05": 1143.917432199998, "2026-07": 2532.069565000002}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T02:05:48+00:00; latest exact replay=2026-09-13T02:48:24+00:00; scalar_seconds=0.1108; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+R8_MINUTE_FULL | DERIVED | REJECT
+Mechanism: Observe mature fade and giveback on every traded RTH minute; same D5 ATR thresholds with next-minute full cover
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "R8_MINUTE_FULL", "mechanism": "Observe mature fade and giveback on every traded RTH minute; same D5 ATR thresholds with next-minute full cover", "min_hold": 3, "origin": "DERIVED", "portfolio_rule": "none", "protection": "full", "protection_clock": "all_minutes", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_R8_MINUTE_FULL; directed/derived parentage in predeclarations above.
+IS total=9656.25; per_session=77.87; trades=184; red_months=2; red_loss_sum=-14572.61; worst_month=-12060.68; max_DD=-18125.74; worst_day=-3816.12; avg_exposure=26944.36; peak_exposure=94497.52; profit/avg_exposure=0.358377; best_month_concentration=0.786066.
+Signal-month PnL: {"2025-09": -12060.682324899997, "2025-11": -2511.927577899998, "2026-01": 5925.1383706999995, "2026-03": 7590.4523469999995, "2026-05": 4314.015563799998, "2026-07": 6399.250924600001}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T02:09:54+00:00; latest exact replay=2026-09-13T02:48:25+00:00; scalar_seconds=0.1745; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+R9_MINUTE_HALF | DERIVED | REJECT
+Mechanism: Observe mature fade and giveback on every traded RTH minute; same D5 ATR thresholds with next-minute one-time half cover
+Exact spec: {"account_cap": null, "arm_atr": 2.0, "cap": null, "cluster_cap": null, "cluster_correlation": 0.75, "entry_confirmation": false, "feature_cut": null, "feature_direction": "high", "feature_low_size": 0.5, "feature_rule": "none", "id": "R9_MINUTE_HALF", "mechanism": "Observe mature fade and giveback on every traded RTH minute; same D5 ATR thresholds with next-minute one-time half cover", "min_hold": 3, "origin": "DERIVED", "portfolio_rule": "none", "protection": "half", "protection_clock": "all_minutes", "rank_pool": 8, "rebound_atr": 1.0, "recycle": false, "schedule": "wed", "secondary_cut": null, "secondary_direction": "high", "secondary_rule": "none", "selection_rule": "none", "sizing": "equal", "substitute": false, "ticket": 4000.0, "width_cut": null}
+Control: PARENT; equal-dollar match MATCH_R9_MINUTE_HALF; directed/derived parentage in predeclarations above.
+IS total=9805.26; per_session=79.07; trades=184; red_months=2; red_loss_sum=-15501.26; worst_month=-12229.06; max_DD=-18592.54; worst_day=-4237.56; avg_exposure=27924.50; peak_exposure=95974.00; profit/avg_exposure=0.351134; best_month_concentration=0.786732.
+Signal-month PnL: {"2025-09": -12229.0605349, "2025-11": -3272.2020078999985, "2026-01": 7714.108555699999, "2026-03": 7300.948132, "2026-05": 3753.9007047999976, "2026-07": 6537.560733800001}
+Strict dual=False; Fails higher-return/acceptable-smoothness mission and is dominated by a completed alternative.
+First score=2026-09-13T02:09:54+00:00; latest exact replay=2026-09-13T02:48:25+00:00; scalar_seconds=0.1641; replays=2.
+Children: see explicit R/D6 derivations above; no pending or post-OOS child.
+
+COMPACT PARETO BOARD (no single ranking score)
+id | IS profit | $/session | red loss sum | DD | worst day | average / peak exposure | strict dual
+A4_VOLUME | 12970.17 | 104.60 | -9288.67 | -11370.18 | -3686.85 | 22415.41 / 71285.16 | True
+R10_COMBO_CAP | 19160.80 | 154.52 | -7953.91 | -10113.70 | -5205.42 | 25669.49 / 85883.54 | False
+R1_STALL_VOLUME | 11882.31 | 95.83 | -3893.96 | -4931.88 | -2552.74 | 13931.92 / 44526.84 | True
+R2_REJECT_VOLUME | 11992.03 | 96.71 | -7222.42 | -8510.98 | -2079.91 | 16419.37 / 48320.96 | True
+R3_STALL_EQUAL_EXPOSURE | 17929.94 | 144.60 | -12372.99 | -14562.27 | -5066.93 | 29069.13 / 93685.25 | False
+R4_VOLUME_EQUAL_EXPOSURE | 16598.29 | 133.86 | -11975.29 | -14656.73 | -4764.93 | 28887.47 / 91791.22 | True
+R5_COMBO_EQUAL_EXPOSURE | 24628.10 | 198.61 | -8157.50 | -10317.29 | -5309.78 | 29026.53 / 92716.16 | False
+R6_REJECTION_EQUAL_EXPOSURE | 21120.61 | 170.33 | -12785.28 | -15057.74 | -3684.91 | 29013.87 / 85384.38 | True
+
+Completed hypotheses=27; origins={'DIRECTED': 8, 'ASTRA': 9, 'DERIVED': 10}; dispositions={'REJECT': 18, 'PROMISING': 6, 'FRONTIER': 3, 'BLOCKED': 0}; frozen=4.
+Separately scored controls=29.
+Superseded A5/D6 causal-state audit results remain in cg_arrow002_superseded_is.json; not counted twice.
+No incomplete hypothesis queue; no OOS-driven tuning; no next arrow.
