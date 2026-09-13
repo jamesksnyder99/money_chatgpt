@@ -1,0 +1,179 @@
+{
+  "timestamp": "2026-09-13T20:20:15+00:00",
+  "mode": "ALL",
+  "books": [
+    {
+      "book": "A4",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 2.3283064365386963e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "055f713d91d44e05cc94cd6a757e4e7af9ba2fe219ade8acd03dfb05d478d9a7"
+    },
+    {
+      "book": "AR10_R4_CONSERVATIVE_COVER_PACED",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 837,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 4.0745362639427185e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "99f8a4aa1224d0be31380c63dbb99b896ca2ef16edc2abe33f6b95487a84927b"
+    },
+    {
+      "book": "AR11_R5_OBSERVED_VOTES_COVER",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 837,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 6.402842700481415e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "1ebfcc634f550da0b92553530fa4735d35e042e955eb9b5ef9d678ad77c5cc97"
+    },
+    {
+      "book": "AR12_R5_OBSERVED_CONSERVATIVE",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 837,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 2.3283064365386963e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "ff491d4361c484ec57ef7525cd4b924e58d1dd43c7d7abbc40431bc0d49ab3f1"
+    },
+    {
+      "book": "AR9_R5_LATE_COVER_PACED",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 837,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 6.693881005048752e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "8613523a43120cf8955fe7186eece0748dd0c46162c59916db3676c99c7af68f"
+    },
+    {
+      "book": "C1_R4_PREORDER",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 2.6193447411060333e-10,
+      "max_marked_gross_error": 5.820766091346741e-11,
+      "detail_sha256": "41defa04129bb09820a1f4f7c24b742d1ce18d3f487b0089f054293e725ddb0d"
+    },
+    {
+      "book": "C1_R5_PREORDER",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 8.731149137020111e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "8197ea9afba8031670316feb12d6c97b5f19a90203f43825bf3e02a679344c86"
+    },
+    {
+      "book": "C5_R4_SIZE_CONSERVATIVE",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "ba6f0ae42949a28d9807225b87a901b01207d6f7330f7a832a4dd895e248edb4"
+    },
+    {
+      "book": "MATCH_AR10_R4_CONSERVATIVE_COVER_PACED",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "bb6b4b0815f532ec640522b68d9f9dc8254b7dd5ebe6aded02568ca49df9c77d"
+    },
+    {
+      "book": "MATCH_AR11_R5_OBSERVED_VOTES_COVER",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 3.92901711165905e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "c0555a9f941f6bf37521b214497aa5d393c0ba64de1fd38b499fcac52bf62d61"
+    },
+    {
+      "book": "MATCH_AR12_R5_OBSERVED_CONSERVATIVE",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "d1b766277f3d2de25cdc9eaaf21e2ffe39ac041c7f6a0f5172048750e8b42a52"
+    },
+    {
+      "book": "MATCH_AR9_R5_LATE_COVER_PACED",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 1.7462298274040222e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "b5605874efd0f016f0157ec7985a07ea03c0b6567e57ecfa27ff77bf89e20d9f"
+    },
+    {
+      "book": "PARENT",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 2.764863893389702e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "861fbe1047fca8baa2547c9e41137634e8ae94d53ce2cff9dc20bde271ff9b91"
+    },
+    {
+      "book": "R1",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 1.7462298274040222e-10,
+      "max_marked_gross_error": 2.1827872842550278e-11,
+      "detail_sha256": "f6098b6cc0be5f05ee35e76f7ddf31871c8c9d76ff0cde26dd2a2b07a38a1b05"
+    },
+    {
+      "book": "R4",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 3.92901711165905e-10,
+      "max_marked_gross_error": 5.820766091346741e-11,
+      "detail_sha256": "6211ee72cf9d9f2bf52ffcd4d072c5847d5698ca5bad1e952bce75a870aaf43c"
+    },
+    {
+      "book": "R5",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "96af56ad20ddae73927d0c8dbc2a760c94e16289a4bc9fad5b737d3e03c2e6bf"
+    },
+    {
+      "book": "R5_CONSERVATIVE_7000",
+      "mode": "ALL",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 792,
+      "terminal_tickets": 26,
+      "max_cash_equity_error": 3.7834979593753815e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "b173428edc90a0ce595bcaded556fb24a0b9e097cc9f17f5b950b5079e5427d6"
+    }
+  ],
+  "wall_seconds": 4.054418200001237,
+  "method": "Entry sale proceeds minus cover cash and independent per-side cost formula, less open short liabilities; verify every saved fill against its actual observation and timing. Same input data, independent accounting identity.",
+  "limitation": "Agreement cannot certify unobserved prices, corporate-action completeness, stock loans, dividends, actual fills or economic edge."
+}

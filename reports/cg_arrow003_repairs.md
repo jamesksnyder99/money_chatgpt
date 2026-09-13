@@ -64,3 +64,11 @@ Final pre-freeze verification expanded the cash reconstruction to all 77 IS book
 The full lifecycle coverage audit attributes 720 of 724 stale position-sessions to documented acquisition price-range exclusions; the remaining four have other documented exclusions. This is stronger evidence of outcome-related coverage bias than an empty split table alone. Complete absolute economics remain INCONCLUSIVE/DATA-LIMITED.
 
 A targeted universe check found 25 IS Wednesday batches and 30,973 eligible ranking rows, spanning 2,245 unique candidates. Per-batch eligible counts ranged from 907 to 1,342 (median 1,304). Every eligible row and all 200 top-eight selections satisfied the inherited prior-close $10–$80 and prior-dollar-volume $10 million requirements. No arbitrary 50-name cap was imposed. This eligibility check does not certify corporate-action completeness or subsequent held-position coverage.
+
+## Post-freeze account audit
+
+The frozen common treatment was applied without repair or retuning to one 17-book OOS batch and one 17-book chronological all-signal replay. All books completed on their first attempts. The independent cash reconstruction passed all 17 investor books; synchronized minute marks reconciled to EOD equity and gross on every one of 251 sessions for the five original/conservative controls and four finalists.
+
+The combined investor accounts retain 26 open terminal tickets, including ten with stale marks; sixteen recent tickets have August 31 observations but are not fictitiously closed at the boundary. R4/R5 total terminal gross is $99,803.45/$105,988.14, of which $41,605.89/$37,883.84 is stale. The common lifecycle has 1,090 stale position-sessions, 21 missing scheduled exits, eleven delayed observed fills spanning 98 delay sessions, and seven missed late entries. No post-reveal price correction was made.
+
+The all-signal provenance audit hashed 29,499 used local source files (387,362,075 bytes), with no linked inputs or raw-input modifications. Its public source-identity hash is `1ea05a9415c0771d6a8e21de8867d7e74aec4a530d65046d8a47d84d6e85d2fa`; detailed source manifests remain local. This expands the inspected input set to the frozen all-signal replay; it does not fill gaps or make repeated even-month confirmation fresh evidence.

@@ -117,3 +117,66 @@ Wall-clock phases: bounded repairs approximately minutes 0-20; directed cores
 shared falsification 71-88; mixed recursive completion 88-100; protected own-shop
 continuation and IS challenges 100-130; final replay/identity/risk QA 130-150.
 Exact policy timestamps and elapsed values are retained in the experiment ledger.
+
+Freeze and single confirmation, executed without a resume or rescore:
+  git commit -m "Close Arrow 003 discovery and verify final research identity"
+    80da764; staged public-safety review: 39 files / 8,709,558 bytes, PASS.
+  python -m research.cg_arrow003_confirmation freeze --selection reports/cg_arrow003_selection.json
+    Freeze at 2026-09-13T20:17:24Z, minute 148.7003, around the planned minute150.
+    Four new policies, 13 controls, 140 code dependencies, 1,840 cached partitions.
+    No blocking-data early closure was claimed; the IS search was fully completed.
+  git commit -m "Freeze four Arrow 003 finalists before confirmation"
+    8f2fe84f616cbd913d06b93bdf0b84426de059b1; 2 files / 3,295,330 bytes reviewed,
+    PASS. Freeze SHA256: 3a6efbe758e8f68c40f354e15101e649d36e4f505d5202400e1e0769144e712b.
+  python -m research.cg_arrow003_confirmation confirmation --workers 8
+    17/17 completed; start20:17:46Z (minute149.0718), finish20:18:25Z
+    (minute149.7181), measured batch38.7393seconds. No interruption or rescore.
+  python -m research.cg_arrow003_confirmation investor --workers 8
+    17/17 completed; start20:18:39Z (minute149.9508), finish20:18:51Z
+    (minute150.1577), measured batch12.3699seconds. No interruption or rescore.
+    All signals shared one chronological capital account per frozen policy.
+
+Post-confirmation verification and reports:
+  python -m research.cg_arrow003_minute --mode ALL --ids PARENT R4 R5 A4 R1 AR9_R5_LATE_COVER_PACED AR12_R5_OBSERVED_CONSERVATIVE AR11_R5_OBSERVED_VOTES_COVER AR10_R4_CONSERVATIVE_COVER_PACED --all-days --workers 8
+    All 251 sessions reconciled daily ending equity/gross; completed20:19:59Z.
+  python -m research.cg_arrow003_oracle --mode ALL --workers 8
+    All17 books passed independent accounting and observed-execution checks,
+    completed20:20:15Z. Detailed records remain in ignored lab data/.
+  python -m research.cg_arrow003_provenance --mode ALL --workers 8
+    29,499 used local source files hashed; completed20:20:30Z; no linked sources
+    or modified raw inputs. Source identity is in cg_arrow003_provenance_all.json.
+  python -m pytest tests/ -q --basetemp=data/tmp/cg_arrow003_tests_final_closure
+    TEMP/TMP both point inside ignored lab data/tmp. 517 passed in6.67seconds.
+  python -m scripts.cg_arrow003_report
+    Completed20:20:55Z, minute152.2216. 17books x251days =4,267 account rows.
+    All twelve calendar-month amounts/returns and daily totals reconcile.
+    Manual editorial interpretation and frozen size-comparator summaries were
+    added to the Markdown artifact only; frozen scoring/report code unchanged.
+  Final read-only/ledger audit verified frozen code/input identity and every
+    historical-evidence hash, 17 frozen result sets and4,267 CSV rows. It appended
+    FINAL_CONFIRMATION_ASSESSMENT for all4 finalists and ARROW_RESEARCH_CLOSURE.
+    No performance experiment remains open; no confirmation invalidation.
+
+Results: F1 NOT REPEATED; F2 REPEATED ride; F3 PARTIALLY REPEATED return;
+F4 REPEATED ride, all relative to their pre-frozen original working comparator.
+Complete absolute economics remain INCONCLUSIVE/DATA-LIMITED. Same-size controls
+weaken new-mechanism claims. No policy meets the full-account $300-$500/day goal.
+No strategy, threshold, size, scenario or priority was changed after OOS reveal.
+
+Final public review / push sequence (from the lab root):
+  git add -- reports/cg_arrow003* src/research/cg_arrow003* scripts/cg_arrow003* tests/test_cg_arrow003*
+  python -m scripts.cg_arrow003_safety
+  git diff --cached --check
+  git diff --cached --name-only
+  git diff --cached --stat
+  git commit -m "Report Arrow 003 confirmation and chronological account results"
+  python -m scripts.cg_arrow003_safety --base 728adb6483d7d97b65e86729fb747b6ba17cc0aa
+  git diff 728adb6483d7d97b65e86729fb747b6ba17cc0aa HEAD --name-only
+  git push origin main
+  git rev-parse HEAD
+  git ls-remote origin refs/heads/main
+  git status --short --branch
+Final commit SHA, actual push/remote-match outcome and total wall-clock elapsed
+are reported in the terminal handoff after these final commands; they cannot
+self-identify inside the commit being created. No force push is authorized.
+Earlier reviewed checkpoint commits: f039ff9, 96fef54, 80da764; freeze8f2fe84.

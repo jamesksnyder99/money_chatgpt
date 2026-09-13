@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-09-13T20:20:30+00:00",
+  "mode": "ALL",
+  "files": 29499,
+  "bytes": 387362075,
+  "source_identity_sha256": "1ea05a9415c0771d6a8e21de8867d7e74aec4a530d65046d8a47d84d6e85d2fa",
+  "local_manifest_path": "data/tmp/cg_arrow003/source_manifest_ALL.json",
+  "local_manifest_sha256": "837d8793cb6310e931d3aceafa0791d9cde8eefa7d52abcc5ed4098825ed6fb0",
+  "raw_inputs_modified": false,
+  "linked_inputs": 0,
+  "source_roots": [
+    "data/full/bars",
+    "data/virgin/bars"
+  ],
+  "summary_coverage": {
+    "summary_records": 36948,
+    "missing_summary_records": 7449,
+    "alternate_tape_records": 0
+  },
+  "wall_seconds": 7.682297200000903,
+  "elapsed_minutes": 151.8112612,
+  "note": "Targeted source hashing for cached research inputs; no broad filesystem inventory, no raw vendor payload published"
+}
