@@ -17,7 +17,7 @@ One arrow may authorize a whole recursive research session without interim user 
 
 The user's latest explicit direction and the active CG arrow supersede conflicting historical Money/CG instructions. `docs/SUCCESS.md` holds the current economic policy. Previous reports and freeze manifests remain immutable historical evidence.
 
-CG Arrow 003 authorizes R4/R5-family continuation only, under soft approximately $130,000 gross exposure and reasonably clean odd/even signal-cohort gates. Independent new swing/day engines are parked, not discarded. Record such ideas in the backlog but do not execute them in this run.
+**CG Arrow 004 is now authorized:** R4/R5 short capital utilization, qualified reserves/top-twenty allocation/cohort replacement, weekly-staggered versus biweekly-reset two-week Thursday cohorts, and a separate long-only loser/recovery engine. All new cohorts use the two-week nominal Thursday expiry defined in that arrow. Earlier proposed 5/10/15-session horizon exploration is superseded for this run. R4/R5 are separate short benchmarks, not two full accounts combined. Unrelated swing/day engines remain parked. The 150-minute limit includes scientific and Git closure, with meaningful time protected for long-engine discovery. Arrow 003's short-only scope was specific to that earlier run.
 
 ## Isolation
 
@@ -32,17 +32,17 @@ The repository is intentionally public. Before pushing, inspect staged paths and
 ## Scientific practice
 
 - Preserve historical controls. New common repairs get versioned working controls and a reconciliation; do not attribute a data repair's profit change to the signal.
-- Never infer absence of corporate actions from an empty placeholder. Never invent split factors from returns. Known material defects limit the conclusions; unresolved coverage is explicitly labeled.
-- Use as-of information before execution. Do not remove losing trades/months based on future outcomes or use missing future data to create present-day capacity.
+- Never infer absence of corporate actions from an empty placeholder. Never invent split factors from returns. Known material defects limit conclusions; unresolved coverage is explicitly labeled.
+- Use as-of information before execution. Do not remove losing trades/months based on future outcomes or use missing future data to create present-day capacity. Entry eligibility is separate from held-position data coverage on BOTH sides.
 - Develop on odd signal months; allow causal lookbacks and position lifecycles across even months. Freeze new finalists before one confirmation reveal. Historical OOS knowledge is disclosed; newly scored OOS cannot direct the current search.
 - Keep signal-cohort statistics separate from actual calendar-month MTM. Replay joint capacity chronologically after freeze. Report outcome overlap; no formal purity project is required.
 - Prefer interpretable rules and focused neighboring checks, not opaque broad grids. Log every tested branch and its mechanism, including negative findings and superseded bug-affected results.
-- Separate less exposure, more efficient exposure, and genuinely different signals. A common R4/R5 mixture is not diversification across independent engines.
+- Separate less exposure, more efficient exposure, and genuinely different signals. A common R4/R5 mixture is not diversification across independent engines. A standalone long engine is separately evaluated, not presumed to diversify or finance shorts.
 - The active arrow's deadline includes setup, research, confirmation, reports, tests, and push. Reserve closure time and stop opening experiments that cannot finish. Do not silently reinterpret a meaningful research allocation as permission to freeze at the first convenient result.
 - Completion and success are different: a fully completed search may find no improvement. Never claim unperformed work or fabricated performance to meet a target.
 
 ## Naming
 
-Hold short for fade is the Money Arrow 44 lineage, later Wednesday/eight-name/15-session-lookback/delayed-fill/ten-session-hold. R4 denotes volume-conditioned sizing; R5 adds stalled-momentum sizing. Always attach a plain-English description to model IDs.
+Hold short for fade is the Money Arrow 44 lineage, later Wednesday/eight-name/15-session-lookback/delayed-fill/ten-session-hold. R4 denotes volume-conditioned sizing; R5 adds stalled-momentum sizing. Their exact historical implementations remain versioned controls. New two-week rotation and long mirror policies get distinct IDs and plain-English descriptions rather than silently redefining R4/R5.
 
 Lab assignments use `docs/CG_BUILD_ARROW_XXX.md`. Preserve earlier arrows as history. A short chat pointer is not the full specification.
