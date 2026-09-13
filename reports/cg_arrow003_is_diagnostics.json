@@ -1,0 +1,637 @@
+{
+  "timestamp": "2026-09-13T18:08:00+00:00",
+  "cohort": "IS only",
+  "holding": {
+    "R4": {
+      "age_state": {
+        "at_or_below_reference/0": {
+          "position_sessions": 91.0,
+          "costs": -564.5499171999999
+        },
+        "at_or_below_reference/1": {
+          "position_sessions": 91.0,
+          "overnight": 3714.0772000000043,
+          "rth": -641.040936000006
+        },
+        "at_or_below_reference/2": {
+          "position_sessions": 91.0,
+          "overnight": -298.06406399998906,
+          "rth": 3848.5059999999926,
+          "stale_position_sessions": 1.0
+        },
+        "at_or_below_reference/3": {
+          "position_sessions": 91.0,
+          "stale_position_sessions": 3.0,
+          "overnight": -344.60099999999636,
+          "rth": 1455.929700000001
+        },
+        "at_or_below_reference/4": {
+          "position_sessions": 91.0,
+          "stale_position_sessions": 4.0,
+          "overnight": -897.8296999999977,
+          "rth": 1282.6872999999941
+        },
+        "at_or_below_reference/5": {
+          "position_sessions": 91.0,
+          "overnight": 1872.882700000001,
+          "rth": 4970.019699999997,
+          "stale_position_sessions": 4.0
+        },
+        "at_or_below_reference/6": {
+          "position_sessions": 91.0,
+          "overnight": 1713.115300000003,
+          "rth": -4360.21813,
+          "stale_position_sessions": 6.0
+        },
+        "at_or_below_reference/7": {
+          "position_sessions": 91.0,
+          "overnight": -1489.784869999999,
+          "rth": -1162.2121000000043,
+          "stale_position_sessions": 7.0
+        },
+        "at_or_below_reference/8": {
+          "position_sessions": 91.0,
+          "overnight": 677.4651000000076,
+          "rth": -632.8628000000034,
+          "stale_position_sessions": 6.0
+        },
+        "at_or_below_reference/9": {
+          "position_sessions": 91.0,
+          "overnight": 1255.1042000000016,
+          "rth": -3606.8088000000016,
+          "stale_position_sessions": 6.0
+        },
+        "at_or_below_reference/10": {
+          "position_sessions": 91.0,
+          "overnight": -9.487599999994679,
+          "rth": 251.35949999999252,
+          "costs": -522.7017305,
+          "stale_position_sessions": 7.0
+        },
+        "above_reference/0": {
+          "position_sessions": 91.0,
+          "costs": -285.99197960000004
+        },
+        "above_reference/1": {
+          "position_sessions": 91.0,
+          "overnight": 1510.1805000000008,
+          "rth": -2500.355900000003,
+          "stale_position_sessions": 1.0
+        },
+        "above_reference/2": {
+          "position_sessions": 91.0,
+          "overnight": -3127.6430000000014,
+          "rth": 1812.6960000000017,
+          "stale_position_sessions": 3.0
+        },
+        "above_reference/3": {
+          "position_sessions": 91.0,
+          "overnight": 1392.2919999999992,
+          "rth": -5018.470699999999,
+          "stale_position_sessions": 3.0
+        },
+        "above_reference/4": {
+          "position_sessions": 91.0,
+          "overnight": -2141.561299999997,
+          "rth": -717.3623000000022,
+          "stale_position_sessions": 3.0
+        },
+        "above_reference/5": {
+          "position_sessions": 91.0,
+          "overnight": 623.8343000000026,
+          "rth": -2047.9945000000023,
+          "stale_position_sessions": 3.0
+        },
+        "above_reference/6": {
+          "position_sessions": 91.0,
+          "overnight": 1454.6253000000027,
+          "rth": 2945.9951999999944,
+          "stale_position_sessions": 3.0
+        },
+        "above_reference/7": {
+          "position_sessions": 91.0,
+          "overnight": -2736.7551999999955,
+          "rth": 1071.7465,
+          "stale_position_sessions": 4.0
+        },
+        "above_reference/8": {
+          "position_sessions": 91.0,
+          "overnight": 1219.9477000000009,
+          "rth": 2002.7943999999966,
+          "stale_position_sessions": 5.0
+        },
+        "above_reference/9": {
+          "position_sessions": 91.0,
+          "overnight": -399.1773999999981,
+          "rth": 249.1971999999998,
+          "stale_position_sessions": 4.0
+        },
+        "above_reference/10": {
+          "position_sessions": 91.0,
+          "overnight": 694.4908000000012,
+          "rth": -2286.4260000000027,
+          "costs": -278.2338816999999,
+          "stale_position_sessions": 5.0
+        },
+        "above_reference/11_plus_delayed": {
+          "position_sessions": 370.0,
+          "stale_position_sessions": 368.0,
+          "overnight": 720.7399999999999,
+          "rth": 0.0,
+          "costs": -5.1371600000000015
+        },
+        "missing/0": {
+          "position_sessions": 15.0,
+          "costs": -149.73390500000002
+        },
+        "missing/1": {
+          "position_sessions": 15.0,
+          "overnight": 4535.6050000000005,
+          "rth": 3684.259800000002
+        },
+        "missing/2": {
+          "position_sessions": 15.0,
+          "overnight": 2045.0701999999992,
+          "rth": 1795.0434999999995
+        },
+        "missing/3": {
+          "position_sessions": 15.0,
+          "overnight": 261.53649999999897,
+          "rth": -467.6699999999991
+        },
+        "missing/4": {
+          "position_sessions": 15.0,
+          "overnight": -10.009999999999188,
+          "rth": -1491.872900000001,
+          "stale_position_sessions": 1.0
+        },
+        "missing/5": {
+          "position_sessions": 15.0,
+          "overnight": 652.8328999999984,
+          "rth": -97.68000000000029,
+          "stale_position_sessions": 2.0
+        },
+        "missing/6": {
+          "position_sessions": 15.0,
+          "overnight": 496.29000000000275,
+          "rth": 1335.3785999999984,
+          "stale_position_sessions": 1.0
+        },
+        "missing/7": {
+          "position_sessions": 15.0,
+          "overnight": 84.32500000000152,
+          "rth": -494.47500000000036,
+          "stale_position_sessions": 3.0
+        },
+        "missing/8": {
+          "position_sessions": 15.0,
+          "overnight": -853.1049999999987,
+          "rth": 2181.0019999999986,
+          "stale_position_sessions": 2.0
+        },
+        "missing/9": {
+          "position_sessions": 15.0,
+          "overnight": 611.198,
+          "rth": -1473.4454000000007,
+          "stale_position_sessions": 3.0
+        },
+        "missing/10": {
+          "position_sessions": 15.0,
+          "overnight": 406.49540000000115,
+          "rth": -1720.6943000000008,
+          "costs": -70.3391906,
+          "stale_position_sessions": 3.0
+        },
+        "at_or_below_reference/11_plus_delayed": {
+          "position_sessions": 141.0,
+          "stale_position_sessions": 136.0,
+          "overnight": 3438.413000000002,
+          "rth": 0.0,
+          "costs": -25.862676999999998
+        },
+        "missing/11_plus_delayed": {
+          "position_sessions": 129.0,
+          "stale_position_sessions": 127.0,
+          "overnight": -1192.3336000000002,
+          "rth": 0.0,
+          "costs": -66.19504
+        }
+      },
+      "reconciled_total": 14078.448518400004,
+      "difference": 5.4569682106375694e-12
+    },
+    "R5": {
+      "age_state": {
+        "at_or_below_reference/0": {
+          "position_sessions": 91.0,
+          "costs": -591.7811334999999
+        },
+        "at_or_below_reference/1": {
+          "position_sessions": 91.0,
+          "overnight": 3821.298500000006,
+          "rth": -1821.8747200000093
+        },
+        "at_or_below_reference/2": {
+          "position_sessions": 91.0,
+          "overnight": 740.8572200000109,
+          "rth": 6098.159999999994,
+          "stale_position_sessions": 1.0
+        },
+        "at_or_below_reference/3": {
+          "position_sessions": 91.0,
+          "stale_position_sessions": 3.0,
+          "overnight": 404.54250000000235,
+          "rth": 3013.904600000001
+        },
+        "at_or_below_reference/4": {
+          "position_sessions": 91.0,
+          "stale_position_sessions": 4.0,
+          "overnight": -339.98459999999733,
+          "rth": 446.474699999994
+        },
+        "at_or_below_reference/5": {
+          "position_sessions": 91.0,
+          "overnight": 1218.8653000000015,
+          "rth": 6631.6696,
+          "stale_position_sessions": 4.0
+        },
+        "at_or_below_reference/6": {
+          "position_sessions": 91.0,
+          "overnight": 1211.905400000002,
+          "rth": -3709.148710000001,
+          "stale_position_sessions": 6.0
+        },
+        "at_or_below_reference/7": {
+          "position_sessions": 91.0,
+          "overnight": -2325.2712900000006,
+          "rth": -829.2917000000048,
+          "stale_position_sessions": 7.0
+        },
+        "at_or_below_reference/8": {
+          "position_sessions": 91.0,
+          "overnight": 1461.3067000000083,
+          "rth": -529.5295000000037,
+          "stale_position_sessions": 6.0
+        },
+        "at_or_below_reference/9": {
+          "position_sessions": 91.0,
+          "overnight": 1883.964800000002,
+          "rth": -3430.432300000003,
+          "stale_position_sessions": 6.0
+        },
+        "at_or_below_reference/10": {
+          "position_sessions": 91.0,
+          "overnight": 138.19700000000685,
+          "rth": 1620.8459999999927,
+          "costs": -539.8544240000001,
+          "stale_position_sessions": 7.0
+        },
+        "above_reference/0": {
+          "position_sessions": 91.0,
+          "costs": -252.43897810000004
+        },
+        "above_reference/1": {
+          "position_sessions": 91.0,
+          "overnight": 1393.7427000000005,
+          "rth": -2792.459600000002,
+          "stale_position_sessions": 1.0
+        },
+        "above_reference/2": {
+          "position_sessions": 91.0,
+          "overnight": -2461.8470000000007,
+          "rth": 1661.5162000000016,
+          "stale_position_sessions": 3.0
+        },
+        "above_reference/3": {
+          "position_sessions": 91.0,
+          "overnight": 1385.1707999999996,
+          "rth": -4319.601200000001,
+          "stale_position_sessions": 3.0
+        },
+        "above_reference/4": {
+          "position_sessions": 91.0,
+          "overnight": -1580.5887999999968,
+          "rth": -1075.3700000000024,
+          "stale_position_sessions": 3.0
+        },
+        "above_reference/5": {
+          "position_sessions": 91.0,
+          "overnight": 716.8990000000028,
+          "rth": -672.9338000000029,
+          "stale_position_sessions": 3.0
+        },
+        "above_reference/6": {
+          "position_sessions": 91.0,
+          "overnight": 1129.1662000000015,
+          "rth": 2346.635599999996,
+          "stale_position_sessions": 3.0
+        },
+        "above_reference/7": {
+          "position_sessions": 91.0,
+          "overnight": -2430.725599999995,
+          "rth": 1399.6986000000006,
+          "stale_position_sessions": 4.0
+        },
+        "above_reference/8": {
+          "position_sessions": 91.0,
+          "overnight": 1040.24,
+          "rth": 1414.0847999999974,
+          "stale_position_sessions": 5.0
+        },
+        "above_reference/9": {
+          "position_sessions": 91.0,
+          "overnight": -251.1397999999981,
+          "rth": 212.0484999999989,
+          "stale_position_sessions": 4.0
+        },
+        "above_reference/10": {
+          "position_sessions": 91.0,
+          "overnight": 666.5465000000017,
+          "rth": -1904.7663000000036,
+          "costs": -245.45965069999997,
+          "stale_position_sessions": 5.0
+        },
+        "above_reference/11_plus_delayed": {
+          "position_sessions": 370.0,
+          "stale_position_sessions": 368.0,
+          "overnight": 566.0799999999999,
+          "rth": 0.0,
+          "costs": -4.093640000000001
+        },
+        "missing/0": {
+          "position_sessions": 15.0,
+          "costs": -156.30963500000004
+        },
+        "missing/1": {
+          "position_sessions": 15.0,
+          "overnight": 4217.775000000001,
+          "rth": 4061.210800000002
+        },
+        "missing/2": {
+          "position_sessions": 15.0,
+          "overnight": 1909.5791999999992,
+          "rth": 1860.7939999999999
+        },
+        "missing/3": {
+          "position_sessions": 15.0,
+          "overnight": 196.26599999999834,
+          "rth": -1038.8549999999984
+        },
+        "missing/4": {
+          "position_sessions": 15.0,
+          "overnight": 87.70500000000095,
+          "rth": -2682.922100000002,
+          "stale_position_sessions": 1.0
+        },
+        "missing/5": {
+          "position_sessions": 15.0,
+          "overnight": 1498.5820999999985,
+          "rth": -106.01999999999995,
+          "stale_position_sessions": 2.0
+        },
+        "missing/6": {
+          "position_sessions": 15.0,
+          "overnight": 538.2150000000042,
+          "rth": 688.6043999999978,
+          "stale_position_sessions": 1.0
+        },
+        "missing/7": {
+          "position_sessions": 15.0,
+          "overnight": 141.35500000000172,
+          "rth": -613.855,
+          "stale_position_sessions": 3.0
+        },
+        "missing/8": {
+          "position_sessions": 15.0,
+          "overnight": -1458.2699999999986,
+          "rth": 2497.570999999998,
+          "stale_position_sessions": 2.0
+        },
+        "missing/9": {
+          "position_sessions": 15.0,
+          "overnight": 849.7439999999993,
+          "rth": -2641.836600000001,
+          "stale_position_sessions": 3.0
+        },
+        "missing/10": {
+          "position_sessions": 15.0,
+          "overnight": 593.8566000000017,
+          "rth": -1933.0119000000009,
+          "costs": -83.5827692,
+          "stale_position_sessions": 3.0
+        },
+        "at_or_below_reference/11_plus_delayed": {
+          "position_sessions": 141.0,
+          "stale_position_sessions": 136.0,
+          "overnight": 3617.5750000000016,
+          "rth": 0.0,
+          "costs": -33.995685
+        },
+        "missing/11_plus_delayed": {
+          "position_sessions": 129.0,
+          "stale_position_sessions": 127.0,
+          "overnight": -805.1844000000003,
+          "rth": 0.0,
+          "costs": -58.17932999999999
+        }
+      },
+      "reconciled_total": 21662.039154500002,
+      "difference": 7.275957614183426e-12
+    }
+  },
+  "attribution": {
+    "R4": {
+      "states": {
+        "at_or_below_reference": {
+          "tickets": 91.0,
+          "incremental_profit_vs_parent": 2151.4341815000025,
+          "candidate_profit": 9923.535375300007
+        },
+        "above_reference": {
+          "tickets": 91.0,
+          "incremental_profit_vs_parent": 3234.1169854000022,
+          "candidate_profit": -5846.569421299993
+        },
+        "missing": {
+          "tickets": 15.0,
+          "incremental_profit_vs_parent": 2241.9060373,
+          "candidate_profit": 10001.482564400003
+        }
+      },
+      "top_symbol_deltas": [
+        [
+          "IREN",
+          1566.4188957999995
+        ],
+        [
+          "BATL",
+          1175.7604399999998
+        ],
+        [
+          "BKKT",
+          1054.2684181999991
+        ],
+        [
+          "AXTI",
+          1000.3350879999994
+        ],
+        [
+          "NBY",
+          972.6579000000002
+        ],
+        [
+          "MRAM",
+          940.0896468999989
+        ],
+        [
+          "WOLF",
+          908.8874999999998
+        ],
+        [
+          "BNAI",
+          830.6501170000004
+        ]
+      ],
+      "bottom_symbol_deltas": [
+        [
+          "HYMC",
+          -762.5180699999996
+        ],
+        [
+          "TERN",
+          -638.3477799999995
+        ],
+        [
+          "RPD",
+          -541.3576199999999
+        ],
+        [
+          "TRAX",
+          -518.9314699999998
+        ],
+        [
+          "RCAT",
+          -491.29070000000013
+        ],
+        [
+          "FCEL",
+          -487.988655
+        ],
+        [
+          "ENPH",
+          -377.60379999999986
+        ],
+        [
+          "FSLY",
+          -346.38216000000034
+        ]
+      ],
+      "month_deltas": {
+        "2025-09": 4337.4713158,
+        "2025-11": 525.2644723000024,
+        "2026-01": -1098.6614867999988,
+        "2026-03": 3278.2663049999987,
+        "2026-05": 1509.8818128999992,
+        "2026-07": -924.765214999999
+      },
+      "comparator": "working constant $4000 parent; includes intended-scale and feature effects, matched controls separate"
+    },
+    "R5": {
+      "states": {
+        "at_or_below_reference": {
+          "tickets": 91.0,
+          "incremental_profit_vs_parent": 10386.302063699999,
+          "candidate_profit": 18158.403257499987
+        },
+        "above_reference": {
+          "tickets": 91.0,
+          "incremental_profit_vs_parent": 5021.090937900002,
+          "candidate_profit": -4059.595468800005
+        },
+        "missing": {
+          "tickets": 15.0,
+          "incremental_profit_vs_parent": -196.34516129999918,
+          "candidate_profit": 7563.2313658
+        }
+      },
+      "top_symbol_deltas": [
+        [
+          "BATL",
+          5493.958359999999
+        ],
+        [
+          "NBY",
+          3663.6780900000003
+        ],
+        [
+          "WOLF",
+          2140.85018
+        ],
+        [
+          "IREN",
+          2104.2002282
+        ],
+        [
+          "MRAM",
+          1518.4653042999992
+        ],
+        [
+          "AXTI",
+          1501.4588436
+        ],
+        [
+          "BKKT",
+          1430.5339499999993
+        ],
+        [
+          "RGTI",
+          907.1514000000004
+        ]
+      ],
+      "bottom_symbol_deltas": [
+        [
+          "TRAX",
+          -1386.40664
+        ],
+        [
+          "CDNA",
+          -831.3358800000003
+        ],
+        [
+          "RPD",
+          -732.0753199999998
+        ],
+        [
+          "RCAT",
+          -665.0398500000001
+        ],
+        [
+          "FCEL",
+          -660.219945
+        ],
+        [
+          "ENPH",
+          -528.6453199999997
+        ],
+        [
+          "WATT",
+          -478.06376000000046
+        ],
+        [
+          "RGC",
+          -457.5698199999998
+        ]
+      ],
+      "month_deltas": {
+        "2025-09": 5863.811083200001,
+        "2025-11": 1530.2204737000004,
+        "2026-01": 1630.2203155000007,
+        "2026-03": 6678.123230600001,
+        "2026-05": 3733.7370272999988,
+        "2026-07": -4225.064289999999
+      },
+      "comparator": "working constant $4000 parent; includes intended-scale and feature effects, matched controls separate"
+    }
+  },
+  "interpretation": "Descriptive attribution, not hindsight exits, exclusions or independent validation"
+}

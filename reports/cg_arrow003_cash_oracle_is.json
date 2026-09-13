@@ -1,0 +1,629 @@
+{
+  "timestamp": "2026-09-13T19:09:54+00:00",
+  "mode": "IS",
+  "books": [
+    {
+      "book": "A1_R4_ORDINAL_PARTICIPATION",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "50756c0f92fcb45004abebda8fdf0bfb626a9a4eabb93f1e6d06057c34882acd"
+    },
+    {
+      "book": "A2_R4_LATE_PARTICIPATION",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.0186340659856796e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "dc1b750801e0513af3d149d3c92f9e1f3a7625b393de7e18d7ac5b44fa8ef6b5"
+    },
+    {
+      "book": "A3_R4_DRAWDOWN_NEW",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 1.4551915228366852e-11,
+      "detail_sha256": "21f894acb7ba771cbe01258809ab2f212d2dca511c349cf6199ea9f948c4599a"
+    },
+    {
+      "book": "A4",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 2.1827872842550278e-11,
+      "detail_sha256": "a2b5ae728b30bcbee286fa65f7b4cce14200d06ba6006278f621a0fce9a84887"
+    },
+    {
+      "book": "A4_R5_SYMBOL_BUDGET",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 386,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.1641532182693481e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "a70de39457158963bc969b10c78ae3b2c3b14e497dddfc942cbe14f698685182"
+    },
+    {
+      "book": "A5_R4_LATE_WEAK_PART_COVER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 410,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.473825588822365e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "50764b864023186c2fbd4da45017802912fdf9e108948296ded1269a4d2e89e3"
+    },
+    {
+      "book": "A6_R5_STALL_VOTES",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.4551915228366852e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "76f79d529a3409e818b4046e56c79164f9c02a8d75c56ada9b76236132a7a053"
+    },
+    {
+      "book": "A7_R4_MINUTE_LATE_COVER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 420,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.6193447411060333e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "4ae13f77bbf65c2e7e6689593f0f327a4328451ba71cc2c50d24dc98b33eadef"
+    },
+    {
+      "book": "A8_R5_MINUTE_LATE_COVER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 420,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.0372681319713593e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "7c91c48e5ffb2e20de673feeb8675b3b00eb2ce236e1b735d2c158922ca2bbd0"
+    },
+    {
+      "book": "AR1_R4_LATE_COVER_DAY7",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 407,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.1827872842550278e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "101e8500938f1ad8c90098868cfdaca32e9342fd8e4941c3def8f3d69ff9d62c"
+    },
+    {
+      "book": "AR2_R5_LATE_WEAK_PART_COVER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 410,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.6007106751203537e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "860cb47e39a98a0d0b06fe5eca4c051f746daf666b996909b797606dc6b06ae2"
+    },
+    {
+      "book": "AR3_R4_LATE_COVER_CONSERVATIVE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 410,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 2.1827872842550278e-11,
+      "detail_sha256": "7d9333fb975b1cb167c3db0dbe00468968f2a7b25d998173f383c439be2d41c1"
+    },
+    {
+      "book": "AR4_R5_VOTES_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.7462298274040222e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "115a971e307dcf625e0066d2f2c4d29cc8f90350087677d401d8d7ab5cc434b3"
+    },
+    {
+      "book": "AR5_R5_VOTES_LATE_COVER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 410,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "9f0d6887c56c314bb6308ec462d5367d3cf8f18c711c897bdfd2bda1a431dac4"
+    },
+    {
+      "book": "AR6_R5_VOTES_COVER_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 410,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "e94a06a1982d18d5435dde6c33777f59861c325d8760897c3f2bb1176d8a5693"
+    },
+    {
+      "book": "AR7_R4_LATE_COVER_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 410,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "493ca238b5d212731ecf7eaa3c34e91e5dd91cf0653f6c2f15ac684a5389b64f"
+    },
+    {
+      "book": "AR8_R5_VOTES_COVER_CONSERVATIVE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 410,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.3283064365386963e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "f90a7b2d861d3ff8e1865dfe50edb4fa0b4fbfecf99cbc40b060fe9be7445254"
+    },
+    {
+      "book": "C1_R4_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.6193447411060333e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "9900b147ecce99c01032c0e4dd21f2ef6c6ded225e72dfe3c7177e2aafca7511"
+    },
+    {
+      "book": "C1_R4_PREORDER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.6193447411060333e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "9900b147ecce99c01032c0e4dd21f2ef6c6ded225e72dfe3c7177e2aafca7511"
+    },
+    {
+      "book": "C1_R5_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.0186340659856796e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "94810e6cc2485ac1a5fb0531395129eb6d35470cb37d2c044990de5c4b2b6111"
+    },
+    {
+      "book": "C1_R5_PREORDER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.0186340659856796e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "c9ed7728cf75dc74394c2bc55bbb7e400ea5984c1892face0789d9582b8298ef"
+    },
+    {
+      "book": "C2_R4_MEDIAN",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.473825588822365e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "1e2615a095cedf7f8f4df0499289fe05e8c7d913a143243bbed6728572f9a1c7"
+    },
+    {
+      "book": "C2_R4_PERSIST3",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "9ac297acbd252b326f487461fe11d21d6f102beb538f8889f23cd4ec267fb815"
+    },
+    {
+      "book": "C2_R5_MEDIAN",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.6193447411060333e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "b5aa6d567d82334346cd63fd55f3243a6175ea26585e92e65ec5fda3e0539a5e"
+    },
+    {
+      "book": "C3_R4_VOLUME_TAPER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "a485ae6a53e9ba158f333ebd13b2d4bbd29919a31a5d58997207c68c8231cee1"
+    },
+    {
+      "book": "C3_R5_MOMENTUM_TAPER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.9103830456733704e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "c030cc1fe992a15181d41dfb82db70aaccc42d768048d39a7dd3bb46e4e1b167"
+    },
+    {
+      "book": "C3_R5_TAPER_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.4551915228366852e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "c6e460f393e91325265338c50a16f5031b2e7cce97ba704168755e2bb7c6c782"
+    },
+    {
+      "book": "C3_R5_TAPER_SWITCH_FALLBACK",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "161f55b980f006ab0be6b751fda506f4f4b05c461accef0f5cf5b319707090bc"
+    },
+    {
+      "book": "C3_R5_VOLUME_TAPER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.0186340659856796e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "819f4362918937a3b7cdf6ff18e746e31c56044a3a5a16412ae828b54d779d7a"
+    },
+    {
+      "book": "C4_R4_ENTRY_UPDATE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "9186c5f25254a14999e47ca22aed0c0e5f36ea93d4692300acbfdb1753001f2d"
+    },
+    {
+      "book": "C5_R4_EARNED_FADE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 399,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.0372681319713593e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "cdae61f66810c19925859aaa5bd2618c467d14a461dc3ab7043baaac7f02a9aa"
+    },
+    {
+      "book": "C5_R4_FADE_ATR15",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 395,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.6007106751203537e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "f9cc387a8d3f0a009174b3fb538e8447310462c46364d83d1ada44c62455f89f"
+    },
+    {
+      "book": "C5_R4_FADE_CONSERVATIVE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 399,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 8.731149137020111e-11,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "a956bd693c937345c9c61268fd7ab1f029d95f6e6d4218ba8cf015f974c356e0"
+    },
+    {
+      "book": "C5_R4_FADE_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 399,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.3283064365386963e-10,
+      "max_marked_gross_error": 1.4551915228366852e-11,
+      "detail_sha256": "ddc1dabcfbfa9875b36dd5de5fbba28cd69cdb1d7e9a1ea2ca1d9847b376ab6e"
+    },
+    {
+      "book": "C5_R4_SIZE_CONSERVATIVE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.0186340659856796e-10,
+      "max_marked_gross_error": 2.1827872842550278e-11,
+      "detail_sha256": "04a3f2df9858c86886e10c0b092fa5ef1fb341485ae0c23b4baaf92a41522307"
+    },
+    {
+      "book": "C5_R5_EARNED_FADE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 399,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "316514daecd94c947840647cc7dd6aced8ed5a63156162845aec8d74ac0c4464"
+    },
+    {
+      "book": "C6_BLEND_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 4.0745362639427185e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "54efc1e5e61d53b2d76456ef9c504677cbbed1b4cc68b9d0c1dc65c52aac059c"
+    },
+    {
+      "book": "MATCH_A3_R4_DRAWDOWN_NEW",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.9103830456733704e-10,
+      "max_marked_gross_error": 2.1827872842550278e-11,
+      "detail_sha256": "b5c6b4025152827d7d54ee82e20a43cfa12111df5ea7bc8f4059a15ae31e69d5"
+    },
+    {
+      "book": "MATCH_A4_R5_SYMBOL_BUDGET",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "ed396d3f90bdbbbe5caac88761884489e63630407097d695eb02984100e1800c"
+    },
+    {
+      "book": "MATCH_A5_R4_LATE_WEAK_PART_COVER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.6007106751203537e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "3ffa582d03228d05e03a65258e5963663f7ffee1ff99a9017629a1e2ca5f8ee5"
+    },
+    {
+      "book": "MATCH_A6_R5_STALL_VOTES",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.4551915228366852e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "988225dc0a2dfb5682f734db99df64fc75556f818524c3aa33736681a13780be"
+    },
+    {
+      "book": "MATCH_AR2_R5_LATE_WEAK_PART_COVER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.7462298274040222e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "1adcef8dd3c5d2296b47e5018abb81914c9d828550d0b87475ef96d202936d81"
+    },
+    {
+      "book": "MATCH_AR3_R4_LATE_COVER_CONSERVATIVE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 3.2014213502407074e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "f7d1d62b4bc287eac1a8291df6bd915f11e4081d660b3d5d7b9cc8afb1e64b98"
+    },
+    {
+      "book": "MATCH_AR6_R5_VOTES_COVER_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.0186340659856796e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "16bb21ce4f27aa8af00dd1e7f0ef6286dda0e63520e214d51f80f9ae7261747e"
+    },
+    {
+      "book": "MATCH_AR7_R4_LATE_COVER_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.6007106751203537e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "7c62ff6fb2b4c428d76a2df6ebb9b4b2f23bcc8bdb322407d1d615a0819ecb72"
+    },
+    {
+      "book": "MATCH_AR8_R5_VOTES_COVER_CONSERVATIVE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.4551915228366852e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "b83aa0e261ba85a64b07a59868a90b671eabab05688e1d2b8a2c35bc3b0bb359"
+    },
+    {
+      "book": "MATCH_C2_R4_MEDIAN",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.0186340659856796e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "d20b3f6312cdd31f4834f5d07b0b0214b8138b7cc6e3ee4701068a38bb5aa3f4"
+    },
+    {
+      "book": "MATCH_C3_R4_VOLUME_TAPER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.3096723705530167e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "e102507c59db2cfa5cf58fe6ee03f40b6a3f78a180689a0452c3478c4769af1f"
+    },
+    {
+      "book": "MATCH_C3_R5_MOMENTUM_TAPER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.473825588822365e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "0fdb719df8f21a5b6f68a799fc3f3453fff3889582c712483ed80befc99c82c8"
+    },
+    {
+      "book": "MATCH_C3_R5_TAPER_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.1827872842550278e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "82b9c54de42137fe1bdf4038b8dd1c14faf0ba6ea619a08829ff088cc7fd6ae5"
+    },
+    {
+      "book": "MATCH_C3_R5_VOLUME_TAPER",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.7462298274040222e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "25f795f27e712846cd9f5fdbb7cea3292c7d9737c1c9d9e38aabe2bc694dd3c0"
+    },
+    {
+      "book": "MATCH_C5_R4_EARNED_FADE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.0186340659856796e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "2278351b449407aebcc6d2203fa2dcc395af13c364069b55007ac07a35c276b3"
+    },
+    {
+      "book": "MATCH_C6_BLEND_PACED",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.4551915228366852e-10,
+      "max_marked_gross_error": 1.4551915228366852e-11,
+      "detail_sha256": "9983e4082eb5771c11e9cb33691b67dc9c84ccfc3f9414388420083fa09d8ceb"
+    },
+    {
+      "book": "PARENT",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.4551915228366852e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "b6f8c92191cc0020c9af4bde4ffc6e7873f87fb4bd9c4c218d1c3481ad018b89"
+    },
+    {
+      "book": "PARENT_MATCH_R4",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.0186340659856796e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "4b1ad1863df7f8b9f9868cc644a64a98b8a376e40be446cfa3a159e6fd3c12fa"
+    },
+    {
+      "book": "PARENT_MATCH_R5",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.8917489796876907e-10,
+      "max_marked_gross_error": 2.1827872842550278e-11,
+      "detail_sha256": "bb10b243a1b4d890f411375a9f8eb82de57b48dfbd6da00efc12152f96660efa"
+    },
+    {
+      "book": "R1",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.6007106751203537e-10,
+      "max_marked_gross_error": 1.4551915228366852e-11,
+      "detail_sha256": "9ff599fc8e893fa505adc903c071db8c7bec4e603cee18daf1fab48cb2ec59bf"
+    },
+    {
+      "book": "R4",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.1827872842550278e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "a6a53fcf7f3760d4574898c08f018fd3dc8c30872f3bdc5de165af607edd68aa"
+    },
+    {
+      "book": "R4_FIXED_BASE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.6007106751203537e-10,
+      "max_marked_gross_error": 4.3655745685100555e-11,
+      "detail_sha256": "ebd990283f7859047cab88ec87b8458021e0757a6b19fbb1dbde58ef7f1f733f"
+    },
+    {
+      "book": "R5",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 1.1641532182693481e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "9177d8b899c730ea6c271cc41e14cada42e7ae29acb62457db611cfd3cbb090c"
+    },
+    {
+      "book": "R5_CONSERVATIVE_7000",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.6193447411060333e-10,
+      "max_marked_gross_error": 2.9103830456733704e-11,
+      "detail_sha256": "c00daf8d72d475d916b18750940a69bfa769527f81f8583cf013a65d5ec7656d"
+    },
+    {
+      "book": "R5_FIXED_BASE",
+      "mode": "IS",
+      "calendar_sessions": 251,
+      "observed_executions_verified": 388,
+      "terminal_tickets": 6,
+      "max_cash_equity_error": 2.6193447411060333e-10,
+      "max_marked_gross_error": 5.820766091346741e-11,
+      "detail_sha256": "0414155d02a9ff4e67b194bc01a2677751f78f2d225425ec87c86d08690c4a5e"
+    }
+  ],
+  "wall_seconds": 5.6843826999975136,
+  "method": "Entry sale proceeds minus cover cash and independent per-side cost formula, less open short liabilities; verify every saved fill against its actual observation and timing. Same input data, independent accounting identity.",
+  "limitation": "Agreement cannot certify unobserved prices, corporate-action completeness, stock loans, dividends, actual fills or economic edge."
+}

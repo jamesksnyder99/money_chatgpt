@@ -1,0 +1,192 @@
+{
+  "timestamp": "2026-09-13T19:05:37+00:00",
+  "books": {
+    "C5_R4_EARNED_FADE": {
+      "control": "R4",
+      "half_covers": 11,
+      "cover_notional": 13839.505000000001,
+      "baseline_increment": 772.2458499999993,
+      "extra_adverse_cover_bps_to_erase_increment": 558.0010628992867,
+      "increment_after_extra_cover_bps": {
+        "5": 765.3260974999994,
+        "10": 758.4063449999993,
+        "25": 737.6470874999993,
+        "50": 703.0483249999993
+      },
+      "calendar_cover_notional": {
+        "2026-01": 2334.65,
+        "2026-03": 1105.4450000000002,
+        "2026-04": 1980.0,
+        "2026-05": 1046.25,
+        "2026-06": 4078.5950000000003,
+        "2026-07": 3294.5649999999996
+      },
+      "interpretation": "For combined sizing policies, this is the whole-policy increment, not a clean causal attribution to covers alone."
+    },
+    "C5_R4_FADE_ATR15": {
+      "control": "R4",
+      "half_covers": 7,
+      "cover_notional": 9168.085000000001,
+      "baseline_increment": 1283.332049999999,
+      "extra_adverse_cover_bps_to_erase_increment": 1399.7820155463207,
+      "increment_after_extra_cover_bps": {
+        "5": 1278.7480074999992,
+        "10": 1274.163964999999,
+        "25": 1260.4118374999991,
+        "50": 1237.491624999999
+      },
+      "calendar_cover_notional": {
+        "2026-04": 1980.0,
+        "2026-05": 1046.25,
+        "2026-06": 4078.5950000000003,
+        "2026-07": 2063.2400000000002
+      },
+      "interpretation": "For combined sizing policies, this is the whole-policy increment, not a clean causal attribution to covers alone."
+    },
+    "A5_R4_LATE_WEAK_PART_COVER": {
+      "control": "R4",
+      "half_covers": 22,
+      "cover_notional": 46148.037000000004,
+      "baseline_increment": 2057.7890180000013,
+      "extra_adverse_cover_bps_to_erase_increment": 445.91041174730816,
+      "increment_after_extra_cover_bps": {
+        "5": 2034.7149995000013,
+        "10": 2011.6409810000014,
+        "25": 1942.4189255000013,
+        "50": 1827.0488330000012
+      },
+      "calendar_cover_notional": {
+        "2025-09": 2276.0,
+        "2025-11": 6852.225,
+        "2025-12": 2370.06,
+        "2026-02": 1925.9520000000002,
+        "2026-03": 12364.65,
+        "2026-04": 4026.33,
+        "2026-06": 3701.145,
+        "2026-07": 12631.675
+      },
+      "interpretation": "For combined sizing policies, this is the whole-policy increment, not a clean causal attribution to covers alone."
+    },
+    "AR2_R5_LATE_WEAK_PART_COVER": {
+      "control": "R5",
+      "half_covers": 22,
+      "cover_notional": 45450.91,
+      "baseline_increment": 2061.7670400000025,
+      "extra_adverse_cover_bps_to_erase_increment": 453.6250297298783,
+      "increment_after_extra_cover_bps": {
+        "5": 2039.0415850000024,
+        "10": 2016.3161300000024,
+        "25": 1948.1397650000024,
+        "50": 1834.5124900000023
+      },
+      "calendar_cover_notional": {
+        "2025-09": 1849.2500000000002,
+        "2025-11": 9122.195,
+        "2025-12": 1908.3600000000001,
+        "2026-02": 1547.64,
+        "2026-03": 12817.35,
+        "2026-04": 3220.65,
+        "2026-06": 2970.985,
+        "2026-07": 12014.48
+      },
+      "interpretation": "For combined sizing policies, this is the whole-policy increment, not a clean causal attribution to covers alone."
+    },
+    "AR3_R4_LATE_COVER_CONSERVATIVE": {
+      "control": "R4",
+      "half_covers": 22,
+      "cover_notional": 41569.455,
+      "baseline_increment": 528.6649301999969,
+      "extra_adverse_cover_bps_to_erase_increment": 127.17629572001769,
+      "increment_after_extra_cover_bps": {
+        "5": 507.88020269999686,
+        "10": 487.0954751999969,
+        "25": 424.7412926999969,
+        "50": 320.8176551999969
+      },
+      "calendar_cover_notional": {
+        "2025-09": 2048.4,
+        "2025-11": 6177.25,
+        "2025-12": 2123.82,
+        "2026-02": 1719.6000000000001,
+        "2026-03": 11190.109999999999,
+        "2026-04": 3600.99,
+        "2026-06": 3336.065,
+        "2026-07": 11373.22
+      },
+      "interpretation": "For combined sizing policies, this is the whole-policy increment, not a clean causal attribution to covers alone."
+    },
+    "AR6_R5_VOTES_COVER_PACED": {
+      "control": "R5",
+      "half_covers": 22,
+      "cover_notional": 45044.455,
+      "baseline_increment": 4559.544447900003,
+      "extra_adverse_cover_bps_to_erase_increment": 1012.2321266624278,
+      "increment_after_extra_cover_bps": {
+        "5": 4537.022220400004,
+        "10": 4514.499992900003,
+        "25": 4446.933310400003,
+        "50": 4334.322172900003
+      },
+      "calendar_cover_notional": {
+        "2025-09": 1820.8000000000002,
+        "2025-11": 7310.290000000001,
+        "2025-12": 1877.5800000000002,
+        "2026-02": 3095.28,
+        "2026-03": 14613.55,
+        "2026-04": 3220.65,
+        "2026-06": 2987.355,
+        "2026-07": 10118.95
+      },
+      "interpretation": "For combined sizing policies, this is the whole-policy increment, not a clean causal attribution to covers alone."
+    },
+    "AR7_R4_LATE_COVER_PACED": {
+      "control": "R4",
+      "half_covers": 22,
+      "cover_notional": 46109.547,
+      "baseline_increment": 2077.4462504000003,
+      "extra_adverse_cover_bps_to_erase_increment": 450.5457948654322,
+      "increment_after_extra_cover_bps": {
+        "5": 2054.3914769000003,
+        "10": 2031.3367034000003,
+        "25": 1962.1723829000002,
+        "50": 1846.8985154000002
+      },
+      "calendar_cover_notional": {
+        "2025-09": 2276.0,
+        "2025-11": 6871.5650000000005,
+        "2025-12": 2339.28,
+        "2026-02": 1925.9520000000002,
+        "2026-03": 12351.91,
+        "2026-04": 4012.02,
+        "2026-06": 3701.145,
+        "2026-07": 12631.675
+      },
+      "interpretation": "For combined sizing policies, this is the whole-policy increment, not a clean causal attribution to covers alone."
+    },
+    "AR8_R5_VOTES_COVER_CONSERVATIVE": {
+      "control": "R5",
+      "half_covers": 22,
+      "cover_notional": 38032.032,
+      "baseline_increment": 445.95646290000514,
+      "extra_adverse_cover_bps_to_erase_increment": 117.25812149611284,
+      "increment_after_extra_cover_bps": {
+        "5": 426.94044690000516,
+        "10": 407.9244309000051,
+        "25": 350.8763829000051,
+        "50": 255.79630290000514
+      },
+      "calendar_cover_notional": {
+        "2025-09": 1536.3000000000002,
+        "2025-11": 6170.879999999999,
+        "2025-12": 1600.56,
+        "2026-02": 2613.7920000000004,
+        "2026-03": 12308.9,
+        "2026-04": 2693.0699999999997,
+        "2026-06": 2522.8199999999997,
+        "2026-07": 8585.71
+      },
+      "interpretation": "For combined sizing policies, this is the whole-policy increment, not a clean causal attribution to covers alone."
+    }
+  },
+  "scope": "IS fixed-execution-ledger sensitivity; baseline spread and commissions already included; no assumptions about actual fill capacity"
+}

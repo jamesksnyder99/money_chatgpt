@@ -1,0 +1,1169 @@
+{
+  "timestamp": "2026-09-13T18:17:03+00:00",
+  "cohort": "IS only",
+  "books": {
+    "A4": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 1939.13,
+        "DNTH": 4196.0,
+        "AGL": 4079.5,
+        "AMBQ": 4333.280000000001,
+        "FBRX": 4463.360000000001
+      },
+      "stale_total": 19011.27,
+      "total_pnl": 11018.6122823,
+      "base_increment": -3059.836236099998,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 20524.2472823,
+        "0.1": 9117.4852823,
+        "0.5": 1512.9772823000003,
+        "1.0": -7992.6577177
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -5826.846236099998,
+        "0.1": -2506.434236099998,
+        "0.5": -292.8262360999979,
+        "1.0": 2474.1837639000023
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 5534.02,
+      "stale_symbol_gross_difference": {
+        "DNTH": -1174.88,
+        "AMBQ": -1226.3999999999996,
+        "FBRX": -1318.7200000000003,
+        "AGL": -1223.8500000000004,
+        "SNDK": -590.1700000000001
+      }
+    },
+    "C1_R4_PACED": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2529.3,
+        "DNTH": 5370.88,
+        "AGL": 5303.35,
+        "AMBQ": 5559.68,
+        "FBRX": 5782.080000000001
+      },
+      "stale_total": 24545.29,
+      "total_pnl": 14093.446090799996,
+      "base_increment": 14.997572399997807,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 26366.091090799997,
+        "0.1": 11638.917090799996,
+        "0.5": 1820.801090799996,
+        "1.0": -10451.843909200004
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 14.997572399997807,
+        "0.1": 14.997572399997807,
+        "0.5": 14.997572399997807,
+        "1.0": 14.997572399997807
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 0.0,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    },
+    "C1_R4_PREORDER": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2529.3,
+        "DNTH": 5370.88,
+        "AGL": 5303.35,
+        "AMBQ": 5559.68,
+        "FBRX": 5782.080000000001
+      },
+      "stale_total": 24545.29,
+      "total_pnl": 14093.446090799996,
+      "base_increment": 14.997572399997807,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 26366.091090799997,
+        "0.1": 11638.917090799996,
+        "0.5": 1820.801090799996,
+        "1.0": -10451.843909200004
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 14.997572399997807,
+        "0.1": 14.997572399997807,
+        "0.5": 14.997572399997807,
+        "1.0": 14.997572399997807
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 0.0,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    },
+    "C1_R5_PACED": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2023.44,
+        "DNTH": 8643.76,
+        "AGL": 4324.27,
+        "AMBQ": 4496.8,
+        "FBRX": 4666.240000000001
+      },
+      "stale_total": 24154.510000000002,
+      "total_pnl": 21820.764522399997,
+      "base_increment": 158.7253679000023,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 33898.0195224,
+        "0.1": 19405.313522399996,
+        "0.5": 9743.509522399996,
+        "1.0": -2333.745477600005
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 199.52036790000238,
+        "0.1": 150.5663679000023,
+        "0.5": 117.93036790000224,
+        "1.0": 77.13536790000217
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 81.59000000000015,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": 81.59000000000015,
+        "SNDK": 0.0
+      }
+    },
+    "C1_R5_PREORDER": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2023.44,
+        "DNTH": 8643.76,
+        "AGL": 4324.27,
+        "AMBQ": 4496.8,
+        "FBRX": 4666.240000000001
+      },
+      "stale_total": 24154.510000000002,
+      "total_pnl": 21586.5281424,
+      "base_increment": -75.51101209999615,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 33663.7831424,
+        "0.1": 19171.077142399998,
+        "0.5": 9509.273142399998,
+        "1.0": -2567.9818576000034
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -34.71601209999608,
+        "0.1": -83.67001209999617,
+        "0.5": -116.30601209999622,
+        "1.0": -157.1010120999963
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 81.59000000000015,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": 81.59000000000015,
+        "SNDK": 0.0
+      }
+    },
+    "C2_R4_MEDIAN": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2529.3,
+        "DNTH": 5370.88,
+        "AGL": 2610.88,
+        "AMBQ": 5559.68,
+        "FBRX": 2891.0400000000004
+      },
+      "stale_total": 18961.780000000002,
+      "total_pnl": 10600.688953999997,
+      "base_increment": -3477.759564400001,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 20081.578953999997,
+        "0.1": 8704.510953999998,
+        "0.5": 1119.7989539999962,
+        "1.0": -8361.091046000005
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -6269.514564400001,
+        "0.1": -2919.408564400001,
+        "0.5": -686.0045644000011,
+        "1.0": 2105.750435599999
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 5583.51,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": -2891.0400000000004,
+        "AGL": -2692.4700000000003,
+        "SNDK": 0.0
+      }
+    },
+    "C2_R4_PERSIST3": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2529.3,
+        "DNTH": 5370.88,
+        "AGL": 2610.88,
+        "AMBQ": 5559.68,
+        "FBRX": 5782.080000000001
+      },
+      "stale_total": 21852.82,
+      "total_pnl": 11810.407381399997,
+      "base_increment": -2268.041137000002,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 22736.817381399997,
+        "0.1": 9625.125381399997,
+        "0.5": 883.9973813999968,
+        "1.0": -10042.412618600003
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -3614.276137000002,
+        "0.1": -1998.794137000002,
+        "0.5": -921.8061370000019,
+        "1.0": 424.4288629999983
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 2692.4700000000003,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": -2692.4700000000003,
+        "SNDK": 0.0
+      }
+    },
+    "C2_R5_MEDIAN": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2023.44,
+        "DNTH": 8643.76,
+        "AGL": 2121.34,
+        "AMBQ": 4496.8,
+        "FBRX": 2333.1200000000003
+      },
+      "stale_total": 19618.46,
+      "total_pnl": 15361.364055699993,
+      "base_increment": -6300.675098800002,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 25170.594055699992,
+        "0.1": 13399.518055699993,
+        "0.5": 5552.134055699993,
+        "1.0": -4257.0959443000065
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -8527.905098800002,
+        "0.1": -5855.229098800002,
+        "0.5": -4073.4450988000017,
+        "1.0": -1846.2150988000012
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 4454.460000000001,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": -2333.1200000000003,
+        "AGL": -2121.34,
+        "SNDK": 0.0
+      }
+    },
+    "C3_R4_VOLUME_TAPER": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 4552.74,
+        "DNTH": 5370.88,
+        "AGL": 5303.35,
+        "AMBQ": 7848.960000000001,
+        "FBRX": 5782.080000000001
+      },
+      "stale_total": 28858.010000000002,
+      "total_pnl": 11885.544698799999,
+      "base_increment": -2192.9038196,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 26314.5496988,
+        "0.1": 8999.743698799997,
+        "0.5": -2543.4603012000025,
+        "1.0": -16972.465301200005
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -36.543819600000006,
+        "0.1": -2624.1758196,
+        "0.5": -4349.263819600001,
+        "1.0": -6505.6238196
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 4312.72,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 2289.2800000000007,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 2023.4399999999996
+      }
+    },
+    "C3_R5_MOMENTUM_TAPER": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2107.75,
+        "DNTH": 8643.76,
+        "AGL": 5058.58,
+        "AMBQ": 5314.400000000001,
+        "FBRX": 9129.6
+      },
+      "stale_total": 30254.09,
+      "total_pnl": 28378.783420099997,
+      "base_increment": 6716.744265600002,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 43505.8284201,
+        "0.1": 25353.374420099997,
+        "0.5": 13251.738420099997,
+        "1.0": -1875.3065799000033
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 9807.329265600001,
+        "0.1": 6098.627265600002,
+        "0.5": 3626.159265600002,
+        "1.0": 535.574265600002
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 6181.17,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 817.6000000000004,
+        "FBRX": 4463.36,
+        "AGL": 815.8999999999996,
+        "SNDK": 84.30999999999995
+      }
+    },
+    "C3_R5_TAPER_PACED": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2107.75,
+        "DNTH": 8643.76,
+        "AGL": 5140.17,
+        "AMBQ": 5150.880000000001,
+        "FBRX": 6796.4800000000005
+      },
+      "stale_total": 27839.04,
+      "total_pnl": 30591.619731900002,
+      "base_increment": 8929.580577400007,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 44511.1397319,
+        "0.1": 27807.715731900003,
+        "0.5": 16672.0997319,
+        "1.0": 2752.579731900001
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 10812.640577400007,
+        "0.1": 8552.968577400006,
+        "0.5": 7046.520577400007,
+        "1.0": 5163.4605774000065
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 3766.1200000000003,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 654.0800000000008,
+        "FBRX": 2130.24,
+        "AGL": 897.4899999999998,
+        "SNDK": 84.30999999999995
+      }
+    },
+    "C3_R5_TAPER_SWITCH_FALLBACK": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2107.75,
+        "DNTH": 8643.76,
+        "AGL": 5058.58,
+        "AMBQ": 5314.400000000001,
+        "FBRX": 9129.6
+      },
+      "stale_total": 30254.09,
+      "total_pnl": 19824.055215199995,
+      "base_increment": -1837.9839393000002,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 34951.10021519999,
+        "0.1": 16798.646215199995,
+        "0.5": 4697.0102151999945,
+        "1.0": -10430.034784800006
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 1252.6010606999998,
+        "0.1": -2456.1009393000004,
+        "0.5": -4928.5689393,
+        "1.0": -8019.1539393
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 6181.17,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 817.6000000000004,
+        "FBRX": 4463.36,
+        "AGL": 815.8999999999996,
+        "SNDK": 84.30999999999995
+      }
+    },
+    "C3_R5_VOLUME_TAPER": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 3709.6400000000003,
+        "DNTH": 8643.76,
+        "AGL": 4242.68,
+        "AMBQ": 6295.52,
+        "FBRX": 4666.240000000001
+      },
+      "stale_total": 27557.840000000004,
+      "total_pnl": 20065.447573699996,
+      "base_increment": -1596.591580799999,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 33844.3675737,
+        "0.1": 17309.663573699996,
+        "0.5": 6286.527573699994,
+        "1.0": -7492.392426300008
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 145.8684192000012,
+        "0.1": -1945.0835807999993,
+        "0.5": -3339.051580799999,
+        "1.0": -5081.511580799999
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 3484.9200000000005,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 1798.7200000000003,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 1686.2000000000003
+      }
+    },
+    "C4_R4_ENTRY_UPDATE": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2529.3,
+        "DNTH": 5370.88,
+        "AGL": 5303.35,
+        "AMBQ": 8339.52,
+        "FBRX": 5782.080000000001
+      },
+      "stale_total": 27325.13,
+      "total_pnl": 11804.105968699998,
+      "base_increment": -2274.3425497000007,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 25466.670968699997,
+        "0.1": 9071.592968699997,
+        "0.5": -1858.4590313000026,
+        "1.0": -15521.024031300003
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -884.4225497000007,
+        "0.1": -2552.3265497000007,
+        "0.5": -3664.262549700001,
+        "1.0": -5054.182549700001
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 2779.84,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 2779.84,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    },
+    "C5_R4_EARNED_FADE": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2529.3,
+        "DNTH": 5370.88,
+        "AGL": 5303.35,
+        "AMBQ": 5559.68,
+        "FBRX": 5782.080000000001
+      },
+      "stale_total": 24545.29,
+      "total_pnl": 14850.694368399998,
+      "base_increment": 772.2458499999993,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 27123.339368399997,
+        "0.1": 12396.165368399998,
+        "0.5": 2578.0493683999975,
+        "1.0": -9694.595631600003
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 772.2458499999993,
+        "0.1": 772.2458499999993,
+        "0.5": 772.2458499999993,
+        "1.0": 772.2458499999993
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 0.0,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    },
+    "C5_R4_FADE_ATR15": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2529.3,
+        "DNTH": 5370.88,
+        "AGL": 5303.35,
+        "AMBQ": 5559.68,
+        "FBRX": 5782.080000000001
+      },
+      "stale_total": 24545.29,
+      "total_pnl": 15361.780568399998,
+      "base_increment": 1283.332049999999,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 27634.425568399998,
+        "0.1": 12907.251568399997,
+        "0.5": 3089.1355683999973,
+        "1.0": -9183.509431600003
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 1283.332049999999,
+        "0.1": 1283.332049999999,
+        "0.5": 1283.332049999999,
+        "1.0": 1283.332049999999
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 0.0,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    },
+    "C5_R4_FADE_CONSERVATIVE": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2276.37,
+        "DNTH": 4867.36,
+        "AGL": 4813.81,
+        "AMBQ": 4987.360000000001,
+        "FBRX": 5224.160000000001
+      },
+      "stale_total": 22169.06,
+      "total_pnl": 13443.015628599996,
+      "base_increment": -635.4328898000022,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 24527.545628599997,
+        "0.1": 11226.109628599996,
+        "0.5": 2358.485628599996,
+        "1.0": -8726.044371400005
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -1823.5478898000024,
+        "0.1": -397.8098898000021,
+        "0.5": 552.6821101999981,
+        "1.0": 1740.7971101999983
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 2376.2300000000005,
+      "stale_symbol_gross_difference": {
+        "DNTH": -503.52000000000044,
+        "AMBQ": -572.3199999999997,
+        "FBRX": -557.9200000000001,
+        "AGL": -489.53999999999996,
+        "SNDK": -252.9300000000003
+      }
+    },
+    "C5_R4_FADE_PACED": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2529.3,
+        "DNTH": 5370.88,
+        "AGL": 5303.35,
+        "AMBQ": 5559.68,
+        "FBRX": 5782.080000000001
+      },
+      "stale_total": 24545.29,
+      "total_pnl": 14866.550090799996,
+      "base_increment": 788.1015723999972,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 27139.195090799996,
+        "0.1": 12412.021090799995,
+        "0.5": 2593.9050907999954,
+        "1.0": -9678.739909200005
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 788.1015723999972,
+        "0.1": 788.1015723999972,
+        "0.5": 788.1015723999972,
+        "1.0": 788.1015723999972
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 0.0,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    },
+    "C5_R4_SIZE_CONSERVATIVE": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2276.37,
+        "DNTH": 4867.36,
+        "AGL": 4813.81,
+        "AMBQ": 4987.360000000001,
+        "FBRX": 5224.160000000001
+      },
+      "stale_total": 22169.06,
+      "total_pnl": 12770.710338599998,
+      "base_increment": -1307.7381798000006,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 23855.2403386,
+        "0.1": 10553.804338599997,
+        "0.5": 1686.1803385999974,
+        "1.0": -9398.349661400003
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -2495.853179800001,
+        "0.1": -1070.1151798000005,
+        "0.5": -119.62317980000034,
+        "1.0": 1068.4918202
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 2376.2300000000005,
+      "stale_symbol_gross_difference": {
+        "DNTH": -503.52000000000044,
+        "AMBQ": -572.3199999999997,
+        "FBRX": -557.9200000000001,
+        "AGL": -489.53999999999996,
+        "SNDK": -252.9300000000003
+      }
+    },
+    "C5_R5_EARNED_FADE": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2023.44,
+        "DNTH": 8643.76,
+        "AGL": 4242.68,
+        "AMBQ": 4496.8,
+        "FBRX": 4666.240000000001
+      },
+      "stale_total": 24072.920000000002,
+      "total_pnl": 22048.925174499997,
+      "base_increment": 386.88602000000174,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 34085.3851745,
+        "0.1": 19641.633174499995,
+        "0.5": 10012.465174499996,
+        "1.0": -2023.9948255000054
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 386.88602000000174,
+        "0.1": 386.88602000000174,
+        "0.5": 386.88602000000174,
+        "1.0": 386.88602000000174
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 0.0,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    },
+    "C6_BLEND_PACED": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2276.37,
+        "DNTH": 7049.28,
+        "AGL": 4813.81,
+        "AMBQ": 4987.360000000001,
+        "FBRX": 5224.160000000001
+      },
+      "stale_total": 24350.980000000003,
+      "total_pnl": 17899.795062999998,
+      "base_increment": 3821.346544599999,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 30075.285063,
+        "0.1": 15464.697062999998,
+        "0.5": 5724.305062999996,
+        "1.0": -6451.184937000005
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 3724.191544599999,
+        "0.1": 3840.777544599999,
+        "0.5": 3918.5015445999993,
+        "1.0": 4015.6565445999995
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 3551.1099999999997,
+      "stale_symbol_gross_difference": {
+        "DNTH": 1678.3999999999996,
+        "AMBQ": -572.3199999999997,
+        "FBRX": -557.9200000000001,
+        "AGL": -489.53999999999996,
+        "SNDK": -252.9300000000003
+      }
+    },
+    "MATCH_C2_R4_MEDIAN": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2107.75,
+        "DNTH": 4531.68,
+        "AGL": 4487.45,
+        "AMBQ": 4660.32,
+        "FBRX": 4919.84
+      },
+      "stale_total": 20707.04,
+      "total_pnl": 11983.726445999995,
+      "base_increment": -2094.7220724000035,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 22337.246445999997,
+        "0.1": 9913.022445999995,
+        "0.5": 1630.2064459999947,
+        "1.0": -8723.313554000006
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -4013.8470724000044,
+        "0.1": -1710.8970724000033,
+        "0.5": -175.59707240000262,
+        "1.0": 1743.5279275999983
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 3838.250000000002,
+      "stale_symbol_gross_difference": {
+        "DNTH": -839.1999999999998,
+        "AMBQ": -899.3600000000006,
+        "FBRX": -862.2400000000007,
+        "AGL": -815.9000000000005,
+        "SNDK": -421.5500000000002
+      }
+    },
+    "MATCH_C3_R4_VOLUME_TAPER": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 3035.16,
+        "DNTH": 6377.92,
+        "AGL": 6282.43,
+        "AMBQ": 6540.800000000001,
+        "FBRX": 6847.200000000001
+      },
+      "stale_total": 29083.510000000002,
+      "total_pnl": 16617.001748699993,
+      "base_increment": 2538.5532302999945,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 31158.756748699994,
+        "0.1": 13708.650748699993,
+        "0.5": 2075.246748699992,
+        "1.0": -12466.508251300009
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 4807.663230299995,
+        "0.1": 2084.7312302999944,
+        "0.5": 269.4432302999944,
+        "1.0": -1999.6667697000057
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 4538.22,
+      "stale_symbol_gross_difference": {
+        "DNTH": 1007.04,
+        "AMBQ": 981.1200000000008,
+        "FBRX": 1065.12,
+        "AGL": 979.0799999999999,
+        "SNDK": 505.8599999999997
+      }
+    },
+    "MATCH_C3_R5_MOMENTUM_TAPER": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2444.9900000000002,
+        "DNTH": 10406.08,
+        "AGL": 5140.17,
+        "AMBQ": 5396.16,
+        "FBRX": 5579.200000000001
+      },
+      "stale_total": 28966.600000000002,
+      "total_pnl": 26045.905252999997,
+      "base_increment": 4383.866098500002,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 40529.205253,
+        "0.1": 23149.245252999997,
+        "0.5": 11562.605252999996,
+        "1.0": -2920.694747000005
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 6830.706098500003,
+        "0.1": 3894.4980985000025,
+        "0.5": 1937.0260985000027,
+        "1.0": -509.813901499997
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 4893.679999999999,
+      "stale_symbol_gross_difference": {
+        "DNTH": 1762.3199999999997,
+        "AMBQ": 899.3599999999997,
+        "FBRX": 912.96,
+        "AGL": 897.4899999999998,
+        "SNDK": 421.5500000000002
+      }
+    },
+    "MATCH_C3_R5_VOLUME_TAPER": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2360.6800000000003,
+        "DNTH": 9986.48,
+        "AGL": 4895.400000000001,
+        "AMBQ": 5150.88,
+        "FBRX": 5376.320000000001
+      },
+      "stale_total": 27769.760000000002,
+      "total_pnl": 24972.204444099996,
+      "base_increment": 3310.1652896000014,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 38857.08444409999,
+        "0.1": 22195.228444099994,
+        "0.5": 11087.324444099995,
+        "1.0": -2797.555555900006
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 5158.5852896000015,
+        "0.1": 2940.481289600001,
+        "0.5": 1461.7452896000016,
+        "1.0": -386.6747103999983
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 3696.8399999999997,
+      "stale_symbol_gross_difference": {
+        "DNTH": 1342.7199999999993,
+        "AMBQ": 654.0799999999999,
+        "FBRX": 710.0799999999999,
+        "AGL": 652.7200000000003,
+        "SNDK": 337.24000000000024
+      }
+    },
+    "MATCH_C5_R4_EARNED_FADE": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2529.3,
+        "DNTH": 5370.88,
+        "AGL": 5303.35,
+        "AMBQ": 5477.92,
+        "FBRX": 5782.080000000001
+      },
+      "stale_total": 24463.530000000002,
+      "total_pnl": 14087.346397799996,
+      "base_increment": 8.897879399997692,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 26319.1113978,
+        "0.1": 11640.993397799995,
+        "0.5": 1855.581397799995,
+        "1.0": -10376.183602200006
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -31.982120600002418,
+        "0.1": 17.073879399997715,
+        "0.5": 49.7778793999978,
+        "1.0": 90.65787939999791
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 81.76000000000022,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": -81.76000000000022,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    },
+    "MATCH_C6_BLEND_PACED": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2529.3,
+        "DNTH": 5370.88,
+        "AGL": 5303.35,
+        "AMBQ": 5559.68,
+        "FBRX": 5832.800000000001
+      },
+      "stale_total": 24596.010000000002,
+      "total_pnl": 14230.964567199993,
+      "base_increment": 152.51604879999468,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 26528.969567199994,
+        "0.1": 11771.363567199993,
+        "0.5": 1932.9595671999923,
+        "1.0": -10365.045432800009
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 177.8760487999948,
+        "0.1": 147.44404879999465,
+        "0.5": 127.15604879999455,
+        "1.0": 101.79604879999442
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 50.720000000000255,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 50.720000000000255,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    },
+    "PARENT": {
+      "control": "PARENT",
+      "stale_terminal_by_symbol": {
+        "SNDK": 3962.57,
+        "DNTH": 4196.0,
+        "AGL": 4079.5,
+        "AMBQ": 8666.560000000001,
+        "FBRX": 4463.360000000001
+      },
+      "stale_total": 25367.99,
+      "total_pnl": 6450.9913142000005,
+      "base_increment": 0.0,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 19134.986314200003,
+        "0.1": 3914.1923142,
+        "0.5": -6233.0036858,
+        "1.0": -18916.9986858
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 0.0,
+        "0.1": 0.0,
+        "0.5": 0.0,
+        "1.0": 0.0
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 0.0,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    },
+    "PARENT_MATCH_R4": {
+      "control": "PARENT",
+      "stale_terminal_by_symbol": {
+        "SNDK": 3793.9500000000003,
+        "DNTH": 4028.16,
+        "AGL": 3916.32,
+        "AMBQ": 8339.52,
+        "FBRX": 4311.200000000001
+      },
+      "stale_total": 24389.15,
+      "total_pnl": 6137.675353899993,
+      "base_increment": -313.31596030000765,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 18332.250353899995,
+        "0.1": 3698.7603538999924,
+        "0.5": -6056.899646100008,
+        "1.0": -18251.47464610001
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -802.735960300008,
+        "0.1": -215.43196030000757,
+        "0.5": 176.10403969999265,
+        "1.0": 665.524039699993
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 978.8400000000006,
+      "stale_symbol_gross_difference": {
+        "DNTH": -167.84000000000015,
+        "AMBQ": -327.0400000000009,
+        "FBRX": -152.15999999999985,
+        "AGL": -163.17999999999984,
+        "SNDK": -168.6199999999999
+      }
+    },
+    "PARENT_MATCH_R5": {
+      "control": "PARENT",
+      "stale_terminal_by_symbol": {
+        "SNDK": 3878.26,
+        "DNTH": 4028.16,
+        "AGL": 3997.9100000000003,
+        "AMBQ": 8421.28,
+        "FBRX": 4361.92
+      },
+      "stale_total": 24687.530000000002,
+      "total_pnl": 6319.526838899997,
+      "base_increment": -131.46447530000387,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 18663.291838899997,
+        "0.1": 3850.773838899996,
+        "0.5": -6024.238161100005,
+        "1.0": -18368.003161100005
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -471.69447530000434,
+        "0.1": -63.41847530000378,
+        "0.5": 208.7655246999966,
+        "1.0": 548.9955246999971
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 680.460000000001,
+      "stale_symbol_gross_difference": {
+        "DNTH": -167.84000000000015,
+        "AMBQ": -245.28000000000065,
+        "FBRX": -101.44000000000051,
+        "AGL": -81.58999999999969,
+        "SNDK": -84.30999999999995
+      }
+    },
+    "R1": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 927.4100000000001,
+        "DNTH": 4196.0,
+        "AGL": 2039.75,
+        "AMBQ": 2125.76,
+        "FBRX": 2231.6800000000003
+      },
+      "stale_total": 11520.6,
+      "total_pnl": 10453.111297,
+      "base_increment": -11208.927857499995,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 16213.411296999999,
+        "0.1": 9301.051297,
+        "0.5": 4692.811296999999,
+        "1.0": -1067.488703000001
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": -17485.087857499995,
+        "0.1": -9953.695857499995,
+        "0.5": -4932.7678574999945,
+        "1.0": 1343.3921425000062
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 12552.320000000002,
+      "stale_symbol_gross_difference": {
+        "DNTH": -4447.76,
+        "AMBQ": -2371.04,
+        "FBRX": -2434.5600000000004,
+        "AGL": -2202.9300000000003,
+        "SNDK": -1096.03
+      }
+    },
+    "R4_FIXED_BASE": {
+      "control": "PARENT",
+      "stale_terminal_by_symbol": {
+        "SNDK": 5142.91,
+        "DNTH": 5370.88,
+        "AGL": 5303.35,
+        "AMBQ": 11201.12,
+        "FBRX": 5782.080000000001
+      },
+      "stale_total": 32800.340000000004,
+      "total_pnl": 8248.060332099994,
+      "base_increment": 1797.069017899994,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 24648.230332099996,
+        "0.1": 4968.026332099994,
+        "0.5": -8152.1096679000075,
+        "1.0": -24552.27966790001
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 5513.244017899994,
+        "0.1": 1053.8340178999938,
+        "0.5": -1919.1059821000063,
+        "1.0": -5635.280982100006
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 7432.35,
+      "stale_symbol_gross_difference": {
+        "DNTH": 1174.88,
+        "AMBQ": 2534.5599999999995,
+        "FBRX": 1318.7200000000003,
+        "AGL": 1223.8500000000004,
+        "SNDK": 1180.3399999999997
+      }
+    },
+    "R4": {
+      "control": "R4",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2529.3,
+        "DNTH": 5370.88,
+        "AGL": 5303.35,
+        "AMBQ": 5559.68,
+        "FBRX": 5782.080000000001
+      },
+      "stale_total": 24545.29,
+      "total_pnl": 14078.448518399999,
+      "base_increment": 0.0,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 26351.093518399997,
+        "0.1": 11623.919518399998,
+        "0.5": 1805.8035183999982,
+        "1.0": -10466.841481600002
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 0.0,
+        "0.1": 0.0,
+        "0.5": 0.0,
+        "1.0": 0.0
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 0.0,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    },
+    "R5_FIXED_BASE": {
+      "control": "PARENT",
+      "stale_terminal_by_symbol": {
+        "SNDK": 8262.380000000001,
+        "DNTH": 8643.76,
+        "AGL": 8566.95,
+        "AMBQ": 18068.96,
+        "FBRX": 9332.480000000001
+      },
+      "stale_total": 52874.53,
+      "total_pnl": 13301.649936399986,
+      "base_increment": 6850.658622199986,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 39738.91493639999,
+        "0.1": 8014.196936399986,
+        "0.5": -13135.615063600013,
+        "1.0": -39572.88006360001
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 20603.928622199986,
+        "0.1": 4100.0046221999855,
+        "0.5": -6902.611377800014,
+        "1.0": -20655.881377800015
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 27506.54,
+      "stale_symbol_gross_difference": {
+        "DNTH": 4447.76,
+        "AMBQ": 9402.399999999998,
+        "FBRX": 4869.120000000001,
+        "AGL": 4487.450000000001,
+        "SNDK": 4299.810000000001
+      }
+    },
+    "R5": {
+      "control": "R5",
+      "stale_terminal_by_symbol": {
+        "SNDK": 2023.44,
+        "DNTH": 8643.76,
+        "AGL": 4242.68,
+        "AMBQ": 4496.8,
+        "FBRX": 4666.240000000001
+      },
+      "stale_total": 24072.920000000002,
+      "total_pnl": 21662.039154499995,
+      "base_increment": 0.0,
+      "pnl_after_uniform_stale_price_shock": {
+        "-0.5": 33698.499154499994,
+        "0.1": 19254.747154499993,
+        "0.5": 9625.579154499994,
+        "1.0": -2410.880845500007
+      },
+      "increment_after_common_symbol_shock": {
+        "-0.5": 0.0,
+        "0.1": 0.0,
+        "0.5": 0.0,
+        "1.0": 0.0
+      },
+      "absolute_increment_sensitivity_per_100pct_independent_symbol_error": 0.0,
+      "stale_symbol_gross_difference": {
+        "DNTH": 0.0,
+        "AMBQ": 0.0,
+        "FBRX": 0.0,
+        "AGL": 0.0,
+        "SNDK": 0.0
+      }
+    }
+  },
+  "convention": "Shock each unresolved terminal valuation by a shared relative error across policies; no trade is deleted and no exit is invented",
+  "shocks": [
+    -0.5,
+    0.1,
+    0.5,
+    1.0
+  ],
+  "warning": "Arithmetic sensitivity, not probabilities, observed prices, loan quotes or certified bounds"
+}

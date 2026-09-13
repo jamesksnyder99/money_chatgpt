@@ -1,0 +1,422 @@
+{
+  "timestamp": "2026-09-13T19:07:20+00:00",
+  "scope": "IS-owned R4 lifecycle; data-quality audit only",
+  "source_counts": {
+    "virgin": {
+      "eligibility_rows_consulted": 26832,
+      "manifest_rows_consulted": 22533,
+      "eligibility_sha256": "2a5f5ef703997a785298ea2a7c7ba193ce6c12843db24093f2e31a02005dfde9",
+      "manifest_sha256": "4a7fc3a06bd290a86ad5abcab83725b3d78f0cb8e2f8792fa9842543597e7958"
+    },
+    "full": {
+      "eligibility_rows_consulted": 9546,
+      "manifest_rows_consulted": 7008,
+      "eligibility_sha256": "fb5b89057ec5777c50c9348be45e6f8179dfe7960375518f366ccaf721d85858",
+      "manifest_sha256": "a025e7c706247c338e50d42ffac814f3c4dfab631c53352b6d4c7f4293cd5b14"
+    }
+  },
+  "missing_backstops": [
+    {
+      "symbol": "SNDK",
+      "signal_month": "2025-09",
+      "scheduled_exit": "2025-09-25",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "INOD",
+      "signal_month": "2025-09",
+      "scheduled_exit": "2025-10-02",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "INOD",
+      "signal_month": "2025-09",
+      "scheduled_exit": "2025-10-09",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "INBX",
+      "signal_month": "2025-11",
+      "scheduled_exit": "2025-11-28",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "HAE",
+      "signal_month": "2025-11",
+      "scheduled_exit": "2025-12-05",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "DNTH",
+      "signal_month": "2026-03",
+      "scheduled_exit": "2026-04-02",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "ONEG",
+      "signal_month": "2026-05",
+      "scheduled_exit": "2026-05-21",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "AGL",
+      "signal_month": "2026-05",
+      "scheduled_exit": "2026-05-29",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "AMBQ",
+      "signal_month": "2026-05",
+      "scheduled_exit": "2026-05-29",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "BAND",
+      "signal_month": "2026-05",
+      "scheduled_exit": "2026-06-05",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "WOLF",
+      "signal_month": "2026-05",
+      "scheduled_exit": "2026-06-05",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "AMBQ",
+      "signal_month": "2026-05",
+      "scheduled_exit": "2026-06-05",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "ENPH",
+      "signal_month": "2026-05",
+      "scheduled_exit": "2026-06-11",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "FBRX",
+      "signal_month": "2026-07",
+      "scheduled_exit": "2026-07-30",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    },
+    {
+      "symbol": "COAG",
+      "signal_month": "2026-07",
+      "scheduled_exit": "2026-08-06",
+      "partial_session_present": false,
+      "source_status": {
+        "virgin": {
+          "eligible": null,
+          "exclusion_reason": "not_in_table",
+          "ingest_status": "not_in_manifest"
+        },
+        "full": {
+          "eligible": false,
+          "exclusion_reason": "prior_close_out_of_range",
+          "ingest_status": "not_in_manifest"
+        }
+      }
+    }
+  ],
+  "terminal_symbols": [
+    {
+      "symbol": "AGL",
+      "tickets": 1,
+      "last_observation_date": "2026-05-15",
+      "last_observation_above_80": true,
+      "source_status": {
+        "virgin": {
+          "eligibility_reason_sessions": {
+            "prior_close_out_of_range": 9,
+            "not_in_table": 64
+          },
+          "ingest_status_sessions": {
+            "not_in_manifest": 73
+          }
+        },
+        "full": {
+          "eligibility_reason_sessions": {
+            "prior_close_out_of_range": 73
+          },
+          "ingest_status_sessions": {
+            "not_in_manifest": 73
+          }
+        }
+      }
+    },
+    {
+      "symbol": "AMBQ",
+      "tickets": 2,
+      "last_observation_date": "2026-05-22",
+      "last_observation_above_80": true,
+      "source_status": {
+        "virgin": {
+          "eligibility_reason_sessions": {
+            "prior_close_out_of_range": 4,
+            "not_in_table": 64
+          },
+          "ingest_status_sessions": {
+            "not_in_manifest": 68
+          }
+        },
+        "full": {
+          "eligibility_reason_sessions": {
+            "prior_close_out_of_range": 68
+          },
+          "ingest_status_sessions": {
+            "not_in_manifest": 68
+          }
+        }
+      }
+    },
+    {
+      "symbol": "DNTH",
+      "tickets": 1,
+      "last_observation_date": "2026-03-31",
+      "last_observation_above_80": true,
+      "source_status": {
+        "virgin": {
+          "eligibility_reason_sessions": {
+            "prior_close_out_of_range": 41,
+            "not_in_table": 64
+          },
+          "ingest_status_sessions": {
+            "not_in_manifest": 105
+          }
+        },
+        "full": {
+          "eligibility_reason_sessions": {
+            "not_in_table": 31,
+            "prior_close_out_of_range": 74
+          },
+          "ingest_status_sessions": {
+            "not_in_manifest": 105
+          }
+        }
+      }
+    },
+    {
+      "symbol": "FBRX",
+      "tickets": 1,
+      "last_observation_date": "2026-07-21",
+      "last_observation_above_80": false,
+      "source_status": {
+        "virgin": {
+          "eligibility_reason_sessions": {
+            "not_in_table": 29
+          },
+          "ingest_status_sessions": {
+            "not_in_manifest": 29
+          }
+        },
+        "full": {
+          "eligibility_reason_sessions": {
+            "prior_close_out_of_range": 27,
+            "no_prior_eod": 2
+          },
+          "ingest_status_sessions": {
+            "not_in_manifest": 29
+          }
+        }
+      }
+    },
+    {
+      "symbol": "SNDK",
+      "tickets": 1,
+      "last_observation_date": "2025-09-11",
+      "last_observation_above_80": true,
+      "source_status": {
+        "virgin": {
+          "eligibility_reason_sessions": {
+            "prior_close_out_of_range": 179,
+            "not_in_table": 64
+          },
+          "ingest_status_sessions": {
+            "not_in_manifest": 243
+          }
+        },
+        "full": {
+          "eligibility_reason_sessions": {
+            "not_in_table": 169,
+            "prior_close_out_of_range": 74
+          },
+          "ingest_status_sessions": {
+            "not_in_manifest": 243
+          }
+        }
+      }
+    }
+  ],
+  "terminal_tickets": 6,
+  "terminal_tickets_last_mark_above_80": 5,
+  "interpretation": "Copied acquisition eligibility was bounded ($80 virgin/$50 full), unlike a complete held-position lifecycle service. Missingness can therefore be associated with rising prices adverse to shorts. This table describes coverage, not actual unobserved returns or executable prices. Conditional mechanism increments do not certify absolute profitability."
+}

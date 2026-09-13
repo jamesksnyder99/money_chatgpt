@@ -1,0 +1,43 @@
+{
+  "C3_R5_MOMENTUM_TAPER": {
+    "available_vol20": {
+      "count": 182.0,
+      "increment": -1837.9839393000016,
+      "candidate_pnl": 12260.823849399985
+    },
+    "missing_vol20": {
+      "count": 15.0,
+      "increment": 8554.7282049,
+      "candidate_pnl": 16117.9595707
+    }
+  },
+  "C4_R4_ENTRY_UPDATE": {
+    "unchanged": {
+      "count": 170.0,
+      "increment": 0.0,
+      "candidate_pnl": 15415.450932400006
+    },
+    "upsized": {
+      "count": 18.0,
+      "increment": -1964.693904700001,
+      "candidate_pnl": -3916.3695437000015
+    },
+    "downsized": {
+      "count": 9.0,
+      "increment": -309.6486450000004,
+      "candidate_pnl": 305.0245800000005
+    }
+  },
+  "C5_R4_EARNED_FADE": {
+    "no_cover": {
+      "count": 186.0,
+      "increment": 0.0,
+      "candidate_pnl": 7604.8209984000005
+    },
+    "half_cover_triggered": {
+      "count": 11.0,
+      "increment": 772.2458499999999,
+      "candidate_pnl": 7245.873369999999
+    }
+  }
+}

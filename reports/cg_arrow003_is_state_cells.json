@@ -1,0 +1,34 @@
+{
+  "scope": "IS working constant4000 parent per-ticket attribution",
+  "cells": {
+    "vol_low/ret_positive": {
+      "count": 64,
+      "profit": -1969.0274535000037
+    },
+    "vol_high/ret_positive": {
+      "count": 83,
+      "profit": -10329.249956700005
+    },
+    "vol_low/ret_stalled": {
+      "count": 27,
+      "profit": 9741.128647300002
+    },
+    "vol_missing/ret_stalled": {
+      "count": 4,
+      "profit": 233.76753500000018
+    },
+    "vol_missing/ret_positive": {
+      "count": 8,
+      "profit": 8232.984692099999
+    },
+    "vol_missing/ret_missing": {
+      "count": 3,
+      "profit": -707.1756999999993
+    },
+    "vol_high/ret_stalled": {
+      "count": 8,
+      "profit": 1248.5635499999994
+    }
+  },
+  "warning": "Descriptive state cells, not independent models or exclusions"
+}

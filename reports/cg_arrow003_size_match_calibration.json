@@ -1,0 +1,37 @@
+[
+  {
+    "candidate": "AR3_R4_LATE_COVER_CONSERVATIVE",
+    "control": "MATCH_AR3_R4_LATE_COVER_CONSERVATIVE",
+    "fixed_base": 4575,
+    "is_candidate_average_gross": 35709.19741651793,
+    "calibration": "original base * candidate IS avg gross / original IS avg gross; nearest $25 once; no iterative retarget and no OOS peak normalization"
+  },
+  {
+    "candidate": "AR6_R5_VOTES_COVER_PACED",
+    "control": "MATCH_AR6_R5_VOTES_COVER_PACED",
+    "fixed_base": 8575,
+    "is_candidate_average_gross": 41791.83102963347,
+    "calibration": "original base * candidate IS avg gross / original IS avg gross; nearest $25 once; no iterative retarget and no OOS peak normalization"
+  },
+  {
+    "candidate": "AR7_R4_LATE_COVER_PACED",
+    "control": "MATCH_AR7_R4_LATE_COVER_PACED",
+    "fixed_base": 5075,
+    "is_candidate_average_gross": 39552.285907729085,
+    "calibration": "original base * candidate IS avg gross / original IS avg gross; nearest $25 once; no iterative retarget and no OOS peak normalization"
+  },
+  {
+    "candidate": "AR8_R5_VOTES_COVER_CONSERVATIVE",
+    "control": "MATCH_AR8_R5_VOTES_COVER_CONSERVATIVE",
+    "fixed_base": 7200,
+    "is_candidate_average_gross": 35172.64207080478,
+    "calibration": "original base * candidate IS avg gross / original IS avg gross; nearest $25 once; no iterative retarget and no OOS peak normalization"
+  },
+  {
+    "candidate": "AR2_R5_LATE_WEAK_PART_COVER",
+    "control": "MATCH_AR2_R5_LATE_WEAK_PART_COVER",
+    "fixed_base": 8175,
+    "is_candidate_average_gross": 39909.31775433466,
+    "calibration": "original base * candidate IS avg gross / original IS avg gross; nearest $25 once; no iterative retarget and no OOS peak normalization"
+  }
+]
