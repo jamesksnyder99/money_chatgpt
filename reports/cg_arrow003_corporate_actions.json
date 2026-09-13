@@ -1,0 +1,16 @@
+{
+  "coverage": "PARTIAL: eight issuer-documented reverse splits found in bounded IS feature-discontinuity review; not a complete universe action service",
+  "retrieved_date": "2026-09-13",
+  "factor_convention": "price_factor = old shares per new share; before effective trading session, comparison prices multiply and share volumes divide by factor; open shares divide by factor",
+  "events": [
+    {"symbol":"LCID","effective_session":"2025-09-02","price_factor":10,"source":"https://ir.lucidmotors.com/news-releases/news-release-details/lucid-group-inc-announces-effective-date-reverse-stock-split","source_date":"2025-08-21"},
+    {"symbol":"OXLC","effective_session":"2025-09-08","price_factor":5,"source":"https://ir.oxfordlanecapital.com/stock/dividends-splits","source_date":null,"source_note":"Undated issuer dividend/split history; September 8 is the event date, not a publication date"},
+    {"symbol":"VOR","effective_session":"2025-09-19","price_factor":20,"source":"https://www.sec.gov/Archives/edgar/data/1817229/000119312525205553/d945826d8k.htm","source_date":"2025-09-17"},
+    {"symbol":"GMRE","effective_session":"2025-09-22","price_factor":5,"source":"https://s21.q4cdn.com/118490706/files/doc_news/Global-Medical-REIT-Inc--Completes-One-for-Five-Reverse-Stock-Split-09-19-2025-2025.pdf","source_date":"2025-09-19"},
+    {"symbol":"ETHZ","effective_session":"2025-10-20","price_factor":10,"source":"https://www.prnewswire.com/news-releases/ethzilla-corporation-announces-1-for-10-reverse-stock-split-302584765.html","source_date":"2025-10-15"},
+    {"symbol":"LXP","effective_session":"2025-11-11","price_factor":5,"source":"https://www.globenewswire.com/news-release/2025/11/10/3185113/19004/en/LXP-Industrial-Trust-Completes-Reverse-Share-Split.html/","source_date":"2025-11-10"},
+    {"symbol":"AMCR","effective_session":"2026-01-15","price_factor":5,"source":"https://www.amcor.com/media/news/amcor-completes-one-for-five-reverse-stock-split","source_date":"2026-01-15"},
+    {"symbol":"FUBO","effective_session":"2026-03-24","price_factor":12,"source":"https://www.sec.gov/Archives/edgar/data/1484769/000149315226011823/form8-k.htm","source_date":"2026-03-20"}
+  ],
+  "limitations": ["No factors inferred from returns", "No future event excludes an earlier signal", "Inherited point-in-time eligibility and ETP exclusions retained", "Raw minute executions retained in contemporaneous units", "Fractional short liabilities after reverse splits are carried theoretically; actual cash-in-lieu and broker treatment unknown", "Dividend and stock-loan coverage unresolved"]
+}

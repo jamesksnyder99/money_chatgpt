@@ -1,0 +1,84 @@
+CG Arrow 003 command and elapsed-time audit
+Repository: jamesksnyder99/money_chatgpt
+Workspace only: C:\Users\james\money_chatgpt
+Start: 2026-09-13T17:48:42Z (13:48:42 America/New_York)
+Deadline: 2026-09-13T20:48:42Z (16:48:42 America/New_York)
+Main pulled fast-forward from 368f3b2 to 728adb6 before research.
+No original-Money access, credentials, orders, terminal, new account, paid data,
+bulk acquisition, unrelated model or Arrow 004 was used.
+
+PowerShell environment for repeatable commands:
+  Set-Location C:\Users\james\money_chatgpt
+  $env:PYTHONPATH='src'
+  $env:POLARS_MAX_THREADS='1'
+  $env:TEMP='C:\Users\james\money_chatgpt\data\tmp\cg_arrow003_system_tmp'
+  $env:TMP=$env:TEMP
+Use .\.venv\Scripts\python.exe for every python command below. Native process
+pools use eight workers. Local raw inputs and detailed execution ledgers remain
+under ignored data/. Primary issuer/SEC references are in the action manifest.
+
+Preparation and bounded repairs:
+  git status --short --branch
+  git pull --ff-only origin main
+  Read AGENTS.md, docs/CHATGPT_LAB_PROTOCOL.md, docs/SUCCESS.md,
+       docs/CG_BUILD_ARROW_003.md and the requested prior evidence/code.
+  python -m research.cg_arrow003_lab controls --workers 8
+  python -m research.cg_arrow003_audit repairs --workers 8
+  Common action-adjusted controls were replayed before candidate scoring; initial
+  accounting-only records and explicit reasons remain in the ledger/superseded
+  local results. Raw inputs and all Arrow 001/002 evidence stayed unchanged.
+
+Completed IS discovery commands (in research order):
+  python -m research.cg_arrow003_lab is --specs reports/cg_arrow003_directed_specs.json --workers 8
+  python -m research.cg_arrow003_audit diagnostics --workers 8
+  python -m research.cg_arrow003_audit shuffles --workers 8
+  python -m research.cg_arrow003_lab is --specs reports/cg_arrow003_matched_specs.json --workers 8
+  python -m research.cg_arrow003_lab is --specs reports/cg_arrow003_directed_refinements.json --workers 8
+  python -m research.cg_arrow003_audit attribution
+  python -m research.cg_arrow003_lab is --specs reports/cg_arrow003_astra_specs.json --workers 8
+  python -m research.cg_arrow003_lab is --specs reports/cg_arrow003_astra_refinements.json --workers 8
+  python -m research.cg_arrow003_lab is --specs reports/cg_arrow003_astra_combinations.json --workers 8
+  python -m research.cg_arrow003_lab is --specs reports/cg_arrow003_minute_specs.json --workers 8
+  python -m scripts.cg_arrow003_continue
+  The continuation script declares one $7000 conservative R5 package plus fixed
+  size comparisons, then runs the two emitted specification files. It is not a
+  general size sweep. All specifications are predeclared in the timestamped ledger.
+
+Completed diagnostics and verification:
+  python -m research.cg_arrow003_audit robustness
+  python -m research.cg_arrow003_audit frontier
+  python -m research.cg_arrow003_audit stale
+  python -m research.cg_arrow003_provenance --mode IS --workers 8
+  python -m research.cg_arrow003_minute --mode IS --ids PARENT R4 R5 C3_R5_TAPER_PACED C5_R4_FADE_CONSERVATIVE C5_R4_FADE_ATR15 --all-days --workers 8
+  python -m research.cg_arrow003_falsification stale --workers 8
+  python -m research.cg_arrow003_falsification execution
+  python -m research.cg_arrow003_falsification coverage
+  python -m research.cg_arrow003_oracle --mode IS --workers 8
+  The 128 seeded size shuffles and 44 dynamic stale-mark jobs are diagnostics,
+  not additional strategies or independent validation. No OOS policy results
+  were exposed by these commands. Opposite-month IS-owned lifecycle marks are allowed.
+
+Checkpoint tests:
+  python -m pytest tests/ -q --basetemp=data/tmp/cg_arrow003_tests_full_second
+    507 passed in 4.96s before the first public-safe checkpoint commits.
+  python -m pytest tests/ -q --basetemp=data/tmp/cg_arrow003_tests_full_checkpoint
+    492 passed in 3.90s at the earlier full-suite checkpoint.
+  python -m pytest tests/test_cg_arrow003.py tests/test_cg_arrow003_closure.py -q --basetemp=data/tmp/cg_arrow003_accounting_tests
+    48 passed in 4.26s after cash/capacity and closure fixtures were added.
+  A synthetic committed-freeze fixture caught Windows CRLF/LF mismatch; the new
+  JSON writer now writes canonical LF. The repaired fixture passed. A direct
+  scripts/cg_arrow003_continue.py invocation hit the repository's existing
+  scripts/research.py import shadow; module invocation above succeeded. The first
+  cash-oracle attempt assumed a nonexistent checkpoint timestamp field; it was
+  corrected to the declared 15:55/15:56 bar clock, then all 62 books passed.
+  These were pre-reveal infrastructure fixes, not OOS repair/rescore cycles.
+
+Current checkpoint status: IS research remains open, confirmation sealed.
+Final freeze, exact replay, closure tests, final elapsed reconciliation and
+commit/push verification will be appended before handoff.
+
+Parked questions, not new work authorization:
+  Complete held-position price histories beyond acquisition eligibility bands;
+  broader corporate actions and historical stock-loan/dividend economics;
+  genuinely new-data challenge of fixed policies; sparse-history feature bias.
+  Independent models and Arrow 004 remain parked.

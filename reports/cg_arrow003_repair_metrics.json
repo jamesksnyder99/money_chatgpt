@@ -1,0 +1,285 @@
+{
+  "timestamp": "2026-09-13T18:06:07+00:00",
+  "elapsed_minutes": 17.432481866666667,
+  "convention": "cg003_common_partial_actions_v1",
+  "reconciliation": {
+    "PARENT": {
+      "legacy_reproduced_pnl": 9969.572685699999,
+      "legacy_count": 184,
+      "maximum_legacy_daily_difference": 0.0,
+      "legacy": {
+        "total_pnl": 9969.572685699999,
+        "per_day": 80.39977972338708,
+        "max_dd": -19048.257114800002,
+        "worst_day": -4658.998264999998,
+        "red_loss_sum": -16418.1290078,
+        "avg_exposure": 28897.73809676494,
+        "peak_exposure": 97450.48500000002,
+        "trades": 184
+      },
+      "accounting_only": {
+        "total_pnl": 10425.918742700002,
+        "per_day": 84.07998986048388,
+        "max_dd": -20325.69385479999,
+        "worst_day": -4658.998264999998,
+        "red_loss_sum": -17695.565747799992,
+        "avg_exposure": 37862.26338560956,
+        "peak_exposure": 105241.70000000001,
+        "trades": 197
+      },
+      "working": {
+        "total_pnl": 6450.9913142000005,
+        "per_day": 52.024123501612905,
+        "max_dd": -26627.07632830004,
+        "worst_day": -4659.124054999998,
+        "red_loss_sum": -23996.948221299997,
+        "avg_exposure": 41640.853278039845,
+        "peak_exposure": 109204.27,
+        "trades": 197
+      },
+      "accounting_delta": 456.3460570000025,
+      "documented_action_delta": -3974.927428500001,
+      "total_common_repair_delta": -3518.5813714999986,
+      "terminal_tickets": 6,
+      "terminal_gross": 25367.99,
+      "terminal_stale_gross": 25367.99,
+      "counters": {
+        "missing_volume_neutral": 17,
+        "missing_momentum_neutral": 0,
+        "entry_update_fallback": 0,
+        "stale_position_sessions": 724,
+        "missing_scheduled_exit": 15,
+        "delayed_exit_fills": 9,
+        "delayed_exit_sessions": 95,
+        "missed_late_entry": 3
+      }
+    },
+    "R4": {
+      "legacy_reproduced_pnl": 16598.290789399998,
+      "legacy_count": 184,
+      "maximum_legacy_daily_difference": 0.0,
+      "legacy": {
+        "total_pnl": 16598.290789399998,
+        "per_day": 133.85718378548387,
+        "max_dd": -14656.734867199997,
+        "worst_day": -4764.933924999998,
+        "red_loss_sum": -11975.288219199996,
+        "avg_exposure": 28887.472587513945,
+        "peak_exposure": 91791.21500000001,
+        "trades": 184
+      },
+      "accounting_only": {
+        "total_pnl": 17358.9750274,
+        "per_day": 139.99173409193548,
+        "max_dd": -15887.232227200016,
+        "worst_day": -4764.933924999999,
+        "red_loss_sum": -13205.785579199995,
+        "avg_exposure": 38446.05216161753,
+        "peak_exposure": 111535.62000000001,
+        "trades": 197
+      },
+      "working": {
+        "total_pnl": 14078.448518399999,
+        "per_day": 113.53587514838709,
+        "max_dd": -21815.659081199992,
+        "worst_day": -4762.132914999999,
+        "red_loss_sum": -19134.21243320001,
+        "avg_exposure": 40160.22556839044,
+        "peak_exposure": 114064.92000000001,
+        "trades": 197
+      },
+      "accounting_delta": 760.6842380000016,
+      "documented_action_delta": -3280.526509000001,
+      "total_common_repair_delta": -2519.8422709999995,
+      "terminal_tickets": 6,
+      "terminal_gross": 24545.29,
+      "terminal_stale_gross": 24545.29,
+      "counters": {
+        "missing_volume_neutral": 17,
+        "missing_momentum_neutral": 0,
+        "entry_update_fallback": 0,
+        "stale_position_sessions": 724,
+        "missing_scheduled_exit": 15,
+        "delayed_exit_fills": 9,
+        "delayed_exit_sessions": 95,
+        "missed_late_entry": 3
+      }
+    },
+    "R5": {
+      "legacy_reproduced_pnl": 24628.0960564,
+      "legacy_count": 184,
+      "maximum_legacy_daily_difference": 0.0,
+      "legacy": {
+        "total_pnl": 24628.0960564,
+        "per_day": 198.61367787419357,
+        "max_dd": -10317.287796499997,
+        "worst_day": -5309.783044999997,
+        "red_loss_sum": -8157.4960374999955,
+        "avg_exposure": 29026.52798179283,
+        "peak_exposure": 92716.165,
+        "trades": 184
+      },
+      "accounting_only": {
+        "total_pnl": 25654.3712014,
+        "per_day": 206.89009033387097,
+        "max_dd": -11673.33137650005,
+        "worst_day": -5309.783044999998,
+        "red_loss_sum": -9513.539617499997,
+        "avg_exposure": 39464.1492861753,
+        "peak_exposure": 117296.12000000001,
+        "trades": 197
+      },
+      "working": {
+        "total_pnl": 21662.039154499995,
+        "per_day": 174.6938641491935,
+        "max_dd": -18762.708423399978,
+        "worst_day": -5302.876004999998,
+        "red_loss_sum": -16602.91666439999,
+        "avg_exposure": 40503.64985111554,
+        "peak_exposure": 119319.56000000001,
+        "trades": 197
+      },
+      "accounting_delta": 1026.2751449999996,
+      "documented_action_delta": -3992.3320469000064,
+      "total_common_repair_delta": -2966.056901900007,
+      "terminal_tickets": 6,
+      "terminal_gross": 24072.920000000002,
+      "terminal_stale_gross": 24072.920000000002,
+      "counters": {
+        "missing_volume_neutral": 17,
+        "missing_momentum_neutral": 4,
+        "entry_update_fallback": 0,
+        "stale_position_sessions": 724,
+        "missing_scheduled_exit": 15,
+        "delayed_exit_fills": 9,
+        "delayed_exit_sessions": 95,
+        "missed_late_entry": 3
+      }
+    }
+  },
+  "local_eod_checks": [
+    {
+      "symbol": "AGL",
+      "partitions": [
+        {
+          "chunk": "2026-03",
+          "rows": 22,
+          "last_date": "2026-03-31",
+          "explicit_adjustment_field": false
+        },
+        {
+          "chunk": "2026-04",
+          "rows": 21,
+          "last_date": "2026-04-30",
+          "explicit_adjustment_field": false
+        },
+        {
+          "chunk": "2026-05",
+          "rows": 20,
+          "last_date": "2026-05-29",
+          "explicit_adjustment_field": false
+        }
+      ],
+      "treatment": "not substituted: national EOD may include later-session trades and lacks declared adjustment metadata"
+    },
+    {
+      "symbol": "AMBQ",
+      "partitions": [
+        {
+          "chunk": "2026-03",
+          "rows": 22,
+          "last_date": "2026-03-31",
+          "explicit_adjustment_field": false
+        },
+        {
+          "chunk": "2026-04",
+          "rows": 21,
+          "last_date": "2026-04-30",
+          "explicit_adjustment_field": false
+        },
+        {
+          "chunk": "2026-05",
+          "rows": 20,
+          "last_date": "2026-05-29",
+          "explicit_adjustment_field": false
+        }
+      ],
+      "treatment": "not substituted: national EOD may include later-session trades and lacks declared adjustment metadata"
+    },
+    {
+      "symbol": "DNTH",
+      "partitions": [
+        {
+          "chunk": "2026-03",
+          "rows": 22,
+          "last_date": "2026-03-31",
+          "explicit_adjustment_field": false
+        },
+        {
+          "chunk": "2026-04",
+          "rows": 21,
+          "last_date": "2026-04-30",
+          "explicit_adjustment_field": false
+        },
+        {
+          "chunk": "2026-05",
+          "rows": 20,
+          "last_date": "2026-05-29",
+          "explicit_adjustment_field": false
+        }
+      ],
+      "treatment": "not substituted: national EOD may include later-session trades and lacks declared adjustment metadata"
+    },
+    {
+      "symbol": "FBRX",
+      "partitions": [
+        {
+          "chunk": "2026-03",
+          "rows": 22,
+          "last_date": "2026-03-31",
+          "explicit_adjustment_field": false
+        },
+        {
+          "chunk": "2026-04",
+          "rows": 21,
+          "last_date": "2026-04-30",
+          "explicit_adjustment_field": false
+        },
+        {
+          "chunk": "2026-05",
+          "rows": 20,
+          "last_date": "2026-05-29",
+          "explicit_adjustment_field": false
+        }
+      ],
+      "treatment": "not substituted: national EOD may include later-session trades and lacks declared adjustment metadata"
+    },
+    {
+      "symbol": "SNDK",
+      "partitions": [
+        {
+          "chunk": "2026-03",
+          "rows": 22,
+          "last_date": "2026-03-31",
+          "explicit_adjustment_field": false
+        },
+        {
+          "chunk": "2026-04",
+          "rows": 21,
+          "last_date": "2026-04-30",
+          "explicit_adjustment_field": false
+        },
+        {
+          "chunk": "2026-05",
+          "rows": 20,
+          "last_date": "2026-05-29",
+          "explicit_adjustment_field": false
+        }
+      ],
+      "treatment": "not substituted: national EOD may include later-session trades and lacks declared adjustment metadata"
+    }
+  ],
+  "split_coverage": "partial documented events; placeholder remains immutable",
+  "sdk": "thetadata 1.0.10 inspected locally; no split endpoint exposed, no authentication/live request attempted",
+  "original_rank_cache": "preserved complete inherited eligibility rows; reranked after known as-of factors, no arbitrary cap"
+}
