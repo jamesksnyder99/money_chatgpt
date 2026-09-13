@@ -571,3 +571,22 @@ Completed hypotheses=27; origins={'DIRECTED': 8, 'ASTRA': 9, 'DERIVED': 10}; dis
 Separately scored controls=29.
 Superseded A5/D6 causal-state audit results remain in cg_arrow002_superseded_is.json; not counted twice.
 No incomplete hypothesis queue; no OOS-driven tuning; no next arrow.
+
+POST-FREEZE CLOSURE (IS dispositions above are preserved, not retrospectively relabeled)
+Freeze: 2026-09-13T02:51:43Z, checkpoint commit 868776f0f28364fdd2d2554484260f5de479bc8a.
+One-shot OOS confirmation: 02:54:42Z to 02:55:52Z, nine frozen books (parent,
+four finalists, four IS-calibrated size controls). No additional candidate OOS scoring.
+R6_REJECTION_EQUAL_EXPOSURE: MIXED; higher OOS profit, no smoothness improvements,
+peak exposure $126,982.12 exceeds the $102,922 improvement ceiling.
+R5_COMBO_EQUAL_EXPOSURE: MIXED; higher profit, only concentration improves,
+peak exposure $122,299.06 exceeds the ceiling.
+R4_VOLUME_EQUAL_EXPOSURE: MIXED; higher profit and four smoothness improvements,
+but worse worst day and $106,545.47 peak exposure exceeds the ceiling.
+D6_RECYCLE: FAILED; lower profit and worse smoothness despite OOS capital fit.
+Confirmed finalists: zero. No sizing, thresholds, rankings, or winner identity changed.
+All-signal investor replay completed 02:57:35Z; every finalist exceeds $100k peak.
+Raw-price research only; corporate-action integrity remains unresolved for deployment.
+Final report/aggregate JSON include all six OOS months, all twelve investor months,
+0%/10%/30% annualized borrow sensitivities and exact comparisons to the parent.
+Calendar-MTM red-month statistics are explicitly separated from signal-month statistics.
+The reporting-only script added after OOS does not generate signals or replay strategies.

@@ -1,83 +1,207 @@
-CG Arrow 002R -- recursive hold-short-for-fade laboratory
-PRE-OOS CHECKPOINT -- finalists frozen; confirmation/reporting still to run.
-
-IS (in-sample) strict dual improvement: YES.
-OOS (out-of-sample) repetition: NOT YET REVEALED at this checkpoint.
-Strongest balanced IS candidate: R6_REJECTION_EQUAL_EXPOSURE.
-Rule: original Wednesday top-eight 15-session winners and next-session last
-regular-hours fill; $7,050 base ticket, multiply by one-half if signal close is
-above the midpoint of its daily range, and independently by one-half if signal
-volume exceeds the prior-20-session mean. Ten-session backstop and inherited costs.
-Parent IS: $9,969.57 / $80.40 per signal-month session, DD -$19,048.26.
-R6 IS: $21,120.61 / $170.33 per session, DD -$15,057.74; worst day -$3,684.91
-versus parent -$4,659.00. IS peak $85,384.38; parent $97,450.49.
-Capital fits the isolated IS end-of-day (EOD) $100k criterion; OOS/all-year unknown.
-Deployment-ready: NO.
-27 completed hypotheses: 8 directed, 9 Astra-originated, 10 derived.
-29 separately scored controls; 56 total books. No pending hypothesis queue.
-
+CG Arrow 002R -- completed recursive hold-short-for-fade laboratory
+VERDICT: IS strict dual improvement FOUND; admissible OOS repetition NOT FOUND (0/4 confirmed).
+IS = in-sample; OOS = out-of-sample; PnL = profit and loss; MTM = marked-to-market;
+DD = drawdown; RTH = regular trading hours; NYSE = New York Stock Exchange; EOD = end of day.
+PF = profit factor; H10 = ten-session holding horizon.
+Strongest balanced IS finalist: R6, selling rejection plus volume exhaustion at restored exposure.
+R6: IS $21,120.61 / $170.33 per session; OOS $53,057.38 / $417.77 per session.
+Parent: IS $9,969.57 / $80.40; OOS $41,886.14 / $329.81. R6 raises profit but NONE
+of the six OOS smoothness measures improve, and OOS peak exposure is $126,982.12.
+No frozen candidate fits $100,000 on its combined all-signal investor curve.
+Deployment-ready: NO. No capital-admissible winner, slate promotion, or new seat is claimed.
+27 completed hypotheses: 8 DIRECTED, 9 ASTRA, 10 DERIVED; 29 controls, 56 total IS books.
+IS dispositions: 18 REJECT, 6 PROMISING, 3 FRONTIER; 4 frozen (including distinct-mechanism D6).
 Research results under the inherited raw-price convention; corporate-action
 integrity remains unresolved for deployment.
 
-Freeze and governance
----------------------
-Freeze written 2026-09-13T02:51:43Z, before the confirmation scorer.
-Manifest: reports/cg_arrow002_freeze.txt
-Manifest SHA-256: f0dfdf400889e7691087965c5d6cabf702899c0f4d27f39f0113fd83080e6d84
-Four finalists: R6_REJECTION_EQUAL_EXPOSURE, R5_COMBO_EQUAL_EXPOSURE,
-R4_VOLUME_EQUAL_EXPOSURE, D6_RECYCLE.
-Four IS-calibrated constant-size parent controls are frozen alongside the parent.
-R5 is the highest-return frontier, NOT an IS strict dual result: worse worst day.
-R4 is the simple volume-exhaustion alternative. D6 supplies a distinct recycling
-mechanism; it is dominated by R6 on the measured IS axes, not claimed orthogonal.
-Do not tune, substitute, or open any new branch after this freeze.
+Frozen rules and selection rationale
+------------------------------------
+Common: inherited point-in-time $10-$80 / >=$10M prior-dollar-volume stock field,
+inherited exchange-traded-product exclusions, no arbitrary name cap. Wednesday top eight
+15-session raw-return leaders; next-session last tradable RTH minute close; integer shares;
+ten trading sessions after fill to last-RTH backstop; inherited costs and missing-H10 convention.
+PARENT: $4,000 per name. R6: $7,050 base, half if signal close is above its RTH range
+midpoint, independently half if signal RTH volume exceeds the prior-20-session mean.
+R5: $8,300 base, half if signal-known three-session return is positive, independently half
+if volume is above that prior20 mean. Highest IS return, but worse worst day: NOT strict dual.
+R4: $5,150 base, only the volume half-size rule. Simplest Astra-originated finalist (A4 lineage).
+D6: original $4k entries; freeze 20-session Average True Range (ATR), arm a >=2-ATR fade
+from hold day 3, cover after a subsequent >=1-ATR rebound using every traded minute close
+and the next traded minute open. One replacement at the first 15:55 checkpoint after cover
+with >=3 sessions to the ORIGINAL expiry; current checkpoint top eight; next minute open;
+up to min($4k, freed marked dollars), $8k symbol entry-value cap, $100k new-order marked
+account cap. Existing scheduled primary orders reserve their signal-known nominal dollars.
+No second replacement, no extended horizon. Full exact numerical rules/code hashes are frozen.
+D6 is mathematically dominated by R6 on measured IS axes; its OOS look tested a genuinely
+different exit/recycling mechanism, not a claimed orthogonal engine. Avoided redundant sizes.
 
-IS signal months: 2025-09, 2025-11, 2026-01, 2026-03, 2026-05, 2026-07 (124 sessions).
-OOS signal months: 2025-10, 2025-12, 2026-02, 2026-04, 2026-06, 2026-08 (127 sessions).
-All cohort trades are marked through their full calendar lifecycle, including
-cross-month dates. D6 uses validated original-slot lifecycle checkpoint rankings;
-no independent even-month root signal cohort was generated during IS research.
-The even months were seen historically and are internal confirmation, not pristine
-external validation. No new OOS signal-cohort performance has been inspected here.
+IS/OOS cohort comparison -- continuous lifecycle DD, SIGNAL-month completed PnL
+----------------------------------------------------------------------------
+book split       total   $/session trades        DD   worst_day    avg_gross  peak_gross
+PARENT IS       9969.57       80.40    184   -19048.26    -4659.00     28897.74    97450.49
+R6     IS      21120.61      170.33    184   -15057.74    -3684.91     29013.87    85384.38
+R5     IS      24628.10      198.61    184   -10317.29    -5309.78     29026.53    92716.16
+R4     IS      16598.29      133.86    184   -14656.73    -4764.93     28887.47    91791.22
+D6     IS      17560.05      141.61    207   -19087.18    -3887.87     28063.52    96048.76
+PARENT OOS     41886.14      329.81    192   -17650.62    -3996.44     29559.86    97278.56
+R6     OOS     53057.38      417.77    192   -18927.93    -5407.57     30876.51   126982.12
+R5     OOS     58483.62      460.50    192   -22307.07    -5426.77     31507.27   122299.06
+R4     OOS     53288.41      419.59    192   -15657.30    -4314.99     30546.66   106545.47
+D6     OOS     34989.17      275.51    223   -22137.56    -4804.63     28829.40    97190.99
 
-Audit artifacts
----------------
-cg_arrow002_ledger.txt: predeclarations, all results, dispositions, parentage, Pareto.
-cg_arrow002_is_results.json: exact aggregate metrics and complete specs for 56 books.
-cg_arrow002_is_robustness.json: all six leave-one-month-out comparisons.
-cg_arrow002_is_month_resampling.json: descriptive paired six-month resampling.
-cg_arrow002_selection.json: pre-OOS selection rationale.
-cg_arrow002_parent_validation.json: 184 IS parent trades match inherited entries,
-exits, shares and PnL exactly; zero daily MTM (marked-to-market) or peak discrepancy.
-cg_arrow002_superseded_is.json: transparent A5/D6 causal-state corrections.
-cg_arrow002_preflight_history.txt: complete archived blocked first-attempt report.
-The old preflight code/tests and cg_arrow002_research_ledger.txt remain unchanged.
+book split red    red_loss worst_signal_month best_month/total PnL/avg_gross    hit     PF
+PARENT IS     2   -16418.13          -12394.77           0.9524        0.3450  0.473  1.187
+R6     IS     2   -12785.28           -9268.68           0.5774        0.7279  0.473  1.448
+R5     IS     2    -8157.50           -7428.85           0.5632        0.8485  0.473  1.553
+R4     IS     2   -11975.29           -9537.13           0.6083        0.5746  0.473  1.338
+D6     IS     2   -14973.89          -12060.68           0.7035        0.6257  0.502  1.329
+PARENT OOS    2   -12425.68          -10800.49           0.6848        1.4170  0.542  1.953
+R6     OOS    2   -14892.67          -13466.11           0.7219        1.7184  0.542  2.151
+R5     OOS    2   -17704.25          -11155.31           0.6073        1.8562  0.542  2.244
+R4     OOS    2   -11508.42           -8969.17           0.6219        1.7445  0.542  2.231
+D6     OOS    2   -15160.37          -13251.43           0.7784        1.2137  0.547  1.659
 
-Independent parquet/date and minute-lifecycle processing used eight workers.
-A9 tested the entire eligible field without a shortlist cap and failed.
-Directed D1-D5 completed without a strict dual winner. Minute-level protection
-subsequently released material capital, so conditional D6 was opened and completed.
-No new pulls, no fabricated splits, no prohibited-source access, no next arrow.
+IS SIGNAL-month completed PnL (all six months retained)
+month         PARENT           R6           R5           R4           D6
+2025-09     -12394.77     -9268.68     -7428.85     -9537.13    -12060.68
+2025-11      -4023.36     -3516.60      -728.64     -2438.16     -2913.21
+2026-01       9495.17      9060.11     10388.26      8323.90     12354.12
+2026-03       7009.65     12194.37     13871.34     10096.41      8852.31
+2026-05       3205.33      5532.77      5687.94      4151.78      5438.88
+2026-07       6677.55      7118.65      2838.05      6001.49      5888.64
 
-Model limitations
------------------
-Inherited raw fixed shares, missing-H10 economic-cohort exclusions and transaction
-costs remain common. Causal sizing/capacity state includes filled missing-backstop
-positions; D6 also simulates their early exits and shadow replacement capacity
-before applying common economic exclusions. No hindsight capacity release.
-Missing historical loan fees/dividend obligations and unresolved corporate actions
-preclude deployment claims. EOD gross risk is not a guarantee of intraday margin fit.
-Borrow sensitivities and continuous 12-month investor curves are reserved until
-after the one-shot OOS pass, as descriptive reports rather than optimization inputs.
+OOS SIGNAL-month completed PnL (all six months retained)
+month         PARENT           R6           R5           R4           D6
+2025-10      28681.57     38300.95     35519.48     33139.73     27236.11
+2025-12     -10800.49    -13466.11    -11155.31     -8969.17    -13251.43
+2026-02      -1625.19     -1426.57     -6548.94     -2539.25     -1908.94
+2026-04       4639.99      5900.85      6480.38      6773.36      3633.72
+2026-06      19500.33     21481.99     29558.85     22353.03     19221.28
+2026-08       1489.92      2266.27      4629.17      2530.72        58.44
 
-Tests / clock
--------------
-Latest pre-freeze full suite: 457 passed, 0 failed, 0 skipped in 3.47 seconds.
-Focused tests include causal fills, signal firewall, full-field selection, sizing,
-capacity, missing-backstop shadow state, daylight-saving time and one-shot freeze.
-All 56 books replayed exactly under the frozen code state in 42.5 seconds.
-Start: 2026-09-13T01:42:30Z; fresh 180-minute allowance.
-Freeze: minute 69.2. Search did not stop at the first improvement: independent
-mechanisms, combinations, exposure-restored controls, full-field reranking,
-minute-cadence comparisons and conditional recycling all completed.
-Confirmation, final investor reporting, final tests and final push remain to close.
+One-shot repetition assessment -- NO finalist is OOS CONFIRMED WITHIN THIS INTERNAL SPLIT
+-------------------------------------------------------------------------------------
+R6 MIXED: profit and exposure-normalized profit rise, but all six smoothness measures fail
+to improve; DD, worst day, red-month losses and concentration worsen. Peak $126,982 > $102,922.
+R5 MIXED: profit rises and concentration improves, but only one smoothness measure improves;
+DD/worst day/red-month losses worsen and peak $122,299 breaches the ceiling.
+R4 MIXED: closest economic repetition -- higher profit, improved red-loss sum, worst month,
+DD and concentration; worst day worsens and peak $106,545.47 exceeds the allowed ceiling
+by $3,623.47. The capital gate is binding; do not relabel it confirmed or rescale after seeing OOS.
+D6 FAILED: OOS profit falls to $34,989.17 versus $41,886.14; normalized economics and all
+six smoothness measures fail to improve. Staying within the OOS exposure ceiling is insufficient.
+These labels explain the outcome rather than hiding failed requirements behind a single score.
+
+Frozen size controls -- IS-calibrated constants, NOT recalibrated to OOS
+id                                      fixed_ticket    OOS_PnL  OOS_avg_gross  OOS_PnL/avg
+MATCH_R6_REJECTION_EQUAL_EXPOSURE          4016.0743   42055.84       29672.09       1.4174
+MATCH_R5_COMBO_EQUAL_EXPOSURE              4017.8270   42099.11       29681.93       1.4183
+MATCH_R4_VOLUME_EQUAL_EXPOSURE             3998.5791   41864.36       29542.97       1.4171
+MATCH_D6_RECYCLE                           3884.5283   40614.02       28699.08       1.4152
+
+Post-freeze descriptive 12-month investor views -- NOT a second optimization surface
+---------------------------------------------------------------------------------
+These red-month statistics use CALENDAR-month MTM, not the SIGNAL-month statistics above.
+book        total_MTM    $/251d  red  red_loss_sum   worst_month        DD    worst_day   avg_gross  peak_gross
+PARENT      51855.71     206.60    3     -15890.73     -11624.81   -20033.68     -6607.31    58457.60   102921.77
+R6          74177.99     295.53    5     -18260.33      -9393.26   -22710.00     -7585.11    59890.38   126982.12
+R5          83111.71     331.12    3     -18932.18      -6798.34   -19306.99     -6885.20    60533.79   122299.06
+R4          69886.70     278.43    3     -15851.44      -9775.64   -17841.23     -6768.31    59434.13   112073.90
+D6          53397.27     212.74    4     -17273.66     -11290.72   -22103.55     -4948.15    56875.98   104386.50
+
+month         PARENT           R6           R5           R4           D6
+2025-09     -11624.81     -9393.26     -6798.34     -9775.64    -11290.72
+2025-10      20205.67     28516.54     25365.52     24706.89     19294.75
+2025-11       5274.46      8058.53     10238.12      7989.46      5594.82
+2025-12      -4194.55     -5059.11     -6462.30     -4736.11     -3338.76
+2026-01         57.30     -1470.57      3880.19      1718.78      2974.29
+2026-02        630.75     -1375.88     -5671.54     -1339.69     -1200.32
+2026-03       6404.67     14740.77     14676.12     10304.43      7450.88
+2026-04       1001.48      -961.52       229.68      1528.50       175.37
+2026-05       1348.35      7272.27      6890.85      4931.46      2016.97
+2026-06      19788.66     20303.65     28100.64     21323.94     21709.23
+2026-07      13035.11     12261.33      9043.20     11780.82     11454.63
+2026-08        -71.38      1285.25      3619.57      1453.85     -1443.87
+
+book mean/peak tickets mean/peak symbols intended_new_notional calendar_best/total PnL/avg_gross
+PARENT  14.980/24      12.143/19             1600000.00              0.3897        0.8871
+R6      14.980/24      12.143/19             1647937.50              0.3844        1.2386
+R5      14.980/24      12.143/19             1678675.00              0.3381        1.3730
+R4      14.980/24      12.143/19             1640275.00              0.3535        1.1759
+D6      14.785/24      11.402/18             1752220.37              0.4066        0.9388
+
+Borrow-cost sensitivity -- reporting only, annual marked short value over holding calendar days
+book       0% total / per_day          10% total / per_day          30% total / per_day
+PARENT     51855.71 /   206.60       46019.80 /   183.35       34347.96 /   136.84
+R6         74177.99 /   295.53       68189.92 /   271.67       56213.77 /   223.96
+R5         83111.71 /   331.12       77056.67 /   307.00       64946.60 /   258.75
+R4         69886.70 /   278.43       63951.44 /   254.79       52080.90 /   207.49
+D6         53397.27 /   212.74       47709.02 /   190.08       36332.50 /   144.75
+Marked EOD value is carried across intervening calendar days until the next session;
+this is a flat-rate sensitivity, not historical locate/loan/dividend data or a live financing model.
+R5's raw $331.12/day is not a $100k slate success: its marked peak is $122,299.06.
+The goal remains $300-$500 net/day and the slate floor $200/day on $100k; no capital-admissible
+improvement was confirmed. No low-correlation/joint-risk seat claim was tested or made.
+
+Scientific audit and negative findings
+--------------------------------------
+The parent reproduces the inherited continuous-year provenance exactly at reported precision:
+$51,855.71, $206.60/day, 376 trades, DD -$20,033.68, worst day -$6,607.31, peak $102,921.775
+(rounded $102,922). No frozen parent constants or inherited source files were changed.
+IS split: 2025-09/11 and 2026-01/03/05/07, 124 sessions; OOS: the six even signal months,
+127 sessions. Lifecycle chronology includes cross-month dates; no concatenated odd-day MTM.
+D6 cross-month checkpoint ranks are subordinate original-slot lifecycle state, not new even-month
+root cohorts. All new OOS root performance was protected until the recorded freeze.
+The inherited even months were previously inspected historically; this is internal confirmation,
+not pristine independent validation. Training resampling with only six months is descriptive,
+post-selection and uncorrected for multiplicity, NOT a valid confidence interval or expected value.
+D1 inverse-vol sizing, D2 repeated-symbol caps, D3 width sizing and full-daily D4 timing failed
+to improve the original two-axis objective. D5 daily-checkpoint protection reduced profit.
+Finest-minute protection retained more IS profit than daily protection (96.9% versus 89.7%)
+and released 6.8% average exposure, justifying conditional D6. Recycling's IS benefit did not
+repeat OOS. Reranking the entire eligible field by return/volatility also failed (A9 $37.09/day).
+Autonomous stall/rejection/volume ideas improved IS, but matching AVERAGE IS exposure did not
+bound future PEAK exposure. That failure is preserved, not repaired after the reveal.
+A5 inventory and D6 capacity-state audits corrected dependence on future missing-backstop
+availability before freeze; superseded aggregates remain archived. A daylight-saving checkpoint
+guard caught a fixed-offset bug before D6 performance was accepted. Tests cover these cases.
+Causal state includes all known fills, including missing-H10 shadow positions. For comparable
+economics, inherited missing-backstop root exclusions remain; D6 excludes their children together.
+This common sampling limitation, raw prices, missing loan/dividend/locate realism, and EOD rather
+than guaranteed intraday margin fit preclude deployment. No split factors were inferred or fetched.
+D6's all-signal book is re-simulated with its joint causal capacity state, not spliced from two
+isolated books: full PnL $53,397.27 differs from isolated IS+OOS $52,549.23. This is descriptive
+post-freeze reporting only. No threshold, size, winner identity, or horizon was changed.
+Unpursued after reveal: controlling peak rather than average exposure and independently validating
+the volume/exhaustion mechanism remain questions, not an opened branch or a new arrow.
+
+Freeze, tests, public safety and clock
+-------------------------------------
+Freeze 2026-09-13T02:51:43+00:00; SHA-256 f0dfdf400889e7691087965c5d6cabf702899c0f4d27f39f0113fd83080e6d84.
+Pre-OOS checkpoint commit: 868776f0f28364fdd2d2554484260f5de479bc8a.
+One OOS pass started 2026-09-13T02:54:42+00:00, completed 2026-09-13T02:55:52+00:00; nine frozen books.
+Full-year investor reporting completed 2026-09-13T02:57:35Z; no second OOS optimization pass.
+All 56 IS books replayed without unexplained drift under the exact frozen code identity.
+Tests: 459 passed, 0 failed, 0 skipped in 3.29 seconds (full tests/ suite).
+Focused tests cover cohort/firewall/freeze invariants, sizing, exposure, later-print fills,
+missing-backstop shadow state, daylight-saving time, full-field selection, and a synthetic
+end-to-end one-shot confirmation. Temporary fixtures remain under ignored local data/tmp.
+Independent parquet/date, minute-lifecycle and resampling work used eight process workers;
+chronological scalar accounting/cache ownership was serial for correctness and low overhead.
+Fresh allowance began 2026-09-13T01:42:30+00:00; freeze at minute 69.2; report at minute 86.9.
+The 180-minute allowance was a ceiling, not a consumption target. Search continued well beyond
+the first improvement through independent hypotheses, contradictory challenges, full-field
+selection, matched exposures, minute execution, recycling and causal-state/fragility audits.
+All opened branches finished; no overrun or unfinished queue. Remaining time did not authorize
+new research after OOS. Closure commands are recorded in the command log; the terminal
+handoff reports the pushed commit after remote verification.
+Work/data stayed in the lab. No live pulls, prohibited-source access, credentials, parquet or
+raw market payloads were added to Git. Only reviewed code/tests and aggregate reports are intended.
+No CG Arrow 003 was begun or invented.
+
+Audit files: cg_arrow002_ledger.txt; cg_arrow002_is_results.json; cg_arrow002_is_robustness.json;
+cg_arrow002_is_month_resampling.json; cg_arrow002_freeze.txt; cg_arrow002_selection.json;
+cg_arrow002_confirmation_results.json (signal-cohort statistics, including ALL by signal month);
+cg_arrow002_investor_metrics.json (calendar-MTM investor statistics); cg_arrow002_commands.txt;
+cg_arrow002_parent_validation.json; cg_arrow002_superseded_is.json; cg_arrow002_preflight_history.txt.
+The first blocked attempt's ledger and preflight code/tests remain unchanged as historical artifacts.

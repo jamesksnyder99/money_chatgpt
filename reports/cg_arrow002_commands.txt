@@ -64,13 +64,72 @@ Latest pre-freeze full suite:
 .\.venv\Scripts\python.exe -m pytest -q tests --basetemp=data/tmp/cg_arrow002r_test9
 457 passed in 3.47 seconds; no failures/skips.
 
-Planned immutable freeze command (same Python here-string form):
+Executed immutable freeze command (same Python here-string form):
 from research.cg_arrow002_lab import REPORTS, ROOT, read, Spec, freeze_finalists
 plan = read(REPORTS/'cg_arrow002_selection.json')
 controls = [Spec(**read(ROOT/'results'/f'{id}_IS.json')['spec']) for id in plan['controls']]
 freeze_finalists(list(plan['finalists']), controls, plan['finalists'])
+Completed 2026-09-13T02:51:43Z.
+Freeze SHA-256: f0dfdf400889e7691087965c5d6cabf702899c0f4d27f39f0113fd83080e6d84
+
+.\.venv\Scripts\python.exe -m pytest -q tests --basetemp=data/tmp/cg_arrow002r_frozen_tests
+457 passed in 3.25 seconds after freeze, before real OOS.
+git add -- src/research/cg_arrow002_lab.py src/research/cg_arrow002_recycle.py src/research/cg_arrow002_audit.py tests/test_cg_arrow002_lab.py tests/test_cg_arrow002_recycle.py 'reports/cg_arrow002*'
+git diff --cached --check
+git diff --cached --stat
+git diff --cached --name-only
+git diff --cached -- reports/cg_arrow002_recursive_lab.txt reports/cg_arrow002_commands.txt reports/cg_arrow002_selection.json
+Staged audit: 26 files, no forbidden paths, no credential-literal suspects, all JSON
+parsed, source matched reviewed working files, no raw market payload fields in JSON.
+git commit -m 'CG Arrow 002R: freeze IS finalists and replay harness'
+Pre-OOS checkpoint: 868776f0f28364fdd2d2554484260f5de479bc8a (not pushed separately).
 
 After freeze only:
 .\.venv\Scripts\python.exe -m research.cg_arrow002_lab confirm --workers 8
 .\.venv\Scripts\python.exe -m research.cg_arrow002_lab investor --workers 8
 .\.venv\Scripts\python.exe -m research.cg_arrow002_audit export
+
+Confirmation completed 2026-09-13T02:55:52Z; one pass, exactly nine frozen books.
+Investor replay completed 2026-09-13T02:57:35Z. No strategy edits after freeze.
+Final reporting-only script was added outside the hash-covered strategy engine;
+it consumes completed snapshots, distinguishes calendar MTM from signal-month
+statistics, and cannot rank or replay. No new hypotheses followed the reveal.
+
+.\.venv\Scripts\python.exe -m pytest -q tests --basetemp=data/tmp/cg_arrow002r_final_tests
+459 passed in 3.52s, no failures/skips.
+.\.venv\Scripts\python.exe -m pytest -q tests --basetemp=data/tmp/cg_arrow002r_closure_tests
+459 passed in 3.29s after final reporting cleanup; no failures/skips.
+.\.venv\Scripts\python.exe scripts/cg_arrow002_report.py --test-summary '459 passed, 0 failed, 0 skipped in 3.29 seconds (full tests/ suite).'
+
+Final read-only invariant check (Python here-string, same environment prefix):
+from research.cg_arrow002_lab import authorize, digest, FREEZE, ROOT, read
+m=authorize('ALL')
+expected={r['id'] for r in m['finalists']+m['controls']}
+c=read(ROOT/'oos_complete.json')
+assert set(c['books'])==expected
+assert len(list((ROOT/'results').glob('*_OOS.json')))==len(expected)==9
+assert c['freeze_sha256']==digest(FREEZE)=='f0dfdf400889e7691087965c5d6cabf702899c0f4d27f39f0113fd83080e6d84'
+for mode in ('OOS','ALL'):
+    for id in expected:
+        r=read(ROOT/'results'/f'{id}_{mode}.json')
+        assert r['freeze_sha256']==digest(FREEZE)
+        assert abs(sum(r['metrics']['monthly_mtm'].values())-r['metrics']['total_pnl'])<1e-6
+PASS: unchanged frozen engine and manifest; exactly nine OOS books; all totals reconcile.
+git diff 868776f -- src
+Empty: no frozen strategy source changed after the pre-OOS checkpoint.
+
+Closure command sequence (remote equality and clean status checked before handoff):
+git add -- reports/cg_arrow002_commands.txt reports/cg_arrow002_ledger.txt reports/cg_arrow002_recursive_lab.txt reports/cg_arrow002_confirmation_results.json reports/cg_arrow002_investor_metrics.json scripts/cg_arrow002_report.py tests/test_cg_arrow002_report.py
+git diff --cached --check
+git diff --cached --stat
+git diff --cached --name-only
+git diff --cached -- reports/cg_arrow002_commands.txt reports/cg_arrow002_ledger.txt reports/cg_arrow002_recursive_lab.txt scripts/cg_arrow002_report.py tests/test_cg_arrow002_report.py
+Public-safety checks inspect both commits' changed paths/content, parse aggregate
+JSON, reject credential literals and raw market payload fields, and verify staged
+content equals reviewed working files. No data/parquet/env/cache paths are intended.
+git commit -m 'CG Arrow 002R: recursive fade laboratory results'
+git push origin main
+git rev-parse HEAD
+git ls-remote origin refs/heads/main
+git status --short --branch
+Final pushed SHA and actual total wall-clock minutes are supplied in the terminal handoff.
