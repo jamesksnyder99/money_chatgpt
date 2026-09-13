@@ -1,22 +1,19 @@
 # Agent rules
 
-- This repository is `jamesksnyder99/money_chatgpt`, an independent research lab. Read `docs/CHATGPT_LAB_PROTOCOL.md` before executing a lab arrow.
-- **Never write to `C:\Users\james\Money`.** The original Money repository and its data are out of bounds for modification. Use only the copied/local data under `C:\Users\james\money_chatgpt\data\` unless an active lab arrow explicitly authorizes a read-only provenance check.
-- Never print, log, commit, or echo `.env` or credential values.
-- This GitHub repository is public by user choice. Before every push, inspect staged files/diff for secrets, parquet, credentials, private account identifiers, or proprietary local data.
-- Stocks Professional only unless the user says otherwise. No options, no bulk/flat files, no streaming. Sub-minute bars only when the user asks for that tape.
-- Prefer the official `thetadata` Python SDK (HTTPS/gRPC). Do not launch Theta Terminal unless asked.
-- Follow `docs/DATA_CONTRACT.md`. Universe is the eligibility rules in the active brief, not an arbitrary 50-name cap.
-- Economic rule is `docs/SUCCESS.md` (two floors: slate $200/day, seat $100/day with IS not red / OOS green / low correlation / joint risk that fits $100k). Goal $300–$500 net per trading day on $100k. Do not optimize for pretty backtests that cannot clear the floors.
-- Language from inherited Money Arrow 43 on: IS = in-sample (odd months), OOS = out-of-sample (even months). A lab arrow may define a different diagnostic split, but must label it explicitly and must not quietly promote an inspected slice to fresh validation.
-- **Granularity law:** the finest tape we actually possess is foundational for reading and acting. Today that is one-minute bars; if a 1-second or 10-second tape is added, that becomes the default. A higher timeframe (5-minute, 15-minute, etc.) is allowed only when a scored comparison shows it is superior for execution or computation (for example anti-twitch). Do not treat “one-minute” as the identity of the law.
-- Keep live pulls resumable. Pilot before a full ingest when new data acquisition is authorized.
-- Parallelize by default: multi-core workers for local compute, parquet, tape replay, validation, and independent subprocesses. Theta pulls use up to 8 concurrent requests (Pro cap) with backoff on 429. Serial loops need a reason.
-- Long jobs: stdout heartbeat at least every 15 minutes with an ETA estimate. Soft time budgets are hints, not kill switches — checkpoint and resume.
-- Do not commit `data/`, parquet, secrets, `.venv/`, caches, or generated local proprietary datasets. Manifests and reports may be committed if they contain no credentials or proprietary payload.
-- Preserve the frozen control named by the active arrow. Reproduce before repairing; repair before optimizing.
-- Report negative findings with the same prominence as positive findings. Do not drop dates, trades, or months after seeing outcomes.
-- Prefer small, reviewable commits over one opaque dump.
-- Expand acronyms on first use in briefs and reports.
-- **Standing SOP:** the detailed instruction set is the active `docs/CG_BUILD_ARROW_XXX.md` on GitHub. The paste to Codex is a short pointer at that file. Do not treat a long chat paste as the spec.
-- At the end of one lab arrow, run tests, write the requested audit report, commit, and push to `origin/main`. Do **not** invent or begin the next lab arrow. ChatGPT audits the pushed commit before the next arrow is written.
+- This repository is `jamesksnyder99/money_chatgpt`, an independent research lab. Read `docs/CHATGPT_LAB_PROTOCOL.md`, `docs/SUCCESS.md`, and the explicitly assigned CG arrow.
+- The currently assigned CG arrow controls its research scope, budget, data treatment, and acceptance criteria. Older Money/CG arrows and their reports are historical evidence, not competing current instructions. Do not rewrite their recorded results to match new policy.
+- **Do not access `C:\Users\james\Money`.** Do not read, write, execute/import code, checkout, clean, reset, copy credentials, or generate caches there. Work inside `C:\Users\james\money_chatgpt`; Windows case variations of this same lab path are not a second repository.
+- Do not use junctions, symbolic links, or hard links back to Money. Use independently copied lab inputs. If an input is absent, use only a fallback or acquisition expressly authorized by the active arrow; otherwise report that specific limitation.
+- Never print, log, commit, or echo `.env` contents or credential values. The GitHub repository is public by user choice. Inspect staged filenames AND contents before every push; filename screening alone is not a secret audit.
+- Do not commit `data/`, parquet, credentials, private account identifiers, `.venv/`, caches, raw vendor data, or proprietary local datasets. Reviewed aggregate research reports, code, tests, and safe provenance manifests may be committed.
+- Stocks Professional only unless the user says otherwise. No options, bulk/flat-file purchases, streaming, or sub-minute ingest without authorization. Prefer the official installed ThetaData Python SDK; do not launch Theta Terminal or change subscription/account settings unless expressly authorized.
+- The eligible field is the active brief's point-in-time rule, not an arbitrary ticker cap. Historical data contracts describe inherited layouts; active CG instructions govern the new lab implementation.
+- Economic policy is `docs/SUCCESS.md`: $100,000 starting equity, $300-$500 modeled net/day ambition, and an approximately $130,000 SOFT gross-exposure planning range. Small temporary overshoots are descriptive, not automatic failure. Exposure is not equity, cash funding, or a broker margin guarantee. Do not manufacture improvement through unrestricted leverage.
+- Odd signal months are IS training and even signal months are OOS internal confirmation unless explicitly specified otherwise. Cross-month feature history and existing-position lifecycles are permitted. New candidate OOS performance may not guide the current IS search; previously inspected confirmation months must never be called pristine validation.
+- The finest available tape is foundational. One-minute execution data are presently available; aggregations are allowed for appropriate features and computation, but do not silently replace executable prices or claim resampled fills are minute fills.
+- Reuse valid caches and parallelize independent work. Bound total workers to the host rather than launching several oversubscribed eight-worker jobs. Theta requests, when authorized, use at most eight concurrent requests with backoff. Preserve one writer per output/cache partition.
+- An active arrow may authorize recursive hypothesis generation, refinement, and falsification without user approval at every step. Obey its scope and deadline; record every tested branch, including failures. No new arrow may be invented or begun.
+- Preserve legacy controls and frozen evidence. Apply common accounting repairs to all NEW comparison books; isolate improvements caused by repairs from improvements caused by strategy changes. Unknown data quality is not proof of zero defects or proof that the model fails.
+- Do not delete losing dates/trades/months using future outcomes. Prefer interpretable mechanisms to opaque sweeps or coefficient-significance mining. Include size/exposure-matched controls when relevant.
+- Emit concise progress at least every 10 minutes for a long run. The active arrow's wall-clock limit overrides older soft-overrun language. Finish results, tests, report, and push within that allocation; reduce breadth rather than leave unfinished experiments.
+- Detailed assignments live in `docs/CG_BUILD_ARROW_XXX.md`. The chat paste is only a pointer. At completion, commit and push intended reviewed files to `origin/main`, verify remote equality, report completion, and stop for ChatGPT's audit.

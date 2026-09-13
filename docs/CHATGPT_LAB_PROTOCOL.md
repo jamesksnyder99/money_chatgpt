@@ -1,75 +1,48 @@
 # money_chatgpt — ChatGPT / Codex research protocol
 
-This repository is an independent research laboratory cloned from `jamesksnyder99/money`.
-The source snapshot is recorded in `SOURCE_MONEY_COMMIT.txt`.
+This is an independent laboratory seeded from `jamesksnyder99/money`. Source provenance is in `SOURCE_MONEY_COMMIT.txt`; it is not permission to access the original local repository.
 
-## Roles
+## Roles and workflow
 
-- **ChatGPT** is research director and auditor. ChatGPT writes the detailed research arrows in GitHub, reviews Codex commits/reports, interprets results, and decides the next arrow.
-- **Codex (C)** is the local execution agent. C pulls the current `main`, reads the active arrow, performs the prescribed work, runs tests, writes code/reports, commits, and pushes to `main` unless an arrow explicitly says otherwise.
-- **User** normally relays only a short pointer telling C which arrow to read. The detailed specification lives in GitHub, not in the chat paste.
+ChatGPT is research director and auditor: it writes the detailed GH arrows, reviews committed code/results, interprets the evidence, and determines the next assignment. Codex Astra is the local investigator/executor. The user normally supplies only a short pointer to the named arrow.
 
-## Shared-control workflow
+1. ChatGPT reads the latest pushed evidence and publishes the next detailed arrow.
+2. Codex checks its current work, uses `git pull --ff-only origin main` without overwriting local changes, and confirms the lab root and remote.
+3. Codex executes the assigned work, tests, records all findings, reviews public safety, commits and pushes to `origin/main`.
+4. Codex verifies the pushed state and stops for audit. It may not invent or begin the next arrow.
 
-1. ChatGPT audits the latest `main` in GitHub.
-2. ChatGPT writes one new `docs/CG_BUILD_ARROW_XXX.md` and pushes it to GitHub.
-3. User gives C a short pointer: pull `main`, read `AGENTS.md`, `docs/CHATGPT_LAB_PROTOCOL.md`, and the named arrow, then execute it completely.
-4. C starts by `git pull --ff-only` and confirms the active repository is `C:\Users\james\money_chatgpt`.
-5. C performs the work only in `money_chatgpt`, runs the prescribed tests, writes audit-friendly reports, commits all intended tracked changes, and pushes to `origin/main`.
-6. ChatGPT reviews the pushed commit and results before writing the next arrow.
+One arrow may authorize a whole recursive research session without interim user approvals. Approximately 60% directed hypotheses / 40% Astra-originated investigation is the present discovery allocation, not a rigid hypothesis-count quota. Astra may originate new mechanisms within the active scope, reject weak branches, and follow useful IS evidence. It cannot change the confirmation rule or silently relax data/economic assumptions.
 
-Do not chain arrows autonomously. One completed, pushed arrow is a checkpoint for audit.
+## Authority and scope
 
-A single active arrow may explicitly authorize **bounded recursive research inside that arrow**: C may generate, test, reject, refine, and combine hypotheses within the arrow's stated data firewall, economic constraints, wall-clock budget, and stopping rules. This is not permission to invent or begin the next arrow.
+The user's latest explicit direction and the active CG arrow supersede conflicting historical Money/CG instructions. `docs/SUCCESS.md` holds the current economic policy. Previous reports and freeze manifests remain immutable historical evidence.
 
-## Isolation rule — absolute
+CG Arrow 003 authorizes R4/R5-family continuation only, under soft approximately $130,000 gross exposure and reasonably clean odd/even signal-cohort gates. Independent new swing/day engines are parked, not discarded. Record such ideas in the backlog but do not execute them in this run.
 
-`C:\Users\james\Money` is source provenance only and is **out of bounds for writes**.
+## Isolation
 
-C must not edit, commit, checkout, clean, reset, fetch into, generate reports in, write caches in, or otherwise modify the original Money repository or its data.
+Do not read from, write to, execute/import code from, or otherwise access `C:\Users\james\Money`. The same prohibition applies when Codex runs without an OS-enforced sandbox; the instruction does not itself create a technical security boundary.
 
-For this laboratory:
+Use only lab code and local independent copies under `C:\Users\james\money_chatgpt`, or inputs acquired directly into this lab when expressly authorized by the active arrow. No links back to Money and no copied source credentials. Never run cleanup/reset operations against the original repository. Missing inputs require a bounded permitted fallback or a precise limitation, not silent fallback to the source.
 
-- Code, tests, reports, and manifests belong under `C:\Users\james\money_chatgpt`.
-- Market data used by the lab must be local copies under `money_chatgpt\data\` or newly acquired directly into the lab.
-- Do not use junctions, symbolic links, or hard links that make lab writes touch `Money`.
-- Do not import data by writing back into `Money`.
-- If a required input is absent from the lab, stop that branch and report the missing input; do not silently read a mutable source copy unless the active arrow explicitly authorizes a read-only provenance check.
+## Public GitHub safety
 
-## Git / public-repository safety
+The repository is intentionally public. Before pushing, inspect staged paths and CONTENT. Do not publish credentials, `.env`, private account identifiers, vendor parquet, raw OHLC/quote payloads, caches, virtual environments, or proprietary datasets. Aggregate performance tables and safe manifests may be published. Keep detailed market-data and trade-audit payloads local with hashes when they cannot be released safely.
 
-The GitHub repository is public by user choice.
+## Scientific practice
 
-Never commit or print:
+- Preserve historical controls. New common repairs get versioned working controls and a reconciliation; do not attribute a data repair's profit change to the signal.
+- Never infer absence of corporate actions from an empty placeholder. Never invent split factors from returns. Known material defects limit the conclusions; unresolved coverage is explicitly labeled.
+- Use as-of information before execution. Do not remove losing trades/months based on future outcomes or use missing future data to create present-day capacity.
+- Develop on odd signal months; allow causal lookbacks and position lifecycles across even months. Freeze new finalists before one confirmation reveal. Historical OOS knowledge is disclosed; newly scored OOS cannot direct the current search.
+- Keep signal-cohort statistics separate from actual calendar-month MTM. Replay joint capacity chronologically after freeze. Report outcome overlap; no formal purity project is required.
+- Prefer interpretable rules and focused neighboring checks, not opaque broad grids. Log every tested branch and its mechanism, including negative findings and superseded bug-affected results.
+- Separate less exposure, more efficient exposure, and genuinely different signals. A common R4/R5 mixture is not diversification across independent engines.
+- The active arrow's deadline includes setup, research, confirmation, reports, tests, and push. Reserve closure time and stop opening experiments that cannot finish. Do not silently reinterpret a meaningful research allocation as permission to freeze at the first convenient result.
+- Completion and success are different: a fully completed search may find no improvement. Never claim unperformed work or fabricated performance to meet a target.
 
-- `.env` or credentials;
-- API keys or tokens;
-- parquet market data;
-- private account identifiers;
-- local secrets;
-- proprietary data files not already intended for public release.
+## Naming
 
-The inherited `.gitignore` is necessary but not sufficient. Before every push, inspect `git status` and the staged diff for public safety.
+Hold short for fade is the Money Arrow 44 lineage, later Wednesday/eight-name/15-session-lookback/delayed-fill/ten-session-hold. R4 denotes volume-conditioned sizing; R5 adds stalled-momentum sizing. Always attach a plain-English description to model IDs.
 
-## Research governance
-
-- Preserve the frozen parent/control exactly unless the active arrow explicitly changes it.
-- Reproduce before repairing; repair before optimizing.
-- One change at a time when causal attribution matters.
-- No hindsight deletion of losing dates, trades, or months.
-- Do not use a previously inspected slice as fresh validation.
-- Report negative findings with the same prominence as positive findings.
-- Prefer interpretable state machines and economic mechanisms over opaque parameter sweeps.
-- Costs, borrow assumptions, capital use, and marked-to-market (MTM) risk are part of strategy economics.
-- A variant is not better merely because it is smoother after taking less exposure. Include exposure-matched controls where relevant.
-- A different name, weekday, or threshold is not automatically an orthogonal engine. Orthogonality requires a meaningfully different economic mechanism and should ultimately be checked on synchronized portfolio returns.
-
-## Hold-short-for-fade working name
-
-In this lab, **hold short for fade** refers to the Money research lineage beginning with the Arrow 44 residual-winner short idea and evolving into the Wednesday, eight-name, 15-session lookback, delayed-fill, ten-session-hold parent studied in Arrows 65–73.
-
-The inherited Money reports may use names such as `leftover`, `Wednesday H10`, `h10_4k`, or related identifiers. Lab reports should always include a short plain-English description next to opaque IDs.
-
-## Arrow numbering
-
-Lab arrows use `CG_BUILD_ARROW_001.md`, `CG_BUILD_ARROW_002.md`, and so on. Do not reuse the inherited Money Arrow numbers.
+Lab assignments use `docs/CG_BUILD_ARROW_XXX.md`. Preserve earlier arrows as history. A short chat pointer is not the full specification.
