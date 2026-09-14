@@ -19,7 +19,7 @@ All three Arrow 007 audit defects are closed, the baseline and ladder were rebui
 | R1→R2 attribution reconciles | 6 of 6 bridges, residual ≤ 1.5e-11 |
 | Calendar, runoff and account reporting reconciles | 18 of 18 books, all identities hold |
 | 10-session hold reproduces the final baseline | exactly, all variants and both panels |
-| Invariant and regression tests | 628 passed, 1 skipped |
+| Invariant and regression tests | 629 passed, 1 skipped |
 | Adversarial audit | 15 of 15 passed |
 | Public/private separation | intact |
 

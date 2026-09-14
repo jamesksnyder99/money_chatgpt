@@ -45,6 +45,18 @@ The GitHub repository is public. Never publish `.env`, credentials, raw vendor b
 - One H1–H10 IS interpretation/freeze, then one full OOS batch; no OOS-driven horizon switch presented as confirmation.
 - Outcomes and resource limits never justify false completion. Exact irreducible blockers must remain explicit.
 
+## Monthly account reporting standard
+
+Frozen in Arrow 009 as `cg_lab_monthly_account_reporting_v1`, implemented in `src/verification/r4r5_monthly.py`.
+
+Every future arrow that publishes strategy economics and has a daily marked-account path must publish the same set: every calendar month of the period individually with none collapsed or skipped, principal variants side by side, monthly marked-account P&L in dollars, monthly return percent on the prior month-end marked equity, month-end marked equity, positive and red month counts, worst and median month, exact reconciliation to the period's marked account result, and explicit treatment of positions still open at the period end.
+
+Two rules make the numbers mean what they say. Monthly P&L comes from the daily marked-account path, never from grouping completed trades by exit month, so a trade opened in one month and closed in another contributes to both. The months reconcile to the marked account result at the period end, never to eventual completed-trade P&L, because eventual P&L includes exits scheduled after the period closes; those are reported separately as runoff.
+
+Published monthly rows are stated in whole cents and must chain exactly. Full precision belongs in the arrow manifest, which carries the exact reconciliation.
+
+This is a reporting requirement, never an optimization dimension. Monthly outcomes must not be used to select or alter a strategy.
+
 ## Naming and reporting convention
 
 Use human-readable names first in all new arrows, reports, tables and conversation. Legacy IDs remain in parentheses or filenames only where needed for provenance and code continuity.

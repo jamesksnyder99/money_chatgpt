@@ -1,0 +1,48 @@
+CG Arrow 009 — commands, checkpoints and timings (Opus in Claude Code)
+Reporting only. No strategy, ranking, sizing, event, price, quantity or accounting change.
+No credential value appears in any command, log, report or cache below.
+
+# 0. Pull and safety
+git pull --ff-only origin main            # -> 0b2bfad (arrow document only)
+git check-ignore -v .env                  # IGNORED, rechecked before the push
+
+# 1. Clerical repair
+# reports/cg_arrow008_verification.md: prose test count 628 -> 629 passed, 1 skipped,
+# matching reports/cg_arrow008_manifest.json and reports/cg_arrow008_commands.txt.
+# No other Arrow 008 figure, hash or verdict changed.
+
+# 2. Frozen reporting standard
+# src/verification/r4r5_monthly.py — cg_lab_monthly_account_reporting_v1
+#   monthly_account()  calendar months from a daily marked-account path
+#   summarize()        positive/red counts, red-month loss sum, worst/best/median
+#   reconcile()        five checks against the period's marked account result
+#   side_by_side(), missing_standard_fields()
+# docs/CHATGPT_LAB_PROTOCOL.md — the standard is now a standing lab requirement.
+
+# 3. Export
+python scripts/cg_arrow009_report.py
+#   source: certified Arrow 008 R2_LEGACY_FILL_QTY daily marked-account path
+#   Equal-Dollar Short:            12 months, total 106,392.41, certified B 106,392.41, reconciles
+#   Volume-Sized Short:            12 months, total 114,655.18, certified B 114,655.18, reconciles
+#   Momentum+Volume-Sized Short:   12 months, total 129,202.83, certified B 129,202.83, reconciles
+
+# 4. Defect found in Arrow 009's own first output and repaired
+#   the first CSV rounded P&L and equity independently, so published rows did not chain to the
+#   cent and the twelve rounded months missed B by 0.024. The cent-rounded equity path is now
+#   the authority for the published P&L and return columns, so the statement chains exactly;
+#   full precision is retained in the manifest, which carries the exact reconciliation.
+
+# 5. Tests
+python -m pytest tests/test_cg_arrow009.py -q --basetemp=data/tmp/cg_arrow009_tests -p no:cacheprovider
+python -m pytest tests -q --basetemp=data/tmp/cg_arrow009_tests -p no:cacheprovider   # 642 passed, 1 skipped
+
+# 6. Safety review and push
+git check-ignore -v .env
+git ls-files handoff data/verification      # empty
+git diff --cached --name-only               # paths AND content inspected before commit
+
+# Outcomes
+# All ten required invariants pass. The twelve calendar months reconcile to Arrow 008 quantity B,
+# the marked account P&L at 2026-08-31, and deliberately not to quantity A, which contains exits
+# scheduled after August closes. Arrow 008 membership hash e51a07d60312 and entry-ledger hash
+# 071bb7e13dfa are unchanged; no certified result was recomputed.

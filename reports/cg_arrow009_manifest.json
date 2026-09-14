@@ -1,0 +1,371 @@
+{
+  "arrow": "CG Arrow 009",
+  "executor": "Opus in Claude Code",
+  "timestamp": "2026-09-14T17:08:31+00:00",
+  "scope": "reporting only; no strategy, ranking, sizing, event or accounting change",
+  "head_at_run": "0b2bfadcddecbbaecad58b388b75f835ca3163f2",
+  "source_book": "certified Arrow 008 R2_LEGACY_FILL_QTY daily marked-account path",
+  "reporting_standard": "cg_lab_monthly_account_reporting_v1",
+  "months": [
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "monthly": {
+    "PARENT": [
+      {
+        "month": "2025-09",
+        "monthly_pnl": 634.4859235999902,
+        "monthly_return_pct": 0.6344859235999902,
+        "month_end_equity": 100634.48592359999,
+        "prior_month_end_equity": 100000.0
+      },
+      {
+        "month": "2025-10",
+        "monthly_pnl": 17869.73854739996,
+        "monthly_return_pct": 17.757072422436146,
+        "month_end_equity": 118504.22447099995,
+        "prior_month_end_equity": 100634.48592359999
+      },
+      {
+        "month": "2025-11",
+        "monthly_pnl": 9779.447423999954,
+        "monthly_return_pct": 8.252404053657306,
+        "month_end_equity": 128283.6718949999,
+        "prior_month_end_equity": 118504.22447099995
+      },
+      {
+        "month": "2025-12",
+        "monthly_pnl": -4139.085272900018,
+        "monthly_return_pct": -3.226509821365151,
+        "month_end_equity": 124144.58662209989,
+        "prior_month_end_equity": 128283.6718949999
+      },
+      {
+        "month": "2026-01",
+        "monthly_pnl": 6273.587486800039,
+        "monthly_return_pct": 5.053452315159776,
+        "month_end_equity": 130418.17410889993,
+        "prior_month_end_equity": 124144.58662209989
+      },
+      {
+        "month": "2026-02",
+        "monthly_pnl": 3939.9061750000983,
+        "monthly_return_pct": 3.0209794010076036,
+        "month_end_equity": 134358.08028390002,
+        "prior_month_end_equity": 130418.17410889993
+      },
+      {
+        "month": "2026-03",
+        "monthly_pnl": 8619.607779800077,
+        "monthly_return_pct": 6.4153996258258195,
+        "month_end_equity": 142977.6880637001,
+        "prior_month_end_equity": 134358.08028390002
+      },
+      {
+        "month": "2026-04",
+        "monthly_pnl": -3387.9343633999233,
+        "monthly_return_pct": -2.3695545852514517,
+        "month_end_equity": 139589.75370030018,
+        "prior_month_end_equity": 142977.6880637001
+      },
+      {
+        "month": "2026-05",
+        "monthly_pnl": 3242.740289799869,
+        "monthly_return_pct": 2.323050369987791,
+        "month_end_equity": 142832.49399010005,
+        "prior_month_end_equity": 139589.75370030018
+      },
+      {
+        "month": "2026-06",
+        "monthly_pnl": 29883.730005700054,
+        "monthly_return_pct": 20.922220967290077,
+        "month_end_equity": 172716.2239958001,
+        "prior_month_end_equity": 142832.49399010005
+      },
+      {
+        "month": "2026-07",
+        "monthly_pnl": 17529.247063699964,
+        "monthly_return_pct": 10.149160662594278,
+        "month_end_equity": 190245.47105950007,
+        "prior_month_end_equity": 172716.2239958001
+      },
+      {
+        "month": "2026-08",
+        "monthly_pnl": 16146.935245000175,
+        "monthly_return_pct": 8.487421621695349,
+        "month_end_equity": 206392.40630450024,
+        "prior_month_end_equity": 190245.47105950007
+      }
+    ],
+    "R4": [
+      {
+        "month": "2025-09",
+        "monthly_pnl": 2854.3856663999904,
+        "monthly_return_pct": 2.8543856663999905,
+        "month_end_equity": 102854.38566639999,
+        "prior_month_end_equity": 100000.0
+      },
+      {
+        "month": "2025-10",
+        "monthly_pnl": 16574.55667669988,
+        "monthly_return_pct": 16.114584292456072,
+        "month_end_equity": 119428.94234309987,
+        "prior_month_end_equity": 102854.38566639999
+      },
+      {
+        "month": "2025-11",
+        "monthly_pnl": 11413.147738,
+        "monthly_return_pct": 9.556433737152162,
+        "month_end_equity": 130842.09008109987,
+        "prior_month_end_equity": 119428.94234309987
+      },
+      {
+        "month": "2025-12",
+        "monthly_pnl": -8288.745975300044,
+        "monthly_return_pct": -6.3349232423316,
+        "month_end_equity": 122553.34410579983,
+        "prior_month_end_equity": 130842.09008109987
+      },
+      {
+        "month": "2026-01",
+        "monthly_pnl": 6506.8411614999495,
+        "monthly_return_pct": 5.309395030365405,
+        "month_end_equity": 129060.18526729978,
+        "prior_month_end_equity": 122553.34410579983
+      },
+      {
+        "month": "2026-02",
+        "monthly_pnl": 2456.209609999947,
+        "monthly_return_pct": 1.9031505377997329,
+        "month_end_equity": 131516.39487729972,
+        "prior_month_end_equity": 129060.18526729978
+      },
+      {
+        "month": "2026-03",
+        "monthly_pnl": 12907.615749600052,
+        "monthly_return_pct": 9.81445375053233,
+        "month_end_equity": 144424.01062689978,
+        "prior_month_end_equity": 131516.39487729972
+      },
+      {
+        "month": "2026-04",
+        "monthly_pnl": -62.61909860005835,
+        "monthly_return_pct": -0.043357817255072956,
+        "month_end_equity": 144361.39152829972,
+        "prior_month_end_equity": 144424.01062689978
+      },
+      {
+        "month": "2026-05",
+        "monthly_pnl": 6893.456213700061,
+        "monthly_return_pct": 4.775138380644322,
+        "month_end_equity": 151254.84774199978,
+        "prior_month_end_equity": 144361.39152829972
+      },
+      {
+        "month": "2026-06",
+        "monthly_pnl": 31451.403541699925,
+        "monthly_return_pct": 20.79364993004891,
+        "month_end_equity": 182706.2512836997,
+        "prior_month_end_equity": 151254.84774199978
+      },
+      {
+        "month": "2026-07",
+        "monthly_pnl": 15155.939658099785,
+        "monthly_return_pct": 8.295249643410497,
+        "month_end_equity": 197862.1909417995,
+        "prior_month_end_equity": 182706.2512836997
+      },
+      {
+        "month": "2026-08",
+        "monthly_pnl": 16792.988134999905,
+        "monthly_return_pct": 8.48721428539094,
+        "month_end_equity": 214655.1790767994,
+        "prior_month_end_equity": 197862.1909417995
+      }
+    ],
+    "R5": [
+      {
+        "month": "2025-09",
+        "monthly_pnl": 3732.7675447001384,
+        "monthly_return_pct": 3.7327675447001383,
+        "month_end_equity": 103732.76754470014,
+        "prior_month_end_equity": 100000.0
+      },
+      {
+        "month": "2025-10",
+        "monthly_pnl": 14264.726408899995,
+        "monthly_return_pct": 13.751417942988065,
+        "month_end_equity": 117997.49395360013,
+        "prior_month_end_equity": 103732.76754470014
+      },
+      {
+        "month": "2025-11",
+        "monthly_pnl": 12244.066262999957,
+        "monthly_return_pct": 10.376547715339328,
+        "month_end_equity": 130241.56021660009,
+        "prior_month_end_equity": 117997.49395360013
+      },
+      {
+        "month": "2025-12",
+        "monthly_pnl": -10792.399234600089,
+        "monthly_return_pct": -8.286448055944382,
+        "month_end_equity": 119449.160982,
+        "prior_month_end_equity": 130241.56021660009
+      },
+      {
+        "month": "2026-01",
+        "monthly_pnl": 12585.956369100139,
+        "monthly_return_pct": 10.536663686567659,
+        "month_end_equity": 132035.11735110014,
+        "prior_month_end_equity": 119449.160982
+      },
+      {
+        "month": "2026-02",
+        "monthly_pnl": -987.9978100001608,
+        "monthly_return_pct": -0.7482841154849238,
+        "month_end_equity": 131047.11954109998,
+        "prior_month_end_equity": 132035.11735110014
+      },
+      {
+        "month": "2026-03",
+        "monthly_pnl": 16734.260279599883,
+        "monthly_return_pct": 12.7696513576184,
+        "month_end_equity": 147781.37982069986,
+        "prior_month_end_equity": 131047.11954109998
+      },
+      {
+        "month": "2026-04",
+        "monthly_pnl": 819.8076962000341,
+        "monthly_return_pct": 0.5547435659314388,
+        "month_end_equity": 148601.1875168999,
+        "prior_month_end_equity": 147781.37982069986
+      },
+      {
+        "month": "2026-05",
+        "monthly_pnl": 8782.806831099908,
+        "monthly_return_pct": 5.910320757094266,
+        "month_end_equity": 157383.9943479998,
+        "prior_month_end_equity": 148601.1875168999
+      },
+      {
+        "month": "2026-06",
+        "monthly_pnl": 41794.93618999998,
+        "monthly_return_pct": 26.556027099925455,
+        "month_end_equity": 199178.93053799978,
+        "prior_month_end_equity": 157383.9943479998
+      },
+      {
+        "month": "2026-07",
+        "monthly_pnl": 14858.62700359989,
+        "monthly_return_pct": 7.459939142892992,
+        "month_end_equity": 214037.55754159967,
+        "prior_month_end_equity": 199178.93053799978
+      },
+      {
+        "month": "2026-08",
+        "monthly_pnl": 15165.274345000187,
+        "monthly_return_pct": 7.085333302802575,
+        "month_end_equity": 229202.83188659986,
+        "prior_month_end_equity": 214037.55754159967
+      }
+    ]
+  },
+  "summary": {
+    "PARENT": {
+      "months": 12,
+      "positive_months": 10,
+      "red_months": 2,
+      "flat_months": 0,
+      "red_month_loss_sum": -7527.019636299941,
+      "worst_month": -4139.085272900018,
+      "best_month": 29883.730005700054,
+      "median_month": 7446.597633300058,
+      "total_monthly_pnl": 106392.40630450024
+    },
+    "R4": {
+      "months": 12,
+      "positive_months": 10,
+      "red_months": 2,
+      "flat_months": 0,
+      "red_month_loss_sum": -8351.365073900102,
+      "worst_month": -8288.745975300044,
+      "best_month": 31451.403541699925,
+      "median_month": 9153.30197585003,
+      "total_monthly_pnl": 114655.1790767994
+    },
+    "R5": {
+      "months": 12,
+      "positive_months": 10,
+      "red_months": 2,
+      "flat_months": 0,
+      "red_month_loss_sum": -11780.39704460025,
+      "worst_month": -10792.399234600089,
+      "best_month": 41794.93618999998,
+      "median_month": 12415.011316050048,
+      "total_monthly_pnl": 129202.83188659986
+    }
+  },
+  "reconciliation": {
+    "PARENT": {
+      "standard": "cg_lab_monthly_account_reporting_v1",
+      "total_monthly_pnl": 106392.40630450024,
+      "expected_period_marked_pnl": 106392.40630450024,
+      "difference": 0.0,
+      "checks": {
+        "monthly_pnl_sums_to_period_marked_pnl": true,
+        "month_end_equity_chains": true,
+        "first_month_starts_from_starting_equity": true,
+        "last_month_end_equity_matches": true,
+        "return_denominator_is_prior_month_end_equity": true
+      },
+      "reconciles": true
+    },
+    "R4": {
+      "standard": "cg_lab_monthly_account_reporting_v1",
+      "total_monthly_pnl": 114655.1790767994,
+      "expected_period_marked_pnl": 114655.1790767994,
+      "difference": 0.0,
+      "checks": {
+        "monthly_pnl_sums_to_period_marked_pnl": true,
+        "month_end_equity_chains": true,
+        "first_month_starts_from_starting_equity": true,
+        "last_month_end_equity_matches": true,
+        "return_denominator_is_prior_month_end_equity": true
+      },
+      "reconciles": true
+    },
+    "R5": {
+      "standard": "cg_lab_monthly_account_reporting_v1",
+      "total_monthly_pnl": 129202.83188659986,
+      "expected_period_marked_pnl": 129202.83188659986,
+      "difference": 0.0,
+      "checks": {
+        "monthly_pnl_sums_to_period_marked_pnl": true,
+        "month_end_equity_chains": true,
+        "first_month_starts_from_starting_equity": true,
+        "last_month_end_equity_matches": true,
+        "return_denominator_is_prior_month_end_equity": true
+      },
+      "reconciles": true
+    }
+  },
+  "certified_inputs": {
+    "arrow008_manifest_sha256": "b68304233ec621e19ce87c891faa05e6cd4b7dea987c943a68435fbcd0a63a21",
+    "arrow008_membership_sha256": "e51a07d60312dfb574ed0df657c4c691607b28b3b710aa8b70a9169914773ae6",
+    "arrow008_entry_ledger_sha256": "071bb7e13dfac51856e1d144f7ef0f58cd61b275089250eb3156cd2038c699ed",
+    "arrow008_action_table_sha256": "338a4b96970e40c21ae5e3427bf414dcade18f59a11a1b5fa70944af69a74a51",
+    "arrow008_certification": "CERTIFIED"
+  },
+  "all_reconcile": true,
+  "headline_footnote": "Headline modeled P&L includes the lab's stated commission/spread assumptions and excludes broker-specific locate/HTB charges, dividends, recalls/buy-ins, financing, taxes, and other account-specific execution items. Alpaca ETB securities currently carry $0 locate and borrow fees for Trading API users; short availability and other security-specific costs may still vary."
+}
