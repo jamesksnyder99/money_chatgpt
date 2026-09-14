@@ -147,7 +147,8 @@ def _base_row(family, stage, c, rank, h, hold, quantity):
 
 
 def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int = 10, quantity: str = "fill",
-           stage: str = "R2", recorded: dict | None = None, scale: dict | None = None) -> dict:
+           stage: str = "R2", recorded: dict | None = None, scale: dict | None = None,
+           allocation: dict | None = None) -> dict:
     """Return {'trades': [...], 'daily': [...]} for one family and horizon.
 
     `recorded` (stage R1) supplies the frozen Arrow 003 position record per ticket id so
@@ -160,6 +161,13 @@ def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int =
     sessions and every observed price are untouched, so a scaled book differs from its
     fixed-dollar control only in share counts and in the amounts that are proportional to
     them. The caller owns causality; see verification.r4r5_equity.
+
+    `allocation` (Arrow 012) maps a ticket id to the base intended notional at 100,000 equity,
+    replacing the frozen family rule's own base amount for that ticket and nothing else. It is
+    the single injection point for a challenger's relative allocation or substituted lineup:
+    the name's own tier, multipliers, entry and exit sessions and observed prices are still
+    computed by the unchanged engine, and the recorded tier fields describe the name, not the
+    allocation. A ticket absent from the map keeps the frozen rule's amount.
     """
     if quantity not in {"fill", "preorder"}:
         raise ValueError("Unknown quantity convention")
@@ -182,7 +190,7 @@ def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int =
             amount, tier, vm, mm = sizing(family, f)
             if old is not None:
                 amount = old["ticket"]
-            fixed_amount = amount
+            fixed_amount = amount if allocation is None else float(allocation.get(tid, amount))
             factor = 1.0 if scale is None else float(scale[c["signal_iso"]])
             amount = fixed_amount * factor
             t.update({"ret3": f.get("ret3"), "volume_ratio": f.get("volume_ratio"),
@@ -190,6 +198,7 @@ def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int =
                       "volume_feature_available": f.get("volume_ratio") is not None,
                       "momentum_feature_available": f.get("ret3") is not None,
                       "intended_size_fixed_dollar": fixed_amount, "sizing_scale_factor": factor,
+                      "frozen_rule_base_notional": amount if allocation is None else sizing(family, f)[0],
                       "intended_size": amount, "size_tier": tier, "volume_multiplier": vm, "momentum_multiplier": mm,
                       "entry_status": observation_status(fill, sym, rec, need_final_minute=True)})
             if not present(rec) or rec.get("exec_px") is None:

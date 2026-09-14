@@ -1,0 +1,1651 @@
+{
+  "arrow": "CG Arrow 012",
+  "stage": "challenger_freeze",
+  "timestamp": "2026-09-14T22:53:00+00:00",
+  "head_at_freeze": "1734e0c121ab00705dfd6bd4d2f19103a7127719",
+  "config_version": "cg_arrow012_challengers_v1",
+  "holdout_embargo": {
+    "declaration": "Arrow 012 scores only the frozen 52 signal cohorts from 2025-09 through 2026-08. No signal cohort outside this set is read, ranked, featurized, scored or summarized, even if new files appear locally. Lookback and lifecycle observations required by the frozen 52 remain permitted.",
+    "frozen_cohort_ids": [
+      "2025-09-03",
+      "2025-09-10",
+      "2025-09-17",
+      "2025-09-24",
+      "2025-10-01",
+      "2025-10-08",
+      "2025-10-15",
+      "2025-10-22",
+      "2025-10-29",
+      "2025-11-05",
+      "2025-11-12",
+      "2025-11-19",
+      "2025-11-26",
+      "2025-12-03",
+      "2025-12-10",
+      "2025-12-17",
+      "2025-12-24",
+      "2025-12-31",
+      "2026-01-07",
+      "2026-01-14",
+      "2026-01-21",
+      "2026-01-28",
+      "2026-02-04",
+      "2026-02-11",
+      "2026-02-18",
+      "2026-02-25",
+      "2026-03-04",
+      "2026-03-11",
+      "2026-03-18",
+      "2026-03-25",
+      "2026-04-01",
+      "2026-04-08",
+      "2026-04-15",
+      "2026-04-22",
+      "2026-04-29",
+      "2026-05-06",
+      "2026-05-13",
+      "2026-05-20",
+      "2026-05-27",
+      "2026-06-03",
+      "2026-06-10",
+      "2026-06-17",
+      "2026-06-24",
+      "2026-07-01",
+      "2026-07-08",
+      "2026-07-15",
+      "2026-07-22",
+      "2026-07-29",
+      "2026-08-05",
+      "2026-08-12",
+      "2026-08-19",
+      "2026-08-26"
+    ],
+    "frozen_cohort_count": 52,
+    "membership_sha256": "e51a07d60312dfb574ed0df657c4c691607b28b3b710aa8b70a9169914773ae6",
+    "enforcement": "scripts assert every scored cohort id is in this list; tests/test_cg_arrow012.py checks it"
+  },
+  "incumbent": {
+    "family": "R5",
+    "replay": "R2",
+    "hold": 10,
+    "quantity": "CAUSAL_PREORDER_QTY",
+    "equity_rule": "Arrow 010 causal signal-close marked equity over 100,000",
+    "tiers": {
+      "FULL": 8300.0,
+      "HALF": 4150.0,
+      "QUARTER": 2075.0
+    }
+  },
+  "challengers": {
+    "C0": {
+      "name": "Incumbent Momentum+Volume equity-scaled R5",
+      "lineup": "original corrected top eight",
+      "allocation": "frozen R5 tier notionals",
+      "reproduces": "Arrow 010 exactly"
+    },
+    "C1": {
+      "name": "Rank-one 1.50x reallocation",
+      "multiplier": 1.5,
+      "formula": "rank1_target = 1.50 * b1; other_scale = (T - rank1_target) / sum(b2..b8); rank one gets rank1_target, each rank 2-8 gets bi * other_scale; sum equals T to full precision before integer-share flooring",
+      "failure_rule": "a nonpositive other_scale fails the cohort; no cap is invented",
+      "lineup": "all eight original names retained"
+    },
+    "C2": {
+      "name": "Off-high substitution from original ranks 9-20",
+      "threshold_M": -0.05508960975760213,
+      "threshold_source": "reports/cg_arrow011_hypothesis_freeze.json frozen_definitions.close_vs_high20_is_median",
+      "search_depth": 20,
+      "formula": "rank one protected; removable = original ranks 2-8 with close_vs_high20 >= M; eligible = original ranks 9-20 with close_vs_high20 < M, certified, not already held; k = min(removable, eligible); remove the k worst original ranks (8 first), add the k best original ranks (9 first); exactly eight unique names",
+      "sizing": "compute the frozen R5 tier for every name in the new lineup from its own pre-entry features, then budget_scale = T / S so the cohort base total equals the incumbent T",
+      "missing_data_rule": "a name with a missing off-high value is neither removable nor eligible; a replacement whose evidence is incomplete is not certified and cannot be chosen; the rule never keeps the original silently nor skips to the next name for a data failure"
+    },
+    "C3": {
+      "name": "Combined rank-one reallocation and off-high substitution",
+      "formula": "start from the C2 substituted lineup and its budget-normalized allocations summing to T; apply the C1 1.50x reallocation to the original protected rank-one name, reducing the other seven proportionally so the total is still T",
+      "independence": "built as its own chronological account, never inferred from C1 and C2"
+    }
+  },
+  "scoring": {
+    "primary": "complete equity-scaled chronological account from 100,000 with each challenger's own causal signal-close equity path",
+    "secondary": "causal fixed-dollar account with the same base allocations",
+    "splits": "odd-month IS, even-month internal confirmation, ALL; even months are not pristine",
+    "interaction": "interaction = C3 - C1 - C2 + C0 on additive quantities only"
+  },
+  "certified_ranks_9_20_counts": {
+    "2025-09-03": 11,
+    "2025-09-10": 11,
+    "2025-09-17": 10,
+    "2025-09-24": 10,
+    "2025-10-01": 11,
+    "2025-10-08": 12,
+    "2025-10-15": 11,
+    "2025-10-22": 11,
+    "2025-10-29": 12,
+    "2025-11-05": 12,
+    "2025-11-12": 10,
+    "2025-11-19": 11,
+    "2025-11-26": 12,
+    "2025-12-03": 12,
+    "2025-12-10": 12,
+    "2025-12-17": 12,
+    "2025-12-24": 11,
+    "2025-12-31": 12,
+    "2026-01-07": 12,
+    "2026-01-14": 11,
+    "2026-01-21": 12,
+    "2026-01-28": 12,
+    "2026-02-04": 12,
+    "2026-02-11": 12,
+    "2026-02-18": 12,
+    "2026-02-25": 10,
+    "2026-03-04": 12,
+    "2026-03-11": 12,
+    "2026-03-18": 12,
+    "2026-03-25": 12,
+    "2026-04-01": 12,
+    "2026-04-08": 11,
+    "2026-04-15": 12,
+    "2026-04-22": 12,
+    "2026-04-29": 11,
+    "2026-05-06": 10,
+    "2026-05-13": 12,
+    "2026-05-20": 11,
+    "2026-05-27": 12,
+    "2026-06-03": 11,
+    "2026-06-10": 11,
+    "2026-06-17": 11,
+    "2026-06-24": 12,
+    "2026-07-01": 12,
+    "2026-07-08": 11,
+    "2026-07-15": 12,
+    "2026-07-22": 12,
+    "2026-07-29": 12,
+    "2026-08-05": 11,
+    "2026-08-12": 11,
+    "2026-08-19": 11,
+    "2026-08-26": 5
+  },
+  "certified_ranks_9_20_sha256": "35f4e45b11021109d4394065c41abc2beff1cb4f1dda4687f2d93bc8ef58d3a5",
+  "certified_ranks_9_20_detail": "handoff/outgoing/cg_arrow012/certified_candidates.json (git-ignored)",
+  "substitution_plan": {
+    "2025-09-03": {
+      "k": 1,
+      "removable": 5,
+      "eligible": 1,
+      "outgoing_ranks": [
+        8
+      ],
+      "incoming_ranks": [
+        17
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        17
+      ]
+    },
+    "2025-09-10": {
+      "k": 0,
+      "removable": 4,
+      "eligible": 0,
+      "outgoing_ranks": [],
+      "incoming_ranks": [],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "2025-09-17": {
+      "k": 2,
+      "removable": 4,
+      "eligible": 2,
+      "outgoing_ranks": [
+        7,
+        6
+      ],
+      "incoming_ranks": [
+        16,
+        17
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        16,
+        17
+      ]
+    },
+    "2025-09-24": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 3,
+      "outgoing_ranks": [
+        8,
+        6,
+        4
+      ],
+      "incoming_ranks": [
+        9,
+        15,
+        16
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        9,
+        15,
+        16
+      ]
+    },
+    "2025-10-01": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 3,
+      "outgoing_ranks": [
+        8,
+        2
+      ],
+      "incoming_ranks": [
+        9,
+        12
+      ],
+      "lineup_original_ranks": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        12
+      ]
+    },
+    "2025-10-08": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 7,
+      "outgoing_ranks": [
+        7,
+        5
+      ],
+      "incoming_ranks": [
+        9,
+        11
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        11
+      ]
+    },
+    "2025-10-15": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 6,
+      "outgoing_ranks": [
+        7
+      ],
+      "incoming_ranks": [
+        9
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ]
+    },
+    "2025-10-22": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 8,
+      "outgoing_ranks": [
+        8,
+        5
+      ],
+      "incoming_ranks": [
+        9,
+        11
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        9,
+        11
+      ]
+    },
+    "2025-10-29": {
+      "k": 4,
+      "removable": 4,
+      "eligible": 4,
+      "outgoing_ranks": [
+        8,
+        7,
+        4,
+        3
+      ],
+      "incoming_ranks": [
+        11,
+        16,
+        17,
+        20
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        5,
+        6,
+        11,
+        16,
+        17,
+        20
+      ]
+    },
+    "2025-11-05": {
+      "k": 4,
+      "removable": 5,
+      "eligible": 4,
+      "outgoing_ranks": [
+        8,
+        7,
+        6,
+        5
+      ],
+      "incoming_ranks": [
+        12,
+        14,
+        15,
+        17
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        12,
+        14,
+        15,
+        17
+      ]
+    },
+    "2025-11-12": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 5,
+      "outgoing_ranks": [
+        4,
+        3,
+        2
+      ],
+      "incoming_ranks": [
+        10,
+        12,
+        13
+      ],
+      "lineup_original_ranks": [
+        1,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        13
+      ]
+    },
+    "2025-11-19": {
+      "k": 5,
+      "removable": 5,
+      "eligible": 5,
+      "outgoing_ranks": [
+        8,
+        7,
+        6,
+        4,
+        3
+      ],
+      "incoming_ranks": [
+        9,
+        11,
+        13,
+        15,
+        17
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        5,
+        9,
+        11,
+        13,
+        15,
+        17
+      ]
+    },
+    "2025-11-26": {
+      "k": 0,
+      "removable": 6,
+      "eligible": 0,
+      "outgoing_ranks": [],
+      "incoming_ranks": [],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "2025-12-03": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 4,
+      "outgoing_ranks": [
+        7
+      ],
+      "incoming_ranks": [
+        11
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        11
+      ]
+    },
+    "2025-12-10": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 4,
+      "outgoing_ranks": [
+        8,
+        7,
+        6
+      ],
+      "incoming_ranks": [
+        12,
+        16,
+        17
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        16,
+        17
+      ]
+    },
+    "2025-12-17": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 10,
+      "outgoing_ranks": [
+        6
+      ],
+      "incoming_ranks": [
+        9
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    "2025-12-24": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 6,
+      "outgoing_ranks": [
+        7,
+        6
+      ],
+      "incoming_ranks": [
+        9,
+        10
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        10
+      ]
+    },
+    "2025-12-31": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 5,
+      "outgoing_ranks": [
+        8
+      ],
+      "incoming_ranks": [
+        11
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        11
+      ]
+    },
+    "2026-01-07": {
+      "k": 4,
+      "removable": 4,
+      "eligible": 7,
+      "outgoing_ranks": [
+        7,
+        6,
+        5,
+        2
+      ],
+      "incoming_ranks": [
+        11,
+        13,
+        14,
+        15
+      ],
+      "lineup_original_ranks": [
+        1,
+        3,
+        4,
+        8,
+        11,
+        13,
+        14,
+        15
+      ]
+    },
+    "2026-01-14": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 6,
+      "outgoing_ranks": [
+        8,
+        7,
+        6
+      ],
+      "incoming_ranks": [
+        10,
+        11,
+        16
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        10,
+        11,
+        16
+      ]
+    },
+    "2026-01-21": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 7,
+      "outgoing_ranks": [
+        8,
+        7,
+        3
+      ],
+      "incoming_ranks": [
+        10,
+        11,
+        12
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        10,
+        11,
+        12
+      ]
+    },
+    "2026-01-28": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 7,
+      "outgoing_ranks": [
+        8,
+        6,
+        4
+      ],
+      "incoming_ranks": [
+        10,
+        11,
+        13
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        10,
+        11,
+        13
+      ]
+    },
+    "2026-02-04": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 6,
+      "outgoing_ranks": [
+        8,
+        7,
+        4
+      ],
+      "incoming_ranks": [
+        12,
+        13,
+        14
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        12,
+        13,
+        14
+      ]
+    },
+    "2026-02-11": {
+      "k": 4,
+      "removable": 4,
+      "eligible": 4,
+      "outgoing_ranks": [
+        6,
+        4,
+        3,
+        2
+      ],
+      "incoming_ranks": [
+        9,
+        13,
+        15,
+        16
+      ],
+      "lineup_original_ranks": [
+        1,
+        5,
+        7,
+        8,
+        9,
+        13,
+        15,
+        16
+      ]
+    },
+    "2026-02-18": {
+      "k": 3,
+      "removable": 5,
+      "eligible": 3,
+      "outgoing_ranks": [
+        8,
+        6,
+        5
+      ],
+      "incoming_ranks": [
+        10,
+        15,
+        18
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        10,
+        15,
+        18
+      ]
+    },
+    "2026-02-25": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 3,
+      "outgoing_ranks": [
+        7,
+        6,
+        4
+      ],
+      "incoming_ranks": [
+        9,
+        10,
+        18
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        5,
+        8,
+        9,
+        10,
+        18
+      ]
+    },
+    "2026-03-04": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 3,
+      "outgoing_ranks": [
+        6,
+        5,
+        2
+      ],
+      "incoming_ranks": [
+        12,
+        14,
+        17
+      ],
+      "lineup_original_ranks": [
+        1,
+        3,
+        4,
+        7,
+        8,
+        12,
+        14,
+        17
+      ]
+    },
+    "2026-03-11": {
+      "k": 4,
+      "removable": 4,
+      "eligible": 8,
+      "outgoing_ranks": [
+        8,
+        7,
+        6,
+        3
+      ],
+      "incoming_ranks": [
+        9,
+        11,
+        14,
+        15
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        4,
+        5,
+        9,
+        11,
+        14,
+        15
+      ]
+    },
+    "2026-03-18": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 4,
+      "outgoing_ranks": [
+        5,
+        4,
+        2
+      ],
+      "incoming_ranks": [
+        11,
+        14,
+        15
+      ],
+      "lineup_original_ranks": [
+        1,
+        3,
+        6,
+        7,
+        8,
+        11,
+        14,
+        15
+      ]
+    },
+    "2026-03-25": {
+      "k": 3,
+      "removable": 5,
+      "eligible": 3,
+      "outgoing_ranks": [
+        8,
+        7,
+        5
+      ],
+      "incoming_ranks": [
+        10,
+        13,
+        19
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        10,
+        13,
+        19
+      ]
+    },
+    "2026-04-01": {
+      "k": 3,
+      "removable": 4,
+      "eligible": 3,
+      "outgoing_ranks": [
+        8,
+        7,
+        6
+      ],
+      "incoming_ranks": [
+        9,
+        16,
+        18
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        9,
+        16,
+        18
+      ]
+    },
+    "2026-04-08": {
+      "k": 3,
+      "removable": 6,
+      "eligible": 3,
+      "outgoing_ranks": [
+        8,
+        7,
+        6
+      ],
+      "incoming_ranks": [
+        11,
+        15,
+        17
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        11,
+        15,
+        17
+      ]
+    },
+    "2026-04-15": {
+      "k": 3,
+      "removable": 5,
+      "eligible": 3,
+      "outgoing_ranks": [
+        8,
+        7,
+        6
+      ],
+      "incoming_ranks": [
+        15,
+        16,
+        17
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        15,
+        16,
+        17
+      ]
+    },
+    "2026-04-22": {
+      "k": 3,
+      "removable": 4,
+      "eligible": 3,
+      "outgoing_ranks": [
+        6,
+        5,
+        4
+      ],
+      "incoming_ranks": [
+        14,
+        17,
+        19
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        14,
+        17,
+        19
+      ]
+    },
+    "2026-04-29": {
+      "k": 4,
+      "removable": 4,
+      "eligible": 5,
+      "outgoing_ranks": [
+        8,
+        7,
+        5,
+        3
+      ],
+      "incoming_ranks": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        4,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    "2026-05-06": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 3,
+      "outgoing_ranks": [
+        6,
+        5,
+        2
+      ],
+      "incoming_ranks": [
+        10,
+        12,
+        13
+      ],
+      "lineup_original_ranks": [
+        1,
+        3,
+        4,
+        7,
+        8,
+        10,
+        12,
+        13
+      ]
+    },
+    "2026-05-13": {
+      "k": 4,
+      "removable": 4,
+      "eligible": 5,
+      "outgoing_ranks": [
+        7,
+        6,
+        4,
+        2
+      ],
+      "incoming_ranks": [
+        10,
+        11,
+        13,
+        15
+      ],
+      "lineup_original_ranks": [
+        1,
+        3,
+        5,
+        8,
+        10,
+        11,
+        13,
+        15
+      ]
+    },
+    "2026-05-20": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 6,
+      "outgoing_ranks": [
+        5,
+        2
+      ],
+      "incoming_ranks": [
+        9,
+        11
+      ],
+      "lineup_original_ranks": [
+        1,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        11
+      ]
+    },
+    "2026-05-27": {
+      "k": 4,
+      "removable": 4,
+      "eligible": 6,
+      "outgoing_ranks": [
+        8,
+        7,
+        6,
+        5
+      ],
+      "incoming_ranks": [
+        11,
+        13,
+        15,
+        16
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        11,
+        13,
+        15,
+        16
+      ]
+    },
+    "2026-06-03": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 8,
+      "outgoing_ranks": [
+        7
+      ],
+      "incoming_ranks": [
+        9
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ]
+    },
+    "2026-06-10": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 6,
+      "outgoing_ranks": [
+        3
+      ],
+      "incoming_ranks": [
+        10
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10
+      ]
+    },
+    "2026-06-17": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 4,
+      "outgoing_ranks": [
+        7,
+        3,
+        2
+      ],
+      "incoming_ranks": [
+        12,
+        17,
+        19
+      ],
+      "lineup_original_ranks": [
+        1,
+        4,
+        5,
+        6,
+        8,
+        12,
+        17,
+        19
+      ]
+    },
+    "2026-06-24": {
+      "k": 3,
+      "removable": 6,
+      "eligible": 3,
+      "outgoing_ranks": [
+        8,
+        6,
+        5
+      ],
+      "incoming_ranks": [
+        10,
+        11,
+        13
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        10,
+        11,
+        13
+      ]
+    },
+    "2026-07-01": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 8,
+      "outgoing_ranks": [
+        8,
+        5,
+        4
+      ],
+      "incoming_ranks": [
+        9,
+        10,
+        11
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        9,
+        10,
+        11
+      ]
+    },
+    "2026-07-08": {
+      "k": 5,
+      "removable": 5,
+      "eligible": 7,
+      "outgoing_ranks": [
+        8,
+        7,
+        6,
+        3,
+        2
+      ],
+      "incoming_ranks": [
+        9,
+        12,
+        16,
+        17,
+        18
+      ],
+      "lineup_original_ranks": [
+        1,
+        4,
+        5,
+        9,
+        12,
+        16,
+        17,
+        18
+      ]
+    },
+    "2026-07-15": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 4,
+      "outgoing_ranks": [
+        6,
+        2
+      ],
+      "incoming_ranks": [
+        9,
+        11
+      ],
+      "lineup_original_ranks": [
+        1,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        11
+      ]
+    },
+    "2026-07-22": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 3,
+      "outgoing_ranks": [
+        4,
+        2
+      ],
+      "incoming_ranks": [
+        12,
+        15
+      ],
+      "lineup_original_ranks": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        8,
+        12,
+        15
+      ]
+    },
+    "2026-07-29": {
+      "k": 3,
+      "removable": 5,
+      "eligible": 3,
+      "outgoing_ranks": [
+        8,
+        7,
+        6
+      ],
+      "incoming_ranks": [
+        16,
+        17,
+        18
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        16,
+        17,
+        18
+      ]
+    },
+    "2026-08-05": {
+      "k": 3,
+      "removable": 4,
+      "eligible": 3,
+      "outgoing_ranks": [
+        8,
+        6,
+        5
+      ],
+      "incoming_ranks": [
+        10,
+        17,
+        19
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        10,
+        17,
+        19
+      ]
+    },
+    "2026-08-12": {
+      "k": 4,
+      "removable": 7,
+      "eligible": 4,
+      "outgoing_ranks": [
+        8,
+        7,
+        6,
+        5
+      ],
+      "incoming_ranks": [
+        12,
+        13,
+        15,
+        19
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        12,
+        13,
+        15,
+        19
+      ]
+    },
+    "2026-08-19": {
+      "k": 4,
+      "removable": 4,
+      "eligible": 7,
+      "outgoing_ranks": [
+        8,
+        7,
+        5,
+        3
+      ],
+      "incoming_ranks": [
+        11,
+        13,
+        15,
+        16
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        4,
+        6,
+        11,
+        13,
+        15,
+        16
+      ]
+    },
+    "2026-08-26": {
+      "k": 2,
+      "removable": 4,
+      "eligible": 2,
+      "outgoing_ranks": [
+        7,
+        6
+      ],
+      "incoming_ranks": [
+        15,
+        16
+      ],
+      "lineup_original_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        15,
+        16
+      ]
+    }
+  },
+  "evidence_affected_cohorts": {
+    "2025-09-10": {
+      "blocked_off_high_ranks": [
+        12
+      ],
+      "incoming_ranks_used": [],
+      "removable": 4,
+      "k": 0,
+      "worse_replacement_admitted": [],
+      "swaps_reduced_by_missing_evidence": true,
+      "failures": [
+        "lookback_action_units_resolved"
+      ]
+    },
+    "2025-09-17": {
+      "blocked_off_high_ranks": [
+        10
+      ],
+      "incoming_ranks_used": [
+        16,
+        17
+      ],
+      "removable": 4,
+      "k": 2,
+      "worse_replacement_admitted": [
+        10
+      ],
+      "swaps_reduced_by_missing_evidence": true,
+      "failures": [
+        "lookback_action_units_resolved"
+      ]
+    },
+    "2025-09-24": {
+      "blocked_off_high_ranks": [
+        14
+      ],
+      "incoming_ranks_used": [
+        9,
+        15,
+        16
+      ],
+      "removable": 3,
+      "k": 3,
+      "worse_replacement_admitted": [
+        14
+      ],
+      "swaps_reduced_by_missing_evidence": false,
+      "failures": [
+        "lookback_action_units_resolved"
+      ]
+    },
+    "2025-11-12": {
+      "blocked_off_high_ranks": [
+        9,
+        11
+      ],
+      "incoming_ranks_used": [
+        10,
+        12,
+        13
+      ],
+      "removable": 3,
+      "k": 3,
+      "worse_replacement_admitted": [
+        9,
+        11
+      ],
+      "swaps_reduced_by_missing_evidence": false,
+      "failures": [
+        "lookback_action_units_resolved"
+      ]
+    },
+    "2026-05-06": {
+      "blocked_off_high_ranks": [
+        11,
+        20
+      ],
+      "incoming_ranks_used": [
+        10,
+        12,
+        13
+      ],
+      "removable": 3,
+      "k": 3,
+      "worse_replacement_admitted": [
+        11
+      ],
+      "swaps_reduced_by_missing_evidence": false,
+      "failures": [
+        "lookback_action_units_resolved"
+      ]
+    },
+    "2026-08-26": {
+      "blocked_off_high_ranks": [
+        9,
+        17,
+        18,
+        19
+      ],
+      "incoming_ranks_used": [
+        15,
+        16
+      ],
+      "removable": 4,
+      "k": 2,
+      "worse_replacement_admitted": [
+        9
+      ],
+      "swaps_reduced_by_missing_evidence": true,
+      "failures": [
+        "causal_preorder_entry_observation",
+        "h10_exit_or_documented_event"
+      ]
+    }
+  },
+  "evidence_sensitivity": {
+    "declared": "before any challenger economics were computed",
+    "rule": "C2R and C3R are C2 and C3 with every cohort in evidence_affected_cohorts reverted to the incumbent top-eight lineup and incumbent allocations. They exist so the C2/C3 conclusion can be tested without the cohorts whose substitution depended on a data failure. If the sign of the C2 or C3 conclusion depends on those cohorts, the challenger is reported inconclusive rather than scored through them.",
+    "cohorts": [
+      "2025-09-10",
+      "2025-09-17",
+      "2025-09-24",
+      "2025-11-12",
+      "2026-05-06",
+      "2026-08-26"
+    ]
+  },
+  "substitution_totals": {
+    "cohorts_with_swaps": 50,
+    "total_swaps": 141,
+    "by_k": {
+      "0": 2,
+      "1": 7,
+      "2": 9,
+      "3": 22,
+      "4": 10,
+      "5": 2
+    }
+  },
+  "frozen_controls": {
+    "r5_r2_h10_causal_preorder_eventual_completed_trade_pnl": {
+      "expected": 128864.62,
+      "observed": 128864.6248656,
+      "difference": 0.00486559999990277,
+      "ok": true
+    },
+    "r5_r2_h10_causal_preorder_marked_account_pnl_at_cutoff": {
+      "expected": 128986.4,
+      "observed": 128986.40067059905,
+      "difference": 0.000670599052682519,
+      "ok": true
+    },
+    "a10_equity_scaled_marked_account_pnl_at_cutoff": {
+      "expected": 230719.74,
+      "observed": 230719.7416604004,
+      "difference": 0.0016604004194959998,
+      "ok": true
+    },
+    "a10_equity_scaled_ending_marked_equity": {
+      "expected": 330719.74,
+      "observed": 330719.7416604004,
+      "difference": 0.0016604004194959998,
+      "ok": true
+    },
+    "a10_equity_scaled_eventual_completed_trade_pnl": {
+      "expected": 230566.36,
+      "observed": 230566.3561054,
+      "difference": -0.0038945999986026436,
+      "ok": true
+    }
+  },
+  "book_census": {
+    "R5/R2_CAUSAL_PREORDER_QTY": {
+      "cohorts": 52,
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 1
+    },
+    "R5/R5_EQUITY_SCALED": {
+      "cohorts": 52,
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 1
+    },
+    "R5/R2_LEGACY_FILL_QTY": {
+      "cohorts": 52,
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 1
+    }
+  },
+  "input_hashes": {
+    "a8_manifest": "b68304233ec621e19ce87c891faa05e6cd4b7dea987c943a68435fbcd0a63a21",
+    "a10_manifest": "af2816524e386415b6fd67f0a69c632013009780ae500d1ca093c305fcce352f",
+    "a11_freeze": "87a8221fa6613326128324611841f30f6ad000c188a8b0f64a926c5d62e7a111",
+    "a11_trade_atlas": "a691e8fc50115fb55c751d10103bac58e8473bb3d5fc33fa5f67a746fca2542f",
+    "action_table": "338a4b96970e40c21ae5e3427bf414dcade18f59a11a1b5fa70944af69a74a51",
+    "a8_trades": "c8a6837c01f222053069b884c2cdb8b35e24b655bd97863059ed84e85985cb3f",
+    "a10_trades": "1f578c2543140f8f38934bc8ecac3eaadca132c4322745d9085a6e2a67673a39",
+    "top20_candidate_audit": "2432a60a9ff2c5e1d3fefb2fa311d57411da350df084ed57a28ac572a115ac23",
+    "substitution_pairs": "7b5c3312344b5825902b89ca08b5dec9634a09b454b927fd294f1d59ca5e1397"
+  },
+  "code_hashes": {
+    "src/verification/r4r5_challenger.py": "2ffe2937ce5d7ddc86326f737f272f9f5efd21be95297c6110b69c1a058c4c6a",
+    "src/verification/r4r5_repaired_stats.py": "e8bf0e9ed43722db967366bc44f2ab476ae92f4d50b3f770b7b0abbda824c190",
+    "src/verification/r4r5_replay.py": "52be77f2c43acc81eeb8628a0119a387386e6f16697d32c96bd13709528e7a42",
+    "src/verification/r4r5_equity.py": "f77396a3a1f9053d3845eae5ee37b302fa1f2367d27f017dc0d73e9868eb45d6",
+    "src/verification/r4r5_anatomy.py": "27400d4bd88b29052f63beeca70ee1fe5295a567e59ab25c247c18af7122df71",
+    "src/verification/r4r5_data.py": "cf0cd05cc055095b812bcb8ce7021b65baf8873c5d51e9fa77e6446416ccd9ce",
+    "scripts/cg_arrow012_candidates.py": "6d71b342114700cd133bc783b8f6ee9d59509597387823ed1a0971e6c9cec85c"
+  },
+  "post_freeze_rule": "no threshold, multiplier, search depth, lineup rule or budget rule may change after this commit",
+  "blockers": []
+}

@@ -50,7 +50,7 @@ def equity_at(daily: list[dict], when: date) -> float:
 
 def causal_book(family: str, cohort_list: list[dict], summaries: dict, *, hold: int = 10,
                 stage: str = "R5_EQUITY_SCALED", starting_equity: float = STARTING_EQUITY,
-                scaled: bool = True) -> dict:
+                scaled: bool = True, allocation: dict | None = None) -> dict:
     """Build a causal pre-order book, cohort by cohort, in signal order.
 
     With `scaled=False` every scale factor is 1.0 and the result is the fixed-dollar control,
@@ -64,7 +64,7 @@ def causal_book(family: str, cohort_list: list[dict], summaries: dict, *, hold: 
         reference = equity_at(daily, cohort["signal"]) if scaled else starting_equity
         factor = reference / starting_equity if scaled else 1.0
         book = replay(family, [cohort], summaries, hold=hold, quantity="preorder", stage=stage,
-                      scale={cohort["signal_iso"]: factor})
+                      scale={cohort["signal_iso"]: factor}, allocation=allocation)
         for t in book["trades"]:
             t["equity_reference"] = reference
             t["equity_reference_date"] = cohort["signal_iso"]
