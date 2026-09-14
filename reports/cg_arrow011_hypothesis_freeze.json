@@ -1,0 +1,1259 @@
+{
+  "arrow": "CG Arrow 011",
+  "stage": "hypothesis_freeze",
+  "timestamp": "2026-09-14T19:35:34+00:00",
+  "head_at_freeze": "264b5286dc3a5c3e91c061e84f93ca1d18e4f3b3",
+  "is_months": [
+    "2025-09",
+    "2025-11",
+    "2026-01",
+    "2026-03",
+    "2026-05",
+    "2026-07"
+  ],
+  "oos_months": [
+    "2025-10",
+    "2025-12",
+    "2026-02",
+    "2026-04",
+    "2026-06",
+    "2026-08"
+  ],
+  "oos_status": "internal confirmation only; these months have been inspected in earlier arrows and are not pristine",
+  "primary_outcome": "oc_price_return_10",
+  "secondary_outcome": "oc_net_per_entry_dollar",
+  "is_rows": 200,
+  "is_cohorts": 25,
+  "is_cohort_census": {
+    "MIXED": 24,
+    "ALL_LOSS": 1
+  },
+  "leading_rule": {
+    "within_halves_share_min": 0.62,
+    "within_spearman_abs_min": 0.12,
+    "sign_agreement_required": true,
+    "min_cohorts": 15
+  },
+  "leading_features_is": [
+    "sc_ret15",
+    "sc_top3_sessions_share_of_advance",
+    "sc_up_sessions_15",
+    "sc_logret_std_15",
+    "sc_close_vs_high20",
+    "sc_close_vs_max_close15",
+    "sc_position_in_range20",
+    "sc_signal_day_range_pct",
+    "sc_mean_range_pct_10",
+    "sc_dollar_volume_cv20",
+    "sc_volume_expansion_15",
+    "sc_signal_close",
+    "cx_rank_in_eight",
+    "cx_ret15_minus_cohort_median",
+    "cx_gap_to_next_rank",
+    "cx_ret15_field_percentile",
+    "po_partial_range_pct",
+    "po_preorder_price"
+  ],
+  "frozen_definitions": {
+    "tercile_cuts": {
+      "sc_ret1": [
+        -0.0015182186234816708,
+        0.045739910313901344
+      ],
+      "sc_ret3": [
+        0.04163169380560694,
+        0.22577140373750537
+      ],
+      "sc_ret5": [
+        0.11557512383048962,
+        0.49493333333333345
+      ],
+      "sc_ret10": [
+        0.4416403785488958,
+        1.027694929697486
+      ],
+      "sc_ret15": [
+        0.8111540585311983,
+        1.2533333333333334
+      ],
+      "sc_ret15_to_5": [
+        0.26696495152871,
+        0.7110956036287508
+      ],
+      "sc_recent_minus_earlier": [
+        -0.6267824211288942,
+        0.23122314987436177
+      ],
+      "sc_acceleration_3": [
+        -0.0959255222649027,
+        0.09617975876105045
+      ],
+      "sc_largest_session_share_of_advance": [
+        0.4403263457692494,
+        0.630976816829606
+      ],
+      "sc_top3_sessions_share_of_advance": [
+        0.838594928443275,
+        1.0257495452612244
+      ],
+      "sc_up_sessions_15": [
+        9.0,
+        10.0
+      ],
+      "sc_logret_std_15": [
+        0.09053605138980203,
+        0.14376051360776285
+      ],
+      "sc_gap_share_of_advance": [
+        0.21994397603065655,
+        0.5329651594632151
+      ],
+      "sc_close_vs_high20": [
+        -0.09703201013858798,
+        -0.032975670004701696
+      ],
+      "sc_close_vs_max_close15": [
+        -0.025963149078726988,
+        0.0
+      ],
+      "sc_sessions_since_max_close15": [
+        0.0,
+        2.0
+      ],
+      "sc_position_in_range20": [
+        0.8336134453781513,
+        0.9427570093457943
+      ],
+      "sc_close_location_signal_day": [
+        0.3297326203208556,
+        0.7132293691046107
+      ],
+      "sc_signal_day_range_pct": [
+        0.07136715391229578,
+        0.14552919708029202
+      ],
+      "sc_mean_range_pct_10": [
+        0.09132808746646522,
+        0.14497518378067362
+      ],
+      "sc_volume_ratio_frozen": [
+        0.7192108978491337,
+        1.4769011793629399
+      ],
+      "sc_volume_trend_5_vs_15": [
+        1.1389323062253511,
+        2.666820208433371
+      ],
+      "sc_dollar_volume_signal_day": [
+        34741191.120000005,
+        105323886.33
+      ],
+      "sc_dollar_volume_mean20": [
+        29075381.678,
+        73690759.24925001
+      ],
+      "sc_dollar_volume_cv20": [
+        0.9289505434267501,
+        1.6606976985161215
+      ],
+      "sc_volume_expansion_15": [
+        1.9714706189852051,
+        4.648878360597562
+      ],
+      "sc_move_per_volume_unit": [
+        0.2443516907923681,
+        0.44712798506163576
+      ],
+      "sc_signal_close": [
+        18.560000000000002,
+        37.275
+      ],
+      "cx_rank_in_eight": [
+        3.0,
+        6.0
+      ],
+      "cx_ret15_minus_cohort_median": [
+        -0.09326003840883312,
+        0.14276345116181188
+      ],
+      "cx_gap_to_next_rank": [
+        0.03185998112431343,
+        0.17591288943302086
+      ],
+      "cx_cohort_ret15_spread": [
+        1.6634740259740257,
+        3.3024511629777686
+      ],
+      "cx_ret15_field_percentile": [
+        0.9955979457079971,
+        0.9977426636568849
+      ],
+      "ep_prior_selections": [
+        0.0,
+        1.0
+      ],
+      "ep_sessions_since_last_selection": [
+        5.0,
+        5.0
+      ],
+      "po_overnight_gap_vs_signal_close": [
+        -0.00693107431651907,
+        0.006375227686703067
+      ],
+      "po_signal_close_to_preorder": [
+        -0.021302291742451795,
+        0.016966580976863765
+      ],
+      "po_open_to_preorder": [
+        -0.025237529691211402,
+        0.018563357546408366
+      ],
+      "po_preorder_location_in_partial_range": [
+        0.2961229946524067,
+        0.6610738255033565
+      ],
+      "po_partial_range_pct": [
+        0.06905089408528192,
+        0.13146811070998787
+      ],
+      "po_partial_volume_vs_elapsed_window_mean": [
+        0.5383518859613998,
+        0.9036052964087407
+      ],
+      "po_preorder_price": [
+        18.945,
+        37.45
+      ]
+    },
+    "close_vs_high20_is_median": -0.05508960975760213,
+    "price_bands": "[10,20) [20,40) [40,80) else OUTSIDE_10_80, on the signal close",
+    "four_state": "ret3 > 0 halves (momentum), volume_ratio > 1 halves (volume); missing is its own state",
+    "path_archetypes": "IMMEDIATE_FADE: age-1 and age-10 returns > 0; ADVERSE_THEN_FADE: age-10 > 0 and some close in ages 1-4 < 0; FADE_THEN_REVERSAL: age-10 <= 0 and some close in ages 1-4 >= 0.03; CONTINUATION: age-10 <= 0 and no close >= 0.03; OTHER; UNLABELED_STALE_OR_OPEN. Declared in code before any data was viewed; close-only marks",
+    "within_cohort_contrast": "mean over cohorts of (top half by feature minus bottom half by feature) of the outcome, cohorts with >= 4 scored rows",
+    "cohort_equal_weight_mean": "mean of per-cohort means",
+    "probes": [
+      {
+        "id": "P1",
+        "name": "rank-1 only",
+        "mask": "cx_rank_in_eight == 1",
+        "control": "ranks 2-8 and the full book",
+        "expected": "higher net per entry dollar and hit rate than the full book; unused exposure idle",
+        "basis": "research-only subset; no new entry, hold or sizing; no compounded equity"
+      },
+      {
+        "id": "P2",
+        "name": "10-20 band and off-high",
+        "mask": "sc_signal_close_band == '10-20' and sc_close_vs_high20 < -0.055090",
+        "control": "complement and the full book",
+        "expected": "higher net per entry dollar and hit rate",
+        "basis": "IS 2x2 best cell"
+      },
+      {
+        "id": "P3",
+        "name": "exclude near-high names priced 20-80",
+        "mask": "not (sc_signal_close_band in ('20-40','40-80') and sc_close_vs_high20 >= -0.055090)",
+        "control": "the excluded cell and the full book",
+        "expected": "the excluded cell has lower net per entry dollar than the retained set",
+        "basis": "IS 2x2 worst cell removed"
+      },
+      {
+        "id": "P4",
+        "name": "non-positive three-session momentum only",
+        "mask": "sc_ret3 <= 0 (states S1 and S2)",
+        "control": "ret3 > 0 and the full book",
+        "expected": "higher net per entry dollar; tests whether the frozen momentum halving points the right way on sizing-neutral grounds",
+        "basis": "frozen R5 rule sign, no threshold learned"
+      }
+    ],
+    "probe_metrics": "n, cohorts, securities, mean and median price return, hit rate, net per entry dollar, entry exposure, fixed-dollar net; exposure-matched: probe net per entry dollar applied to the full book's entry exposure, labeled hypothetical; no compounded equity"
+  },
+  "registry": [
+    {
+      "id": "D2-1",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_four_state",
+      "question": "Do the two HALF states behave alike on sizing-neutral return?",
+      "test": "group table S2 vs S3, cohort-equal-weight mean and hit rate",
+      "prediction": "S2 (weak, loud) and S3 (strong, quiet) differ; no direction claimed",
+      "is_result": [
+        {
+          "group": "MISSING_FEATURE",
+          "n": 2,
+          "cohorts": 2,
+          "securities": 2,
+          "months": 2,
+          "mean": 0.317976608654894,
+          "median": 0.317976608654894,
+          "hit_rate": 1.0,
+          "cohort_equal_weight_mean": 0.317976608654894,
+          "p25": 0.10665634230978804,
+          "p75": 0.529296875,
+          "sum_lens_fixed_causal_net": 2554.0271979999998
+        },
+        {
+          "group": "S1_FULL_weak_quiet",
+          "n": 30,
+          "cohorts": 16,
+          "securities": 28,
+          "months": 6,
+          "mean": 0.15614909719050601,
+          "median": 0.0964077244485052,
+          "hit_rate": 0.6,
+          "cohort_equal_weight_mean": 0.15564216628411853,
+          "p25": -0.002803738317757043,
+          "p75": 0.27180052943152355,
+          "sum_lens_fixed_causal_net": 38314.7472146
+        },
+        {
+          "group": "S2_HALF_weak_loud",
+          "n": 11,
+          "cohorts": 9,
+          "securities": 11,
+          "months": 6,
+          "mean": 0.07455633647888286,
+          "median": 0.03109656301145669,
+          "hit_rate": 0.6363636363636364,
+          "cohort_equal_weight_mean": 0.07120910375467038,
+          "p25": -0.0059010440308668866,
+          "p75": 0.15228197017623135,
+          "sum_lens_fixed_causal_net": 3272.8239249999997
+        },
+        {
+          "group": "S3_HALF_strong_quiet",
+          "n": 70,
+          "cohorts": 24,
+          "securities": 57,
+          "months": 6,
+          "mean": 0.0434397771812347,
+          "median": 0.00016350445248214385,
+          "hit_rate": 0.5,
+          "cohort_equal_weight_mean": 0.017413058560023696,
+          "p25": -0.10690192008303079,
+          "p75": 0.26144756277695724,
+          "sum_lens_fixed_causal_net": 11639.056940999999
+        },
+        {
+          "group": "S4_QUARTER_strong_loud",
+          "n": 87,
+          "cohorts": 25,
+          "securities": 74,
+          "months": 6,
+          "mean": 0.018656607288922104,
+          "median": 0.0006501950585174887,
+          "hit_rate": 0.5057471264367817,
+          "cohort_equal_weight_mean": 0.020894545426038146,
+          "p25": -0.08928880429139974,
+          "p75": 0.2137820512820513,
+          "sum_lens_fixed_causal_net": 2889.685733499999
+        }
+      ],
+      "is_status": "GROUPS_DIFFER",
+      "is_basis": "cohort-equal-weight mean S2=+0.071 (n=11) vs S3=+0.017 (n=70); S2 sits with S1 (+0.156), S3 with S4 (+0.021); S2 is sparse"
+    },
+    {
+      "id": "D2-2",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_ret3",
+      "question": "Is the engine shorting already-weakening winners (ret3 <= 0) more successfully than still-accelerating ones?",
+      "test": "S1+S2 vs S3+S4 sizing-neutral return; continuous ret3 relationship",
+      "prediction": "positive ret3 fades LESS (continuation risk): high-ret3 minus low-ret3 return negative",
+      "is_result": {
+        "n": 200,
+        "cohorts": 25,
+        "securities": 138,
+        "pooled_spearman": 0.04587564689117228,
+        "t3_minus_t1_mean": 0.03125482993914094,
+        "t3_minus_t1_hit": 0.03663500678426057,
+        "within_cohort_mean_spearman": 0.03809523809523809,
+        "within_cohort_halves_positive_share": 0.6,
+        "within_cohort_top_half_minus_bottom_half": 0.04094174928463894,
+        "between_cohort_spearman": -0.09692307692307692
+      },
+      "is_leading": false,
+      "is_status": "SUPPORTED_AS_PREDICTED_SIGN_SPLIT",
+      "is_basis": "continuous ret3 shows no rank relationship, but the frozen sign split does: ret3<=0 cohort-equal-weight +0.133 vs ret3>0 +0.019; the separation is the sign, not the magnitude"
+    },
+    {
+      "id": "D2-3",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_volume_ratio_frozen",
+      "question": "Does weakening on elevated volume behave differently from weakening on quiet volume?",
+      "test": "S2 vs S1 within ret3 <= 0; continuous volume ratio relationship",
+      "prediction": "elevated signal-day volume fades LESS (attention/participation): high minus low negative",
+      "is_result": {
+        "n": 198,
+        "cohorts": 25,
+        "securities": 136,
+        "pooled_spearman": -0.13857396504132724,
+        "t3_minus_t1_mean": -0.08783353281831871,
+        "t3_minus_t1_hit": -0.13636363636363635,
+        "within_cohort_mean_spearman": -0.1538095238095238,
+        "within_cohort_halves_positive_share": 0.4,
+        "within_cohort_top_half_minus_bottom_half": -0.06579930427169275,
+        "between_cohort_spearman": -0.22846153846153847
+      },
+      "is_leading": false,
+      "is_result_inside_weak": {
+        "volume_ratio": {
+          "feature": "sc_volume_ratio_frozen",
+          "outcome": "oc_price_return_10",
+          "n": 41,
+          "missing": 0,
+          "cohorts": 19,
+          "securities": 38,
+          "months": 6,
+          "pooled_spearman": -0.19686411149825783,
+          "tercile_cuts": [
+            0.41697896334588064,
+            0.8216895489709384
+          ],
+          "t1_low": {
+            "n": 13,
+            "mean": 0.1661754489068137,
+            "median": 0.024492652204338716,
+            "hit_rate": 0.5384615384615384
+          },
+          "t3_high": {
+            "n": 14,
+            "mean": 0.047861244347126575,
+            "median": 0.00938426343309684,
+            "hit_rate": 0.5
+          },
+          "t3_minus_t1_mean": -0.11831420455968714,
+          "t3_minus_t1_hit": -0.038461538461538436,
+          "within_cohort_mean_spearman": -0.09999999999999998,
+          "within_cohort_positive_share": 0.5,
+          "within_cohort_cohorts": 2,
+          "within_cohort_top_half_minus_bottom_half": -0.10817353883016992,
+          "within_cohort_halves_positive_share": 0.5,
+          "between_cohort_spearman": -0.042105263157894736
+        },
+        "groups": [
+          {
+            "group": "S1_FULL_weak_quiet",
+            "n": 30,
+            "cohorts": 16,
+            "securities": 28,
+            "months": 6,
+            "mean": 0.15614909719050601,
+            "median": 0.0964077244485052,
+            "hit_rate": 0.6,
+            "cohort_equal_weight_mean": 0.15564216628411853,
+            "p25": -0.002803738317757043,
+            "p75": 0.27180052943152355
+          },
+          {
+            "group": "S2_HALF_weak_loud",
+            "n": 11,
+            "cohorts": 9,
+            "securities": 11,
+            "months": 6,
+            "mean": 0.07455633647888286,
+            "median": 0.03109656301145669,
+            "hit_rate": 0.6363636363636364,
+            "cohort_equal_weight_mean": 0.07120910375467038,
+            "p25": -0.0059010440308668866,
+            "p75": 0.15228197017623135
+          }
+        ]
+      },
+      "is_status": "WEAK_DIRECTION_AS_PREDICTED",
+      "is_basis": "not leading by rule: within share=0.40, contrast=-0.066"
+    },
+    {
+      "id": "D3-1",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_largest_session_share_of_advance",
+      "question": "Episodic run-up (one session carries the advance) versus gradual ascent",
+      "test": "tercile contrast and within-cohort concordance",
+      "prediction": "episodic advances fade LESS: high minus low negative",
+      "is_result": {
+        "n": 199,
+        "cohorts": 25,
+        "securities": 137,
+        "pooled_spearman": 0.01163544997715852,
+        "t3_minus_t1_mean": 0.05101817123820087,
+        "t3_minus_t1_hit": -0.18792401628222527,
+        "within_cohort_mean_spearman": 0.06761904761904762,
+        "within_cohort_halves_positive_share": 0.68,
+        "within_cohort_top_half_minus_bottom_half": 0.043469482673183325,
+        "between_cohort_spearman": -0.1453846153846154
+      },
+      "is_leading": false,
+      "is_status": "NO_SEPARATION",
+      "is_basis": "not leading by rule: within share=0.68, contrast=+0.043"
+    },
+    {
+      "id": "D3-2",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_gap_share_of_advance",
+      "question": "Gap-driven versus continuous-session advance",
+      "test": "tercile contrast and within-cohort concordance",
+      "prediction": "gap-driven advances fade LESS: high minus low negative",
+      "is_result": {
+        "n": 199,
+        "cohorts": 25,
+        "securities": 137,
+        "pooled_spearman": 0.0006091061367443277,
+        "t3_minus_t1_mean": 0.005649717743102758,
+        "t3_minus_t1_hit": -0.14292175486205344,
+        "within_cohort_mean_spearman": 0.06285714285714286,
+        "within_cohort_halves_positive_share": 0.52,
+        "within_cohort_top_half_minus_bottom_half": -0.004765068018509708,
+        "between_cohort_spearman": -0.2553846153846154
+      },
+      "is_leading": false,
+      "is_status": "WEAK_DIRECTION_AS_PREDICTED",
+      "is_basis": "not leading by rule: within share=0.52, contrast=-0.005"
+    },
+    {
+      "id": "D3-3",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_close_vs_max_close15",
+      "question": "Drawdown already underway at the signal versus closing at the run-up high",
+      "test": "tercile contrast and within-cohort concordance",
+      "prediction": "names already off their high fade LESS further: high (near high) minus low positive",
+      "is_result": {
+        "n": 198,
+        "cohorts": 25,
+        "securities": 136,
+        "pooled_spearman": -0.2361372111227464,
+        "t3_minus_t1_mean": -0.12609124301091706,
+        "t3_minus_t1_hit": -0.26573426573426573,
+        "within_cohort_mean_spearman": -0.2600363139354986,
+        "within_cohort_halves_positive_share": 0.32,
+        "within_cohort_top_half_minus_bottom_half": -0.1233801161254879,
+        "between_cohort_spearman": -0.39153846153846156
+      },
+      "is_leading": true,
+      "is_status": "REJECTED_OPPOSITE_DIRECTION",
+      "is_basis": "leading but opposite to the prediction: share=0.32, contrast=-0.123"
+    },
+    {
+      "id": "D3-4",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_recent_minus_earlier",
+      "question": "Late acceleration versus early front-loaded run-up",
+      "test": "tercile contrast and within-cohort concordance",
+      "prediction": "late-accelerating names fade MORE: high minus low positive",
+      "is_result": {
+        "n": 200,
+        "cohorts": 25,
+        "securities": 138,
+        "pooled_spearman": 0.030995274881872047,
+        "t3_minus_t1_mean": -0.026351044376817005,
+        "t3_minus_t1_hit": -0.022840343735866075,
+        "within_cohort_mean_spearman": -0.011428571428571434,
+        "within_cohort_halves_positive_share": 0.52,
+        "within_cohort_top_half_minus_bottom_half": 9.049236073119027e-05,
+        "between_cohort_spearman": -0.04384615384615385
+      },
+      "is_leading": false,
+      "is_status": "WEAK_DIRECTION_AS_PREDICTED",
+      "is_basis": "not leading by rule: within share=0.52, contrast=+0.000"
+    },
+    {
+      "id": "D3-5",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_dollar_volume_mean20",
+      "question": "Liquidity: does dollar volume relate to the fade?",
+      "test": "tercile contrast and within-cohort concordance",
+      "prediction": "less liquid names fade MORE: high minus low negative",
+      "is_result": {
+        "n": 198,
+        "cohorts": 25,
+        "securities": 136,
+        "pooled_spearman": 0.03589784022403975,
+        "t3_minus_t1_mean": 0.015907561537620032,
+        "t3_minus_t1_hit": 0.0,
+        "within_cohort_mean_spearman": 0.0004761904761904756,
+        "within_cohort_halves_positive_share": 0.6,
+        "within_cohort_top_half_minus_bottom_half": 0.023355048705446597,
+        "between_cohort_spearman": 0.14923076923076922
+      },
+      "is_leading": false,
+      "is_status": "NO_SEPARATION",
+      "is_basis": "not leading by rule: within share=0.60, contrast=+0.023"
+    },
+    {
+      "id": "D3-6",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_signal_close_band",
+      "question": "Price band association",
+      "test": "group table by band",
+      "prediction": "no direction claimed",
+      "is_result": [
+        {
+          "group": "10-20",
+          "n": 74,
+          "cohorts": 24,
+          "securities": 61,
+          "months": 6,
+          "mean": 0.1383432583973041,
+          "median": 0.14962935718113896,
+          "hit_rate": 0.6486486486486487,
+          "cohort_equal_weight_mean": 0.09280515464187807,
+          "p25": -0.012589928057553879,
+          "p75": 0.3217665615141956,
+          "sum_lens_fixed_causal_net": 55606.550456
+        },
+        {
+          "group": "20-40",
+          "n": 59,
+          "cohorts": 23,
+          "securities": 45,
+          "months": 6,
+          "mean": -0.011393853287955509,
+          "median": -0.002568293252393161,
+          "hit_rate": 0.4576271186440678,
+          "cohort_equal_weight_mean": -0.011268981422165647,
+          "p25": -0.14719882826803365,
+          "p75": 0.16169326856349753,
+          "sum_lens_fixed_causal_net": -2665.4280358000033
+        },
+        {
+          "group": "40-80",
+          "n": 62,
+          "cohorts": 24,
+          "securities": 43,
+          "months": 6,
+          "mean": -0.0003056059176686033,
+          "median": -0.0030576670098793057,
+          "hit_rate": 0.43548387096774194,
+          "cohort_equal_weight_mean": -0.01942048816908372,
+          "p25": -0.11699720484493525,
+          "p75": 0.10665634230978804,
+          "sum_lens_fixed_causal_net": -1923.9748353000002
+        },
+        {
+          "group": "OUTSIDE_10_80",
+          "n": 5,
+          "cohorts": 4,
+          "securities": 5,
+          "months": 3,
+          "mean": 0.25164777211993117,
+          "median": 0.262109375,
+          "hit_rate": 0.8,
+          "cohort_equal_weight_mean": 0.2881232037687411,
+          "p25": 0.18177844654628839,
+          "p75": 0.3114101813926272,
+          "sum_lens_fixed_causal_net": 7653.193427200001
+        }
+      ],
+      "is_status": "RECURRING_ASSOCIATION",
+      "is_basis": "10-20 cew +0.093 hit 0.65 vs 20-40 -0.011 and 40-80 -0.019; OUTSIDE band is 5 rows"
+    },
+    {
+      "id": "D3-7",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "cx_rank_in_eight",
+      "question": "Rank within the eight and relative extremeness",
+      "test": "group table by rank; cx_ret15_minus_cohort_median",
+      "prediction": "the most extreme (rank 1-2) fade MORE: rank-return relationship positive on extremeness",
+      "is_result": {
+        "n": 200,
+        "cohorts": 25,
+        "securities": 138,
+        "pooled_spearman": -0.2801507693009425,
+        "t3_minus_t1_mean": -0.1933519196329813,
+        "t3_minus_t1_hit": -0.2666666666666667,
+        "within_cohort_mean_spearman": -0.3038095238095238,
+        "within_cohort_halves_positive_share": 0.36,
+        "within_cohort_top_half_minus_bottom_half": -0.08563866450841544,
+        "between_cohort_spearman": null
+      },
+      "is_leading": true,
+      "is_status": "SUPPORTED_AS_PREDICTED",
+      "is_basis": "rank 1 mean +0.327 hit 0.88 (25 cohorts); ranks 2-8 near zero; cx_gap_to_next_rank is the strongest within-cohort feature"
+    },
+    {
+      "id": "D3-8",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "PRE_ORDER",
+      "feature": "po_signal_close_to_preorder",
+      "question": "Does entry-session continuation up to the pre-order bar add information beyond the signal close?",
+      "test": "within-cohort concordance of the pre-order move; compared with sc_ret1 on the same rows",
+      "prediction": "further rise into the order fades MORE: high minus low positive",
+      "is_result": {
+        "n": 200,
+        "cohorts": 25,
+        "securities": 138,
+        "pooled_spearman": 0.04635265881647041,
+        "t3_minus_t1_mean": 0.03122567434637598,
+        "t3_minus_t1_hit": -0.008819538670284954,
+        "within_cohort_mean_spearman": -1.1102230246251566e-18,
+        "within_cohort_halves_positive_share": 0.6,
+        "within_cohort_top_half_minus_bottom_half": 0.018356655046310254,
+        "between_cohort_spearman": 0.45
+      },
+      "is_leading": false,
+      "is_status": "WEAK_DIRECTION_AS_PREDICTED",
+      "is_basis": "not leading by rule: within share=0.60, contrast=+0.018"
+    },
+    {
+      "id": "D3-9",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "PRE_ORDER",
+      "feature": "po_partial_volume_vs_elapsed_window_mean",
+      "question": "Entry-session volume through the pre-order bar versus the same elapsed window on prior sessions",
+      "test": "tercile contrast and within-cohort concordance",
+      "prediction": "elevated entry-session participation fades LESS: negative",
+      "is_result": {
+        "n": 200,
+        "cohorts": 25,
+        "securities": 138,
+        "pooled_spearman": -0.14394359858996475,
+        "t3_minus_t1_mean": -0.10566079115390838,
+        "t3_minus_t1_hit": -0.05269109000452282,
+        "within_cohort_mean_spearman": -0.17238095238095238,
+        "within_cohort_halves_positive_share": 0.44,
+        "within_cohort_top_half_minus_bottom_half": -0.03591740003216489,
+        "between_cohort_spearman": -0.18846153846153846
+      },
+      "is_leading": false,
+      "is_status": "WEAK_DIRECTION_AS_PREDICTED",
+      "is_basis": "not leading by rule: within share=0.44, contrast=-0.036"
+    },
+    {
+      "id": "D3-10",
+      "lane": "directed",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_documented_action_within_60_sessions",
+      "question": "Known documented corporate action before the signal as context",
+      "test": "group table 0 vs >=1 actions",
+      "prediction": "no direction claimed; sparse",
+      "is_result": [
+        {
+          "group": "0",
+          "n": 190,
+          "cohorts": 25,
+          "securities": 132,
+          "months": 6,
+          "mean": 0.04587241005790908,
+          "median": 0.00610651458425171,
+          "hit_rate": 0.5210526315789473,
+          "cohort_equal_weight_mean": 0.04568844075766601,
+          "p25": -0.06758448060075106,
+          "p75": 0.2087894887995404,
+          "sum_lens_fixed_causal_net": 49204.2063621
+        },
+        {
+          "group": "1",
+          "n": 10,
+          "cohorts": 9,
+          "securities": 6,
+          "months": 4,
+          "mean": 0.2088697160112606,
+          "median": 0.1516929137276809,
+          "hit_rate": 0.7,
+          "cohort_equal_weight_mean": 0.24797256187276995,
+          "p25": -0.015662330767188815,
+          "p75": 0.40301576422206986,
+          "sum_lens_fixed_causal_net": 9466.13465
+        }
+      ],
+      "is_status": "INCONCLUSIVE_SPARSE",
+      "is_basis": "categorical; see is_result"
+    },
+    {
+      "id": "F1",
+      "lane": "freelance",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "ep_episode",
+      "question": "Overlapping repeat selection (previous hold still open) versus first selection",
+      "why_distinct": "directed work covers run-up shape and volume; episode age is a membership-history feature",
+      "test": "group table FIRST vs OVERLAPPING_REPEAT vs LATER_REPEAT; cohort-equal-weight",
+      "prediction": "overlapping repeats fade LESS than first selections (the first fade was already captured or the move is persistent)",
+      "information_value": "35% of selections are overlapping repeats; a difference would reshape how the weekly basket is read",
+      "is_result": [
+        {
+          "group": "FIRST",
+          "n": 116,
+          "cohorts": 25,
+          "securities": 116,
+          "months": 6,
+          "mean": 0.06616177411145555,
+          "median": 0.011733283331168132,
+          "hit_rate": 0.5344827586206896,
+          "cohort_equal_weight_mean": 0.08008982118523068,
+          "p25": -0.050617283950617376,
+          "p75": 0.22662769784172665,
+          "sum_lens_fixed_causal_net": 31889.565097599996
+        },
+        {
+          "group": "LATER_REPEAT",
+          "n": 13,
+          "cohorts": 11,
+          "securities": 13,
+          "months": 4,
+          "mean": -0.013300785995630116,
+          "median": -0.015499070055796649,
+          "hit_rate": 0.46153846153846156,
+          "cohort_equal_weight_mean": -0.031221658613188773,
+          "p25": -0.1792098734016161,
+          "p75": 0.19743935309973049,
+          "sum_lens_fixed_causal_net": 858.8989044999995
+        },
+        {
+          "group": "OVERLAPPING_REPEAT",
+          "n": 71,
+          "cohorts": 23,
+          "securities": 49,
+          "months": 6,
+          "mean": 0.04651548580464339,
+          "median": 0.028045917036263912,
+          "hit_rate": 0.5352112676056338,
+          "cohort_equal_weight_mean": 0.05290703504577928,
+          "p25": -0.08928880429139974,
+          "p75": 0.2087894887995404,
+          "sum_lens_fixed_causal_net": 25921.87701
+        }
+      ],
+      "is_status": "WEAK_DIRECTION_AS_PREDICTED",
+      "is_basis": "FIRST cew +0.080 (n=116), OVERLAPPING_REPEAT +0.053 (n=71), LATER_REPEAT -0.031 (n=13); modest, not leading"
+    },
+    {
+      "id": "F2",
+      "lane": "freelance",
+      "parent": null,
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_up_sessions_15",
+      "question": "Steady ascent (many up sessions) versus a few large jumps, holding the total advance similar",
+      "why_distinct": "D3-1 measures concentration by magnitude; this measures persistence by count",
+      "test": "tercile contrast and within-cohort concordance",
+      "prediction": "steady grinders fade MORE: high minus low positive",
+      "information_value": "separates squeeze-like persistence from news jumps without a catalyst narrative",
+      "is_result": {
+        "n": 199,
+        "cohorts": 25,
+        "securities": 137,
+        "pooled_spearman": -0.26650654326239565,
+        "t3_minus_t1_mean": -0.13267879964359508,
+        "t3_minus_t1_hit": -0.06337535014005607,
+        "within_cohort_mean_spearman": -0.3004301252389554,
+        "within_cohort_halves_positive_share": 0.24,
+        "within_cohort_top_half_minus_bottom_half": -0.10122595131419965,
+        "between_cohort_spearman": -0.1366276092770237
+      },
+      "is_leading": true,
+      "is_status": "REJECTED_OPPOSITE_DIRECTION",
+      "is_basis": "leading but opposite to the prediction: share=0.24, contrast=-0.101"
+    },
+    {
+      "id": "F3",
+      "lane": "freelance",
+      "parent": "D3-8",
+      "cutoff": "PRE_ORDER",
+      "feature": "po_preorder_location_in_partial_range",
+      "question": "Failed continuation inside the entry session: is the pre-order price near the partial-day low?",
+      "why_distinct": "D3-8 is the level of the entry-day move; this is where the price sits inside the entry-day range",
+      "test": "tercile contrast and within-cohort concordance",
+      "prediction": "closing near the partial-day low fades MORE: high minus low negative",
+      "information_value": "an intraday failure signature would be actionable at the same order time",
+      "is_result": {
+        "n": 200,
+        "cohorts": 25,
+        "securities": 138,
+        "pooled_spearman": 0.0374589505208721,
+        "t3_minus_t1_mean": 0.021905110828990493,
+        "t3_minus_t1_hit": 0.03731343283582089,
+        "within_cohort_mean_spearman": 0.06095238095238095,
+        "within_cohort_halves_positive_share": 0.48,
+        "within_cohort_top_half_minus_bottom_half": 0.009914854496807353,
+        "between_cohort_spearman": 0.0
+      },
+      "is_leading": false,
+      "is_status": "NO_SEPARATION",
+      "is_basis": "not leading by rule: within share=0.48, contrast=+0.010"
+    },
+    {
+      "id": "F4",
+      "lane": "freelance",
+      "parent": "D2-1",
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_four_state",
+      "question": "Within the QUARTER state (strong and loud), does the volume ratio still separate outcomes?",
+      "why_distinct": "tests whether the volume reduction is informative inside the state where it already applies",
+      "test": "S4 rows only: tercile contrast of sc_volume_ratio_frozen",
+      "prediction": "no additional separation inside S4",
+      "information_value": "tells whether the two reductions are redundant or additive",
+      "is_result": {
+        "volume_ratio": {
+          "feature": "sc_volume_ratio_frozen",
+          "outcome": "oc_price_return_10",
+          "n": 87,
+          "missing": 0,
+          "cohorts": 25,
+          "securities": 74,
+          "months": 6,
+          "pooled_spearman": -0.011390974702923379,
+          "tercile_cuts": [
+            1.4658122322340288,
+            2.5761479275738712
+          ],
+          "t1_low": {
+            "n": 29,
+            "mean": 0.030545704374772036,
+            "median": 0.028045917036263912,
+            "hit_rate": 0.5862068965517241
+          },
+          "t3_high": {
+            "n": 29,
+            "mean": 0.008684939938752186,
+            "median": -0.0007220216606498298,
+            "hit_rate": 0.4827586206896552
+          },
+          "t3_minus_t1_mean": -0.02186076443601985,
+          "t3_minus_t1_hit": -0.1034482758620689,
+          "within_cohort_mean_spearman": 0.03452380952380953,
+          "within_cohort_positive_share": 0.5,
+          "within_cohort_cohorts": 12,
+          "within_cohort_top_half_minus_bottom_half": -0.04810043370847968,
+          "within_cohort_halves_positive_share": 0.4166666666666667,
+          "between_cohort_spearman": -0.14923076923076922
+        },
+        "ret3": {
+          "feature": "sc_ret3",
+          "outcome": "oc_price_return_10",
+          "n": 87,
+          "missing": 0,
+          "cohorts": 25,
+          "securities": 74,
+          "months": 6,
+          "pooled_spearman": 0.2498359699642779,
+          "tercile_cuts": [
+            0.15776152980877378,
+            0.6047745358090189
+          ],
+          "t1_low": {
+            "n": 29,
+            "mean": -0.027840243700253026,
+            "median": -0.003775167785234901,
+            "hit_rate": 0.4482758620689655
+          },
+          "t3_high": {
+            "n": 29,
+            "mean": 0.04066902329609979,
+            "median": -0.00273109243697478,
+            "hit_rate": 0.4827586206896552
+          },
+          "t3_minus_t1_mean": 0.06850926699635282,
+          "t3_minus_t1_hit": 0.03448275862068967,
+          "within_cohort_mean_spearman": 0.12857142857142856,
+          "within_cohort_positive_share": 0.6666666666666666,
+          "within_cohort_cohorts": 12,
+          "within_cohort_top_half_minus_bottom_half": 0.027649355595658048,
+          "within_cohort_halves_positive_share": 0.5,
+          "between_cohort_spearman": 0.2623076923076923
+        }
+      },
+      "is_status": "NO_SEPARATION",
+      "is_basis": "inside S4 the volume ratio has within-cohort rho +0.035, T3-T1 -0.022"
+    },
+    {
+      "id": "D3-7r",
+      "lane": "directed",
+      "parent": "D3-7",
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "cx_rank_in_eight, cx_gap_to_next_rank",
+      "question": "Is the rank-1 fade a gap effect? Rank-1 names with a top-tercile gap to rank 2 versus everything else",
+      "test": "rank-1 & gap T3 vs ranks 2-8; cohort-equal-weight",
+      "prediction": "rank-1 with a wide gap fades most",
+      "is_status": "RECURRING_ASSOCIATION",
+      "is_basis": "IS: 23 of 25 rank-1 names sit in the top gap tercile, mean +0.356, hit 0.91; ranks 2-8 near zero; 3 of 6 counterexamples are November 2025"
+    },
+    {
+      "id": "D3-3r",
+      "lane": "directed",
+      "parent": "D3-3",
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_close_vs_high20",
+      "question": "Reversed reading: names already off their 20-session high fade MORE, among ranks 2-8",
+      "test": "tercile contrast among ranks 2-8 with IS cuts",
+      "prediction": "T1 (furthest below the high) > T3 (at the high)",
+      "is_status": "RECURRING_ASSOCIATION",
+      "is_basis": "IS ranks 2-8: T1 mean +0.123 hit 0.65 vs T3 -0.074 hit 0.25; negative in every IS month; opposite to the original D3-3 prediction"
+    },
+    {
+      "id": "D3-11",
+      "lane": "directed",
+      "parent": "D3-6",
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_signal_close_band x sc_close_vs_high20",
+      "question": "2x2 state map: price band 10-20 vs >=20 by off-high (below IS median close_vs_high20) vs near-high",
+      "test": "four cells, cohort-equal-weight mean and hit rate",
+      "prediction": "10-20 x off-high best; >=20 x near-high worst; ordering preserved",
+      "is_status": "RECURRING_ASSOCIATION",
+      "is_basis": "IS: 10-20 x off-high +0.203 hit 0.75 (n=44); >=20 x near-high -0.075 hit 0.28 (n=69)"
+    },
+    {
+      "id": "D2-4",
+      "lane": "directed",
+      "parent": "D2-1",
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_four_state",
+      "question": "Are the two reductions informative individually? Momentum sign versus volume ratio among ranks 2-8",
+      "test": "ret3 sign split and volume-ratio terciles among ranks 2-8",
+      "prediction": "momentum sign separates; volume ratio separates weakly and inconsistently across bands",
+      "is_status": "RECURRING_ASSOCIATION",
+      "is_basis": "IS ranks 2-8: ret3<=0 +0.065 vs >0 +0.003; volume T1 +0.058 vs T3 +0.001; in band >=20 S4 (+0.019) beats S3 (-0.056), so the volume cut is not monotone across bands"
+    },
+    {
+      "id": "F2r",
+      "lane": "freelance",
+      "parent": "F2",
+      "cutoff": "SIGNAL_CLOSE",
+      "feature": "sc_up_sessions_15, sc_top3_sessions_share_of_advance",
+      "question": "Reversed reading: episodic advances (few up sessions, concentrated in three sessions) fade MORE",
+      "test": "tercile contrasts with IS cuts",
+      "prediction": "few up sessions > many; high top-3 share > low",
+      "is_status": "REJECTED_OPPOSITE_DIRECTION_THEN_REVERSED",
+      "is_basis": "F2 predicted steady grinders fade more; IS shows the opposite in every month (up_sessions within contrast -0.101, share 0.24)"
+    },
+    {
+      "id": "D3-8b",
+      "lane": "directed",
+      "parent": "D3-8",
+      "cutoff": "PRE_ORDER",
+      "feature": "po_signal_close_to_preorder",
+      "question": "Between-cohort only: cohorts whose names kept rising into the order did better as a whole",
+      "test": "between-cohort Spearman of cohort means",
+      "prediction": "no within-cohort effect; between-cohort positive",
+      "is_status": "BETWEEN_COHORT_ONLY_EXPLORATORY",
+      "is_basis": "IS within-cohort rho 0.00, between-cohort rho +0.45 on 25 cohort means; a cohort-level regime effect, not a stock-selection signal"
+    }
+  ],
+  "claims_to_confirm": [
+    {
+      "id": "C1",
+      "claim": "rank-1 extremeness",
+      "registered": [
+        "D3-7",
+        "D3-7r"
+      ],
+      "expected_oos": "rank-1 cohort-equal-weight return exceeds ranks 2-8 by more than 0.10 and hit rate exceeds 0.65; cx_gap_to_next_rank within-cohort positive share >= 0.62"
+    },
+    {
+      "id": "C2",
+      "claim": "already-off-the-high fades more (ranks 2-8)",
+      "registered": [
+        "D3-3r"
+      ],
+      "expected_oos": "T1 minus T3 of sc_close_vs_high20 positive among ranks 2-8; within-cohort share of positive halves <= 0.38"
+    },
+    {
+      "id": "C3",
+      "claim": "wide recent range fades more",
+      "registered": [
+        "sc_mean_range_pct_10",
+        "sc_logret_std_15",
+        "sc_signal_day_range_pct",
+        "po_partial_range_pct"
+      ],
+      "expected_oos": "within-cohort half-contrast positive, share >= 0.62"
+    },
+    {
+      "id": "C4",
+      "claim": "10-20 band fades more than 20-80",
+      "registered": [
+        "D3-6"
+      ],
+      "expected_oos": "10-20 cohort-equal-weight mean exceeds the 20-40 and 40-80 means"
+    },
+    {
+      "id": "C5",
+      "claim": "momentum sign separates; the two HALF states differ",
+      "registered": [
+        "D2-1",
+        "D2-2",
+        "D2-4"
+      ],
+      "expected_oos": "ret3<=0 exceeds ret3>0; S2 closer to S1 than to S3 (sparse S2 may fail on count alone)"
+    },
+    {
+      "id": "C6",
+      "claim": "overlapping repeats fade less than first selections",
+      "registered": [
+        "F1"
+      ],
+      "expected_oos": "FIRST cohort-equal-weight mean exceeds OVERLAPPING_REPEAT; modest"
+    },
+    {
+      "id": "C7",
+      "claim": "episodic advances fade more",
+      "registered": [
+        "F2r",
+        "D3-1"
+      ],
+      "expected_oos": "sc_up_sessions_15 within contrast negative; sc_top3_sessions_share_of_advance positive"
+    },
+    {
+      "id": "C8",
+      "claim": "pre-order information adds nothing within cohort",
+      "registered": [
+        "D3-8",
+        "F3",
+        "D3-9"
+      ],
+      "expected_oos": "po_signal_close_to_preorder and po_preorder_location_in_partial_range within-cohort share between 0.38 and 0.62"
+    },
+    {
+      "id": "C9",
+      "claim": "2x2 state map ordering",
+      "registered": [
+        "D3-11"
+      ],
+      "expected_oos": "10-20 x off-high is the best cell and >=20 x near-high the worst, by cohort-equal-weight mean"
+    },
+    {
+      "id": "C10",
+      "claim": "holding-path shape",
+      "registered": [
+        "paths"
+      ],
+      "expected_oos": "IMMEDIATE_FADE the most common archetype; most of the mean fade accrues by age 2; S1 path keeps accruing through age 10"
+    }
+  ],
+  "reported_regardless_of_outcome": "every registered feature relationship, group table, claim and probe, including non-replications",
+  "input_hashes": {
+    "trade_atlas.csv": "a691e8fc50115fb55c751d10103bac58e8473bb3d5fc33fa5f67a746fca2542f",
+    "trade_path_atlas.csv": "a92e2b79ec0705e74d37b2c4e458806fb3822c8baa24494d5d0d6ae62da8b796",
+    "is_results.json": "7213b36d77c6068cbb8aa2432a37582bcd16a0a8b5a22a832705c439e3ae61c8",
+    "build_manifest.json": "969d8e53bb35ab4f4335c2ff854d34ad7becd1d87908f3ae4cb90f006865f5fd",
+    "arrow008_manifest": "b68304233ec621e19ce87c891faa05e6cd4b7dea987c943a68435fbcd0a63a21",
+    "arrow010_manifest": "af2816524e386415b6fd67f0a69c632013009780ae500d1ca093c305fcce352f"
+  },
+  "code_hashes": {
+    "src/verification/r4r5_anatomy.py": "27400d4bd88b29052f63beeca70ee1fe5295a567e59ab25c247c18af7122df71",
+    "src/verification/r4r5_anatomy_stats.py": "94aa8c8f702ddf10f129e6bd89f4e68dc7ad55b34f9141c5ae7e59f921e63002",
+    "scripts/cg_arrow011_build.py": "9b5d5989a940d57195a4f052cefdcce779b0eb418a5a4b4cb83f5d29cf9373eb",
+    "scripts/cg_arrow011_analyze.py": "08e494fabd3d19fd012a8fa6057222ee92ec933f783ce967b0f32ed64f8d3fb8",
+    "scripts/cg_arrow011_freeze.py": "c92e69fadf03261d828f6d0dcf5651ce908b197b622a6774b5865b308c6635e0",
+    "src/verification/r4r5_replay.py": "1c292dab088bb14031682a1a498671b191223b3dc234a0e165a0148c06b3ae27",
+    "src/verification/r4r5_data.py": "cf0cd05cc055095b812bcb8ce7021b65baf8873c5d51e9fa77e6446416ccd9ce"
+  },
+  "build_controls": {
+    "R5/R2_LEGACY_FILL_QTY": {
+      "expected": 129092.6,
+      "observed": 129092.5950666,
+      "ok": true
+    },
+    "R5/R2_CAUSAL_PREORDER_QTY": {
+      "expected": 128864.62,
+      "observed": 128864.6248656,
+      "ok": true
+    },
+    "R5/R5_EQUITY_SCALED": {
+      "expected": 230566.36,
+      "observed": 230566.3561054,
+      "ok": true
+    },
+    "R4/R2_LEGACY_FILL_QTY": {
+      "expected": 114190.85,
+      "observed": 114190.8496268,
+      "ok": true
+    }
+  },
+  "build_counts": {
+    "R4/R1_LEGACY_FILL_QTY": {
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 0,
+      "cohorts": 52,
+      "eventual_completed_pnl": 56971.05004499999
+    },
+    "R4/R1_CAUSAL_PREORDER_QTY": {
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 0,
+      "cohorts": 52,
+      "eventual_completed_pnl": 56900.24648729999
+    },
+    "R4/R2_LEGACY_FILL_QTY": {
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 1,
+      "cohorts": 52,
+      "eventual_completed_pnl": 114190.8496268
+    },
+    "R4/R2_CAUSAL_PREORDER_QTY": {
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 1,
+      "cohorts": 52,
+      "eventual_completed_pnl": 113845.29164529999
+    },
+    "R5/R1_LEGACY_FILL_QTY": {
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 0,
+      "cohorts": 52,
+      "eventual_completed_pnl": 65676.3937779
+    },
+    "R5/R1_CAUSAL_PREORDER_QTY": {
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 0,
+      "cohorts": 52,
+      "eventual_completed_pnl": 65520.520488899994
+    },
+    "R5/R2_LEGACY_FILL_QTY": {
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 1,
+      "cohorts": 52,
+      "eventual_completed_pnl": 129092.5950666
+    },
+    "R5/R2_CAUSAL_PREORDER_QTY": {
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 1,
+      "cohorts": 52,
+      "eventual_completed_pnl": 128864.6248656
+    },
+    "R5/R5_FIXED_DOLLAR_CONTROL": {
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 1,
+      "cohorts": 52,
+      "eventual_completed_pnl": 128864.6248656
+    },
+    "R5/R5_EQUITY_SCALED": {
+      "intended": 416,
+      "completed": 415,
+      "open_documented": 1,
+      "cohorts": 52,
+      "eventual_completed_pnl": 230566.3561054
+    }
+  },
+  "post_freeze_rule": "no new hypothesis, threshold, mask or probe after this commit; anything noticed after the reveal is labeled post-reveal and queued",
+  "unstarted_queue": [
+    "float / shares outstanding as-of history for the 10-20 band names (data not held)",
+    "first-public-availability catalyst evidence for the top-gap rank-1 names (requires timestamped news, not held)",
+    "cohort-level regime descriptor behind the between-cohort pre-order effect (D3-8b)"
+  ]
+}
