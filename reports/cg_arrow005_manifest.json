@@ -1,17 +1,19 @@
 {
-  "timestamp": "2026-09-14T10:46:19+00:00",
-  "elapsed_minutes": 0.9111738349999844,
-  "head_at_run": "0174e7ee97cd74ad772ca32ad09f51b3fbe566d9",
+  "timestamp": "2026-09-14T10:55:24+00:00",
+  "elapsed_minutes": 0.9384190299999318,
+  "head_at_run": "e9327d7fac7d92f9824b1f71818595033c7626ed",
   "code_sha256": {
-    "src/verification/r4r5_data.py": "3fa2d54590fd82759b7d1727d81c375a0fb344c72fd1b28ee5cfb417ed3434c9",
-    "src/verification/r4r5_replay.py": "4239ece60164ea89699718337dd8c99b1490064c383be9df9c789521dcc129e6",
-    "src/verification/r4r5_export.py": "7ced8dbb4e7a21cb982cc3ff33bc03a53bc3fc688f2b6a8f1c210ed37ae04891",
+    "src/verification/r4r5_data.py": "e4376c3f3d15b49a574c9f46ea9f07def474693c553ab80e1d6566a1999376df",
+    "src/verification/r4r5_replay.py": "2dfd06a3411003b093aa03a83660e70105467699af333e7ca795c6978d2ebb2a",
+    "src/verification/r4r5_export.py": "d91de41607140a6932d21fd3e8d6ad1425bf10e6183faba2b07b7fbcdcb75d8f",
     "src/verification/r4r5_oracle.py": "f0ba825902741adabed7bf05c1392b01f1588ba626013a83b7eab9887dda8c5b",
     "src/verification/r4r5_acquire.py": "345ac417ef16c917a9590b8516922027c3c5df02a73eb1af34a64ae3c672f40a",
-    "scripts/cg_arrow005_run.py": "23cf96d6e053683d4184843613ce46719c86a3f3c2e51556d54f2caa816efe33"
+    "scripts/cg_arrow005_run.py": "913732b5fd5902367cbaafa5424d047377c050cc7d487ddc08c47fe23cea4903"
   },
   "input_sha256": {
     "data/tmp/cg_arrow002r/ranks_ALL_wed.json": "33fb637bf5f9a2c12cfe192a425d8736545cbc76aa7fe73ce99ae2c65fc38397",
+    "reports/cg_arrow003_corporate_actions.json": "522f027dcacd2cc3e6831d43ed894f5a21ef49048814041d919e88b6cade13cf",
+    "reports/cg_arrow005_corporate_actions.json": "a240a19051d9e814ea5572563ea17785557cfdae0002382c44a5f79b857d3b21",
     "data/tmp/cg_arrow003/results/PARENT_ALL.json": "283a9819f3627fe8c5df68ca28aec3e65d4fbec2abba36e2d170ecbfa72437aa",
     "data/tmp/cg_arrow003/results/R4_ALL.json": "054fd991756acfe2da9a23a98f5165b5f8705ef23a6d0e6bb93112eb5450ae2b",
     "data/tmp/cg_arrow003/results/R5_ALL.json": "3b7011c3be3fe5dccf449d330db6e0ffa5947a965d16fe8c639bcc96cd376544"
@@ -36,7 +38,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.20791722602403329,
       "date": "2025-10-29",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "DOCUMENTED_ACTION_APPLIED"
     },
     {
       "cohort_id": "2025-10-22",
@@ -45,7 +48,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.20791722602403329,
       "date": "2025-10-29",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "DOCUMENTED_ACTION_APPLIED"
     },
     {
       "cohort_id": "2025-10-22",
@@ -54,7 +58,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.3,
       "date": "2025-10-24",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "DOCUMENTED_MARKET_MOVE"
     },
     {
       "cohort_id": "2025-12-24",
@@ -63,7 +68,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 1.5779706674648308,
       "date": "2026-01-07",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "DOCUMENTED_MARKET_MOVE"
     },
     {
       "cohort_id": "2026-01-14",
@@ -72,7 +78,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.4448334466349422,
       "date": "2026-01-20",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "DOCUMENTED_MARKET_MOVE"
     },
     {
       "cohort_id": "2026-01-14",
@@ -81,7 +88,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 1.8916558861578265,
       "date": "2026-01-15",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "DOCUMENTED_MARKET_MOVE"
     },
     {
       "cohort_id": "2026-01-28",
@@ -90,7 +98,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.4702743902439024,
       "date": "2026-01-30",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT"
     },
     {
       "cohort_id": "2026-03-11",
@@ -99,7 +108,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.5672131147540984,
       "date": "2026-03-25",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "DOCUMENTED_MARKET_MOVE"
     },
     {
       "cohort_id": "2026-03-18",
@@ -108,7 +118,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.5672131147540984,
       "date": "2026-03-25",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "DOCUMENTED_MARKET_MOVE"
     },
     {
       "cohort_id": "2026-04-01",
@@ -117,7 +128,8 @@
       "identity": "TEST_SYMBOL_ID_REVIEW",
       "ratio": 0.178359096313912,
       "date": "2026-04-02",
-      "status": "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW"
+      "status": "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW",
+      "resolution": "TEST_SYMBOL_ID_REVIEW_UNRESOLVED"
     },
     {
       "cohort_id": "2026-04-22",
@@ -126,7 +138,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.36603930251868255,
       "date": "2026-05-04",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "DOCUMENTED_MARKET_MOVE"
     },
     {
       "cohort_id": "2026-04-22",
@@ -135,7 +148,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.5266644584299437,
       "date": "2026-04-27",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "DOCUMENTED_MARKET_MOVE"
     },
     {
       "cohort_id": "2026-04-22",
@@ -144,7 +158,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 1.7565521258008152,
       "date": "2026-04-24",
-      "status": "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED"
+      "status": "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED",
+      "resolution": "LARGE_MOVE_UNREVIEWED"
     },
     {
       "cohort_id": "2026-04-29",
@@ -153,7 +168,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.36603930251868255,
       "date": "2026-05-04",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "DOCUMENTED_MARKET_MOVE"
     },
     {
       "cohort_id": "2026-05-06",
@@ -162,7 +178,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.1439803826728608,
       "date": "2026-05-07",
-      "status": "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED"
+      "status": "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED",
+      "resolution": "DOCUMENTED_MARKET_MOVE"
     },
     {
       "cohort_id": "2026-06-17",
@@ -171,7 +188,8 @@
       "identity": "TEST_SYMBOL_ID_REVIEW",
       "ratio": null,
       "date": null,
-      "status": "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW"
+      "status": "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW",
+      "resolution": "TEST_SYMBOL_ID_REVIEW_UNRESOLVED"
     },
     {
       "cohort_id": "2026-08-12",
@@ -180,7 +198,8 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.5390966488586693,
       "date": "2026-08-24",
-      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+      "resolution": "MARKET_MOVE_UNCONFIRMED"
     },
     {
       "cohort_id": "2026-08-19",
@@ -189,9 +208,11 @@
       "identity": "INHERITED_ROSTER_UNVERIFIED",
       "ratio": 0.12743362831858407,
       "date": "2026-08-27",
-      "status": "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED"
+      "status": "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED",
+      "resolution": "DOCUMENTED_MARKET_MOVE"
     }
   ],
+  "r2_membership_changes": [],
   "r0": {
     "source": "data/tmp/cg_arrow003/results and details (frozen, read-only)",
     "books": {
@@ -456,12 +477,27 @@
       "frozen_scheduled_legs": 372,
       "matched_scheduled_legs": 372,
       "max_abs_leg_difference": 9.094947017729282e-13,
+      "documented_action_leg_changes": [
+        {
+          "ticket_id": "2025-10-15/NVA",
+          "frozen_pnl": 3484.9899000000005,
+          "r1_pnl": 1641.6099,
+          "factor": 0.2
+        },
+        {
+          "ticket_id": "2025-10-22/NVA",
+          "frozen_pnl": 3177.2974999999997,
+          "r1_pnl": -25.222500000000274,
+          "factor": 0.2
+        }
+      ],
+      "documented_action_delta": -5045.900000000001,
       "waterfall": {
         "R0_total": 38317.195368,
         "R0_scheduled_exit_legs": 45391.714636,
         "R0_delayed_backstop_legs_diagnostic": -3783.6047730000005,
         "R0_terminal_mtm_incl_stale": -3290.9144950000027,
-        "R1_verified_scheduled_exits_net": 45391.714636000004,
+        "R1_verified_scheduled_exits_net": 40345.814636,
         "R1_unresolved_slots": 37,
         "R1_missed_entries": 7,
         "R1_blocked_or_zero": 0
@@ -478,12 +514,27 @@
       "frozen_scheduled_legs": 372,
       "matched_scheduled_legs": 372,
       "max_abs_leg_difference": 1.8189894035458565e-12,
+      "documented_action_leg_changes": [
+        {
+          "ticket_id": "2025-10-15/NVA",
+          "frozen_pnl": 4536.0186,
+          "r1_pnl": 2136.6986,
+          "factor": 0.2
+        },
+        {
+          "ticket_id": "2025-10-22/NVA",
+          "frozen_pnl": 4092.79,
+          "r1_pnl": -32.49000000000035,
+          "factor": 0.2
+        }
+      ],
+      "documented_action_delta": -6524.6,
       "waterfall": {
         "R0_total": 59040.686398900005,
         "R0_scheduled_exit_legs": 64531.426615899996,
         "R0_delayed_backstop_legs_diagnostic": -5443.165327000001,
         "R0_terminal_mtm_incl_stale": -47.57489000000143,
-        "R1_verified_scheduled_exits_net": 64531.426615899996,
+        "R1_verified_scheduled_exits_net": 58006.8266159,
         "R1_unresolved_slots": 37,
         "R1_missed_entries": 7,
         "R1_blocked_or_zero": 0
@@ -500,12 +551,27 @@
       "frozen_scheduled_legs": 372,
       "matched_scheduled_legs": 372,
       "max_abs_leg_difference": 9.094947017729282e-13,
+      "documented_action_leg_changes": [
+        {
+          "ticket_id": "2025-10-15/NVA",
+          "frozen_pnl": 3650.9418000000005,
+          "r1_pnl": 1719.7818,
+          "factor": 0.2
+        },
+        {
+          "ticket_id": "2025-10-22/NVA",
+          "frozen_pnl": 6596.931250000001,
+          "r1_pnl": -52.36875000000057,
+          "factor": 0.2
+        }
+      ],
+      "documented_action_delta": -8580.460000000001,
       "waterfall": {
         "R0_total": 68921.14063380001,
         "R0_scheduled_exit_legs": 74202.3930738,
         "R0_delayed_backstop_legs_diagnostic": -4494.371145000001,
         "R0_terminal_mtm_incl_stale": -786.8812950000008,
-        "R1_verified_scheduled_exits_net": 74202.39307379999,
+        "R1_verified_scheduled_exits_net": 65621.9330738,
         "R1_unresolved_slots": 37,
         "R1_missed_entries": 7,
         "R1_blocked_or_zero": 0
@@ -515,36 +581,42 @@
   "r1_r2_comparison": {
     "PARENT": {
       "membership_equal": true,
+      "recorded_only": [],
+      "reconstructed_only": [],
       "feature_differences": 0,
       "size_differences": 0,
       "quantity_differences": 0,
-      "R1_verified_net": 45391.714636000004,
-      "R2_verified_net": 45391.714636000004,
-      "R2_causal_preorder_verified_net": 45274.6076,
+      "R1_verified_net": 40345.814636,
+      "R2_verified_net": 40345.814636,
+      "R2_causal_preorder_verified_net": 40282.9876,
       "causal_quantity_changes": 152,
-      "note": "R2 uses the same local field as R1; complete-field reconstruction is blocked by acquisition (see ranking_scope)"
+      "note": "R2 re-ranks the local field with the v2 documented events; complete-field reconstruction is blocked by acquisition (see ranking_scope)"
     },
     "R4": {
       "membership_equal": true,
+      "recorded_only": [],
+      "reconstructed_only": [],
       "feature_differences": 0,
       "size_differences": 0,
       "quantity_differences": 0,
-      "R1_verified_net": 64531.426615899996,
-      "R2_verified_net": 64531.426615899996,
-      "R2_causal_preorder_verified_net": 64481.1146111,
+      "R1_verified_net": 58006.8266159,
+      "R2_verified_net": 58006.8266159,
+      "R2_causal_preorder_verified_net": 58010.7946111,
       "causal_quantity_changes": 152,
-      "note": "R2 uses the same local field as R1; complete-field reconstruction is blocked by acquisition (see ranking_scope)"
+      "note": "R2 re-ranks the local field with the v2 documented events; complete-field reconstruction is blocked by acquisition (see ranking_scope)"
     },
     "R5": {
       "membership_equal": true,
+      "recorded_only": [],
+      "reconstructed_only": [],
       "feature_differences": 0,
       "size_differences": 0,
       "quantity_differences": 0,
-      "R1_verified_net": 74202.39307379999,
-      "R2_verified_net": 74202.39307379999,
-      "R2_causal_preorder_verified_net": 74041.2421098,
+      "R1_verified_net": 65621.9330738,
+      "R2_verified_net": 65621.9330738,
+      "R2_causal_preorder_verified_net": 65542.2021098,
       "causal_quantity_changes": 140,
-      "note": "R2 uses the same local field as R1; complete-field reconstruction is blocked by acquisition (see ranking_scope)"
+      "note": "R2 re-ranks the local field with the v2 documented events; complete-field reconstruction is blocked by acquisition (see ranking_scope)"
     }
   },
   "eod_corroboration": {
@@ -596,7 +668,7 @@
     "scope": "same-vendor national 17:15 EOD versus final-minute RTH close; corroboration, not an independent vendor; June-August 2026 has no local EOD partition"
   },
   "pilot": {
-    "timestamp": "2026-09-14T10:46:02+00:00",
+    "timestamp": "2026-09-14T10:55:06+00:00",
     "sdk": "1.0.10",
     "auth_mode": null,
     "authenticated": false,
@@ -621,34 +693,43 @@
         "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
         "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
       },
-      "verified_gross": 49008.4505,
-      "verified_modeled_net": 45391.714636000004,
+      "verified_gross": 43973.4105,
+      "verified_modeled_net": 40345.814636,
       "verified_net_by_split": {
         "IS": 6709.889187200004,
-        "OOS": 38681.825448800024
+        "OOS": 33635.92544880002
       },
-      "verified_net_excluding_action_review": 26518.636206,
+      "verified_net_excluding_unresolved_review": 40345.814636,
+      "verified_net_excluding_all_flags": 22121.262346,
+      "review_resolution_counts": {
+        "DOCUMENTED_ACTION_APPLIED": 2,
+        "DOCUMENTED_MARKET_MOVE": 11,
+        "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT": 1,
+        "TEST_SYMBOL_ID_REVIEW_UNRESOLVED": 2,
+        "LARGE_MOVE_UNREVIEWED": 1,
+        "MARKET_MOVE_UNCONFIRMED": 1
+      },
       "action_review_flagged_verified": 7,
       "large_move_flagged_verified": 6,
       "test_symbol_slots": 2,
-      "verified_wins": 186,
-      "verified_losses": 186,
+      "verified_wins": 185,
+      "verified_losses": 187,
       "verified_flats": 0,
-      "net_double_spread": 42454.378772000004,
-      "net_borrow_10": 39620.26011390027,
-      "net_borrow_30": 28077.35106970082,
+      "net_double_spread": 37401.238772000004,
+      "net_borrow_10": 34566.07673855781,
+      "net_borrow_30": 23006.600943673424,
       "tier_contribution": {
-        "FULL": 45391.714636000004,
+        "FULL": 40345.814636,
         "HALF": 0,
         "QUARTER": 0
       },
       "unresolved_stale_liability_last_marks": 151790.55000000002,
-      "aug31_equity": 146807.6772209998,
+      "aug31_equity": 141761.77722099988,
       "aug31_open_tickets": 37,
       "aug31_stale_gross": 71636.695,
       "aug31_overdue_gross": 87021.585,
       "peak_gross": 194925.89,
-      "mean_gross": 99879.42811429483,
+      "mean_gross": 99966.37345294026,
       "min_equity": 80015.90756919995
     },
     "PARENT/R2": {
@@ -660,34 +741,43 @@
         "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
         "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
       },
-      "verified_gross": 49008.4505,
-      "verified_modeled_net": 45391.714636000004,
+      "verified_gross": 43973.4105,
+      "verified_modeled_net": 40345.814636,
       "verified_net_by_split": {
         "IS": 6709.889187200004,
-        "OOS": 38681.825448800024
+        "OOS": 33635.92544880002
       },
-      "verified_net_excluding_action_review": 26518.636206,
+      "verified_net_excluding_unresolved_review": 40345.814636,
+      "verified_net_excluding_all_flags": 22121.262346,
+      "review_resolution_counts": {
+        "DOCUMENTED_ACTION_APPLIED": 2,
+        "DOCUMENTED_MARKET_MOVE": 11,
+        "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT": 1,
+        "TEST_SYMBOL_ID_REVIEW_UNRESOLVED": 2,
+        "LARGE_MOVE_UNREVIEWED": 1,
+        "MARKET_MOVE_UNCONFIRMED": 1
+      },
       "action_review_flagged_verified": 7,
       "large_move_flagged_verified": 6,
       "test_symbol_slots": 2,
-      "verified_wins": 186,
-      "verified_losses": 186,
+      "verified_wins": 185,
+      "verified_losses": 187,
       "verified_flats": 0,
-      "net_double_spread": 42454.378772000004,
-      "net_borrow_10": 39620.26011390027,
-      "net_borrow_30": 28077.35106970082,
+      "net_double_spread": 37401.238772000004,
+      "net_borrow_10": 34566.07673855781,
+      "net_borrow_30": 23006.600943673424,
       "tier_contribution": {
-        "FULL": 45391.714636000004,
+        "FULL": 40345.814636,
         "HALF": 0,
         "QUARTER": 0
       },
       "unresolved_stale_liability_last_marks": 151790.55000000002,
-      "aug31_equity": 146807.6772209998,
+      "aug31_equity": 141761.77722099988,
       "aug31_open_tickets": 37,
       "aug31_stale_gross": 71636.695,
       "aug31_overdue_gross": 87021.585,
       "peak_gross": 194925.89,
-      "mean_gross": 99879.42811429483,
+      "mean_gross": 99966.37345294026,
       "min_equity": 80015.90756919995
     },
     "PARENT/R2_CAUSAL": {
@@ -699,34 +789,43 @@
         "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
         "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
       },
-      "verified_gross": 48892.3136,
-      "verified_modeled_net": 45274.6076,
+      "verified_gross": 43911.4336,
+      "verified_modeled_net": 40282.9876,
       "verified_net_by_split": {
         "IS": 6666.604149500006,
-        "OOS": 38608.00345050002
+        "OOS": 33616.38345050001
       },
-      "verified_net_excluding_action_review": 26461.293325,
+      "verified_net_excluding_unresolved_review": 40282.9876,
+      "verified_net_excluding_all_flags": 22150.363025,
+      "review_resolution_counts": {
+        "DOCUMENTED_ACTION_APPLIED": 2,
+        "DOCUMENTED_MARKET_MOVE": 11,
+        "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT": 1,
+        "TEST_SYMBOL_ID_REVIEW_UNRESOLVED": 2,
+        "LARGE_MOVE_UNREVIEWED": 1,
+        "MARKET_MOVE_UNCONFIRMED": 1
+      },
       "action_review_flagged_verified": 7,
       "large_move_flagged_verified": 6,
       "test_symbol_slots": 2,
-      "verified_wins": 186,
-      "verified_losses": 186,
+      "verified_wins": 185,
+      "verified_losses": 187,
       "verified_flats": 0,
-      "net_double_spread": 42336.4516,
-      "net_borrow_10": 39501.56305833863,
-      "net_borrow_30": 27955.47397501589,
+      "net_double_spread": 37337.6716,
+      "net_borrow_10": 34501.792285735886,
+      "net_borrow_30": 22939.401657207673,
       "tier_contribution": {
-        "FULL": 45274.6076,
+        "FULL": 40282.9876,
         "HALF": 0,
         "QUARTER": 0
       },
       "unresolved_stale_liability_last_marks": 151832.844,
-      "aug31_equity": 146661.46180999983,
+      "aug31_equity": 141669.84181,
       "aug31_open_tickets": 37,
       "aug31_stale_gross": 71695.815,
       "aug31_overdue_gross": 87033.625,
       "peak_gross": 194448.495,
-      "mean_gross": 99872.75507086854,
+      "mean_gross": 99958.34009078886,
       "min_equity": 79993.45167949995
     },
     "R4/R1": {
@@ -738,34 +837,43 @@
         "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
         "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
       },
-      "verified_gross": 68164.9013,
-      "verified_modeled_net": 64531.426615899996,
+      "verified_gross": 61654.34129999999,
+      "verified_modeled_net": 58006.8266159,
       "verified_net_by_split": {
         "IS": 14239.900080399997,
-        "OOS": 50291.52653549999
+        "OOS": 43766.926535499995
       },
-      "verified_net_excluding_action_review": 40163.049225899995,
+      "verified_net_excluding_unresolved_review": 58006.8266159,
+      "verified_net_excluding_all_flags": 32162.448670899994,
+      "review_resolution_counts": {
+        "DOCUMENTED_ACTION_APPLIED": 2,
+        "DOCUMENTED_MARKET_MOVE": 11,
+        "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT": 1,
+        "TEST_SYMBOL_ID_REVIEW_UNRESOLVED": 2,
+        "LARGE_MOVE_UNREVIEWED": 1,
+        "MARKET_MOVE_UNCONFIRMED": 1
+      },
       "action_review_flagged_verified": 7,
       "large_move_flagged_verified": 6,
       "test_symbol_slots": 2,
-      "verified_wins": 186,
-      "verified_losses": 186,
+      "verified_wins": 185,
+      "verified_losses": 187,
       "verified_flats": 0,
-      "net_double_spread": 61585.171931799996,
-      "net_borrow_10": 58755.620657900545,
-      "net_borrow_30": 47204.00874190164,
+      "net_double_spread": 55051.2119318,
+      "net_borrow_10": 52220.34436201013,
+      "net_borrow_30": 40647.37985423041,
       "tier_contribution": {
-        "FULL": 70677.3459421,
+        "FULL": 64152.745942099995,
         "HALF": -6145.919326200002,
         "QUARTER": 0
       },
       "unresolved_stale_liability_last_marks": 150366.94640000002,
-      "aug31_equity": 167811.11712590026,
+      "aug31_equity": 161286.51712590028,
       "aug31_open_tickets": 37,
       "aug31_stale_gross": 68318.47,
       "aug31_overdue_gross": 86773.35,
       "peak_gross": 205044.09,
-      "mean_gross": 99562.23236042232,
+      "mean_gross": 99674.31969109962,
       "min_equity": 83920.12646610009
     },
     "R4/R2": {
@@ -777,34 +885,43 @@
         "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
         "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
       },
-      "verified_gross": 68164.9013,
-      "verified_modeled_net": 64531.426615899996,
+      "verified_gross": 61654.34129999999,
+      "verified_modeled_net": 58006.8266159,
       "verified_net_by_split": {
         "IS": 14239.900080399997,
-        "OOS": 50291.52653549999
+        "OOS": 43766.926535499995
       },
-      "verified_net_excluding_action_review": 40163.049225899995,
+      "verified_net_excluding_unresolved_review": 58006.8266159,
+      "verified_net_excluding_all_flags": 32162.448670899994,
+      "review_resolution_counts": {
+        "DOCUMENTED_ACTION_APPLIED": 2,
+        "DOCUMENTED_MARKET_MOVE": 11,
+        "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT": 1,
+        "TEST_SYMBOL_ID_REVIEW_UNRESOLVED": 2,
+        "LARGE_MOVE_UNREVIEWED": 1,
+        "MARKET_MOVE_UNCONFIRMED": 1
+      },
       "action_review_flagged_verified": 7,
       "large_move_flagged_verified": 6,
       "test_symbol_slots": 2,
-      "verified_wins": 186,
-      "verified_losses": 186,
+      "verified_wins": 185,
+      "verified_losses": 187,
       "verified_flats": 0,
-      "net_double_spread": 61585.171931799996,
-      "net_borrow_10": 58755.620657900545,
-      "net_borrow_30": 47204.00874190164,
+      "net_double_spread": 55051.2119318,
+      "net_borrow_10": 52220.34436201013,
+      "net_borrow_30": 40647.37985423041,
       "tier_contribution": {
-        "FULL": 70677.3459421,
+        "FULL": 64152.745942099995,
         "HALF": -6145.919326200002,
         "QUARTER": 0
       },
       "unresolved_stale_liability_last_marks": 150366.94640000002,
-      "aug31_equity": 167811.11712590026,
+      "aug31_equity": 161286.51712590028,
       "aug31_open_tickets": 37,
       "aug31_stale_gross": 68318.47,
       "aug31_overdue_gross": 86773.35,
       "peak_gross": 205044.09,
-      "mean_gross": 99562.23236042232,
+      "mean_gross": 99674.31969109962,
       "min_equity": 83920.12646610009
     },
     "R4/R2_CAUSAL": {
@@ -816,34 +933,43 @@
         "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
         "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
       },
-      "verified_gross": 68114.5688,
-      "verified_modeled_net": 64481.1146111,
+      "verified_gross": 61658.1688,
+      "verified_modeled_net": 58010.7946111,
       "verified_net_by_split": {
         "IS": 14233.955037799995,
-        "OOS": 50247.159573299985
+        "OOS": 43776.83957329999
       },
-      "verified_net_excluding_action_review": 40172.501376099994,
+      "verified_net_excluding_unresolved_review": 58010.7946111,
+      "verified_net_excluding_all_flags": 32290.572716099996,
+      "review_resolution_counts": {
+        "DOCUMENTED_ACTION_APPLIED": 2,
+        "DOCUMENTED_MARKET_MOVE": 11,
+        "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT": 1,
+        "TEST_SYMBOL_ID_REVIEW_UNRESOLVED": 2,
+        "LARGE_MOVE_UNREVIEWED": 1,
+        "MARKET_MOVE_UNCONFIRMED": 1
+      },
       "action_review_flagged_verified": 7,
       "large_move_flagged_verified": 6,
       "test_symbol_slots": 2,
-      "verified_wins": 186,
-      "verified_losses": 186,
+      "verified_wins": 185,
+      "verified_losses": 187,
       "verified_flats": 0,
-      "net_double_spread": 61534.8604222,
-      "net_borrow_10": 58705.16190798328,
-      "net_borrow_30": 47153.256501749864,
+      "net_double_spread": 55055.2604222,
+      "net_borrow_10": 52224.2982148326,
+      "net_borrow_30": 40651.3054222978,
       "tier_contribution": {
-        "FULL": 70579.8459086,
+        "FULL": 64109.5259086,
         "HALF": -6098.731297500001,
         "QUARTER": 0
       },
       "unresolved_stale_liability_last_marks": 150298.27680000002,
-      "aug31_equity": 167785.58835610034,
+      "aug31_equity": 161315.2683561004,
       "aug31_open_tickets": 37,
       "aug31_stale_gross": 68284.235,
       "aug31_overdue_gross": 86695.93500000001,
       "peak_gross": 204246.39,
-      "mean_gross": 99549.95885853388,
+      "mean_gross": 99660.68587048605,
       "min_equity": 83926.41256410009
     },
     "R5/R1": {
@@ -855,34 +981,43 @@
         "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
         "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
       },
-      "verified_gross": 77878.78970000001,
-      "verified_modeled_net": 74202.39307379999,
+      "verified_gross": 69316.9897,
+      "verified_modeled_net": 65621.9330738,
       "verified_net_by_split": {
         "IS": 22109.0378495,
-        "OOS": 52093.35522430002
+        "OOS": 43512.89522430002
       },
-      "verified_net_excluding_action_review": 45763.611338799994,
+      "verified_net_excluding_unresolved_review": 65621.9330738,
+      "verified_net_excluding_all_flags": 30977.856523799994,
+      "review_resolution_counts": {
+        "DOCUMENTED_ACTION_APPLIED": 2,
+        "DOCUMENTED_MARKET_MOVE": 11,
+        "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT": 1,
+        "TEST_SYMBOL_ID_REVIEW_UNRESOLVED": 2,
+        "LARGE_MOVE_UNREVIEWED": 1,
+        "MARKET_MOVE_UNCONFIRMED": 1
+      },
       "action_review_flagged_verified": 7,
       "large_move_flagged_verified": 6,
       "test_symbol_slots": 2,
-      "verified_wins": 186,
-      "verified_losses": 186,
+      "verified_wins": 185,
+      "verified_losses": 187,
       "verified_flats": 0,
-      "net_double_spread": 71230.4464476,
-      "net_borrow_10": 68363.18316892603,
-      "net_borrow_30": 56684.763359178076,
+      "net_double_spread": 62637.5464476,
+      "net_borrow_10": 59765.99762372055,
+      "net_borrow_30": 48054.12672356164,
       "tier_contribution": {
-        "FULL": 43868.228351000005,
-        "HALF": 35476.711912399995,
+        "FULL": 37218.928351,
+        "HALF": 33545.55191239999,
         "QUARTER": -5142.5471896
       },
       "unresolved_stale_liability_last_marks": 164344.96060000002,
-      "aug31_equity": 177174.98658879974,
+      "aug31_equity": 168594.52658879978,
       "aug31_open_tickets": 37,
       "aug31_stale_gross": 69143.825,
       "aug31_overdue_gross": 89738.345,
       "peak_gross": 197092.185,
-      "mean_gross": 102783.69803358566,
+      "mean_gross": 102957.3420176494,
       "min_equity": 85010.46415860011
     },
     "R5/R2": {
@@ -894,34 +1029,43 @@
         "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
         "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
       },
-      "verified_gross": 77878.78970000001,
-      "verified_modeled_net": 74202.39307379999,
+      "verified_gross": 69316.9897,
+      "verified_modeled_net": 65621.9330738,
       "verified_net_by_split": {
         "IS": 22109.0378495,
-        "OOS": 52093.35522430002
+        "OOS": 43512.89522430002
       },
-      "verified_net_excluding_action_review": 45763.611338799994,
+      "verified_net_excluding_unresolved_review": 65621.9330738,
+      "verified_net_excluding_all_flags": 30977.856523799994,
+      "review_resolution_counts": {
+        "DOCUMENTED_ACTION_APPLIED": 2,
+        "DOCUMENTED_MARKET_MOVE": 11,
+        "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT": 1,
+        "TEST_SYMBOL_ID_REVIEW_UNRESOLVED": 2,
+        "LARGE_MOVE_UNREVIEWED": 1,
+        "MARKET_MOVE_UNCONFIRMED": 1
+      },
       "action_review_flagged_verified": 7,
       "large_move_flagged_verified": 6,
       "test_symbol_slots": 2,
-      "verified_wins": 186,
-      "verified_losses": 186,
+      "verified_wins": 185,
+      "verified_losses": 187,
       "verified_flats": 0,
-      "net_double_spread": 71230.4464476,
-      "net_borrow_10": 68363.18316892603,
-      "net_borrow_30": 56684.763359178076,
+      "net_double_spread": 62637.5464476,
+      "net_borrow_10": 59765.99762372055,
+      "net_borrow_30": 48054.12672356164,
       "tier_contribution": {
-        "FULL": 43868.228351000005,
-        "HALF": 35476.711912399995,
+        "FULL": 37218.928351,
+        "HALF": 33545.55191239999,
         "QUARTER": -5142.5471896
       },
       "unresolved_stale_liability_last_marks": 164344.96060000002,
-      "aug31_equity": 177174.98658879974,
+      "aug31_equity": 168594.52658879978,
       "aug31_open_tickets": 37,
       "aug31_stale_gross": 69143.825,
       "aug31_overdue_gross": 89738.345,
       "peak_gross": 197092.185,
-      "mean_gross": 102783.69803358566,
+      "mean_gross": 102957.3420176494,
       "min_equity": 85010.46415860011
     },
     "R5/R2_CAUSAL": {
@@ -933,34 +1077,43 @@
         "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
         "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
       },
-      "verified_gross": 77716.6699,
-      "verified_modeled_net": 74041.2421098,
+      "verified_gross": 69236.1099,
+      "verified_modeled_net": 65542.2021098,
       "verified_net_by_split": {
         "IS": 22044.9048524,
-        "OOS": 51996.337257399995
+        "OOS": 43497.297257400016
       },
-      "verified_net_excluding_action_review": 45702.886529799995,
+      "verified_net_excluding_unresolved_review": 65542.2021098,
+      "verified_net_excluding_all_flags": 31073.617109799998,
+      "review_resolution_counts": {
+        "DOCUMENTED_ACTION_APPLIED": 2,
+        "DOCUMENTED_MARKET_MOVE": 11,
+        "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT": 1,
+        "TEST_SYMBOL_ID_REVIEW_UNRESOLVED": 2,
+        "LARGE_MOVE_UNREVIEWED": 1,
+        "MARKET_MOVE_UNCONFIRMED": 1
+      },
       "action_review_flagged_verified": 7,
       "large_move_flagged_verified": 6,
       "test_symbol_slots": 2,
-      "verified_wins": 186,
-      "verified_losses": 186,
+      "verified_wins": 185,
+      "verified_losses": 187,
       "verified_flats": 0,
-      "net_double_spread": 71070.1243196,
-      "net_borrow_10": 68203.63248259726,
-      "net_borrow_30": 56528.413228191785,
+      "net_double_spread": 62558.7643196,
+      "net_borrow_10": 59688.06584150137,
+      "net_borrow_30": 47979.79330490411,
       "tier_contribution": {
-        "FULL": 43716.47099080001,
-        "HALF": 35443.1694545,
+        "FULL": 37148.5909908,
+        "HALF": 33512.009454499996,
         "QUARTER": -5118.3983355
       },
       "unresolved_stale_liability_last_marks": 164357.0624,
-      "aug31_equity": 177030.94002479926,
+      "aug31_equity": 168531.90002479922,
       "aug31_open_tickets": 37,
       "aug31_stale_gross": 69148.955,
       "aug31_overdue_gross": 89684.625,
       "peak_gross": 196334.02500000002,
-      "mean_gross": 102759.04784952191,
+      "mean_gross": 102930.65135549802,
       "min_equity": 85008.71810660009
     }
   },
@@ -1008,7 +1161,7 @@
         "ok": true
       },
       "R5/R2_CAUSAL": {
-        "max_abs_error": 1.4551915228366852e-10,
+        "max_abs_error": 4.3655745685100555e-11,
         "ok": true
       }
     },
@@ -1023,7 +1176,7 @@
       "R4: 7 intended entries missing the final-minute observation",
       "R5: 37 scheduled H10 exits unresolved locally",
       "R5: 7 intended entries missing the final-minute observation",
-      "11 slots carry an unresolved action/identity review flag (>=2x session gap or test symbol)",
+      "2 slots carry an unresolved action/identity review flag (test symbol or unreviewed >=2x session gap)",
       "13 cohorts ranked on a $50-ceiling field (rule requires $10-$80)"
     ],
     "disclosed": [
@@ -1033,7 +1186,7 @@
       "R4: 7 intended entries missing the final-minute observation",
       "R5: 37 scheduled H10 exits unresolved locally",
       "R5: 7 intended entries missing the final-minute observation",
-      "11 slots carry an unresolved action/identity review flag (>=2x session gap or test symbol)",
+      "2 slots carry an unresolved action/identity review flag (test symbol or unreviewed >=2x session gap)",
       "13 cohorts ranked on a $50-ceiling field (rule requires $10-$80)",
       "no independent second vendor; loans/dividends unknown (does not by itself block a conditional model-cost study)"
     ]
@@ -1041,28 +1194,28 @@
   "local_csvs": {
     "r4r5_trade_exceptions.csv": {
       "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_trade_exceptions.csv",
-      "sha256": "bd654b398bbc585fd28086b27bdf8890948f323bad7cb0c3c36c87c0c7e364f7",
-      "bytes": 1208219
+      "sha256": "b2d8efe6afaa204858f1fc8a9665dcfdc1c564361aa756ec57e110ee9cc3ba4f",
+      "bytes": 1230213
     },
     "r4r5_verified_trades.csv": {
       "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_verified_trades.csv",
-      "sha256": "bd5aa952f658481521c0631b6b94edd33ecfc473b5925071a4c87bbdf73426e1",
-      "bytes": 3843650
+      "sha256": "5894419e78a7e8be640f856ffcd9f30983c886d3e8c05e379e7c98ab2c942d62",
+      "bytes": 3865995
     },
     "r4r5_verified_cohort_audit.csv": {
       "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_verified_cohort_audit.csv",
-      "sha256": "61109ddd9402c96656504133c5c5a264198a29d9db1ccf132c3669c1ee230d3d",
-      "bytes": 562629
+      "sha256": "76536c2ac726ced2817de4e5c98d03f60621de3247b8a47ad039d262924d3153",
+      "bytes": 562705
     },
     "r4r5_cohort_matrix.csv": {
       "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_cohort_matrix.csv",
-      "sha256": "c1a5d20fc312fb1be66296e70dd40b65d986067b98887f32697c975d37b53ed3",
-      "bytes": 316678
+      "sha256": "fe815cb9f85edd8ed1612703f87793ae59f13bd49b87f7ff6d7c7e7d351e0441",
+      "bytes": 316668
     },
     "r4r5_daily_account.csv": {
       "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_daily_account.csv",
-      "sha256": "0526a917be429ec48ed5299fe47f3d4d672b8eb9d179960f7df86efa38ba0b05",
-      "bytes": 958881
+      "sha256": "445982f4c06445f03d141f01bc05d3a0f4721ed06d2e437f191112a6108d4a64",
+      "bytes": 958672
     },
     "r4r5_trade_exceptions_initial.csv": {
       "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_trade_exceptions_initial.csv",
@@ -1071,17 +1224,18 @@
     }
   },
   "log": [
-    "2026-09-14T10:45:25+00:00 +0.0m R0 frozen reproduction read: PARENT_ALL=38317.20, R4_ALL=59040.69, R5_ALL=68921.14",
-    "2026-09-14T10:45:25+00:00 +0.0m cohorts=52 slots=416 ranking scope={'LOCAL_FIELD_CEILING_80_ACTIONS_PARTIAL': 39, 'RANKING_SCOPE_UNVERIFIED_CEILING_50': 13}",
-    "2026-09-14T10:45:25+00:00 +0.0m observations required (incl. post-due sessions)=35412",
-    "2026-09-14T10:46:02+00:00 +0.6m summaries loaded: present=28213 missing=7199",
-    "2026-09-14T10:46:02+00:00 +0.6m vendor pilot: authenticated=False error=RuntimeError: Missing Theta Data credentials in .env. Expected THETADATA_API_KEY, or an email/password pair: THETADATA_EMAIL/THETADATA_PASSWORD, THETA_EMAIL/THETA_PASSWORD, THETA_USERNAME/THETA_PASSWORD, EMAIL/PASS",
-    "2026-09-14T10:46:04+00:00 +0.7m required manifest: {'PRESENT_CHECKED': 8683, 'NOT_PREVIOUSLY_REQUESTED': 403, 'PARTIAL_OR_SPARSE_REVIEW': 18}; coalesced requests=118",
-    "2026-09-14T10:46:04+00:00 +0.7m PARENT: R1=372verified R2=372verified R2_CAUSAL=372verified",
-    "2026-09-14T10:46:05+00:00 +0.7m R4: R1=372verified R2=372verified R2_CAUSAL=372verified",
-    "2026-09-14T10:46:05+00:00 +0.7m R5: R1=372verified R2=372verified R2_CAUSAL=372verified",
-    "2026-09-14T10:46:06+00:00 +0.7m CSVs exported",
-    "2026-09-14T10:46:06+00:00 +0.7m oracle ok=True trades={'checked': 3348, 'errors': 0, 'max_abs_error': 1.8189894035458565e-12} cohorts={'cohorts': 468, 'errors': 0}",
-    "2026-09-14T10:46:19+00:00 +0.9m gate=NOT_RUN_DATA_GATE blocking=['PARENT: 37 scheduled H10 exits unresolved locally', 'PARENT: 7 intended entries missing the final-minute observation', 'R4: 37 scheduled H10 exits unresolved locally', 'R4: 7 intended entries missing the final-minute observation', 'R5: 37 scheduled H10 exits unresolved locally', 'R5: 7 intended entries missing the final-minute observation', '11 slots carry an unresolved action/identity review flag (>=2x session gap or test symbol)', '13 cohorts ranked on a $50-ceiling field (rule requires $10-$80)']"
+    "2026-09-14T10:54:28+00:00 +0.0m R0 frozen reproduction read: PARENT_ALL=38317.20, R4_ALL=59040.69, R5_ALL=68921.14",
+    "2026-09-14T10:54:29+00:00 +0.0m R2 membership changes versus recorded selection: 0 cohorts []",
+    "2026-09-14T10:54:29+00:00 +0.0m cohorts=52 slots=416 ranking scope={'LOCAL_FIELD_CEILING_80_ACTIONS_PARTIAL': 39, 'RANKING_SCOPE_UNVERIFIED_CEILING_50': 13}",
+    "2026-09-14T10:54:29+00:00 +0.0m observations required (incl. post-due sessions)=35412",
+    "2026-09-14T10:55:06+00:00 +0.6m summaries loaded: present=28213 missing=7199",
+    "2026-09-14T10:55:07+00:00 +0.6m vendor pilot: authenticated=False error=RuntimeError: Missing Theta Data credentials in .env. Expected THETADATA_API_KEY, or an email/password pair: THETADATA_EMAIL/THETADATA_PASSWORD, THETA_EMAIL/THETA_PASSWORD, THETA_USERNAME/THETA_PASSWORD, EMAIL/PASS",
+    "2026-09-14T10:55:08+00:00 +0.7m required manifest: {'PRESENT_CHECKED': 8683, 'NOT_PREVIOUSLY_REQUESTED': 403, 'PARTIAL_OR_SPARSE_REVIEW': 18}; coalesced requests=118",
+    "2026-09-14T10:55:09+00:00 +0.7m PARENT: R1=372verified R2=372verified R2_CAUSAL=372verified",
+    "2026-09-14T10:55:09+00:00 +0.7m R4: R1=372verified R2=372verified R2_CAUSAL=372verified",
+    "2026-09-14T10:55:09+00:00 +0.7m R5: R1=372verified R2=372verified R2_CAUSAL=372verified",
+    "2026-09-14T10:55:10+00:00 +0.7m CSVs exported",
+    "2026-09-14T10:55:10+00:00 +0.7m oracle ok=True trades={'checked': 3348, 'errors': 0, 'max_abs_error': 1.8189894035458565e-12} cohorts={'cohorts': 468, 'errors': 0}",
+    "2026-09-14T10:55:24+00:00 +0.9m gate=NOT_RUN_DATA_GATE blocking=['PARENT: 37 scheduled H10 exits unresolved locally', 'PARENT: 7 intended entries missing the final-minute observation', 'R4: 37 scheduled H10 exits unresolved locally', 'R4: 7 intended entries missing the final-minute observation', 'R5: 37 scheduled H10 exits unresolved locally', 'R5: 7 intended entries missing the final-minute observation', '2 slots carry an unresolved action/identity review flag (test symbol or unreviewed >=2x session gap)', '13 cohorts ranked on a $50-ceiling field (rule requires $10-$80)']"
   ]
 }

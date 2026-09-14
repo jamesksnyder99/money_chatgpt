@@ -5,7 +5,7 @@ Status: **NOT RUN.** The baseline release gate in `docs/CG_BUILD_ARROW_005.md` s
 Blocking conditions recorded in `reports/cg_arrow005_horizon_freeze.json`:
 
 - 37 scheduled H10 exits per family unresolved locally (21 in-window, 16 September runoff); 7 intended entries missing the final-minute observation.
-- 11 slots with unresolved ≥2x single-session gaps or a test-symbol identity, 7 of them inside the verified profit subtotal.
+- 2 slots with an unresolved identity defect (ZVZZT, a Nasdaq test symbol in the inherited roster); the other flagged moves were resolved with issuer evidence, including an undocumented NVA 5-for-1 split now applied.
 - 13 cohorts (June–August 2026) ranked on a $50-ceiling field against a $10–$80 rule.
 - No vendor authentication available to repair any of the above.
 

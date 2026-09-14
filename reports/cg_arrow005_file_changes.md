@@ -15,6 +15,10 @@ No existing tracked `.py` file was modified. Frozen Arrow 003/004 dependencies, 
 | `scripts/cg_arrow005_run.py` | orchestration | `r0_reproduction`, `recorded_positions`, `reconcile_r0_r1`, `compare_r1_r2`, `eod_corroboration`, `gate`, `main` (writes `reports/cg_arrow005_manifest.json`, `reports/cg_arrow005_horizon_freeze.json`). |
 | `tests/test_cg_arrow005.py` | 18 focused tests | evidence unchanged; acquisition windows beyond bands and warmup; empty-file resumption; holiday/early-close/runoff calendar; action neutrality; no future-exit-dependent entry; documented-missing versus never-requested; every slot exported; sizing tiers and neutral missing history; original versus causal quantity; same shares at all horizons and H10 identity; cutoff/runoff separation; cost signs and scenarios; export + oracle + subtotal conservation; oracle rejects net on unverified rows; identity and discontinuity flags; gate/freeze consistency; pilot without secrets; private paths ignored by Git. |
 
+## Versioned action reference
+
+`reports/cg_arrow005_corporate_actions.json` (v2) carries the eight inherited Arrow 003 events unchanged plus two issuer-documented additions found by the full-year screen (NVA 5-for-1 forward split effective 2025-10-29, price_factor 0.2; BNAI 1-for-10 reverse split effective 2025-12-12, price_factor 10) and dated resolutions for the other flagged moves with sources. `r4r5_data.ACTION_PATH` points to v2; `ACTION_PATH_V1` keeps the inherited file, which the run script uses to pin the R1 recorded selection. `reports/cg_arrow003_corporate_actions.json` is unchanged.
+
 ## Data paths and versions
 
 - New ignored layer `data/verification/r4r5/v1/`: `cache/summaries_r4r5_v1/<date>.json` (280 date partitions, 35,412 symbol-sessions requested, 28,213 present), `required_manifest.json`, `pilot.json`. `validated/` and `acquisition/` are empty because no vendor request could be authenticated. Bytes acquired: 0.

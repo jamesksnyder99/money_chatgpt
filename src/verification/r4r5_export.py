@@ -23,7 +23,7 @@ TRADE_FIELDS = ["model", "replay_stage", "data_version", "quantity_convention", 
                 "net_borrow_10", "net_borrow_30", "stale_mark_sessions_in_hold", "stale_liability_last_mark",
                 "stale_liability_last_mark_date", "stale_liability_eod_reference", "diagnostic_delayed_exit_date",
                 "diagnostic_delayed_open", "diagnostic_delayed_ts", "diagnostic_delay_sessions", "security_identity_status",
-                "max_session_ratio_in_hold", "max_session_ratio_date", "discontinuity_flag", "status",
+                "max_session_ratio_in_hold", "max_session_ratio_date", "discontinuity_flag", "action_review_resolution", "status",
                 "verification_status", "verification_reason"]
 
 
@@ -51,7 +51,7 @@ def exceptions_rows(books: dict, initial: dict | None = None) -> list[dict]:
                         "scheduled_exit_date": t.get("scheduled_exit_date"), "exit_status": t.get("exit_status"),
                         "initial_status": (initial or {}).get((key, t["ticket_id"]), t["status"]), "final_status": t["status"],
                         "ranking_scope": t["ranking_scope"], "diagnostic_delay_sessions": t.get("diagnostic_delay_sessions"),
-                        "security_identity_status": t.get("security_identity_status"), "discontinuity_flag": t.get("discontinuity_flag"),
+                        "security_identity_status": t.get("security_identity_status"), "discontinuity_flag": t.get("discontinuity_flag"), "action_review_resolution": t.get("action_review_resolution"),
                         "reason": t.get("verification_reason")})
     return out
 

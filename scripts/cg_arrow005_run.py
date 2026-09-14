@@ -21,7 +21,7 @@ from verification import r4r5_acquire as acq  # noqa: E402
 from verification import r4r5_export as exp  # noqa: E402
 from verification import r4r5_oracle as oracle  # noqa: E402
 from verification.r4r5_data import (  # noqa: E402
-    HANDOFF, LOCAL_TAPE_END, RANKS_PATH, VERIFY_ROOT, digest, dump_json, load_summaries, present, read_json, stamp,
+    ACTION_PATH_V1, HANDOFF, LOCAL_TAPE_END, RANKS_PATH, VERIFY_ROOT, digest, dump_json, load_summaries, present, read_json, stamp,
 )
 from verification.r4r5_replay import VERIFIED, cohorts, load_field, needs_for, replay  # noqa: E402
 
@@ -71,18 +71,23 @@ def reconcile_r0_r1(fam: str, book: dict, r0: dict) -> dict:
     verified = {k: t for k, t in mine.items() if t["status"] == VERIFIED}
     diff = 0.0
     n_match = 0
+    action_legs = []
     for k, t in verified.items():
         leg = scheduled_legs.get(k)
         if leg is None:
             diff += abs(t["modeled_net"])
             continue
         n_match += 1
+        if t.get("action_factor_over_hold", 1.0) != 1.0 and abs(leg["shares"] - t["quantity_at_exit"]) > 1e-9:
+            action_legs.append({"ticket_id": k, "frozen_pnl": leg["pnl"], "r1_pnl": t["modeled_net"], "factor": t["action_factor_over_hold"]})
+            continue
         diff = max(diff, abs(leg["pnl"] - t["modeled_net"]), abs(leg["shares"] - t["quantity_at_exit"]), abs(leg["exit"] - t["exit_price"]))
     qty_mismatch = sum(1 for k in filled & frozen_ids if mine[k]["quantity"] != recorded_positions(fam)[k]["original_shares"])
     return {"frozen_positions": len(frozen_ids), "r1_filled": len(filled), "identity_equal": filled == frozen_ids,
             "missing_from_r1": sorted(frozen_ids - filled), "extra_in_r1": sorted(filled - frozen_ids),
             "quantity_mismatches": qty_mismatch, "verified_scheduled_exits": len(verified), "frozen_scheduled_legs": len(scheduled_legs),
             "matched_scheduled_legs": n_match, "max_abs_leg_difference": diff,
+            "documented_action_leg_changes": action_legs, "documented_action_delta": sum(x["r1_pnl"] - x["frozen_pnl"] for x in action_legs),
             "waterfall": {"R0_total": r0["books"][f"{fam}_ALL"]["total_pnl"],
                           "R0_scheduled_exit_legs": sum(l["pnl"] for l in scheduled_legs.values()),
                           "R0_delayed_backstop_legs_diagnostic": delayed,
@@ -98,7 +103,7 @@ def compare_r1_r2(r1: dict, r2: dict, r2c: dict) -> dict:
     b = {t["ticket_id"]: t for t in r2["trades"]}
     c = {t["ticket_id"]: t for t in r2c["trades"]}
     feat = size = qty = 0
-    for k in a:
+    for k in set(a) & set(b):
         if abs((a[k].get("volume_ratio") or 0) - (b[k].get("volume_ratio") or 0)) > 1e-9 or abs((a[k].get("ret3") or 0) - (b[k].get("ret3") or 0)) > 1e-9:
             feat += 1
         if abs(a[k]["intended_size"] - b[k]["intended_size"]) > 1e-9:
@@ -108,10 +113,10 @@ def compare_r1_r2(r1: dict, r2: dict, r2c: dict) -> dict:
     vb = sum(t["modeled_net"] for t in b.values() if t["status"] == VERIFIED)
     va = sum(t["modeled_net"] for t in a.values() if t["status"] == VERIFIED)
     vc = sum(t["modeled_net"] for t in c.values() if t["status"] == VERIFIED)
-    return {"membership_equal": set(a) == set(b), "feature_differences": feat, "size_differences": size, "quantity_differences": qty,
+    return {"membership_equal": set(a) == set(b), "recorded_only": sorted(set(a) - set(b)), "reconstructed_only": sorted(set(b) - set(a)), "feature_differences": feat, "size_differences": size, "quantity_differences": qty,
             "R1_verified_net": va, "R2_verified_net": vb, "R2_causal_preorder_verified_net": vc,
             "causal_quantity_changes": sum(1 for k in b if b[k].get("quantity") and c[k].get("quantity") and b[k]["quantity"] != c[k]["quantity"]),
-            "note": "R2 uses the same local field as R1; complete-field reconstruction is blocked by acquisition (see ranking_scope)"}
+            "note": "R2 re-ranks the local field with the v2 documented events; complete-field reconstruction is blocked by acquisition (see ranking_scope)"}
 
 
 def eod_corroboration(books: dict) -> dict:
@@ -149,9 +154,9 @@ def gate(books: dict, field_scope: Counter) -> dict:
         if missed:
             reasons.append(f"{fam}: {len(missed)} intended entries missing the final-minute observation")
     flagged = [t for (fam, stage), b in books.items() if stage == "R2" and fam == "PARENT" for t in b["trades"]
-               if t.get("discontinuity_flag") == "ACTION_OR_ID_REVIEW" or t.get("security_identity_status") == "TEST_SYMBOL_ID_REVIEW"]
+               if t.get("action_review_resolution") in {"TEST_SYMBOL_ID_REVIEW_UNRESOLVED", "PENDING_REVIEW"}]
     if flagged:
-        reasons.append(f"{len(flagged)} slots carry an unresolved action/identity review flag (>=2x session gap or test symbol)")
+        reasons.append(f"{len(flagged)} slots carry an unresolved action/identity review flag (test symbol or unreviewed >=2x session gap)")
     if field_scope.get("RANKING_SCOPE_UNVERIFIED_CEILING_50"):
         reasons.append(f"{field_scope['RANKING_SCOPE_UNVERIFIED_CEILING_50']} cohorts ranked on a $50-ceiling field (rule requires $10-$80)")
     reasons.append("no independent second vendor; loans/dividends unknown (does not by itself block a conditional model-cost study)")
@@ -176,11 +181,15 @@ def main() -> int:
 
     r0 = r0_reproduction()
     note("R0 frozen reproduction read: " + ", ".join(f"{k}={v['total_pnl']:.2f}" for k, v in r0["books"].items() if k.endswith("_ALL")))
-    field = load_field()
+    field_v1 = load_field(events=tuple(read_json(ACTION_PATH_V1)["events"]))
+    cl_v1 = cohorts(field_v1)  # R1: the inherited Arrow 003 event set fixes the recorded selection
+    field = load_field()  # R2: v2 documented events (inherited plus Arrow 005 additions)
     cl = cohorts(field)
     scope = Counter(c["ranking_scope"] for c in cl)
+    membership = [(a["signal_iso"], [h["symbol"] for h in a["rows"]], [h["symbol"] for h in b["rows"]]) for a, b in zip(cl_v1, cl) if [h["symbol"] for h in a["rows"]] != [h["symbol"] for h in b["rows"]]]
+    note(f"R2 membership changes versus recorded selection: {len(membership)} cohorts {[(m[0], sorted(set(m[1]) ^ set(m[2]))) for m in membership]}")
     note(f"cohorts={len(cl)} slots={sum(len(c['rows']) for c in cl)} ranking scope={dict(scope)}")
-    needs = needs_for(cl)
+    needs = needs_for(cl) | needs_for(cl_v1)
     note(f"observations required (incl. post-due sessions)={len(needs)}")
     summaries = load_summaries(needs, args.workers)
     note(f"summaries loaded: present={sum(present(v) for v in summaries.values())} missing={sum(not present(v) for v in summaries.values())}")
@@ -201,10 +210,27 @@ def main() -> int:
     books = {}
     for fam in FAMS:
         rec = recorded_positions(fam)
-        books[(fam, "R1")] = replay(fam, cl, summaries, hold=10, quantity="fill", stage="R1", recorded=rec)
+        books[(fam, "R1")] = replay(fam, cl_v1, summaries, hold=10, quantity="fill", stage="R1", recorded=rec)
         books[(fam, "R2")] = replay(fam, cl, summaries, hold=10, quantity="fill", stage="R2")
         books[(fam, "R2_CAUSAL")] = replay(fam, cl, summaries, hold=10, quantity="preorder", stage="R2_CAUSAL")
         note(f"{fam}: " + " ".join(f"{s}={Counter(t['status'] for t in books[(fam, s)]['trades']).get(VERIFIED, 0)}verified" for s in ("R1", "R2", "R2_CAUSAL")))
+    resolutions = {(x["symbol"], x["date"]): x["resolution"] for x in read_json(REPORTS / "cg_arrow005_corporate_actions.json").get("screen_resolutions", [])}
+    applied = {e["symbol"] for e in read_json(REPORTS / "cg_arrow005_corporate_actions.json")["events"]}
+    for book in books.values():
+        for t in book["trades"]:
+            flag = t.get("discontinuity_flag")
+            if t.get("security_identity_status") == "TEST_SYMBOL_ID_REVIEW":
+                t["action_review_resolution"] = "TEST_SYMBOL_ID_REVIEW_UNRESOLVED"
+            elif flag in {"ACTION_OR_ID_REVIEW", "LARGE_MOVE_REVIEW"}:
+                res = resolutions.get((t["symbol"], t.get("max_session_ratio_date")))
+                if t["symbol"] in applied and t.get("action_factor_over_hold", 1.0) != 1.0:
+                    t["action_review_resolution"] = "DOCUMENTED_ACTION_APPLIED"
+                elif res:
+                    t["action_review_resolution"] = res
+                else:
+                    t["action_review_resolution"] = "PENDING_REVIEW" if flag == "ACTION_OR_ID_REVIEW" else "LARGE_MOVE_UNREVIEWED"
+            else:
+                t["action_review_resolution"] = "NONE"
     initial_path = HANDOFF / "r4r5_trade_exceptions_initial.csv"
     if not initial_path.exists():
         exp.write_csv(initial_path, exp.exceptions_rows(books))
@@ -229,7 +255,9 @@ def main() -> int:
         wins = sum(t["modeled_net"] > 0 for t in ver)
         summary[f"{fam}/{stage}"] = {"intended_slots": len(ts), "status_counts": dict(st), "verified_gross": sum(t["gross_pnl"] for t in ver),
                                      "verified_modeled_net": sum(t["modeled_net"] for t in ver), "verified_net_by_split": dict(by_split),
-                                     "verified_net_excluding_action_review": sum(t["modeled_net"] for t in ver if t.get("discontinuity_flag") != "ACTION_OR_ID_REVIEW" and t.get("security_identity_status") != "TEST_SYMBOL_ID_REVIEW"),
+                                     "verified_net_excluding_unresolved_review": sum(t["modeled_net"] for t in ver if t.get("action_review_resolution") in {"NONE", "DOCUMENTED_MARKET_MOVE", "DOCUMENTED_ACTION_APPLIED", "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT", "MARKET_MOVE_UNCONFIRMED"}),
+                                     "verified_net_excluding_all_flags": sum(t["modeled_net"] for t in ver if t.get("discontinuity_flag") == "NONE"),
+                                     "review_resolution_counts": dict(Counter(t.get("action_review_resolution") for t in ts if t.get("action_review_resolution") != "NONE")),
                                      "action_review_flagged_verified": sum(1 for t in ver if t.get("discontinuity_flag") == "ACTION_OR_ID_REVIEW"),
                                      "large_move_flagged_verified": sum(1 for t in ver if t.get("discontinuity_flag") == "LARGE_MOVE_REVIEW"),
                                      "test_symbol_slots": sum(1 for t in ts if t.get("security_identity_status") == "TEST_SYMBOL_ID_REVIEW"),
@@ -246,13 +274,14 @@ def main() -> int:
     manifest = {"timestamp": stamp(), "elapsed_minutes": (time.monotonic() - t0) / 60, "head_at_run": state["head"],
                 "code_sha256": {p: digest(REPO_ROOT / p) for p in ("src/verification/r4r5_data.py", "src/verification/r4r5_replay.py", "src/verification/r4r5_export.py",
                                                                     "src/verification/r4r5_oracle.py", "src/verification/r4r5_acquire.py", "scripts/cg_arrow005_run.py")},
-                "input_sha256": {"data/tmp/cg_arrow002r/ranks_ALL_wed.json": digest(RANKS_PATH),
+                "input_sha256": {"data/tmp/cg_arrow002r/ranks_ALL_wed.json": digest(RANKS_PATH), "reports/cg_arrow003_corporate_actions.json": digest(REPORTS / "cg_arrow003_corporate_actions.json"), "reports/cg_arrow005_corporate_actions.json": digest(REPORTS / "cg_arrow005_corporate_actions.json"),
                                  **{f"data/tmp/cg_arrow003/results/{f}_ALL.json": digest(FROZEN / "results" / f"{f}_ALL.json") for f in FAMS}},
                 "calendar": {"features_start": "2025-08-01", "score_end": LOCAL_TAPE_END.isoformat(), "runoff_through": "2026-09-30",
                              "holidays_2026_in_window": ["2026-09-07"], "early_closes": ["2025-11-28", "2025-12-24"]},
                 "action_identity_review": [{"cohort_id": t["cohort_id"], "symbol": t["symbol"], "flag": t.get("discontinuity_flag"), "identity": t.get("security_identity_status"),
-                                            "ratio": t.get("max_session_ratio_in_hold"), "date": t.get("max_session_ratio_date"), "status": t["status"]}
+                                            "ratio": t.get("max_session_ratio_in_hold"), "date": t.get("max_session_ratio_date"), "status": t["status"], "resolution": t.get("action_review_resolution")}
                                            for t in books[("PARENT", "R2")]["trades"] if t.get("discontinuity_flag") in {"ACTION_OR_ID_REVIEW", "LARGE_MOVE_REVIEW"} or t.get("security_identity_status") == "TEST_SYMBOL_ID_REVIEW"],
+                "r2_membership_changes": membership,
                 "r0": r0, "r0_r1_reconciliation": recon, "r1_r2_comparison": r12, "eod_corroboration": corr,
                 "pilot": pilot, "required_observations": dict(req_status), "coalesced_requests": len(requests), "acquired": acquired,
                 "summary": summary, "oracle": orc, "gate": g, "local_csvs": files, "log": log}

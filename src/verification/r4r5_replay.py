@@ -34,7 +34,7 @@ def side_cost(px: float) -> float:
     return COMMISSION + spread(px)
 
 
-def load_field(path=RANKS_PATH) -> dict:
+def load_field(path=RANKS_PATH, events=None) -> dict:
     """Historical candidate field with the common documented-action repair (Arrow 003 convention)."""
     ranks = read_json(path)
     out = {}
@@ -43,7 +43,7 @@ def load_field(path=RANKS_PATH) -> dict:
         back = FEATS[INDEX[d] - 15]
         rows = []
         for h in rec["rows"]:
-            f = adjustment_factor(h["symbol"], back, d)
+            f = adjustment_factor(h["symbol"], back, d, events)
             ret = (1 + h["raw_return"]) / f - 1
             rows.append({**h, "raw_return": ret, "documented_rank_factor": f})
         rows.sort(key=lambda h: h["raw_return"], reverse=True)
