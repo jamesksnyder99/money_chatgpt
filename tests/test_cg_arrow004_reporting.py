@@ -5,6 +5,17 @@ from research import cg_arrow004_lab as lab
 from research import cg_arrow004_report as report
 from research.cg_arrow004_data import dump,read,digest
 
+def test_actual_holding_duration_crosses_dst_and_censors_terminal():
+    positions=[{'id':'closed','entry_ts':'2025-10-30T15:59:00-04:00'},
+               {'id':'open','entry_ts':'2025-10-30T15:59:00-04:00'}]
+    stats=report.holding_stats(positions,{'closed':{'exit_ts':'2025-11-13T15:00:00-05:00'}},{'open'},'2025-11-14')
+    assert stats['actual_calendar_days_min']==14
+    assert stats['actual_intervening_sessions_max']==10
+    assert abs(stats['actual_elapsed_hours_median']-(336+1/60))<1e-9
+    assert stats['terminal_max_age_calendar_days']==15
+    assert stats['actual_exit_dates']=='2025-11-13'
+    assert report.holding_stats(positions,{}, {'closed','open'},'2025-11-14')['actual_elapsed_hours_min']==''
+
 def test_report_exports_all_modes_and_months_without_market_payload(monkeypatch,tmp_path):
     root=tmp_path/'data';reports=tmp_path/'reports';reports.mkdir();freeze=reports/'cg_arrow004_freeze.json'
     specs=[lab.Spec('S0_R4',origin='CONTROL'),lab.Spec('S0_R5',family='R5',origin='CONTROL'),

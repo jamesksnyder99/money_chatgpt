@@ -1,0 +1,38 @@
+[
+  {
+    "id": "A11_PERSISTENT_QUIET",
+    "side": "long",
+    "family": "R5",
+    "allocation": "qualified8",
+    "rhythm": "weekly",
+    "u": 1.0,
+    "fixed_equity": false,
+    "budget_scale": 1.0,
+    "ticket": 5150.0,
+    "feature": "persistent",
+    "threshold": 1.0,
+    "pool_start": 1,
+    "origin": "ASTRA",
+    "control": "PATIENT_MIRROR",
+    "mechanism": "Patient observed full-conviction tickets require median of three consecutive signal-known daily volume/preceding20-session mean ratios <=1 and ret3>=0; replace a single quiet day with persistent normalization. Strict B/8, no forced utilization",
+    "reference": null
+  },
+  {
+    "id": "A12_MINUTE_RECOVERY",
+    "side": "long",
+    "family": "R5",
+    "allocation": "select8_equal",
+    "rhythm": "weekly",
+    "u": 1.0,
+    "fixed_equity": false,
+    "budget_scale": 1.0,
+    "ticket": 5150.0,
+    "feature": "minute_flow",
+    "threshold": 1.0,
+    "pool_start": 1,
+    "origin": "ASTRA",
+    "control": "A6_RECOVERY_EQUAL",
+    "mechanism": "Replace participation tier with positive sum(sign(one-minute close-open)*minute volume)/total volume over completed signal RTH, retain nonnegative ret3 tier and equal-dollar selected eight. This is a bar-body recovery proxy, not aggressor-side order flow",
+    "reference": null
+  }
+]

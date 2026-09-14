@@ -1,0 +1,38 @@
+[
+  {
+    "id": "L5_A",
+    "side": "long",
+    "family": "R5",
+    "allocation": "s0",
+    "rhythm": "A",
+    "u": 1.0,
+    "fixed_equity": false,
+    "budget_scale": 1.0,
+    "ticket": 5150.0,
+    "feature": "mirror",
+    "threshold": 1.0,
+    "pool_start": 1,
+    "origin": "CONTROL",
+    "control": "L5",
+    "mechanism": "Same inherited long mirror allocation on fixed global phase A; matched baseline for the completed patient phase falsification, no new candidate",
+    "reference": null
+  },
+  {
+    "id": "L5_B",
+    "side": "long",
+    "family": "R5",
+    "allocation": "s0",
+    "rhythm": "B",
+    "u": 1.0,
+    "fixed_equity": false,
+    "budget_scale": 1.0,
+    "ticket": 5150.0,
+    "feature": "mirror",
+    "threshold": 1.0,
+    "pool_start": 1,
+    "origin": "CONTROL",
+    "control": "L5",
+    "mechanism": "Same inherited long mirror allocation on fixed global phase B; matched baseline for the completed patient phase falsification, no new candidate",
+    "reference": null
+  }
+]

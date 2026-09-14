@@ -1,0 +1,44 @@
+{
+  "finalists": [
+    {
+      "id": "L5_REC_SELECT8",
+      "control": "L5_REC_NORM8",
+      "primary_claim": "ride",
+      "benchmark": "IWM_L5_REC_SELECT8",
+      "pitch": "Select eight of the bottom twenty by observed participation/recovery confidence, retaining the same normalized cohort budget. Test whether the combined observed-history and recovery-tier selection gives a smoother ride than the original bottom-eight recovery-weighted portfolio while retaining useful profit.",
+      "acceptable_tradeoff": "At least 85% of positive parent profit, at least 5% lower drawdown, and no reported downside dollar amount more than 5% worse. Lower median-month profit can coexist with this claim. This is not a claim that confidence ranking beats the observation-only OBSERVED_REC_BOTTOM8 control: IS retention versus that ablation is below 85%. IWM-relative and concentration weaknesses remain explicit.",
+      "secondary_controls": ["OBSERVED_REC_BOTTOM8", "A6_RECOVERY_EQUAL", "L0", "LONG_EQ20", "FIXE_L5_REC_SELECT8", "FIXE_L5_REC_NORM8"],
+      "locked_phase_companions": ["L5_REC_SELECT8_A", "L5_REC_SELECT8_B", "L5_REC_NORM8_A", "L5_REC_NORM8_B"]
+    },
+    {
+      "id": "A8_PATIENT_RECOVERY",
+      "control": "L5",
+      "primary_claim": "balanced",
+      "benchmark": "IWM_A8_PATIENT_RECOVERY",
+      "pitch": "Buy at most eight fully observed recovery-qualified names from the bottom twenty at strict B/8 per name, leaving unqualified slots idle. Compare useful standalone profit and downside with the L5 mirror anchor at similar realized IS average exposure.",
+      "acceptable_tradeoff": "Material profit gain with at least one material downside improvement and no downside dollar amount more than 5% worse. Similar average exposure to L5 does not mean lower risk on every date: IS minute peak is about $98168 versus $70025 for L5, within the common planning range but explicitly higher. Against the direct fully allocated A6 parent, disclose substantially lower profit in exchange for much lower exposure and drawdown; no 85% retention claim against A6. The high-volume allowance has little isolated IS advantage over PATIENT_MIRROR, and this finalist does not claim otherwise.",
+      "lineage_parent": "A6_RECOVERY_EQUAL",
+      "primary_control_rationale": "L5 and the patient book have similar IS average gross; A6 is the higher-exposure direct parent and remains a mandatory separate comparator. The comparator change is explicit before reveal, not an OOS rescue.",
+      "secondary_controls": ["A6_RECOVERY_EQUAL", "PATIENT_MIRROR", "L0", "FIXE_A8_PATIENT_RECOVERY", "FIXE_L5"],
+      "locked_phase_companions": ["A8_PATIENT_RECOVERY_A", "A8_PATIENT_RECOVERY_B", "L5_A", "L5_B"]
+    }
+  ],
+  "controls": [
+    "BRIDGE_R4", "BRIDGE_R5", "S0_R4", "S0_R5",
+    "L0", "L4", "L5", "L5_A", "L5_B", "LONG_EQ20", "L5_REC_NORM8", "A6_RECOVERY_EQUAL",
+    "PATIENT_MIRROR", "OBSERVED_REC_BOTTOM8",
+    "FIXE_L5", "FIXE_L5_REC_NORM8", "FIXE_L5_REC_SELECT8", "FIXE_A8_PATIENT_RECOVERY",
+    "L5_REC_NORM8_A", "L5_REC_NORM8_B", "L5_REC_SELECT8_A", "L5_REC_SELECT8_B",
+    "A8_PATIENT_RECOVERY_A", "A8_PATIENT_RECOVERY_B",
+    "IWM_L0", "IWM_L5", "IWM_L5_REC_NORM8", "IWM_L5_REC_SELECT8", "IWM_A8_PATIENT_RECOVERY", "IWM_A6_RECOVERY_EQUAL"
+  ],
+  "notes": [
+    "No new short finalist is forced: all tested reserve/weighted/carry policies fail to establish a credible incremental result over paired controls. National-EOD-reference sensitivity makes short absolute economics heavily data-limited.",
+    "Two economically distinct long finalists: a fully allocated eight-name ride hypothesis and a patient fewer-name balanced hypothesis. No maximum-utilization or lucky alternate-phase winner is selected.",
+    "Only weekly variants are finalist policies. Both previously declared phase companions remain explicit separate controls, never averaged or selected using confirmation.",
+    "Recovery selection improves DD/profit retention in both IS phases, but phase B worsens the worst day beyond the frozen ride tolerance. Neither phase is an automatically passing copy of the weekly claim. Matched L5 phase A/B controls complete the patient phase comparison before freeze.",
+    "Long IS benchmark increments are positive but disappear when the strongest signal month is left out; removing the three largest positive symbol contributors also erases positive absolute PnL. These are conditional screens, not established alpha.",
+    "The frozen baseline retains observed minute marks. Prior national 17:15 EOD references are a separate causal sensitivity with unresolved adjustment declaration and later-session scope, never executions. The positive long reference sensitivity cannot be substituted to improve the headline.",
+    "New mechanism branching closed after A11 persistent participation and A12 minute-bar recovery failed. Remaining IS work is falsification, accounting, protocol and report verification. OOS remains unavailable until committed freeze at or after minute115."
+  ]
+}

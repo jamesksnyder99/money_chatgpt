@@ -1,0 +1,38 @@
+[
+  {
+    "id": "S4_FULL_R4",
+    "side": "short",
+    "family": "R4",
+    "allocation": "carry_full",
+    "rhythm": "weekly",
+    "u": 1.0,
+    "fixed_equity": false,
+    "budget_scale": 1.0,
+    "ticket": 5150.0,
+    "feature": "mirror",
+    "threshold": 1.0,
+    "pool_start": 1,
+    "origin": "DIRECTED",
+    "control": "S1_R4",
+    "mechanism": "Literal qualified headroom extension: first global Thursday half-budget; later H/8 full-conviction observed primary/reserve tickets, cautious/unknown primary keeps strict B/8*m, no extra weak orders or virtual credits",
+    "reference": null
+  },
+  {
+    "id": "S4_FULL_R5",
+    "side": "short",
+    "family": "R5",
+    "allocation": "carry_full",
+    "rhythm": "weekly",
+    "u": 1.0,
+    "fixed_equity": false,
+    "budget_scale": 1.0,
+    "ticket": 5150.0,
+    "feature": "mirror",
+    "threshold": 1.0,
+    "pool_start": 1,
+    "origin": "DIRECTED",
+    "control": "S1_R5",
+    "mechanism": "Literal qualified headroom extension: first global Thursday half-budget; later H/8 full-conviction observed primary/reserve tickets, cautious/unknown primary keeps strict B/8*m, no extra weak orders or virtual credits",
+    "reference": null
+  }
+]

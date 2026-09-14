@@ -1,0 +1,847 @@
+{
+  "status": "SUPERSEDED: carry startup violated the required half-target first cohort",
+  "old_scores": {
+    "S4_R4": [
+      {
+        "metrics": {
+          "total_pnl": 10335.618284736993,
+          "per_day": 83.3517603607822,
+          "return": 0.10335618284736993,
+          "sessions": 124,
+          "trades": 253,
+          "realized_pnl": 13755.592589737003,
+          "terminal_net_mtm": -3419.974305000001,
+          "red_months": 2,
+          "red_loss_sum": -11471.0927297,
+          "worst_month": -6788.036554299996,
+          "median_month": 2554.099210668496,
+          "months": {
+            "2025-09": -6788.036554299996,
+            "2025-11": -4683.056175400004,
+            "2026-01": 8197.024276400009,
+            "2026-03": 8501.488316699999,
+            "2026-05": 1618.043786336998,
+            "2026-07": 3490.154634999995
+          },
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -4633.7731412999565,
+              "return": -0.046337731412999565,
+              "ending_equity": 95366.22685870004
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 95366.22685870004,
+              "pnl": -2154.2634129999788,
+              "return": -0.022589374498289173,
+              "ending_equity": 93211.96344570006
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 93211.96344570006,
+              "pnl": -4373.049400000018,
+              "return": -0.046915108730088126,
+              "ending_equity": 88838.91404570005
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 88838.91404570005,
+              "pnl": -310.00677540001925,
+              "return": -0.003489538100843367,
+              "ending_equity": 88528.90727030003
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 88528.90727030003,
+              "pnl": 5737.4289166000235,
+              "return": 0.06480853648269118,
+              "ending_equity": 94266.33618690005
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 94266.33618690005,
+              "pnl": 2459.5953598000197,
+              "return": 0.02609198001419539,
+              "ending_equity": 96725.93154670007
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 96725.93154670007,
+              "pnl": 8404.859871700057,
+              "return": 0.08689355312791298,
+              "ending_equity": 105130.79141840013
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 105130.79141840013,
+              "pnl": 96.62844499998027,
+              "return": 0.0009191260114785766,
+              "ending_equity": 105227.41986340011
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 105227.41986340011,
+              "pnl": 711.0731242370093,
+              "return": 0.006757488924085391,
+              "ending_equity": 105938.49298763712
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 105938.49298763712,
+              "pnl": -3492.0967299000185,
+              "return": -0.03296343596569324,
+              "ending_equity": 102446.3962577371
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 102446.3962577371,
+              "pnl": 8305.090431999895,
+              "return": 0.08106766792563157,
+              "ending_equity": 110751.486689737
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 110751.486689737,
+              "pnl": -415.8684050000011,
+              "return": -0.003754969052153937,
+              "ending_equity": 110335.618284737
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -15379.057864599992,
+          "calendar_worst_month": -4633.7731412999565,
+          "calendar_median_month": -106.68916520001949,
+          "max_dd": -16174.556531099937,
+          "max_dd_percent": -0.16174556531099937,
+          "worst_day": -4761.386324999985,
+          "time_underwater_sessions": 241,
+          "longest_underwater_sessions": 132,
+          "avg_exposure": 59859.96803359363,
+          "p95_exposure": 107112.365,
+          "peak_exposure": 112217.933,
+          "avg_target": 98918.42989983052,
+          "utilization": 0.6051447449601725,
+          "mean_occupancy": 0.6003597273841788,
+          "avg_unused_headroom": 39488.289808783855,
+          "longest_under_half_target": 25,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.1076264511951694,
+          "largest_symbol_equity_fraction": 0.15846501313086706,
+          "peak_live_tickets": 28,
+          "mean_live_tickets": 12.625498007968128,
+          "peak_live_symbols": 24,
+          "peak_live_cohorts": 8,
+          "same_symbol_overlap_sessions": 132,
+          "turnover": 1953183.6600630002,
+          "profit_per_avg_exposure": 0.17266327771736542,
+          "terminal_tickets": 7,
+          "terminal_gross": 42904.695,
+          "terminal_stale_gross": 42904.69500000001,
+          "terminal_overdue": 7,
+          "stale_exposure_dollar_sessions": 5738450.476800001,
+          "attribution": {
+            "primary_1_8": {
+              "trades": 189,
+              "pnl": 10973.991831837007,
+              "entry_gross": 565244.2296999998
+            },
+            "observed": {
+              "trades": 238,
+              "pnl": 4009.373559037005,
+              "entry_gross": 944791.1116999999
+            },
+            "confidence_1.0": {
+              "trades": 169,
+              "pnl": 17221.787844900005,
+              "entry_gross": 843200.9716999999
+            },
+            "confidence_0.5": {
+              "trades": 84,
+              "pnl": -6886.169560162994,
+              "entry_gross": 161273.35599999997
+            },
+            "reserve_9_20": {
+              "trades": 64,
+              "pnl": -638.3735471000019,
+              "entry_gross": 439230.0980000001
+            },
+            "unknown": {
+              "trades": 15,
+              "pnl": 6326.244725699999,
+              "entry_gross": 59683.215999999986
+            }
+          },
+          "counters": {
+            "allocation_batches": 25,
+            "stale_position_sessions": 800,
+            "missing_scheduled_exit": 17,
+            "delayed_exit_fills": 10,
+            "delay_calendar_days": 202,
+            "missed_entry": 4
+          },
+          "short_borrow_base": 59554.33792629041,
+          "long_debit_base": 0.0,
+          "negative_cash_sessions": 0,
+          "max_margin_debit": 0,
+          "scenarios": {
+            "borrow_0_spread_1": 10335.618284736993,
+            "borrow_0_spread_2": 8286.331232473993,
+            "borrow_10_spread_1": 4380.184492107951,
+            "borrow_10_spread_2": 2330.897439844951,
+            "borrow_30_spread_1": -7530.683093150132,
+            "borrow_30_spread_2": -9579.970145413132
+          },
+          "top_symbol_profit": [
+            [
+              "BATL",
+              5267.625348699999
+            ],
+            [
+              "LUMN",
+              3510.7082450000007
+            ],
+            [
+              "BNAI",
+              3141.9799352000005
+            ],
+            [
+              "FIGR",
+              2364.3004150000006
+            ],
+            [
+              "HIMS",
+              2280.285225000001
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "CDNA",
+              -2005.3716299999999
+            ],
+            [
+              "IREN",
+              -2126.475445
+            ],
+            [
+              "TERN",
+              -2388.3594050000015
+            ],
+            [
+              "STOK",
+              -2596.997879999999
+            ],
+            [
+              "HYMC",
+              -3105.191125000001
+            ]
+          ],
+          "top_symbol_concentration": 0.5096574973631627,
+          "best_month_concentration": 0.8131937190551859,
+          "adverse_10pct_all": -11221.793300000001,
+          "adverse_50pct_largest": -7616.100000000001,
+          "joint_adverse_other10_largest50": -16535.1533,
+          "absolute_economics": "CONDITIONAL: partial actions, missing held-position observations, unknown dividends/loans/financing"
+        },
+        "detail_sha256": "8bb083d5075fa55d970e34d9a8ef79bb80542a562b897b3a13d5b6ec4f7541f6"
+      }
+    ],
+    "S4_R5": [
+      {
+        "metrics": {
+          "total_pnl": 5318.312450039055,
+          "per_day": 42.88961653257302,
+          "return": 0.05318312450039055,
+          "sessions": 124,
+          "trades": 250,
+          "realized_pnl": 8639.692610039008,
+          "terminal_net_mtm": -3321.38016,
+          "red_months": 3,
+          "red_loss_sum": -21047.661808461013,
+          "worst_month": -9357.567708200007,
+          "median_month": -1666.9751681305038,
+          "months": {
+            "2025-09": -9357.567708200007,
+            "2025-11": -8079.967409000002,
+            "2026-01": 12594.849226900005,
+            "2026-03": 13494.948676599994,
+            "2026-05": -3610.1266912610026,
+            "2026-07": 276.1763549999948
+          },
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -6124.155670699998,
+              "return": -0.06124155670699998,
+              "ending_equity": 93875.8443293
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 93875.8443293,
+              "pnl": -3233.4120374999766,
+              "return": -0.034443493537674445,
+              "ending_equity": 90642.43229180003
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 90642.43229180003,
+              "pnl": -7447.138494999934,
+              "return": -0.08215951742144104,
+              "ending_equity": 83195.29379680009
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 83195.29379680009,
+              "pnl": -632.8289139999979,
+              "return": -0.007606547018700932,
+              "ending_equity": 82562.4648828001
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 82562.4648828001,
+              "pnl": 8566.433405399948,
+              "return": 0.10375699680914637,
+              "ending_equity": 91128.89828820004
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 91128.89828820004,
+              "pnl": 4028.415821500006,
+              "return": 0.0442056899311997,
+              "ending_equity": 95157.31410970005
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 95157.31410970005,
+              "pnl": 12497.738851599963,
+              "return": 0.13133765878671413,
+              "ending_equity": 107655.05296130001
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 107655.05296130001,
+              "pnl": 997.209824999969,
+              "return": 0.00926300993375989,
+              "ending_equity": 108652.26278629998
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 108652.26278629998,
+              "pnl": 1263.0962253390608,
+              "return": 0.011625125818349043,
+              "ending_equity": 109915.35901163904
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 109915.35901163904,
+              "pnl": -6451.078904599926,
+              "return": -0.05869133270007166,
+              "ending_equity": 103464.28010703911
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 103464.28010703911,
+              "pnl": 2154.7239929999632,
+              "return": 0.02082577669095837,
+              "ending_equity": 105619.00410003908
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 105619.00410003908,
+              "pnl": -300.6916500000225,
+              "return": -0.0028469464615971628,
+              "ending_equity": 105318.31245003905
+            }
+          ],
+          "calendar_red_months": 6,
+          "calendar_red_loss_sum": -24189.305671799855,
+          "calendar_worst_month": -7447.138494999934,
+          "calendar_median_month": 348.25908749997325,
+          "max_dd": -20012.44027719993,
+          "max_dd_percent": -0.20012440277199928,
+          "worst_day": -5680.580400000006,
+          "time_underwater_sessions": 235,
+          "longest_underwater_sessions": 132,
+          "avg_exposure": 50051.99782881275,
+          "p95_exposure": 102575.888,
+          "peak_exposure": 116169.705,
+          "avg_target": 97463.47996742226,
+          "utilization": 0.5135461800208952,
+          "mean_occupancy": 0.5100076512363847,
+          "avg_unused_headroom": 47707.383305798525,
+          "longest_under_half_target": 27,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.0937696362104241,
+          "largest_symbol_equity_fraction": 0.1596810809613843,
+          "peak_live_tickets": 29,
+          "mean_live_tickets": 13.07569721115538,
+          "peak_live_symbols": 25,
+          "peak_live_cohorts": 8,
+          "same_symbol_overlap_sessions": 142,
+          "turnover": 1679365.064561,
+          "profit_per_avg_exposure": 0.10625574763726083,
+          "terminal_tickets": 8,
+          "terminal_gross": 33054.6,
+          "terminal_stale_gross": 33054.6,
+          "terminal_overdue": 8,
+          "stale_exposure_dollar_sessions": 4648659.3228,
+          "attribution": {
+            "primary_1_8": {
+              "trades": 197,
+              "pnl": 9824.088342739005,
+              "entry_gross": 494264.7479999999
+            },
+            "observed": {
+              "trades": 235,
+              "pnl": 1251.1754897390115,
+              "entry_gross": 801648.8238000006
+            },
+            "confidence_0.5": {
+              "trades": 82,
+              "pnl": 5579.1514934,
+              "entry_gross": 206648.25510000007
+            },
+            "confidence_0.25": {
+              "trades": 82,
+              "pnl": -5643.131328260997,
+              "entry_gross": 103288.01049999997
+            },
+            "confidence_1.0": {
+              "trades": 86,
+              "pnl": 5382.292284900004,
+              "entry_gross": 550015.0304000002
+            },
+            "reserve_9_20": {
+              "trades": 53,
+              "pnl": -4505.775892699996,
+              "entry_gross": 365686.548
+            },
+            "unknown": {
+              "trades": 15,
+              "pnl": 4067.1369602999994,
+              "entry_gross": 58302.472200000004
+            }
+          },
+          "counters": {
+            "allocation_batches": 25,
+            "stale_position_sessions": 948,
+            "missing_scheduled_exit": 17,
+            "delayed_exit_fills": 9,
+            "delay_calendar_days": 147,
+            "missed_entry": 3
+          },
+          "short_borrow_base": 49980.78443204384,
+          "long_debit_base": 0.0,
+          "negative_cash_sessions": 0,
+          "max_margin_debit": 0,
+          "scenarios": {
+            "borrow_0_spread_1": 5318.312450039055,
+            "borrow_0_spread_2": 3577.202461078055,
+            "borrow_10_spread_1": 320.23400683467116,
+            "borrow_10_spread_2": -1420.8759821263288,
+            "borrow_30_spread_1": -9675.922879574096,
+            "borrow_30_spread_2": -11417.032868535096
+          },
+          "top_symbol_profit": [
+            [
+              "BATL",
+              7883.2119698000015
+            ],
+            [
+              "NBY",
+              4283.6409
+            ],
+            [
+              "CRML",
+              2750.2668650000005
+            ],
+            [
+              "NVA",
+              1856.6550000000002
+            ],
+            [
+              "BNAI",
+              1744.9868684000005
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "MBX",
+              -2342.1599099999994
+            ],
+            [
+              "TRAX",
+              -2525.295300000001
+            ],
+            [
+              "STOK",
+              -2596.997879999999
+            ],
+            [
+              "TERN",
+              -2721.3773650000003
+            ],
+            [
+              "FLNC",
+              -2731.377809999999
+            ]
+          ],
+          "top_symbol_concentration": 1.4822769522956687,
+          "best_month_concentration": 2.349944454938556,
+          "adverse_10pct_all": -11616.970500000001,
+          "adverse_50pct_largest": -7616.100000000001,
+          "joint_adverse_other10_largest50": -16725.970500000003,
+          "absolute_economics": "CONDITIONAL: partial actions, missing held-position observations, unknown dividends/loans/financing"
+        },
+        "detail_sha256": "38e5add2775adf8fc7425856b2a1ed1cfa1e75922757746f059f72680d45562f"
+      }
+    ],
+    "FIXE_S4_R4": [
+      {
+        "metrics": {
+          "total_pnl": 13276.436159118923,
+          "per_day": 107.06803354128164,
+          "return": 0.13276436159118923,
+          "sessions": 124,
+          "trades": 262,
+          "realized_pnl": 16687.400584119005,
+          "terminal_net_mtm": -3410.964425000001,
+          "red_months": 2,
+          "red_loss_sum": -11696.497693000008,
+          "worst_month": -6587.0974738000095,
+          "median_month": 3364.7321865094973,
+          "months": {
+            "2025-09": -6587.0974738000095,
+            "2025-11": -5109.400219199998,
+            "2026-01": 10010.114071100004,
+            "2026-03": 8233.355408000007,
+            "2026-05": 2842.4745280189964,
+            "2026-07": 3886.9898449999982
+          },
+          "calendar_months": [
+            {
+              "month": "2025-09",
+              "starting_equity": 100000.0,
+              "pnl": -4503.2369913,
+              "return": -0.045032369913000005,
+              "ending_equity": 95496.7630087
+            },
+            {
+              "month": "2025-10",
+              "starting_equity": 95496.7630087,
+              "pnl": -2083.860482499993,
+              "return": -0.021821268248748367,
+              "ending_equity": 93412.9025262
+            },
+            {
+              "month": "2025-11",
+              "starting_equity": 93412.9025262,
+              "pnl": -4288.439920000033,
+              "return": -0.045908432390238944,
+              "ending_equity": 89124.46260619997
+            },
+            {
+              "month": "2025-12",
+              "starting_equity": 89124.46260619997,
+              "pnl": -820.9602992000146,
+              "return": -0.009211391296993965,
+              "ending_equity": 88303.50230699996
+            },
+            {
+              "month": "2026-01",
+              "starting_equity": 88303.50230699996,
+              "pnl": 6977.899238499987,
+              "return": 0.07902177214036547,
+              "ending_equity": 95281.40154549995
+            },
+            {
+              "month": "2026-02",
+              "starting_equity": 95281.40154549995,
+              "pnl": 3032.2148325999733,
+              "return": 0.03182378495085416,
+              "ending_equity": 98313.61637809992
+            },
+            {
+              "month": "2026-03",
+              "starting_equity": 98313.61637809992,
+              "pnl": 8296.992772999976,
+              "return": 0.08439311947483392,
+              "ending_equity": 106610.6091510999
+            },
+            {
+              "month": "2026-04",
+              "starting_equity": 106610.6091510999,
+              "pnl": -63.63736500003142,
+              "return": -0.0005969139985856171,
+              "ending_equity": 106546.97178609986
+            },
+            {
+              "month": "2026-05",
+              "starting_equity": 106546.97178609986,
+              "pnl": 790.6538535190048,
+              "return": 0.0074207069451611915,
+              "ending_equity": 107337.62563961887
+            },
+            {
+              "month": "2026-06",
+              "starting_equity": 107337.62563961887,
+              "pnl": -2000.3379294999904,
+              "return": -0.018635943524743438,
+              "ending_equity": 105337.28771011888
+            },
+            {
+              "month": "2026-07",
+              "starting_equity": 105337.28771011888,
+              "pnl": 8322.973169000004,
+              "return": 0.07901260180444618,
+              "ending_equity": 113660.26087911888
+            },
+            {
+              "month": "2026-08",
+              "starting_equity": 113660.26087911888,
+              "pnl": -383.8247199999605,
+              "return": -0.0033769473783644547,
+              "ending_equity": 113276.43615911892
+            }
+          ],
+          "calendar_red_months": 7,
+          "calendar_red_loss_sum": -14144.297707500024,
+          "calendar_worst_month": -4503.2369913,
+          "calendar_median_month": -223.73104249999597,
+          "max_dd": -16856.879866900068,
+          "max_dd_percent": -0.16856879866900065,
+          "worst_day": -5643.814029999994,
+          "time_underwater_sessions": 237,
+          "longest_underwater_sessions": 131,
+          "avg_exposure": 60470.548539171315,
+          "p95_exposure": 101431.02,
+          "peak_exposure": 104727.655,
+          "avg_target": 100000.0,
+          "utilization": 0.6047054853917131,
+          "mean_occupancy": 0.6047054853917132,
+          "avg_unused_headroom": 39693.79803373705,
+          "longest_under_half_target": 25,
+          "above_130k_sessions": 0,
+          "longest_above_130k": 0,
+          "exposure_dollar_days_above_130k": 0,
+          "excursion_causes": {},
+          "peak_gross_to_equity": 1.1970810492903479,
+          "largest_symbol_equity_fraction": 0.17205512587330707,
+          "peak_live_tickets": 28,
+          "mean_live_tickets": 12.98804780876494,
+          "peak_live_symbols": 24,
+          "peak_live_cohorts": 8,
+          "same_symbol_overlap_sessions": 142,
+          "turnover": 1973150.163781,
+          "profit_per_avg_exposure": 0.21955210395551114,
+          "terminal_tickets": 7,
+          "terminal_gross": 42176.775,
+          "terminal_stale_gross": 42176.774999999994,
+          "terminal_overdue": 7,
+          "stale_exposure_dollar_sessions": 5790400.6616,
+          "attribution": {
+            "primary_1_8": {
+              "trades": 196,
+              "pnl": 12198.048606819008,
+              "entry_gross": 569272.774
+            },
+            "observed": {
+              "trades": 247,
+              "pnl": 6367.164991119004,
+              "entry_gross": 954963.175199999
+            },
+            "confidence_1.0": {
+              "trades": 173,
+              "pnl": 19027.043070700012,
+              "entry_gross": 851117.4743999988
+            },
+            "confidence_0.5": {
+              "trades": 89,
+              "pnl": -5750.6069115810005,
+              "entry_gross": 164456.13259999998
+            },
+            "reserve_9_20": {
+              "trades": 66,
+              "pnl": 1078.387552299996,
+              "entry_gross": 446300.83300000016
+            },
+            "unknown": {
+              "trades": 15,
+              "pnl": 6909.271167999997,
+              "entry_gross": 60610.43179999999
+            }
+          },
+          "counters": {
+            "allocation_batches": 25,
+            "symbol_cap_binding_orders": 0,
+            "stale_position_sessions": 800,
+            "zero_share_order": 1,
+            "missing_scheduled_exit": 17,
+            "delayed_exit_fills": 10,
+            "delay_calendar_days": 202,
+            "missed_entry": 4
+          },
+          "short_borrow_base": 60186.22298848219,
+          "long_debit_base": 0.0,
+          "negative_cash_sessions": 0,
+          "max_margin_debit": 0,
+          "scenarios": {
+            "borrow_0_spread_1": 13276.436159118923,
+            "borrow_0_spread_2": 11210.922099237923,
+            "borrow_10_spread_1": 7257.813860270703,
+            "borrow_10_spread_2": 5192.299800389703,
+            "borrow_30_spread_1": -4779.430737425733,
+            "borrow_30_spread_2": -6844.944797306734
+          },
+          "top_symbol_profit": [
+            [
+              "BATL",
+              5230.1457493
+            ],
+            [
+              "LUMN",
+              3766.868435
+            ],
+            [
+              "BNAI",
+              3318.370717200002
+            ],
+            [
+              "FIGR",
+              2809.0698000000007
+            ],
+            [
+              "NBY",
+              2606.963275
+            ]
+          ],
+          "bottom_symbol_profit": [
+            [
+              "GSAT",
+              -1997.0413823999993
+            ],
+            [
+              "IREN",
+              -2196.7571949999997
+            ],
+            [
+              "TERN",
+              -2549.3276050000004
+            ],
+            [
+              "STOK",
+              -2596.997879999999
+            ],
+            [
+              "HYMC",
+              -3596.368949999999
+            ]
+          ],
+          "top_symbol_concentration": 0.3939419951722265,
+          "best_month_concentration": 0.6268981426377265,
+          "adverse_10pct_all": -10472.765500000001,
+          "adverse_50pct_largest": -7616.100000000001,
+          "joint_adverse_other10_largest50": -16194.845500000003,
+          "absolute_economics": "CONDITIONAL: partial actions, missing held-position observations, unknown dividends/loans/financing"
+        },
+        "detail_sha256": "f399a95234b2b0545e99b6aaee488edf455fa63c5c4ad0c8d0a2551e20b3c236"
+      }
+    ]
+  },
+  "old_stale_diagnostics": {
+    "S4_R4": {
+      "0.0": {
+        "total_pnl": 10335.618284736993,
+        "per_day": 83.3517603607822,
+        "max_dd": -16174.556531099937,
+        "red_loss_sum": -11471.0927297,
+        "worst_month": -6788.036554299996,
+        "worst_day": -4761.386324999985,
+        "avg_exposure": 59859.96803359363,
+        "peak_exposure": 112217.933,
+        "utilization": 0.6051447449601725,
+        "terminal_stale_gross": 42904.69500000001,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 800,
+          "missing_scheduled_exit": 17,
+          "delayed_exit_fills": 10,
+          "delay_calendar_days": 202,
+          "missed_entry": 4
+        }
+      },
+      "0.1": {
+        "total_pnl": 5350.376757582169,
+        "per_day": 43.14819965792072,
+        "max_dd": -17222.67763199999,
+        "red_loss_sum": -12562.07483271801,
+        "worst_month": -6788.036554299994,
+        "worst_day": -4630.232652499995,
+        "avg_exposure": 59689.79878451794,
+        "peak_exposure": 107728.07812000002,
+        "utilization": 0.6184964344616485,
+        "terminal_stale_gross": 44052.778000000006,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 787,
+          "missing_scheduled_exit": 16,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 195,
+          "missed_entry": 4
+        }
+      },
+      "0.5": {
+        "total_pnl": -8752.026757699932,
+        "per_day": -70.580860949193,
+        "max_dd": -23756.840560699842,
+        "red_loss_sum": -19924.2280961,
+        "worst_month": -10105.260261799998,
+        "worst_day": -8693.095000000001,
+        "avg_exposure": 59652.400009745026,
+        "peak_exposure": 107096.46200000001,
+        "utilization": 0.6733592972080991,
+        "terminal_stale_gross": 49774.2225,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 641,
+          "missing_scheduled_exit": 13,
+          "delayed_exit_fills": 8,
+          "delay_calendar_days": 191,
+          "missed_entry": 4
+        }
+      }
+    }
+  },
+  "old_match_calibration": [
+    {
+      "candidate": "S4_R4",
+      "reference": "BRIDGE_R4",
+      "is_average_gross_ratio": 1.5206366085072476,
+      "fixed_ticket": 7825,
+      "calibration": "One formula, nearest25 dollars; no iterative size search or OOS maxima"
+    },
+    {
+      "candidate": "S3_R4",
+      "reference": "BRIDGE_R4",
+      "is_average_gross_ratio": 1.3150832620650694,
+      "fixed_ticket": 6775,
+      "calibration": "One formula, nearest25 dollars; no iterative size search or OOS maxima"
+    },
+    {
+      "candidate": "S0_R5_U125",
+      "reference": "BRIDGE_R5",
+      "is_average_gross_ratio": 0.9293214965861109,
+      "fixed_ticket": 7725,
+      "calibration": "One formula, nearest25 dollars; no iterative size search or OOS maxima"
+    }
+  ],
+  "interpretation": "Invalid startup benefit is not evidence; complete local outputs and original ledger events preserved. No OOS had been exposed."
+}

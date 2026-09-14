@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-09-14T00:37:31+00:00",
+  "controls": [
+    {
+      "control": "R4",
+      "matched": true,
+      "differences": [],
+      "total_pnl": 14078.448518399999,
+      "historical_detail_sha256": "7af2e2f5bb5abc5ec0e4241cdc47982bff0440b0d15320e22d7f7632d98e4fc7",
+      "historical_record_sha256": "d618e4c4eb2c0f043b0b2fb17a0dbb6a9b68150b0a180cb63b6f0cff1304a54c"
+    },
+    {
+      "control": "R5",
+      "matched": true,
+      "differences": [],
+      "total_pnl": 21662.039154499995,
+      "historical_detail_sha256": "1a672e042ec513b499cc9f3cf45229bc8e64145f2785df978b02ab04367ac8ed",
+      "historical_record_sha256": "6c513a8962b6c3b24afec74e5c2c933306a9918187da03c374f929cd95688b09"
+    }
+  ],
+  "old_writers_called": false
+}

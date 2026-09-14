@@ -1,0 +1,38 @@
+[
+  {
+    "id": "PATIENT_MIRROR",
+    "side": "long",
+    "family": "R5",
+    "allocation": "qualified8",
+    "rhythm": "weekly",
+    "u": 1.0,
+    "fixed_equity": false,
+    "budget_scale": 1.0,
+    "ticket": 5150.0,
+    "feature": "mirror",
+    "threshold": 1.0,
+    "pool_start": 1,
+    "origin": "CONTROL",
+    "control": "A8_PATIENT_RECOVERY",
+    "mechanism": "Patient ablation: admit only observed low-volume/nonnegative-ret3 names; remove high-volume intraday recovery allowance, preserve bottom-twenty rank order and strict B/8 per name",
+    "reference": null
+  },
+  {
+    "id": "OBSERVED_REC_BOTTOM8",
+    "side": "long",
+    "family": "R5",
+    "allocation": "observed8",
+    "rhythm": "weekly",
+    "u": 1.0,
+    "fixed_equity": false,
+    "budget_scale": 1.0,
+    "ticket": 5150.0,
+    "feature": "recovery",
+    "threshold": 1.0,
+    "pool_start": 1,
+    "origin": "CONTROL",
+    "control": "L5_REC_NORM8",
+    "mechanism": "Choose first eight loss-ranked names whose actually used volume/ret3 features are observed, without sorting by confidence tier; recovery weights normalized to B. Isolate missing-history exclusion from recovery ranking",
+    "reference": null
+  }
+]

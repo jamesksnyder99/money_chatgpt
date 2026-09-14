@@ -1,5 +1,7 @@
 """Frozen claim evaluation and aggregate-only Arrow 004 report generation."""
 from collections import Counter
+from datetime import date,datetime,timedelta
+from ingest.calendar import nyse_sessions
 import argparse,csv,math,statistics
 from research.cg_arrow004_data import ROOT,REPO_ROOT,read,dump,digest,stamp,schedule
 from research.cg_arrow004_lab import FREEZE,MATERIALITY,authorize,elapsed,ledger
@@ -57,6 +59,23 @@ def write_csv(path,rows,fields=None):
     with path.open('w',encoding='utf-8',newline='') as f:
         w=csv.DictWriter(f,fieldnames=fields or list(rows[0]));w.writeheader();w.writerows(rows)
 
+def holding_stats(positions,exits,terminal,end_date):
+    """Observed exits only; unfinished holdings have separate censored ages."""
+    values={'actual_calendar_days':[],'actual_intervening_sessions':[],'actual_elapsed_hours':[]}
+    dates=[];ages=[]
+    for p in positions:
+        entry=datetime.fromisoformat(p['entry_ts'])
+        if p['id'] in exits:
+            finish=datetime.fromisoformat(exits[p['id']]['exit_ts']);dates.append(finish.date().isoformat())
+            values['actual_calendar_days'].append((finish.date()-entry.date()).days)
+            values['actual_intervening_sessions'].append(len(nyse_sessions(entry.date()+timedelta(days=1),finish.date())))
+            values['actual_elapsed_hours'].append((finish-entry).total_seconds()/3600)
+        elif p['id'] in terminal:ages.append((date.fromisoformat(end_date)-entry.date()).days)
+    out={'actual_exit_dates':'|'.join(sorted(set(dates))),'terminal_max_age_calendar_days':max(ages) if ages else ''}
+    for key,items in values.items():
+        for label,fn in [('min',min),('median',statistics.median),('max',max)]:out[key+'_'+label]=fn(items) if items else ''
+    return out
+
 def build():
     f=authorize('ALL');complete=read(ROOT/'investor_complete.json')
     if complete['freeze_sha256']!=digest(FREEZE):raise RuntimeError('Incomplete or mismatched investor replay')
@@ -75,7 +94,7 @@ def build():
             by={c['nominal']:c for c in d['cohorts']}
             for sched in schedule():
                 c=by.get(sched['nominal']);positions=[p for p in d['positions'] if p['nominal']==sched['nominal']]
-                cohorts.append({'book':n,'side':s['side'],'mode':mode,**sched,'scheduled_in_this_book':c is not None,
+                cohorts.append({'book':n,'side':s['side'],'mode':mode,**sched,**holding_stats(positions,exits,terminal,d['daily'][-1]['date']),'scheduled_in_this_book':c is not None,
                   'filled':len(positions),'missed':c['missed'] if c else 0,'delayed_exit_fills':sum(exits.get(p['id'],{}).get('delayed',False) for p in positions),
                   'terminal_tickets':sum(p['id'] in terminal for p in positions),'terminal_overdue':sum(p['id'] in terminal and p['expiry_date']<=d['daily'][-1]['date'] for p in positions),
                   'preorder_equity':c['preorder_equity'] if c else '', 'surviving_gross':c['surviving_gross'] if c else '',

@@ -1,0 +1,153 @@
+CG Arrow 004 execution record (PowerShell, independent lab only)
+Root: C:\Users\james\money_chatgpt
+Remote: jamesksnyder99/money_chatgpt, origin/main
+Pulled main with git pull --ff-only origin main; 3dd9cb7 -> 1827380.
+Start after pull/root check: 2026-09-13 23:13:39 UTC / 19:13:39 America/New_York.
+Hard deadline: 2026-09-14 01:43:39 UTC / September13 21:43:39 America/New_York.
+Earliest ordinary freeze/reveal gate: minute115, 2026-09-14 01:08:39 UTC.
+No timer reset and no automatic overtime. No Arrow005.
+
+Read AGENTS.md, docs/CHATGPT_LAB_PROTOCOL.md, docs/SUCCESS.md,
+docs/CG_BUILD_ARROW_004.md, then targeted Arrow003 repair/lifecycle/control
+code and reports. Historical evidence and markers remain immutable.
+
+Environment used for all Python research commands:
+  $env:PYTHONPATH='src'
+  $env:POLARS_MAX_THREADS='1'
+  $env:TEMP='C:\Users\james\money_chatgpt\data\tmp\cg_arrow004_system_tmp'
+  $env:TMP=$env:TEMP
+  .venv\Scripts\python.exe ...
+8 total compute workers maximum; source hash I/O uses eight threads.
+Module invocations avoid the scripts/ directory shadowing the research package.
+No credential values, .env content, original-source repository, live order,
+Theta Terminal, unrelated model, bulk ingest, or sub-minute tape was accessed.
+
+Executed discovery and repair commands (prefix .venv\Scripts\python.exe):
+  -m research.cg_arrow004_data --mode IS --workers 8
+  -m scripts.cg_arrow004_cores
+  -m scripts.cg_arrow004_short_continue
+  -m scripts.cg_arrow004_short_matches
+  -m scripts.cg_arrow004_carry_close
+  -m scripts.cg_arrow004_long_directed
+  -m scripts.cg_arrow004_long_astra
+  -m scripts.cg_arrow004_long_recursive
+  -m scripts.cg_arrow004_long_patient
+  -m scripts.cg_arrow004_long_controls
+  -m scripts.cg_arrow004_long_ablation
+  -m scripts.cg_arrow004_long_final_branches
+Benchmark batches:
+  -m scripts.cg_arrow004_benchmarks --ids L0 L4 L5 LONG_EQ20
+  -m scripts.cg_arrow004_benchmarks --ids L4_RECOVERY L5_RECOVERY L5_NORM8 L5_REC_NORM8 L5_SELECT8 L5_REC_SELECT8 L5_WEIGHT20 L5_RESERVE A1_MILD_LOSERS EQ_MILD_LOSERS A2_RECLAIM_HIGH A3_STABLE_PATH A4_ADVANCING_DAYS
+  -m scripts.cg_arrow004_benchmarks --ids A5_RECOVERY_VOTES A6_RECOVERY_EQUAL A7_MIDDLE_LOSERS
+  -m scripts.cg_arrow004_benchmarks --ids A8_PATIENT_RECOVERY A9_QUIET_RECOVERY A10_RECLAIM_MEAN
+  -m scripts.cg_arrow004_benchmarks --ids PATIENT_MIRROR OBSERVED_REC_BOTTOM8
+  -m scripts.cg_arrow004_benchmarks --ids A11_PERSISTENT_QUIET A12_MINUTE_RECOVERY
+
+Ad hoc bounded reporting replay used run_is(existing_specs,
+replay_reason='...') on the four existing long anchors after adding planned
+gross metadata and on all 23 affected normalized books after fixing saved
+confidence-tier labels. Exact replay reasons, specs, timestamps, hashes and
+superseded local records are in cg_arrow004_ledger.jsonl. No economic change
+was found in those metadata replays. Carry repair did change economics and
+is explicitly reconciled in cg_arrow004_repairs.md.
+
+Executed diagnostics (same Python prefix):
+  -m research.cg_arrow004_audit board
+  -m research.cg_arrow004_audit robustness
+  -m research.cg_arrow004_audit oracle --mode IS
+  -m research.cg_arrow004_falsify stale --ids S0_R4 S1_R4 S4_R4 S0_R5 S1_R5 S3_R4 L0 L4 L5 LONG_EQ20
+  -m research.cg_arrow004_falsify stale --ids S4_R4 S4_R5 S4_FULL_R4 S4_FULL_R5 NORM8_R4 S0_R5_U125 BRIDGE_R5
+  -m research.cg_arrow004_falsify stale --ids L5_REC_SELECT8 L5_REC_NORM8 A5_RECOVERY_VOTES A6_RECOVERY_EQUAL EQ_MILD_LOSERS
+  -m research.cg_arrow004_falsify stale --ids A8_PATIENT_RECOVERY L5
+  -m research.cg_arrow004_falsify coverage --ids S0_R4 S1_R4 S4_R4 S0_R5 S1_R5 L0 L4 L5 LONG_EQ20
+  -m research.cg_arrow004_falsify coverage --ids S4_R4 S4_R5 L5_REC_SELECT8 L5_REC_NORM8 A6_RECOVERY_EQUAL A8_PATIENT_RECOVERY A9_QUIET_RECOVERY A10_RECLAIM_MEAN
+  -m research.cg_arrow004_minute --ids S0_R4 S0_R5 BRIDGE_R4 BRIDGE_R5 L0 L4 L5 IWM_L5
+  -m research.cg_arrow004_minute --ids L5 L5_REC_NORM8 L5_REC_SELECT8 A6_RECOVERY_EQUAL A8_PATIENT_RECOVERY IWM_L5 IWM_L5_REC_SELECT8 IWM_A8_PATIENT_RECOVERY
+  -m research.cg_arrow004_integrity universe
+  -m research.cg_arrow004_integrity inherited
+  -m research.cg_arrow004_valuation
+  -m scripts.cg_arrow004_reference_stress
+  -m research.cg_arrow004_pool_evidence
+  -m research.cg_arrow004_long_evidence --ids L5 L5_REC_NORM8 L5_REC_SELECT8 A6_RECOVERY_EQUAL A8_PATIENT_RECOVERY PATIENT_MIRROR OBSERVED_REC_BOTTOM8
+  -m research.cg_arrow004_raw_audit reconstruct
+  -m research.cg_arrow004_raw_audit manifest
+  -m scripts.cg_arrow004_historical_reproduction
+  -m research.cg_arrow004_report discovery
+  -m scripts.cg_arrow004_closure preflight
+
+Raw reconstruction: all25 complete IS full-field rank endpoints and1000
+selected feature rows match independent copied-minute reconstruction.
+Source manifest: SHA-256 of all77073 referenced copied IS source files,
+stored locally; compact public identity only.
+Read-only historical R4/R5 reproduction: every existing metric/detail
+matches frozen Arrow003 IS results; no old writer/gate was invoked.
+
+Focused tests were run before interpretation, then repeated only for new
+allocation/feature, causal-reference or protocol changes. Earlier preflight:
+  -m pytest tests/test_cg_arrow004.py tests/test_cg_arrow004_protocol.py -q --basetemp=data/tmp/cg_arrow004_tests_preflight
+  29 passed in1.17s.
+Earlier synthetic/feature/protocol checkpoints:19,23,28 and29 focused tests
+passed as coverage expanded. These are accounting/implementation tests,
+not investment evidence.
+
+Primary documentation consulted only to resolve national EOD scope:
+  https://docs.thetadata.us/operations/stock_history_eod.html
+  https://docs.thetadata.us/Articles/Data-And-Requests/OHLC-EOD.html
+SDK source and local ingestion code were inspected without instantiating a
+client or reading credentials. The reference scenario remains diagnostic,
+because later-session scope and price adjustment declaration are unresolved.
+
+Interruption/resume state:
+  data/tmp/cg_arrow004/state.json retains original UTC/monotonic start,
+  elapsed checkpoints, completed IDs and reveal state. Context compaction
+  did not reset the timer or reopen any gate. Every launched mechanism is
+  declared and closes with scored results; replays/scenarios are not new
+  hypotheses. New mechanism branching closed at70.84 elapsed minutes.
+  Protected long laboratory began at36.87 minutes, with long engine
+  plumbing and anchors implemented earlier. Work after branch closure is
+  causal/data/concentration/capital falsification and exact audit closure.
+
+Final freeze, confirmation, test, public review and Git closure commands
+and their actual results are appended below after execution. This record
+does not claim that pending steps have already completed.
+
+Final pre-reveal additions and completed checks:
+  -m scripts.cg_arrow004_patient_phase_controls
+  -m pytest tests/test_cg_arrow004.py tests/test_cg_arrow004_protocol.py tests/test_cg_arrow004_reporting.py -q --basetemp=data/tmp/cg_arrow004_tests_frozen
+  31 passed in1.64s, including a flat synthetic aggregate-report smoke test.
+  -m scripts.cg_arrow004_replay
+  111 complete IS books, zero changed existing economic metrics/details.
+  Repeated after adding the explicit original-signal-month firewall and
+  eager diagnostic-reference availability assertion; still zero changes.
+  -m research.cg_arrow004_report discovery
+  -m scripts.cg_arrow004_closure preflight
+  111 declared and completed books:28 new core policy specifications
+  (10 short,18 long),6 declared short phase/utilization neighbors,
+  and77 controls/ablations/benchmarks. Replays and sensitivities excluded.
+  -m research.cg_arrow004_audit oracle --mode IS
+  All111 IS books independently reconcile cash, equity and gross.
+  -m research.cg_arrow004_minute --ids S0_R4 S0_R5 BRIDGE_R4 BRIDGE_R5 L0 L4 L5 L5_REC_NORM8 L5_REC_SELECT8 A6_RECOVERY_EQUAL A8_PATIENT_RECOVERY PATIENT_MIRROR OBSERVED_REC_BOTTOM8 IWM_L5 IWM_L5_REC_SELECT8 IWM_A8_PATIENT_RECOVERY
+  All251 sessions reconcile for all16 minute-audited IS books.
+  -m research.cg_arrow004_audit robustness
+
+Public source/test review:
+  git add -- src/research/cg_arrow004*.py scripts/cg_arrow004*.py tests/test_cg_arrow004*.py
+  git diff --cached --check
+  git diff --cached --stat
+  -m scripts.cg_arrow004_safety
+  PASS:33 staged source/test files,175339 bytes,zero flagged issues.
+  Critical staged confirmation/protocol/security diffs manually inspected;
+  exact proof still matches current code/input identities.
+  git commit -m "Implement Arrow 004 two-week capital accounts and validation"
+  Commit:c58c582ee8e48595785c4be178019ea47147ccd8.
+  Nothing pushed yet at this checkpoint; full pending-push bytes are
+  reviewed again before the final authorized push.
+
+Final pre-freeze schedule export check:
+  Added aggregate actual observed holding days, intervening sessions and elapsed hours; terminal holdings have separate censored ages. DST fixture included.
+  -m pytest tests/test_cg_arrow004.py tests/test_cg_arrow004_protocol.py tests/test_cg_arrow004_reporting.py -q --basetemp=data/tmp/cg_arrow004_tests_duration
+  32 passed in 1.69s.
+  -m scripts.cg_arrow004_replay
+  Final report-only change requires a new exact identity proof before freeze.
+  Final exact replay:111 books,zero economic mismatches. Discovery and preflight regenerated.
+  Effort estimates:short substantive research about25min; long substantive research about55-60min within approximately78min long-phase elapsed window, excluding shared engineering/reporting/replay. These are retrospective estimates, not instrumented CPU times.

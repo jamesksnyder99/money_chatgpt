@@ -1,0 +1,23 @@
+[
+  {
+    "candidate": "S4_R4",
+    "reference": "BRIDGE_R4",
+    "is_average_gross_ratio": 1.5206366085072476,
+    "fixed_ticket": 7825,
+    "calibration": "One formula, nearest25 dollars; no iterative size search or OOS maxima"
+  },
+  {
+    "candidate": "S3_R4",
+    "reference": "BRIDGE_R4",
+    "is_average_gross_ratio": 1.3150832620650694,
+    "fixed_ticket": 6775,
+    "calibration": "One formula, nearest25 dollars; no iterative size search or OOS maxima"
+  },
+  {
+    "candidate": "S0_R5_U125",
+    "reference": "BRIDGE_R5",
+    "is_average_gross_ratio": 0.9293214965861109,
+    "fixed_ticket": 7725,
+    "calibration": "One formula, nearest25 dollars; no iterative size search or OOS maxima"
+  }
+]

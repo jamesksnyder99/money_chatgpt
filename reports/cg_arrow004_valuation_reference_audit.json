@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-09-14T00:58:46+00:00",
+  "references": 84449,
+  "source_counts": {
+    "data/virgin/eligibility.parquet": 53591,
+    "data/full/eligibility.parquet": 30858
+  },
+  "gap_counts": {
+    "missing_minute_with_prior_reference": 7687,
+    "missing_minute_without_reference": 2804
+  },
+  "overlap_comparisons": 76401,
+  "relative_difference_quantiles": {
+    "0.5": 0.0005224660397072922,
+    "0.95": 0.003027245206861817,
+    "0.99": 0.007757951900698279,
+    "1.0": 0.46365604701515617
+  },
+  "overlap_over_5percent": [
+    {
+      "date": "2026-06-16",
+      "symbol": "RVI",
+      "relative_difference": 0.05534883720930217
+    },
+    {
+      "date": "2026-06-17",
+      "symbol": "SDOT",
+      "relative_difference": 0.46365604701515617
+    },
+    {
+      "date": "2025-12-24",
+      "symbol": "THH",
+      "relative_difference": 0.08320184426229504
+    },
+    {
+      "date": "2026-01-07",
+      "symbol": "VTYX",
+      "relative_difference": 0.22114216281895516
+    },
+    {
+      "date": "2026-05-07",
+      "symbol": "ONEG",
+      "relative_difference": 0.26210053880158823
+    }
+  ],
+  "source_identity": {
+    "data/virgin/eligibility.parquet": "2a5f5ef703997a785298ea2a7c7ba193ce6c12843db24093f2e31a02005dfde9",
+    "data/full/eligibility.parquet": "fb5b89057ec5777c50c9348be45e6f8179dfe7960375518f366ccaf721d85858"
+  },
+  "local_reference_path": "data/tmp/cg_arrow004/valuation_IS.json",
+  "local_reference_sha256": "f59a4a2b4c693223a86ced7f3272b815c3c2cf7fbe25ec4b21280231ea837303",
+  "provenance": "ingest.eligibility.evaluate_session copies previous-session EOD close into prior_close, including ineligible rows. The contract labels it official, but vendor/local timestamps establish national17:15 scope. References are known only on the following row session; diagnostic price-unit compatibility and dated split conversion are explicit assumptions.",
+  "decision": "DIAGNOSTIC ONLY. National 17:15 reports include later-session scope and absent explicit adjustment declaration. Preserve minute-only baseline; quantify a separate causal prior-reference sensitivity under a compatible-price-unit assumption. References never substitute for intraday execution or signal/rank history.",
+  "primary_source": "https://docs.thetadata.us/operations/stock_history_eod.html",
+  "primary_methodology": "https://docs.thetadata.us/Articles/Data-And-Requests/OHLC-EOD.html"
+}

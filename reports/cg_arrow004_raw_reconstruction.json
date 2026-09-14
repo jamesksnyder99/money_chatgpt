@@ -1,0 +1,257 @@
+{
+  "timestamp": "2026-09-14T00:33:38+00:00",
+  "signals": [
+    {
+      "signal": "2025-09-03",
+      "full_rank_rows": 1277,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 1.1102230246251565e-16,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3394
+    },
+    {
+      "signal": "2025-09-10",
+      "full_rank_rows": 1282,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 2.220446049250313e-16,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3404
+    },
+    {
+      "signal": "2025-09-17",
+      "full_rank_rows": 1297,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3434
+    },
+    {
+      "signal": "2025-09-24",
+      "full_rank_rows": 1306,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 2.220446049250313e-16,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3452
+    },
+    {
+      "signal": "2025-11-05",
+      "full_rank_rows": 1339,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 1.1102230246251565e-16,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3518
+    },
+    {
+      "signal": "2025-11-12",
+      "full_rank_rows": 1287,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3414
+    },
+    {
+      "signal": "2025-11-19",
+      "full_rank_rows": 1286,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 1.1102230246251565e-16,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3412
+    },
+    {
+      "signal": "2025-11-25",
+      "full_rank_rows": 1365,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3570
+    },
+    {
+      "signal": "2026-01-07",
+      "full_rank_rows": 1342,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3524
+    },
+    {
+      "signal": "2026-01-14",
+      "full_rank_rows": 1304,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3448
+    },
+    {
+      "signal": "2026-01-21",
+      "full_rank_rows": 1321,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 2.220446049250313e-16,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3482
+    },
+    {
+      "signal": "2026-01-28",
+      "full_rank_rows": 1276,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3392
+    },
+    {
+      "signal": "2026-03-04",
+      "full_rank_rows": 1340,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3520
+    },
+    {
+      "signal": "2026-03-11",
+      "full_rank_rows": 1334,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3508
+    },
+    {
+      "signal": "2026-03-18",
+      "full_rank_rows": 1309,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3458
+    },
+    {
+      "signal": "2026-03-25",
+      "full_rank_rows": 1308,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3456
+    },
+    {
+      "signal": "2026-05-06",
+      "full_rank_rows": 1329,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3498
+    },
+    {
+      "signal": "2026-05-13",
+      "full_rank_rows": 1333,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3506
+    },
+    {
+      "signal": "2026-05-20",
+      "full_rank_rows": 1295,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3430
+    },
+    {
+      "signal": "2026-05-27",
+      "full_rank_rows": 1342,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 3524
+    },
+    {
+      "signal": "2026-07-01",
+      "full_rank_rows": 1028,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 2896
+    },
+    {
+      "signal": "2026-07-08",
+      "full_rank_rows": 960,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 2760
+    },
+    {
+      "signal": "2026-07-15",
+      "full_rank_rows": 917,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 2674
+    },
+    {
+      "signal": "2026-07-22",
+      "full_rank_rows": 907,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 2654
+    },
+    {
+      "signal": "2026-07-29",
+      "full_rank_rows": 928,
+      "missing_rank_endpoints": 0,
+      "max_rank_error": 0.0,
+      "selected_feature_rows": 40,
+      "max_feature_error": 0.0,
+      "mismatches": [],
+      "raw_symbol_days_read": 2696
+    }
+  ],
+  "all_match": true,
+  "interpretation": "Read raw copied minute files independently of cached summaries: full eligible rank endpoints and all selected long/short signal-history features. No outcomes used to alter membership."
+}

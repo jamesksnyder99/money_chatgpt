@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-09-14T01:08:32+00:00",
+  "elapsed_minutes": 114.88986467833335,
+  "declared_and_completed_books": 111,
+  "counts": {
+    "long/ASTRA": 12,
+    "short/CONTROL": 28,
+    "long/CONTROL": 49,
+    "short/DERIVED": 6,
+    "long/DIRECTED": 6,
+    "short/DIRECTED": 10
+  },
+  "reveal_status": false,
+  "input_sha256": {
+    "data/virgin/eligibility.parquet": "2a5f5ef703997a785298ea2a7c7ba193ce6c12843db24093f2e31a02005dfde9",
+    "data/full/eligibility.parquet": "fb5b89057ec5777c50c9348be45e6f8179dfe7960375518f366ccaf721d85858",
+    "data/ref/symbols_common.parquet": "05e62e88ccac67a2bb436236aa41cc7d9cf627eed1a5ba5344c0e4384dc2c509",
+    "data/ref/splits.parquet": "4160421067b1a4418a0adfe32d1047cee0d36936d5554db4d06c36bdbe29a0ee",
+    "reports/cg_arrow003_corporate_actions.json": "522f027dcacd2cc3e6831d43ed894f5a21ef49048814041d919e88b6cade13cf",
+    "data/tmp/cg_arrow002r/ranks_IS_wed.json": "96a64640fe152e7000976193c04c5788de0d7193a9dcd221a26321f57ba28270",
+    "data/tmp/cg_arrow002r/ranks_OOS_wed.json": "84d00a5e1f68e47e2993f265de40f8052d21c8158eb4f0251e722579e50f4634",
+    "src/ingest/etp_tickers.txt": "4296a9f4087e0ee8f4013a2115a1b31f789ead6c8af1f538f6b89b46fbc77042",
+    "data/tmp/cg_arrow004/raw_sources_IS.json": "eda2b21ae25912615f264e2cb989d747ff50591732f4ca8da07255773640c042"
+  },
+  "dependency_identity": {
+    "python": "3.14.5",
+    "implementation": "CPython",
+    "packages": {
+      "polars": "1.44.2",
+      "numpy": "2.5.3",
+      "pytest": "9.1.1",
+      "tzdata": "2026.4",
+      "thetadata": "1.0.10"
+    },
+    "requirements_sha256": "692a74b0a3827ef4ee5d94c718b28fa8918b126c932dd5387353280f0e9cffad"
+  },
+  "required_tests": "Focused tests completed; complete tests/ suite reserved for final closure",
+  "no_unfinished_experiment": true
+}

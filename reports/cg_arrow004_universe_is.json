@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-09-14T00:08:31+00:00",
+  "mode": "IS",
+  "signals": [
+    {
+      "signal": "2025-09-03",
+      "entry_rule_field": 1295,
+      "rankable_full_field": 1277,
+      "unrankable_endpoints": 18
+    },
+    {
+      "signal": "2025-09-10",
+      "entry_rule_field": 1303,
+      "rankable_full_field": 1282,
+      "unrankable_endpoints": 21
+    },
+    {
+      "signal": "2025-09-17",
+      "entry_rule_field": 1325,
+      "rankable_full_field": 1297,
+      "unrankable_endpoints": 28
+    },
+    {
+      "signal": "2025-09-24",
+      "entry_rule_field": 1345,
+      "rankable_full_field": 1306,
+      "unrankable_endpoints": 39
+    },
+    {
+      "signal": "2025-11-05",
+      "entry_rule_field": 1380,
+      "rankable_full_field": 1339,
+      "unrankable_endpoints": 41
+    },
+    {
+      "signal": "2025-11-12",
+      "entry_rule_field": 1327,
+      "rankable_full_field": 1287,
+      "unrankable_endpoints": 40
+    },
+    {
+      "signal": "2025-11-19",
+      "entry_rule_field": 1346,
+      "rankable_full_field": 1286,
+      "unrankable_endpoints": 60
+    },
+    {
+      "signal": "2025-11-25",
+      "entry_rule_field": 1411,
+      "rankable_full_field": 1365,
+      "unrankable_endpoints": 46
+    },
+    {
+      "signal": "2026-01-07",
+      "entry_rule_field": 1367,
+      "rankable_full_field": 1342,
+      "unrankable_endpoints": 25
+    },
+    {
+      "signal": "2026-01-14",
+      "entry_rule_field": 1331,
+      "rankable_full_field": 1304,
+      "unrankable_endpoints": 27
+    },
+    {
+      "signal": "2026-01-21",
+      "entry_rule_field": 1357,
+      "rankable_full_field": 1321,
+      "unrankable_endpoints": 36
+    },
+    {
+      "signal": "2026-01-28",
+      "entry_rule_field": 1302,
+      "rankable_full_field": 1276,
+      "unrankable_endpoints": 26
+    },
+    {
+      "signal": "2026-03-04",
+      "entry_rule_field": 1392,
+      "rankable_full_field": 1340,
+      "unrankable_endpoints": 52
+    },
+    {
+      "signal": "2026-03-11",
+      "entry_rule_field": 1395,
+      "rankable_full_field": 1334,
+      "unrankable_endpoints": 61
+    },
+    {
+      "signal": "2026-03-18",
+      "entry_rule_field": 1369,
+      "rankable_full_field": 1309,
+      "unrankable_endpoints": 60
+    },
+    {
+      "signal": "2026-03-25",
+      "entry_rule_field": 1367,
+      "rankable_full_field": 1308,
+      "unrankable_endpoints": 59
+    },
+    {
+      "signal": "2026-05-06",
+      "entry_rule_field": 1376,
+      "rankable_full_field": 1329,
+      "unrankable_endpoints": 47
+    },
+    {
+      "signal": "2026-05-13",
+      "entry_rule_field": 1392,
+      "rankable_full_field": 1333,
+      "unrankable_endpoints": 59
+    },
+    {
+      "signal": "2026-05-20",
+      "entry_rule_field": 1359,
+      "rankable_full_field": 1295,
+      "unrankable_endpoints": 64
+    },
+    {
+      "signal": "2026-05-27",
+      "entry_rule_field": 1375,
+      "rankable_full_field": 1342,
+      "unrankable_endpoints": 33
+    },
+    {
+      "signal": "2026-07-01",
+      "entry_rule_field": 1451,
+      "rankable_full_field": 1028,
+      "unrankable_endpoints": 423
+    },
+    {
+      "signal": "2026-07-08",
+      "entry_rule_field": 1373,
+      "rankable_full_field": 960,
+      "unrankable_endpoints": 413
+    },
+    {
+      "signal": "2026-07-15",
+      "entry_rule_field": 1322,
+      "rankable_full_field": 917,
+      "unrankable_endpoints": 405
+    },
+    {
+      "signal": "2026-07-22",
+      "entry_rule_field": 1322,
+      "rankable_full_field": 907,
+      "unrankable_endpoints": 415
+    },
+    {
+      "signal": "2026-07-29",
+      "entry_rule_field": 1334,
+      "rankable_full_field": 928,
+      "unrankable_endpoints": 406
+    }
+  ],
+  "unique_ranked_symbols": 2249,
+  "feature_coverage": {
+    "long_pool_slots": 500,
+    "long_missing_history20": 20,
+    "short_pool_slots": 500,
+    "short_missing_history20": 23
+  },
+  "checks": "All rankable rows satisfy inherited common-stock and ETP exclusions, price/dollar-volume rules; no ticker cap; entire field ranked before twenty retained; every prepared feature recomputed using signal-bounded history",
+  "limitation": "Rankable field is conditional on available endpoint observations. Acquisition max-price differences are retained as unrankable counts, not hidden eligibility changes."
+}

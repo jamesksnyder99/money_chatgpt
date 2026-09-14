@@ -1,0 +1,4797 @@
+{
+  "timestamp": "2026-09-14T00:56:11+00:00",
+  "candidates": {
+    "A10_RECLAIM_MEAN": {
+      "control": "A6_RECOVERY_EQUAL",
+      "month_differences": {
+        "2025-09": -8337.696621599995,
+        "2025-11": 5330.307957581999,
+        "2026-01": -1525.5712229999976,
+        "2026-03": 1392.0991718999903,
+        "2026-05": -2998.815411000003,
+        "2026-07": -9358.168411999999
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -7160.14791651801,
+        "2025-11": -20828.152495700004,
+        "2026-01": -13972.273315118007,
+        "2026-03": -16889.943710017993,
+        "2026-05": -12499.029127118001,
+        "2026-07": -6139.676126118005
+      },
+      "top_incremental_symbols": [
+        [
+          "KVYO",
+          3223.2984949999995
+        ],
+        [
+          "BKKT",
+          2011.6429010000002
+        ],
+        [
+          "METC",
+          1968.5200865820004
+        ],
+        [
+          "WOLF",
+          1845.8411596
+        ],
+        [
+          "ASAN",
+          1721.317559999999
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "LUNR",
+          -2508.1106300000006
+        ],
+        [
+          "BMNR",
+          -2651.8003599999997
+        ],
+        [
+          "AEVA",
+          -3124.370469999999
+        ],
+        [
+          "CLSK",
+          -3284.4245280000005
+        ],
+        [
+          "VOYG",
+          -5176.946694600001
+        ]
+      ],
+      "increment_without_top_symbol": -18721.143033118005,
+      "membership_overlap": 0.556420233463035,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 68,
+          "pnl": -121.95069999999697,
+          "entry_gross": 414547.08
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 3191.488489600003,
+          "entry_gross": 1217292.9091000003
+        },
+        "confidence_0.5": {
+          "trades": 73,
+          "pnl": 10189.027048399992,
+          "entry_gross": 436315.03659999993
+        },
+        "primary_1_8": {
+          "trades": 132,
+          "pnl": 3313.4391895999975,
+          "entry_gross": 802745.8290999997
+        },
+        "confidence_0.25": {
+          "trades": 95,
+          "pnl": -10524.587827900004,
+          "entry_gross": 575665.5266
+        },
+        "confidence_1.0": {
+          "trades": 32,
+          "pnl": 3527.049269100002,
+          "entry_gross": 205312.34590000004
+        }
+      },
+      "control_attribution": {
+        "reserve_9_20": {
+          "trades": 91,
+          "pnl": 12672.9342875,
+          "entry_gross": 600854.0709999998
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 18689.333027718007,
+          "entry_gross": 1320731.5559999999
+        },
+        "confidence_1.0": {
+          "trades": 88,
+          "pnl": 13253.9366301,
+          "entry_gross": 578430.4857999998
+        },
+        "primary_1_8": {
+          "trades": 109,
+          "pnl": 6016.398740218001,
+          "entry_gross": 719877.4850000003
+        },
+        "confidence_0.5": {
+          "trades": 111,
+          "pnl": 6563.545497618001,
+          "entry_gross": 735370.7702000001
+        },
+        "confidence_0.25": {
+          "trades": 1,
+          "pnl": -1128.1491,
+          "entry_gross": 6930.3
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -2702.9595506180035,
+        "reserve_9_20": -12794.884987499998
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": -15497.844538118065,
+        "debit_0_spread_2": -15291.486294236065,
+        "debit_5_spread_1": -15497.906970525783,
+        "debit_5_spread_2": -15291.548726643785,
+        "debit_10_spread_1": -15497.969402933502,
+        "debit_10_spread_2": -15291.611159051503
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "A11_PERSISTENT_QUIET": {
+      "control": "PATIENT_MIRROR",
+      "month_differences": {
+        "2025-09": -7778.017574999998,
+        "2025-11": 270.69581329999846,
+        "2026-01": 334.8380699999989,
+        "2026-03": -905.0381185999977,
+        "2026-05": -603.7086500000028,
+        "2026-07": -2491.6919845999946
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -3394.9048698999977,
+        "2025-11": -11443.618258199995,
+        "2026-01": -11507.760514899994,
+        "2026-03": -10267.884326299998,
+        "2026-05": -10569.213794899993,
+        "2026-07": -8681.230460300001
+      },
+      "top_incremental_symbols": [
+        [
+          "CSIQ",
+          693.1311999999995
+        ],
+        [
+          "WOLF",
+          585.3525497999995
+        ],
+        [
+          "HTCO",
+          278.2356
+        ],
+        [
+          "ERII",
+          196.35369000000088
+        ],
+        [
+          "RDW",
+          137.58312
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "CLBK",
+          -458.7036999999998
+        ],
+        [
+          "WAY",
+          -459.09976000000137
+        ],
+        [
+          "PRGO",
+          -858.7327199999997
+        ],
+        [
+          "AMPX",
+          -1324.45566
+        ],
+        [
+          "DGNX",
+          -7393.523099999999
+        ]
+      ],
+      "increment_without_top_symbol": -11866.053644899996,
+      "membership_overlap": 0.8160919540229885,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 50,
+          "pnl": -3355.490635999995,
+          "entry_gross": 317837.295
+        },
+        "observed": {
+          "trades": 77,
+          "pnl": 2840.733024800004,
+          "entry_gross": 488906.46419999993
+        },
+        "confidence_1.0": {
+          "trades": 77,
+          "pnl": 2840.733024800004,
+          "entry_gross": 488906.46419999993
+        },
+        "primary_1_8": {
+          "trades": 27,
+          "pnl": 6196.2236607999985,
+          "entry_gross": 171069.1692
+        }
+      },
+      "control_attribution": {
+        "reserve_9_20": {
+          "trades": 50,
+          "pnl": -625.0658175999965,
+          "entry_gross": 337697.23
+        },
+        "observed": {
+          "trades": 81,
+          "pnl": 14013.655469699996,
+          "entry_gross": 547008.7076999998
+        },
+        "confidence_1.0": {
+          "trades": 81,
+          "pnl": 14013.655469699996,
+          "entry_gross": 547008.7076999998
+        },
+        "primary_1_8": {
+          "trades": 31,
+          "pnl": 14638.721287299995,
+          "entry_gross": 209311.4777
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -8442.497626499997,
+        "reserve_9_20": -2730.4248183999985
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": -11172.922444900018,
+        "debit_0_spread_2": -11044.937389800018,
+        "debit_5_spread_1": -11172.922444900018,
+        "debit_5_spread_2": -11044.937389800018,
+        "debit_10_spread_1": -11172.922444900018,
+        "debit_10_spread_2": -11044.937389800018
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "A12_MINUTE_RECOVERY": {
+      "control": "A6_RECOVERY_EQUAL",
+      "month_differences": {
+        "2025-09": -11270.016874299998,
+        "2025-11": 4561.594100782004,
+        "2026-01": 104.98018079999929,
+        "2026-03": -301.4170601000078,
+        "2026-05": -2876.7471933,
+        "2026-07": -8173.804706799981
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -6685.394678617986,
+        "2025-11": -22517.005653699987,
+        "2026-01": -18060.39173371798,
+        "2026-03": -17653.994492817976,
+        "2026-05": -15078.664359617984,
+        "2026-07": -9781.606846118002
+      },
+      "top_incremental_symbols": [
+        [
+          "YSS",
+          4132.589730000001
+        ],
+        [
+          "BRZE",
+          3853.1954299999998
+        ],
+        [
+          "METC",
+          3832.003071582
+        ],
+        [
+          "KVYO",
+          3000.5035399999997
+        ],
+        [
+          "AZTA",
+          2338.3877700000003
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "WGS",
+          -3330.369194999999
+        ],
+        [
+          "ASTS",
+          -3715.2546299999995
+        ],
+        [
+          "LUNR",
+          -4229.881579999999
+        ],
+        [
+          "VOYG",
+          -5176.946694600001
+        ],
+        [
+          "AEVA",
+          -5675.484769999998
+        ]
+      ],
+      "increment_without_top_symbol": -22088.001282917983,
+      "membership_overlap": 0.42857142857142855,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 108,
+          "pnl": 6155.092464899997,
+          "entry_gross": 641459.3515999999
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 733.9214748000011,
+          "entry_gross": 1190880.7463999994
+        },
+        "confidence_0.5": {
+          "trades": 123,
+          "pnl": -10229.778421599998,
+          "entry_gross": 738632.9514000001
+        },
+        "reserve_9_20": {
+          "trades": 92,
+          "pnl": -5421.1709900999995,
+          "entry_gross": 549421.3948000002
+        },
+        "confidence_1.0": {
+          "trades": 65,
+          "pnl": 9266.746411400005,
+          "entry_gross": 383168.8450000001
+        },
+        "confidence_0.25": {
+          "trades": 12,
+          "pnl": 1696.953485,
+          "entry_gross": 69078.95
+        }
+      },
+      "control_attribution": {
+        "reserve_9_20": {
+          "trades": 91,
+          "pnl": 12672.9342875,
+          "entry_gross": 600854.0709999998
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 18689.333027718007,
+          "entry_gross": 1320731.5559999999
+        },
+        "confidence_1.0": {
+          "trades": 88,
+          "pnl": 13253.9366301,
+          "entry_gross": 578430.4857999998
+        },
+        "primary_1_8": {
+          "trades": 109,
+          "pnl": 6016.398740218001,
+          "entry_gross": 719877.4850000003
+        },
+        "confidence_0.5": {
+          "trades": 111,
+          "pnl": 6563.545497618001,
+          "entry_gross": 735370.7702000001
+        },
+        "confidence_0.25": {
+          "trades": 1,
+          "pnl": -1128.1491,
+          "entry_gross": 6930.3
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 138.69372468199617,
+        "reserve_9_20": -18094.1052776
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": -17955.41155291807,
+        "debit_0_spread_2": -17667.14442383607,
+        "debit_5_spread_1": -17955.467122894297,
+        "debit_5_spread_2": -17667.199993812297,
+        "debit_10_spread_1": -17955.522692870523,
+        "debit_10_spread_2": -17667.255563788523
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "A1_MILD_LOSERS": {
+      "control": "L5_NORM8",
+      "month_differences": {
+        "2025-09": -17813.656334300005,
+        "2025-11": 13855.504167139996,
+        "2026-01": -2919.1603664000004,
+        "2026-03": -7315.0469777000035,
+        "2026-05": -15255.652347600002,
+        "2026-07": 12218.448455599988
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": 584.092931039977,
+        "2025-11": -31085.067570400024,
+        "2026-01": -14310.403036860029,
+        "2026-03": -9914.516425560025,
+        "2026-05": -1973.9110556600262,
+        "2026-07": -29448.011858860016
+      },
+      "top_incremental_symbols": [
+        [
+          "VOYG",
+          7632.008060599999
+        ],
+        [
+          "LUNR",
+          6735.968540000002
+        ],
+        [
+          "BRZE",
+          5676.212154999999
+        ],
+        [
+          "BMNR",
+          4784.567300000001
+        ],
+        [
+          "ARX",
+          4130.477150000001
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "CAPR",
+          -4504.00627
+        ],
+        [
+          "FSLY",
+          -5098.541320000003
+        ],
+        [
+          "NTLA",
+          -5390.830054999999
+        ],
+        [
+          "HTCO",
+          -9128.5827
+        ],
+        [
+          "DGNX",
+          -20193.039269999997
+        ]
+      ],
+      "increment_without_top_symbol": -24861.571463860026,
+      "membership_overlap": 0.0,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 200,
+          "pnl": -470.18489410000427,
+          "entry_gross": 1193148.1361999998
+        },
+        "observed": {
+          "trades": 194,
+          "pnl": -1228.881133100005,
+          "entry_gross": 1167939.8861999998
+        },
+        "confidence_0.5": {
+          "trades": 88,
+          "pnl": 8612.150247599999,
+          "entry_gross": 552440.6871999999
+        },
+        "confidence_0.25": {
+          "trades": 74,
+          "pnl": 5148.366027999999,
+          "entry_gross": 273661.059
+        },
+        "unknown": {
+          "trades": 6,
+          "pnl": 758.6962390000012,
+          "entry_gross": 25208.250000000004
+        },
+        "confidence_1.0": {
+          "trades": 38,
+          "pnl": -14230.7011697,
+          "entry_gross": 367046.38999999996
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 200,
+          "pnl": 16759.378509159986,
+          "entry_gross": 1331332.8135
+        },
+        "unknown": {
+          "trades": 13,
+          "pnl": -4483.785014000001,
+          "entry_gross": 49196.342000000004
+        },
+        "confidence_0.25": {
+          "trades": 91,
+          "pnl": -4807.510411500004,
+          "entry_gross": 369247.2025
+        },
+        "observed": {
+          "trades": 187,
+          "pnl": 21243.163523159987,
+          "entry_gross": 1282136.4715
+        },
+        "confidence_0.5": {
+          "trades": 78,
+          "pnl": -9789.204575739994,
+          "entry_gross": 590476.3574
+        },
+        "confidence_1.0": {
+          "trades": 31,
+          "pnl": 31356.0934964,
+          "entry_gross": 371609.2536
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -16759.378509159986,
+        "reserve_9_20": -470.18489410000427
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": -17229.563403259803,
+        "debit_0_spread_2": -16934.550166519803,
+        "debit_5_spread_1": -17229.501710085377,
+        "debit_5_spread_2": -16934.488473345376,
+        "debit_10_spread_1": -17229.440016910954,
+        "debit_10_spread_2": -16934.426780170954
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "A2_RECLAIM_HIGH": {
+      "control": "L5_SELECT8",
+      "month_differences": {
+        "2025-09": -4953.6055089,
+        "2025-11": 2723.074478400021,
+        "2026-01": 6490.839840599997,
+        "2026-03": 3803.8927566999964,
+        "2026-05": -2642.266867799999,
+        "2026-07": -2010.1123675999934
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": 8365.42784030002,
+        "2025-11": 688.7478530000008,
+        "2026-01": -3079.0175091999754,
+        "2026-03": -392.0704252999749,
+        "2026-05": 6054.089199200021,
+        "2026-07": 5421.934699000015
+      },
+      "top_incremental_symbols": [
+        [
+          "CAPR",
+          4564.462730000001
+        ],
+        [
+          "OKLS",
+          3004.1254886
+        ],
+        [
+          "INTA",
+          2636.0589420000006
+        ],
+        [
+          "BRZE",
+          2433.193805
+        ],
+        [
+          "WOLF",
+          2110.1131413
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "ASTS",
+          -2234.00932
+        ],
+        [
+          "BMNR",
+          -2347.20167
+        ],
+        [
+          "NTLA",
+          -2426.2806749999986
+        ],
+        [
+          "CLSK",
+          -2921.8581840000006
+        ],
+        [
+          "VOYG",
+          -3383.3588634000002
+        ]
+      ],
+      "increment_without_top_symbol": -1152.6403985999796,
+      "membership_overlap": 0.45985401459854014,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 73,
+          "pnl": -11737.901985599994,
+          "entry_gross": 553574.5150000002
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 4475.473341400004,
+          "entry_gross": 1241802.8503999999
+        },
+        "confidence_0.5": {
+          "trades": 74,
+          "pnl": -1097.243901499994,
+          "entry_gross": 480869.57500000024
+        },
+        "primary_1_8": {
+          "trades": 127,
+          "pnl": 16213.375327000014,
+          "entry_gross": 688228.3354
+        },
+        "confidence_0.25": {
+          "trades": 84,
+          "pnl": 882.1984138000004,
+          "entry_gross": 368584.7535999999
+        },
+        "confidence_1.0": {
+          "trades": 42,
+          "pnl": 4690.518829100003,
+          "entry_gross": 392348.5218000001
+        }
+      },
+      "control_attribution": {
+        "reserve_9_20": {
+          "trades": 98,
+          "pnl": -6297.994430899998,
+          "entry_gross": 656197.8840000002
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 1063.6510099999982,
+          "entry_gross": 1249515.7121000001
+        },
+        "confidence_1.0": {
+          "trades": 81,
+          "pnl": 12638.0591593,
+          "entry_gross": 643944.7101
+        },
+        "primary_1_8": {
+          "trades": 102,
+          "pnl": 7361.645440900003,
+          "entry_gross": 593317.8281000003
+        },
+        "confidence_0.5": {
+          "trades": 116,
+          "pnl": -10827.695799300003,
+          "entry_gross": 598055.6970000002
+        },
+        "confidence_0.25": {
+          "trades": 3,
+          "pnl": -746.7123499999998,
+          "entry_gross": 7515.305
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 8851.72988610001,
+        "reserve_9_20": -5439.907554699996
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": 3411.8223313999915,
+        "debit_0_spread_2": 3422.8311627999915,
+        "debit_5_spread_1": 3411.7194910679914,
+        "debit_5_spread_2": 3422.7283224679913,
+        "debit_10_spread_1": 3411.6166507359912,
+        "debit_10_spread_2": 3422.625482135991
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "A3_STABLE_PATH": {
+      "control": "L5_SELECT8",
+      "month_differences": {
+        "2025-09": -1687.239090899995,
+        "2025-11": -107.0683158739821,
+        "2026-01": 1423.877639999997,
+        "2026-03": 1818.1960320999979,
+        "2026-05": 1577.2143808999967,
+        "2026-07": 1548.4262137000037
+      },
+      "positive_increment_months": 4,
+      "leave_one_month_out": {
+        "2025-09": 6260.645950826013,
+        "2025-11": 4680.4751758,
+        "2026-01": 3149.529219926021,
+        "2026-03": 2755.2108278260202,
+        "2026-05": 2996.1924790260214,
+        "2026-07": 3024.9806462260144
+      },
+      "top_incremental_symbols": [
+        [
+          "HTCO",
+          2471.3868000000007
+        ],
+        [
+          "BMNR",
+          2365.1192400000004
+        ],
+        [
+          "NTLA",
+          2257.2450899999994
+        ],
+        [
+          "SGML",
+          1727.2683049999996
+        ],
+        [
+          "VELO",
+          1604.42906
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "METC",
+          -1026.197127774
+        ],
+        [
+          "BRUN",
+          -1477.78244
+        ],
+        [
+          "KVYO",
+          -1843.4014000000004
+        ],
+        [
+          "WOLF",
+          -2782.8159731999995
+        ],
+        [
+          "ASTS",
+          -4953.67284
+        ]
+      ],
+      "increment_without_top_symbol": 2102.0200599260174,
+      "membership_overlap": 0.8264840182648402,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 94,
+          "pnl": -4209.878086399999,
+          "entry_gross": 619795.6889999999
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 5637.057869925999,
+          "entry_gross": 1267832.0616000004
+        },
+        "confidence_1.0": {
+          "trades": 72,
+          "pnl": 11264.332975325993,
+          "entry_gross": 602517.9906
+        },
+        "primary_1_8": {
+          "trades": 106,
+          "pnl": 9846.935956326,
+          "entry_gross": 648036.3726000002
+        },
+        "confidence_0.5": {
+          "trades": 123,
+          "pnl": -4852.148985400002,
+          "entry_gross": 651929.5160000001
+        },
+        "confidence_0.25": {
+          "trades": 5,
+          "pnl": -775.1261200000002,
+          "entry_gross": 13384.555
+        }
+      },
+      "control_attribution": {
+        "reserve_9_20": {
+          "trades": 98,
+          "pnl": -6297.994430899998,
+          "entry_gross": 656197.8840000002
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 1063.6510099999982,
+          "entry_gross": 1249515.7121000001
+        },
+        "confidence_1.0": {
+          "trades": 81,
+          "pnl": 12638.0591593,
+          "entry_gross": 643944.7101
+        },
+        "primary_1_8": {
+          "trades": 102,
+          "pnl": 7361.645440900003,
+          "entry_gross": 593317.8281000003
+        },
+        "confidence_0.5": {
+          "trades": 116,
+          "pnl": -10827.695799300003,
+          "entry_gross": 598055.6970000002
+        },
+        "confidence_0.25": {
+          "trades": 3,
+          "pnl": -746.7123499999998,
+          "entry_gross": 7515.305
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 2485.290515425997,
+        "reserve_9_20": 2088.1163444999993
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": 4573.406859925963,
+        "debit_0_spread_2": 4536.8399458519625,
+        "debit_5_spread_1": 4573.420743718532,
+        "debit_5_spread_2": 4536.853829644533,
+        "debit_10_spread_1": 4573.434627511103,
+        "debit_10_spread_2": 4536.867713437103
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "A4_ADVANCING_DAYS": {
+      "control": "L5_SELECT8",
+      "month_differences": {
+        "2025-09": 1058.4122627000124,
+        "2025-11": -2822.2801017619695,
+        "2026-01": 1528.0480570000054,
+        "2026-03": 2803.630666799999,
+        "2026-05": -1477.017679200007,
+        "2026-07": 9687.16057140001
+      },
+      "positive_increment_months": 4,
+      "leave_one_month_out": {
+        "2025-09": 9719.541514238039,
+        "2025-11": 13600.23387870002,
+        "2026-01": 9249.905719938046,
+        "2026-03": 7974.3231101380525,
+        "2026-05": 12254.971456138059,
+        "2026-07": 1090.7932055380406
+      },
+      "top_incremental_symbols": [
+        [
+          "CAPR",
+          4564.462730000001
+        ],
+        [
+          "INTA",
+          2636.0589420000006
+        ],
+        [
+          "AVEX",
+          2471.4874158000007
+        ],
+        [
+          "SGML",
+          2214.9952799999996
+        ],
+        [
+          "GEMI",
+          2156.33643
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "FSLY",
+          -1099.9077800000005
+        ],
+        [
+          "KVYO",
+          -1582.2018650000007
+        ],
+        [
+          "QBTS",
+          -1878.1116399999994
+        ],
+        [
+          "WOLF",
+          -2788.0685331999994
+        ],
+        [
+          "CLSK",
+          -2921.8581840000006
+        ]
+      ],
+      "increment_without_top_symbol": 6213.49104693805,
+      "membership_overlap": 0.762114537444934,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 95,
+          "pnl": 765.9381477999946,
+          "entry_gross": 655662.7540000002
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 11841.604786938002,
+          "entry_gross": 1260084.9228
+        },
+        "confidence_1.0": {
+          "trades": 90,
+          "pnl": 6036.832011438004,
+          "entry_gross": 717451.5498000003
+        },
+        "primary_1_8": {
+          "trades": 105,
+          "pnl": 11075.666639137999,
+          "entry_gross": 604422.1687999999
+        },
+        "confidence_0.5": {
+          "trades": 106,
+          "pnl": 6094.8042605,
+          "entry_gross": 529810.993
+        },
+        "confidence_0.25": {
+          "trades": 4,
+          "pnl": -290.031485,
+          "entry_gross": 12822.380000000001
+        }
+      },
+      "control_attribution": {
+        "reserve_9_20": {
+          "trades": 98,
+          "pnl": -6297.994430899998,
+          "entry_gross": 656197.8840000002
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 1063.6510099999982,
+          "entry_gross": 1249515.7121000001
+        },
+        "confidence_1.0": {
+          "trades": 81,
+          "pnl": 12638.0591593,
+          "entry_gross": 643944.7101
+        },
+        "primary_1_8": {
+          "trades": 102,
+          "pnl": 7361.645440900003,
+          "entry_gross": 593317.8281000003
+        },
+        "confidence_0.5": {
+          "trades": 116,
+          "pnl": -10827.695799300003,
+          "entry_gross": 598055.6970000002
+        },
+        "confidence_0.25": {
+          "trades": 3,
+          "pnl": -746.7123499999998,
+          "entry_gross": 7515.305
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 3714.021198237995,
+        "reserve_9_20": 7063.9325786999925
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": 10777.953776937982,
+        "debit_0_spread_2": 10747.256591875983,
+        "debit_5_spread_1": 10777.919011038393,
+        "debit_5_spread_2": 10747.221825976392,
+        "debit_10_spread_1": 10777.884245138805,
+        "debit_10_spread_2": 10747.187060076805
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "A5_RECOVERY_VOTES": {
+      "control": "L5_REC_SELECT8",
+      "month_differences": {
+        "2025-09": 472.9377736000006,
+        "2025-11": -4508.864339460002,
+        "2026-01": -1433.5375173000039,
+        "2026-03": 2107.6682581000023,
+        "2026-05": -783.8411823000035,
+        "2026-07": 2555.8040943000055
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": -2062.770686660002,
+        "2025-11": 2919.031426400001,
+        "2026-01": -156.2953957599973,
+        "2026-03": -3697.5011711600037,
+        "2026-05": -805.9917307599976,
+        "2026-07": -4145.6370073600065
+      },
+      "top_incremental_symbols": [
+        [
+          "AVEX",
+          2603.2164405000008
+        ],
+        [
+          "SGML",
+          2340.5138050000005
+        ],
+        [
+          "GEMI",
+          2163.6959399999996
+        ],
+        [
+          "ASAN",
+          1742.7669999999991
+        ],
+        [
+          "EVMN",
+          1619.7941250000001
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "AEVA",
+          -1327.1223899999995
+        ],
+        [
+          "QBTS",
+          -1924.0312399999993
+        ],
+        [
+          "OKLS",
+          -1952.4673773000004
+        ],
+        [
+          "CLSK",
+          -2969.8449060000007
+        ],
+        [
+          "WOLF",
+          -3763.3506024999997
+        ]
+      ],
+      "increment_without_top_symbol": -4193.049353560002,
+      "membership_overlap": 0.762114537444934,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 88,
+          "pnl": 3966.337601900002,
+          "entry_gross": 637055.4019999997
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 16401.803181167994,
+          "entry_gross": 1302448.9086000002
+        },
+        "confidence_1.0": {
+          "trades": 97,
+          "pnl": 2181.4186058679957,
+          "entry_gross": 794895.2399999998
+        },
+        "primary_1_8": {
+          "trades": 112,
+          "pnl": 12435.465579268,
+          "entry_gross": 665393.5066
+        },
+        "confidence_0.5": {
+          "trades": 101,
+          "pnl": 14709.522395300004,
+          "entry_gross": 501472.53359999997
+        },
+        "confidence_0.25": {
+          "trades": 2,
+          "pnl": -489.1378199999997,
+          "entry_gross": 6081.135
+        }
+      },
+      "control_attribution": {
+        "reserve_9_20": {
+          "trades": 91,
+          "pnl": 5729.9040951000015,
+          "entry_gross": 654055.8910000002
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 17991.636094228015,
+          "entry_gross": 1337986.8062000005
+        },
+        "confidence_1.0": {
+          "trades": 88,
+          "pnl": 13711.150818400009,
+          "entry_gross": 727523.9769000001
+        },
+        "primary_1_8": {
+          "trades": 109,
+          "pnl": 12261.73199912801,
+          "entry_gross": 683930.9152
+        },
+        "confidence_0.5": {
+          "trades": 111,
+          "pnl": 4720.174155828002,
+          "entry_gross": 607761.7893
+        },
+        "confidence_0.25": {
+          "trades": 1,
+          "pnl": -439.68887999999987,
+          "entry_gross": 2701.04
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 173.73358013999132,
+        "reserve_9_20": -1763.5664931999995
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": -1589.832913059974,
+        "debit_0_spread_2": -1515.4218861199734,
+        "debit_5_spread_1": -1589.8355702583904,
+        "debit_5_spread_2": -1515.4245433183896,
+        "debit_10_spread_1": -1589.838227456803,
+        "debit_10_spread_2": -1515.4272005168023
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "A6_RECOVERY_EQUAL": {
+      "control": "L5_REC_SELECT8",
+      "month_differences": {
+        "2025-09": -2435.882421200011,
+        "2025-11": -127.17095920999623,
+        "2026-01": 635.9764267000005,
+        "2026-03": -1968.2327373999933,
+        "2026-05": 2716.276926000006,
+        "2026-07": 1876.7296986000247
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": 3133.5793546900413,
+        "2025-11": 824.8678927000269,
+        "2026-01": 61.720506790030186,
+        "2026-03": 2665.9296708900238,
+        "2026-05": -2018.5799925099752,
+        "2026-07": -1179.032765109994
+      },
+      "top_incremental_symbols": [
+        [
+          "HTCO",
+          2463.2034000000003
+        ],
+        [
+          "NTLA",
+          1674.986714999999
+        ],
+        [
+          "VOYG",
+          1059.847354800002
+        ],
+        [
+          "TNXP",
+          912.0162900000003
+        ],
+        [
+          "RDW",
+          857.0281850000001
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "ERAS",
+          -838.489634999999
+        ],
+        [
+          "ASTS",
+          -849.8948500000006
+        ],
+        [
+          "METC",
+          -874.4330863100004
+        ],
+        [
+          "WOLF",
+          -1472.8557760000003
+        ],
+        [
+          "DGNX",
+          -3166.4244500000004
+        ]
+      ],
+      "increment_without_top_symbol": -1765.5064665099696,
+      "membership_overlap": 1.0,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 91,
+          "pnl": 12672.9342875,
+          "entry_gross": 600854.0709999998
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 18689.333027718007,
+          "entry_gross": 1320731.5559999999
+        },
+        "confidence_1.0": {
+          "trades": 88,
+          "pnl": 13253.9366301,
+          "entry_gross": 578430.4857999998
+        },
+        "primary_1_8": {
+          "trades": 109,
+          "pnl": 6016.398740218001,
+          "entry_gross": 719877.4850000003
+        },
+        "confidence_0.5": {
+          "trades": 111,
+          "pnl": 6563.545497618001,
+          "entry_gross": 735370.7702000001
+        },
+        "confidence_0.25": {
+          "trades": 1,
+          "pnl": -1128.1491,
+          "entry_gross": 6930.3
+        }
+      },
+      "control_attribution": {
+        "reserve_9_20": {
+          "trades": 91,
+          "pnl": 5729.9040951000015,
+          "entry_gross": 654055.8910000002
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 17991.636094228015,
+          "entry_gross": 1337986.8062000005
+        },
+        "confidence_1.0": {
+          "trades": 88,
+          "pnl": 13711.150818400009,
+          "entry_gross": 727523.9769000001
+        },
+        "primary_1_8": {
+          "trades": 109,
+          "pnl": 12261.73199912801,
+          "entry_gross": 683930.9152
+        },
+        "confidence_0.5": {
+          "trades": 111,
+          "pnl": 4720.174155828002,
+          "entry_gross": 607761.7893
+        },
+        "confidence_0.25": {
+          "trades": 1,
+          "pnl": -439.68887999999987,
+          "entry_gross": 2701.04
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -6245.333258910008,
+        "reserve_9_20": 6943.030192399999
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": 697.6969334899914,
+        "debit_0_spread_2": 737.4639569799929,
+        "debit_5_spread_1": 697.7202236582743,
+        "debit_5_spread_2": 737.4872471482759,
+        "debit_10_spread_1": 697.7435138265573,
+        "debit_10_spread_2": 737.5105373165588
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "A7_MIDDLE_LOSERS": {
+      "control": "EQ_MILD_LOSERS",
+      "month_differences": {
+        "2025-09": 1581.4369635000025,
+        "2025-11": -9059.355000738,
+        "2026-01": -2716.959172799994,
+        "2026-03": -5172.363553700002,
+        "2026-05": -5793.395059500001,
+        "2026-07": -10566.73513190001
+      },
+      "positive_increment_months": 1,
+      "leave_one_month_out": {
+        "2025-09": -33308.807918638006,
+        "2025-11": -22668.015954400005,
+        "2026-01": -29010.41178233801,
+        "2026-03": -26555.007401438004,
+        "2026-05": -25933.975895638003,
+        "2026-07": -21160.635823237993
+      },
+      "top_incremental_symbols": [
+        [
+          "INTA",
+          2753.2171172000008
+        ],
+        [
+          "GGAL",
+          2102.6241949999994
+        ],
+        [
+          "SGML",
+          1684.7843399999997
+        ],
+        [
+          "SWMR",
+          1648.990980000001
+        ],
+        [
+          "BETA",
+          1472.25722
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "AMPX",
+          -2811.8865600000017
+        ],
+        [
+          "METC",
+          -3225.4861039379985
+        ],
+        [
+          "YSS",
+          -3835.749230000001
+        ],
+        [
+          "LUNR",
+          -4548.60771
+        ],
+        [
+          "VOYG",
+          -6555.0369861
+        ]
+      ],
+      "increment_without_top_symbol": -34480.588072338,
+      "membership_overlap": 0.3333333333333333,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 100,
+          "pnl": -15850.679980338,
+          "entry_gross": 577205.0720999999
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": -19985.786418437983,
+          "entry_gross": 1154523.6090999995
+        },
+        "confidence_1.0": {
+          "trades": 200,
+          "pnl": -19985.786418437983,
+          "entry_gross": 1154523.6090999995
+        },
+        "reserve_9_20": {
+          "trades": 100,
+          "pnl": -4135.106438100006,
+          "entry_gross": 577318.5369999999
+        }
+      },
+      "control_attribution": {
+        "reserve_9_20": {
+          "trades": 200,
+          "pnl": 11741.584536700002,
+          "entry_gross": 1280174.8611999995
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 11741.584536700002,
+          "entry_gross": 1280174.8611999995
+        },
+        "confidence_1.0": {
+          "trades": 200,
+          "pnl": 11741.584536700002,
+          "entry_gross": 1280174.8611999995
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -15850.679980338,
+        "reserve_9_20": -15876.690974800007
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": -31727.370955138,
+        "debit_0_spread_2": -31444.018348276004,
+        "debit_5_spread_1": -31727.324370061506,
+        "debit_5_spread_2": -31443.971763199508,
+        "debit_10_spread_1": -31727.277784985017,
+        "debit_10_spread_2": -31443.925178123016
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "A8_PATIENT_RECOVERY": {
+      "control": "A6_RECOVERY_EQUAL",
+      "month_differences": {
+        "2025-09": -4022.4685401999923,
+        "2025-11": 4182.343517281993,
+        "2026-01": 3273.3723736000006,
+        "2026-03": -274.0283409000049,
+        "2026-05": -5614.702215000004,
+        "2026-07": -2003.9652953999955
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -436.9799604180107,
+        "2025-11": -8641.792017899996,
+        "2026-01": -7732.820874218003,
+        "2026-03": -4185.420159717998,
+        "2026-05": 1155.253714382001,
+        "2026-07": -2455.4832052180072
+      },
+      "top_incremental_symbols": [
+        [
+          "BRZE",
+          3853.1954299999998
+        ],
+        [
+          "METC",
+          3832.003071582
+        ],
+        [
+          "KVYO",
+          3234.986795
+        ],
+        [
+          "NVTS",
+          3022.0271399999997
+        ],
+        [
+          "ARX",
+          2495.3151950000006
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "BMNR",
+          -2651.8003599999997
+        ],
+        [
+          "WGS",
+          -3274.477034999999
+        ],
+        [
+          "CLSK",
+          -3284.4245280000005
+        ],
+        [
+          "OKLS",
+          -4797.0734064
+        ],
+        [
+          "VOYG",
+          -5176.946694600001
+        ]
+      ],
+      "increment_without_top_symbol": -8312.643930618004,
+      "membership_overlap": 0.44,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 54,
+          "pnl": -172.87987989999738,
+          "entry_gross": 365106.7949999999
+        },
+        "observed": {
+          "trades": 88,
+          "pnl": 14229.884527099995,
+          "entry_gross": 594658.7429999999
+        },
+        "confidence_1.0": {
+          "trades": 88,
+          "pnl": 14229.884527099995,
+          "entry_gross": 594658.7429999999
+        },
+        "primary_1_8": {
+          "trades": 34,
+          "pnl": 14402.764406999995,
+          "entry_gross": 229551.94799999997
+        }
+      },
+      "control_attribution": {
+        "reserve_9_20": {
+          "trades": 91,
+          "pnl": 12672.9342875,
+          "entry_gross": 600854.0709999998
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 18689.333027718007,
+          "entry_gross": 1320731.5559999999
+        },
+        "confidence_1.0": {
+          "trades": 88,
+          "pnl": 13253.9366301,
+          "entry_gross": 578430.4857999998
+        },
+        "primary_1_8": {
+          "trades": 109,
+          "pnl": 6016.398740218001,
+          "entry_gross": 719877.4850000003
+        },
+        "confidence_0.5": {
+          "trades": 111,
+          "pnl": 6563.545497618001,
+          "entry_gross": 735370.7702000001
+        },
+        "confidence_0.25": {
+          "trades": 1,
+          "pnl": -1128.1491,
+          "entry_gross": 6930.3
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 8386.365666781994,
+        "reserve_9_20": -12845.814167399998
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": -4459.448500618106,
+        "debit_0_spread_2": -2992.2489192361063,
+        "debit_5_spread_1": -4459.438083200592,
+        "debit_5_spread_2": -2992.2385018185923,
+        "debit_10_spread_1": -4459.427665783078,
+        "debit_10_spread_2": -2992.2280844010784
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "A9_QUIET_RECOVERY": {
+      "control": "A6_RECOVERY_EQUAL",
+      "month_differences": {
+        "2025-09": -2847.791904799995,
+        "2025-11": 5924.750362781997,
+        "2026-01": -5519.443738200005,
+        "2026-03": 2986.3322163999937,
+        "2026-05": -102.31200700000227,
+        "2026-07": -8730.131646000007
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -5440.804812018023,
+        "2025-11": -14213.347079600015,
+        "2026-01": -2769.1529786180126,
+        "2026-03": -11274.928933218012,
+        "2026-05": -8186.2847098180155,
+        "2026-07": 441.53492918198936
+      },
+      "top_incremental_symbols": [
+        [
+          "METC",
+          3832.003071582
+        ],
+        [
+          "KVYO",
+          3236.5452349999996
+        ],
+        [
+          "NVTS",
+          2146.1801749999995
+        ],
+        [
+          "WOLF",
+          2100.5052905
+        ],
+        [
+          "ASAN",
+          1721.317559999999
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "LUNR",
+          -2616.4785100000004
+        ],
+        [
+          "INTA",
+          -2767.8618891000006
+        ],
+        [
+          "AEVA",
+          -2946.5924699999987
+        ],
+        [
+          "CLSK",
+          -3284.4245280000005
+        ],
+        [
+          "VOYG",
+          -5176.946694600001
+        ]
+      ],
+      "increment_without_top_symbol": -12120.599788400017,
+      "membership_overlap": 0.5503875968992248,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 79,
+          "pnl": -2770.283563900001,
+          "entry_gross": 500357.78210000007
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 10400.736310899987,
+          "entry_gross": 1270232.6559999997
+        },
+        "confidence_0.5": {
+          "trades": 95,
+          "pnl": -1446.8455789000013,
+          "entry_gross": 596692.4321000001
+        },
+        "primary_1_8": {
+          "trades": 121,
+          "pnl": 13171.019874799998,
+          "entry_gross": 769874.8738999999
+        },
+        "confidence_0.25": {
+          "trades": 72,
+          "pnl": 3529.0794033999982,
+          "entry_gross": 458772.85530000005
+        },
+        "confidence_1.0": {
+          "trades": 33,
+          "pnl": 8318.502486399999,
+          "entry_gross": 214767.36860000007
+        }
+      },
+      "control_attribution": {
+        "reserve_9_20": {
+          "trades": 91,
+          "pnl": 12672.9342875,
+          "entry_gross": 600854.0709999998
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 18689.333027718007,
+          "entry_gross": 1320731.5559999999
+        },
+        "confidence_1.0": {
+          "trades": 88,
+          "pnl": 13253.9366301,
+          "entry_gross": 578430.4857999998
+        },
+        "primary_1_8": {
+          "trades": 109,
+          "pnl": 6016.398740218001,
+          "entry_gross": 719877.4850000003
+        },
+        "confidence_0.5": {
+          "trades": 111,
+          "pnl": 6563.545497618001,
+          "entry_gross": 735370.7702000001
+        },
+        "confidence_0.25": {
+          "trades": 1,
+          "pnl": -1128.1491,
+          "entry_gross": 6930.3
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 7154.6211345819975,
+        "reserve_9_20": -15443.2178514
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": -8288.596716818109,
+        "debit_0_spread_2": -8195.55165163611,
+        "debit_5_spread_1": -8288.662820752006,
+        "debit_5_spread_2": -8195.617755570007,
+        "debit_10_spread_1": -8288.728924685904,
+        "debit_10_spread_2": -8195.683859503904
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "L4_RECOVERY": {
+      "control": "L4",
+      "month_differences": {
+        "2025-09": 203.75688500000342,
+        "2025-11": -1002.5511375999863,
+        "2026-01": 2974.867587600004,
+        "2026-03": 353.88950040000736,
+        "2026-05": -927.9035220000028,
+        "2026-07": -813.2480591999829
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": 585.0543692000392,
+        "2025-11": 1791.362391800029,
+        "2026-01": -2186.056333399961,
+        "2026-03": 434.9217538000353,
+        "2026-05": 1716.7147762000454,
+        "2026-07": 1602.0593134000255
+      },
+      "top_incremental_symbols": [
+        [
+          "OKLS",
+          2221.7166276
+        ],
+        [
+          "ZBIO",
+          736.6336599999995
+        ],
+        [
+          "WGS",
+          580.4904299999994
+        ],
+        [
+          "SMMT",
+          278.1497350000003
+        ],
+        [
+          "RUN",
+          261.1788050000005
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "MPLT",
+          -435.8671599999999
+        ],
+        [
+          "FLNC",
+          -461.30111999999997
+        ],
+        [
+          "BRBR",
+          -502.64345000000003
+        ],
+        [
+          "XNDU",
+          -611.0981999999999
+        ],
+        [
+          "METC",
+          -957.3965099999987
+        ]
+      ],
+      "increment_without_top_symbol": -1432.9053733999572,
+      "membership_overlap": 1.0,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 200,
+          "pnl": 318.3112851940007,
+          "entry_gross": 1068590.401
+        },
+        "unknown": {
+          "trades": 13,
+          "pnl": -8055.587781800002,
+          "entry_gross": 82966.68740000001
+        },
+        "confidence_1.0": {
+          "trades": 136,
+          "pnl": 2481.4337767940083,
+          "entry_gross": 865049.8293999998
+        },
+        "observed": {
+          "trades": 187,
+          "pnl": 8373.899066994005,
+          "entry_gross": 985623.7135999997
+        },
+        "confidence_0.5": {
+          "trades": 64,
+          "pnl": -2163.1224916000047,
+          "entry_gross": 203540.57159999997
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 200,
+          "pnl": -470.4999690059949,
+          "entry_gross": 995571.4824000003
+        },
+        "unknown": {
+          "trades": 13,
+          "pnl": -7931.328376800004,
+          "entry_gross": 81944.3574
+        },
+        "confidence_1.0": {
+          "trades": 116,
+          "pnl": 900.6017053940052,
+          "entry_gross": 730349.6630000002
+        },
+        "observed": {
+          "trades": 187,
+          "pnl": 7460.828407794008,
+          "entry_gross": 913627.1250000001
+        },
+        "confidence_0.5": {
+          "trades": 84,
+          "pnl": -1371.1016744000012,
+          "entry_gross": 265221.8194000001
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 788.8112541999956,
+        "reserve_9_20": 0
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": 788.8112541999726,
+        "debit_0_spread_2": 641.0695083999726,
+        "debit_5_spread_1": 788.8112541999726,
+        "debit_5_spread_2": 641.0695083999726,
+        "debit_10_spread_1": 788.8112541999726,
+        "debit_10_spread_2": 641.0695083999726
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "L5_REC_SELECT8": {
+      "control": "L5_REC_NORM8",
+      "month_differences": {
+        "2025-09": -2918.1373351,
+        "2025-11": 2952.6930050499827,
+        "2026-01": -375.9548408999999,
+        "2026-03": -3209.1918600999998,
+        "2026-05": -7162.237510000019,
+        "2026-07": 9402.306492400006
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": 1607.6152864499704,
+        "2025-11": -4263.2150537000125,
+        "2026-01": -934.5672077500299,
+        "2026-03": 1898.66981144997,
+        "2026-05": 5851.71546134999,
+        "2026-07": -10712.828541050036
+      },
+      "top_incremental_symbols": [
+        [
+          "LUNR",
+          4741.753095
+        ],
+        [
+          "ASTS",
+          4565.14948
+        ],
+        [
+          "VOYG",
+          4117.099339799999
+        ],
+        [
+          "CLSK",
+          2969.8449060000007
+        ],
+        [
+          "BMNR",
+          2347.20167
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "TNXP",
+          -2452.69614
+        ],
+        [
+          "SGML",
+          -2774.739520000002
+        ],
+        [
+          "NTLA",
+          -4593.188625
+        ],
+        [
+          "HTCO",
+          -6243.934200000001
+        ],
+        [
+          "DGNX",
+          -8984.5344
+        ]
+      ],
+      "increment_without_top_symbol": -6052.275143650029,
+      "membership_overlap": 0.3745704467353952,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 91,
+          "pnl": 5729.9040951000015,
+          "entry_gross": 654055.8910000002
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 17991.636094228015,
+          "entry_gross": 1337986.8062000005
+        },
+        "confidence_1.0": {
+          "trades": 88,
+          "pnl": 13711.150818400009,
+          "entry_gross": 727523.9769000001
+        },
+        "primary_1_8": {
+          "trades": 109,
+          "pnl": 12261.73199912801,
+          "entry_gross": 683930.9152
+        },
+        "confidence_0.5": {
+          "trades": 111,
+          "pnl": 4720.174155828002,
+          "entry_gross": 607761.7893
+        },
+        "confidence_0.25": {
+          "trades": 1,
+          "pnl": -439.68887999999987,
+          "entry_gross": 2701.04
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 200,
+          "pnl": 19302.158142877994,
+          "entry_gross": 1361227.9146000007
+        },
+        "unknown": {
+          "trades": 13,
+          "pnl": -4142.360684000001,
+          "entry_gross": 46509.106999999996
+        },
+        "confidence_0.25": {
+          "trades": 74,
+          "pnl": -6011.709372400002,
+          "entry_gross": 278812.9533999998
+        },
+        "observed": {
+          "trades": 187,
+          "pnl": 23444.518826878004,
+          "entry_gross": 1314718.8076000006
+        },
+        "confidence_0.5": {
+          "trades": 92,
+          "pnl": -6139.494990321995,
+          "entry_gross": 671111.8417999999
+        },
+        "confidence_1.0": {
+          "trades": 34,
+          "pnl": 31453.36250560001,
+          "entry_gross": 411303.1194000001
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -7040.4261437499845,
+        "reserve_9_20": 5729.9040951000015
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": -1310.5220486499747,
+        "debit_0_spread_2": -1260.3499472999756,
+        "debit_5_spread_1": -1310.5165604743088,
+        "debit_5_spread_2": -1260.3444591243097,
+        "debit_10_spread_1": -1310.5110722986465,
+        "debit_10_spread_2": -1260.3389709486473
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "L5_RECOVERY": {
+      "control": "L5",
+      "month_differences": {
+        "2025-09": 27.622644999998556,
+        "2025-11": -497.904051200002,
+        "2026-01": 1522.860980700002,
+        "2026-03": 167.66329610000048,
+        "2026-05": -479.07350600000336,
+        "2026-07": -396.7218263999807
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": 316.82489320001645,
+        "2025-11": 842.351589400017,
+        "2026-01": -1178.413442499987,
+        "2026-03": 176.78424210001452,
+        "2026-05": 823.5210442000184,
+        "2026-07": 741.1693645999958
+      },
+      "top_incremental_symbols": [
+        [
+          "OKLS",
+          1118.8296206999999
+        ],
+        [
+          "ZBIO",
+          379.04323499999987
+        ],
+        [
+          "WGS",
+          297.02717499999994
+        ],
+        [
+          "SMMT",
+          139.92657500000013
+        ],
+        [
+          "RUN",
+          135.06931000000003
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "FLNC",
+          -232.91184
+        ],
+        [
+          "MPLT",
+          -236.9763199999999
+        ],
+        [
+          "BRBR",
+          -255.9730299999998
+        ],
+        [
+          "XNDU",
+          -324.2337950000001
+        ],
+        [
+          "METC",
+          -478.4042200000001
+        ]
+      ],
+      "increment_without_top_symbol": -774.3820824999848,
+      "membership_overlap": 1.0,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 200,
+          "pnl": 6336.938337106,
+          "entry_gross": 671251.9325000002
+        },
+        "unknown": {
+          "trades": 13,
+          "pnl": -4871.5033134000005,
+          "entry_gross": 49099.7462
+        },
+        "confidence_0.5": {
+          "trades": 103,
+          "pnl": -5717.161564993997,
+          "entry_gross": 335384.5056000001
+        },
+        "observed": {
+          "trades": 187,
+          "pnl": 11208.441650505998,
+          "entry_gross": 622152.1863000003
+        },
+        "confidence_0.25": {
+          "trades": 61,
+          "pnl": -562.7792264000008,
+          "entry_gross": 99003.8954
+        },
+        "confidence_1.0": {
+          "trades": 36,
+          "pnl": 12616.879128499997,
+          "entry_gross": 236863.5315
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 200,
+          "pnl": 5992.490798905999,
+          "entry_gross": 630861.3626
+        },
+        "unknown": {
+          "trades": 13,
+          "pnl": -4838.942843400001,
+          "entry_gross": 48832.6412
+        },
+        "confidence_0.5": {
+          "trades": 89,
+          "pnl": -6750.268047493999,
+          "entry_gross": 288709.8660000001
+        },
+        "observed": {
+          "trades": 187,
+          "pnl": 10831.433642306005,
+          "entry_gross": 582028.7213999998
+        },
+        "confidence_0.25": {
+          "trades": 78,
+          "pnl": -116.09404179999908,
+          "entry_gross": 126012.30479999998
+        },
+        "confidence_1.0": {
+          "trades": 33,
+          "pnl": 12858.8528882,
+          "entry_gross": 216139.19180000006
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 344.44753820000096,
+        "reserve_9_20": 0
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": 344.4475382000237,
+        "debit_0_spread_2": 262.9282764000236,
+        "debit_5_spread_1": 344.4475382000237,
+        "debit_5_spread_2": 262.9282764000236,
+        "debit_10_spread_1": 344.4475382000237,
+        "debit_10_spread_2": 262.9282764000236
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "L5_RESERVE": {
+      "control": "L5",
+      "month_differences": {
+        "2025-09": 1663.4897129000046,
+        "2025-11": -565.815998605997,
+        "2026-01": -863.6778699999982,
+        "2026-03": 1533.4362688999977,
+        "2026-05": -3816.2551280000025,
+        "2026-07": -688.9668775999653
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -4401.279605305966,
+        "2025-11": -2171.9738937999637,
+        "2026-01": -1874.1120224059628,
+        "2026-03": -4271.226161305958,
+        "2026-05": 1078.4652355940416,
+        "2026-07": -2048.8230148059956
+      },
+      "top_incremental_symbols": [
+        [
+          "ASTS",
+          3618.1237899999996
+        ],
+        [
+          "WOLF",
+          1502.6126465999994
+        ],
+        [
+          "HYMC",
+          1484.0159800000001
+        ],
+        [
+          "HUN",
+          1172.9166600000005
+        ],
+        [
+          "CECO",
+          744.6227000000001
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "NKTR",
+          -872.7749999999995
+        ],
+        [
+          "IPX",
+          -1314.615745
+        ],
+        [
+          "TNXP",
+          -1434.2254500000001
+        ],
+        [
+          "NTLA",
+          -2441.465669999999
+        ],
+        [
+          "HTCO",
+          -3715.2636
+        ]
+      ],
+      "increment_without_top_symbol": -6355.913682405961,
+      "membership_overlap": 0.8130081300813008,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 200,
+          "pnl": 5553.7059943999975,
+          "entry_gross": 620487.1407000005
+        },
+        "unknown": {
+          "trades": 13,
+          "pnl": -4809.2055384000005,
+          "entry_gross": 48642.56620000001
+        },
+        "confidence_0.5": {
+          "trades": 89,
+          "pnl": -6827.520805899998,
+          "entry_gross": 284140.419
+        },
+        "observed": {
+          "trades": 233,
+          "pnl": 8063.906444899998,
+          "entry_gross": 851217.0595000007
+        },
+        "confidence_0.25": {
+          "trades": 78,
+          "pnl": -237.68017789999917,
+          "entry_gross": 124550.10990000002
+        },
+        "reserve_9_20": {
+          "trades": 46,
+          "pnl": -2299.005087899999,
+          "entry_gross": 279372.48500000004
+        },
+        "confidence_1.0": {
+          "trades": 79,
+          "pnl": 10319.901890300003,
+          "entry_gross": 491169.09679999994
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 200,
+          "pnl": 5992.490798905999,
+          "entry_gross": 630861.3626
+        },
+        "unknown": {
+          "trades": 13,
+          "pnl": -4838.942843400001,
+          "entry_gross": 48832.6412
+        },
+        "confidence_0.5": {
+          "trades": 89,
+          "pnl": -6750.268047493999,
+          "entry_gross": 288709.8660000001
+        },
+        "observed": {
+          "trades": 187,
+          "pnl": 10831.433642306005,
+          "entry_gross": 582028.7213999998
+        },
+        "confidence_0.25": {
+          "trades": 78,
+          "pnl": -116.09404179999908,
+          "entry_gross": 126012.30479999998
+        },
+        "confidence_1.0": {
+          "trades": 33,
+          "pnl": 12858.8528882,
+          "entry_gross": 216139.19180000006
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -438.7848045060018,
+        "reserve_9_20": -2299.005087899999
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": -2737.789892405912,
+        "debit_0_spread_2": -3275.9995908119117,
+        "debit_5_spread_1": -2737.789892405912,
+        "debit_5_spread_2": -3275.9995908119117,
+        "debit_10_spread_1": -2737.789892405912,
+        "debit_10_spread_2": -3275.9995908119117
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "L5_SELECT8": {
+      "control": "L5_NORM8",
+      "month_differences": {
+        "2025-09": -2996.3305133000104,
+        "2025-11": 947.8465018399788,
+        "2026-01": -5423.789713699997,
+        "2026-03": -4160.777126399996,
+        "2026-05": -7040.556491799999,
+        "2026-07": 2977.8798441999925
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -12699.396985860021,
+        "2025-11": -16643.57400100001,
+        "2026-01": -10271.937785460035,
+        "2026-03": -11534.950372760035,
+        "2026-05": -8655.171007360033,
+        "2026-07": -18673.607343360025
+      },
+      "top_incremental_symbols": [
+        [
+          "ASTS",
+          4953.67284
+        ],
+        [
+          "LUNR",
+          3694.527855000001
+        ],
+        [
+          "VOYG",
+          3383.3588634000002
+        ],
+        [
+          "CLSK",
+          2921.8581840000006
+        ],
+        [
+          "BMNR",
+          2347.20167
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "OKLS",
+          -3426.1173216999996
+        ],
+        [
+          "CAPR",
+          -4564.462730000001
+        ],
+        [
+          "NTLA",
+          -4690.170164999999
+        ],
+        [
+          "HTCO",
+          -5667.004500000001
+        ],
+        [
+          "DGNX",
+          -8922.141799999998
+        ]
+      ],
+      "increment_without_top_symbol": -20649.40033916003,
+      "membership_overlap": 0.3422818791946309,
+      "candidate_attribution": {
+        "reserve_9_20": {
+          "trades": 98,
+          "pnl": -6297.994430899998,
+          "entry_gross": 656197.8840000002
+        },
+        "observed": {
+          "trades": 200,
+          "pnl": 1063.6510099999982,
+          "entry_gross": 1249515.7121000001
+        },
+        "confidence_1.0": {
+          "trades": 81,
+          "pnl": 12638.0591593,
+          "entry_gross": 643944.7101
+        },
+        "primary_1_8": {
+          "trades": 102,
+          "pnl": 7361.645440900003,
+          "entry_gross": 593317.8281000003
+        },
+        "confidence_0.5": {
+          "trades": 116,
+          "pnl": -10827.695799300003,
+          "entry_gross": 598055.6970000002
+        },
+        "confidence_0.25": {
+          "trades": 3,
+          "pnl": -746.7123499999998,
+          "entry_gross": 7515.305
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 200,
+          "pnl": 16759.378509159986,
+          "entry_gross": 1331332.8135
+        },
+        "unknown": {
+          "trades": 13,
+          "pnl": -4483.785014000001,
+          "entry_gross": 49196.342000000004
+        },
+        "confidence_0.25": {
+          "trades": 91,
+          "pnl": -4807.510411500004,
+          "entry_gross": 369247.2025
+        },
+        "observed": {
+          "trades": 187,
+          "pnl": 21243.163523159987,
+          "entry_gross": 1282136.4715
+        },
+        "confidence_0.5": {
+          "trades": 78,
+          "pnl": -9789.204575739994,
+          "entry_gross": 590476.3574
+        },
+        "confidence_1.0": {
+          "trades": 31,
+          "pnl": 31356.0934964,
+          "entry_gross": 371609.2536
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -9397.733068259982,
+        "reserve_9_20": -6297.994430899998
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": -15695.727499159868,
+        "debit_0_spread_2": -15512.88145831987,
+        "debit_5_spread_1": -15695.680199071621,
+        "debit_5_spread_2": -15512.83415823162,
+        "debit_10_spread_1": -15695.632898983375,
+        "debit_10_spread_2": -15512.786858143374
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "L5_WEIGHT20": {
+      "control": "LONG_EQ20",
+      "month_differences": {
+        "2025-09": 4542.373786300004,
+        "2025-11": -1440.8609132299953,
+        "2026-01": -1979.186510700003,
+        "2026-03": 1285.6673185999962,
+        "2026-05": -886.6755173999995,
+        "2026-07": 600.8314047000285
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": -2420.224218029973,
+        "2025-11": 3563.0104815000263,
+        "2026-01": 4101.336078970035,
+        "2026-03": 836.4822496700349,
+        "2026-05": 3008.8250856700306,
+        "2026-07": 1521.3181635700025
+      },
+      "top_incremental_symbols": [
+        [
+          "DGNX",
+          4046.634430000001
+        ],
+        [
+          "ASTS",
+          1189.85279
+        ],
+        [
+          "ERAS",
+          755.2353449999997
+        ],
+        [
+          "FSLY",
+          744.6846400000007
+        ],
+        [
+          "AEVA",
+          744.6635199999992
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "RDW",
+          -707.1806250000004
+        ],
+        [
+          "YSS",
+          -724.34995
+        ],
+        [
+          "TNXP",
+          -748.2144199999998
+        ],
+        [
+          "NTLA",
+          -1217.7876849999984
+        ],
+        [
+          "HTCO",
+          -2213.6097
+        ]
+      ],
+      "increment_without_top_symbol": -1924.48486172997,
+      "membership_overlap": 1.0,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 200,
+          "pnl": 6703.612750153999,
+          "entry_gross": 487397.12829999987
+        },
+        "unknown": {
+          "trades": 20,
+          "pnl": -1511.9234251999997,
+          "entry_gross": 28790.956599999994
+        },
+        "confidence_0.25": {
+          "trades": 203,
+          "pnl": 2867.1680884000007,
+          "entry_gross": 295270.75119999994
+        },
+        "observed": {
+          "trades": 480,
+          "pnl": 11924.57675305399,
+          "entry_gross": 1234797.1721999994
+        },
+        "confidence_0.5": {
+          "trades": 209,
+          "pnl": -1959.0691906459995,
+          "entry_gross": 561537.4627999997
+        },
+        "reserve_9_20": {
+          "trades": 300,
+          "pnl": 3709.040577699999,
+          "entry_gross": 776191.0004999996
+        },
+        "confidence_1.0": {
+          "trades": 88,
+          "pnl": 9504.554430100005,
+          "entry_gross": 406779.9148
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 200,
+          "pnl": -502.96544851599833,
+          "entry_gross": 497858.22730000014
+        },
+        "observed": {
+          "trades": 500,
+          "pnl": 8290.503759584004,
+          "entry_gross": 1244410.2996000017
+        },
+        "confidence_1.0": {
+          "trades": 500,
+          "pnl": 8290.503759584004,
+          "entry_gross": 1244410.2996000017
+        },
+        "reserve_9_20": {
+          "trades": 300,
+          "pnl": 8793.4692081,
+          "entry_gross": 746552.0723000001
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 7206.578198669997,
+        "reserve_9_20": -5084.4286304
+      },
+      "scenario_increments": {
+        "debit_0_spread_1": 2122.149568270237,
+        "debit_0_spread_2": 2083.3512065402374,
+        "debit_5_spread_1": 2122.149568270237,
+        "debit_5_spread_2": 2083.3512065402374,
+        "debit_10_spread_1": 2122.149568270237,
+        "debit_10_spread_2": 2083.3512065402374
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S1_R4": {
+      "control": "S0_R4",
+      "month_differences": {
+        "2025-09": -4807.5357341,
+        "2025-11": -1070.9644585999904,
+        "2026-01": 1319.9138176000033,
+        "2026-03": 23.642941699983567,
+        "2026-05": 3015.2651366169966,
+        "2026-07": -1402.6812450000007
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": 1885.1761923169925,
+        "2025-11": -1851.395083183017,
+        "2026-01": -4242.273359383011,
+        "2026-03": -2946.002483482991,
+        "2026-05": -5937.624678400004,
+        "2026-07": -1519.6782967830068
+      },
+      "top_incremental_symbols": [
+        [
+          "FIGR",
+          1615.2151350000006
+        ],
+        [
+          "LUMN",
+          1553.3816650000003
+        ],
+        [
+          "VG",
+          1181.5978200000002
+        ],
+        [
+          "ENOV",
+          1015.3571249999995
+        ],
+        [
+          "FCEL",
+          982.0184599999998
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "CDNA",
+          -1121.0791499999996
+        ],
+        [
+          "STOK",
+          -1298.4989399999995
+        ],
+        [
+          "PL",
+          -1767.4977
+        ],
+        [
+          "UUUU",
+          -2026.680180000001
+        ],
+        [
+          "MBX",
+          -2161.792769999999
+        ]
+      ],
+      "increment_without_top_symbol": -4537.574676783008,
+      "membership_overlap": 0.8073770491803278,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 10311.910184176004,
+          "entry_gross": 772903.1321999998
+        },
+        "observed": {
+          "trades": 229,
+          "pnl": -463.4672422239803,
+          "entry_gross": 922499.1082000001
+        },
+        "confidence_1.0": {
+          "trades": 154,
+          "pnl": 18575.110582,
+          "entry_gross": 771327.6577999997
+        },
+        "confidence_0.5": {
+          "trades": 90,
+          "pnl": -9895.466297623994,
+          "entry_gross": 229273.3994
+        },
+        "reserve_9_20": {
+          "trades": 47,
+          "pnl": -1632.2658997999945,
+          "entry_gross": 227697.92500000002
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 9143.1115266,
+          "entry_gross": 78101.94900000001
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 11602.003826158998,
+          "entry_gross": 853790.3926999999
+        },
+        "observed": {
+          "trades": 182,
+          "pnl": 1650.153133458984,
+          "entry_gross": 769372.1666999998
+        },
+        "confidence_1.0": {
+          "trades": 107,
+          "pnl": 21056.80623179999,
+          "entry_gross": 601377.1178999998
+        },
+        "confidence_0.5": {
+          "trades": 90,
+          "pnl": -9454.802405641007,
+          "entry_gross": 252413.27480000004
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 9951.850692699998,
+          "entry_gross": 84418.226
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -1290.093641982994,
+        "reserve_9_20": -1632.2658997999945
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -2922.359541783182,
+        "borrow_0_spread_2": -3217.9628005661825,
+        "borrow_10_spread_1": -3490.782220619347,
+        "borrow_10_spread_2": -3786.3854794023464,
+        "borrow_30_spread_1": -4627.627578291675,
+        "borrow_30_spread_2": -4923.230837074674
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S1_R5_A": {
+      "control": "S0_R5_A",
+      "month_differences": {
+        "2025-09": -3223.5538076999974,
+        "2025-11": -5513.2703919999985,
+        "2026-01": -1465.0202806999987,
+        "2026-03": 3436.916906000006,
+        "2026-05": 2549.662245526999,
+        "2026-07": 1158.964080000008
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": 167.2525588270155,
+        "2025-11": 2456.9691431270167,
+        "2026-01": -1591.2809681729832,
+        "2026-03": -6493.218154872988,
+        "2026-05": -5605.963494399981,
+        "2026-07": -4215.26532887299
+      },
+      "top_incremental_symbols": [
+        [
+          "ABSI",
+          2874.89312
+        ],
+        [
+          "FCEL",
+          2718.195
+        ],
+        [
+          "HIMS",
+          2185.9285950000008
+        ],
+        [
+          "VELO",
+          1126.1598599999998
+        ],
+        [
+          "AESI",
+          975.45297
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "IONS",
+          -1138.404480000001
+        ],
+        [
+          "ISSC",
+          -1268.4707100000014
+        ],
+        [
+          "CNMD",
+          -2082.724799999999
+        ],
+        [
+          "STOK",
+          -2596.997879999999
+        ],
+        [
+          "MBX",
+          -4745.607899999999
+        ]
+      ],
+      "increment_without_top_symbol": -5931.1943688729825,
+      "membership_overlap": 0.7933884297520661,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 96,
+          "pnl": -257.16406449599845,
+          "entry_gross": 450614.14099999995
+        },
+        "observed": {
+          "trades": 116,
+          "pnl": -3799.1890910959933,
+          "entry_gross": 666586.6169999997
+        },
+        "confidence_0.5": {
+          "trades": 42,
+          "pnl": -2576.3272310999996,
+          "entry_gross": 211143.74500000005
+        },
+        "confidence_0.25": {
+          "trades": 42,
+          "pnl": 88.8018366039993,
+          "entry_gross": 108473.22599999998
+        },
+        "confidence_1.0": {
+          "trades": 37,
+          "pnl": 191.3892223000056,
+          "entry_gross": 389497.9309999999
+        },
+        "reserve_9_20": {
+          "trades": 25,
+          "pnl": -2038.9721076999972,
+          "entry_gross": 258500.761
+        },
+        "unknown": {
+          "trades": 5,
+          "pnl": 1503.0529188999985,
+          "entry_gross": 42528.285
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 96,
+          "pnl": 760.165076676999,
+          "entry_gross": 478546.88099999994
+        },
+        "observed": {
+          "trades": 91,
+          "pnl": -924.3124879229963,
+          "entry_gross": 433158.33599999995
+        },
+        "confidence_0.5": {
+          "trades": 42,
+          "pnl": -2642.4493034000016,
+          "entry_gross": 227041.89499999996
+        },
+        "confidence_0.25": {
+          "trades": 42,
+          "pnl": 377.0897400769989,
+          "entry_gross": 115347.86600000001
+        },
+        "confidence_1.0": {
+          "trades": 12,
+          "pnl": 3025.524640000001,
+          "entry_gross": 136157.11999999997
+        },
+        "unknown": {
+          "trades": 5,
+          "pnl": 1684.4775645999985,
+          "entry_gross": 45388.545000000006
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -1017.3291411729974,
+        "reserve_9_20": -2038.9721076999972
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -3056.301248873089,
+        "borrow_0_spread_2": -3521.8707247460898,
+        "borrow_10_spread_1": -3879.331670951446,
+        "borrow_10_spread_2": -4344.901146824446,
+        "borrow_30_spread_1": -5525.392515108159,
+        "borrow_30_spread_2": -5990.96199098116
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S1_R5_B": {
+      "control": "S0_R5_B",
+      "month_differences": {
+        "2025-09": 0.0,
+        "2025-11": -4096.480027,
+        "2026-01": 4698.451146399999,
+        "2026-03": 1109.6523022999936,
+        "2026-05": -8237.775083499999,
+        "2026-07": -2819.0808249999986
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -9345.232486800005,
+        "2025-11": -5248.752459800005,
+        "2026-01": -14043.683633200004,
+        "2026-03": -10454.884789099999,
+        "2026-05": -1107.4574033000063,
+        "2026-07": -6526.151661800006
+      },
+      "top_incremental_symbols": [
+        [
+          "NVA",
+          2444.175
+        ],
+        [
+          "OSS",
+          2156.612458
+        ],
+        [
+          "SEDG",
+          1969.0123199999994
+        ],
+        [
+          "ONDS",
+          1096.4382600000008
+        ],
+        [
+          "GLUE",
+          1070.8855199999998
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "NBY",
+          -1774.0331000000024
+        ],
+        [
+          "GSAT",
+          -2009.2184639999991
+        ],
+        [
+          "HIMX",
+          -2586.5439600000022
+        ],
+        [
+          "CDNA",
+          -2774.03952
+        ],
+        [
+          "FLNC",
+          -3891.892794999997
+        ]
+      ],
+      "increment_without_top_symbol": -11789.407486800006,
+      "membership_overlap": 0.7952755905511811,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 101,
+          "pnl": 19815.7004666,
+          "entry_gross": 571595.6432999999
+        },
+        "observed": {
+          "trades": 117,
+          "pnl": 7557.275621200002,
+          "entry_gross": 757461.7353000001
+        },
+        "confidence_0.5": {
+          "trades": 40,
+          "pnl": 14365.708718800002,
+          "entry_gross": 222532.40159999998
+        },
+        "confidence_0.25": {
+          "trades": 40,
+          "pnl": -10492.519912499998,
+          "entry_gross": 113045.08700000001
+        },
+        "unknown": {
+          "trades": 10,
+          "pnl": 7667.538794399998,
+          "entry_gross": 77433.85
+        },
+        "confidence_1.0": {
+          "trades": 47,
+          "pnl": 11351.625609299997,
+          "entry_gross": 499318.0967
+        },
+        "reserve_9_20": {
+          "trades": 26,
+          "pnl": -4590.8860509999995,
+          "entry_gross": 263299.942
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 101,
+          "pnl": 24570.046902400012,
+          "entry_gross": 647287.1932
+        },
+        "observed": {
+          "trades": 91,
+          "pnl": 15887.811616900008,
+          "entry_gross": 559062.6826
+        },
+        "confidence_0.5": {
+          "trades": 40,
+          "pnl": 16110.269814899997,
+          "entry_gross": 249462.45620000002
+        },
+        "confidence_0.25": {
+          "trades": 40,
+          "pnl": -10435.0673005,
+          "entry_gross": 126371.62999999999
+        },
+        "unknown": {
+          "trades": 10,
+          "pnl": 8682.235285499999,
+          "entry_gross": 88224.5106
+        },
+        "confidence_1.0": {
+          "trades": 21,
+          "pnl": 18894.844388,
+          "entry_gross": 271453.10699999996
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -4754.346435800013,
+        "reserve_9_20": -4590.8860509999995
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -9345.23248679997,
+        "borrow_0_spread_2": -9712.10237359997,
+        "borrow_10_spread_1": -11022.763441671203,
+        "borrow_10_spread_2": -11389.633328471202,
+        "borrow_30_spread_1": -14377.825351413669,
+        "borrow_30_spread_2": -14744.69523821367
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S1_R5": {
+      "control": "S0_R5",
+      "month_differences": {
+        "2025-09": -1579.8086328000054,
+        "2025-11": -4348.228682200001,
+        "2026-01": 2771.0722602999986,
+        "2026-03": 3772.2107606999907,
+        "2026-05": -4037.6328768999974,
+        "2026-07": -550.2060149999986
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -2392.7845531000075,
+        "2025-11": 375.6354962999876,
+        "2026-01": -6743.6654462000115,
+        "2026-03": -7744.803946600004,
+        "2026-05": 65.03969099998449,
+        "2026-07": -3422.387170900014
+      },
+      "top_incremental_symbols": [
+        [
+          "ABSI",
+          1403.8613600000003
+        ],
+        [
+          "HIMS",
+          1336.7189250000004
+        ],
+        [
+          "NVA",
+          1317.33
+        ],
+        [
+          "FCEL",
+          1094.4225199999996
+        ],
+        [
+          "OSS",
+          1048.4158540000005
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "STOK",
+          -1298.4989399999995
+        ],
+        [
+          "CNMD",
+          -1337.7501599999994
+        ],
+        [
+          "HIMX",
+          -1423.6104550000011
+        ],
+        [
+          "FLNC",
+          -2141.502789999999
+        ],
+        [
+          "MBX",
+          -2367.4195699999987
+        ]
+      ],
+      "increment_without_top_symbol": -5376.454545900013,
+      "membership_overlap": 0.7943548387096774,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 11779.852459748006,
+          "entry_gross": 540909.5827000001
+        },
+        "observed": {
+          "trades": 233,
+          "pnl": 4405.963582048026,
+          "entry_gross": 757716.7811000004
+        },
+        "confidence_0.5": {
+          "trades": 82,
+          "pnl": 6572.178887000002,
+          "entry_gross": 227421.39020000008
+        },
+        "confidence_0.25": {
+          "trades": 82,
+          "pnl": -5027.570145251998,
+          "entry_gross": 114270.6955
+        },
+        "confidence_1.0": {
+          "trades": 84,
+          "pnl": 7569.487097900014,
+          "entry_gross": 479174.3059999998
+        },
+        "reserve_9_20": {
+          "trades": 51,
+          "pnl": -2665.7566200999963,
+          "entry_gross": 279956.809
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 4708.1322576,
+          "entry_gross": 63149.61060000001
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 13086.689025548007,
+          "entry_gross": 595169.9682
+        },
+        "observed": {
+          "trades": 182,
+          "pnl": 7775.10084964801,
+          "entry_gross": 527529.1120000001
+        },
+        "confidence_0.5": {
+          "trades": 82,
+          "pnl": 7002.9209251,
+          "entry_gross": 253659.1950000001
+        },
+        "confidence_0.25": {
+          "trades": 82,
+          "pnl": -4266.706946352004,
+          "entry_gross": 128673.68
+        },
+        "confidence_1.0": {
+          "trades": 33,
+          "pnl": 10350.475046799998,
+          "entry_gross": 212837.09319999997
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 5311.5881759,
+          "entry_gross": 67640.8562
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -1306.8365658000002,
+        "reserve_9_20": -2665.7566200999963
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -3972.593185900376,
+        "borrow_0_spread_2": -4423.496571800375,
+        "borrow_10_spread_1": -5352.723752697637,
+        "borrow_10_spread_2": -5803.627138597636,
+        "borrow_30_spread_1": -8112.984886292159,
+        "borrow_30_spread_2": -8563.888272192158
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S1_R5_U125": {
+      "control": "S0_R5_U125",
+      "month_differences": {
+        "2025-09": -1927.153243900013,
+        "2025-11": -5215.042226400009,
+        "2026-01": 3137.953680700004,
+        "2026-03": 4584.891599900004,
+        "2026-05": -4854.6679367,
+        "2026-07": -332.59301000000346
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -2679.457892500004,
+        "2025-11": 608.4310899999919,
+        "2026-01": -7744.564817100021,
+        "2026-03": -9191.50273630002,
+        "2026-05": 248.05680029998257,
+        "2026-07": -4274.018126400014
+      },
+      "top_incremental_symbols": [
+        [
+          "ABSI",
+          1739.7133600000004
+        ],
+        [
+          "HIMS",
+          1656.4830600000003
+        ],
+        [
+          "NVA",
+          1590.4350000000002
+        ],
+        [
+          "FCEL",
+          1362.7217600000004
+        ],
+        [
+          "OSS",
+          1274.4713280000005
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "CNMD",
+          -1489.9492799999994
+        ],
+        [
+          "STOK",
+          -1621.082009999999
+        ],
+        [
+          "HIMX",
+          -1713.1654800000013
+        ],
+        [
+          "FLNC",
+          -2577.4973699999987
+        ],
+        [
+          "MBX",
+          -2890.9140299999985
+        ]
+      ],
+      "increment_without_top_symbol": -6346.324496400018,
+      "membership_overlap": 0.7943548387096774,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 14757.154762585009,
+          "entry_gross": 652938.7582000002
+        },
+        "observed": {
+          "trades": 233,
+          "pnl": 5940.517738385009,
+          "entry_gross": 915622.4160000002
+        },
+        "confidence_0.5": {
+          "trades": 82,
+          "pnl": 8316.641525500001,
+          "entry_gross": 275593.2154
+        },
+        "confidence_0.25": {
+          "trades": 82,
+          "pnl": -6374.451915114997,
+          "entry_gross": 139042.65499999994
+        },
+        "confidence_1.0": {
+          "trades": 84,
+          "pnl": 9712.119539700005,
+          "entry_gross": 577944.2657999999
+        },
+        "reserve_9_20": {
+          "trades": 51,
+          "pnl": -3102.8456124999943,
+          "entry_gross": 339641.3780000001
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 5713.791411699998,
+          "entry_gross": 76957.7202
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 16260.920286485018,
+          "entry_gross": 719850.6312999999
+        },
+        "observed": {
+          "trades": 182,
+          "pnl": 9734.307538485014,
+          "entry_gross": 636855.2111
+        },
+        "confidence_0.5": {
+          "trades": 82,
+          "pnl": 8579.290930100002,
+          "entry_gross": 308597.9751000001
+        },
+        "confidence_0.25": {
+          "trades": 82,
+          "pnl": -5431.011704914996,
+          "entry_gross": 155809.7175
+        },
+        "confidence_1.0": {
+          "trades": 33,
+          "pnl": 13112.641061300006,
+          "entry_gross": 255442.93870000006
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 6526.612747999997,
+          "entry_gross": 82995.42020000002
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -1503.7655239000087,
+        "reserve_9_20": -3102.8456124999943
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -4606.611136400141,
+        "borrow_0_spread_2": -5151.524072800141,
+        "borrow_10_spread_1": -6267.276668509182,
+        "borrow_10_spread_2": -6812.189604909181,
+        "borrow_30_spread_1": -9588.607732727263,
+        "borrow_30_spread_2": -10133.520669127263
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S2_R4": {
+      "control": "S0_R4",
+      "month_differences": {
+        "2025-09": -1909.3793707999994,
+        "2025-11": -236.8422828999992,
+        "2026-01": 2332.164146799996,
+        "2026-03": -1362.960348400009,
+        "2026-05": -5518.674375666,
+        "2026-07": -1411.3015945999996
+      },
+      "positive_increment_months": 1,
+      "leave_one_month_out": {
+        "2025-09": -6197.6144547660115,
+        "2025-11": -7870.151542666012,
+        "2026-01": -10439.157972366007,
+        "2026-03": -6744.033477166002,
+        "2026-05": -2588.319449900011,
+        "2026-07": -6695.692230966011
+      },
+      "top_incremental_symbols": [
+        [
+          "TERN",
+          3427.3245199999997
+        ],
+        [
+          "TRAX",
+          1641.4979800000012
+        ],
+        [
+          "SDM",
+          1551.8415
+        ],
+        [
+          "AXTI",
+          1514.8474314999987
+        ],
+        [
+          "OSS",
+          1453.6911969999994
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "NCI",
+          -2057.7381000000005
+        ],
+        [
+          "FCEL",
+          -2419.2787399999993
+        ],
+        [
+          "BNAI",
+          -2436.8399015999994
+        ],
+        [
+          "NBY",
+          -2455.521425000001
+        ],
+        [
+          "BATL",
+          -4236.097308500002
+        ]
+      ],
+      "increment_without_top_symbol": -11534.318345566011,
+      "membership_overlap": 0.397979797979798,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 1290.8169029930027,
+          "entry_gross": 411298.0729000002
+        },
+        "observed": {
+          "trades": 474,
+          "pnl": 237.1815003929877,
+          "entry_gross": 993661.2489999998
+        },
+        "confidence_1.0": {
+          "trades": 225,
+          "pnl": 9384.396650100005,
+          "entry_gross": 622723.0297999998
+        },
+        "confidence_0.5": {
+          "trades": 270,
+          "pnl": -5889.3866495070115,
+          "entry_gross": 402480.41960000014
+        },
+        "reserve_9_20": {
+          "trades": 298,
+          "pnl": 2204.1930976000003,
+          "entry_gross": 613905.3764999998
+        },
+        "unknown": {
+          "trades": 21,
+          "pnl": 3257.8285002,
+          "entry_gross": 31542.2004
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 11602.003826158998,
+          "entry_gross": 853790.3926999999
+        },
+        "observed": {
+          "trades": 182,
+          "pnl": 1650.153133458984,
+          "entry_gross": 769372.1666999998
+        },
+        "confidence_1.0": {
+          "trades": 107,
+          "pnl": 21056.80623179999,
+          "entry_gross": 601377.1178999998
+        },
+        "confidence_0.5": {
+          "trades": 90,
+          "pnl": -9454.802405641007,
+          "entry_gross": 252413.27480000004
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 9951.850692699998,
+          "entry_gross": 84418.226
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -10311.186923165995,
+        "reserve_9_20": 2204.1930976000003
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -8106.993825566358,
+        "borrow_0_spread_2": -8401.571285132359,
+        "borrow_10_spread_1": -8737.426874776222,
+        "borrow_10_spread_2": -9032.004334342222,
+        "borrow_30_spread_1": -9998.292973195945,
+        "borrow_30_spread_2": -10292.870432761945
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S2_R5": {
+      "control": "S0_R5",
+      "month_differences": {
+        "2025-09": -7699.888259900002,
+        "2025-11": -2331.9242193000036,
+        "2026-01": 4643.9191867,
+        "2026-03": 2951.628653599997,
+        "2026-05": -8250.622333727986,
+        "2026-07": 433.41914509998105
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": -2553.5795676280113,
+        "2025-11": -7921.543608228009,
+        "2026-01": -14897.387014228014,
+        "2026-03": -13205.09648112801,
+        "2026-05": -2002.8454938000268,
+        "2026-07": -10686.886972627994
+      },
+      "top_incremental_symbols": [
+        [
+          "OSS",
+          1522.8057789999998
+        ],
+        [
+          "ABSI",
+          1447.33722
+        ],
+        [
+          "SDM",
+          1434.27775
+        ],
+        [
+          "CRML",
+          1401.8438899999996
+        ],
+        [
+          "IMSR",
+          1252.1657849999997
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "NVTS",
+          -1768.367195
+        ],
+        [
+          "FLNC",
+          -1887.7582699999996
+        ],
+        [
+          "NBY",
+          -2152.6377250000005
+        ],
+        [
+          "BATL",
+          -2494.997912599997
+        ],
+        [
+          "FCEL",
+          -3126.307299999999
+        ]
+      ],
+      "increment_without_top_symbol": -11776.273606528013,
+      "membership_overlap": 0.397979797979798,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 3776.6083889200045,
+          "entry_gross": 404122.58949999994
+        },
+        "observed": {
+          "trades": 474,
+          "pnl": -137.13065637997994,
+          "entry_gross": 1002981.5909000005
+        },
+        "confidence_0.5": {
+          "trades": 172,
+          "pnl": 2527.541031799993,
+          "entry_gross": 396398.9704000002
+        },
+        "confidence_0.25": {
+          "trades": 241,
+          "pnl": -4128.893155679998,
+          "entry_gross": 300598.59190000006
+        },
+        "confidence_1.0": {
+          "trades": 82,
+          "pnl": 4434.573321900005,
+          "entry_gross": 339000.7256
+        },
+        "reserve_9_20": {
+          "trades": 298,
+          "pnl": -943.3871909000072,
+          "entry_gross": 631875.6984000006
+        },
+        "unknown": {
+          "trades": 21,
+          "pnl": 2970.3518544,
+          "entry_gross": 33016.69700000001
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 13086.689025548007,
+          "entry_gross": 595169.9682
+        },
+        "observed": {
+          "trades": 182,
+          "pnl": 7775.10084964801,
+          "entry_gross": 527529.1120000001
+        },
+        "confidence_0.5": {
+          "trades": 82,
+          "pnl": 7002.9209251,
+          "entry_gross": 253659.1950000001
+        },
+        "confidence_0.25": {
+          "trades": 82,
+          "pnl": -4266.706946352004,
+          "entry_gross": 128673.68
+        },
+        "confidence_1.0": {
+          "trades": 33,
+          "pnl": 10350.475046799998,
+          "entry_gross": 212837.09319999997
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 5311.5881759,
+          "entry_gross": 67640.8562
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -9310.080636628001,
+        "reserve_9_20": -943.3871909000072
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -10253.467827528599,
+        "borrow_0_spread_2": -11119.729327056599,
+        "borrow_10_spread_1": -12309.923051528052,
+        "borrow_10_spread_2": -13176.184551056052,
+        "borrow_30_spread_1": -16422.833499526954,
+        "borrow_30_spread_2": -17289.094999054956
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S3_R4_A": {
+      "control": "NORM8_R4_A",
+      "month_differences": {
+        "2025-09": 10417.541600699991,
+        "2025-11": -5323.994728999995,
+        "2026-01": 4157.540919700005,
+        "2026-03": 1124.3657679999978,
+        "2026-05": 4031.7910102910064,
+        "2026-07": 4640.585395
+      },
+      "positive_increment_months": 5,
+      "leave_one_month_out": {
+        "2025-09": 8630.288363991014,
+        "2025-11": 24371.824693691,
+        "2026-01": 14890.289044991001,
+        "2026-03": 17923.464196691006,
+        "2026-05": 15016.038954399999,
+        "2026-07": 14407.244569691005
+      },
+      "top_incremental_symbols": [
+        [
+          "IREN",
+          6165.920840000001
+        ],
+        [
+          "FIGR",
+          4143.377955000001
+        ],
+        [
+          "PCT",
+          3038.6549800000003
+        ],
+        [
+          "ABSI",
+          2834.59088
+        ],
+        [
+          "FCEL",
+          2747.18908
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "CNMD",
+          -2178.850559999999
+        ],
+        [
+          "BATL",
+          -2268.282009999999
+        ],
+        [
+          "MRAM",
+          -2362.3297828000013
+        ],
+        [
+          "STOK",
+          -2596.997879999999
+        ],
+        [
+          "MBX",
+          -4944.168899999998
+        ]
+      ],
+      "increment_without_top_symbol": 12881.909124691005,
+      "membership_overlap": 0.40441176470588236,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 55,
+          "pnl": -5149.438613823999,
+          "entry_gross": 555174.015
+        },
+        "observed": {
+          "trades": 95,
+          "pnl": 8200.088164876011,
+          "entry_gross": 1007234.4890000001
+        },
+        "confidence_1.0": {
+          "trades": 84,
+          "pnl": -1001.7995492999956,
+          "entry_gross": 937500.474
+        },
+        "reserve_9_20": {
+          "trades": 40,
+          "pnl": 13349.526778700005,
+          "entry_gross": 452060.4740000001
+        },
+        "confidence_0.5": {
+          "trades": 11,
+          "pnl": 9201.887714176,
+          "entry_gross": 69734.015
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 96,
+          "pnl": -10847.741799815005,
+          "entry_gross": 877225.0475000002
+        },
+        "observed": {
+          "trades": 91,
+          "pnl": -13834.385902614998,
+          "entry_gross": 842757.1925000001
+        },
+        "confidence_1.0": {
+          "trades": 44,
+          "pnl": -17043.32806099999,
+          "entry_gross": 523532.1249999999
+        },
+        "confidence_0.5": {
+          "trades": 52,
+          "pnl": 6195.586261184999,
+          "entry_gross": 353692.9224999999
+        },
+        "unknown": {
+          "trades": 5,
+          "pnl": 2986.644102799998,
+          "entry_gross": 34467.855
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 5698.303185991006,
+        "reserve_9_20": 13349.526778700005
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": 19047.829964691235,
+        "borrow_0_spread_2": 18800.309638382234,
+        "borrow_10_spread_1": 18906.285237864387,
+        "borrow_10_spread_2": 18658.764911555387,
+        "borrow_30_spread_1": 18623.195784210686,
+        "borrow_30_spread_2": 18375.675457901685
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S3_R4_B": {
+      "control": "NORM8_R4_B",
+      "month_differences": {
+        "2025-09": 3066.9492599999867,
+        "2025-11": -502.6511472000011,
+        "2026-01": -4912.730594100001,
+        "2026-03": 1119.5499495000058,
+        "2026-05": 2844.7803354999987,
+        "2026-07": -7165.666759999983
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": -8616.718216299982,
+        "2025-11": -5047.117809099993,
+        "2026-01": -637.0383621999927,
+        "2026-03": -6669.3189058,
+        "2026-05": -8394.549291799993,
+        "2026-07": 1615.8978036999888
+      },
+      "top_incremental_symbols": [
+        [
+          "BKKT",
+          5771.803910000001
+        ],
+        [
+          "IREN",
+          4111.315759999999
+        ],
+        [
+          "LUMN",
+          3050.933545
+        ],
+        [
+          "RGTI",
+          3043.2252000000008
+        ],
+        [
+          "TERN",
+          2464.8785500000004
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "NBY",
+          -3072.1061
+        ],
+        [
+          "BNAI",
+          -3085.650032400001
+        ],
+        [
+          "NCI",
+          -3406.8886999999995
+        ],
+        [
+          "PL",
+          -3815.20845
+        ],
+        [
+          "UUUU",
+          -5600.758065000003
+        ]
+      ],
+      "increment_without_top_symbol": -11321.572866299995,
+      "membership_overlap": 0.4068965517241379,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 59,
+          "pnl": 11059.555167900007,
+          "entry_gross": 540880.1780999999
+        },
+        "observed": {
+          "trades": 103,
+          "pnl": 5888.339309700006,
+          "entry_gross": 986607.4571000002
+        },
+        "confidence_1.0": {
+          "trades": 92,
+          "pnl": 19044.61155370001,
+          "entry_gross": 909082.1571000002
+        },
+        "reserve_9_20": {
+          "trades": 44,
+          "pnl": -5171.215858200007,
+          "entry_gross": 445727.27900000016
+        },
+        "confidence_0.5": {
+          "trades": 11,
+          "pnl": -13156.272244000003,
+          "entry_gross": 77525.3
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 101,
+          "pnl": 11438.108266000005,
+          "entry_gross": 1023289.1218999997
+        },
+        "observed": {
+          "trades": 91,
+          "pnl": 1468.765705300002,
+          "entry_gross": 945567.0846999995
+        },
+        "confidence_1.0": {
+          "trades": 48,
+          "pnl": 33160.0541667,
+          "entry_gross": 625702.9573000001
+        },
+        "confidence_0.5": {
+          "trades": 53,
+          "pnl": -21721.9459007,
+          "entry_gross": 397586.16459999996
+        },
+        "unknown": {
+          "trades": 10,
+          "pnl": 9969.342560699999,
+          "entry_gross": 77722.0372
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -378.55309809999744,
+        "reserve_9_20": -5171.215858200007
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -5549.7689562999585,
+        "borrow_0_spread_2": -5332.5170125999575,
+        "borrow_10_spread_1": -5683.484455057766,
+        "borrow_10_spread_2": -5466.232511357766,
+        "borrow_30_spread_1": -5950.915452573385,
+        "borrow_30_spread_2": -5733.663508873384
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S3_R4": {
+      "control": "NORM8_R4",
+      "month_differences": {
+        "2025-09": 6883.948778099992,
+        "2025-11": -2809.0273863999946,
+        "2026-01": 10.45206949999374,
+        "2026-03": 1734.2950613999838,
+        "2026-05": 2760.6184301460053,
+        "2026-07": -3663.228309999999
+      },
+      "positive_increment_months": 4,
+      "leave_one_month_out": {
+        "2025-09": -1966.8901353540114,
+        "2025-11": 7726.086029145975,
+        "2026-01": 4906.6065732459865,
+        "2026-03": 3182.7635813459965,
+        "2026-05": 2156.440212599975,
+        "2026-07": 8580.286952745979
+      },
+      "top_incremental_symbols": [
+        [
+          "IREN",
+          4970.898199999999
+        ],
+        [
+          "BKKT",
+          3251.748419999999
+        ],
+        [
+          "ABSI",
+          2315.4449099999997
+        ],
+        [
+          "FIGR",
+          2294.0736700000007
+        ],
+        [
+          "AXTI",
+          2230.1068640000008
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "BNAI",
+          -1645.2778620000006
+        ],
+        [
+          "PL",
+          -2026.1559000000002
+        ],
+        [
+          "MBX",
+          -2252.3260499999988
+        ],
+        [
+          "BATL",
+          -2524.400964600002
+        ],
+        [
+          "UUUU",
+          -2743.3215950000017
+        ]
+      ],
+      "increment_without_top_symbol": -53.83955725401847,
+      "membership_overlap": 0.40569395017793597,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 114,
+          "pnl": 6248.117757104004,
+          "entry_gross": 559095.1091000001
+        },
+        "observed": {
+          "trades": 198,
+          "pnl": 8534.337192803989,
+          "entry_gross": 1020060.3871000003
+        },
+        "confidence_1.0": {
+          "trades": 176,
+          "pnl": 11244.028576599996,
+          "entry_gross": 946570.4021000002
+        },
+        "reserve_9_20": {
+          "trades": 84,
+          "pnl": 2286.219435699995,
+          "entry_gross": 460965.278
+        },
+        "confidence_0.5": {
+          "trades": 22,
+          "pnl": -2709.691383796,
+          "entry_gross": 73489.985
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 3617.278550058016,
+          "entry_gross": 970636.765
+        },
+        "observed": {
+          "trades": 182,
+          "pnl": -3023.6917814419817,
+          "entry_gross": 913446.8130000001
+        },
+        "confidence_1.0": {
+          "trades": 92,
+          "pnl": 10691.39395000001,
+          "entry_gross": 593736.184
+        },
+        "confidence_0.5": {
+          "trades": 105,
+          "pnl": -7074.115399942006,
+          "entry_gross": 376900.5810000001
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 6640.970331499999,
+          "entry_gross": 57189.952000000005
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 2630.839207045988,
+        "reserve_9_20": 2286.219435699995
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": 4917.0586427458475,
+        "borrow_0_spread_2": 4898.173639491847,
+        "borrow_10_spread_1": 4608.419014822011,
+        "borrow_10_spread_2": 4589.534011568012,
+        "borrow_30_spread_1": 3991.139758974339,
+        "borrow_30_spread_2": 3972.254755720338
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S3_R4_U125": {
+      "control": "NORM8_R4_U125",
+      "month_differences": {
+        "2025-09": 8765.348471500016,
+        "2025-11": -3544.1086015999954,
+        "2026-01": -372.45919319999666,
+        "2026-03": 2426.012981700016,
+        "2026-05": 3479.9040524099896,
+        "2026-07": -4006.105025000001
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": -2016.7557856899875,
+        "2025-11": 10292.701287410024,
+        "2026-01": 7121.051879010025,
+        "2026-03": 4322.579704110012,
+        "2026-05": 3268.6886334000387,
+        "2026-07": 10754.69771081003
+      },
+      "top_incremental_symbols": [
+        [
+          "IREN",
+          6312.081184999997
+        ],
+        [
+          "BKKT",
+          4078.2120700000014
+        ],
+        [
+          "ABSI",
+          2922.0102199999997
+        ],
+        [
+          "FIGR",
+          2668.616310000001
+        ],
+        [
+          "AXTI",
+          2643.4826665000005
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "BNAI",
+          -1907.9111776
+        ],
+        [
+          "PL",
+          -2496.770125
+        ],
+        [
+          "MBX",
+          -2773.969029999999
+        ],
+        [
+          "BATL",
+          -2855.853974200001
+        ],
+        [
+          "UUUU",
+          -3418.881655000002
+        ]
+      ],
+      "increment_without_top_symbol": 436.51150081003107,
+      "membership_overlap": 0.40569395017793597,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 114,
+          "pnl": 7821.122168032009,
+          "entry_gross": 676784.8143000001
+        },
+        "observed": {
+          "trades": 198,
+          "pnl": 10641.995777932,
+          "entry_gross": 1237509.3933000003
+        },
+        "confidence_1.0": {
+          "trades": 176,
+          "pnl": 14354.987912100016,
+          "entry_gross": 1148450.3608000006
+        },
+        "reserve_9_20": {
+          "trades": 84,
+          "pnl": 2820.8736098999984,
+          "entry_gross": 560724.5789999999
+        },
+        "confidence_0.5": {
+          "trades": 22,
+          "pnl": -3712.992134168,
+          "entry_gross": 89059.0325
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 3893.4030921220133,
+          "entry_gross": 1169167.5759000005
+        },
+        "observed": {
+          "trades": 182,
+          "pnl": -4175.2509445779915,
+          "entry_gross": 1098724.9515000007
+        },
+        "confidence_1.0": {
+          "trades": 92,
+          "pnl": 13090.925084100012,
+          "entry_gross": 707055.5619000002
+        },
+        "confidence_0.5": {
+          "trades": 105,
+          "pnl": -9197.521991978001,
+          "entry_gross": 462112.014
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 8068.654036699998,
+          "entry_gross": 70442.6244
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": 3927.7190759099954,
+        "reserve_9_20": 2820.8736098999984
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": 6748.5926858103485,
+        "borrow_0_spread_2": 6710.691561620348,
+        "borrow_10_spread_1": 6331.406630650896,
+        "borrow_10_spread_2": 6293.505506460895,
+        "borrow_30_spread_1": 5497.034520331992,
+        "borrow_30_spread_2": 5459.133396141991
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S3_R5": {
+      "control": "NORM8_R5",
+      "month_differences": {
+        "2025-09": 5437.618730400007,
+        "2025-11": -3212.669184200001,
+        "2026-01": 494.91053619999184,
+        "2026-03": 1473.1222638,
+        "2026-05": -13495.416705729007,
+        "2026-07": -4515.496544999993
+      },
+      "positive_increment_months": 3,
+      "leave_one_month_out": {
+        "2025-09": -19255.54963492901,
+        "2025-11": -10605.261720329003,
+        "2026-01": -14312.841440728995,
+        "2026-03": -15291.053168329003,
+        "2026-05": -322.51419879999594,
+        "2026-07": -9302.43435952901
+      },
+      "top_incremental_symbols": [
+        [
+          "BKKT",
+          4646.1154377
+        ],
+        [
+          "IREN",
+          4630.355629999999
+        ],
+        [
+          "CRML",
+          2523.0910049999984
+        ],
+        [
+          "ABSI",
+          2446.9383499999994
+        ],
+        [
+          "WOLF",
+          2422.06505
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "UUUU",
+          -2729.627810000002
+        ],
+        [
+          "NVTS",
+          -3628.9424149999995
+        ],
+        [
+          "NBY",
+          -4359.361825000002
+        ],
+        [
+          "BATL",
+          -5469.900557999999
+        ],
+        [
+          "FCEL",
+          -7393.23276
+        ]
+      ],
+      "increment_without_top_symbol": -18464.046342229005,
+      "membership_overlap": 0.3389830508474576,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 100,
+          "pnl": 7175.936413712004,
+          "entry_gross": 468543.1087999999
+        },
+        "observed": {
+          "trades": 198,
+          "pnl": -406.3994354880031,
+          "entry_gross": 1029699.2268000001
+        },
+        "confidence_1.0": {
+          "trades": 81,
+          "pnl": 6696.546646899999,
+          "entry_gross": 538152.0868999999
+        },
+        "reserve_9_20": {
+          "trades": 98,
+          "pnl": -7582.3358492000025,
+          "entry_gross": 561156.1179999999
+        },
+        "confidence_0.5": {
+          "trades": 106,
+          "pnl": -6105.672927400003,
+          "entry_gross": 460700.0124000001
+        },
+        "confidence_0.25": {
+          "trades": 11,
+          "pnl": -997.2731549879993,
+          "entry_gross": 30847.1275
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 13411.531469041005,
+          "entry_gross": 1052775.4593999998
+        },
+        "observed": {
+          "trades": 182,
+          "pnl": 7215.4270041410045,
+          "entry_gross": 986404.2536
+        },
+        "confidence_0.5": {
+          "trades": 78,
+          "pnl": 1561.2037255000037,
+          "entry_gross": 468938.3345
+        },
+        "confidence_0.25": {
+          "trades": 93,
+          "pnl": -6445.534800558999,
+          "entry_gross": 310113.1489999999
+        },
+        "confidence_1.0": {
+          "trades": 26,
+          "pnl": 18295.862544100004,
+          "entry_gross": 273723.9759
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 6196.104464899999,
+          "entry_gross": 66371.2058
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -6235.595055329001,
+        "reserve_9_20": -7582.3358492000025
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -13817.930904528883,
+        "borrow_0_spread_2": -13715.146180057882,
+        "borrow_10_spread_1": -13797.353538198471,
+        "borrow_10_spread_2": -13694.56881372747,
+        "borrow_30_spread_1": -13756.198805537651,
+        "borrow_30_spread_2": -13653.41408106665
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S4_FULL_R4": {
+      "control": "S1_R4",
+      "month_differences": {
+        "2025-09": 20.652913500009163,
+        "2025-11": 5669.196884799996,
+        "2026-01": -7166.5093617,
+        "2026-03": -2648.302575199992,
+        "2026-05": -2071.755300384998,
+        "2026-07": -1251.124895
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -7468.495247484994,
+        "2025-11": -13117.039218784981,
+        "2026-01": -281.33297228498486,
+        "2026-03": -4799.539758784993,
+        "2026-05": -5376.087033599987,
+        "2026-07": -6196.717438984985
+      },
+      "top_incremental_symbols": [
+        [
+          "TERN",
+          3408.9169749999974
+        ],
+        [
+          "LUMN",
+          1451.5744100000006
+        ],
+        [
+          "HIMS",
+          1320.9928200000006
+        ],
+        [
+          "VELO",
+          983.4242250000001
+        ],
+        [
+          "FIGR",
+          983.1744300000003
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "CELC",
+          -1407.3022799999999
+        ],
+        [
+          "BATL",
+          -1525.6857494999986
+        ],
+        [
+          "NCI",
+          -2312.8296
+        ],
+        [
+          "NBY",
+          -3191.096125
+        ],
+        [
+          "HYMC",
+          -3375.6436949999998
+        ]
+      ],
+      "increment_without_top_symbol": -10856.759308984983,
+      "membership_overlap": 0.9203187250996016,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 187,
+          "pnl": 4016.8057709909986,
+          "entry_gross": 643374.5647
+        },
+        "observed": {
+          "trades": 224,
+          "pnl": -4609.0601992089805,
+          "entry_gross": 838337.8205000003
+        },
+        "confidence_1.0": {
+          "trades": 156,
+          "pnl": 14247.132101000007,
+          "entry_gross": 728045.3412000003
+        },
+        "confidence_0.5": {
+          "trades": 82,
+          "pnl": -13015.330150608992,
+          "entry_gross": 166742.2185
+        },
+        "reserve_9_20": {
+          "trades": 51,
+          "pnl": -2785.003820599999,
+          "entry_gross": 251412.99499999997
+        },
+        "unknown": {
+          "trades": 14,
+          "pnl": 5840.862149599998,
+          "entry_gross": 56449.73920000001
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 10311.910184176004,
+          "entry_gross": 772903.1321999998
+        },
+        "observed": {
+          "trades": 229,
+          "pnl": -463.4672422239803,
+          "entry_gross": 922499.1082000001
+        },
+        "confidence_1.0": {
+          "trades": 154,
+          "pnl": 18575.110582,
+          "entry_gross": 771327.6577999997
+        },
+        "confidence_0.5": {
+          "trades": 90,
+          "pnl": -9895.466297623994,
+          "entry_gross": 229273.3994
+        },
+        "reserve_9_20": {
+          "trades": 47,
+          "pnl": -1632.2658997999945,
+          "entry_gross": 227697.92500000002
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 9143.1115266,
+          "entry_gross": 78101.94900000001
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -6295.104413185005,
+        "reserve_9_20": -1152.7379208000045
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -7447.842333985274,
+        "borrow_0_spread_2": -7224.2543829702745,
+        "borrow_10_spread_1": -8036.715264962261,
+        "borrow_10_spread_2": -7813.127313947261,
+        "borrow_30_spread_1": -9214.461126916232,
+        "borrow_30_spread_2": -8990.873175901233
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S4_FULL_R5": {
+      "control": "S1_R5",
+      "month_differences": {
+        "2025-09": -57.74897549998968,
+        "2025-11": 208.4388358000042,
+        "2026-01": 2062.699921200001,
+        "2026-03": -209.73380249999173,
+        "2026-05": -2960.1910494090007,
+        "2026-07": -857.8366450000078
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -1756.622739908995,
+        "2025-11": -2022.810551208989,
+        "2026-01": -3877.0716366089855,
+        "2026-03": -1604.637912908993,
+        "2026-05": 1145.819334000016,
+        "2026-07": -956.5350704089769
+      },
+      "top_incremental_symbols": [
+        [
+          "CRML",
+          1728.7822649999998
+        ],
+        [
+          "WOLF",
+          602.7174850000006
+        ],
+        [
+          "NVA",
+          550.8000000000002
+        ],
+        [
+          "VELO",
+          394.8778400000002
+        ],
+        [
+          "TERN",
+          337.41060999999854
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "FLNC",
+          -621.9334449999992
+        ],
+        [
+          "ABSI",
+          -671.704
+        ],
+        [
+          "FCEL",
+          -801.0134599999997
+        ],
+        [
+          "CELC",
+          -807.2896799999999
+        ],
+        [
+          "PCT",
+          -832.4111249999997
+        ]
+      ],
+      "increment_without_top_symbol": -3543.1539804089844,
+      "membership_overlap": 0.9959839357429718,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 10870.589980139004,
+          "entry_gross": 519958.2112000003
+        },
+        "observed": {
+          "trades": 234,
+          "pnl": 3157.0425719390223,
+          "entry_gross": 796046.3600000003
+        },
+        "confidence_0.5": {
+          "trades": 82,
+          "pnl": 5415.573712300003,
+          "entry_gross": 209229.1601999999
+        },
+        "confidence_0.25": {
+          "trades": 82,
+          "pnl": -5862.248132660999,
+          "entry_gross": 106703.63149999994
+        },
+        "confidence_1.0": {
+          "trades": 85,
+          "pnl": 7746.398544600014,
+          "entry_gross": 539044.5774999999
+        },
+        "reserve_9_20": {
+          "trades": 52,
+          "pnl": -3570.865855899994,
+          "entry_gross": 335019.1579999999
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 4142.6815523,
+          "entry_gross": 58931.00919999999
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 11779.852459748006,
+          "entry_gross": 540909.5827000001
+        },
+        "observed": {
+          "trades": 233,
+          "pnl": 4405.963582048026,
+          "entry_gross": 757716.7811000004
+        },
+        "confidence_0.5": {
+          "trades": 82,
+          "pnl": 6572.178887000002,
+          "entry_gross": 227421.39020000008
+        },
+        "confidence_0.25": {
+          "trades": 82,
+          "pnl": -5027.570145251998,
+          "entry_gross": 114270.6955
+        },
+        "confidence_1.0": {
+          "trades": 84,
+          "pnl": 7569.487097900014,
+          "entry_gross": 479174.3059999998
+        },
+        "reserve_9_20": {
+          "trades": 51,
+          "pnl": -2665.7566200999963,
+          "entry_gross": 279956.809
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 4708.1322576,
+          "entry_gross": 63149.61060000001
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -909.2624796090022,
+        "reserve_9_20": -905.1092357999978
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -1814.371715408808,
+        "borrow_0_spread_2": -1880.5059218178085,
+        "borrow_10_spread_1": -2443.354369214835,
+        "borrow_10_spread_2": -2509.488575623835,
+        "borrow_30_spread_1": -3701.319676826888,
+        "borrow_30_spread_2": -3767.4538832358885
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S4_R4": {
+      "control": "S1_R4",
+      "month_differences": {
+        "2025-09": 45.73818850001044,
+        "2025-11": 3646.3827811999936,
+        "2026-01": -2902.1730412000024,
+        "2026-03": -5124.780190999989,
+        "2026-05": -5386.703780320999,
+        "2026-07": -1368.585264999997
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -11135.859496320994,
+        "2025-11": -14736.504089020978,
+        "2026-01": -8187.9482666209815,
+        "2026-03": -5965.341116820995,
+        "2026-05": -5703.417527499985,
+        "2026-07": -9721.536042820986
+      },
+      "top_incremental_symbols": [
+        [
+          "TERN",
+          3525.522249999999
+        ],
+        [
+          "HIMS",
+          1950.0370200000004
+        ],
+        [
+          "MBX",
+          1558.703849999999
+        ],
+        [
+          "LUMN",
+          1454.858515
+        ],
+        [
+          "ALM",
+          1006.7122999999997
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "CELC",
+          -1461.8488799999998
+        ],
+        [
+          "NBY",
+          -1752.3985500000001
+        ],
+        [
+          "HIMX",
+          -2051.6917150000018
+        ],
+        [
+          "NCI",
+          -2488.5593000000003
+        ],
+        [
+          "BATL",
+          -3691.029887900001
+        ]
+      ],
+      "increment_without_top_symbol": -14615.643557820982,
+      "membership_overlap": 0.9153846153846154,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 191,
+          "pnl": 2021.1877373550062,
+          "entry_gross": 558430.1140999999
+        },
+        "observed": {
+          "trades": 239,
+          "pnl": -8692.586346844979,
+          "entry_gross": 821426.9314999997
+        },
+        "confidence_1.0": {
+          "trades": 169,
+          "pnl": 9880.9229144,
+          "entry_gross": 709154.6317999997
+        },
+        "confidence_0.5": {
+          "trades": 85,
+          "pnl": -12291.399937844997,
+          "entry_gross": 170143.4273
+        },
+        "reserve_9_20": {
+          "trades": 63,
+          "pnl": -4431.664760800001,
+          "entry_gross": 320867.94499999995
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 6282.109323400001,
+          "entry_gross": 57871.1276
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 10311.910184176004,
+          "entry_gross": 772903.1321999998
+        },
+        "observed": {
+          "trades": 229,
+          "pnl": -463.4672422239803,
+          "entry_gross": 922499.1082000001
+        },
+        "confidence_1.0": {
+          "trades": 154,
+          "pnl": 18575.110582,
+          "entry_gross": 771327.6577999997
+        },
+        "confidence_0.5": {
+          "trades": 90,
+          "pnl": -9895.466297623994,
+          "entry_gross": 229273.3994
+        },
+        "reserve_9_20": {
+          "trades": 47,
+          "pnl": -1632.2658997999945,
+          "entry_gross": 227697.92500000002
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 9143.1115266,
+          "entry_gross": 78101.94900000001
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -8290.722446820997,
+        "reserve_9_20": -2799.398861000007
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -11090.121307820853,
+        "borrow_0_spread_2": -10837.342894641853,
+        "borrow_10_spread_1": -11626.491856418663,
+        "borrow_10_spread_2": -11373.713443239662,
+        "borrow_30_spread_1": -12699.232953614277,
+        "borrow_30_spread_2": -12446.45454043528
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    },
+    "S4_R5": {
+      "control": "S1_R5",
+      "month_differences": {
+        "2025-09": -57.74897549998968,
+        "2025-11": 208.4388358000042,
+        "2026-01": 2081.1049361999976,
+        "2026-03": -858.317415699983,
+        "2026-05": -3526.9193365090005,
+        "2026-07": -571.4862050000161
+      },
+      "positive_increment_months": 2,
+      "leave_one_month_out": {
+        "2025-09": -2667.1791852089978,
+        "2025-11": -2933.3669965089916,
+        "2026-01": -4806.033096908985,
+        "2026-03": -1866.6107450090044,
+        "2026-05": 801.991175800013,
+        "2026-07": -2153.4419557089714
+      },
+      "top_incremental_symbols": [
+        [
+          "CRML",
+          1728.7822649999998
+        ],
+        [
+          "NVA",
+          548.5050000000006
+        ],
+        [
+          "OSS",
+          426.59353
+        ],
+        [
+          "VELO",
+          415.96362000000056
+        ],
+        [
+          "TERN",
+          337.41060999999854
+        ]
+      ],
+      "bottom_incremental_symbols": [
+        [
+          "FLNC",
+          -602.6983899999996
+        ],
+        [
+          "CELC",
+          -807.2896799999999
+        ],
+        [
+          "FCEL",
+          -873.4986599999995
+        ],
+        [
+          "BATL",
+          -926.1747139000036
+        ],
+        [
+          "PCT",
+          -1176.5081249999998
+        ]
+      ],
+      "increment_without_top_symbol": -4453.710425708987,
+      "membership_overlap": 0.992,
+      "candidate_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 9610.778389838999,
+          "entry_gross": 502008.02139999974
+        },
+        "observed": {
+          "trades": 235,
+          "pnl": 2291.1912998390117,
+          "entry_gross": 790445.8020000001
+        },
+        "confidence_0.5": {
+          "trades": 82,
+          "pnl": 5493.180442300003,
+          "entry_gross": 210033.7202
+        },
+        "confidence_0.25": {
+          "trades": 82,
+          "pnl": -5842.951324761,
+          "entry_gross": 106112.90349999997
+        },
+        "confidence_1.0": {
+          "trades": 86,
+          "pnl": 6738.938561400013,
+          "entry_gross": 533180.4156999997
+        },
+        "reserve_9_20": {
+          "trades": 53,
+          "pnl": -3221.610710899996,
+          "entry_gross": 347319.01799999987
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 4097.9763791,
+          "entry_gross": 58881.237400000005
+        }
+      },
+      "control_attribution": {
+        "primary_1_8": {
+          "trades": 197,
+          "pnl": 11779.852459748006,
+          "entry_gross": 540909.5827000001
+        },
+        "observed": {
+          "trades": 233,
+          "pnl": 4405.963582048026,
+          "entry_gross": 757716.7811000004
+        },
+        "confidence_0.5": {
+          "trades": 82,
+          "pnl": 6572.178887000002,
+          "entry_gross": 227421.39020000008
+        },
+        "confidence_0.25": {
+          "trades": 82,
+          "pnl": -5027.570145251998,
+          "entry_gross": 114270.6955
+        },
+        "confidence_1.0": {
+          "trades": 84,
+          "pnl": 7569.487097900014,
+          "entry_gross": 479174.3059999998
+        },
+        "reserve_9_20": {
+          "trades": 51,
+          "pnl": -2665.7566200999963,
+          "entry_gross": 279956.809
+        },
+        "unknown": {
+          "trades": 15,
+          "pnl": 4708.1322576,
+          "entry_gross": 63149.61060000001
+        }
+      },
+      "primary_reserve_increment": {
+        "primary_1_8": -2169.0740699090074,
+        "reserve_9_20": -555.8540907999995
+      },
+      "scenario_increments": {
+        "borrow_0_spread_1": -2724.928160708907,
+        "borrow_0_spread_2": -2780.068412417908,
+        "borrow_10_spread_1": -3330.242962289729,
+        "borrow_10_spread_2": -3385.383213998729,
+        "borrow_30_spread_1": -4540.872565451373,
+        "borrow_30_spread_2": -4596.012817160374
+      },
+      "interpretation": "Fragility diagnostics on inspected IS, not independent validation; no date/ticket removed from policy"
+    }
+  }
+}

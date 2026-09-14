@@ -1,0 +1,1341 @@
+{
+  "timestamp": "2026-09-14T00:06:33+00:00",
+  "books": {
+    "S0_R4": {
+      "0.0": {
+        "total_pnl": 11602.00382615914,
+        "per_day": 93.56454698515435,
+        "max_dd": -21721.51660659995,
+        "red_loss_sum": -19029.744481600002,
+        "worst_month": -12609.485569999999,
+        "worst_day": -4968.341709999964,
+        "avg_exposure": 43895.86838222311,
+        "peak_exposure": 106583.43500000001,
+        "utilization": 0.45931731204466175,
+        "terminal_stale_gross": 28950.68,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.1": {
+        "total_pnl": 8452.26367018625,
+        "per_day": 68.1634166950504,
+        "max_dd": -21836.840069599857,
+        "red_loss_sum": -19146.3863946,
+        "worst_month": -12873.645939999995,
+        "worst_day": -4954.579137499983,
+        "avg_exposure": 44248.47616963347,
+        "peak_exposure": 104350.05700000002,
+        "utilization": 0.46917227483296703,
+        "terminal_stale_gross": 30826.400000000005,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.5": {
+        "total_pnl": -2124.993629924211,
+        "per_day": -17.137045402614604,
+        "max_dd": -25766.437514900026,
+        "red_loss_sum": -21963.237292223996,
+        "worst_month": -13985.693191499999,
+        "worst_day": -8582.666140000016,
+        "avg_exposure": 45607.5595421753,
+        "peak_exposure": 95582.78000000001,
+        "utilization": 0.5077739767152425,
+        "terminal_stale_gross": 37177.425,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      }
+    },
+    "S1_R4": {
+      "0.0": {
+        "total_pnl": 8679.644284375958,
+        "per_day": 69.99713132561256,
+        "max_dd": -27697.54008990011,
+        "red_loss_sum": -24908.244674299993,
+        "worst_month": -17417.0213041,
+        "worst_day": -5318.582410000003,
+        "avg_exposure": 49695.83364749801,
+        "peak_exposure": 113765.90000000001,
+        "utilization": 0.5439665293576434,
+        "terminal_stale_gross": 26117.710000000003,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 766,
+          "missing_scheduled_exit": 16,
+          "delayed_exit_fills": 10,
+          "delay_calendar_days": 202,
+          "missed_entry": 4,
+          "zero_share_order": 3
+        }
+      },
+      "0.1": {
+        "total_pnl": 5573.10464090301,
+        "per_day": 44.94439226534685,
+        "max_dd": -27815.73285840002,
+        "red_loss_sum": -25004.488737599997,
+        "worst_month": -17655.610175600003,
+        "worst_day": -5285.99519999999,
+        "avg_exposure": 49757.677595338646,
+        "peak_exposure": 108908.72800000002,
+        "utilization": 0.5526951759811705,
+        "terminal_stale_gross": 27763.362,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 766,
+          "missing_scheduled_exit": 16,
+          "delayed_exit_fills": 10,
+          "delay_calendar_days": 202,
+          "missed_entry": 4,
+          "zero_share_order": 4
+        }
+      },
+      "0.5": {
+        "total_pnl": -5168.973694916291,
+        "per_day": -41.68527173319589,
+        "max_dd": -30938.10972380011,
+        "red_loss_sum": -25411.878023800004,
+        "worst_month": -18634.06195560001,
+        "worst_day": -9891.813599999994,
+        "avg_exposure": 49989.50545862152,
+        "peak_exposure": 100595.185,
+        "utilization": 0.5868712046270159,
+        "terminal_stale_gross": 33017.340000000004,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 761,
+          "missing_scheduled_exit": 15,
+          "zero_share_order": 1,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 198,
+          "missed_entry": 4
+        }
+      }
+    },
+    "S4_R4": {
+      "0.0": {
+        "total_pnl": -2410.477023444895,
+        "per_day": -19.439330834233026,
+        "max_dd": -25487.38462520008,
+        "red_loss_sum": -21216.123704599988,
+        "worst_month": -17371.28311559999,
+        "worst_day": -4163.551999999996,
+        "avg_exposure": 55134.40180683666,
+        "peak_exposure": 102403.71500000001,
+        "utilization": 0.6236741541135365,
+        "terminal_stale_gross": 39534.495,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 1030,
+          "missing_scheduled_exit": 17,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 195,
+          "missed_entry": 4,
+          "zero_share_order": 7
+        }
+      },
+      "0.1": {
+        "total_pnl": -6858.514854700174,
+        "per_day": -55.310603666936885,
+        "max_dd": -26598.331181000147,
+        "red_loss_sum": -22341.341239799996,
+        "worst_month": -17635.647640599993,
+        "worst_day": -4470.779799999975,
+        "avg_exposure": 55008.31860588845,
+        "peak_exposure": 102136.868,
+        "utilization": 0.6392216585959262,
+        "terminal_stale_gross": 40453.22600000001,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 889,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 195,
+          "missed_entry": 4,
+          "zero_share_order": 5
+        }
+      },
+      "0.5": {
+        "total_pnl": -20457.89619600006,
+        "per_day": -164.98303383871016,
+        "max_dd": -32604.353886000114,
+        "red_loss_sum": -29626.777164500007,
+        "worst_month": -18632.510880600013,
+        "worst_day": -8471.152134999968,
+        "avg_exposure": 54774.478445641435,
+        "peak_exposure": 100719.42,
+        "utilization": 0.7010604283873623,
+        "terminal_stale_gross": 45614.97,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 884,
+          "missing_scheduled_exit": 14,
+          "delayed_exit_fills": 8,
+          "delay_calendar_days": 191,
+          "missed_entry": 4,
+          "zero_share_order": 1
+        }
+      }
+    },
+    "S0_R5": {
+      "0.0": {
+        "total_pnl": 13086.689025548316,
+        "per_day": 105.53781472216384,
+        "max_dd": -12261.313223999954,
+        "red_loss_sum": -10781.327268999998,
+        "worst_month": -6772.299150999998,
+        "worst_day": -3941.9890000000014,
+        "avg_exposure": 30230.87300596813,
+        "peak_exposure": 89184.66500000001,
+        "utilization": 0.2982106132764164,
+        "terminal_stale_gross": 19063.4,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.1": {
+        "total_pnl": 11155.888098348281,
+        "per_day": 89.96683950280872,
+        "max_dd": -12385.02606769999,
+        "red_loss_sum": -10909.9476127,
+        "worst_month": -6920.1533924999985,
+        "worst_day": -3866.400999999998,
+        "avg_exposure": 30883.327020071716,
+        "peak_exposure": 90850.96100000001,
+        "utilization": 0.30728740687200545,
+        "terminal_stale_gross": 20768.407000000003,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.5": {
+        "total_pnl": 3570.884261257117,
+        "per_day": 28.79745371981546,
+        "max_dd": -16384.60992269995,
+        "red_loss_sum": -11563.451367700001,
+        "worst_month": -7471.8383874999945,
+        "worst_day": -6663.910809999972,
+        "avg_exposure": 33191.19984520319,
+        "peak_exposure": 93317.77,
+        "utilization": 0.34207842732899946,
+        "terminal_stale_gross": 27572.489999999998,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      }
+    },
+    "S1_R5": {
+      "0.0": {
+        "total_pnl": 9114.09583964794,
+        "per_day": 73.50077290038661,
+        "max_dd": -18653.369418999966,
+        "red_loss_sum": -16793.783120252003,
+        "worst_month": -8357.2568002,
+        "worst_day": -4476.274999999994,
+        "avg_exposure": 44045.10974648606,
+        "peak_exposure": 121159.63500000001,
+        "utilization": 0.44662758314452394,
+        "terminal_stale_gross": 27517.83,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 948,
+          "missing_scheduled_exit": 17,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.1": {
+        "total_pnl": 6111.499631748025,
+        "per_day": 49.28628735280666,
+        "max_dd": -19272.024601000026,
+        "red_loss_sum": -18305.603122452,
+        "worst_month": -8838.770831200003,
+        "worst_day": -5198.474400000006,
+        "avg_exposure": 44528.21207878885,
+        "peak_exposure": 118087.29900000001,
+        "utilization": 0.45823570699330696,
+        "terminal_stale_gross": 29611.197,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 948,
+          "missing_scheduled_exit": 17,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.5": {
+        "total_pnl": -5052.741635734186,
+        "per_day": -40.74791641721118,
+        "max_dd": -24275.68218699994,
+        "red_loss_sum": -25647.936169034,
+        "worst_month": -10812.653059200004,
+        "worst_day": -8479.170400000003,
+        "avg_exposure": 46419.56456985658,
+        "peak_exposure": 105044.16,
+        "utilization": 0.507132729385341,
+        "terminal_stale_gross": 37147.5,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 948,
+          "missing_scheduled_exit": 17,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3,
+          "zero_share_order": 1
+        }
+      }
+    },
+    "S3_R4": {
+      "0.0": {
+        "total_pnl": 8534.337192803781,
+        "per_day": 68.82529994196598,
+        "max_dd": -25410.560029299944,
+        "red_loss_sum": -21578.6676743,
+        "worst_month": -11596.083998900001,
+        "worst_day": -4863.242759999994,
+        "avg_exposure": 51768.345960055776,
+        "peak_exposure": 113232.09500000002,
+        "utilization": 0.551199327274875,
+        "terminal_stale_gross": 30831.865000000005,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 567,
+          "missing_scheduled_exit": 11,
+          "delayed_exit_fills": 6,
+          "delay_calendar_days": 141,
+          "missed_entry": 2
+        }
+      },
+      "0.1": {
+        "total_pnl": 4656.883431740032,
+        "per_day": 37.55551154629058,
+        "max_dd": -25891.482908500024,
+        "red_loss_sum": -22082.167363500004,
+        "worst_month": -11596.083998900001,
+        "worst_day": -4985.6584,
+        "avg_exposure": 51662.04905515538,
+        "peak_exposure": 107115.63350000001,
+        "utilization": 0.5595418102961752,
+        "terminal_stale_gross": 32598.351500000004,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 567,
+          "missing_scheduled_exit": 11,
+          "delayed_exit_fills": 6,
+          "delay_calendar_days": 141,
+          "missed_entry": 2
+        }
+      },
+      "0.5": {
+        "total_pnl": -8520.023015424973,
+        "per_day": -68.70986302762076,
+        "max_dd": -27906.229249900003,
+        "red_loss_sum": -29875.027404124994,
+        "worst_month": -12564.25692099999,
+        "worst_day": -11107.443400000004,
+        "avg_exposure": 51459.57213785658,
+        "peak_exposure": 101528.16750000001,
+        "utilization": 0.594697844367727,
+        "terminal_stale_gross": 37338.93,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 562,
+          "missing_scheduled_exit": 10,
+          "delayed_exit_fills": 5,
+          "delay_calendar_days": 137,
+          "missed_entry": 2
+        }
+      }
+    },
+    "L0": {
+      "0.0": {
+        "total_pnl": -1191.6060980299808,
+        "per_day": -9.609726597015975,
+        "max_dd": -30748.32170999996,
+        "red_loss_sum": -14865.55611613,
+        "worst_month": -5875.138249400003,
+        "worst_day": -6386.633199999997,
+        "avg_exposure": 50242.93493306773,
+        "peak_exposure": 109169.285,
+        "utilization": 0.5010134885077514,
+        "terminal_stale_gross": 6140.140000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.1": {
+        "total_pnl": -1893.6138566301088,
+        "per_day": -15.27107948895249,
+        "max_dd": -30732.707645000017,
+        "red_loss_sum": -15591.36525592998,
+        "worst_month": -5896.321676599989,
+        "worst_day": -6380.392999999996,
+        "avg_exposure": 49725.996686454186,
+        "peak_exposure": 108436.316,
+        "utilization": 0.49849812681884526,
+        "terminal_stale_gross": 5526.126000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.5": {
+        "total_pnl": -4714.176229430086,
+        "per_day": -38.01755023733941,
+        "max_dd": -31775.394639430073,
+        "red_loss_sum": -18436.231358529978,
+        "worst_month": -6257.563288629985,
+        "worst_day": -6400.6831999999995,
+        "avg_exposure": 47660.815064143426,
+        "peak_exposure": 105719.18000000001,
+        "utilization": 0.4881075967543317,
+        "terminal_stale_gross": 3070.0700000000006,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      }
+    },
+    "L4": {
+      "0.0": {
+        "total_pnl": -470.49996900599217,
+        "per_day": -3.7943545887580012,
+        "max_dd": -29513.955405,
+        "red_loss_sum": -14545.884430606013,
+        "worst_month": -6879.118992400004,
+        "worst_day": -6116.220000000001,
+        "avg_exposure": 40419.93622589642,
+        "peak_exposure": 101565.52,
+        "utilization": 0.397658800429719,
+        "terminal_stale_gross": 3106.51,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.1": {
+        "total_pnl": -803.5668358059629,
+        "per_day": -6.480377708112604,
+        "max_dd": -29431.13385,
+        "red_loss_sum": -14845.87706740601,
+        "worst_month": -6848.1899843,
+        "worst_day": -6094.457399999999,
+        "avg_exposure": 40081.29247011952,
+        "peak_exposure": 100970.174,
+        "utilization": 0.3953031649781254,
+        "terminal_stale_gross": 2795.8590000000004,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.5": {
+        "total_pnl": -2032.83252600595,
+        "per_day": -16.39381069359637,
+        "max_dd": -29218.86255280595,
+        "red_loss_sum": -15976.43193830597,
+        "worst_month": -6762.871536900001,
+        "worst_day": -6019.747000000003,
+        "avg_exposure": 38746.42221075697,
+        "peak_exposure": 98442.765,
+        "utilization": 0.3859105966839939,
+        "terminal_stale_gross": 1553.255,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      }
+    },
+    "L5": {
+      "0.0": {
+        "total_pnl": 5992.490798906016,
+        "per_day": 48.32653870085497,
+        "max_dd": -19831.119060000026,
+        "red_loss_sum": -6894.845120394007,
+        "worst_month": -3459.817594300002,
+        "worst_day": -3805.342399999994,
+        "avg_exposure": 25375.47987171315,
+        "peak_exposure": 69242.575,
+        "utilization": 0.2416306370357673,
+        "terminal_stale_gross": 1557.8100000000002,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.1": {
+        "total_pnl": 5836.372342006056,
+        "per_day": 47.06751888714561,
+        "max_dd": -19805.946039999995,
+        "red_loss_sum": -7044.732525293989,
+        "worst_month": -3455.0387493000007,
+        "worst_day": -3801.7724000000017,
+        "avg_exposure": 25226.74421553785,
+        "peak_exposure": 68967.654,
+        "utilization": 0.24051002981670136,
+        "terminal_stale_gross": 1402.0290000000002,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.5": {
+        "total_pnl": 5206.8784002060565,
+        "per_day": 41.99095484037142,
+        "max_dd": -19683.291234999997,
+        "red_loss_sum": -7649.148386993998,
+        "worst_month": -3433.6098912000007,
+        "worst_day": -3775.364799999981,
+        "avg_exposure": 24622.675030278886,
+        "peak_exposure": 67912.74,
+        "utilization": 0.23585474686110264,
+        "terminal_stale_gross": 778.9050000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      }
+    },
+    "LONG_EQ20": {
+      "0.0": {
+        "total_pnl": 8290.503759583939,
+        "per_day": 66.85890128696725,
+        "max_dd": -27856.329141900074,
+        "red_loss_sum": -8125.189085400007,
+        "worst_month": -8125.189085400007,
+        "worst_day": -7041.633600000001,
+        "avg_exposure": 50423.71885386454,
+        "peak_exposure": 111628.2089,
+        "utilization": 0.48939108847509255,
+        "terminal_stale_gross": 5239.360000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 280,
+          "missing_scheduled_exit": 4,
+          "delayed_exit_fills": 2,
+          "delay_calendar_days": 6
+        }
+      },
+      "0.1": {
+        "total_pnl": 7750.432704984036,
+        "per_day": 62.50348955632287,
+        "max_dd": -28205.11542279998,
+        "red_loss_sum": -8128.143175400013,
+        "worst_month": -8128.143175400013,
+        "worst_day": -7117.553600000014,
+        "avg_exposure": 50127.57514828686,
+        "peak_exposure": 111374.3898,
+        "utilization": 0.48782970320916963,
+        "terminal_stale_gross": 4715.424000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 280,
+          "missing_scheduled_exit": 4,
+          "delayed_exit_fills": 2,
+          "delay_calendar_days": 6
+        }
+      },
+      "0.5": {
+        "total_pnl": 5438.680325883979,
+        "per_day": 43.86032520874177,
+        "max_dd": -29696.131198600007,
+        "red_loss_sum": -8194.8214142,
+        "worst_month": -8194.8214142,
+        "worst_day": -7404.809899999993,
+        "avg_exposure": 48911.66469537052,
+        "peak_exposure": 110379.55960000001,
+        "utilization": 0.4814306383885744,
+        "terminal_stale_gross": 2593.665,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 280,
+          "missing_scheduled_exit": 4,
+          "delayed_exit_fills": 2,
+          "delay_calendar_days": 6
+        }
+      }
+    },
+    "S4_R5": {
+      "0.0": {
+        "total_pnl": 6389.167678939033,
+        "per_day": 51.525545797895425,
+        "max_dd": -19152.67465869998,
+        "red_loss_sum": -20170.01259646099,
+        "worst_month": -8409.856759299993,
+        "worst_day": -5702.6600000000035,
+        "avg_exposure": 50067.15624206375,
+        "peak_exposure": 117332.87000000001,
+        "utilization": 0.5086757262664521,
+        "terminal_stale_gross": 33693.22,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 948,
+          "missing_scheduled_exit": 17,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.1": {
+        "total_pnl": 2635.699210148159,
+        "per_day": 21.255638791517413,
+        "max_dd": -20278.53335669999,
+        "red_loss_sum": -21923.92187435198,
+        "worst_month": -9204.258179399993,
+        "worst_day": -6168.400200000004,
+        "avg_exposure": 50389.59721422311,
+        "peak_exposure": 113028.20100000002,
+        "utilization": 0.5235086786304086,
+        "terminal_stale_gross": 36139.158,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 948,
+          "missing_scheduled_exit": 17,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.5": {
+        "total_pnl": -10097.71677197999,
+        "per_day": -81.43319977403219,
+        "max_dd": -26118.952777400074,
+        "red_loss_sum": -28247.943322880026,
+        "worst_month": -13366.24247660002,
+        "worst_day": -8045.807799999995,
+        "avg_exposure": 51263.92533047012,
+        "peak_exposure": 100266.7418,
+        "utilization": 0.5804448151725216,
+        "terminal_stale_gross": 43416.00000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 948,
+          "missing_scheduled_exit": 17,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      }
+    },
+    "S4_FULL_R4": {
+      "0.0": {
+        "total_pnl": 1231.8019503906835,
+        "per_day": 9.93388669669906,
+        "max_dd": -26745.714657800127,
+        "red_loss_sum": -19218.394875999988,
+        "worst_month": -17396.36839059999,
+        "worst_day": -4183.491999999998,
+        "avg_exposure": 55615.289741609566,
+        "peak_exposure": 102449.77,
+        "utilization": 0.6241067334263011,
+        "terminal_stale_gross": 38441.355,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 962,
+          "missing_scheduled_exit": 16,
+          "zero_share_order": 3,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 195,
+          "missed_entry": 4
+        }
+      },
+      "0.1": {
+        "total_pnl": -3723.21768670014,
+        "per_day": -30.02594908629145,
+        "max_dd": -27678.564000600018,
+        "red_loss_sum": -20392.25796119999,
+        "worst_month": -17642.110665599997,
+        "worst_day": -4475.852030000009,
+        "avg_exposure": 55521.432305187256,
+        "peak_exposure": 102149.043,
+        "utilization": 0.6403998659708445,
+        "terminal_stale_gross": 40183.154,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 889,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 195,
+          "missed_entry": 4,
+          "zero_share_order": 1
+        }
+      },
+      "0.5": {
+        "total_pnl": -19754.599553899898,
+        "per_day": -159.31128672499918,
+        "max_dd": -32410.10685589994,
+        "red_loss_sum": -27416.515006600013,
+        "worst_month": -18637.752495600012,
+        "worst_day": -8471.407134999958,
+        "avg_exposure": 54907.638630812755,
+        "peak_exposure": 100661.41500000001,
+        "utilization": 0.6987003554799726,
+        "terminal_stale_gross": 45107.64750000001,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 884,
+          "missing_scheduled_exit": 14,
+          "delayed_exit_fills": 8,
+          "delay_calendar_days": 191,
+          "missed_entry": 4,
+          "zero_share_order": 1
+        }
+      }
+    },
+    "S4_FULL_R5": {
+      "0.0": {
+        "total_pnl": 7299.724124239132,
+        "per_day": 58.86874293741236,
+        "max_dd": -19152.67465869998,
+        "red_loss_sum": -19603.284309360988,
+        "worst_month": -8409.856759299993,
+        "worst_day": -5896.572,
+        "avg_exposure": 50294.140606502,
+        "peak_exposure": 118533.36000000002,
+        "utilization": 0.5089515262813165,
+        "terminal_stale_gross": 33770.8,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 948,
+          "missing_scheduled_exit": 17,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.1": {
+        "total_pnl": 3546.016970248369,
+        "per_day": 28.596911050390073,
+        "max_dd": -20278.53335669999,
+        "red_loss_sum": -21532.641664851995,
+        "worst_month": -9204.258179399993,
+        "worst_day": -6488.791799999992,
+        "avg_exposure": 50576.19441972112,
+        "peak_exposure": 114258.89700000001,
+        "utilization": 0.5235131145494164,
+        "terminal_stale_gross": 36194.950000000004,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 948,
+          "missing_scheduled_exit": 17,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.5": {
+        "total_pnl": -10150.68032388002,
+        "per_day": -81.8603251925808,
+        "max_dd": -26118.952777400074,
+        "red_loss_sum": -28129.754572880014,
+        "worst_month": -13366.24247660002,
+        "worst_day": -8081.293000000005,
+        "avg_exposure": 51237.6788645259,
+        "peak_exposure": 100266.7418,
+        "utilization": 0.580686114751928,
+        "terminal_stale_gross": 43369.439999999995,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 948,
+          "missing_scheduled_exit": 17,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      }
+    },
+    "NORM8_R4": {
+      "0.0": {
+        "total_pnl": 3617.278550057934,
+        "per_day": 29.17160121014463,
+        "max_dd": -29392.26735660006,
+        "red_loss_sum": -25653.589065999997,
+        "worst_month": -18480.032776999993,
+        "worst_day": -4922.807000000001,
+        "avg_exposure": 48752.910818326694,
+        "peak_exposure": 110824.47,
+        "utilization": 0.5483540865941704,
+        "terminal_stale_gross": 27477.380000000005,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.1": {
+        "total_pnl": 630.6489556845772,
+        "per_day": 5.085878674875623,
+        "max_dd": -29558.446141000182,
+        "red_loss_sum": -25830.124725100002,
+        "worst_month": -18786.82409850001,
+        "worst_day": -5624.776899999983,
+        "avg_exposure": 48957.27775450997,
+        "peak_exposure": 107120.88400000002,
+        "utilization": 0.5587314304153281,
+        "terminal_stale_gross": 29171.813000000006,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.5": {
+        "total_pnl": -9421.287730198033,
+        "per_day": -75.97812685643575,
+        "max_dd": -32204.670658800038,
+        "red_loss_sum": -29854.885229098014,
+        "worst_month": -20262.70692500002,
+        "worst_day": -11040.487170000022,
+        "avg_exposure": 49490.134513378485,
+        "peak_exposure": 100279.31,
+        "utilization": 0.5965484465724893,
+        "terminal_stale_gross": 34364.79,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      }
+    },
+    "S0_R5_U125": {
+      "0.0": {
+        "total_pnl": 16260.920286485096,
+        "per_day": 131.1364539232669,
+        "max_dd": -15164.176373799957,
+        "red_loss_sum": -13370.503198799997,
+        "worst_month": -8461.622258,
+        "worst_day": -4516.665022500005,
+        "avg_exposure": 36719.3876518008,
+        "peak_exposure": 101805.89000000001,
+        "utilization": 0.30059310679962403,
+        "terminal_stale_gross": 23219.74,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.1": {
+        "total_pnl": 13881.129468184983,
+        "per_day": 111.94459248536276,
+        "max_dd": -15309.173665800015,
+        "red_loss_sum": -13515.500490799997,
+        "worst_month": -8632.915368000002,
+        "worst_day": -4515.257132500017,
+        "avg_exposure": 37739.31456367331,
+        "peak_exposure": 105688.93300000002,
+        "utilization": 0.30958667439866144,
+        "terminal_stale_gross": 25541.714,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.5": {
+        "total_pnl": 4410.688940993918,
+        "per_day": 35.57007210478966,
+        "max_dd": -20265.626180200008,
+        "red_loss_sum": -14207.462305200015,
+        "worst_month": -9344.824913000008,
+        "worst_day": -8389.429804999992,
+        "avg_exposure": 41111.30934163347,
+        "peak_exposure": 115132.865,
+        "utilization": 0.3427758794966083,
+        "terminal_stale_gross": 34213.67999999999,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      }
+    },
+    "BRIDGE_R5": {
+      "0.0": {
+        "total_pnl": 18071.927249176166,
+        "per_day": 145.74134878367875,
+        "max_dd": -17072.658627499986,
+        "red_loss_sum": -14869.947512499988,
+        "worst_month": -9086.368067499989,
+        "worst_day": -5583.006487499981,
+        "avg_exposure": 39512.039468247014,
+        "peak_exposure": 104424.695,
+        "utilization": 0.3868232643983832,
+        "terminal_stale_gross": 24154.510000000002,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.1": {
+        "total_pnl": 15656.476249176165,
+        "per_day": 126.26190523529165,
+        "max_dd": -17275.002627499984,
+        "red_loss_sum": -15072.291512499987,
+        "worst_month": -9288.712067499986,
+        "worst_day": -5583.006487499981,
+        "avg_exposure": 40649.39820657371,
+        "peak_exposure": 108432.884,
+        "utilization": 0.4024390778356065,
+        "terminal_stale_gross": 26569.961000000003,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      },
+      "0.5": {
+        "total_pnl": 5994.672249176176,
+        "per_day": 48.34413104174335,
+        "max_dd": -23035.395832499955,
+        "red_loss_sum": -16179.620877499987,
+        "worst_month": -10098.088067499986,
+        "worst_day": -9078.989249999999,
+        "avg_exposure": 45198.83315988048,
+        "peak_exposure": 124465.64000000001,
+        "utilization": 0.46858491981345973,
+        "terminal_stale_gross": 36231.76500000001,
+        "counters": {
+          "allocation_batches": 25,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delay_calendar_days": 147,
+          "missed_entry": 3
+        }
+      }
+    },
+    "L5_REC_SELECT8": {
+      "0.0": {
+        "total_pnl": 17991.636094228044,
+        "per_day": 145.093839469581,
+        "max_dd": -33133.21086999998,
+        "red_loss_sum": -6234.163766971995,
+        "worst_month": -4719.0964853,
+        "worst_day": -7373.700299999997,
+        "avg_exposure": 53420.78051075697,
+        "peak_exposure": 122605.595,
+        "utilization": 0.4788068973218814,
+        "terminal_stale_gross": 8012.62,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.1": {
+        "total_pnl": 17156.45540132803,
+        "per_day": 138.35851130103248,
+        "max_dd": -33111.507309999986,
+        "red_loss_sum": -6234.163766971995,
+        "worst_month": -4719.0964853,
+        "worst_day": -7374.569700000007,
+        "avg_exposure": 53181.90746454184,
+        "peak_exposure": 121816.516,
+        "utilization": 0.47763143857492435,
+        "terminal_stale_gross": 7164.531000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.5": {
+        "total_pnl": 13976.713047428027,
+        "per_day": 112.71542780183893,
+        "max_dd": -34943.49021500001,
+        "red_loss_sum": -9363.355927972,
+        "worst_month": -4719.0964853,
+        "worst_day": -7387.198699999994,
+        "avg_exposure": 52230.7527374502,
+        "peak_exposure": 120052.655,
+        "utilization": 0.4727291808296741,
+        "terminal_stale_gross": 3850.2200000000003,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      }
+    },
+    "L5_REC_NORM8": {
+      "0.0": {
+        "total_pnl": 19302.15814287802,
+        "per_day": 155.66256566837112,
+        "max_dd": -41311.329049999986,
+        "red_loss_sum": -16816.78405732201,
+        "worst_month": -8005.882126200033,
+        "worst_day": -7725.5674,
+        "avg_exposure": 56217.7983808765,
+        "peak_exposure": 133397.36000000002,
+        "utilization": 0.49004129500098736,
+        "terminal_stale_gross": 5028.72,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 3,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.1": {
+        "total_pnl": 18698.386883178027,
+        "per_day": 150.79344260627443,
+        "max_dd": -41320.753840000034,
+        "red_loss_sum": -17353.248797122014,
+        "worst_month": -7976.596453400039,
+        "worst_day": -7717.502200000003,
+        "avg_exposure": 55808.29482629483,
+        "peak_exposure": 133381.508,
+        "utilization": 0.48829194170977924,
+        "terminal_stale_gross": 4525.848000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 3,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.5": {
+        "total_pnl": 16389.958954177986,
+        "per_day": 132.17708834014505,
+        "max_dd": -41291.00967500001,
+        "red_loss_sum": -19600.27533052197,
+        "worst_month": -7934.585520799991,
+        "worst_day": -7692.311400000006,
+        "avg_exposure": 54097.3284059761,
+        "peak_exposure": 131285.755,
+        "utilization": 0.48055505766901163,
+        "terminal_stale_gross": 2514.36,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 3,
+          "stale_position_sessions": 197,
+          "missing_scheduled_exit": 1
+        }
+      }
+    },
+    "A5_RECOVERY_VOTES": {
+      "0.0": {
+        "total_pnl": 16401.80318116807,
+        "per_day": 132.2726062997425,
+        "max_dd": -32991.15932499996,
+        "red_loss_sum": -12176.565623732,
+        "worst_month": -6152.634002600003,
+        "worst_day": -6917.681399999987,
+        "avg_exposure": 52207.34844877291,
+        "peak_exposure": 120070.08,
+        "utilization": 0.4800326974650845,
+        "terminal_stale_gross": 8949.16,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.1": {
+        "total_pnl": 15533.384707867983,
+        "per_day": 125.26923151506438,
+        "max_dd": -32950.28486000004,
+        "red_loss_sum": -13018.531002032,
+        "worst_month": -6152.634002600003,
+        "worst_day": -6914.2738000000245,
+        "avg_exposure": 51942.29275753785,
+        "peak_exposure": 119086.03700000001,
+        "utilization": 0.4786547994524305,
+        "terminal_stale_gross": 8007.417000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.5": {
+        "total_pnl": 12120.306404568051,
+        "per_day": 97.74440648845203,
+        "max_dd": -34914.27236243199,
+        "red_loss_sum": -16490.478602032003,
+        "worst_month": -6152.634002600003,
+        "worst_day": -6896.856400000004,
+        "avg_exposure": 50859.936348374504,
+        "peak_exposure": 116583.3,
+        "utilization": 0.47274637717808987,
+        "terminal_stale_gross": 4292.475,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      }
+    },
+    "A6_RECOVERY_EQUAL": {
+      "0.0": {
+        "total_pnl": 18689.333027718036,
+        "per_day": 150.7204276428874,
+        "max_dd": -32772.825209999966,
+        "red_loss_sum": -5725.358299481991,
+        "worst_month": -4083.120058599999,
+        "worst_day": -7314.241500000004,
+        "avg_exposure": 52776.5554374502,
+        "peak_exposure": 121328.58,
+        "utilization": 0.480373229433976,
+        "terminal_stale_gross": 7804.5,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.1": {
+        "total_pnl": 17876.621034817945,
+        "per_day": 144.16629866788665,
+        "max_dd": -32780.02471000004,
+        "red_loss_sum": -5725.358299481991,
+        "worst_month": -4083.120058599999,
+        "worst_day": -7311.942099999986,
+        "avg_exposure": 52546.28547808765,
+        "peak_exposure": 120546.648,
+        "utilization": 0.4792029287038979,
+        "terminal_stale_gross": 6977.223000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.5": {
+        "total_pnl": 14584.501515418,
+        "per_day": 117.61694770498387,
+        "max_dd": -34730.45830999999,
+        "red_loss_sum": -6032.677529481998,
+        "worst_month": -4083.120058599999,
+        "worst_day": -7311.599600000001,
+        "avg_exposure": 51625.60408406375,
+        "peak_exposure": 118881.905,
+        "utilization": 0.47442348671815865,
+        "terminal_stale_gross": 3798.19,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      }
+    },
+    "EQ_MILD_LOSERS": {
+      "0.0": {
+        "total_pnl": 11741.584536699986,
+        "per_day": 94.69019787661279,
+        "max_dd": -27367.623313299977,
+        "red_loss_sum": -8405.336335800004,
+        "worst_month": -6944.4446522000035,
+        "worst_day": -7001.419999999998,
+        "avg_exposure": 51362.10532633466,
+        "peak_exposure": 115351.205,
+        "utilization": 0.4863450578653727,
+        "terminal_stale_gross": 7544.35,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 83,
+          "missing_scheduled_exit": 3,
+          "delayed_exit_fills": 2,
+          "delay_calendar_days": 6
+        }
+      },
+      "0.1": {
+        "total_pnl": 10927.819209500012,
+        "per_day": 88.12757427016139,
+        "max_dd": -28339.44356829996,
+        "red_loss_sum": -8405.336335800004,
+        "worst_month": -6944.4446522000035,
+        "worst_day": -7205.4100000000035,
+        "avg_exposure": 51105.80339167331,
+        "peak_exposure": 115374.755,
+        "utilization": 0.4850633281977154,
+        "terminal_stale_gross": 6789.915000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 83,
+          "missing_scheduled_exit": 3,
+          "delayed_exit_fills": 2,
+          "delay_calendar_days": 6
+        }
+      },
+      "0.5": {
+        "total_pnl": 7671.050125399997,
+        "per_day": 61.8633074629032,
+        "max_dd": -32188.21802829999,
+        "red_loss_sum": -11052.87239,
+        "worst_month": -6944.4446522000035,
+        "worst_day": -14659.570000000007,
+        "avg_exposure": 50063.350200039844,
+        "peak_exposure": 115303.55,
+        "utilization": 0.4796559204449508,
+        "terminal_stale_gross": 3694.13,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 83,
+          "missing_scheduled_exit": 3,
+          "delayed_exit_fills": 2,
+          "delay_calendar_days": 6
+        }
+      }
+    },
+    "A8_PATIENT_RECOVERY": {
+      "0.0": {
+        "total_pnl": 14229.88452709993,
+        "per_day": 114.75713328306395,
+        "max_dd": -18041.800525000013,
+        "red_loss_sum": -2857.114769999997,
+        "worst_month": -2047.3670849999985,
+        "worst_day": -3967.8954999999987,
+        "avg_exposure": 24809.38884621514,
+        "peak_exposure": 97182.62000000001,
+        "utilization": 0.225346603628283,
+        "terminal_stale_gross": 7804.5,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.1": {
+        "total_pnl": 13436.41385929998,
+        "per_day": 108.35817628467727,
+        "max_dd": -17958.779979999978,
+        "red_loss_sum": -3653.428304999998,
+        "worst_month": -2843.6806199999996,
+        "worst_day": -3941.3859000000084,
+        "avg_exposure": 24567.814747808767,
+        "peak_exposure": 96323.133,
+        "utilization": 0.22357780344424094,
+        "terminal_stale_gross": 6977.223000000001,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      },
+      "0.5": {
+        "total_pnl": 10387.327859499972,
+        "per_day": 83.76877306048364,
+        "max_dd": -19281.594805,
+        "red_loss_sum": -6733.706394999997,
+        "worst_month": -5923.958709999999,
+        "worst_day": -3834.1022000000085,
+        "avg_exposure": 23626.425015936256,
+        "peak_exposure": 95961.5,
+        "utilization": 0.21660637814486114,
+        "terminal_stale_gross": 3798.19,
+        "counters": {
+          "allocation_batches": 25,
+          "symbol_cap_binding_orders": 0,
+          "stale_position_sessions": 68,
+          "missing_scheduled_exit": 1
+        }
+      }
+    }
+  },
+  "interpretation": "Hypothetical adverse missing-mark errors, not reconstructed prices or probability bounds; outcomes remain conditional"
+}

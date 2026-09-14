@@ -1,0 +1,2801 @@
+{
+  "timestamp": "2026-09-14T00:23:01+00:00",
+  "books": {
+    "L5": {
+      "mode": "IS",
+      "side": "long",
+      "causal_state_attribution": {
+        "unknown": {
+          "tickets": 13,
+          "entry_gross": 48832.6412,
+          "net_pnl": -4838.942843400001,
+          "positive_tickets": 4,
+          "pnl_per_entry_gross": -0.09909238420222909
+        },
+        "quiet/ret3_negative": {
+          "tickets": 72,
+          "entry_gross": 233278.43480000005,
+          "net_pnl": -2356.148809093999,
+          "positive_tickets": 33,
+          "pnl_per_entry_gross": -0.01010015696956313
+        },
+        "high_volume_without_recovery/ret3_negative": {
+          "tickets": 61,
+          "entry_gross": 98577.29050000002,
+          "net_pnl": -579.9037675000006,
+          "positive_tickets": 31,
+          "pnl_per_entry_gross": -0.00588273186003221
+        },
+        "high_volume_recovery/ret3_negative": {
+          "tickets": 17,
+          "entry_gross": 27435.014300000006,
+          "net_pnl": 463.8097257000002,
+          "positive_tickets": 8,
+          "pnl_per_entry_gross": 0.01690575848178071
+        },
+        "high_volume_recovery/ret3_nonnegative": {
+          "tickets": 3,
+          "entry_gross": 9799.105,
+          "net_pnl": -139.06326999999962,
+          "positive_tickets": 1,
+          "pnl_per_entry_gross": -0.014191425645505342
+        },
+        "quiet/ret3_nonnegative": {
+          "tickets": 31,
+          "entry_gross": 203070.09180000008,
+          "net_pnl": 14291.069468200003,
+          "positive_tickets": 19,
+          "pnl_per_entry_gross": 0.07037505790008215
+        },
+        "high_volume_without_recovery/ret3_nonnegative": {
+          "tickets": 3,
+          "entry_gross": 9868.785,
+          "net_pnl": -848.3297050000006,
+          "positive_tickets": 1,
+          "pnl_per_entry_gross": -0.08596090653510037
+        }
+      },
+      "profit_without_top_symbol": -1447.826751093984,
+      "profit_without_top_three_symbols": -7600.012801093984,
+      "top_symbols": [
+        [
+          "DGNX",
+          7440.31755
+        ],
+        [
+          "AEVA",
+          3511.1154999999994
+        ],
+        [
+          "CCOI",
+          2641.0705500000004
+        ],
+        [
+          "FSLY",
+          2362.4967200000015
+        ],
+        [
+          "SMR",
+          1390.6000600000007
+        ]
+      ],
+      "cohort_distribution": {
+        "cohorts_with_fills": 25,
+        "positive_cohorts": 12,
+        "median_pnl": -17.140089999999446,
+        "best_pnl": 7738.13896,
+        "worst_pnl": -4173.964940000002,
+        "profit_without_best_cohort": -1745.6481610939845
+      },
+      "capital": {
+        "mean_filled_per_allocation": 8.0,
+        "empty_allocations": 0,
+        "intended_budget_use": 0.4857165622244623,
+        "mean_surviving_gross": 19519.48831408,
+        "mean_remaining_headroom": 59416.06387825705
+      },
+      "comparisons": {
+        "L0": {
+          "profit_increment": 7184.0968969359965,
+          "month_increments": {
+            "2025-09": 1753.1506811999998,
+            "2025-11": 2865.1989089359945,
+            "2026-01": 2343.106983800006,
+            "2026-03": -1787.4350280000003,
+            "2026-05": -752.3297519999951,
+            "2026-07": 2762.4051029999923
+          },
+          "positive_increment_months": 4,
+          "leave_one_month_out_increment": {
+            "2025-09": 5430.946215735998,
+            "2025-11": 4318.897988000002,
+            "2026-01": 4840.989913135991,
+            "2026-03": 8971.531924935998,
+            "2026-05": 7936.4266489359925,
+            "2026-07": 4421.691793936005
+          },
+          "increment_without_largest_positive_contributor": 5021.403034599997,
+          "top_incremental_symbols": [
+            [
+              "METC",
+              2162.6938623359993
+            ],
+            [
+              "BRZE",
+              2103.2216299999995
+            ],
+            [
+              "ARX",
+              2073.8530850000006
+            ],
+            [
+              "BBNX",
+              1759.8638349999992
+            ],
+            [
+              "LUNR",
+              1437.182200000001
+            ]
+          ],
+          "daily_pnl_correlation": 0.9595118078023758,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": true,
+            "profit_increment": 7184.0968969359965,
+            "material_profit_threshold": 100.0,
+            "profit_retention": null,
+            "downside_dollar_improvements": {
+              "max_dd": 10917.202649999934,
+              "red_loss_sum": 7970.710995735993,
+              "worst_month": 2415.3206551000007,
+              "worst_day": 2581.2908000000025
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": false,
+            "profit_increment": 7184.0968969359965,
+            "material_profit_threshold": 100.0,
+            "profit_retention": null,
+            "downside_dollar_improvements": {
+              "max_dd": 10917.202649999934,
+              "red_loss_sum": 7970.710995735993,
+              "worst_month": 2415.3206551000007,
+              "worst_day": 2581.2908000000025
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": true,
+            "profit_increment": 7184.0968969359965,
+            "material_profit_threshold": 100.0,
+            "profit_retention": null,
+            "downside_dollar_improvements": {
+              "max_dd": 10917.202649999934,
+              "red_loss_sum": 7970.710995735993,
+              "worst_month": 2415.3206551000007,
+              "worst_day": 2581.2908000000025
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        },
+        "L5_REC_NORM8": {
+          "profit_increment": -13309.667343972003,
+          "month_increments": {
+            "2025-09": -11358.330595800002,
+            "2025-11": 4145.465907027984,
+            "2026-01": 883.3240500999977,
+            "2026-03": -6936.509079099998,
+            "2026-05": -4936.766606000016,
+            "2026-07": 4893.148979800022
+          },
+          "positive_increment_months": 3,
+          "leave_one_month_out_increment": {
+            "2025-09": -1951.3367481720106,
+            "2025-11": -17455.133250999996,
+            "2026-01": -14192.99139407201,
+            "2026-03": -6373.158264872014,
+            "2026-05": -8372.900737971997,
+            "2026-07": -18202.816323772036
+          },
+          "increment_without_largest_positive_contributor": -16744.851878972004,
+          "top_incremental_symbols": [
+            [
+              "BRZE",
+              3435.184535000001
+            ],
+            [
+              "METC",
+              3231.0611879279977
+            ],
+            [
+              "RDW",
+              2573.9508700000006
+            ],
+            [
+              "LUNR",
+              2264.212325
+            ],
+            [
+              "CRML",
+              1989.2133999999992
+            ]
+          ],
+          "daily_pnl_correlation": 0.9800584444640131,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": -13309.667343972003,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.3104570356614286,
+            "downside_dollar_improvements": {
+              "max_dd": 21480.20998999996,
+              "red_loss_sum": 9921.938936928003,
+              "worst_month": 4546.0645319000305,
+              "worst_day": 3920.225000000006
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": false,
+            "profit_increment": -13309.667343972003,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.3104570356614286,
+            "downside_dollar_improvements": {
+              "max_dd": 21480.20998999996,
+              "red_loss_sum": 9921.938936928003,
+              "worst_month": 4546.0645319000305,
+              "worst_day": 3920.225000000006
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": -13309.667343972003,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.3104570356614286,
+            "downside_dollar_improvements": {
+              "max_dd": 21480.20998999996,
+              "red_loss_sum": 9921.938936928003,
+              "worst_month": 4546.0645319000305,
+              "worst_day": 3920.225000000006
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        }
+      },
+      "matched_iwm_increment": {
+        "total": -243.07479609397706,
+        "months": {
+          "2025-09": 6028.541028800001,
+          "2025-11": -4875.527339693994,
+          "2026-01": -2703.7923843000017,
+          "2026-03": 2704.461962499994,
+          "2026-05": 2068.5665579999986,
+          "2026-07": -3465.324621400019
+        },
+        "positive_months": 3,
+        "leave_one_month_out": {
+          "2025-09": -6271.615824894022,
+          "2025-11": 4632.452543599973,
+          "2026-01": 2460.717588205981,
+          "2026-03": -2947.536758594015,
+          "2026-05": -2311.6413540940193,
+          "2026-07": 3222.2498253059985
+        }
+      },
+      "local_detail_sha256": "c14293f5f30794de6db3ed2734b38df7225eaa29e74bf247f430c4e4c5a2f534"
+    },
+    "L5_REC_NORM8": {
+      "mode": "IS",
+      "side": "long",
+      "causal_state_attribution": {
+        "unknown": {
+          "tickets": 13,
+          "entry_gross": 46509.106999999996,
+          "net_pnl": -4142.360684000001,
+          "positive_tickets": 4,
+          "pnl_per_entry_gross": -0.08906558201601252
+        },
+        "quiet/ret3_negative": {
+          "tickets": 72,
+          "entry_gross": 515924.4374,
+          "net_pnl": -6020.181480921992,
+          "positive_tickets": 33,
+          "pnl_per_entry_gross": -0.011668727132331011
+        },
+        "high_volume_without_recovery/ret3_negative": {
+          "tickets": 61,
+          "entry_gross": 232303.84640000004,
+          "net_pnl": -1869.348688399999,
+          "positive_tickets": 31,
+          "pnl_per_entry_gross": -0.00804699843489117
+        },
+        "high_volume_recovery/ret3_negative": {
+          "tickets": 17,
+          "entry_gross": 129331.67440000002,
+          "net_pnl": 1968.4971506000009,
+          "positive_tickets": 8,
+          "pnl_per_entry_gross": 0.015220534024107559
+        },
+        "high_volume_recovery/ret3_nonnegative": {
+          "tickets": 3,
+          "entry_gross": 40334.5,
+          "net_pnl": -515.7080149999989,
+          "positive_tickets": 1,
+          "pnl_per_entry_gross": -0.012785779295640181
+        },
+        "quiet/ret3_nonnegative": {
+          "tickets": 31,
+          "entry_gross": 370968.6194,
+          "net_pnl": 31969.070520600013,
+          "positive_tickets": 19,
+          "pnl_per_entry_gross": 0.08617729060831718
+        },
+        "high_volume_without_recovery/ret3_nonnegative": {
+          "tickets": 3,
+          "entry_gross": 25855.730000000003,
+          "net_pnl": -2087.810660000002,
+          "positive_tickets": 1,
+          "pnl_per_entry_gross": -0.08074847084185988
+        }
+      },
+      "profit_without_top_symbol": -367.10900712198054,
+      "profit_without_top_three_symbols": -13202.865422721978,
+      "top_symbols": [
+        [
+          "DGNX",
+          19669.26715
+        ],
+        [
+          "AEVA",
+          6657.7860999999975
+        ],
+        [
+          "OKLS",
+          6177.9703156
+        ],
+        [
+          "FSLY",
+          4684.622940000004
+        ],
+        [
+          "CCOI",
+          4228.063330000001
+        ]
+      ],
+      "cohort_distribution": {
+        "cohorts_with_fills": 25,
+        "positive_cohorts": 14,
+        "median_pnl": 714.2314950000017,
+        "best_pnl": 20460.355065,
+        "worst_pnl": -8945.47549,
+        "profit_without_best_cohort": -1158.1969221219806
+      },
+      "capital": {
+        "mean_filled_per_allocation": 8.0,
+        "empty_allocations": 0,
+        "intended_budget_use": 1.0,
+        "mean_surviving_gross": 45035.45663436,
+        "mean_remaining_headroom": 13224.950686825363
+      },
+      "comparisons": {
+        "L5_RECOVERY": {
+          "profit_increment": 12965.21980577198,
+          "month_increments": {
+            "2025-09": 11330.707950800004,
+            "2025-11": -3647.5618558279825,
+            "2026-01": -2406.1850308,
+            "2026-03": 6768.845782999997,
+            "2026-05": 5415.840112000019,
+            "2026-07": -4496.427153400042
+          },
+          "positive_increment_months": 3,
+          "leave_one_month_out_increment": {
+            "2025-09": 1634.5118549719919,
+            "2025-11": 16612.78166159998,
+            "2026-01": 15371.404836571995,
+            "2026-03": 6196.374022771999,
+            "2026-05": 7549.379693771977,
+            "2026-07": 17461.646959172038
+          },
+          "increment_without_largest_positive_contributor": 751.8683557719778,
+          "top_incremental_symbols": [
+            [
+              "DGNX",
+              12213.351450000002
+            ],
+            [
+              "OKLS",
+              3869.1720142
+            ],
+            [
+              "AEVA",
+              3120.003899999999
+            ],
+            [
+              "FSLY",
+              2295.3874600000026
+            ],
+            [
+              "WGS",
+              2219.4574499999994
+            ]
+          ],
+          "daily_pnl_correlation": 0.9875774618092836,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": 12965.21980577198,
+            "material_profit_threshold": 316.84691685530197,
+            "profit_retention": 3.045975377392255,
+            "downside_dollar_improvements": {
+              "max_dd": -20408.05624499997,
+              "red_loss_sum": -10550.174040028021,
+              "worst_month": -4496.427153400042,
+              "worst_day": -3731.272400000016
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": false,
+            "profit_increment": 12965.21980577198,
+            "material_profit_threshold": 316.84691685530197,
+            "profit_retention": 3.045975377392255,
+            "downside_dollar_improvements": {
+              "max_dd": -20408.05624499997,
+              "red_loss_sum": -10550.174040028021,
+              "worst_month": -4496.427153400042,
+              "worst_day": -3731.272400000016
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": 12965.21980577198,
+            "material_profit_threshold": 316.84691685530197,
+            "profit_retention": 3.045975377392255,
+            "downside_dollar_improvements": {
+              "max_dd": -20408.05624499997,
+              "red_loss_sum": -10550.174040028021,
+              "worst_month": -4496.427153400042,
+              "worst_day": -3731.272400000016
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        },
+        "L5": {
+          "profit_increment": 13309.667343972003,
+          "month_increments": {
+            "2025-09": 11358.330595800002,
+            "2025-11": -4145.465907027984,
+            "2026-01": -883.3240500999977,
+            "2026-03": 6936.509079099998,
+            "2026-05": 4936.766606000016,
+            "2026-07": -4893.148979800022
+          },
+          "positive_increment_months": 3,
+          "leave_one_month_out_increment": {
+            "2025-09": 1951.3367481720106,
+            "2025-11": 17455.133250999996,
+            "2026-01": 14192.99139407201,
+            "2026-03": 6373.158264872014,
+            "2026-05": 8372.900737971997,
+            "2026-07": 18202.816323772036
+          },
+          "increment_without_largest_positive_contributor": 1080.7177439720035,
+          "top_incremental_symbols": [
+            [
+              "DGNX",
+              12228.9496
+            ],
+            [
+              "OKLS",
+              4988.0016349
+            ],
+            [
+              "AEVA",
+              3146.670599999998
+            ],
+            [
+              "WGS",
+              2516.484624999999
+            ],
+            [
+              "FSLY",
+              2322.1262200000024
+            ]
+          ],
+          "daily_pnl_correlation": 0.9800584444640131,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": 13309.667343972003,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.22105761871204,
+            "downside_dollar_improvements": {
+              "max_dd": -21480.20998999996,
+              "red_loss_sum": -9921.938936928003,
+              "worst_month": -4546.0645319000305,
+              "worst_day": -3920.225000000006
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": false,
+            "profit_increment": 13309.667343972003,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.22105761871204,
+            "downside_dollar_improvements": {
+              "max_dd": -21480.20998999996,
+              "red_loss_sum": -9921.938936928003,
+              "worst_month": -4546.0645319000305,
+              "worst_day": -3920.225000000006
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": 13309.667343972003,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.22105761871204,
+            "downside_dollar_improvements": {
+              "max_dd": -21480.20998999996,
+              "red_loss_sum": -9921.938936928003,
+              "worst_month": -4546.0645319000305,
+              "worst_day": -3920.225000000006
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        }
+      },
+      "matched_iwm_increment": {
+        "total": 8079.248352877985,
+        "months": {
+          "2025-09": 16338.671404600007,
+          "2025-11": -11746.04699672198,
+          "2026-01": -2426.356294399994,
+          "2026-03": 8698.712756599987,
+          "2026-05": 5502.533299000008,
+          "2026-07": -8288.265816200048
+        },
+        "positive_months": 3,
+        "leave_one_month_out": {
+          "2025-09": -8259.423051722028,
+          "2025-11": 19825.29534959996,
+          "2026-01": 10505.604647277974,
+          "2026-03": -619.4644037220069,
+          "2026-05": 2576.7150538779724,
+          "2026-07": 16367.51416907803
+        }
+      },
+      "local_detail_sha256": "84cbef737ed449b1bbfc76a3523b72fcaba1a86bc0d3a30ca913157bfc91e487"
+    },
+    "L5_REC_SELECT8": {
+      "mode": "IS",
+      "side": "long",
+      "causal_state_attribution": {
+        "quiet/ret3_nonnegative": {
+          "tickets": 80,
+          "entry_gross": 665360.5769000001,
+          "net_pnl": 12823.263108400002,
+          "positive_tickets": 42,
+          "pnl_per_entry_gross": 0.019272652383682278
+        },
+        "quiet/ret3_negative": {
+          "tickets": 89,
+          "entry_gross": 485009.734,
+          "net_pnl": 4793.647396128002,
+          "positive_tickets": 42,
+          "pnl_per_entry_gross": 0.009883610699095787
+        },
+        "high_volume_recovery/ret3_negative": {
+          "tickets": 17,
+          "entry_gross": 96415.00529999999,
+          "net_pnl": 1751.4718096999998,
+          "positive_tickets": 8,
+          "pnl_per_entry_gross": 0.018165967053055797
+        },
+        "high_volume_recovery/ret3_nonnegative": {
+          "tickets": 8,
+          "entry_gross": 62163.4,
+          "net_pnl": 887.8877100000009,
+          "positive_tickets": 4,
+          "pnl_per_entry_gross": 0.014283126566436212
+        },
+        "high_volume_without_recovery/ret3_nonnegative": {
+          "tickets": 5,
+          "entry_gross": 26337.050000000003,
+          "net_pnl": -1824.9450500000003,
+          "positive_tickets": 1,
+          "pnl_per_entry_gross": -0.06929193094898632
+        },
+        "high_volume_without_recovery/ret3_negative": {
+          "tickets": 1,
+          "entry_gross": 2701.04,
+          "net_pnl": -439.68887999999987,
+          "positive_tickets": 0,
+          "pnl_per_entry_gross": -0.16278503095104102
+        }
+      },
+      "profit_without_top_symbol": 7306.903344228045,
+      "profit_without_top_three_symbols": -2776.990295471951,
+      "top_symbols": [
+        [
+          "DGNX",
+          10684.73275
+        ],
+        [
+          "AEVA",
+          5235.631949999997
+        ],
+        [
+          "OKLS",
+          4848.261689700001
+        ],
+        [
+          "ASTS",
+          4565.14948
+        ],
+        [
+          "VOYG",
+          4117.099339799999
+        ]
+      ],
+      "cohort_distribution": {
+        "cohorts_with_fills": 25,
+        "positive_cohorts": 13,
+        "median_pnl": 1022.6697139999992,
+        "best_pnl": 11007.4001298,
+        "worst_pnl": -12187.530020999999,
+        "profit_without_best_cohort": 6984.235964428044
+      },
+      "capital": {
+        "mean_filled_per_allocation": 8.0,
+        "empty_allocations": 0,
+        "intended_budget_use": 1.0,
+        "mean_surviving_gross": 41736.874182880005,
+        "mean_remaining_headroom": 13751.497199587599
+      },
+      "comparisons": {
+        "L5_REC_NORM8": {
+          "profit_increment": -1310.5220486499747,
+          "month_increments": {
+            "2025-09": -2918.1373351,
+            "2025-11": 2952.6930050499827,
+            "2026-01": -375.9548408999999,
+            "2026-03": -3209.1918600999998,
+            "2026-05": -7162.237510000019,
+            "2026-07": 9402.306492400006
+          },
+          "positive_increment_months": 2,
+          "leave_one_month_out_increment": {
+            "2025-09": 1607.6152864499704,
+            "2025-11": -4263.2150537000125,
+            "2026-01": -934.5672077500299,
+            "2026-03": 1898.66981144997,
+            "2026-05": 5851.71546134999,
+            "2026-07": -10712.828541050036
+          },
+          "increment_without_largest_positive_contributor": -6052.275143649975,
+          "top_incremental_symbols": [
+            [
+              "LUNR",
+              4741.753095
+            ],
+            [
+              "ASTS",
+              4565.14948
+            ],
+            [
+              "VOYG",
+              4117.099339799999
+            ],
+            [
+              "CLSK",
+              2969.8449060000007
+            ],
+            [
+              "BMNR",
+              2347.20167
+            ]
+          ],
+          "daily_pnl_correlation": 0.9279321323040135,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": -1310.5220486499747,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.9321048952687437,
+            "downside_dollar_improvements": {
+              "max_dd": 8178.118180000005,
+              "red_loss_sum": 10582.620290350014,
+              "worst_month": 3286.7856409000333,
+              "worst_day": 351.8671000000031
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": true,
+            "profit_increment": -1310.5220486499747,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.9321048952687437,
+            "downside_dollar_improvements": {
+              "max_dd": 8178.118180000005,
+              "red_loss_sum": 10582.620290350014,
+              "worst_month": 3286.7856409000333,
+              "worst_day": 351.8671000000031
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": -1310.5220486499747,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.9321048952687437,
+            "downside_dollar_improvements": {
+              "max_dd": 8178.118180000005,
+              "red_loss_sum": 10582.620290350014,
+              "worst_month": 3286.7856409000333,
+              "worst_day": 351.8671000000031
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        },
+        "L5": {
+          "profit_increment": 11999.145295322029,
+          "month_increments": {
+            "2025-09": 8440.193260700002,
+            "2025-11": -1192.7729019780018,
+            "2026-01": -1259.2788909999977,
+            "2026-03": 3727.317218999998,
+            "2026-05": -2225.470904000003,
+            "2026-07": 4509.157512599984
+          },
+          "positive_increment_months": 3,
+          "leave_one_month_out_increment": {
+            "2025-09": 3558.9520346219797,
+            "2025-11": 13191.918197299983,
+            "2026-01": 13258.42418632198,
+            "2026-03": 8271.828076321983,
+            "2026-05": 14224.616199321985,
+            "2026-07": 7489.987782721997
+          },
+          "increment_without_largest_positive_contributor": 7433.995815322029,
+          "top_incremental_symbols": [
+            [
+              "ASTS",
+              4565.14948
+            ],
+            [
+              "VOYG",
+              4117.099339799999
+            ],
+            [
+              "OKLS",
+              3658.293009000001
+            ],
+            [
+              "DGNX",
+              3244.4151999999995
+            ],
+            [
+              "CLSK",
+              2969.8449060000007
+            ]
+          ],
+          "daily_pnl_correlation": 0.9211613579436666,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": 11999.145295322029,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.002363574344175,
+            "downside_dollar_improvements": {
+              "max_dd": -13302.091809999954,
+              "red_loss_sum": 660.6813534220119,
+              "worst_month": -1259.2788909999977,
+              "worst_day": -3568.3579000000027
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": false,
+            "profit_increment": 11999.145295322029,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.002363574344175,
+            "downside_dollar_improvements": {
+              "max_dd": -13302.091809999954,
+              "red_loss_sum": 660.6813534220119,
+              "worst_month": -1259.2788909999977,
+              "worst_day": -3568.3579000000027
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": 11999.145295322029,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.002363574344175,
+            "downside_dollar_improvements": {
+              "max_dd": -13302.091809999954,
+              "red_loss_sum": 660.6813534220119,
+              "worst_month": -1259.2788909999977,
+              "worst_day": -3568.3579000000027
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        }
+      },
+      "matched_iwm_increment": {
+        "total": 6830.575954228028,
+        "months": {
+          "2025-09": 13438.339719500007,
+          "2025-11": -8748.555681672,
+          "2026-01": -2694.479040299995,
+          "2026-03": 5365.849746499989,
+          "2026-05": -1602.1539260000095,
+          "2026-07": 1071.5751361999587
+        },
+        "positive_months": 3,
+        "leave_one_month_out": {
+          "2025-09": -6607.763765272057,
+          "2025-11": 15579.13163589995,
+          "2026-01": 9525.054994527945,
+          "2026-03": 1464.726207727961,
+          "2026-05": 8432.72988022796,
+          "2026-07": 5759.000818027991
+        }
+      },
+      "local_detail_sha256": "a17d134a5cc5cdaee316ca6122f6bb91797f52b290455b4fd388342bc9e3a1ef"
+    },
+    "A6_RECOVERY_EQUAL": {
+      "mode": "IS",
+      "side": "long",
+      "causal_state_attribution": {
+        "quiet/ret3_nonnegative": {
+          "tickets": 80,
+          "entry_gross": 524429.2908000001,
+          "net_pnl": 12623.114170099996,
+          "positive_tickets": 42,
+          "pnl_per_entry_gross": 0.024070192858304768
+        },
+        "quiet/ret3_negative": {
+          "tickets": 89,
+          "entry_gross": 586505.3566,
+          "net_pnl": 7061.864246218005,
+          "positive_tickets": 42,
+          "pnl_per_entry_gross": 0.012040579283292439
+        },
+        "high_volume_recovery/ret3_negative": {
+          "tickets": 17,
+          "entry_gross": 114259.0336,
+          "net_pnl": 1890.746196399999,
+          "positive_tickets": 8,
+          "pnl_per_entry_gross": 0.01654789242327356
+        },
+        "high_volume_recovery/ret3_nonnegative": {
+          "tickets": 8,
+          "entry_gross": 54001.195,
+          "net_pnl": 630.8224600000001,
+          "positive_tickets": 4,
+          "pnl_per_entry_gross": 0.01168163889706515
+        },
+        "high_volume_without_recovery/ret3_nonnegative": {
+          "tickets": 5,
+          "entry_gross": 34606.380000000005,
+          "net_pnl": -2389.0649450000005,
+          "positive_tickets": 1,
+          "pnl_per_entry_gross": -0.0690353901506023
+        },
+        "high_volume_without_recovery/ret3_negative": {
+          "tickets": 1,
+          "entry_gross": 6930.3,
+          "net_pnl": -1128.1491,
+          "positive_tickets": 0,
+          "pnl_per_entry_gross": -0.16278503095104108
+        }
+      },
+      "profit_without_top_symbol": 11171.024727718037,
+      "profit_without_top_three_symbols": 318.5932631180367,
+      "top_symbols": [
+        [
+          "DGNX",
+          7518.308299999999
+        ],
+        [
+          "AEVA",
+          5675.484769999998
+        ],
+        [
+          "VOYG",
+          5176.946694600001
+        ],
+        [
+          "OKLS",
+          4797.0734064
+        ],
+        [
+          "WGS",
+          3973.129034999999
+        ]
+      ],
+      "cohort_distribution": {
+        "cohorts_with_fills": 25,
+        "positive_cohorts": 14,
+        "median_pnl": 1771.3718450000008,
+        "best_pnl": 12896.6874246,
+        "worst_pnl": -10972.736225999999,
+        "profit_without_best_cohort": 5792.645603118035
+      },
+      "capital": {
+        "mean_filled_per_allocation": 8.0,
+        "empty_allocations": 0,
+        "intended_budget_use": 1.0,
+        "mean_surviving_gross": 41173.06864528,
+        "mean_remaining_headroom": 13499.837443763603
+      },
+      "comparisons": {
+        "L5_REC_SELECT8": {
+          "profit_increment": 697.6969334899914,
+          "month_increments": {
+            "2025-09": -2435.882421200011,
+            "2025-11": -127.17095920999623,
+            "2026-01": 635.9764267000005,
+            "2026-03": -1968.2327373999933,
+            "2026-05": 2716.276926000006,
+            "2026-07": 1876.7296986000247
+          },
+          "positive_increment_months": 3,
+          "leave_one_month_out_increment": {
+            "2025-09": 3133.5793546900413,
+            "2025-11": 824.8678927000269,
+            "2026-01": 61.720506790030186,
+            "2026-03": 2665.9296708900238,
+            "2026-05": -2018.5799925099752,
+            "2026-07": -1179.032765109994
+          },
+          "increment_without_largest_positive_contributor": -1765.506466510009,
+          "top_incremental_symbols": [
+            [
+              "HTCO",
+              2463.2034000000003
+            ],
+            [
+              "NTLA",
+              1674.986714999999
+            ],
+            [
+              "VOYG",
+              1059.847354800002
+            ],
+            [
+              "TNXP",
+              912.0162900000003
+            ],
+            [
+              "RDW",
+              857.0281850000001
+            ]
+          ],
+          "daily_pnl_correlation": 0.991858230857823,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": 697.6969334899914,
+            "material_profit_threshold": 899.5818047114022,
+            "profit_retention": 1.0387789598364443,
+            "downside_dollar_improvements": {
+              "max_dd": 360.38566000001447,
+              "red_loss_sum": 508.80546749000405,
+              "worst_month": 635.9764267000005,
+              "worst_day": 59.45879999999306
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": false,
+            "profit_increment": 697.6969334899914,
+            "material_profit_threshold": 899.5818047114022,
+            "profit_retention": 1.0387789598364443,
+            "downside_dollar_improvements": {
+              "max_dd": 360.38566000001447,
+              "red_loss_sum": 508.80546749000405,
+              "worst_month": 635.9764267000005,
+              "worst_day": 59.45879999999306
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": 697.6969334899914,
+            "material_profit_threshold": 899.5818047114022,
+            "profit_retention": 1.0387789598364443,
+            "downside_dollar_improvements": {
+              "max_dd": 360.38566000001447,
+              "red_loss_sum": 508.80546749000405,
+              "worst_month": 635.9764267000005,
+              "worst_day": 59.45879999999306
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        },
+        "L5": {
+          "profit_increment": 12696.84222881202,
+          "month_increments": {
+            "2025-09": 6004.310839499992,
+            "2025-11": -1319.943861187998,
+            "2026-01": -623.3024642999972,
+            "2026-03": 1759.084481600005,
+            "2026-05": 490.80602200000294,
+            "2026-07": 6385.887211200009
+          },
+          "positive_increment_months": 4,
+          "leave_one_month_out_increment": {
+            "2025-09": 6692.531389312021,
+            "2025-11": 14016.78609000001,
+            "2026-01": 13320.14469311201,
+            "2026-03": 10937.757747212008,
+            "2026-05": 12206.03620681201,
+            "2026-07": 6310.955017612004
+          },
+          "increment_without_largest_positive_contributor": 7519.895534212019,
+          "top_incremental_symbols": [
+            [
+              "VOYG",
+              5176.946694600001
+            ],
+            [
+              "ASTS",
+              3715.2546299999995
+            ],
+            [
+              "OKLS",
+              3607.1047257
+            ],
+            [
+              "CLSK",
+              3284.4245280000005
+            ],
+            [
+              "WGS",
+              2678.3228149999986
+            ]
+          ],
+          "daily_pnl_correlation": 0.9245242277221022,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": 12696.84222881202,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.1187921108080707,
+            "downside_dollar_improvements": {
+              "max_dd": -12941.70614999994,
+              "red_loss_sum": 1169.486820912016,
+              "worst_month": -623.3024642999972,
+              "worst_day": -3508.8991000000096
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": false,
+            "profit_increment": 12696.84222881202,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.1187921108080707,
+            "downside_dollar_improvements": {
+              "max_dd": -12941.70614999994,
+              "red_loss_sum": 1169.486820912016,
+              "worst_month": -623.3024642999972,
+              "worst_day": -3508.8991000000096
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": 12696.84222881202,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.1187921108080707,
+            "downside_dollar_improvements": {
+              "max_dd": -12941.70614999994,
+              "red_loss_sum": 1169.486820912016,
+              "worst_month": -623.3024642999972,
+              "worst_day": -3508.8991000000096
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": true,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        },
+        "L5_REC_NORM8": {
+          "profit_increment": -612.8251151599834,
+          "month_increments": {
+            "2025-09": -5354.019756300011,
+            "2025-11": 2825.5220458399863,
+            "2026-01": 260.0215858000006,
+            "2026-03": -5177.424597499993,
+            "2026-05": -4445.960584000013,
+            "2026-07": 11279.036191000032
+          },
+          "positive_increment_months": 3,
+          "leave_one_month_out_increment": {
+            "2025-09": 4741.194641140013,
+            "2025-11": -3438.3471609999847,
+            "2026-01": -872.846700959999,
+            "2026-03": 4564.599482339994,
+            "2026-05": 3833.1354688400147,
+            "2026-07": -11891.86130616003
+          },
+          "increment_without_largest_positive_contributor": -5789.7718097599845,
+          "top_incremental_symbols": [
+            [
+              "VOYG",
+              5176.946694600001
+            ],
+            [
+              "LUNR",
+              4641.4654
+            ],
+            [
+              "ASTS",
+              3715.2546299999995
+            ],
+            [
+              "CLSK",
+              3284.4245280000005
+            ],
+            [
+              "BMNR",
+              2651.8003599999997
+            ]
+          ],
+          "daily_pnl_correlation": 0.9311018975058833,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": -612.8251151599834,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.9682509535657234,
+            "downside_dollar_improvements": {
+              "max_dd": 8538.50384000002,
+              "red_loss_sum": 11091.425757840017,
+              "worst_month": 3922.762067600034,
+              "worst_day": 411.3258999999962
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": true,
+            "profit_increment": -612.8251151599834,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.9682509535657234,
+            "downside_dollar_improvements": {
+              "max_dd": 8538.50384000002,
+              "red_loss_sum": 11091.425757840017,
+              "worst_month": 3922.762067600034,
+              "worst_day": 411.3258999999962
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": -612.8251151599834,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.9682509535657234,
+            "downside_dollar_improvements": {
+              "max_dd": 8538.50384000002,
+              "red_loss_sum": 11091.425757840017,
+              "worst_month": 3922.762067600034,
+              "worst_day": 411.3258999999962
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        }
+      },
+      "matched_iwm_increment": {
+        "total": 7696.048287718004,
+        "months": {
+          "2025-09": 10980.693968299995,
+          "2025-11": -8791.778920881994,
+          "2026-01": -2079.550933599994,
+          "2026-03": 3435.8006590999958,
+          "2026-05": 1202.5352449999973,
+          "2026-07": 2948.3482697999834
+        },
+        "positive_months": 4,
+        "leave_one_month_out": {
+          "2025-09": -3284.6456805820117,
+          "2025-11": 16487.827208599978,
+          "2026-01": 9775.599221317978,
+          "2026-03": 4260.247628617987,
+          "2026-05": 6493.513042717986,
+          "2026-07": 4747.7000179179995
+        }
+      },
+      "local_detail_sha256": "92960ec18de608ffc8f6b27b0bb80c65bce7a3d1b0b74721e327517fac9a1019"
+    },
+    "A8_PATIENT_RECOVERY": {
+      "mode": "IS",
+      "side": "long",
+      "causal_state_attribution": {
+        "quiet/ret3_nonnegative": {
+          "tickets": 80,
+          "entry_gross": 540088.6279999999,
+          "net_pnl": 13590.265617099998,
+          "positive_tickets": 42,
+          "pnl_per_entry_gross": 0.025163028644809755
+        },
+        "high_volume_recovery/ret3_nonnegative": {
+          "tickets": 8,
+          "entry_gross": 54570.115000000005,
+          "net_pnl": 639.6189100000004,
+          "positive_tickets": 4,
+          "pnl_per_entry_gross": 0.011721047500083156
+        }
+      },
+      "profit_without_top_symbol": 6851.959577099931,
+      "profit_without_top_three_symbols": -526.1689129000661,
+      "top_symbols": [
+        [
+          "DGNX",
+          7377.924949999999
+        ],
+        [
+          "AEVA",
+          3760.0046999999986
+        ],
+        [
+          "ASTS",
+          3618.1237899999996
+        ],
+        [
+          "FSLY",
+          2447.7093200000013
+        ],
+        [
+          "WOLF",
+          2436.997604399999
+        ]
+      ],
+      "cohort_distribution": {
+        "cohorts_with_fills": 22,
+        "positive_cohorts": 11,
+        "median_pnl": -22.465474999999756,
+        "best_pnl": 6922.841934999999,
+        "worst_pnl": -3745.156865000001,
+        "profit_without_best_cohort": 7307.042592099931
+      },
+      "capital": {
+        "mean_filled_per_allocation": 3.52,
+        "empty_allocations": 3,
+        "intended_budget_use": 0.4423649830912283,
+        "mean_surviving_gross": 19123.2822472,
+        "mean_remaining_headroom": 65465.90853098298
+      },
+      "comparisons": {
+        "A6_RECOVERY_EQUAL": {
+          "profit_increment": -4459.448500618106,
+          "month_increments": {
+            "2025-09": -4022.4685401999923,
+            "2025-11": 4182.343517281993,
+            "2026-01": 3273.3723736000006,
+            "2026-03": -274.0283409000049,
+            "2026-05": -5614.702215000004,
+            "2026-07": -2003.9652953999955
+          },
+          "positive_increment_months": 2,
+          "leave_one_month_out_increment": {
+            "2025-09": -436.9799604180107,
+            "2025-11": -8641.792017899996,
+            "2026-01": -7732.820874218003,
+            "2026-03": -4185.420159717998,
+            "2026-05": 1155.253714382001,
+            "2026-07": -2455.4832052180072
+          },
+          "increment_without_largest_positive_contributor": -8312.643930618106,
+          "top_incremental_symbols": [
+            [
+              "BRZE",
+              3853.1954299999998
+            ],
+            [
+              "METC",
+              3832.003071582
+            ],
+            [
+              "KVYO",
+              3234.986795
+            ],
+            [
+              "NVTS",
+              3022.0271399999997
+            ],
+            [
+              "ARX",
+              2495.3151950000006
+            ]
+          ],
+          "daily_pnl_correlation": 0.854988514709697,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": -4459.448500618106,
+            "material_profit_threshold": 934.4666513859019,
+            "profit_retention": 0.7613907091278044,
+            "downside_dollar_improvements": {
+              "max_dd": 14731.024684999953,
+              "red_loss_sum": 2868.243529481994,
+              "worst_month": 2035.7529736000006,
+              "worst_day": 3346.346000000005
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": false,
+            "profit_increment": -4459.448500618106,
+            "material_profit_threshold": 934.4666513859019,
+            "profit_retention": 0.7613907091278044,
+            "downside_dollar_improvements": {
+              "max_dd": 14731.024684999953,
+              "red_loss_sum": 2868.243529481994,
+              "worst_month": 2035.7529736000006,
+              "worst_day": 3346.346000000005
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": -4459.448500618106,
+            "material_profit_threshold": 934.4666513859019,
+            "profit_retention": 0.7613907091278044,
+            "downside_dollar_improvements": {
+              "max_dd": 14731.024684999953,
+              "red_loss_sum": 2868.243529481994,
+              "worst_month": 2035.7529736000006,
+              "worst_day": 3346.346000000005
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        },
+        "L5": {
+          "profit_increment": 8237.393728193914,
+          "month_increments": {
+            "2025-09": 1981.8422992999995,
+            "2025-11": 2862.3996560939945,
+            "2026-01": 2650.0699093000035,
+            "2026-03": 1485.0561407,
+            "2026-05": -5123.8961930000005,
+            "2026-07": 4381.921915800013
+          },
+          "positive_increment_months": 5,
+          "leave_one_month_out_increment": {
+            "2025-09": 6255.551428894011,
+            "2025-11": 5374.994072100017,
+            "2026-01": 5587.323818894007,
+            "2026-03": 6752.33758749401,
+            "2026-05": 13361.289921194011,
+            "2026-07": 3855.4718123939974
+          },
+          "increment_without_largest_positive_contributor": 4619.269938193915,
+          "top_incremental_symbols": [
+            [
+              "ASTS",
+              3618.1237899999996
+            ],
+            [
+              "LUNR",
+              2187.804934999999
+            ],
+            [
+              "BRZE",
+              2092.3756799999996
+            ],
+            [
+              "NVTS",
+              1790.8334900000013
+            ],
+            [
+              "WOLF",
+              1695.1344393999987
+            ]
+          ],
+          "daily_pnl_correlation": 0.8457627512896897,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": true,
+            "profit_increment": 8237.393728193914,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 2.3746193368703588,
+            "downside_dollar_improvements": {
+              "max_dd": 1789.318535000013,
+              "red_loss_sum": 4037.7303503940097,
+              "worst_month": 1412.4505093000034,
+              "worst_day": -162.55310000000463
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": true,
+            "profit_increment": 8237.393728193914,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 2.3746193368703588,
+            "downside_dollar_improvements": {
+              "max_dd": 1789.318535000013,
+              "red_loss_sum": 4037.7303503940097,
+              "worst_month": 1412.4505093000034,
+              "worst_day": -162.55310000000463
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": true,
+            "profit_increment": 8237.393728193914,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 2.3746193368703588,
+            "downside_dollar_improvements": {
+              "max_dd": 1789.318535000013,
+              "red_loss_sum": 4037.7303503940097,
+              "worst_month": 1412.4505093000034,
+              "worst_day": -162.55310000000463
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        },
+        "L5_REC_NORM8": {
+          "profit_increment": -5072.273615778089,
+          "month_increments": {
+            "2025-09": -9376.488296500003,
+            "2025-11": 7007.865563121979,
+            "2026-01": 3533.393959400001,
+            "2026-03": -5451.452938399998,
+            "2026-05": -10060.662799000016,
+            "2026-07": 9275.070895600036
+          },
+          "positive_increment_months": 3,
+          "leave_one_month_out_increment": {
+            "2025-09": 4304.214680722002,
+            "2025-11": -12080.139178899979,
+            "2026-01": -8605.667575178002,
+            "2026-03": 379.179322621997,
+            "2026-05": 4988.389183222015,
+            "2026-07": -14347.344511378036
+          },
+          "increment_without_largest_positive_contributor": -10599.83383077809,
+          "top_incremental_symbols": [
+            [
+              "BRZE",
+              5527.560215
+            ],
+            [
+              "METC",
+              4485.318834821997
+            ],
+            [
+              "LUNR",
+              4452.01726
+            ],
+            [
+              "NVTS",
+              3712.996225000002
+            ],
+            [
+              "ASTS",
+              3618.1237899999996
+            ]
+          ],
+          "daily_pnl_correlation": 0.8146029434683364,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": -5072.273615778089,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.737217280149079,
+            "downside_dollar_improvements": {
+              "max_dd": 23269.528524999972,
+              "red_loss_sum": 13959.669287322013,
+              "worst_month": 5958.515041200035,
+              "worst_day": 3757.671900000001
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": false,
+            "profit_increment": -5072.273615778089,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.737217280149079,
+            "downside_dollar_improvements": {
+              "max_dd": 23269.528524999972,
+              "red_loss_sum": 13959.669287322013,
+              "worst_month": 5958.515041200035,
+              "worst_day": 3757.671900000001
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": -5072.273615778089,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.737217280149079,
+            "downside_dollar_improvements": {
+              "max_dd": 23269.528524999972,
+              "red_loss_sum": 13959.669287322013,
+              "worst_month": 5958.515041200035,
+              "worst_day": 3757.671900000001
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        }
+      },
+      "matched_iwm_increment": {
+        "total": 7008.405552099881,
+        "months": {
+          "2025-09": 8565.8005581,
+          "2025-11": -1557.7723635999973,
+          "2026-01": -1390.812844999999,
+          "2026-03": 4816.359493199995,
+          "2026-05": -3779.3470750000033,
+          "2026-07": 354.17778439999574
+        },
+        "positive_months": 3,
+        "leave_one_month_out": {
+          "2025-09": -1557.3950060000088,
+          "2025-11": 8566.177915699987,
+          "2026-01": 8399.21839709999,
+          "2026-03": 2192.046058899996,
+          "2026-05": 10787.752627099995,
+          "2026-07": 6654.227767699995
+        }
+      },
+      "local_detail_sha256": "69e271c395f76d9b2cd2a294339daaf818d19f04059a42f0dff5a0b40644a059"
+    },
+    "PATIENT_MIRROR": {
+      "mode": "IS",
+      "side": "long",
+      "causal_state_attribution": {
+        "quiet/ret3_nonnegative": {
+          "tickets": 81,
+          "entry_gross": 547008.7076999998,
+          "net_pnl": 14013.655469699996,
+          "positive_tickets": 43,
+          "pnl_per_entry_gross": 0.025618706379690052
+        }
+      },
+      "profit_without_top_symbol": 6620.1323697000835,
+      "profit_without_top_three_symbols": -749.1072202999148,
+      "top_symbols": [
+        [
+          "DGNX",
+          7393.523099999999
+        ],
+        [
+          "AEVA",
+          3751.1157999999987
+        ],
+        [
+          "ASTS",
+          3618.1237899999996
+        ],
+        [
+          "FSLY",
+          2462.453840000002
+        ],
+        [
+          "WOLF",
+          1691.5599997999993
+        ]
+      ],
+      "cohort_distribution": {
+        "cohorts_with_fills": 22,
+        "positive_cohorts": 11,
+        "median_pnl": -21.386299999999565,
+        "best_pnl": 6938.38289,
+        "worst_pnl": -3734.8979500000014,
+        "profit_without_best_cohort": 7075.272579700083
+      },
+      "capital": {
+        "mean_filled_per_allocation": 3.24,
+        "empty_allocations": 3,
+        "intended_budget_use": 0.40719774292729394,
+        "mean_surviving_gross": 17129.046032640003,
+        "mean_remaining_headroom": 69075.83185455154
+      },
+      "comparisons": {
+        "A8_PATIENT_RECOVERY": {
+          "profit_increment": -216.22905739984708,
+          "month_increments": {
+            "2025-09": 299.9622249999993,
+            "2025-11": -772.7449992999955,
+            "2026-01": -55.39947500000028,
+            "2026-03": 29.823735099999794,
+            "2026-05": 287.2614100000005,
+            "2026-07": -5.131953200007047
+          },
+          "positive_increment_months": 3,
+          "leave_one_month_out_increment": {
+            "2025-09": -516.1912824000025,
+            "2025-11": 556.5159418999923,
+            "2026-01": -160.8295824000029,
+            "2026-03": -246.05279250000297,
+            "2026-05": -503.4904674000037,
+            "2026-07": -211.09710419999612
+          },
+          "increment_without_largest_positive_contributor": -879.5889173998473,
+          "top_incremental_symbols": [
+            [
+              "ERII",
+              663.3598600000003
+            ],
+            [
+              "WAY",
+              459.09976000000137
+            ],
+            [
+              "HDB",
+              284.42126999999994
+            ],
+            [
+              "SLM",
+              131.67956000000063
+            ],
+            [
+              "XNDU",
+              56.1206549999996
+            ]
+          ],
+          "daily_pnl_correlation": 0.9856674226061913,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": -216.22905739984708,
+            "material_profit_threshold": 711.4942263549965,
+            "profit_retention": 0.9848045810218592,
+            "downside_dollar_improvements": {
+              "max_dd": 1237.7032199999812,
+              "red_loss_sum": 231.86193500000036,
+              "worst_month": 287.2614100000005,
+              "worst_day": 4.729900000005728
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": true,
+            "profit_increment": -216.22905739984708,
+            "material_profit_threshold": 711.4942263549965,
+            "profit_retention": 0.9848045810218592,
+            "downside_dollar_improvements": {
+              "max_dd": 1237.7032199999812,
+              "red_loss_sum": 231.86193500000036,
+              "worst_month": 287.2614100000005,
+              "worst_day": 4.729900000005728
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": -216.22905739984708,
+            "material_profit_threshold": 711.4942263549965,
+            "profit_retention": 0.9848045810218592,
+            "downside_dollar_improvements": {
+              "max_dd": 1237.7032199999812,
+              "red_loss_sum": 231.86193500000036,
+              "worst_month": 287.2614100000005,
+              "worst_day": 4.729900000005728
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        },
+        "L5": {
+          "profit_increment": 8021.164670794067,
+          "month_increments": {
+            "2025-09": 2281.804524299999,
+            "2025-11": 2089.654656793999,
+            "2026-01": 2594.6704343000033,
+            "2026-03": 1514.8798757999998,
+            "2026-05": -4836.634783,
+            "2026-07": 4376.789962600006
+          },
+          "positive_increment_months": 5,
+          "leave_one_month_out_increment": {
+            "2025-09": 5739.360146494008,
+            "2025-11": 5931.510014000009,
+            "2026-01": 5426.494236494003,
+            "2026-03": 6506.284794994008,
+            "2026-05": 12857.799453794007,
+            "2026-07": 3644.374708194001
+          },
+          "increment_without_largest_positive_contributor": 4403.040880794068,
+          "top_incremental_symbols": [
+            [
+              "ASTS",
+              3618.1237899999996
+            ],
+            [
+              "LUNR",
+              2186.8484399999993
+            ],
+            [
+              "BRZE",
+              2092.3756799999996
+            ],
+            [
+              "NVTS",
+              1790.2931350000013
+            ],
+            [
+              "HYMC",
+              1610.1573383
+            ]
+          ],
+          "daily_pnl_correlation": 0.8455016931897534,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": true,
+            "profit_increment": 8021.164670794067,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 2.338536001133019,
+            "downside_dollar_improvements": {
+              "max_dd": 3027.0217549999943,
+              "red_loss_sum": 4269.59228539401,
+              "worst_month": 1699.711919300004,
+              "worst_day": -157.8231999999989
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": true,
+            "profit_increment": 8021.164670794067,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 2.338536001133019,
+            "downside_dollar_improvements": {
+              "max_dd": 3027.0217549999943,
+              "red_loss_sum": 4269.59228539401,
+              "worst_month": 1699.711919300004,
+              "worst_day": -157.8231999999989
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": true,
+            "profit_increment": 8021.164670794067,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 2.338536001133019,
+            "downside_dollar_improvements": {
+              "max_dd": 3027.0217549999943,
+              "red_loss_sum": 4269.59228539401,
+              "worst_month": 1699.711919300004,
+              "worst_day": -157.8231999999989
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        },
+        "L5_REC_NORM8": {
+          "profit_increment": -5288.502673177936,
+          "month_increments": {
+            "2025-09": -9076.526071500004,
+            "2025-11": 6235.1205638219835,
+            "2026-01": 3477.994484400001,
+            "2026-03": -5421.629203299998,
+            "2026-05": -9773.401389000017,
+            "2026-07": 9269.93894240003
+          },
+          "positive_increment_months": 3,
+          "leave_one_month_out_increment": {
+            "2025-09": 3788.0233983219987,
+            "2025-11": -11523.623236999989,
+            "2026-01": -8766.497157578007,
+            "2026-03": 133.1265301219928,
+            "2026-05": 4484.898715822012,
+            "2026-07": -14558.441615578035
+          },
+          "increment_without_largest_positive_contributor": -10816.062888177938,
+          "top_incremental_symbols": [
+            [
+              "BRZE",
+              5527.560215
+            ],
+            [
+              "METC",
+              4485.318834821997
+            ],
+            [
+              "LUNR",
+              4451.060764999999
+            ],
+            [
+              "NVTS",
+              3712.455870000002
+            ],
+            [
+              "ASTS",
+              3618.1237899999996
+            ]
+          ],
+          "daily_pnl_correlation": 0.8088122687414205,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": -5288.502673177936,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.7260149546992882,
+            "downside_dollar_improvements": {
+              "max_dd": 24507.231744999954,
+              "red_loss_sum": 14191.531222322013,
+              "worst_month": 6245.776451200035,
+              "worst_day": 3762.401800000007
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": false,
+            "profit_increment": -5288.502673177936,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.7260149546992882,
+            "downside_dollar_improvements": {
+              "max_dd": 24507.231744999954,
+              "red_loss_sum": 14191.531222322013,
+              "worst_month": 6245.776451200035,
+              "worst_day": 3762.401800000007
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": -5288.502673177936,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 0.7260149546992882,
+            "downside_dollar_improvements": {
+              "max_dd": 24507.231744999954,
+              "red_loss_sum": 14191.531222322013,
+              "worst_month": 6245.776451200035,
+              "worst_day": 3762.401800000007
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        }
+      },
+      "matched_iwm_increment": {
+        "total": 7054.009674699992,
+        "months": {
+          "2025-09": 8814.3246731,
+          "2025-11": -2019.2959628999934,
+          "2026-01": -1145.9248000000002,
+          "2026-03": 4300.341628299993,
+          "2026-05": -3241.469285000003,
+          "2026-07": 346.0334211999889
+        },
+        "positive_months": 3,
+        "leave_one_month_out": {
+          "2025-09": -1760.3149984000138,
+          "2025-11": 9073.30563759998,
+          "2026-01": 8199.934474699987,
+          "2026-03": 2753.668046399993,
+          "2026-05": 10295.478959699989,
+          "2026-07": 6707.976253499997
+        }
+      },
+      "local_detail_sha256": "cc82a309f1bcde4b8de560adf47d34fd03bf0b3e533bdb33055bc08a599a56da"
+    },
+    "OBSERVED_REC_BOTTOM8": {
+      "mode": "IS",
+      "side": "long",
+      "causal_state_attribution": {
+        "quiet/ret3_negative": {
+          "tickets": 75,
+          "entry_gross": 512610.5767,
+          "net_pnl": -5072.894194045995,
+          "positive_tickets": 34,
+          "pnl_per_entry_gross": -0.009896194937497074
+        },
+        "high_volume_without_recovery/ret3_negative": {
+          "tickets": 65,
+          "entry_gross": 241729.07130000004,
+          "net_pnl": 984.4597536999986,
+          "positive_tickets": 35,
+          "pnl_per_entry_gross": 0.004072574922021795
+        },
+        "high_volume_recovery/ret3_negative": {
+          "tickets": 18,
+          "entry_gross": 126309.04700000002,
+          "net_pnl": 2254.966248000001,
+          "positive_tickets": 9,
+          "pnl_per_entry_gross": 0.017852769073619885
+        },
+        "quiet/ret3_nonnegative": {
+          "tickets": 35,
+          "entry_gross": 392588.10340000014,
+          "net_pnl": 27204.722172200003,
+          "positive_tickets": 20,
+          "pnl_per_entry_gross": 0.06929583942201543
+        },
+        "high_volume_recovery/ret3_nonnegative": {
+          "tickets": 3,
+          "entry_gross": 36425.479999999996,
+          "net_pnl": -486.4887149999991,
+          "positive_tickets": 1,
+          "pnl_per_entry_gross": -0.013355725580006061
+        },
+        "high_volume_without_recovery/ret3_nonnegative": {
+          "tickets": 4,
+          "entry_gross": 32001.095,
+          "net_pnl": -2288.560155000001,
+          "positive_tickets": 1,
+          "pnl_per_entry_gross": -0.07151505768786977
+        }
+      },
+      "profit_without_top_symbol": 3597.658409853968,
+      "profit_without_top_three_symbols": -7423.42508314603,
+      "top_symbols": [
+        [
+          "DGNX",
+          18998.5467
+        ],
+        [
+          "OKLS",
+          6147.841608
+        ],
+        [
+          "WGS",
+          4873.2418849999995
+        ],
+        [
+          "AEVA",
+          4391.1165999999985
+        ],
+        [
+          "CCOI",
+          4192.789390000001
+        ]
+      ],
+      "cohort_distribution": {
+        "cohorts_with_fills": 25,
+        "positive_cohorts": 14,
+        "median_pnl": 1186.1536372999985,
+        "best_pnl": 19760.658325,
+        "worst_pnl": -7331.705045000001,
+        "profit_without_best_cohort": 2835.5467848539665
+      },
+      "capital": {
+        "mean_filled_per_allocation": 8.0,
+        "empty_allocations": 0,
+        "intended_budget_use": 1.0,
+        "mean_surviving_gross": 46751.641652160004,
+        "mean_remaining_headroom": 12735.705693172482
+      },
+      "comparisons": {
+        "L5_REC_NORM8": {
+          "profit_increment": 3294.0469669759477,
+          "month_increments": {
+            "2025-09": -2370.5058322999976,
+            "2025-11": 1710.0224586759923,
+            "2026-01": 774.8608623999917,
+            "2026-03": -184.81495419999555,
+            "2026-05": 2549.4618619999856,
+            "2026-07": 815.022570400034
+          },
+          "positive_increment_months": 4,
+          "leave_one_month_out_increment": {
+            "2025-09": 5664.552799276008,
+            "2025-11": 1584.0245083000182,
+            "2026-01": 2519.186104576019,
+            "2026-03": 3478.861921176006,
+            "2026-05": 744.5851049760249,
+            "2026-07": 2479.0243965759764
+          },
+          "increment_without_largest_positive_contributor": 2026.8834819759477,
+          "top_incremental_symbols": [
+            [
+              "LENZ",
+              1267.163485
+            ],
+            [
+              "EDSA",
+              1250.2156800000002
+            ],
+            [
+              "USAR",
+              1097.7150699999988
+            ],
+            [
+              "WGS",
+              1061.95104
+            ],
+            [
+              "SDOT",
+              1058.0367300000003
+            ]
+          ],
+          "daily_pnl_correlation": 0.992537272162774,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": true,
+            "profit_increment": 3294.0469669759477,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 1.1706569256449368,
+            "downside_dollar_improvements": {
+              "max_dd": 5454.455724999963,
+              "red_loss_sum": 3299.905891476017,
+              "worst_month": 815.022570400034,
+              "worst_day": 455.9189000000042
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": true,
+            "profit_increment": 3294.0469669759477,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 1.1706569256449368,
+            "downside_dollar_improvements": {
+              "max_dd": 5454.455724999963,
+              "red_loss_sum": 3299.905891476017,
+              "worst_month": 815.022570400034,
+              "worst_day": 455.9189000000042
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": true,
+            "profit_increment": 3294.0469669759477,
+            "material_profit_threshold": 965.107907143901,
+            "profit_retention": 1.1706569256449368,
+            "downside_dollar_improvements": {
+              "max_dd": 5454.455724999963,
+              "red_loss_sum": 3299.905891476017,
+              "worst_month": 815.022570400034,
+              "worst_day": 455.9189000000042
+            },
+            "material_downside_improvements": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "within_5pct_downside": {
+              "max_dd": true,
+              "red_loss_sum": true,
+              "worst_month": true,
+              "worst_day": true
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        },
+        "L5": {
+          "profit_increment": 16603.71431094795,
+          "month_increments": {
+            "2025-09": 8987.824763500004,
+            "2025-11": -2435.443448351992,
+            "2026-01": -108.46318770000607,
+            "2026-03": 6751.694124900003,
+            "2026-05": 7486.228468000001,
+            "2026-07": -4078.1264093999885
+          },
+          "positive_increment_months": 3,
+          "leave_one_month_out_increment": {
+            "2025-09": 7615.889547448016,
+            "2025-11": 19039.15775930001,
+            "2026-01": 16712.177498648027,
+            "2026-03": 9852.020186048017,
+            "2026-05": 9117.48584294802,
+            "2026-07": 20681.84072034801
+          },
+          "increment_without_largest_positive_contributor": 5045.485160947952,
+          "top_incremental_symbols": [
+            [
+              "DGNX",
+              11558.22915
+            ],
+            [
+              "OKLS",
+              4957.8729273
+            ],
+            [
+              "WGS",
+              3578.435664999999
+            ],
+            [
+              "SGML",
+              1924.234520000001
+            ],
+            [
+              "ZBIO",
+              1693.707864999999
+            ]
+          ],
+          "daily_pnl_correlation": 0.9672730995615654,
+          "balanced": {
+            "claim": "balanced",
+            "numeric_claim_pass": false,
+            "profit_increment": 16603.71431094795,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.770753409246638,
+            "downside_dollar_improvements": {
+              "max_dd": -16025.754264999996,
+              "red_loss_sum": -6622.033045451985,
+              "worst_month": -3731.041961499997,
+              "worst_day": -3464.3061000000016
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "ride": {
+            "claim": "ride",
+            "numeric_claim_pass": false,
+            "profit_increment": 16603.71431094795,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.770753409246638,
+            "downside_dollar_improvements": {
+              "max_dd": -16025.754264999996,
+              "red_loss_sum": -6622.033045451985,
+              "worst_month": -3731.041961499997,
+              "worst_day": -3464.3061000000016
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          },
+          "return": {
+            "claim": "return",
+            "numeric_claim_pass": false,
+            "profit_increment": 16603.71431094795,
+            "material_profit_threshold": 299.6245399453008,
+            "profit_retention": 3.770753409246638,
+            "downside_dollar_improvements": {
+              "max_dd": -16025.754264999996,
+              "red_loss_sum": -6622.033045451985,
+              "worst_month": -3731.041961499997,
+              "worst_day": -3464.3061000000016
+            },
+            "material_downside_improvements": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "within_5pct_downside": {
+              "max_dd": false,
+              "red_loss_sum": false,
+              "worst_month": false,
+              "worst_day": false
+            },
+            "interpretation": "Numeric comparison only; data, costs, benchmark and concentration qualifications remain mandatory. Correlated downside metrics are not independent confirmations."
+          }
+        }
+      },
+      "matched_iwm_increment": {
+        "total": 11293.204709853948,
+        "months": {
+          "2025-09": 13991.806027300008,
+          "2025-11": -10040.802668045988,
+          "2026-01": -1651.7040770000021,
+          "2026-03": 8477.033432399992,
+          "2026-05": 8037.590080999994,
+          "2026-07": -7520.718085800014
+        },
+        "positive_months": 3,
+        "leave_one_month_out": {
+          "2025-09": -2698.6013174460168,
+          "2025-11": 21334.00737789998,
+          "2026-01": 12944.908786853994,
+          "2026-03": 2816.171277453999,
+          "2026-05": 3255.6146288539976,
+          "2026-07": 18813.922795654005
+        }
+      },
+      "local_detail_sha256": "1ad410c96d8c682de6bdc97d9d1cdfdf5d6cb30079b8daad6f7a55b71e396fcf"
+    }
+  },
+  "interpretation": "Causal state attribution on completed fixed books, without any trade/date exclusions or rescaling. Removing a contributor is arithmetic fragility, not a revised policy. Overlapping cohorts and six reused months do not support independent-trade significance claims."
+}
