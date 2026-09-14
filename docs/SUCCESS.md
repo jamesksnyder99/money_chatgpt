@@ -1,10 +1,10 @@
 # money_chatgpt economic and evaluation policy
 
-## Active mandate — September 14, 2026: CG Arrow 005
+## Active mandate — September 14, 2026: CG Arrow 006
 
-Fable in Claude Code is assigned **historical economics verification first, then a gated H1–H10 census** for the original equal-dollar parent, R4 and R5. The exact assignment is `docs/CG_BUILD_ARROW_005.md`. It overrides the earlier Arrow 004 two-week-only and long-discovery scope. No baseline tuning, reserve allocation, new long model, cash-yield optimization or rescue search is authorized in this pass.
+Opus in Claude Code is assigned **completion of the historical economics repair first, then a gated H1–H10 census** for the original equal-dollar PARENT, R4 and R5. The exact assignment is `docs/CG_BUILD_ARROW_006.md`. It supersedes Arrow 005 as the active execution brief while preserving Arrow 005 as a partial forensic checkpoint. No baseline tuning, reserve allocation, new long model, cash-yield optimization or rescue search is authorized.
 
-A positive return does not satisfy a verification gate. A negative reconstructed result is not a failed engineering assignment. Unexplained missing trade/ranking/action observations prevent a verified total, regardless of sign. Publish verification levels and the user-readable cohort ledger.
+A positive return does not satisfy a verification gate. A negative reconstructed result is not a failed engineering assignment. Unexplained missing trade/ranking/action observations prevent a verified total regardless of sign. Publish verification levels and the user-readable cohort ledger.
 
 ## Economic context
 
@@ -16,7 +16,11 @@ For this fixed-entry horizon study, do not add a new capital cap, resize to fit,
 
 ## Verification and costs
 
-Preserve legacy results as history. Reconstruct fixed historical decisions and then unchanged rules on the complete intended field. Verification must account for all scheduled slots, documented corporate actions, actual observation conventions, intended versus observed exits, missed entries and terminal inventory. Independently reconcile trade/cohort/account calculations.
+Preserve legacy results as history. Reconstruct fixed historical decisions (R1) and then unchanged rules on the complete intended field (R2). Verification must account for all scheduled slots, documented corporate actions, actual observation conventions, intended versus observed exits, missed entries and terminal inventory. Independently reconcile trade/cohort/account calculations.
+
+Arrow 006 must finish the acquisition pipeline end to end: authenticated raw retrieval, validation/normalization, dated validated partitions, cache invalidation/rebuild and replay consumption. Existing `data/full` and `data/virgin` remain preserved. Entry eligibility must never stop held-position or required feature-history acquisition.
+
+Corrected R2 must exclude documented test issues from the tradable universe and restore the intended `$10–$80` candidate field where old acquisition truncated at `$50`; reranking the old cached field alone is not complete reconstruction.
 
 Publish price/action-based simulated gross PnL separately from modeled costs and from verified historical costs. Unknown loan fees, locate availability, dividends, corporate actions or financing are not zero verified expenses. The active arrow specifies inherited commission/spread and 0/10/30% annualized borrow sensitivities plus doubled spread; these are scenarios, not current rates. No idle-yield credit in this pass.
 
@@ -34,6 +38,8 @@ Calendar account reporting ends August 31, while follow-up prices can establish 
 
 ## Input and delivery
 
-Original `data/virgin`, `data/full`, reference files and historical evidence remain preserved. Add a versioned verification layer under ignored `data/verification/r4r5/`. Candidate/held-position history must extend beyond old acquisition price bands without changing entry rules. Validate request completeness, not mere file existence.
+Original `data/virgin`, `data/full`, reference files and historical evidence remain preserved. Add/continue a versioned verification layer under ignored `data/verification/r4r5/`. Candidate/held-position history must extend beyond old acquisition price bands without changing entry rules. Validate request completeness, not mere file existence.
 
-Detailed entry/exit and cohort CSVs are mandatory private local deliverables under ignored `handoff/outgoing/cg_arrow005/`. Publish safe aggregate results, schema, hashes and local paths only. Market-data licensing and user-requested CSV delivery do not imply permission for public raw-data redistribution.
+The user has placed a local `.env` in the repo root for ThetaData access. It is secret local configuration and must remain ignored, unstaged and unreported. No credential values may appear in logs, reports or chat handoffs.
+
+Detailed entry/exit and cohort CSVs are mandatory private local deliverables under ignored `handoff/outgoing/cg_arrow006/` (or a clearly versioned Arrow 006 path). Publish safe aggregate results, schema, hashes and local paths only. Market-data licensing and user-requested CSV delivery do not imply permission for public raw-data redistribution.
