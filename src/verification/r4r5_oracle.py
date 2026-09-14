@@ -37,7 +37,7 @@ def verify_trades(rows: list[dict]) -> dict:
     max_err = 0.0
     checked = 0
     for r in rows:
-        if r["status"] != "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE":
+        if r["status"] not in ("VERIFIED_PRICE_LOCAL_SINGLE_SOURCE", "VERIFIED_PRICE_CARRIED_DOCUMENTED_HALT"):
             if _num(r.get("modeled_net")) is not None or _num(r.get("gross_pnl")) is not None:
                 raise AssertionError(f"Unverified row carries a net total: {r['ticket_id']}")
             continue
@@ -63,7 +63,7 @@ def verify_cohorts(trades: list[dict], audit: list[dict]) -> dict:
     for r in trades:
         key = (r["model"], r["replay_stage"], r["cohort_id"])
         counts[key] += 1
-        if r["status"] == "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE":
+        if r["status"] in ("VERIFIED_PRICE_LOCAL_SINGLE_SOURCE", "VERIFIED_PRICE_CARRIED_DOCUMENTED_HALT"):
             by[key] += _num(r["modeled_net"])
     errors = 0
     seen = 0
@@ -109,7 +109,8 @@ def verify_daily(trades: list[dict], daily: list[dict], summaries: dict) -> dict
                 r, q, mark, md = p
                 f = adjustment_factor(r["symbol"], md, d)
                 q, mark = q / f, mark * f
-                if r["status"] == "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE" and r["scheduled_exit_date"] == iso:
+                if r["status"] in ("VERIFIED_PRICE_LOCAL_SINGLE_SOURCE", "VERIFIED_PRICE_CARRIED_DOCUMENTED_HALT") \
+                        and (r.get("actual_exit_date") or r["scheduled_exit_date"]) == iso:
                     xp = _num(r["exit_price"])
                     cash -= q * (xp + fee(xp))
                     continue

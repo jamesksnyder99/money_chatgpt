@@ -28,6 +28,7 @@ def obs(d, px, volume=100.0, preorder=None):
     return {"version": data.VERSION, "source": "virgin", "path": f"data/virgin/bars/{iso}/X.parquet", "mark_kind": "minute_close",
             "ts": f"{iso}T{fm}:00-05:00", "close": px, "first_ts": f"{iso}T09:30:00-05:00", "open": px, "high": px + 1, "low": px - 1,
             "volume": volume, "n_bars": 390, "entry_ts": f"{iso}T{fm}:00-05:00", "entry_px": px,
+            "exec_ts": f"{iso}T{fm}:00-05:00", "exec_px": px, "exec_field": "final_minute_bar_close",
             "preorder": preorder if preorder is not None else px, "preorder_ts": f"{iso}T15:58:00-05:00", "early_close": d in data.NYSE_EARLY_CLOSE}
 
 
@@ -70,8 +71,11 @@ def test_empty_response_is_not_coverage(monkeypatch):
     assert data.observation_status(d, "C", None, need_final_minute=True) == "NOT_PREVIOUSLY_REQUESTED"
     rec = obs(d, 20.0)
     rec["entry_ts"] = None
-    assert data.observation_status(d, "B", rec, need_final_minute=True) == "PARTIAL_OR_SPARSE_REVIEW"
+    # traded that session but not in the final minute: the last regular-hours print is used
+    assert data.observation_status(d, "B", rec, need_final_minute=True) == "THIN_SESSION_LAST_PRINT_USED"
     assert data.observation_status(d, "B", rec, need_final_minute=False) == "PRESENT_CHECKED"
+    rec["exec_px"] = None
+    assert data.observation_status(d, "B", rec, need_final_minute=True) == "PARTIAL_OR_SPARSE_REVIEW"
 
 
 def test_calendar_holiday_early_close_and_runoff():
@@ -158,10 +162,14 @@ def test_same_entries_all_horizons_and_h10_identity():
 
 
 def test_cutoff_runoff_separation():
+    """Arrow 006: the September runoff exit is retrievable, so it must be flagged as
+    post-cutoff and kept out of the calendar account rather than reported as missing."""
     c = cohort(signal=date(2026, 8, 26))
-    t = rp.replay("PARENT", c, market())["trades"][0]
+    book = rp.replay("PARENT", c, market())
+    t = book["trades"][0]
     assert t["exit_after_cutoff"] is True and t["scheduled_exit_date"] == "2026-09-11"
-    assert t["status"] == "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED" and t["modeled_net"] is None
+    assert book["daily"][-1]["date"] == "2026-08-31"
+    assert all(r["date"] <= "2026-08-31" for r in book["daily"])
 
 
 def test_costs_signs_and_scenarios():

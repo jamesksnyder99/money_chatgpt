@@ -6,7 +6,7 @@ import csv
 from pathlib import Path
 
 from verification.r4r5_data import HANDOFF, digest, split_of
-from verification.r4r5_replay import VERIFIED, replay
+from verification.r4r5_replay import COMPLETED, VERIFIED, replay
 
 TRADE_FIELDS = ["model", "replay_stage", "data_version", "quantity_convention", "horizon", "cohort_id", "signal_date",
                 "signal_month", "split", "rank", "ticket_id", "symbol", "security_id", "ranking_scope", "field_size",
@@ -16,14 +16,15 @@ TRADE_FIELDS = ["model", "replay_stage", "data_version", "quantity_convention", 
                 "entry_price_field", "entry_price", "entry_source", "entry_eod_reference", "preorder_price", "preorder_ts",
                 "quantity_fill_convention", "quantity_preorder_convention", "quantity", "scheduled_exit_date",
                 "exit_status", "exit_ts", "exit_price_field", "exit_price", "exit_source", "exit_eod_reference",
-                "exit_reason", "action_factor_over_hold", "quantity_at_exit", "entry_price_exit_units",
+                "exit_reason", "actual_exit_date", "event_treatment", "event_source", "action_factor_over_hold", "quantity_at_exit", "entry_price_exit_units",
                 "exit_after_cutoff", "holding_sessions_intended", "actual_holding_sessions", "holding_calendar_days",
                 "gross_pnl", "entry_commission", "entry_spread", "exit_commission", "exit_spread", "dividends",
                 "dividend_status", "borrow_status", "borrow_base_dollar_years", "modeled_net", "modeled_net_double_spread",
                 "net_borrow_10", "net_borrow_30", "stale_mark_sessions_in_hold", "stale_liability_last_mark",
                 "stale_liability_last_mark_date", "stale_liability_eod_reference", "diagnostic_delayed_exit_date",
                 "diagnostic_delayed_open", "diagnostic_delayed_ts", "diagnostic_delay_sessions", "security_identity_status",
-                "max_session_ratio_in_hold", "max_session_ratio_date", "discontinuity_flag", "action_review_resolution", "status",
+                "max_session_ratio_in_hold", "max_session_ratio_date", "discontinuity_flag", "action_review_resolution",
+                "lookback_flag", "lookback_max_ratio", "lookback_ratio_date", "lookback_resolution", "status",
                 "verification_status", "verification_reason"]
 
 
@@ -69,14 +70,14 @@ def cohort_audit_rows(books: dict) -> list[dict]:
                             "split": t["split"], "rank": t["rank"], "symbol": t["symbol"], "status": t["status"],
                             "quantity": t.get("quantity"), "entry_price": t.get("entry_price"), "exit_price": t.get("exit_price"),
                             "gross_pnl": t.get("gross_pnl"), "modeled_net": t.get("modeled_net")})
-            ver = [t for t in ts if t["status"] == VERIFIED]
+            ver = [t for t in ts if t["status"] in COMPLETED]
             row = {"row_type": "COHORT_SUBTOTAL", "model": ts[0]["model"], "replay_stage": ts[0]["replay_stage"], "cohort_id": cid,
                    "split": ts[0]["split"], "expected_slots": len(ts), "filled": sum(bool(t.get("quantity")) for t in ts),
                    "closed_verified": len(ver), "unresolved": sum(t["status"].startswith("UNRESOLVED") for t in ts),
                    "missed_entry": sum(t["status"].startswith("MISSED_ENTRY") for t in ts),
                    "blocked_or_zero": sum(t["status"] in {"BLOCKED_INHERITED_BORROW_PROXY", "ZERO_SHARE_ORDER"} for t in ts),
                    "gross_pnl": sum(t["gross_pnl"] for t in ver), "modeled_net": sum(t["modeled_net"] for t in ver),
-                   "verified_total_is_complete": all(t["status"] == VERIFIED or t["status"].startswith(("MISSED", "BLOCKED", "ZERO")) for t in ts)}
+                   "verified_total_is_complete": all(t["status"] in COMPLETED or t["status"].startswith(("MISSED", "BLOCKED", "ZERO", "NO_ENTRY")) for t in ts)}
             out.append(row)
             for scope in (("SIGNAL_MONTH", cid[:7]), ("SPLIT", ts[0]["split"]), ("PERIOD", "ALL")):
                 tot = totals[scope]

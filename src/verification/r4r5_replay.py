@@ -16,14 +16,17 @@ import re
 
 from research.book import borrow_blocks_short
 from verification.r4r5_data import (
-    CUTOFF, FEATS, INDEX, LOCAL_TAPE_END, RANKS_PATH, SCORE, adjustment_factor, features, history,
-    observation_status, present, read_json, split_of,
+    CUTOFF, FEATS, INDEX, LOCAL_TAPE_END, RANKS_PATH, SCORE, adjustment_factor, features, halted,
+    history, observation_status, present, read_json, resolved_symbol, split_of,
 )
 
 FAMILIES = {"PARENT": 4000.0, "R4": 5150.0, "R5": 8300.0}
 COMMISSION = 0.005
 SLOTS = 8
 VERIFIED = "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+CARRIED_STATUS = "VERIFIED_PRICE_CARRIED_DOCUMENTED_HALT"
+# Both statuses carry a real observed execution price; they are counted together in totals.
+COMPLETED = (VERIFIED, CARRIED_STATUS)
 
 
 def spread(px: float) -> float:
@@ -130,6 +133,9 @@ def _base_row(family, stage, c, rank, h, hold, quantity):
             "split": c["split"], "rank": rank, "symbol": h["symbol"], "security_id": h["symbol"],
             "prior_close": h["prior_close"], "prior_dollar_volume": h["prior_dv"], "ret15": h["raw_return"],
             "ranking_scope": c["ranking_scope"], "field_size": c["n_field"], "security_identity_status": identity_status(h["symbol"]),
+            "lookback_flag": h.get("lookback_flag"), "lookback_max_ratio": h.get("lookback_max_ratio"),
+            "lookback_ratio_date": h.get("lookback_ratio_date"),
+            "lookback_resolution": h.get("lookback_resolution"),
             "scheduled_entry_date": c["fill"].isoformat()}
 
 
@@ -166,12 +172,17 @@ def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int =
                       "momentum_feature_available": f.get("ret3") is not None,
                       "intended_size": amount, "size_tier": tier, "volume_multiplier": vm, "momentum_multiplier": mm,
                       "entry_status": observation_status(fill, sym, rec, need_final_minute=True)})
-            if not present(rec) or rec.get("entry_ts") is None:
-                t.update({"status": "MISSED_ENTRY_" + t["entry_status"], "quantity": 0, "gross_pnl": None, "modeled_net": None})
+            if not present(rec) or rec.get("exec_px") is None:
+                ev = halted(sym, fill)
+                t.update({"status": ("NO_ENTRY_DOCUMENTED_TRADING_EVENT" if ev else
+                                     "MISSED_ENTRY_" + t["entry_status"]),
+                          "quantity": 0, "gross_pnl": None, "modeled_net": None,
+                          "event_treatment": (ev["event"] if ev else None),
+                          "event_source": (ev["source"] if ev else None)})
                 trades.append(t)
                 continue
-            px = rec["entry_px"]
-            t.update({"entry_ts": rec["entry_ts"], "entry_price_field": "final_minute_bar_close", "entry_price": px,
+            px = rec["exec_px"]
+            t.update({"entry_ts": rec["exec_ts"], "entry_price_field": rec["exec_field"], "entry_price": px,
                       "entry_source": rec["path"], "preorder_price": rec.get("preorder"), "preorder_ts": rec.get("preorder_ts"),
                       "entry_eod_reference": rec.get("eod_close")})
             gap = px / h["prior_close"] - 1 if h["prior_close"] > 0 else None
@@ -224,13 +235,13 @@ def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int =
                 q_now = qty / adjustment_factor(sym, fill, d)
                 borrow_base += q_now * last_mark * (FEATS[j + 1] - d).days / 365
             t.update({"stale_mark_sessions_in_hold": stale, "borrow_base_dollar_years": borrow_base})
-            if present(xrec) and xrec.get("entry_ts"):
-                xp = xrec["entry_px"]
+            if present(xrec) and xrec.get("exec_px") is not None:
+                xp = xrec["exec_px"]
                 gross = q_exit * (entry_adj - xp)
                 xc = q_exit * COMMISSION
                 xs = q_exit * spread(xp)
                 net = gross - t["entry_commission"] - t["entry_spread"] - xc - xs
-                t.update({"status": VERIFIED, "exit_ts": xrec["entry_ts"], "exit_price_field": "final_minute_bar_close",
+                t.update({"status": VERIFIED, "exit_ts": xrec["exec_ts"], "exit_price_field": xrec["exec_field"],
                           "exit_price": xp, "exit_source": xrec["path"], "exit_reason": "scheduled_backstop",
                           "exit_eod_reference": xrec.get("eod_close"), "exit_commission": xc, "exit_spread": xs,
                           "gross_pnl": gross, "modeled_net": net,
@@ -240,6 +251,7 @@ def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int =
                           "verification_reason": "entry/exit final-minute closes present in one local vendor partition; no independent second vendor"})
             else:
                 delayed = None
+                carried = None
                 for j in range(fi + hold + 1, len(FEATS)):
                     d = FEATS[j]
                     if d > LOCAL_TAPE_END:
@@ -248,13 +260,57 @@ def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int =
                     if present(r):
                         delayed = {"diagnostic_delayed_exit_date": d.isoformat(), "diagnostic_delayed_open": r["open"],
                                    "diagnostic_delayed_ts": r["first_ts"], "diagnostic_delay_sessions": j - (fi + hold)}
+                        if r.get("exec_px") is not None:
+                            carried = (d, r, j)
                         break
-                t.update({"status": "UNRESOLVED_" + t["exit_status"], "exit_price": None, "exit_reason": "scheduled_exit_not_observed_locally",
-                          "gross_pnl": None, "modeled_net": None, "verification_status": "UNRESOLVED",
-                          "verification_reason": "scheduled exit observation absent locally; not evidence of a halt; stale liability carried",
-                          "stale_liability_last_mark": last_mark, "stale_liability_last_mark_date": last_mark_date.isoformat(),
-                          "stale_liability_eod_reference": xrec.get("eod_close") if xrec else None,
-                          **(delayed or {})})
+                event = halted(sym, exit_d)
+                if event and carried:
+                    # Documented non-execution: the resting cover order executes at the first later
+                    # session on which the security actually traded, same late-RTH close convention.
+                    d, r, j = carried
+                    fac2 = adjustment_factor(sym, fill, d)
+                    q2 = qty / fac2
+                    ent2 = px * fac2
+                    xp = r["exec_px"]
+                    gross = q2 * (ent2 - xp)
+                    xc = q2 * COMMISSION
+                    xs = q2 * spread(xp)
+                    net = gross - t["entry_commission"] - t["entry_spread"] - xc - xs
+                    t.update({"status": CARRIED_STATUS, "exit_ts": r["exec_ts"],
+                              "exit_price_field": r["exec_field"], "exit_price": xp,
+                              "exit_source": r["path"], "exit_reason": "documented_trading_event_order_carried",
+                              "exit_eod_reference": r.get("eod_close"), "exit_commission": xc, "exit_spread": xs,
+                              "action_factor_over_hold": fac2, "quantity_at_exit": q2,
+                              "entry_price_exit_units": ent2,
+                              "gross_pnl": gross, "modeled_net": net,
+                              "modeled_net_double_spread": net - t["entry_spread"] - xs,
+                              "net_borrow_10": net - 0.10 * borrow_base, "net_borrow_30": net - 0.30 * borrow_base,
+                              "actual_holding_sessions": j - fi, "actual_exit_date": d.isoformat(),
+                              "event_treatment": event["event"], "event_source": event["source"],
+                              "verification_status": CARRIED_STATUS,
+                              "verification_reason": "scheduled session had no executable trade under a documented "
+                                                     "suspension/halt; the resting order is filled at the first later "
+                                                     "session that actually traded"})
+                elif event:
+                    t.update({"status": "OPEN_AT_BOUNDARY_DOCUMENTED_HALT", "exit_price": None,
+                              "exit_reason": "documented_trading_event_no_later_execution_in_window",
+                              "gross_pnl": None, "modeled_net": None,
+                              "verification_status": "OPEN_DOCUMENTED_EVENT",
+                              "verification_reason": "security did not trade again inside the study window under a "
+                                                     "documented suspension/halt; the short obligation remains open "
+                                                     "and is excluded from completed-trade totals",
+                              "event_treatment": event["event"], "event_source": event["source"],
+                              "stale_liability_last_mark": last_mark,
+                              "stale_liability_last_mark_date": last_mark_date.isoformat(),
+                              **(delayed or {})})
+                else:
+                    t.update({"status": "UNRESOLVED_" + t["exit_status"], "exit_price": None,
+                              "exit_reason": "scheduled_exit_not_observed_locally",
+                              "gross_pnl": None, "modeled_net": None, "verification_status": "UNRESOLVED",
+                              "verification_reason": "scheduled exit observation absent locally; not evidence of a halt; stale liability carried",
+                              "stale_liability_last_mark": last_mark, "stale_liability_last_mark_date": last_mark_date.isoformat(),
+                              "stale_liability_eod_reference": xrec.get("eod_close") if xrec else None,
+                              **(delayed or {})})
             trades.append(t)
     return {"trades": trades, "daily": daily_account(trades, summaries)}
 
@@ -263,7 +319,7 @@ def daily_account(trades: list[dict], summaries: dict) -> list[dict]:
     """Cash-minus-liability account through the cutoff. Stale marks are flagged, never verified."""
     opens = {}
     for t in trades:
-        if t.get("quantity") and t["status"] not in {"ZERO_SHARE_ORDER"} and t.get("entry_price") is not None and "scheduled_exit_date" in t:
+        if t.get("quantity") and t["status"] != "ZERO_SHARE_ORDER" and t.get("entry_price") is not None and "scheduled_exit_date" in t:
             opens.setdefault(t["scheduled_entry_date"], []).append(t)
     cash = 100000.0
     realized = costs = 0.0
@@ -287,7 +343,8 @@ def daily_account(trades: list[dict], summaries: dict) -> list[dict]:
                 p["q"] /= fac
                 p["mark"] *= fac
                 events.append(f"ACTION {t['symbol']} factor {fac}")
-            if t["status"] == VERIFIED and t["scheduled_exit_date"] == iso:
+            close_on = t.get("actual_exit_date") or t.get("scheduled_exit_date")
+            if t["status"] in COMPLETED and close_on == iso:
                 xp = t["exit_price"]
                 cash -= p["q"] * xp + t["exit_commission"] + t["exit_spread"]
                 costs += t["exit_commission"] + t["exit_spread"]

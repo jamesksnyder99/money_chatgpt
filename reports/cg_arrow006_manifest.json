@@ -1,0 +1,6919 @@
+{
+  "arrow": "CG Arrow 006",
+  "executor": "Opus in Claude Code",
+  "timestamp": "2026-09-14T12:46:36+00:00",
+  "elapsed_minutes": 0.457557075000174,
+  "head_at_run": "cf51827bb8cae372bd2a3cd421fc23394ff272a7",
+  "code_sha256": {
+    "src/verification/r4r5_data.py": "660a68b9165e5c7316cf3c85c57998cb6deff42d48b21001743acb96292dff45",
+    "src/verification/r4r5_replay.py": "883224f4ca987e341acae435559d8b353a8700c017f717de6ff895b7382261c9",
+    "src/verification/r4r5_export.py": "82e3ebdaf776db02b68698d014e5d009502e92ab6bbecf99568a8d03c412d240",
+    "src/verification/r4r5_oracle.py": "a815939886f44d20c96894f410b0525622c73557b4fabe6c243b60746d13644b",
+    "src/verification/r4r5_repair.py": "9a566690b4a69723578d25243b25a131c804287cd1175f288ab94e386d86dc1d",
+    "src/verification/r4r5_rank.py": "a2645ce8a90e5f5eafebe61862660f78a0bdeea0f5e2627d3632e6f09aa41089",
+    "scripts/cg_arrow006_run.py": "cc7e83bc6be18ec43b0e77ca1a08acdec57c52ba1e27364de4a26b14a51d9e63",
+    "scripts/cg_arrow006_acquire.py": "650c7d808992f7a1dd1cc3f7f750165b4133e36e2533d584533bb714ef97d8d5"
+  },
+  "input_sha256": {
+    "data/tmp/cg_arrow002r/ranks_ALL_wed.json": "33fb637bf5f9a2c12cfe192a425d8736545cbc76aa7fe73ce99ae2c65fc38397",
+    "reports/cg_arrow003_corporate_actions.json": "522f027dcacd2cc3e6831d43ed894f5a21ef49048814041d919e88b6cade13cf",
+    "reports/cg_arrow006_corporate_actions.json": "28492e0a1211647d85b200eb31b5f124ac02f8b151e0994947986ffe2452fd1b"
+  },
+  "universe_rule": {
+    "roster": 15322,
+    "etp_excluded": 5672,
+    "test_issues_excluded": [
+      "ZAZZT",
+      "ZBZZT",
+      "ZCZZT",
+      "ZFZZT",
+      "ZJZZT",
+      "ZVZZT",
+      "ZWZZT",
+      "ZXZZT"
+    ],
+    "prior_close": [
+      10.0,
+      80.0
+    ],
+    "prior_dollar_volume_min": 10000000.0
+  },
+  "acquisition": {
+    "timestamp": "2026-09-14T12:23:51+00:00",
+    "symbol_sessions": 194,
+    "status_counts": {
+      "DOCUMENTED_NO_TRADING": 46,
+      "RETRIEVED_CHECKED": 148
+    },
+    "unresolved": []
+  },
+  "end_to_end_proof": {
+    "case": "SNDK/2025-09-25",
+    "pipeline": "authenticated request -> immutable raw parquet -> normalize/validate -> per-session validated partition -> summary cache invalidation -> replay loader",
+    "pipeline_ok": true,
+    "cache_partitions_invalidated": 1,
+    "before": {
+      "source": null,
+      "priced": false
+    },
+    "after": {
+      "source": "validated",
+      "path": "data/verification/r4r5/v1/validated/2025-09-25/SNDK.parquet",
+      "priced": true,
+      "n_bars": 390,
+      "execution_timestamp": "2025-09-25T15:59:00-04:00"
+    },
+    "note": "price values are withheld from public artefacts; the local proof file carries them",
+    "local_proof_path": "data/verification/r4r5/v1/proof_end_to_end.json",
+    "local_proof_sha256": "fab332970b8f8c7163aae9ecb4327ea27b9059ae7f5ca41fef4e12d7668c3f91"
+  },
+  "r0": {
+    "source": "data/tmp/cg_arrow003 frozen records (read-only)",
+    "books": {
+      "PARENT_IS": {
+        "total_pnl": 6450.9913142000005,
+        "trades": 197,
+        "exit_legs": 191,
+        "terminal_tickets": 6,
+        "terminal_net_mtm": -1605.542940000001,
+        "result_sha256": "081640268542212e93da688da10a0787ad69f3345259a1c3e3c58a480b54c57c"
+      },
+      "PARENT_OOS": {
+        "total_pnl": 31866.2040538,
+        "trades": 212,
+        "exit_legs": 192,
+        "terminal_tickets": 20,
+        "terminal_net_mtm": -1685.3715550000018,
+        "result_sha256": "6770ff2373421ada922aa4f5137e491ef85c22f14a9c5a3bbca8958d41aacc23"
+      },
+      "PARENT_ALL": {
+        "total_pnl": 38317.195368,
+        "trades": 409,
+        "exit_legs": 383,
+        "terminal_tickets": 26,
+        "terminal_net_mtm": -3290.9144950000027,
+        "result_sha256": "283a9819f3627fe8c5df68ca28aec3e65d4fbec2abba36e2d170ecbfa72437aa"
+      },
+      "R4_IS": {
+        "total_pnl": 14078.448518399999,
+        "trades": 197,
+        "exit_legs": 191,
+        "terminal_tickets": 6,
+        "terminal_net_mtm": -1598.1717950000007,
+        "result_sha256": "d618e4c4eb2c0f043b0b2fb17a0dbb6a9b68150b0a180cb63b6f0cff1304a54c"
+      },
+      "R4_OOS": {
+        "total_pnl": 44962.237880500004,
+        "trades": 212,
+        "exit_legs": 192,
+        "terminal_tickets": 20,
+        "terminal_net_mtm": 1550.5969049999992,
+        "result_sha256": "ef84bfe845309defce4c9a4830fabd00d6855c0874e5f1c73ce54edcf540821d"
+      },
+      "R4_ALL": {
+        "total_pnl": 59040.686398900005,
+        "trades": 409,
+        "exit_legs": 383,
+        "terminal_tickets": 26,
+        "terminal_net_mtm": -47.57489000000143,
+        "result_sha256": "054fd991756acfe2da9a23a98f5165b5f8705ef23a6d0e6bb93112eb5450ae2b"
+      },
+      "R5_IS": {
+        "total_pnl": 21662.039154499995,
+        "trades": 197,
+        "exit_legs": 191,
+        "terminal_tickets": 6,
+        "terminal_net_mtm": -1498.41873,
+        "result_sha256": "6c513a8962b6c3b24afec74e5c2c933306a9918187da03c374f929cd95688b09"
+      },
+      "R5_OOS": {
+        "total_pnl": 47259.10147930001,
+        "trades": 212,
+        "exit_legs": 192,
+        "terminal_tickets": 20,
+        "terminal_net_mtm": 711.5374349999992,
+        "result_sha256": "7ab26c29b516ef661100ea5673c07b4b224477344cbe8b84ea77f46f38b31352"
+      },
+      "R5_ALL": {
+        "total_pnl": 68921.14063380001,
+        "trades": 409,
+        "exit_legs": 383,
+        "terminal_tickets": 26,
+        "terminal_net_mtm": -786.8812950000008,
+        "result_sha256": "3b7011c3be3fe5dccf449d330db6e0ffa5947a965d16fe8c639bcc96cd376544"
+      }
+    }
+  },
+  "r0_r1_reconciliation": {
+    "PARENT": {
+      "frozen_positions": 409,
+      "r1_filled": 416,
+      "frozen_positions_all_present": true,
+      "identity_equal": false,
+      "repaired_entries_new_in_r1": [
+        "2025-10-22/VICR",
+        "2025-11-05/NEGG",
+        "2026-02-11/VAL",
+        "2026-06-17/ZVZZT",
+        "2026-06-24/DD",
+        "2026-07-01/SDOT",
+        "2026-07-29/CBZ"
+      ],
+      "missing_from_r1": [],
+      "extra_in_r1": [
+        "2025-10-22/VICR",
+        "2025-11-05/NEGG",
+        "2026-02-11/VAL",
+        "2026-06-17/ZVZZT",
+        "2026-06-24/DD",
+        "2026-07-01/SDOT",
+        "2026-07-29/CBZ"
+      ],
+      "quantity_mismatches": 0,
+      "frozen_scheduled_legs": 372,
+      "matched_unchanged_legs": 372,
+      "max_abs_leg_difference": 9.094947017729282e-13,
+      "documented_action_leg_changes": [
+        {
+          "ticket_id": "2025-10-15/NVA",
+          "frozen_pnl": 3484.9899000000005,
+          "r1_pnl": 1641.6099,
+          "factor": 0.2
+        },
+        {
+          "ticket_id": "2025-10-22/NVA",
+          "frozen_pnl": 3177.2974999999997,
+          "r1_pnl": -25.222500000000274,
+          "factor": 0.2
+        }
+      ],
+      "documented_action_delta": -5045.900000000001,
+      "repaired_exits_new_in_r1": 43,
+      "repaired_exit_net": -3809.262504700006
+    },
+    "R4": {
+      "frozen_positions": 409,
+      "r1_filled": 416,
+      "frozen_positions_all_present": true,
+      "identity_equal": false,
+      "repaired_entries_new_in_r1": [
+        "2025-10-22/VICR",
+        "2025-11-05/NEGG",
+        "2026-02-11/VAL",
+        "2026-06-17/ZVZZT",
+        "2026-06-24/DD",
+        "2026-07-01/SDOT",
+        "2026-07-29/CBZ"
+      ],
+      "missing_from_r1": [],
+      "extra_in_r1": [
+        "2025-10-22/VICR",
+        "2025-11-05/NEGG",
+        "2026-02-11/VAL",
+        "2026-06-17/ZVZZT",
+        "2026-06-24/DD",
+        "2026-07-01/SDOT",
+        "2026-07-29/CBZ"
+      ],
+      "quantity_mismatches": 0,
+      "frozen_scheduled_legs": 372,
+      "matched_unchanged_legs": 372,
+      "max_abs_leg_difference": 1.8189894035458565e-12,
+      "documented_action_leg_changes": [
+        {
+          "ticket_id": "2025-10-15/NVA",
+          "frozen_pnl": 4536.0186,
+          "r1_pnl": 2136.6986,
+          "factor": 0.2
+        },
+        {
+          "ticket_id": "2025-10-22/NVA",
+          "frozen_pnl": 4092.79,
+          "r1_pnl": -32.49000000000035,
+          "factor": 0.2
+        }
+      ],
+      "documented_action_delta": -6524.6,
+      "repaired_exits_new_in_r1": 43,
+      "repaired_exit_net": -981.2938809000069
+    },
+    "R5": {
+      "frozen_positions": 409,
+      "r1_filled": 416,
+      "frozen_positions_all_present": true,
+      "identity_equal": false,
+      "repaired_entries_new_in_r1": [
+        "2025-10-22/VICR",
+        "2025-11-05/NEGG",
+        "2026-02-11/VAL",
+        "2026-06-17/ZVZZT",
+        "2026-06-24/DD",
+        "2026-07-01/SDOT",
+        "2026-07-29/CBZ"
+      ],
+      "missing_from_r1": [],
+      "extra_in_r1": [
+        "2025-10-22/VICR",
+        "2025-11-05/NEGG",
+        "2026-02-11/VAL",
+        "2026-06-17/ZVZZT",
+        "2026-06-24/DD",
+        "2026-07-01/SDOT",
+        "2026-07-29/CBZ"
+      ],
+      "quantity_mismatches": 0,
+      "frozen_scheduled_legs": 372,
+      "matched_unchanged_legs": 372,
+      "max_abs_leg_difference": 9.094947017729282e-13,
+      "documented_action_leg_changes": [
+        {
+          "ticket_id": "2025-10-15/NVA",
+          "frozen_pnl": 3650.9418000000005,
+          "r1_pnl": 1719.7818,
+          "factor": 0.2
+        },
+        {
+          "ticket_id": "2025-10-22/NVA",
+          "frozen_pnl": 6596.931250000001,
+          "r1_pnl": -52.36875000000057,
+          "factor": 0.2
+        }
+      ],
+      "documented_action_delta": -8580.460000000001,
+      "repaired_exits_new_in_r1": 43,
+      "repaired_exit_net": 54.4607040999961
+    }
+  },
+  "ranking_reconciliation": [
+    {
+      "cohort_id": "2025-09-03",
+      "old_field_size": 1277,
+      "corrected_field_size": 1290,
+      "restored_candidates": 18,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 5,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "LCID",
+        "SATS",
+        "MLYS",
+        "IREN",
+        "ZEPP",
+        "ARWR",
+        "DK",
+        "PLYM"
+      ],
+      "corrected_top8": [
+        "SOGP",
+        "SATS",
+        "MLYS",
+        "IREN",
+        "ZEPP",
+        "ARWR",
+        "DK",
+        "PLYM"
+      ],
+      "added": [
+        "SOGP"
+      ],
+      "dropped": [
+        "LCID"
+      ],
+      "rank_changes": {
+        "SOGP": [
+          null,
+          1
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-09-10",
+      "old_field_size": 1282,
+      "corrected_field_size": 1300,
+      "restored_candidates": 21,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 3,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "LCID",
+        "OXLC",
+        "MLYS",
+        "SUPX",
+        "TRML",
+        "KRRO",
+        "NKTR",
+        "IREN"
+      ],
+      "corrected_top8": [
+        "OCTO",
+        "SOGP",
+        "MLYS",
+        "SUPX",
+        "FORD",
+        "TRML",
+        "KRRO",
+        "NKTR"
+      ],
+      "added": [
+        "OCTO",
+        "SOGP",
+        "FORD"
+      ],
+      "dropped": [
+        "LCID",
+        "OXLC",
+        "IREN"
+      ],
+      "rank_changes": {
+        "OCTO": [
+          null,
+          1
+        ],
+        "SOGP": [
+          null,
+          2
+        ],
+        "FORD": [
+          null,
+          5
+        ],
+        "TRML": [
+          5,
+          6
+        ],
+        "KRRO": [
+          6,
+          7
+        ],
+        "NKTR": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-09-17",
+      "old_field_size": 1297,
+      "corrected_field_size": 1315,
+      "restored_candidates": 28,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 10,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "LCID",
+        "OXLC",
+        "MLYS",
+        "TRML",
+        "NKTR",
+        "INOD",
+        "HYPD",
+        "CIFR"
+      ],
+      "corrected_top8": [
+        "TURB",
+        "HSDT",
+        "FORD",
+        "MLYS",
+        "TRML",
+        "NKTR",
+        "INOD",
+        "HYPD"
+      ],
+      "added": [
+        "TURB",
+        "HSDT",
+        "FORD"
+      ],
+      "dropped": [
+        "LCID",
+        "OXLC",
+        "CIFR"
+      ],
+      "rank_changes": {
+        "TURB": [
+          null,
+          1
+        ],
+        "HSDT": [
+          null,
+          2
+        ],
+        "FORD": [
+          null,
+          3
+        ],
+        "MLYS": [
+          3,
+          4
+        ],
+        "TRML": [
+          4,
+          5
+        ],
+        "NKTR": [
+          5,
+          6
+        ],
+        "INOD": [
+          6,
+          7
+        ],
+        "HYPD": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-09-24",
+      "old_field_size": 1306,
+      "corrected_field_size": 1329,
+      "restored_candidates": 39,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 16,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "VOR",
+        "OXLC",
+        "GMRE",
+        "BETR",
+        "QURE",
+        "BKKT",
+        "FORD",
+        "NKTR"
+      ],
+      "corrected_top8": [
+        "BREA",
+        "BETR",
+        "QURE",
+        "BKKT",
+        "FORD",
+        "NKTR",
+        "RGTI",
+        "TRML"
+      ],
+      "added": [
+        "BREA",
+        "RGTI",
+        "TRML"
+      ],
+      "dropped": [
+        "VOR",
+        "OXLC",
+        "GMRE"
+      ],
+      "rank_changes": {
+        "BREA": [
+          null,
+          1
+        ],
+        "BETR": [
+          4,
+          2
+        ],
+        "QURE": [
+          5,
+          3
+        ],
+        "BKKT": [
+          6,
+          4
+        ],
+        "FORD": [
+          7,
+          5
+        ],
+        "NKTR": [
+          8,
+          6
+        ],
+        "RGTI": [
+          null,
+          7
+        ],
+        "TRML": [
+          null,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-10-01",
+      "old_field_size": 1324,
+      "corrected_field_size": 1359,
+      "restored_candidates": 48,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 13,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "VOR",
+        "WOLF",
+        "BKKT",
+        "QURE",
+        "BETR",
+        "FLNC",
+        "CLPT",
+        "SKYT"
+      ],
+      "corrected_top8": [
+        "WOLF",
+        "BREA",
+        "BKKT",
+        "QURE",
+        "BETR",
+        "MFH",
+        "EFTY",
+        "HSDT"
+      ],
+      "added": [
+        "BREA",
+        "MFH",
+        "EFTY",
+        "HSDT"
+      ],
+      "dropped": [
+        "VOR",
+        "FLNC",
+        "CLPT",
+        "SKYT"
+      ],
+      "rank_changes": {
+        "WOLF": [
+          2,
+          1
+        ],
+        "BREA": [
+          null,
+          2
+        ],
+        "MFH": [
+          null,
+          6
+        ],
+        "EFTY": [
+          null,
+          7
+        ],
+        "HSDT": [
+          null,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-10-08",
+      "old_field_size": 1316,
+      "corrected_field_size": 1347,
+      "restored_candidates": 37,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 6,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "VOR",
+        "WOLF",
+        "QURE",
+        "BKKT",
+        "GMRE",
+        "DGNX",
+        "MFH",
+        "CLPT"
+      ],
+      "corrected_top8": [
+        "WOLF",
+        "QURE",
+        "BKKT",
+        "BQ",
+        "GLTO",
+        "DGNX",
+        "MFH",
+        "CLPT"
+      ],
+      "added": [
+        "BQ",
+        "GLTO"
+      ],
+      "dropped": [
+        "VOR",
+        "GMRE"
+      ],
+      "rank_changes": {
+        "WOLF": [
+          2,
+          1
+        ],
+        "QURE": [
+          3,
+          2
+        ],
+        "BKKT": [
+          4,
+          3
+        ],
+        "BQ": [
+          null,
+          4
+        ],
+        "GLTO": [
+          null,
+          5
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-10-15",
+      "old_field_size": 1297,
+      "corrected_field_size": 1324,
+      "restored_candidates": 36,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 9,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "WOLF",
+        "STI",
+        "NVA",
+        "CRML",
+        "NUKK",
+        "AQMS",
+        "NVTS",
+        "BKKT"
+      ],
+      "corrected_top8": [
+        "WOLF",
+        "STI",
+        "TMQ",
+        "NVA",
+        "CRML",
+        "NUKK",
+        "AQMS",
+        "NVTS"
+      ],
+      "added": [
+        "TMQ"
+      ],
+      "dropped": [
+        "BKKT"
+      ],
+      "rank_changes": {
+        "TMQ": [
+          null,
+          3
+        ],
+        "NVA": [
+          3,
+          4
+        ],
+        "CRML": [
+          4,
+          5
+        ],
+        "NUKK": [
+          5,
+          6
+        ],
+        "AQMS": [
+          6,
+          7
+        ],
+        "NVTS": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-10-22",
+      "old_field_size": 1259,
+      "corrected_field_size": 1287,
+      "restored_candidates": 31,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 3,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "ETHZ",
+        "CRML",
+        "NVTS",
+        "VICR",
+        "UAMY",
+        "NVA",
+        "ATXS",
+        "CELC"
+      ],
+      "corrected_top8": [
+        "GSIT",
+        "ANRO",
+        "CRML",
+        "NVTS",
+        "VICR",
+        "UAMY",
+        "NVA",
+        "ATXS"
+      ],
+      "added": [
+        "GSIT",
+        "ANRO"
+      ],
+      "dropped": [
+        "ETHZ",
+        "CELC"
+      ],
+      "rank_changes": {
+        "GSIT": [
+          null,
+          1
+        ],
+        "ANRO": [
+          null,
+          2
+        ],
+        "CRML": [
+          2,
+          3
+        ],
+        "NVTS": [
+          3,
+          4
+        ],
+        "VICR": [
+          4,
+          5
+        ],
+        "UAMY": [
+          5,
+          6
+        ],
+        "NVA": [
+          6,
+          7
+        ],
+        "ATXS": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-10-29",
+      "old_field_size": 1275,
+      "corrected_field_size": 1301,
+      "restored_candidates": 30,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 4,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "ETHZ",
+        "GSIT",
+        "SUPV",
+        "INBX",
+        "ANRO",
+        "REPL",
+        "EDN",
+        "GGAL"
+      ],
+      "corrected_top8": [
+        "WKEY",
+        "GSIT",
+        "SUPV",
+        "INBX",
+        "ANRO",
+        "REPL",
+        "EDN",
+        "GGAL"
+      ],
+      "added": [
+        "WKEY"
+      ],
+      "dropped": [
+        "ETHZ"
+      ],
+      "rank_changes": {
+        "WKEY": [
+          null,
+          1
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-11-05",
+      "old_field_size": 1339,
+      "corrected_field_size": 1373,
+      "restored_candidates": 41,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 7,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "ETHZ",
+        "TERN",
+        "PUMP",
+        "SUPV",
+        "NEGG",
+        "BBAR",
+        "GGAL",
+        "TCMD"
+      ],
+      "corrected_top8": [
+        "EVOK",
+        "TERN",
+        "PUMP",
+        "SUPV",
+        "NEGG",
+        "BBAR",
+        "GGAL",
+        "TCMD"
+      ],
+      "added": [
+        "EVOK"
+      ],
+      "dropped": [
+        "ETHZ"
+      ],
+      "rank_changes": {
+        "EVOK": [
+          null,
+          1
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-11-12",
+      "old_field_size": 1287,
+      "corrected_field_size": 1317,
+      "restored_candidates": 40,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 10,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "LXP",
+        "TERN",
+        "COGT",
+        "INBX",
+        "AXTI",
+        "CSIQ",
+        "SUPV",
+        "PUMP"
+      ],
+      "corrected_top8": [
+        "GLTO",
+        "FRGE",
+        "TERN",
+        "COGT",
+        "INBX",
+        "AXTI",
+        "CSIQ",
+        "SUPV"
+      ],
+      "added": [
+        "GLTO",
+        "FRGE"
+      ],
+      "dropped": [
+        "LXP",
+        "PUMP"
+      ],
+      "rank_changes": {
+        "GLTO": [
+          null,
+          1
+        ],
+        "FRGE": [
+          null,
+          2
+        ],
+        "TERN": [
+          2,
+          3
+        ],
+        "COGT": [
+          3,
+          4
+        ],
+        "INBX": [
+          4,
+          5
+        ],
+        "AXTI": [
+          5,
+          6
+        ],
+        "CSIQ": [
+          6,
+          7
+        ],
+        "SUPV": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-11-19",
+      "old_field_size": 1286,
+      "corrected_field_size": 1335,
+      "restored_candidates": 60,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 11,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "LXP",
+        "TERN",
+        "OLMA",
+        "FRGE",
+        "COGT",
+        "MCRB",
+        "HAE",
+        "MH"
+      ],
+      "corrected_top8": [
+        "TERN",
+        "OLMA",
+        "FRGE",
+        "COGT",
+        "CMCT",
+        "MCRB",
+        "HAE",
+        "MH"
+      ],
+      "added": [
+        "CMCT"
+      ],
+      "dropped": [
+        "LXP"
+      ],
+      "rank_changes": {
+        "TERN": [
+          2,
+          1
+        ],
+        "OLMA": [
+          3,
+          2
+        ],
+        "FRGE": [
+          4,
+          3
+        ],
+        "COGT": [
+          5,
+          4
+        ],
+        "CMCT": [
+          null,
+          5
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-11-26",
+      "old_field_size": 1326,
+      "corrected_field_size": 1356,
+      "restored_candidates": 36,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 6,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "LXP",
+        "OLMA",
+        "COGT",
+        "PACS",
+        "FRGE",
+        "HLF",
+        "MAGN",
+        "CGEM"
+      ],
+      "corrected_top8": [
+        "OLMA",
+        "COGT",
+        "PACS",
+        "FRGE",
+        "HLF",
+        "MAGN",
+        "CGEM",
+        "TERN"
+      ],
+      "added": [
+        "TERN"
+      ],
+      "dropped": [
+        "LXP"
+      ],
+      "rank_changes": {
+        "OLMA": [
+          2,
+          1
+        ],
+        "COGT": [
+          3,
+          2
+        ],
+        "PACS": [
+          4,
+          3
+        ],
+        "FRGE": [
+          5,
+          4
+        ],
+        "HLF": [
+          6,
+          5
+        ],
+        "MAGN": [
+          7,
+          6
+        ],
+        "CGEM": [
+          8,
+          7
+        ],
+        "TERN": [
+          null,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-12-03",
+      "old_field_size": 1290,
+      "corrected_field_size": 1320,
+      "restored_candidates": 32,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 2,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "HPP",
+        "OLMA",
+        "PACS",
+        "SGML",
+        "SEMR",
+        "MAGN",
+        "ARWR",
+        "SRRK"
+      ],
+      "corrected_top8": [
+        "HPP",
+        "SMX",
+        "OLMA",
+        "AHMA",
+        "PACS",
+        "SGML",
+        "FLYE",
+        "SEMR"
+      ],
+      "added": [
+        "SMX",
+        "AHMA",
+        "FLYE"
+      ],
+      "dropped": [
+        "MAGN",
+        "ARWR",
+        "SRRK"
+      ],
+      "rank_changes": {
+        "SMX": [
+          null,
+          2
+        ],
+        "OLMA": [
+          2,
+          3
+        ],
+        "AHMA": [
+          null,
+          4
+        ],
+        "PACS": [
+          3,
+          5
+        ],
+        "SGML": [
+          4,
+          6
+        ],
+        "FLYE": [
+          null,
+          7
+        ],
+        "SEMR": [
+          5,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-12-10",
+      "old_field_size": 1319,
+      "corrected_field_size": 1336,
+      "restored_candidates": 24,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 7,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "HPP",
+        "CAPR",
+        "WVE",
+        "PACS",
+        "GPCR",
+        "ALMS",
+        "PLAB",
+        "SEMR"
+      ],
+      "corrected_top8": [
+        "TGL",
+        "HPP",
+        "CAPR",
+        "OCG",
+        "WVE",
+        "PACS",
+        "GPCR",
+        "ALMS"
+      ],
+      "added": [
+        "TGL",
+        "OCG"
+      ],
+      "dropped": [
+        "PLAB",
+        "SEMR"
+      ],
+      "rank_changes": {
+        "TGL": [
+          null,
+          1
+        ],
+        "HPP": [
+          1,
+          2
+        ],
+        "CAPR": [
+          2,
+          3
+        ],
+        "OCG": [
+          null,
+          4
+        ],
+        "WVE": [
+          3,
+          5
+        ],
+        "PACS": [
+          4,
+          6
+        ],
+        "GPCR": [
+          5,
+          7
+        ],
+        "ALMS": [
+          6,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-12-17",
+      "old_field_size": 1347,
+      "corrected_field_size": 1364,
+      "restored_candidates": 29,
+      "removed_test_issues": 1,
+      "unrankable_no_trading": 11,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "HPP",
+        "CAPR",
+        "WVE",
+        "VOR",
+        "GPCR",
+        "DBVT",
+        "VERA",
+        "FEIM"
+      ],
+      "corrected_top8": [
+        "TLRY",
+        "HPP",
+        "CAPR",
+        "WVE",
+        "VOR",
+        "GPCR",
+        "DBVT",
+        "VERA"
+      ],
+      "added": [
+        "TLRY"
+      ],
+      "dropped": [
+        "FEIM"
+      ],
+      "rank_changes": {
+        "TLRY": [
+          null,
+          1
+        ],
+        "HPP": [
+          1,
+          2
+        ],
+        "CAPR": [
+          2,
+          3
+        ],
+        "WVE": [
+          3,
+          4
+        ],
+        "VOR": [
+          4,
+          5
+        ],
+        "GPCR": [
+          5,
+          6
+        ],
+        "DBVT": [
+          6,
+          7
+        ],
+        "VERA": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-12-24",
+      "old_field_size": 1249,
+      "corrected_field_size": 1265,
+      "restored_candidates": 22,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 6,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "WVE",
+        "GPCR",
+        "HYMC",
+        "ISSC",
+        "FEIM",
+        "SOC",
+        "RGC",
+        "KDK"
+      ],
+      "corrected_top8": [
+        "AFJK",
+        "WVE",
+        "VELO",
+        "GPCR",
+        "HYMC",
+        "ISSC",
+        "FEIM",
+        "SOC"
+      ],
+      "added": [
+        "AFJK",
+        "VELO"
+      ],
+      "dropped": [
+        "RGC",
+        "KDK"
+      ],
+      "rank_changes": {
+        "AFJK": [
+          null,
+          1
+        ],
+        "WVE": [
+          1,
+          2
+        ],
+        "VELO": [
+          null,
+          3
+        ],
+        "GPCR": [
+          2,
+          4
+        ],
+        "HYMC": [
+          3,
+          5
+        ],
+        "ISSC": [
+          4,
+          6
+        ],
+        "FEIM": [
+          5,
+          7
+        ],
+        "SOC": [
+          6,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2025-12-31",
+      "old_field_size": 1208,
+      "corrected_field_size": 1231,
+      "restored_candidates": 29,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 6,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "VELO",
+        "HYMC",
+        "PL",
+        "FEIM",
+        "OMER",
+        "FOLD",
+        "DVAX",
+        "LUNR"
+      ],
+      "corrected_top8": [
+        "ASPC",
+        "GLSI",
+        "VELO",
+        "HYMC",
+        "EKSO",
+        "PL",
+        "FEIM",
+        "OMER"
+      ],
+      "added": [
+        "ASPC",
+        "GLSI",
+        "EKSO"
+      ],
+      "dropped": [
+        "FOLD",
+        "DVAX",
+        "LUNR"
+      ],
+      "rank_changes": {
+        "ASPC": [
+          null,
+          1
+        ],
+        "GLSI": [
+          null,
+          2
+        ],
+        "VELO": [
+          1,
+          3
+        ],
+        "HYMC": [
+          2,
+          4
+        ],
+        "EKSO": [
+          null,
+          5
+        ],
+        "PL": [
+          3,
+          6
+        ],
+        "FEIM": [
+          4,
+          7
+        ],
+        "OMER": [
+          5,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-01-07",
+      "old_field_size": 1342,
+      "corrected_field_size": 1360,
+      "restored_candidates": 25,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 7,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "RGC",
+        "HYMC",
+        "VELO",
+        "SKYT",
+        "CRML",
+        "LUNR",
+        "VTYX",
+        "HUT"
+      ],
+      "corrected_top8": [
+        "INBS",
+        "RGC",
+        "HYMC",
+        "VELO",
+        "SKYT",
+        "CRML",
+        "LUNR",
+        "VTYX"
+      ],
+      "added": [
+        "INBS"
+      ],
+      "dropped": [
+        "HUT"
+      ],
+      "rank_changes": {
+        "INBS": [
+          null,
+          1
+        ],
+        "RGC": [
+          1,
+          2
+        ],
+        "HYMC": [
+          2,
+          3
+        ],
+        "VELO": [
+          3,
+          4
+        ],
+        "SKYT": [
+          4,
+          5
+        ],
+        "CRML": [
+          5,
+          6
+        ],
+        "LUNR": [
+          6,
+          7
+        ],
+        "VTYX": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-01-14",
+      "old_field_size": 1304,
+      "corrected_field_size": 1328,
+      "restored_candidates": 27,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 3,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "NBY",
+        "CRML",
+        "GLSI",
+        "AHMA",
+        "ALMS",
+        "BKKT",
+        "BIOA",
+        "SKYT"
+      ],
+      "corrected_top8": [
+        "INBS",
+        "NBY",
+        "CRML",
+        "GLSI",
+        "AHMA",
+        "ALMS",
+        "BKKT",
+        "BIOA"
+      ],
+      "added": [
+        "INBS"
+      ],
+      "dropped": [
+        "SKYT"
+      ],
+      "rank_changes": {
+        "INBS": [
+          null,
+          1
+        ],
+        "NBY": [
+          1,
+          2
+        ],
+        "CRML": [
+          2,
+          3
+        ],
+        "GLSI": [
+          3,
+          4
+        ],
+        "AHMA": [
+          4,
+          5
+        ],
+        "ALMS": [
+          5,
+          6
+        ],
+        "BKKT": [
+          6,
+          7
+        ],
+        "BIOA": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-01-21",
+      "old_field_size": 1321,
+      "corrected_field_size": 1353,
+      "restored_candidates": 36,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 4,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "AMCR",
+        "CRVS",
+        "ALMS",
+        "CRML",
+        "RCAT",
+        "SKYT",
+        "UCTT",
+        "MRAM"
+      ],
+      "corrected_top8": [
+        "ROLR",
+        "CRVS",
+        "ALMS",
+        "CRML",
+        "RCAT",
+        "SKYT",
+        "UCTT",
+        "MRAM"
+      ],
+      "added": [
+        "ROLR"
+      ],
+      "dropped": [
+        "AMCR"
+      ],
+      "rank_changes": {
+        "ROLR": [
+          null,
+          1
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-01-28",
+      "old_field_size": 1276,
+      "corrected_field_size": 1295,
+      "restored_candidates": 26,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 7,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "BNAI",
+        "AMCR",
+        "CRVS",
+        "ERAS",
+        "RAPT",
+        "HYMC",
+        "ASM",
+        "ALMS"
+      ],
+      "corrected_top8": [
+        "BNAI",
+        "ANPA",
+        "CRVS",
+        "ERAS",
+        "MOVE",
+        "RAPT",
+        "HYMC",
+        "ASM"
+      ],
+      "added": [
+        "ANPA",
+        "MOVE"
+      ],
+      "dropped": [
+        "AMCR",
+        "ALMS"
+      ],
+      "rank_changes": {
+        "ANPA": [
+          null,
+          2
+        ],
+        "MOVE": [
+          null,
+          5
+        ],
+        "RAPT": [
+          5,
+          6
+        ],
+        "HYMC": [
+          6,
+          7
+        ],
+        "ASM": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-02-04",
+      "old_field_size": 1372,
+      "corrected_field_size": 1406,
+      "restored_candidates": 44,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 10,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "BNAI",
+        "AMCR",
+        "CRVS",
+        "HOOZ",
+        "RAPT",
+        "OKLS",
+        "ASM",
+        "ERAS"
+      ],
+      "corrected_top8": [
+        "BNAI",
+        "CRVS",
+        "HOOZ",
+        "RAPT",
+        "OKLS",
+        "ASM",
+        "ERAS",
+        "PKST"
+      ],
+      "added": [
+        "PKST"
+      ],
+      "dropped": [
+        "AMCR"
+      ],
+      "rank_changes": {
+        "CRVS": [
+          3,
+          2
+        ],
+        "HOOZ": [
+          4,
+          3
+        ],
+        "RAPT": [
+          5,
+          4
+        ],
+        "OKLS": [
+          6,
+          5
+        ],
+        "ASM": [
+          7,
+          6
+        ],
+        "ERAS": [
+          8,
+          7
+        ],
+        "PKST": [
+          null,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-02-11",
+      "old_field_size": 1271,
+      "corrected_field_size": 1301,
+      "restored_candidates": 40,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 10,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "BNAI",
+        "NKTR",
+        "PLSE",
+        "VAL",
+        "HOOZ",
+        "EVMN",
+        "ASM",
+        "GOLD"
+      ],
+      "corrected_top8": [
+        "FGL",
+        "BNAI",
+        "NKTR",
+        "PLSE",
+        "VAL",
+        "HOOZ",
+        "ESOA",
+        "EVMN"
+      ],
+      "added": [
+        "FGL",
+        "ESOA"
+      ],
+      "dropped": [
+        "ASM",
+        "GOLD"
+      ],
+      "rank_changes": {
+        "FGL": [
+          null,
+          1
+        ],
+        "BNAI": [
+          1,
+          2
+        ],
+        "NKTR": [
+          2,
+          3
+        ],
+        "PLSE": [
+          3,
+          4
+        ],
+        "VAL": [
+          4,
+          5
+        ],
+        "HOOZ": [
+          5,
+          6
+        ],
+        "ESOA": [
+          null,
+          7
+        ],
+        "EVMN": [
+          6,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-02-18",
+      "old_field_size": 1271,
+      "corrected_field_size": 1309,
+      "restored_candidates": 47,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 9,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "SMX",
+        "NKTR",
+        "FSLY",
+        "EVMN",
+        "ICHR",
+        "CGNX",
+        "TPH",
+        "AXTI"
+      ],
+      "corrected_top8": [
+        "SMX",
+        "NKTR",
+        "FSLY",
+        "EVMN",
+        "ICHR",
+        "CGNX",
+        "TPH",
+        "AXTI"
+      ],
+      "added": [],
+      "dropped": [],
+      "rank_changes": {},
+      "membership_changed": false,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-02-25",
+      "old_field_size": 1322,
+      "corrected_field_size": 1364,
+      "restored_candidates": 49,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 7,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "AXTI",
+        "FSLY",
+        "NKTR",
+        "ICHR",
+        "EVMN",
+        "AEHR",
+        "ACHC",
+        "OIS"
+      ],
+      "corrected_top8": [
+        "FGL",
+        "AXTI",
+        "FSLY",
+        "NKTR",
+        "ICHR",
+        "EVMN",
+        "AEHR",
+        "ACHC"
+      ],
+      "added": [
+        "FGL"
+      ],
+      "dropped": [
+        "OIS"
+      ],
+      "rank_changes": {
+        "FGL": [
+          null,
+          1
+        ],
+        "AXTI": [
+          1,
+          2
+        ],
+        "FSLY": [
+          2,
+          3
+        ],
+        "NKTR": [
+          3,
+          4
+        ],
+        "ICHR": [
+          4,
+          5
+        ],
+        "EVMN": [
+          5,
+          6
+        ],
+        "AEHR": [
+          6,
+          7
+        ],
+        "ACHC": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-03-04",
+      "old_field_size": 1340,
+      "corrected_field_size": 1385,
+      "restored_candidates": 52,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 7,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "BATL",
+        "FSLY",
+        "BNAI",
+        "ACHC",
+        "FIGS",
+        "AXTI",
+        "AEHR",
+        "PRAA"
+      ],
+      "corrected_top8": [
+        "BATL",
+        "NPT",
+        "FSLY",
+        "BNAI",
+        "ACHC",
+        "FIGS",
+        "AXTI",
+        "AEHR"
+      ],
+      "added": [
+        "NPT"
+      ],
+      "dropped": [
+        "PRAA"
+      ],
+      "rank_changes": {
+        "NPT": [
+          null,
+          2
+        ],
+        "FSLY": [
+          2,
+          3
+        ],
+        "BNAI": [
+          3,
+          4
+        ],
+        "ACHC": [
+          4,
+          5
+        ],
+        "FIGS": [
+          5,
+          6
+        ],
+        "AXTI": [
+          6,
+          7
+        ],
+        "AEHR": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-03-11",
+      "old_field_size": 1334,
+      "corrected_field_size": 1387,
+      "restored_candidates": 61,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 8,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "BATL",
+        "NCI",
+        "AXTI",
+        "SOC",
+        "BNAI",
+        "AMPX",
+        "DAWN",
+        "TECX"
+      ],
+      "corrected_top8": [
+        "BATL",
+        "NCI",
+        "AXTI",
+        "SOC",
+        "BNAI",
+        "AMPX",
+        "DAWN",
+        "TECX"
+      ],
+      "added": [],
+      "dropped": [],
+      "rank_changes": {},
+      "membership_changed": false,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-03-18",
+      "old_field_size": 1309,
+      "corrected_field_size": 1363,
+      "restored_candidates": 60,
+      "removed_test_issues": 1,
+      "unrankable_no_trading": 5,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "BATL",
+        "DAWN",
+        "SOC",
+        "AMPX",
+        "VG",
+        "ZD",
+        "BW",
+        "DNTH"
+      ],
+      "corrected_top8": [
+        "BATL",
+        "DAWN",
+        "SOC",
+        "AMPX",
+        "VG",
+        "ZD",
+        "BW",
+        "DNTH"
+      ],
+      "added": [],
+      "dropped": [],
+      "rank_changes": {},
+      "membership_changed": false,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-03-25",
+      "old_field_size": 1308,
+      "corrected_field_size": 1360,
+      "restored_candidates": 59,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 7,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "FUBO",
+        "QURE",
+        "SOC",
+        "AXTI",
+        "TNGX",
+        "DAWN",
+        "WATT",
+        "AGRO"
+      ],
+      "corrected_top8": [
+        "QURE",
+        "SOC",
+        "AXTI",
+        "TNGX",
+        "DAWN",
+        "WATT",
+        "AGRO",
+        "SSL"
+      ],
+      "added": [
+        "SSL"
+      ],
+      "dropped": [
+        "FUBO"
+      ],
+      "rank_changes": {
+        "QURE": [
+          2,
+          1
+        ],
+        "SOC": [
+          3,
+          2
+        ],
+        "AXTI": [
+          4,
+          3
+        ],
+        "TNGX": [
+          5,
+          4
+        ],
+        "DAWN": [
+          6,
+          5
+        ],
+        "WATT": [
+          7,
+          6
+        ],
+        "AGRO": [
+          8,
+          7
+        ],
+        "SSL": [
+          null,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-04-01",
+      "old_field_size": 1383,
+      "corrected_field_size": 1418,
+      "restored_candidates": 44,
+      "removed_test_issues": 1,
+      "unrankable_no_trading": 8,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "ZVZZT",
+        "OKLS",
+        "APLS",
+        "KOD",
+        "TBN",
+        "ORKA",
+        "FLY",
+        "SEDG"
+      ],
+      "corrected_top8": [
+        "UGRO",
+        "OKLS",
+        "APLS",
+        "KOD",
+        "TBN",
+        "ORKA",
+        "FLY",
+        "SEDG"
+      ],
+      "added": [
+        "UGRO"
+      ],
+      "dropped": [
+        "ZVZZT"
+      ],
+      "rank_changes": {
+        "UGRO": [
+          null,
+          1
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-04-08",
+      "old_field_size": 1297,
+      "corrected_field_size": 1317,
+      "restored_candidates": 24,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 4,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "FUBO",
+        "APLS",
+        "SPIR",
+        "KOD",
+        "AEHR",
+        "SLNO",
+        "FLY",
+        "ELVN"
+      ],
+      "corrected_top8": [
+        "AGL",
+        "UGRO",
+        "APLS",
+        "SPIR",
+        "KOD",
+        "AEHR",
+        "SLNO",
+        "FLY"
+      ],
+      "added": [
+        "AGL",
+        "UGRO"
+      ],
+      "dropped": [
+        "FUBO",
+        "ELVN"
+      ],
+      "rank_changes": {
+        "AGL": [
+          null,
+          1
+        ],
+        "UGRO": [
+          null,
+          2
+        ],
+        "APLS": [
+          2,
+          3
+        ],
+        "SPIR": [
+          3,
+          4
+        ],
+        "KOD": [
+          4,
+          5
+        ],
+        "AEHR": [
+          5,
+          6
+        ],
+        "SLNO": [
+          6,
+          7
+        ],
+        "FLY": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-04-15",
+      "old_field_size": 1297,
+      "corrected_field_size": 1311,
+      "restored_candidates": 16,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 2,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "APLS",
+        "KOD",
+        "CBIO",
+        "ANL",
+        "AEHR",
+        "YSS",
+        "AVNS",
+        "SGML"
+      ],
+      "corrected_top8": [
+        "BBGI",
+        "APLS",
+        "KOD",
+        "CBIO",
+        "ANL",
+        "AEHR",
+        "YSS",
+        "AVNS"
+      ],
+      "added": [
+        "BBGI"
+      ],
+      "dropped": [
+        "SGML"
+      ],
+      "rank_changes": {
+        "BBGI": [
+          null,
+          1
+        ],
+        "APLS": [
+          1,
+          2
+        ],
+        "KOD": [
+          2,
+          3
+        ],
+        "CBIO": [
+          3,
+          4
+        ],
+        "ANL": [
+          4,
+          5
+        ],
+        "AEHR": [
+          5,
+          6
+        ],
+        "YSS": [
+          6,
+          7
+        ],
+        "AVNS": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-04-22",
+      "old_field_size": 1328,
+      "corrected_field_size": 1336,
+      "restored_candidates": 17,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 9,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "XNDU",
+        "LWLG",
+        "POET",
+        "NVTS",
+        "YSS",
+        "MXL",
+        "AOSL",
+        "JBIO"
+      ],
+      "corrected_top8": [
+        "XNDU",
+        "AGL",
+        "LWLG",
+        "POET",
+        "NVTS",
+        "YSS",
+        "MXL",
+        "AOSL"
+      ],
+      "added": [
+        "AGL"
+      ],
+      "dropped": [
+        "JBIO"
+      ],
+      "rank_changes": {
+        "AGL": [
+          null,
+          2
+        ],
+        "LWLG": [
+          2,
+          3
+        ],
+        "POET": [
+          3,
+          4
+        ],
+        "NVTS": [
+          4,
+          5
+        ],
+        "YSS": [
+          5,
+          6
+        ],
+        "MXL": [
+          6,
+          7
+        ],
+        "AOSL": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-04-29",
+      "old_field_size": 1302,
+      "corrected_field_size": 1322,
+      "restored_candidates": 31,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 11,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "XNDU",
+        "MXL",
+        "OGN",
+        "WATT",
+        "RMAX",
+        "AVNS",
+        "SHAZ",
+        "ALMU"
+      ],
+      "corrected_top8": [
+        "AKAN",
+        "XNDU",
+        "MXL",
+        "EDSA",
+        "OGN",
+        "WATT",
+        "RMAX",
+        "AVNS"
+      ],
+      "added": [
+        "AKAN",
+        "EDSA"
+      ],
+      "dropped": [
+        "SHAZ",
+        "ALMU"
+      ],
+      "rank_changes": {
+        "AKAN": [
+          null,
+          1
+        ],
+        "XNDU": [
+          1,
+          2
+        ],
+        "MXL": [
+          2,
+          3
+        ],
+        "EDSA": [
+          null,
+          4
+        ],
+        "OGN": [
+          3,
+          5
+        ],
+        "WATT": [
+          4,
+          6
+        ],
+        "RMAX": [
+          5,
+          7
+        ],
+        "AVNS": [
+          6,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-05-06",
+      "old_field_size": 1329,
+      "corrected_field_size": 1363,
+      "restored_candidates": 47,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 13,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "BAND",
+        "ONEG",
+        "SILC",
+        "MRAM",
+        "WOLF",
+        "RMAX",
+        "ATOM",
+        "ALMU"
+      ],
+      "corrected_top8": [
+        "CUE",
+        "AIOS",
+        "AKAN",
+        "BAND",
+        "ONEG",
+        "SILC",
+        "MRAM",
+        "WOLF"
+      ],
+      "added": [
+        "CUE",
+        "AIOS",
+        "AKAN"
+      ],
+      "dropped": [
+        "RMAX",
+        "ATOM",
+        "ALMU"
+      ],
+      "rank_changes": {
+        "CUE": [
+          null,
+          1
+        ],
+        "AIOS": [
+          null,
+          2
+        ],
+        "AKAN": [
+          null,
+          3
+        ],
+        "BAND": [
+          1,
+          4
+        ],
+        "ONEG": [
+          2,
+          5
+        ],
+        "SILC": [
+          3,
+          6
+        ],
+        "MRAM": [
+          4,
+          7
+        ],
+        "WOLF": [
+          5,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-05-13",
+      "old_field_size": 1333,
+      "corrected_field_size": 1379,
+      "restored_candidates": 59,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 13,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "MRAM",
+        "AGL",
+        "RVI",
+        "WOLF",
+        "BAND",
+        "AMBQ",
+        "HIMX",
+        "QUIK"
+      ],
+      "corrected_top8": [
+        "ERNA",
+        "MRAM",
+        "AGL",
+        "RVI",
+        "WOLF",
+        "BAND",
+        "AMBQ",
+        "HIMX"
+      ],
+      "added": [
+        "ERNA"
+      ],
+      "dropped": [
+        "QUIK"
+      ],
+      "rank_changes": {
+        "ERNA": [
+          null,
+          1
+        ],
+        "MRAM": [
+          1,
+          2
+        ],
+        "AGL": [
+          2,
+          3
+        ],
+        "RVI": [
+          3,
+          4
+        ],
+        "WOLF": [
+          4,
+          5
+        ],
+        "BAND": [
+          5,
+          6
+        ],
+        "AMBQ": [
+          6,
+          7
+        ],
+        "HIMX": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-05-20",
+      "old_field_size": 1295,
+      "corrected_field_size": 1347,
+      "restored_candidates": 64,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 12,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "BAND",
+        "WOLF",
+        "POET",
+        "AMBQ",
+        "MRAM",
+        "RVI",
+        "OSS",
+        "RDW"
+      ],
+      "corrected_top8": [
+        "PIII",
+        "BAND",
+        "WOLF",
+        "POET",
+        "AMBQ",
+        "MRAM",
+        "RVI",
+        "OSS"
+      ],
+      "added": [
+        "PIII"
+      ],
+      "dropped": [
+        "RDW"
+      ],
+      "rank_changes": {
+        "PIII": [
+          null,
+          1
+        ],
+        "BAND": [
+          1,
+          2
+        ],
+        "WOLF": [
+          2,
+          3
+        ],
+        "POET": [
+          3,
+          4
+        ],
+        "AMBQ": [
+          4,
+          5
+        ],
+        "MRAM": [
+          5,
+          6
+        ],
+        "RVI": [
+          6,
+          7
+        ],
+        "OSS": [
+          7,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-05-27",
+      "old_field_size": 1342,
+      "corrected_field_size": 1364,
+      "restored_candidates": 33,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 11,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "MNTS",
+        "CPSH",
+        "RDW",
+        "TE",
+        "ENPH",
+        "VELO",
+        "AEVA",
+        "VOYG"
+      ],
+      "corrected_top8": [
+        "PCLA",
+        "MNTS",
+        "CPSH",
+        "AKTX",
+        "RDW",
+        "TE",
+        "ENPH",
+        "VELO"
+      ],
+      "added": [
+        "PCLA",
+        "AKTX"
+      ],
+      "dropped": [
+        "AEVA",
+        "VOYG"
+      ],
+      "rank_changes": {
+        "PCLA": [
+          null,
+          1
+        ],
+        "MNTS": [
+          1,
+          2
+        ],
+        "CPSH": [
+          2,
+          3
+        ],
+        "AKTX": [
+          null,
+          4
+        ],
+        "RDW": [
+          3,
+          5
+        ],
+        "TE": [
+          4,
+          6
+        ],
+        "ENPH": [
+          5,
+          7
+        ],
+        "VELO": [
+          6,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-06-03",
+      "old_field_size": 1046,
+      "corrected_field_size": 1416,
+      "restored_candidates": 377,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 7,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "NCI",
+        "MNTS",
+        "BRUN",
+        "UMAC",
+        "TE",
+        "PSNL",
+        "QMCO",
+        "OPTX"
+      ],
+      "corrected_top8": [
+        "ASTC",
+        "NCI",
+        "MNTS",
+        "BRUN",
+        "UMAC",
+        "SWMR",
+        "TE",
+        "VSH"
+      ],
+      "added": [
+        "ASTC",
+        "SWMR",
+        "VSH"
+      ],
+      "dropped": [
+        "PSNL",
+        "QMCO",
+        "OPTX"
+      ],
+      "rank_changes": {
+        "ASTC": [
+          null,
+          1
+        ],
+        "NCI": [
+          1,
+          2
+        ],
+        "MNTS": [
+          2,
+          3
+        ],
+        "BRUN": [
+          3,
+          4
+        ],
+        "UMAC": [
+          4,
+          5
+        ],
+        "SWMR": [
+          null,
+          6
+        ],
+        "TE": [
+          5,
+          7
+        ],
+        "VSH": [
+          null,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-06-10",
+      "old_field_size": 1024,
+      "corrected_field_size": 1382,
+      "restored_candidates": 370,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 12,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "OCC",
+        "MNTS",
+        "UMAC",
+        "OPTX",
+        "QMCO",
+        "ALOY",
+        "CBRL",
+        "FWRD"
+      ],
+      "corrected_top8": [
+        "ASTC",
+        "STI",
+        "OCC",
+        "MNTS",
+        "SWMR",
+        "UMAC",
+        "OPTX",
+        "QMCO"
+      ],
+      "added": [
+        "ASTC",
+        "STI",
+        "SWMR"
+      ],
+      "dropped": [
+        "ALOY",
+        "CBRL",
+        "FWRD"
+      ],
+      "rank_changes": {
+        "ASTC": [
+          null,
+          1
+        ],
+        "STI": [
+          null,
+          2
+        ],
+        "OCC": [
+          1,
+          3
+        ],
+        "MNTS": [
+          2,
+          4
+        ],
+        "SWMR": [
+          null,
+          5
+        ],
+        "UMAC": [
+          3,
+          6
+        ],
+        "OPTX": [
+          4,
+          7
+        ],
+        "QMCO": [
+          5,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-06-17",
+      "old_field_size": 1006,
+      "corrected_field_size": 1366,
+      "restored_candidates": 374,
+      "removed_test_issues": 1,
+      "unrankable_no_trading": 13,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "ZVZZT",
+        "HQ",
+        "QURE",
+        "ALOY",
+        "QMCO",
+        "TNGX",
+        "ZSQR",
+        "OCC"
+      ],
+      "corrected_top8": [
+        "STI",
+        "HQ",
+        "QURE",
+        "ALOY",
+        "QMCO",
+        "TNGX",
+        "ZSQR",
+        "OCC"
+      ],
+      "added": [
+        "STI"
+      ],
+      "dropped": [
+        "ZVZZT"
+      ],
+      "rank_changes": {
+        "STI": [
+          null,
+          1
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-06-24",
+      "old_field_size": 995,
+      "corrected_field_size": 1388,
+      "restored_candidates": 408,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 15,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "DD",
+        "HQ",
+        "DFTX",
+        "QURE",
+        "ARQQ",
+        "WNC",
+        "ALHC",
+        "MAAS"
+      ],
+      "corrected_top8": [
+        "DD",
+        "HQ",
+        "DFTX",
+        "QURE",
+        "ARQQ",
+        "WNC",
+        "ALHC",
+        "MAAS"
+      ],
+      "added": [],
+      "dropped": [],
+      "rank_changes": {},
+      "membership_changed": false,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-07-01",
+      "old_field_size": 1028,
+      "corrected_field_size": 1434,
+      "restored_candidates": 423,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 17,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "SDOT",
+        "HQ",
+        "ARQQ",
+        "BLZE",
+        "RGNX",
+        "DFTX",
+        "FCEL",
+        "SLS"
+      ],
+      "corrected_top8": [
+        "SDOT",
+        "HQ",
+        "ARQQ",
+        "BLZE",
+        "RGNX",
+        "NVCT",
+        "DFTX",
+        "MBX"
+      ],
+      "added": [
+        "NVCT",
+        "MBX"
+      ],
+      "dropped": [
+        "FCEL",
+        "SLS"
+      ],
+      "rank_changes": {
+        "NVCT": [
+          null,
+          6
+        ],
+        "DFTX": [
+          6,
+          7
+        ],
+        "MBX": [
+          null,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-07-08",
+      "old_field_size": 960,
+      "corrected_field_size": 1364,
+      "restored_candidates": 413,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 9,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "MQ",
+        "RGNX",
+        "BLZE",
+        "DFTX",
+        "SLS",
+        "RPD",
+        "QURE",
+        "ZBIO"
+      ],
+      "corrected_top8": [
+        "ALIT",
+        "MQ",
+        "CLRO",
+        "RGNX",
+        "BLZE",
+        "DFTX",
+        "SLS",
+        "RPD"
+      ],
+      "added": [
+        "ALIT",
+        "CLRO"
+      ],
+      "dropped": [
+        "QURE",
+        "ZBIO"
+      ],
+      "rank_changes": {
+        "ALIT": [
+          null,
+          1
+        ],
+        "MQ": [
+          1,
+          2
+        ],
+        "CLRO": [
+          null,
+          3
+        ],
+        "RGNX": [
+          2,
+          4
+        ],
+        "BLZE": [
+          3,
+          5
+        ],
+        "DFTX": [
+          4,
+          6
+        ],
+        "SLS": [
+          5,
+          7
+        ],
+        "RPD": [
+          6,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-07-15",
+      "old_field_size": 917,
+      "corrected_field_size": 1314,
+      "restored_candidates": 405,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 8,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "MQ",
+        "FBRX",
+        "TRAX",
+        "RPD",
+        "PSNL",
+        "GRPN",
+        "QDEL",
+        "COAG"
+      ],
+      "corrected_top8": [
+        "ALIT",
+        "VEEE",
+        "MQ",
+        "FBRX",
+        "TRAX",
+        "RPD",
+        "PSNL",
+        "GRPN"
+      ],
+      "added": [
+        "ALIT",
+        "VEEE"
+      ],
+      "dropped": [
+        "QDEL",
+        "COAG"
+      ],
+      "rank_changes": {
+        "ALIT": [
+          null,
+          1
+        ],
+        "VEEE": [
+          null,
+          2
+        ],
+        "MQ": [
+          1,
+          3
+        ],
+        "FBRX": [
+          2,
+          4
+        ],
+        "TRAX": [
+          3,
+          5
+        ],
+        "RPD": [
+          4,
+          6
+        ],
+        "PSNL": [
+          5,
+          7
+        ],
+        "GRPN": [
+          6,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-07-22",
+      "old_field_size": 907,
+      "corrected_field_size": 1317,
+      "restored_candidates": 415,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 5,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "MQ",
+        "TRAX",
+        "UTZ",
+        "COAG",
+        "BMNR",
+        "VG",
+        "RHI",
+        "CDNA"
+      ],
+      "corrected_top8": [
+        "ALIT",
+        "MQ",
+        "VEEE",
+        "FBRX",
+        "TRAX",
+        "UTZ",
+        "MAN",
+        "PBF"
+      ],
+      "added": [
+        "ALIT",
+        "VEEE",
+        "FBRX",
+        "MAN",
+        "PBF"
+      ],
+      "dropped": [
+        "COAG",
+        "BMNR",
+        "VG",
+        "RHI",
+        "CDNA"
+      ],
+      "rank_changes": {
+        "ALIT": [
+          null,
+          1
+        ],
+        "MQ": [
+          1,
+          2
+        ],
+        "VEEE": [
+          null,
+          3
+        ],
+        "FBRX": [
+          null,
+          4
+        ],
+        "TRAX": [
+          2,
+          5
+        ],
+        "UTZ": [
+          3,
+          6
+        ],
+        "MAN": [
+          null,
+          7
+        ],
+        "PBF": [
+          null,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-07-29",
+      "old_field_size": 928,
+      "corrected_field_size": 1332,
+      "restored_candidates": 406,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 2,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "TRAX",
+        "UTZ",
+        "CBZ",
+        "BLKB",
+        "AVTR",
+        "ETON",
+        "EFOR",
+        "EXLS"
+      ],
+      "corrected_top8": [
+        "DFNS",
+        "FBRX",
+        "TRAX",
+        "UTZ",
+        "CBZ",
+        "BLKB",
+        "MAN",
+        "AVTR"
+      ],
+      "added": [
+        "DFNS",
+        "FBRX",
+        "MAN"
+      ],
+      "dropped": [
+        "ETON",
+        "EFOR",
+        "EXLS"
+      ],
+      "rank_changes": {
+        "DFNS": [
+          null,
+          1
+        ],
+        "FBRX": [
+          null,
+          2
+        ],
+        "TRAX": [
+          1,
+          3
+        ],
+        "UTZ": [
+          2,
+          4
+        ],
+        "CBZ": [
+          3,
+          5
+        ],
+        "BLKB": [
+          4,
+          6
+        ],
+        "MAN": [
+          null,
+          7
+        ],
+        "AVTR": [
+          5,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-08-05",
+      "old_field_size": 1005,
+      "corrected_field_size": 1410,
+      "restored_candidates": 410,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 5,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "UTZ",
+        "EFOR",
+        "CDNA",
+        "CMCO",
+        "LIFE",
+        "BLKB",
+        "PLSE",
+        "LBRX"
+      ],
+      "corrected_top8": [
+        "DFNS",
+        "FCUV",
+        "AMIX",
+        "UTZ",
+        "EFOR",
+        "FBRX",
+        "CDNA",
+        "CMCO"
+      ],
+      "added": [
+        "DFNS",
+        "FCUV",
+        "AMIX",
+        "FBRX"
+      ],
+      "dropped": [
+        "LIFE",
+        "BLKB",
+        "PLSE",
+        "LBRX"
+      ],
+      "rank_changes": {
+        "DFNS": [
+          null,
+          1
+        ],
+        "FCUV": [
+          null,
+          2
+        ],
+        "AMIX": [
+          null,
+          3
+        ],
+        "UTZ": [
+          1,
+          4
+        ],
+        "EFOR": [
+          2,
+          5
+        ],
+        "FBRX": [
+          null,
+          6
+        ],
+        "CDNA": [
+          3,
+          7
+        ],
+        "CMCO": [
+          4,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-08-12",
+      "old_field_size": 937,
+      "corrected_field_size": 1322,
+      "restored_candidates": 389,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 4,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "DFNS",
+        "QMCO",
+        "LIFE",
+        "VREX",
+        "VOYG",
+        "EFOR",
+        "NIQ",
+        "BWMN"
+      ],
+      "corrected_top8": [
+        "DFNS",
+        "QMCO",
+        "LIFE",
+        "VREX",
+        "RNG",
+        "VOYG",
+        "EFOR",
+        "HZO"
+      ],
+      "added": [
+        "RNG",
+        "HZO"
+      ],
+      "dropped": [
+        "NIQ",
+        "BWMN"
+      ],
+      "rank_changes": {
+        "RNG": [
+          null,
+          5
+        ],
+        "VOYG": [
+          5,
+          6
+        ],
+        "EFOR": [
+          6,
+          7
+        ],
+        "HZO": [
+          null,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-08-19",
+      "old_field_size": 943,
+      "corrected_field_size": 1345,
+      "restored_candidates": 410,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 8,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "REPL",
+        "ABCL",
+        "QMCO",
+        "AMLX",
+        "SMJF",
+        "HTFL",
+        "FDMT",
+        "VOYG"
+      ],
+      "corrected_top8": [
+        "WETO",
+        "BYND",
+        "PFSA",
+        "IPST",
+        "MRNA",
+        "REPL",
+        "ABCL",
+        "QMCO"
+      ],
+      "added": [
+        "WETO",
+        "BYND",
+        "PFSA",
+        "IPST",
+        "MRNA"
+      ],
+      "dropped": [
+        "AMLX",
+        "SMJF",
+        "HTFL",
+        "FDMT",
+        "VOYG"
+      ],
+      "rank_changes": {
+        "WETO": [
+          null,
+          1
+        ],
+        "BYND": [
+          null,
+          2
+        ],
+        "PFSA": [
+          null,
+          3
+        ],
+        "IPST": [
+          null,
+          4
+        ],
+        "MRNA": [
+          null,
+          5
+        ],
+        "REPL": [
+          1,
+          6
+        ],
+        "ABCL": [
+          2,
+          7
+        ],
+        "QMCO": [
+          3,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    },
+    {
+      "cohort_id": "2026-08-26",
+      "old_field_size": 915,
+      "corrected_field_size": 1308,
+      "restored_candidates": 397,
+      "removed_test_issues": 0,
+      "unrankable_no_trading": 4,
+      "unrankable_unresolved": 0,
+      "old_top8": [
+        "REAX",
+        "ARCT",
+        "ABCL",
+        "QMCO",
+        "HTFL",
+        "ASST",
+        "PURR",
+        "AMLX"
+      ],
+      "corrected_top8": [
+        "BYND",
+        "REAX",
+        "ARCT",
+        "ABCL",
+        "QMCO",
+        "EDRY",
+        "HTFL",
+        "ASST"
+      ],
+      "added": [
+        "BYND",
+        "EDRY"
+      ],
+      "dropped": [
+        "PURR",
+        "AMLX"
+      ],
+      "rank_changes": {
+        "BYND": [
+          null,
+          1
+        ],
+        "REAX": [
+          1,
+          2
+        ],
+        "ARCT": [
+          2,
+          3
+        ],
+        "ABCL": [
+          3,
+          4
+        ],
+        "QMCO": [
+          4,
+          5
+        ],
+        "EDRY": [
+          null,
+          6
+        ],
+        "HTFL": [
+          5,
+          7
+        ],
+        "ASST": [
+          6,
+          8
+        ]
+      },
+      "membership_changed": true,
+      "ranking_scope": "CERTIFIED_RULE_FIELD_10_80"
+    }
+  ],
+  "waterfall": {
+    "PARENT": {
+      "R0_frozen_total_incl_stale_and_delayed": 38317.195368,
+      "R0_scheduled_exit_legs_only": 45391.714636,
+      "step1_documented_action_unit_repair": -5045.900000000001,
+      "step2_repaired_previously_unpriced_exits": -3809.262504700006,
+      "R1_verified_total": 36536.55213129999,
+      "step3_universe_test_issue_and_field_restoration": 78319.2443776,
+      "R2_verified_total": 114855.79650889999,
+      "memo_causal_preorder_quantity_bridge": -525.5450358999951,
+      "R2_causal_quantity_total": 114330.251473
+    },
+    "R4": {
+      "R0_frozen_total_incl_stale_and_delayed": 59040.686398900005,
+      "R0_scheduled_exit_legs_only": 64531.426615899996,
+      "step1_documented_action_unit_repair": -6524.6,
+      "step2_repaired_previously_unpriced_exits": -981.2938809000069,
+      "R1_verified_total": 57025.532734999986,
+      "step3_universe_test_issue_and_field_restoration": 70520.57548710001,
+      "R2_verified_total": 127546.1082221,
+      "memo_causal_preorder_quantity_bridge": -333.2775715000025,
+      "R2_causal_quantity_total": 127212.8306506
+    },
+    "R5": {
+      "R0_frozen_total_incl_stale_and_delayed": 68921.14063380001,
+      "R0_scheduled_exit_legs_only": 74202.3930738,
+      "step1_documented_action_unit_repair": -8580.460000000001,
+      "step2_repaired_previously_unpriced_exits": 54.4607040999961,
+      "R1_verified_total": 65676.3937779,
+      "step3_universe_test_issue_and_field_restoration": 74579.67466789999,
+      "R2_verified_total": 140256.0684458,
+      "memo_causal_preorder_quantity_bridge": -187.25722599998699,
+      "R2_causal_quantity_total": 140068.8112198
+    }
+  },
+  "action_identity_review": {
+    "rows": [
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2025-10-15",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2025-10-22",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2025-10-22",
+        "symbol": "PMI",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.3,
+        "date": "2025-10-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2025-12-24",
+        "symbol": "RGC",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.5779706674648308,
+        "date": "2026-01-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-01-14",
+        "symbol": "NBY",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4448334466349422,
+        "date": "2026-01-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-01-14",
+        "symbol": "AHMA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.8916558861578265,
+        "date": "2026-01-15",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-01-28",
+        "symbol": "BNAI",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4702743902439024,
+        "date": "2026-01-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-03-11",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-03-18",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-01",
+        "symbol": "ZVZZT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "TEST_SYMBOL_ID_REVIEW",
+        "ratio": 0.178359096313912,
+        "date": "2026-04-02",
+        "status": "UNRESOLVED_DOCUMENTED_NO_TRADING",
+        "resolution": "TEST_ISSUE_RETAINED_IN_R1_FORENSIC"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-22",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-22",
+        "symbol": "POET",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5266644584299437,
+        "date": "2026-04-27",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-22",
+        "symbol": "MXL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.7565521258008152,
+        "date": "2026-04-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-29",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-05-06",
+        "symbol": "ONEG",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.1439803826728608,
+        "date": "2026-05-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-06-17",
+        "symbol": "ZVZZT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "TEST_SYMBOL_ID_REVIEW",
+        "ratio": 0.1707042253521127,
+        "date": "2026-06-22",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "TEST_ISSUE_RETAINED_IN_R1_FORENSIC"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-07-01",
+        "symbol": "SDOT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4898359049718344,
+        "date": "2026-07-08",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-08-12",
+        "symbol": "DFNS",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5390966488586693,
+        "date": "2026-08-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "MARKET_MOVE_UNCONFIRMED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R1",
+        "cohort_id": "2026-08-19",
+        "symbol": "SMJF",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.12743362831858407,
+        "date": "2026-08-27",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2025-09-10",
+        "symbol": "OCTO",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.59767731231854,
+        "date": "2025-09-11",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2025-10-01",
+        "symbol": "HSDT",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.6361916771752837,
+        "date": "2025-10-16",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2025-10-15",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2025-10-22",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2025-11-19",
+        "symbol": "CMCT",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5342146189735614,
+        "date": "2025-11-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-03",
+        "symbol": "SMX",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4076903334893341,
+        "date": "2025-12-08",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-03",
+        "symbol": "AHMA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.6356060606060606,
+        "date": "2025-12-05",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-10",
+        "symbol": "OCG",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.10704099717139469,
+        "date": "2025-12-11",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-24",
+        "symbol": "AFJK",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.9684994272623138,
+        "date": "2025-12-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-01-14",
+        "symbol": "NBY",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4448334466349422,
+        "date": "2026-01-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-01-14",
+        "symbol": "AHMA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.8916558861578265,
+        "date": "2026-01-15",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-01-28",
+        "symbol": "BNAI",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4702743902439024,
+        "date": "2026-01-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-03-04",
+        "symbol": "NPT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.49777211966900065,
+        "date": "2026-03-18",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-03-11",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-03-18",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-15",
+        "symbol": "BBGI",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.5335940277284037,
+        "date": "2026-04-17",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "AGL",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 2.1951484431571324,
+        "date": "2026-05-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "POET",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5266644584299437,
+        "date": "2026-04-27",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "MXL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.7565521258008152,
+        "date": "2026-04-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-29",
+        "symbol": "AKAN",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.9308834420457741,
+        "date": "2026-04-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-29",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-05-06",
+        "symbol": "AKAN",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.6347159288950854,
+        "date": "2026-05-21",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-05-06",
+        "symbol": "ONEG",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.1439803826728608,
+        "date": "2026-05-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-07-01",
+        "symbol": "SDOT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4898359049718344,
+        "date": "2026-07-08",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-07-29",
+        "symbol": "DFNS",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.33047882352941177,
+        "date": "2026-07-31",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "MARKET_MOVE_UNCONFIRMED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-05",
+        "symbol": "FCUV",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.6218844984802432,
+        "date": "2026-08-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-12",
+        "symbol": "DFNS",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5390966488586693,
+        "date": "2026-08-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "MARKET_MOVE_UNCONFIRMED"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-19",
+        "symbol": "WETO",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.48829289059174114,
+        "date": "2026-08-28",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "PARENT",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-19",
+        "symbol": "PFSA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5824722541140451,
+        "date": "2026-08-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2025-10-15",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2025-10-22",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2025-10-22",
+        "symbol": "PMI",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.3,
+        "date": "2025-10-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2025-12-24",
+        "symbol": "RGC",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.5779706674648308,
+        "date": "2026-01-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-01-14",
+        "symbol": "NBY",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4448334466349422,
+        "date": "2026-01-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-01-14",
+        "symbol": "AHMA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.8916558861578265,
+        "date": "2026-01-15",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-01-28",
+        "symbol": "BNAI",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4702743902439024,
+        "date": "2026-01-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-03-11",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-03-18",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-01",
+        "symbol": "ZVZZT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "TEST_SYMBOL_ID_REVIEW",
+        "ratio": 0.178359096313912,
+        "date": "2026-04-02",
+        "status": "UNRESOLVED_DOCUMENTED_NO_TRADING",
+        "resolution": "TEST_ISSUE_RETAINED_IN_R1_FORENSIC"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-22",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-22",
+        "symbol": "POET",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5266644584299437,
+        "date": "2026-04-27",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-22",
+        "symbol": "MXL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.7565521258008152,
+        "date": "2026-04-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-29",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-05-06",
+        "symbol": "ONEG",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.1439803826728608,
+        "date": "2026-05-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-06-17",
+        "symbol": "ZVZZT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "TEST_SYMBOL_ID_REVIEW",
+        "ratio": 0.1707042253521127,
+        "date": "2026-06-22",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "TEST_ISSUE_RETAINED_IN_R1_FORENSIC"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-07-01",
+        "symbol": "SDOT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4898359049718344,
+        "date": "2026-07-08",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-08-12",
+        "symbol": "DFNS",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5390966488586693,
+        "date": "2026-08-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "MARKET_MOVE_UNCONFIRMED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R1",
+        "cohort_id": "2026-08-19",
+        "symbol": "SMJF",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.12743362831858407,
+        "date": "2026-08-27",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2025-09-10",
+        "symbol": "OCTO",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.59767731231854,
+        "date": "2025-09-11",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2025-10-01",
+        "symbol": "HSDT",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.6361916771752837,
+        "date": "2025-10-16",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2025-10-15",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2025-10-22",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2025-11-19",
+        "symbol": "CMCT",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5342146189735614,
+        "date": "2025-11-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-03",
+        "symbol": "SMX",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4076903334893341,
+        "date": "2025-12-08",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-03",
+        "symbol": "AHMA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.6356060606060606,
+        "date": "2025-12-05",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-10",
+        "symbol": "OCG",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.10704099717139469,
+        "date": "2025-12-11",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-24",
+        "symbol": "AFJK",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.9684994272623138,
+        "date": "2025-12-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-01-14",
+        "symbol": "NBY",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4448334466349422,
+        "date": "2026-01-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-01-14",
+        "symbol": "AHMA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.8916558861578265,
+        "date": "2026-01-15",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-01-28",
+        "symbol": "BNAI",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4702743902439024,
+        "date": "2026-01-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-03-04",
+        "symbol": "NPT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.49777211966900065,
+        "date": "2026-03-18",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-03-11",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-03-18",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-15",
+        "symbol": "BBGI",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.5335940277284037,
+        "date": "2026-04-17",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "AGL",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 2.1951484431571324,
+        "date": "2026-05-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "POET",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5266644584299437,
+        "date": "2026-04-27",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "MXL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.7565521258008152,
+        "date": "2026-04-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-29",
+        "symbol": "AKAN",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.9308834420457741,
+        "date": "2026-04-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-29",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-05-06",
+        "symbol": "AKAN",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.6347159288950854,
+        "date": "2026-05-21",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-05-06",
+        "symbol": "ONEG",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.1439803826728608,
+        "date": "2026-05-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-07-01",
+        "symbol": "SDOT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4898359049718344,
+        "date": "2026-07-08",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-07-29",
+        "symbol": "DFNS",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.33047882352941177,
+        "date": "2026-07-31",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "MARKET_MOVE_UNCONFIRMED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-05",
+        "symbol": "FCUV",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.6218844984802432,
+        "date": "2026-08-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-12",
+        "symbol": "DFNS",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5390966488586693,
+        "date": "2026-08-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "MARKET_MOVE_UNCONFIRMED"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-19",
+        "symbol": "WETO",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.48829289059174114,
+        "date": "2026-08-28",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R4",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-19",
+        "symbol": "PFSA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5824722541140451,
+        "date": "2026-08-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2025-10-15",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2025-10-22",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2025-10-22",
+        "symbol": "PMI",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.3,
+        "date": "2025-10-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2025-12-24",
+        "symbol": "RGC",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.5779706674648308,
+        "date": "2026-01-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-01-14",
+        "symbol": "NBY",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4448334466349422,
+        "date": "2026-01-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-01-14",
+        "symbol": "AHMA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.8916558861578265,
+        "date": "2026-01-15",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-01-28",
+        "symbol": "BNAI",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4702743902439024,
+        "date": "2026-01-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-03-11",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-03-18",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-01",
+        "symbol": "ZVZZT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "TEST_SYMBOL_ID_REVIEW",
+        "ratio": 0.178359096313912,
+        "date": "2026-04-02",
+        "status": "UNRESOLVED_DOCUMENTED_NO_TRADING",
+        "resolution": "TEST_ISSUE_RETAINED_IN_R1_FORENSIC"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-22",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-22",
+        "symbol": "POET",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5266644584299437,
+        "date": "2026-04-27",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-22",
+        "symbol": "MXL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.7565521258008152,
+        "date": "2026-04-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-04-29",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-05-06",
+        "symbol": "ONEG",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.1439803826728608,
+        "date": "2026-05-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-06-17",
+        "symbol": "ZVZZT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "TEST_SYMBOL_ID_REVIEW",
+        "ratio": 0.1707042253521127,
+        "date": "2026-06-22",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "TEST_ISSUE_RETAINED_IN_R1_FORENSIC"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-07-01",
+        "symbol": "SDOT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4898359049718344,
+        "date": "2026-07-08",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-08-12",
+        "symbol": "DFNS",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5390966488586693,
+        "date": "2026-08-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "MARKET_MOVE_UNCONFIRMED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R1",
+        "cohort_id": "2026-08-19",
+        "symbol": "SMJF",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.12743362831858407,
+        "date": "2026-08-27",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2025-09-10",
+        "symbol": "OCTO",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.59767731231854,
+        "date": "2025-09-11",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2025-10-01",
+        "symbol": "HSDT",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.6361916771752837,
+        "date": "2025-10-16",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2025-10-15",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2025-10-22",
+        "symbol": "NVA",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.20791722602403329,
+        "date": "2025-10-29",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_ACTION_APPLIED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2025-11-19",
+        "symbol": "CMCT",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5342146189735614,
+        "date": "2025-11-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-03",
+        "symbol": "SMX",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4076903334893341,
+        "date": "2025-12-08",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-03",
+        "symbol": "AHMA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.6356060606060606,
+        "date": "2025-12-05",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-10",
+        "symbol": "OCG",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.10704099717139469,
+        "date": "2025-12-11",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2025-12-24",
+        "symbol": "AFJK",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.9684994272623138,
+        "date": "2025-12-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-01-14",
+        "symbol": "NBY",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4448334466349422,
+        "date": "2026-01-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-01-14",
+        "symbol": "AHMA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.8916558861578265,
+        "date": "2026-01-15",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-01-28",
+        "symbol": "BNAI",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4702743902439024,
+        "date": "2026-01-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-03-04",
+        "symbol": "NPT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.49777211966900065,
+        "date": "2026-03-18",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-03-11",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-03-18",
+        "symbol": "BATL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5672131147540984,
+        "date": "2026-03-25",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-15",
+        "symbol": "BBGI",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.5335940277284037,
+        "date": "2026-04-17",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "AGL",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 2.1951484431571324,
+        "date": "2026-05-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "POET",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5266644584299437,
+        "date": "2026-04-27",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-22",
+        "symbol": "MXL",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.7565521258008152,
+        "date": "2026-04-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-29",
+        "symbol": "AKAN",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.9308834420457741,
+        "date": "2026-04-30",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-04-29",
+        "symbol": "XNDU",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.36603930251868255,
+        "date": "2026-05-04",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-05-06",
+        "symbol": "AKAN",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 1.6347159288950854,
+        "date": "2026-05-21",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-05-06",
+        "symbol": "ONEG",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.1439803826728608,
+        "date": "2026-05-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-07-01",
+        "symbol": "SDOT",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.4898359049718344,
+        "date": "2026-07-08",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-07-29",
+        "symbol": "DFNS",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.33047882352941177,
+        "date": "2026-07-31",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "MARKET_MOVE_UNCONFIRMED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-05",
+        "symbol": "FCUV",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.6218844984802432,
+        "date": "2026-08-07",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-12",
+        "symbol": "DFNS",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5390966488586693,
+        "date": "2026-08-24",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "MARKET_MOVE_UNCONFIRMED"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-19",
+        "symbol": "WETO",
+        "flag": "ACTION_OR_ID_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.48829289059174114,
+        "date": "2026-08-28",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "DOCUMENTED_MARKET_MOVE"
+      },
+      {
+        "model": "R5",
+        "replay_stage": "R2",
+        "cohort_id": "2026-08-19",
+        "symbol": "PFSA",
+        "flag": "LARGE_MOVE_REVIEW",
+        "identity": "INHERITED_ROSTER_UNVERIFIED",
+        "ratio": 0.5824722541140451,
+        "date": "2026-08-20",
+        "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE",
+        "resolution": "LARGE_MOVE_UNREVIEWED"
+      }
+    ],
+    "unresolved_in_r2": [],
+    "counts": {
+      "LARGE_MOVE_UNREVIEWED": 33,
+      "DOCUMENTED_ACTION_APPLIED": 6,
+      "DOCUMENTED_MARKET_MOVE": 42,
+      "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT": 3,
+      "MARKET_MOVE_UNCONFIRMED": 6
+    }
+  },
+  "summary": {
+    "PARENT/R1": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 415,
+        "UNRESOLVED_DOCUMENTED_NO_TRADING": 1
+      },
+      "verified_trades": 415,
+      "verified_gross": 40648.15329999999,
+      "verified_modeled_net": 36536.55213129999,
+      "verified_net_by_split": {
+        "IS": 3179.3410324999945,
+        "OOS": 33357.21109880001
+      },
+      "wins": 205,
+      "losses": 210,
+      "flats": 0,
+      "hit_rate": 0.4939759036144578,
+      "avg_win": 774.6756451351221,
+      "avg_loss": -582.24740534,
+      "profit_factor": 1.2988138375232816,
+      "net_double_spread": 33187.8809626,
+      "net_borrow_10": 30075.742566412595,
+      "net_borrow_30": 17154.1234366378,
+      "tier_contribution": {
+        "FULL": 36536.55213129999,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "tier_counts": {
+        "FULL": 416
+      },
+      "aug31_equity": 136192.29713630016,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0,
+      "aug31_overdue_gross": 4472.6,
+      "max_drawdown_dollars": -49994.466300000044,
+      "worst_day": -37439.649999999994,
+      "peak_gross": 110917.265,
+      "mean_gross": 67248.87442335857,
+      "exposure_dollar_days": 16879467.480263002,
+      "sessions_above_130k": 0,
+      "min_equity": 78698.47480079994
+    },
+    "PARENT/R2": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 415,
+        "OPEN_AT_BOUNDARY_DOCUMENTED_HALT": 1
+      },
+      "verified_trades": 415,
+      "verified_gross": 119076.20564999999,
+      "verified_modeled_net": 114855.79650889999,
+      "verified_net_by_split": {
+        "IS": 42761.25676369998,
+        "OOS": 72094.53974520002
+      },
+      "wins": 230,
+      "losses": 185,
+      "flats": 0,
+      "hit_rate": 0.5542168674698795,
+      "avg_win": 996.7131932517391,
+      "avg_loss": -618.3147996702703,
+      "profit_factor": 2.0040874706903806,
+      "net_double_spread": 111470.7173678,
+      "net_borrow_10": 108539.17976522767,
+      "net_borrow_30": 95905.946277883,
+      "tier_contribution": {
+        "FULL": 114855.79650889999,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "tier_counts": {
+        "FULL": 416
+      },
+      "aug31_equity": 215302.46677390017,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 3872.5800000000004,
+      "aug31_overdue_gross": 3872.5800000000004,
+      "max_drawdown_dollars": -14043.50583870006,
+      "worst_day": -6953.114000000001,
+      "peak_gross": 107497.37890000001,
+      "mean_gross": 65594.52147421514,
+      "exposure_dollar_days": 16464224.890028002,
+      "sessions_above_130k": 0,
+      "min_equity": 94295.07176989995
+    },
+    "PARENT/R2_CAUSAL": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 415,
+        "OPEN_AT_BOUNDARY_DOCUMENTED_HALT": 1
+      },
+      "verified_trades": 415,
+      "verified_gross": 118539.4742,
+      "verified_modeled_net": 114330.251473,
+      "verified_net_by_split": {
+        "IS": 42400.43476099999,
+        "OOS": 71929.81671200006
+      },
+      "wins": 230,
+      "losses": 185,
+      "flats": 0,
+      "hit_rate": 0.5542168674698795,
+      "avg_win": 994.4407730356522,
+      "avg_loss": -618.3304125686486,
+      "profit_factor": 1.9994678358876636,
+      "net_double_spread": 110952.618746,
+      "net_borrow_10": 108015.16769701314,
+      "net_borrow_30": 95385.00014503945,
+      "tier_contribution": {
+        "FULL": 114330.251473,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "tier_counts": {
+        "FULL": 416
+      },
+      "aug31_equity": 214782.86162799943,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 3797.53,
+      "aug31_overdue_gross": 3797.53,
+      "max_drawdown_dollars": -14027.254560500107,
+      "worst_day": -6957.832000000024,
+      "peak_gross": 107386.33450000001,
+      "mean_gross": 65509.51843456574,
+      "exposure_dollar_days": 16442889.127076,
+      "sessions_above_130k": 0,
+      "min_equity": 94245.09769509987
+    },
+    "R4/R1": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 415,
+        "UNRESOLVED_DOCUMENTED_NO_TRADING": 1
+      },
+      "verified_trades": 415,
+      "verified_gross": 61174.45689999999,
+      "verified_modeled_net": 57025.532734999986,
+      "verified_net_by_split": {
+        "IS": 8957.284459499993,
+        "OOS": 48068.24827550001
+      },
+      "wins": 205,
+      "losses": 210,
+      "flats": 0,
+      "hit_rate": 0.4939759036144578,
+      "avg_win": 835.8240120590244,
+      "avg_loss": -544.373284462381,
+      "profit_factor": 1.4988307906203246,
+      "net_double_spread": 53656.34856999999,
+      "net_borrow_10": 50573.67542969177,
+      "net_borrow_30": 37669.960819075335,
+      "tier_contribution": {
+        "FULL": 67022.61327439999,
+        "HALF": -9997.080539400004,
+        "QUARTER": 0
+      },
+      "tier_counts": {
+        "FULL": 235,
+        "HALF": 181
+      },
+      "aug31_equity": 156222.84359500016,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0,
+      "aug31_overdue_gross": 5767.300000000001,
+      "max_drawdown_dollars": -63277.70012999997,
+      "worst_day": -48747.750000000015,
+      "peak_gross": 122434.39,
+      "mean_gross": 68125.33914519123,
+      "exposure_dollar_days": 17099460.125443,
+      "sessions_above_130k": 0,
+      "min_equity": 82720.90243290008
+    },
+    "R4/R2": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 415,
+        "OPEN_AT_BOUNDARY_DOCUMENTED_HALT": 1
+      },
+      "verified_trades": 415,
+      "verified_gross": 131703.74585,
+      "verified_modeled_net": 127546.1082221,
+      "verified_net_by_split": {
+        "IS": 51133.88462089999,
+        "OOS": 76412.22360120002
+      },
+      "wins": 230,
+      "losses": 185,
+      "flats": 0,
+      "hit_rate": 0.5542168674698795,
+      "avg_win": 1046.2880439908695,
+      "avg_loss": -611.3521183556758,
+      "profit_factor": 2.127727216643186,
+      "net_double_spread": 124208.8905942,
+      "net_borrow_10": 121239.4092016852,
+      "net_borrow_30": 108626.0111608556,
+      "tier_contribution": {
+        "FULL": 107214.4269885,
+        "HALF": 20331.6812336,
+        "QUARTER": 0
+      },
+      "tier_counts": {
+        "FULL": 232,
+        "HALF": 184
+      },
+      "aug31_equity": 226608.1023320998,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 4983.320000000001,
+      "aug31_overdue_gross": 4983.320000000001,
+      "max_drawdown_dollars": -16454.199282299945,
+      "worst_day": -8677.175000000017,
+      "peak_gross": 119941.346,
+      "mean_gross": 66403.03071387252,
+      "exposure_dollar_days": 16667160.709182002,
+      "sessions_above_130k": 0,
+      "min_equity": 97987.70192199995
+    },
+    "R4/R2_CAUSAL": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 415,
+        "OPEN_AT_BOUNDARY_DOCUMENTED_HALT": 1
+      },
+      "verified_trades": 415,
+      "verified_gross": 131361.9294,
+      "verified_modeled_net": 127212.8306506,
+      "verified_net_by_split": {
+        "IS": 50894.686441399965,
+        "OOS": 76318.14420919998
+      },
+      "wins": 230,
+      "losses": 185,
+      "flats": 0,
+      "hit_rate": 0.5542168674698795,
+      "avg_win": 1044.2423495778262,
+      "avg_loss": -610.6103229854054,
+      "profit_factor": 2.1261469001599425,
+      "net_double_spread": 123881.38190119999,
+      "net_borrow_10": 120909.0606397463,
+      "net_borrow_30": 108301.52061803889,
+      "tier_contribution": {
+        "FULL": 106992.7099772,
+        "HALF": 20220.120673399997,
+        "QUARTER": 0
+      },
+      "tier_counts": {
+        "FULL": 232,
+        "HALF": 184
+      },
+      "aug31_equity": 226278.83994059986,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 4893.26,
+      "aug31_overdue_gross": 4893.26,
+      "max_drawdown_dollars": -16523.801987199942,
+      "worst_day": -8655.944000000018,
+      "peak_gross": 119675.69,
+      "mean_gross": 66292.58322642231,
+      "exposure_dollar_days": 16639438.389832001,
+      "sessions_above_130k": 0,
+      "min_equity": 97967.15719989999
+    },
+    "R5/R1": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 415,
+        "UNRESOLVED_DOCUMENTED_NO_TRADING": 1
+      },
+      "verified_trades": 415,
+      "verified_gross": 69877.5748,
+      "verified_modeled_net": 65676.3937779,
+      "verified_net_by_split": {
+        "IS": 15924.93514859998,
+        "OOS": 49751.45862930002
+      },
+      "wins": 205,
+      "losses": 210,
+      "flats": 0,
+      "hit_rate": 0.4939759036144578,
+      "avg_win": 871.04167518,
+      "avg_loss": -537.5578554000001,
+      "profit_factor": 1.581788042224774,
+      "net_double_spread": 62268.48275579999,
+      "net_borrow_10": 59108.838858243005,
+      "net_borrow_30": 45973.729018929036,
+      "tier_contribution": {
+        "FULL": 38920.8596229,
+        "HALF": 35010.42222239999,
+        "QUARTER": -8254.888067400001
+      },
+      "tier_counts": {
+        "HALF": 168,
+        "QUARTER": 169,
+        "FULL": 79
+      },
+      "aug31_equity": 164663.6414178993,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0,
+      "aug31_overdue_gross": 4649.150000000001,
+      "max_drawdown_dollars": -53459.86229000006,
+      "worst_day": -38858.11,
+      "peak_gross": 124050.28,
+      "mean_gross": 68159.27742266135,
+      "exposure_dollar_days": 17107978.633088,
+      "sessions_above_130k": 0,
+      "min_equity": 83480.8512238001
+    },
+    "R5/R2": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 415,
+        "OPEN_AT_BOUNDARY_DOCUMENTED_HALT": 1
+      },
+      "verified_trades": 415,
+      "verified_gross": 144458.29155,
+      "verified_modeled_net": 140256.0684458,
+      "verified_net_by_split": {
+        "IS": 62051.58655859998,
+        "OOS": 78204.48188719999
+      },
+      "wins": 230,
+      "losses": 185,
+      "flats": 0,
+      "hit_rate": 0.5542168674698795,
+      "avg_win": 1098.791696311739,
+      "avg_loss": -607.9244416535136,
+      "profit_factor": 2.2470972682982535,
+      "net_double_spread": 136886.2353416,
+      "net_borrow_10": 133851.6912880071,
+      "net_borrow_30": 121042.93697242136,
+      "tier_contribution": {
+        "FULL": 68744.4373684,
+        "HALF": 58279.6542993,
+        "QUARTER": 13231.9767781
+      },
+      "tier_counts": {
+        "HALF": 165,
+        "QUARTER": 172,
+        "FULL": 79
+      },
+      "aug31_equity": 238572.3569007998,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 4007.6700000000005,
+      "aug31_overdue_gross": 4007.6700000000005,
+      "max_drawdown_dollars": -16386.07045140001,
+      "worst_day": -10851.884185000032,
+      "peak_gross": 129498.53,
+      "mean_gross": 66287.34033419921,
+      "exposure_dollar_days": 16638122.423884,
+      "sessions_above_130k": 0,
+      "min_equity": 99375.9482
+    },
+    "R5/R2_CAUSAL": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 415,
+        "OPEN_AT_BOUNDARY_DOCUMENTED_HALT": 1
+      },
+      "verified_trades": 415,
+      "verified_gross": 144264.02465,
+      "verified_modeled_net": 140068.8112198,
+      "verified_net_by_split": {
+        "IS": 61819.18985709998,
+        "OOS": 78249.62136269998
+      },
+      "wins": 230,
+      "losses": 185,
+      "flats": 0,
+      "hit_rate": 0.5542168674698795,
+      "avg_win": 1097.2343434491304,
+      "avg_loss": -607.0004744513514,
+      "profit_factor": 2.2473280354196774,
+      "net_double_spread": 136703.8877896,
+      "net_borrow_10": 133667.30517162848,
+      "net_borrow_30": 120864.29307528547,
+      "tier_contribution": {
+        "FULL": 68992.5403024,
+        "HALF": 57924.064071099994,
+        "QUARTER": 13152.2068463
+      },
+      "tier_counts": {
+        "HALF": 165,
+        "QUARTER": 172,
+        "FULL": 79
+      },
+      "aug31_equity": 238385.13557979913,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 3947.6300000000006,
+      "aug31_overdue_gross": 3947.6300000000006,
+      "max_drawdown_dollars": -16404.277881100163,
+      "worst_day": -10822.766730000003,
+      "peak_gross": 129429.486,
+      "mean_gross": 66202.67371739443,
+      "exposure_dollar_days": 16616871.103066001,
+      "sessions_above_130k": 0,
+      "min_equity": 99393.50895999999
+    }
+  },
+  "selection_integrity": {
+    "PARENT/R1": {
+      "completed": 415,
+      "uncertified_rank_units": 64,
+      "net_total": 36536.55213129999,
+      "net_from_uncertified": 30413.4236636,
+      "net_excluding_uncertified": 6123.128467699993,
+      "documented_action_in_window": 0,
+      "resolved_market_move_in_window": 1
+    },
+    "PARENT/R2": {
+      "completed": 415,
+      "uncertified_rank_units": 121,
+      "net_total": 114855.79650889999,
+      "net_from_uncertified": 100884.2404938,
+      "net_excluding_uncertified": 13971.556015099995,
+      "documented_action_in_window": 1,
+      "resolved_market_move_in_window": 1
+    },
+    "PARENT/R2_CAUSAL": {
+      "completed": 415,
+      "uncertified_rank_units": 121,
+      "net_total": 114330.251473,
+      "net_from_uncertified": 100546.7409733,
+      "net_excluding_uncertified": 13783.510499700002,
+      "documented_action_in_window": 1,
+      "resolved_market_move_in_window": 1
+    },
+    "R4/R1": {
+      "completed": 415,
+      "uncertified_rank_units": 64,
+      "net_total": 57025.532734999986,
+      "net_from_uncertified": 37760.9588693,
+      "net_excluding_uncertified": 19264.57386569999,
+      "documented_action_in_window": 0,
+      "resolved_market_move_in_window": 1
+    },
+    "R4/R2": {
+      "completed": 415,
+      "uncertified_rank_units": 121,
+      "net_total": 127546.1082221,
+      "net_from_uncertified": 112989.1116398,
+      "net_excluding_uncertified": 14556.996582299995,
+      "documented_action_in_window": 1,
+      "resolved_market_move_in_window": 1
+    },
+    "R4/R2_CAUSAL": {
+      "completed": 415,
+      "uncertified_rank_units": 121,
+      "net_total": 127212.8306506,
+      "net_from_uncertified": 112778.2362112,
+      "net_excluding_uncertified": 14434.594439399996,
+      "documented_action_in_window": 1,
+      "resolved_market_move_in_window": 1
+    },
+    "R5/R1": {
+      "completed": 415,
+      "uncertified_rank_units": 64,
+      "net_total": 65676.3937779,
+      "net_from_uncertified": 48270.8001325,
+      "net_excluding_uncertified": 17405.593645399997,
+      "documented_action_in_window": 0,
+      "resolved_market_move_in_window": 1
+    },
+    "R5/R2": {
+      "completed": 415,
+      "uncertified_rank_units": 121,
+      "net_total": 140256.0684458,
+      "net_from_uncertified": 123292.1168377,
+      "net_excluding_uncertified": 16963.95160809999,
+      "documented_action_in_window": 1,
+      "resolved_market_move_in_window": 1
+    },
+    "R5/R2_CAUSAL": {
+      "completed": 415,
+      "uncertified_rank_units": 121,
+      "net_total": 140068.8112198,
+      "net_from_uncertified": 123225.65044659999,
+      "net_excluding_uncertified": 16843.160773200012,
+      "documented_action_in_window": 1,
+      "resolved_market_move_in_window": 1
+    }
+  },
+  "ranking_window_flags": [
+    [
+      "FGL",
+      "2026-02-11",
+      157.87321063394685,
+      "2026-02-10",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "FGL",
+      "2026-02-25",
+      157.87321063394685,
+      "2026-02-10",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "DFNS",
+      "2026-07-29",
+      121.4622641509434,
+      "2026-07-20",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "DFNS",
+      "2026-08-05",
+      121.4622641509434,
+      "2026-07-20",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "WETO",
+      "2026-08-19",
+      83.04498269896195,
+      "2026-08-03",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "TGL",
+      "2025-12-10",
+      76.52484379648915,
+      "2025-12-05",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "BYND",
+      "2026-08-19",
+      32.34303584315612,
+      "2026-08-14",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "BYND",
+      "2026-08-26",
+      32.34303584315612,
+      "2026-08-14",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "CUE",
+      "2026-05-06",
+      31.849315068493155,
+      "2026-04-24",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "OCTO",
+      "2025-09-10",
+      31.224489795918366,
+      "2025-09-08",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "ERNA",
+      "2026-05-13",
+      25.77049180327869,
+      "2026-05-04",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AGL",
+      "2026-04-22",
+      24.375963020030817,
+      "2026-03-31",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AGL",
+      "2026-04-08",
+      24.375963020030817,
+      "2026-03-31",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "ALIT",
+      "2026-07-15",
+      23.894736842105267,
+      "2026-07-01",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "ALIT",
+      "2026-07-08",
+      23.894736842105267,
+      "2026-07-01",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "ALIT",
+      "2026-07-22",
+      23.894736842105267,
+      "2026-07-01",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AIOS",
+      "2026-05-06",
+      19.877565718401158,
+      "2026-04-27",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "WOLF",
+      "2025-10-01",
+      18.015916003499854,
+      "2025-09-29",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "WOLF",
+      "2025-10-15",
+      18.015916003499854,
+      "2025-09-29",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "WOLF",
+      "2025-10-08",
+      18.015916003499854,
+      "2025-09-29",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "REAX",
+      "2026-08-26",
+      11.816666666666666,
+      "2026-08-25",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AFJK",
+      "2025-12-24",
+      10.7475,
+      "2025-12-09",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "INBS",
+      "2026-01-07",
+      9.999090991728028,
+      "2025-12-16",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "TLRY",
+      "2025-12-17",
+      9.959141981613893,
+      "2025-12-02",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "NCI",
+      "2026-06-03",
+      8.450000000000001,
+      "2026-05-19",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "SMX",
+      "2025-12-03",
+      7.2796208530805675,
+      "2025-11-18",
+      "DOCUMENTED_ACTION_IN_RANKING_WINDOW"
+    ],
+    [
+      "HPP",
+      "2025-12-17",
+      7.150753768844221,
+      "2025-12-02",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "HPP",
+      "2025-12-10",
+      7.150753768844221,
+      "2025-12-02",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "HPP",
+      "2025-12-03",
+      7.150753768844221,
+      "2025-12-02",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "GLTO",
+      "2025-10-08",
+      6.763586956521739,
+      "2025-10-07",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "PFSA",
+      "2026-08-19",
+      6.177419354838709,
+      "2026-08-18",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "FCUV",
+      "2026-08-05",
+      6.000052631578947,
+      "2026-07-31",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "SMX",
+      "2026-02-18",
+      5.652411282984532,
+      "2026-02-17",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "ASTC",
+      "2026-06-03",
+      5.516,
+      "2026-05-27",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "ASTC",
+      "2026-06-10",
+      5.516,
+      "2026-05-27",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AMIX",
+      "2026-08-05",
+      5.357142857142857,
+      "2026-08-04",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "ROLR",
+      "2026-01-21",
+      5.298295454545455,
+      "2026-01-14",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "UGRO",
+      "2026-04-01",
+      5.1635846372688485,
+      "2026-03-25",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "UGRO",
+      "2026-04-08",
+      5.1635846372688485,
+      "2026-03-25",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "VEEE",
+      "2026-07-22",
+      5.156819254658385,
+      "2026-07-13",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "VEEE",
+      "2026-07-15",
+      5.156819254658385,
+      "2026-07-13",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AKAN",
+      "2026-04-29",
+      4.996837444655282,
+      "2026-04-13",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "STI",
+      "2026-06-10",
+      4.9146825396825395,
+      "2026-06-04",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "STI",
+      "2026-06-17",
+      4.9146825396825395,
+      "2026-06-04",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "CAPR",
+      "2025-12-17",
+      4.708201892744479,
+      "2025-12-03",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "CAPR",
+      "2025-12-10",
+      4.708201892744479,
+      "2025-12-03",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "TURB",
+      "2025-09-17",
+      4.592592592592593,
+      "2025-09-16",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "GLTO",
+      "2025-11-12",
+      4.142995169082125,
+      "2025-11-10",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "MQ",
+      "2026-07-15",
+      4.0935960591133,
+      "2026-07-01",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "MQ",
+      "2026-07-08",
+      4.0935960591133,
+      "2026-07-01",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "MQ",
+      "2026-07-22",
+      4.0935960591133,
+      "2026-07-01",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "OCG",
+      "2025-12-10",
+      3.95,
+      "2025-12-09",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "STI",
+      "2025-10-15",
+      3.8491785714285713,
+      "2025-10-13",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "BNAI",
+      "2026-02-11",
+      3.778454047474133,
+      "2026-01-26",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "BNAI",
+      "2026-01-28",
+      3.778454047474133,
+      "2026-01-26",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "BNAI",
+      "2026-02-04",
+      3.778454047474133,
+      "2026-01-26",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AKTX",
+      "2026-05-27",
+      3.607162698412698,
+      "2026-05-22",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "IPST",
+      "2026-08-19",
+      3.5998363710740424,
+      "2026-08-17",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "ANPA",
+      "2026-01-28",
+      3.5274822695035457,
+      "2026-01-09",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "QURE",
+      "2025-10-01",
+      3.481171303074671,
+      "2025-09-24",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "QURE",
+      "2025-09-24",
+      3.481171303074671,
+      "2025-09-24",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "QURE",
+      "2025-10-08",
+      3.481171303074671,
+      "2025-09-24",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "TMQ",
+      "2025-10-15",
+      3.442857142857143,
+      "2025-10-07",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "BQ",
+      "2025-10-08",
+      3.4107997265892003,
+      "2025-09-29",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "SDOT",
+      "2026-07-01",
+      3.3845407503234153,
+      "2026-06-26",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "BREA",
+      "2025-09-24",
+      3.276315789473684,
+      "2025-09-18",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "BREA",
+      "2025-10-01",
+      3.276315789473684,
+      "2025-09-18",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "SOGP",
+      "2025-09-10",
+      3.246052631578947,
+      "2025-08-28",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "SOGP",
+      "2025-09-03",
+      3.246052631578947,
+      "2025-08-28",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AKAN",
+      "2026-05-06",
+      3.230769230769231,
+      "2026-04-22",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "HSDT",
+      "2025-10-01",
+      3.193166885676741,
+      "2025-09-15",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "HSDT",
+      "2025-09-17",
+      3.193166885676741,
+      "2025-09-15",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "DFNS",
+      "2026-08-12",
+      3.148837209302325,
+      "2026-07-27",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "OLMA",
+      "2025-11-19",
+      3.1086956521739126,
+      "2025-11-18",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "OLMA",
+      "2025-12-03",
+      3.1086956521739126,
+      "2025-11-18",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "OLMA",
+      "2025-11-26",
+      3.1086956521739126,
+      "2025-11-18",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "DD",
+      "2026-06-24",
+      3.101564173987572,
+      "2026-06-24",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AQMS",
+      "2025-10-15",
+      2.984984984984985,
+      "2025-10-14",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AHMA",
+      "2025-12-03",
+      2.972972972972973,
+      "2025-12-01",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "FLYE",
+      "2025-12-03",
+      2.9040178571428568,
+      "2025-12-01",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "MOVE",
+      "2026-01-28",
+      2.8895265423242464,
+      "2026-01-23",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "OKLS",
+      "2026-04-01",
+      2.8685147507629707,
+      "2026-03-23",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "PIII",
+      "2026-05-20",
+      2.8661363636363633,
+      "2026-05-15",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "PCLA",
+      "2026-05-27",
+      2.8205128205128203,
+      "2026-05-22",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "MRNA",
+      "2026-08-19",
+      2.7783071303795457,
+      "2026-08-19",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "ALMS",
+      "2026-01-21",
+      2.676311030741411,
+      "2026-01-06",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "ALMS",
+      "2026-01-14",
+      2.676311030741411,
+      "2026-01-06",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "CRVS",
+      "2026-01-21",
+      2.6554934823091245,
+      "2026-01-20",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "CRVS",
+      "2026-01-28",
+      2.6554934823091245,
+      "2026-01-20",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "CRVS",
+      "2026-02-04",
+      2.6554934823091245,
+      "2026-01-20",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "GSIT",
+      "2025-10-22",
+      2.5510805500982316,
+      "2025-10-20",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "GSIT",
+      "2025-10-29",
+      2.5510805500982316,
+      "2025-10-20",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "ASPC",
+      "2025-12-31",
+      2.480916030534351,
+      "2025-12-10",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "WVE",
+      "2025-12-10",
+      2.4719999999999995,
+      "2025-12-08",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "WVE",
+      "2025-12-24",
+      2.4719999999999995,
+      "2025-12-08",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "WVE",
+      "2025-12-17",
+      2.4719999999999995,
+      "2025-12-08",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AHMA",
+      "2026-01-14",
+      2.3673076923076923,
+      "2026-01-13",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "APLS",
+      "2026-04-15",
+      2.3667252489748094,
+      "2026-03-31",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "APLS",
+      "2026-04-01",
+      2.3667252489748094,
+      "2026-03-31",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "APLS",
+      "2026-04-08",
+      2.3667252489748094,
+      "2026-03-31",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "BATL",
+      "2026-03-04",
+      2.3551959114139693,
+      "2026-03-03",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "BATL",
+      "2026-03-18",
+      2.3551959114139693,
+      "2026-03-03",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "BATL",
+      "2026-03-11",
+      2.3551959114139693,
+      "2026-03-03",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "EVOK",
+      "2025-11-05",
+      2.3464912280701755,
+      "2025-11-04",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "INBS",
+      "2026-01-14",
+      2.3076923076923075,
+      "2025-12-31",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "COGT",
+      "2025-11-19",
+      2.210526315789474,
+      "2025-11-10",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "COGT",
+      "2025-11-26",
+      2.210526315789474,
+      "2025-11-10",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "COGT",
+      "2025-11-12",
+      2.210526315789474,
+      "2025-11-10",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "AGL",
+      "2026-05-13",
+      2.1951484431571324,
+      "2026-05-07",
+      "DOCUMENTED_MARKET_MOVE"
+    ],
+    [
+      "NVA",
+      "2025-10-22",
+      2.110164512338425,
+      "2025-10-14",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "NVA",
+      "2025-10-15",
+      2.110164512338425,
+      "2025-10-14",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "MNTS",
+      "2026-06-10",
+      2.096075778078484,
+      "2026-05-26",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "MNTS",
+      "2026-06-03",
+      2.096075778078484,
+      "2026-05-26",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "MNTS",
+      "2026-05-27",
+      2.096075778078484,
+      "2026-05-26",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "REPL",
+      "2026-08-19",
+      2.0955801104972376,
+      "2026-07-31",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "REPL",
+      "2025-10-29",
+      2.0422222222222226,
+      "2025-10-20",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "INBX",
+      "2025-10-29",
+      2.0273389950460015,
+      "2025-10-24",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "INBX",
+      "2025-11-12",
+      2.0273389950460015,
+      "2025-10-24",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "NBY",
+      "2026-01-14",
+      2.025369978858351,
+      "2026-01-09",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "GPCR",
+      "2025-12-17",
+      2.017924255565192,
+      "2025-12-08",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "GPCR",
+      "2025-12-10",
+      2.017924255565192,
+      "2025-12-08",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "GPCR",
+      "2025-12-24",
+      2.017924255565192,
+      "2025-12-08",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ],
+    [
+      "CLRO",
+      "2026-07-08",
+      2.012049689440994,
+      "2026-07-02",
+      "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
+    ]
+  ],
+  "oracle": {
+    "trades": {
+      "checked": 3735,
+      "errors": 0,
+      "max_abs_error": 1.8189894035458565e-12
+    },
+    "cohorts": {
+      "cohorts": 468,
+      "errors": 0
+    },
+    "daily": {
+      "PARENT/R1": {
+        "max_abs_error": 5.820766091346741e-11,
+        "ok": true
+      },
+      "PARENT/R2": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "PARENT/R2_CAUSAL": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R4/R1": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R4/R2": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R4/R2_CAUSAL": {
+        "max_abs_error": 1.4551915228366852e-10,
+        "ok": true
+      },
+      "R5/R1": {
+        "max_abs_error": 2.0372681319713593e-10,
+        "ok": true
+      },
+      "R5/R2": {
+        "max_abs_error": 1.7462298274040222e-10,
+        "ok": true
+      },
+      "R5/R2_CAUSAL": {
+        "max_abs_error": 1.4551915228366852e-10,
+        "ok": true
+      }
+    },
+    "ok": true
+  },
+  "gate": {
+    "status": "NOT_RUN_DATA_GATE",
+    "blockers": [
+      "121 corrected selections rest on a ranking window containing an undocumented discontinuity of 2x or more, so their 15-session return is not certified to be in consistent price units"
+    ],
+    "disclosed_limitations": [
+      "PARENT: 1 slots under a documented trading event with no execution in the window, 0 filled by a carried order after a documented halt",
+      "R4: 1 slots under a documented trading event with no execution in the window, 0 filled by a carried order after a documented halt",
+      "R5: 1 slots under a documented trading event with no execution in the window, 0 filled by a carried order after a documented halt",
+      "loan/locate/dividend history unavailable: borrow is scenario-only, so modeled net is conditional and is not verified executable historical net profit",
+      "single vendor: a second endpoint of the same vendor is corroboration, not independent validation",
+      "observed bar prices are a simulation reference, not guaranteed broker fills"
+    ]
+  },
+  "r2_entry_ledger_sha256": "ae6c1556acdcb6c545016eb42a985269f29c41481de1313b169359aa15f76698",
+  "local_csvs": {
+    "r4r5_trade_exceptions.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow006/r4r5_trade_exceptions.csv",
+      "sha256": "4f82b89e4ba38eccb9e06f340093f74de4e89fe27383926d74ae3ba0938af702",
+      "bytes": 1211646
+    },
+    "r4r5_verified_trades.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow006/r4r5_verified_trades.csv",
+      "sha256": "d3312fd819a172223cf72cab6fb9e476d2b892a510703a088dd5d787e50c4b29",
+      "bytes": 4171820
+    },
+    "r4r5_verified_cohort_audit.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow006/r4r5_verified_cohort_audit.csv",
+      "sha256": "947de2120f61439ad06b05f899006a17de42c39c10844cbdd55cafc46cd9da94",
+      "bytes": 577257
+    },
+    "r4r5_cohort_matrix.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow006/r4r5_cohort_matrix.csv",
+      "sha256": "ea17ea1f2347e5853126806b742b293144a5c8e2266c7c93964fa3ded501fbf9",
+      "bytes": 326317
+    },
+    "r4r5_daily_account.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow006/r4r5_daily_account.csv",
+      "sha256": "b389c393c2a99842e30a5b50d2b1d7addf757138f143b7703ac500f33db6b27a",
+      "bytes": 941195
+    },
+    "r4r5_trade_exceptions_initial.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow006/r4r5_trade_exceptions_initial.csv",
+      "sha256": "0a54f3d9718e910e2e1a0e7c18cf00ab259b295d216786933638d33d076a8722",
+      "bytes": 1208682
+    }
+  },
+  "log": [
+    "2026-09-14T12:46:09+00:00 +0.0m R0 frozen books: PARENT_ALL=38317.20, R4_ALL=59040.69, R5_ALL=68921.14",
+    "2026-09-14T12:46:11+00:00 +0.0m universe rule: roster=15322 etp_excluded=5672 test_issues_excluded=['ZAZZT', 'ZBZZT', 'ZCZZT', 'ZFZZT', 'ZJZZT', 'ZVZZT', 'ZWZZT', 'ZXZZT']",
+    "2026-09-14T12:46:11+00:00 +0.0m pass 1: loading 109518 ranking endpoints across 78 sessions",
+    "2026-09-14T12:46:24+00:00 +0.3m ranking endpoints present=109107 absent=411",
+    "2026-09-14T12:46:25+00:00 +0.3m corrected ranking: 52 cohorts, membership changed in 48, unrankable_no_trading=411, unrankable_unresolved=0, restored candidates=6659",
+    "2026-09-14T12:46:28+00:00 +0.3m ranking-window integrity: unexplained discontinuities R2=121 R1=65 of 416 selected rows each",
+    "2026-09-14T12:46:28+00:00 +0.3m pass 2: loading 28296 selected-name lifecycle observations",
+    "2026-09-14T12:46:34+00:00 +0.4m selected-name sessions with a documented no-trading vendor response: 25",
+    "2026-09-14T12:46:34+00:00 +0.4m corrected selections missing lifecycle observations: 0",
+    "2026-09-14T12:46:34+00:00 +0.4m PARENT: R1=415/416 R2=415/416 R2_CAUSAL=415/416",
+    "2026-09-14T12:46:35+00:00 +0.4m R4: R1=415/416 R2=415/416 R2_CAUSAL=415/416",
+    "2026-09-14T12:46:35+00:00 +0.4m R5: R1=415/416 R2=415/416 R2_CAUSAL=415/416",
+    "2026-09-14T12:46:35+00:00 +0.4m action/identity review: R2 resolutions={'LARGE_MOVE_UNREVIEWED': 33, 'DOCUMENTED_ACTION_APPLIED': 6, 'DOCUMENTED_MARKET_MOVE': 42, 'LARGE_MOVE_AFTER_DOCUMENTED_SPLIT': 3, 'MARKET_MOVE_UNCONFIRMED': 6} unresolved=[]",
+    "2026-09-14T12:46:36+00:00 +0.4m CSVs exported to handoff/outgoing/cg_arrow006",
+    "2026-09-14T12:46:36+00:00 +0.5m oracle ok=True trades={'checked': 3735, 'errors': 0, 'max_abs_error': 1.8189894035458565e-12} cohorts={'cohorts': 468, 'errors': 0}",
+    "2026-09-14T12:46:36+00:00 +0.5m selection integrity PARENT/R1: 64 uncertified rank units carrying 30,413.42 of 36,536.55",
+    "2026-09-14T12:46:36+00:00 +0.5m selection integrity PARENT/R2: 121 uncertified rank units carrying 100,884.24 of 114,855.80",
+    "2026-09-14T12:46:36+00:00 +0.5m selection integrity R4/R1: 64 uncertified rank units carrying 37,760.96 of 57,025.53",
+    "2026-09-14T12:46:36+00:00 +0.5m selection integrity R4/R2: 121 uncertified rank units carrying 112,989.11 of 127,546.11",
+    "2026-09-14T12:46:36+00:00 +0.5m selection integrity R5/R1: 64 uncertified rank units carrying 48,270.80 of 65,676.39",
+    "2026-09-14T12:46:36+00:00 +0.5m selection integrity R5/R2: 121 uncertified rank units carrying 123,292.12 of 140,256.07",
+    "2026-09-14T12:46:36+00:00 +0.5m GATE NOT_RUN_DATA_GATE blockers=['121 corrected selections rest on a ranking window containing an undocumented discontinuity of 2x or more, so their 15-session return is not certified to be in consistent price units']"
+  ]
+}

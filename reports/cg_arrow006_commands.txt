@@ -1,0 +1,91 @@
+CG Arrow 006 — commands, checkpoints and timings (Opus in Claude Code)
+Start 2026-09-14T11:31:55Z. Hard maximum 180 minutes (deadline 14:31:55Z).
+Python 3.14.5, thetadata SDK 1.0.10, polars 1.43.2, 8 CPU. No credential value appears in any log, report or command below.
+
+# 0. Pull, credentials, required reading (minute 0-5)
+git pull --ff-only origin main                      # f460775..cf51827
+git check-ignore -v .env                            # .gitignore:1:.env -> IGNORED, confirmed before work and before push
+python -c "from dotenv import dotenv_values; print(sorted(dotenv_values('.env')))"   # key NAMES only, no values
+# read CLAUDE.md AGENTS.md docs/CHATGPT_LAB_PROTOCOL.md docs/SUCCESS.md docs/CG_BUILD_ARROW_006.md
+# Arrow 005 artefacts and src/verification/* were already in this session's context from the Arrow 005 run.
+
+# 1. Authenticated pilot and vendor convention parity (minute 5-12)
+#    SNDK 2025-09-25 -> 391 rows 0.56s; DNTH 2026-04-02 -> 391 rows 0.08s; AAPL 2026-03-04 -> 391 rows 0.89s
+#    parity vs untouched local tape (SATS 2025-09-04, venue utp_cta, 04:00-16:00): max abs diff 0.0 on O/H/L/C/V
+#    vendor limit discovered: "Bulk history requests are limited to no more than 1 month" -> month chunking
+
+# 2. End-to-end repair proof (minute 12-13)
+python scripts/cg_arrow006_acquire.py proof
+#   before: SNDK 2025-09-25 source=null missing=true entry_px=null
+#   after : source=validated path=data/verification/r4r5/v1/validated/2025-09-25/SNDK.parquet priced=true n_bars=390
+#   cache partitions invalidated: 1; pipeline_ok=True -> data/verification/r4r5/v1/proof_end_to_end.json
+
+# 3. Selected-trade lifecycle acquisition (minute 13-14)
+python scripts/cg_arrow006_acquire.py lifecycle --workers 8
+#   9,104 symbol-sessions required across 231 names; 405 missing; 90 requests; 13.2s
+#   394 RETRIEVED_CHECKED, 11 DOCUMENTED_NO_TRADING, 0 unresolved
+
+# 4. Corrected $10-$80 candidate field acquisition (minute 14-33, background)
+python scripts/cg_arrow006_acquire.py field --workers 8
+#   universe: roster 15,322, ETP excluded 5,672, test issues excluded 8 (ZAZZT ZBZZT ZCZZT ZFZZT ZJZZT ZVZZT ZWZZT ZXZZT)
+#   6,659 missing candidate rows across 1,096 symbols; 3,109 requests; 906.8s; 298,010,300 raw bytes; 30,929,458 rows
+#   36,226 RETRIEVED_CHECKED, 2,966 DOCUMENTED_NO_TRADING, 0 unresolved
+
+# 5. Loader performance repair (minute 35-40)
+#   first baseline attempt was syscall-bound: safe_path walked every path component per file.
+#   memoised the directory containment check and batched the parquet reads per date partition.
+#   one 1,400-symbol partition: minutes -> 17.2s. Containment and link refusal unchanged.
+
+# 6. Security identity and documented trading events (minute 40-48)
+#   three securities stopped trading mid-lifecycle; each was researched rather than assumed:
+#   OCTO -> ORBS ticker change effective 2025-09-11; BREA -> SLMT effective 2025-10-03 (both wired through the loader)
+#   EFTY: SEC suspension 2025-10-06..2025-10-17 then Nasdaq halt from 2025-10-18; no trade through 2026-08-31
+python - (acquire ORBS, SLMT and EFTY forward windows; 11 requests + 8 EFTY-2026 requests)
+
+# 7. Baseline reconstruction (minute 48-52, rerun after each repair)
+python scripts/cg_arrow006_run.py --workers 8
+#   pass 1: 109,518 ranking endpoints across 78 sessions; present 109,107, absent 411 (all documented no-trading)
+#   corrected ranking: 52 cohorts, membership changed in 48, unrankable_unresolved=0, restored candidates 6,659
+#   pass 2: 33,142 selected-name lifecycle observations; missing 0
+#   PARENT/R4/R5: R1=415/416 R2=415/416 R2_CAUSAL=415/416
+#   oracle ok: 3,735 trades, 468 cohorts, max abs error 1.8e-12
+
+# 8. Action/identity review of the corrected selections (minute 52-58)
+#   seven >=2x holding-window flags researched with dated sources and recorded in
+#   reports/cg_arrow006_corporate_actions.json: SMX, OCG, NPT, AGL, SDOT, WETO documented market moves; DFNS unconfirmed.
+#   GATE OPEN at this point.
+
+# 9. Ranking-window integrity screen (minute 58-64)  <-- the decisive check
+#   the holding-window screen does not protect the SELECTION: a 15-session ranking return is only rule-faithful if
+#   both endpoints are in the same price units. Screened the ranking window of every selected name at the same >=2x
+#   threshold the inherited holding-window screen already used.
+#   result: 121 of 415 corrected selections carry an undocumented >=2x ranking-window discontinuity, holding 88% of the total.
+#   also measured on the inherited historical selection: 64 of 415 R1 trades, 83% of PARENT's R1 total.
+#   SMX one-for-eight reverse split of 2025-11-18 (Nasdaq alert 2025-612) added to the documented events as proof of mechanism.
+python scripts/cg_arrow006_run.py --workers 8
+#   GATE NOT_RUN_DATA_GATE -> horizon census must not run on an uncertified entry ledger
+
+# 10. Reports, tests, safety, push (minute 64-)
+python -m pytest tests -q --basetemp=data/tmp/cg_arrow006_tests -p no:cacheprovider
+git check-ignore .env data/verification/r4r5/v1/acquisition/requests.jsonl handoff/outgoing/cg_arrow006/r4r5_verified_trades.csv
+git ls-files handoff data/verification        # must be empty
+git diff --cached --name-only                 # inspected paths AND content before commit
+
+# Gates and outcomes
+# Baseline gate: NOT_RUN_DATA_GATE. Sole blocker: 121 uncertified ranking units in the corrected R2 selection.
+#   All other gate conditions satisfied: entries and H10 endpoints priced or covered by a documented event,
+#   no unresolved test-security/action flag among selected R2 names, 52/52 cohorts certified, oracle reconciled,
+#   no stale mark inside a completed-trade total.
+# Horizon census: NOT RUN. Zero real-data cells scored, zero OOS cells revealed. Exporter exercised on synthetic data only.
+# Acquisition totals: 3,264 requests, 0 errors, 31,692,997 rows, 304,744,337 raw bytes, 40,093 validated symbol-sessions,
+#   36,843 RETRIEVED_CHECKED, 3,250 DOCUMENTED_NO_TRADING, 0 unresolved.
+# Errors/retries: no vendor errors and no backoff events. One over-scoped first baseline attempt was stopped and
+#   restructured into two passes; one background run was stopped with TaskStop.
+
+# Local private deliverables (git-ignored; hashes in reports/cg_arrow006_manifest.json)
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow006\r4r5_verified_trades.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow006\r4r5_verified_cohort_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow006\r4r5_cohort_matrix.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow006\r4r5_trade_exceptions.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow006\r4r5_trade_exceptions_initial.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow006\r4r5_daily_account.csv

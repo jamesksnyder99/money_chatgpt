@@ -27,10 +27,11 @@ VALIDATED = VERIFY_ROOT / "validated"
 CACHE = VERIFY_ROOT / "cache" / f"summaries_{VERSION}"
 HANDOFF = REPO_ROOT / "handoff" / "outgoing" / "cg_arrow005"
 ACTION_PATH_V1 = REPO_ROOT / "reports" / "cg_arrow003_corporate_actions.json"
-ACTION_PATH = REPO_ROOT / "reports" / "cg_arrow005_corporate_actions.json"  # v2: inherited events plus Arrow 005 documented additions
+ACTION_PATH_V2 = REPO_ROOT / "reports" / "cg_arrow005_corporate_actions.json"  # v2: inherited plus Arrow 005 additions
+ACTION_PATH = REPO_ROOT / "reports" / "cg_arrow006_corporate_actions.json"  # v3: active reference for Arrow 006
 RANKS_PATH = DATA / "tmp" / "cg_arrow002r" / "ranks_ALL_wed.json"
 VIRGIN_END = date(2026, 5, 29)
-LOCAL_TAPE_END = date(2026, 8, 31)
+LOCAL_TAPE_END = date(2026, 9, 11)  # Arrow 006: last required H10 exit of the 2026-08-26 cohort, now retrievable
 CUTOFF = date(2026, 8, 31)
 FEATS = nyse_sessions(date(2025, 8, 1), date(2026, 9, 30))
 INDEX = {d: i for i, d in enumerate(FEATS)}
@@ -74,16 +75,28 @@ def digest(path: Path) -> str:
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def safe_path(path: Path) -> Path:
+@lru_cache(maxsize=100_000)
+def _safe_dir(directory: Path) -> None:
+    """Containment and link check for a directory prefix, memoised per directory.
+
+    Walking every component for every file made the loader syscall-bound; the
+    check is identical for every file in the same directory, so it is cached.
+    """
     root = REPO_ROOT.absolute()
-    p = Path(path).absolute()
-    if not p.is_relative_to(root) or ".." in p.parts:
+    if not directory.is_relative_to(root) or ".." in directory.parts:
         raise ValueError("Path outside the independent lab")
     cursor = root
-    for part in p.relative_to(root).parts:
+    for part in directory.relative_to(root).parts:
         cursor = cursor / part
         if cursor.is_symlink() or cursor.is_junction():
             raise ValueError("Linked lab inputs are forbidden")
+
+
+def safe_path(path: Path) -> Path:
+    p = Path(path).absolute()
+    _safe_dir(p.parent)
+    if p.is_symlink() or p.is_junction():
+        raise ValueError("Linked lab inputs are forbidden")
     return p
 
 
@@ -116,9 +129,41 @@ def adjusted(rec: dict | None, factor: float) -> dict | None:
     return out
 
 
+@lru_cache(maxsize=1)
+def identity_events() -> tuple:
+    """Documented symbol changes: the same security trading under a successor ticker."""
+    if not ACTION_PATH.exists():
+        return ()
+    return tuple(read_json(ACTION_PATH).get("security_identity", []))
+
+
+def resolved_symbol(symbol: str, d: date) -> str:
+    """Ticker under which this security actually traded on session d."""
+    out = symbol
+    for e in identity_events():
+        if e["symbol"] == out and d.isoformat() >= e["effective_session"]:
+            out = e["successor"]
+    return out
+
+
+@lru_cache(maxsize=1)
+def trading_events() -> tuple:
+    """Documented halts/suspensions: real non-execution, never a missing observation."""
+    if not ACTION_PATH.exists():
+        return ()
+    return tuple(read_json(ACTION_PATH).get("trading_events", []))
+
+
+def halted(symbol: str, d: date) -> dict | None:
+    for e in trading_events():
+        if e["symbol"] == symbol and d.isoformat() >= e["first_non_trading_session"]:
+            return e
+    return None
+
+
 # ---------------------------------------------------------------- source resolution
 def candidate_paths(d: date, symbol: str) -> list[tuple[str, Path]]:
-    fn = safe_symbol_filename(symbol) + ".parquet"
+    fn = safe_symbol_filename(resolved_symbol(symbol, d)) + ".parquet"
     primary = "virgin" if d <= VIRGIN_END else "full"
     alternate = "full" if primary == "virgin" else "virgin"
     return [("validated", VALIDATED / d.isoformat() / fn),
@@ -169,6 +214,14 @@ def summarize(df: pl.DataFrame, d: date, source: str, path: str, checks: dict) -
             "volume": float(df["volume"].sum()), "n_bars": int(df.height),
             "entry_ts": closing["bar_start"][0].isoformat() if closing.height else None,
             "entry_px": float(closing["close"][0]) if closing.height else None,
+            # Execution reference. The original engine took the final-minute print when it
+            # existed and otherwise the session's last regular-hours print; a thinly traded
+            # security has no 15:59 trade, and that is trading behaviour, not a data gap.
+            "exec_ts": (closing["bar_start"][0].isoformat() if closing.height
+                        else last["bar_start"].isoformat()),
+            "exec_px": float(closing["close"][0]) if closing.height else float(last["close"]),
+            "exec_field": ("final_minute_bar_close" if closing.height
+                           else "last_regular_hours_print_fallback"),
             "preorder": float(pre["close"][-1]) if pre.height else None,
             "preorder_ts": pre["bar_start"][-1].isoformat() if pre.height else None,
             "early_close": d in NYSE_EARLY_CLOSE,
@@ -202,29 +255,84 @@ def _file_key(p: Path) -> str:
     return f"{st.st_size}:{int(st.st_mtime)}"
 
 
+def resolve_source(d: date, symbol: str):
+    """First existing candidate partition for a symbol-session, by loader precedence."""
+    for label, p in candidate_paths(d, symbol):
+        safe_path(p)
+        if p.is_file():
+            return label, p
+    return None, None
+
+
 def summary_job(job):
+    """Build one date partition of the summary cache.
+
+    Sources are resolved first, then read in batches with a single polars call per
+    source tree, because one call per symbol made the loader I/O-bound.
+    """
     iso, symbols = job
     d = date.fromisoformat(iso)
     p = CACHE / (iso + ".json")
     cache = read_json(p) if p.exists() else {}
-    changed = False
+    todo, resolved = [], {}
     for sym in symbols:
+        label, path = resolve_source(d, sym)
+        key = _file_key(path) if path else None
         entry = cache.get(sym)
-        df, source, rel, checks = read_bars(d, sym)
-        key = _file_key(REPO_ROOT / rel) if rel else None
         if entry is not None and entry.get("_key") == key and entry.get("version") == VERSION:
             continue
-        rec = summarize(df, d, source, rel, checks) if df is not None else None
-        eod = eod_reference(d, sym)
-        if rec is None:
-            rec = {"version": VERSION, "source": None, "path": None, "mark_kind": None, "missing": True,
-                   "tried": checks.get("tried", []), "empty_files": checks.get("empty_files", [])}
-        if eod:
-            rec.update(eod)
-        rec["_key"] = key
-        cache[sym] = rec
-        changed = True
-    if changed:
+        resolved[sym] = (label, path, key)
+        todo.append(sym)
+    if todo:
+        by_path = {}
+        for sym in todo:
+            label, path, _ = resolved[sym]
+            if path is not None:
+                by_path.setdefault(path, sym)
+        frames = {}
+        paths = sorted(by_path)
+        for chunk in (paths[i:i + 400] for i in range(0, len(paths), 400)):
+            try:
+                df = pl.read_parquet(chunk, columns=["symbol", "bar_start", "open", "high", "low",
+                                                     "close", "volume"])
+            except (OSError, pl.exceptions.PolarsError):
+                df = None
+            if df is None or df.is_empty():
+                continue
+            for (sym,), part in df.group_by("symbol"):
+                frames[sym] = part
+        for sym in todo:
+            label, path, key = resolved[sym]
+            raw = frames.get(resolved_symbol(sym, d))
+            checks = {"tried": [path.relative_to(REPO_ROOT).as_posix()] if path else [],
+                      "duplicates": 0, "unordered": False, "ohlc_inconsistent": 0, "negative_volume": 0}
+            rth = None
+            if raw is not None and raw.height:
+                checks["negative_volume"] = int(raw.filter(pl.col("volume") < 0).height)
+                checks["unordered"] = bool(not raw["bar_start"].is_sorted())
+                checks["duplicates"] = int(raw.height - raw["bar_start"].n_unique())
+                clock = pl.col("bar_start").dt.time()
+                rth = raw.filter((clock >= time(9, 30)) & (clock < close_time(d)) & (pl.col("volume") > 0)
+                                 & pl.col("open").is_finite() & pl.col("close").is_finite()
+                                 & (pl.col("open") > 0) & (pl.col("close") > 0)).sort("bar_start")
+                checks["ohlc_inconsistent"] = int(rth.filter(
+                    (pl.col("high") < pl.col("low")) | (pl.col("close") > pl.col("high") + 1e-9)
+                    | (pl.col("close") < pl.col("low") - 1e-9)).height)
+                if rth.is_empty():
+                    rth = None
+            rec = (summarize(rth, d, label, path.relative_to(REPO_ROOT).as_posix(), checks)
+                   if rth is not None else
+                   {"version": VERSION, "source": None, "path": None, "mark_kind": None, "missing": True,
+                    "tried": checks["tried"], "empty_files": []})
+            eod = eod_reference(d, sym)
+            if eod:
+                rec.update(eod)
+            rec["_key"] = key
+            traded_as = resolved_symbol(sym, d)
+            if traded_as != sym:
+                rec["resolved_symbol"] = traded_as
+                rec["identity_note"] = "documented ticker change; same security"
+            cache[sym] = rec
         dump_json(p, cache)
     return iso, {sym: cache[sym] for sym in symbols}
 
@@ -263,14 +371,26 @@ def manifest_rows() -> dict:
     return out
 
 
+VENDOR_STATUS: dict = {}
+
+
+def set_vendor_status(mapping: dict) -> None:
+    """Terminal vendor status per (symbol, session) from the Arrow 006 request log."""
+    VENDOR_STATUS.clear()
+    VENDOR_STATUS.update(mapping)
+
+
 def observation_status(d: date, symbol: str, rec: dict | None, *, need_final_minute: bool) -> str:
     """Evidence label for one symbol-session; describes data, not outcomes."""
     if d > LOCAL_TAPE_END:
         return "FUTURE_NOT_OBSERVABLE" if d > date.today() else "NOT_PREVIOUSLY_REQUESTED"
     if present(rec):
         if need_final_minute and rec.get("entry_ts") is None:
-            return "PARTIAL_OR_SPARSE_REVIEW"
+            return "THIN_SESSION_LAST_PRINT_USED" if rec.get("exec_px") is not None else "PARTIAL_OR_SPARSE_REVIEW"
         return "PRESENT_CHECKED"
+    vendor = VENDOR_STATUS.get((symbol, d.isoformat()))
+    if vendor:
+        return vendor
     man = manifest_rows().get((symbol, d.isoformat()))
     if man is None:
         return "NOT_PREVIOUSLY_REQUESTED"

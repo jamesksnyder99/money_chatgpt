@@ -1,0 +1,41 @@
+{
+ "status": "NOT_RUN_DATA_GATE",
+ "timestamp": "2026-09-14T12:46:36+00:00",
+ "baseline_gate": "NOT_RUN_DATA_GATE",
+ "blockers": [
+  "121 corrected selections rest on a ranking window containing an undocumented discontinuity of 2x or more, so their 15-session return is not certified to be in consistent price units"
+ ],
+ "disclosed_limitations": [
+  "PARENT: 1 slots under a documented trading event with no execution in the window, 0 filled by a carried order after a documented halt",
+  "R4: 1 slots under a documented trading event with no execution in the window, 0 filled by a carried order after a documented halt",
+  "R5: 1 slots under a documented trading event with no execution in the window, 0 filled by a carried order after a documented halt",
+  "loan/locate/dividend history unavailable: borrow is scenario-only, so modeled net is conditional and is not verified executable historical net profit",
+  "single vendor: a second endpoint of the same vendor is corroboration, not independent validation",
+  "observed bar prices are a simulation reference, not guaranteed broker fills"
+ ],
+ "grid_authorised": {
+  "families": [
+   "PARENT",
+   "R4",
+   "R5"
+  ],
+  "horizons": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "cells": 30
+ },
+ "cells_scored_on_real_data": 0,
+ "oos_cells_revealed": 0,
+ "r2_entry_ledger_sha256": "ae6c1556acdcb6c545016eb42a985269f29c41481de1313b169359aa15f76698",
+ "note": "The H1-H10 census requires the same verified R2 entry ledger at every horizon. The corrected R2 selection is not certified because 121 of its 415 completed trades were ranked on a 15-session window containing an undocumented discontinuity of 2x or more, so their selection returns are not certified to be in consistent price units. Scoring horizons on that ledger would inherit the defect. The horizon exporter and its identity/invariance tests run on synthetic data only.",
+ "resume_condition": "certify or repair the ranking units of the flagged selections listed in reports/cg_arrow006_manifest.json ranking_window_flags, then rerun scripts/cg_arrow006_run.py and scripts/cg_arrow006_horizons.py is/oos"
+}
