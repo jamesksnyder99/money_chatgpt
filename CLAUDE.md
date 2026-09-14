@@ -2,16 +2,20 @@
 
 Read `AGENTS.md`, `docs/CHATGPT_LAB_PROTOCOL.md`, `docs/SUCCESS.md`, and the explicitly assigned CG arrow before acting.
 
-**Current assignment: `docs/CG_BUILD_ARROW_006.md`. Executor: Opus in Claude Code.** Complete the Arrow 005 R4/R5 forensic repair using the now-local ThetaData credentials, verify the unchanged PARENT-H10/R4/R5 baselines and private cohort CSVs, then run the predeclared H1–H10 comparison only after the repaired baseline gate clears. No autonomous new-model research and no Arrow 007.
+**Current assignment: `docs/CG_BUILD_ARROW_007.md`. Executor: Opus in Claude Code.** Complete the corporate-action/security-identity certification and engine hardening needed to make PARENT/R4/R5 results believable; mechanically rerank the complete point-in-time field after precise action normalization; freeze the certified R2 baseline; then complete the gated H1–H10 horizon census. No capital-allocation/redeployment research and no Arrow 008.
 
-Work only in `C:\Users\james\money_chatgpt`, remote `jamesksnyder99/money_chatgpt`. Never access `C:\Users\james\Money`, including credentials. Preserve historical raw data, code/report evidence and old confirmation markers. No live trades, subscription/account changes or exposed credentials.
+Work only in `C:\Users\james\money_chatgpt`, remote `jamesksnyder99/money_chatgpt`. Never access `C:\Users\james\Money`. Preserve historical raw data, code/report evidence and old confirmation markers. No live trades, subscription/account changes or exposed credentials.
 
-The Arrow 006 allowance is **180 elapsed minutes hard maximum** including acquisition, reconstruction, horizons if released, reports/tests/push. Expected completion is roughly 90–150 minutes if authenticated retrieval and the ranking-field rebuild are straightforward. If reconstruction cannot be completed, checkpoint and disclose exact unresolved evidence; never substitute a subset backtest for verification. Verification has priority over horizon scoring.
+The Arrow 007 runtime is quality-first: up to 300 elapsed minutes, with a modest overrun allowed only to finish a finite already-started primary-source verification branch required to close the gate. Do not rush the evidence to fit a clock and do not start unrelated work.
 
-**Credentials:** the user has placed a local `.env` at the lab root for ThetaData. Treat it as secret local configuration. Before work and before push, confirm `git check-ignore .env`; never print, log, echo, stage, commit, copy into reports, or expose credential values.
+**Credentials:** the local repo-root `.env` contains authorized ThetaData credentials. Confirm `git check-ignore .env` at start and before every push. Never print, log, echo, stage, commit, copy into reports, or expose credential values.
 
-**Acquisition concurrency:** at most eight concurrent Theta requests across the process tree (or the lower vendor limit), not eight requests over the whole run. Make the necessary authorized historical requests resumably and with backoff.
+**Core event rule:** never manually replace a suspicious selected stock with rank 9. Resolve/document the corporate action, normalize price/share/volume units precisely, rerank the entire eligible field, and let the corrected top eight emerge mechanically. If an event remains materially unresolved, keep the affected cohort uncertified.
 
-This repository is PUBLIC. New market data under `data/verification/` and user-facing detailed CSVs under `handoff/outgoing/` are LOCAL and ignored, not public artifacts. Publish only reviewed code, tests, safe aggregates and provenance manifests. Verify data exclusion with Git before staging.
+**Calendar repair frozen before testing:** nominal Wednesday signal; if closed, roll backward to the most recent exchange session; entry is the first valid exchange session after the signal. Prove this produces no change in the current study window before scoring.
 
-Use Arrow 006’s sequence exactly: authenticated pilot and raw→validated proof; complete selected-trade lifecycle retrieval; corrected `$10–$80` ranking/universe reconstruction including test-issue exclusion; action/identity review; R1/R2 baseline reconciliation and CSVs; baseline gate; then H1–H10 IS/freeze/one OOS batch/ALL only if the gate opens. Opus has engineering/forensic autonomy, not authority to tune the frozen strategy rules. Commit/push reviewed results, report exact local CSV paths and stop for audit.
+This repository is PUBLIC. Market data under `data/verification/` and detailed CSVs under `handoff/outgoing/` are LOCAL/ignored. Publish only reviewed code, tests, safe aggregates and provenance/event manifests. Inspect staged paths and contents before every push.
+
+Use Arrow 007’s sequence exactly: calendar helper; corporate-action/security event census; precise ranking/volume/holding unit normalization; iterative rerank to a fixed point; fix identified engine/reporting inconsistencies; certify and freeze R1/R2; quantify whether Arrow 006’s apparent R2 upside survives; then run H1–H10 IS/freeze/one OOS batch/ALL only after the baseline gate opens. Opus has engineering/forensic autonomy, not authority to tune the frozen signal/sizing rules.
+
+Commit/push reviewed results, report exact local CSV paths and stop for ChatGPT audit.
