@@ -370,6 +370,20 @@ def main() -> int:
         bad = [b for b in classified if b["blocking"]]
         by_class = Counter(b["classification"] for b in classified)
         note(f"  discontinuity classification: {dict(by_class)}")
+        # the ledger the user audits must carry the same state the gate used
+        by_key = {(b["cohort_id"], b["symbol"], b["window"]): b for b in classified}
+        for c in corrected:
+            for h in c["rows"]:
+                for window, field in (("ranking", "lookback"), ("holding", "holding")):
+                    b = by_key.get((c["signal_iso"], h["symbol"], window))
+                    if not b:
+                        continue
+                    h[f"{field}_evidence_classification"] = b["classification"]
+                    h[f"{field}_issuer_filings_searched"] = b["issuer_filings_searched"]
+                    h[f"{field}_filings_scanned"] = b["filings_scanned"]
+                    h[f"{field}_volume_ratio_at_flag"] = b.get("volume_ratio")
+                    if not b["blocking"]:
+                        h[f"{field}_resolution"] = b["classification"]
         members = {c["signal_iso"]: [h["symbol"] for h in c["rows"]] for c in corrected}
         iterations.append({"iteration": it, "unresolved_selected": len(bad),
                            "discontinuities_examined": len(classified),

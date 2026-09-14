@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-14T15:06:16+00:00",
+  "timestamp": "2026-09-14T15:12:35+00:00",
   "all_passed": true,
   "checks": [
     {
@@ -50,7 +50,7 @@
     {
       "check": "public repository contains no .env, private CSV, vendor partition or parquet",
       "ok": true,
-      "detail": "651 tracked files, 0 offending"
+      "detail": "660 tracked files, 0 offending"
     },
     {
       "check": "public Arrow 007 artefacts contain no credential material",

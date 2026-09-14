@@ -1,9 +1,9 @@
 {
   "arrow": "CG Arrow 007",
   "executor": "Opus in Claude Code",
-  "timestamp": "2026-09-14T15:02:11+00:00",
-  "elapsed_minutes": 0.46944549166655636,
-  "head_at_run": "712684be835e3bab447f084cc0c1d6874a8f1f3d",
+  "timestamp": "2026-09-14T15:12:09+00:00",
+  "elapsed_minutes": 0.4752447866664928,
+  "head_at_run": "bc1837ffd4d2f4b5b70f6f4c811907191f0ddd56",
   "calendar_rule": {
     "rule_id": "cg_arrow007_weekly_wednesday_rollback_v1",
     "weeks": 52,
@@ -16,19 +16,19 @@
     "entry_is_next_session_for_all": true
   },
   "code_sha256": {
-    "src/verification/r4r5_data.py": "7dc97d7cca0fb71c585bbcdf8cf8240921d9660eee0a919909724222396835ea",
-    "src/verification/r4r5_replay.py": "477ae244349458b00448a6f15ef1559de39ed1af533a14a582c905f553307638",
-    "src/verification/r4r5_export.py": "82e3ebdaf776db02b68698d014e5d009502e92ab6bbecf99568a8d03c412d240",
+    "src/verification/r4r5_data.py": "30e9c6bb06e382476705c9f184204768bbc3b8c1656c45083168196a060644a3",
+    "src/verification/r4r5_replay.py": "f2801062a1fa1d5b6450c0e3b7bc733d21f17b2ac3557aaeffcb2276fdc68e9b",
+    "src/verification/r4r5_export.py": "aca52723f03dfedab2fb92eb177fc3a0d2ed76928222a6c0be84332206213b14",
     "src/verification/r4r5_oracle.py": "a815939886f44d20c96894f410b0525622c73557b4fabe6c243b60746d13644b",
     "src/verification/r4r5_repair.py": "9a566690b4a69723578d25243b25a131c804287cd1175f288ab94e386d86dc1d",
-    "src/verification/r4r5_rank.py": "6a6a84683ac317aca490365f5218145a2d6b3874e955fc30eeeb6d808721333a",
-    "src/verification/r4r5_events.py": "ab7ba1796ce8878a2212bc01a147b6b51d0f22e8c58f6a3efa452e3e78ce34df",
-    "src/verification/r4r5_schedule.py": "99e3c54e4a48768f40993720f6f52e236b19ed0a61108799c1f3f38eae81b842",
-    "scripts/cg_arrow007_run.py": "b09eceafac243a8ac14d7025b00bda16855b6c73df74fabf373c648e295f4e1c",
-    "scripts/cg_arrow007_events.py": "72f59b6ad35cb7f281ce97d9ff13e3be770e46eaa8ddc7635292b4dee85e480f",
-    "scripts/cg_arrow007_actions.py": "12d1ec3d91465be905e90a61de1b53063ff8f521a6ce857664b9a506774500bf"
+    "src/verification/r4r5_rank.py": "46352d8c0d2abf810782b6cf7d31cb2fcf1081a37fb38287bbd467aa3c4fade3",
+    "src/verification/r4r5_events.py": "23c591fcc8c4c8846d4f62a01fca0385ca34f40b13a97bfd8c66672fcb409ff4",
+    "src/verification/r4r5_schedule.py": "964dcfb12e90d5d36cc70ca18d8592006ad7a0833f42654de29934bc5c5e964e",
+    "scripts/cg_arrow007_run.py": "279c345b5f2baf2583de5ad89637d4c9522c1599bbb2dff9cdb3a3ea711a7ff7",
+    "scripts/cg_arrow007_events.py": "fa182f363458f53d4985d160d5fcebc98cc360057080a38c054e47a56e73cac6",
+    "scripts/cg_arrow007_actions.py": "6a3c93c87d48dd802d794d9cff1efefa98262c34c02cd888ebc8a846a97e615c"
   },
-  "action_table_sha256": "0eedf2c6986f5772fd9e2cd88ad9e55cdc69d4f1cec1355f44e65f8795ed210c",
+  "action_table_sha256": "387a6eabecaa83f45e173b318d62275e3f173148b444f2b149dfae5947da1599",
   "action_summary": {
     "events": 32,
     "cases": 1017,
@@ -6103,220 +6103,55 @@
   },
   "r2_entry_ledger_sha256": "071bb7e13dfac51856e1d144f7ef0f58cd61b275089250eb3156cd2038c699ed",
   "local_csvs": {
-    "r4r5_cohort_matrix.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_cohort_matrix.csv",
-      "sha256": "23c60f398aa73f99361a11ba77a83bf124f22fd46661990d0d3b9586fd8fb03d",
-      "bytes": 445437
-    },
-    "r4r5_corporate_action_ledger.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_corporate_action_ledger.csv",
-      "sha256": "3af5d74f55f83bd51e4b3d91322ee431e88e7b834e75f510a52030902831262e",
-      "bytes": 320801
-    },
-    "r4r5_daily_account.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_daily_account.csv",
-      "sha256": "5507dc364075a752fb1cd96b25e7568f97b10710b2831d2a9285a38edda99532",
-      "bytes": 1288939
-    },
-    "r4r5_horizon_summary.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_horizon_summary.csv",
-      "sha256": "b75f779f2aa7ff1b7df697f023c2a8365c7065ec2d889b912b1ab3bb417c4972",
-      "bytes": 101338
-    },
-    "r4r5_horizon_trade_paths.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_horizon_trade_paths.csv",
-      "sha256": "aed9c15bda2ed9b32136c439f52cc1bdb5e751fe6e5cf4eecc468ee6b78ce9d4",
-      "bytes": 1006664
-    },
-    "r4r5_horizon_trade_paths_tidy.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_horizon_trade_paths_tidy.csv",
-      "sha256": "93cd962da8310363b893bdf929458f959869e2bb8b28f66a400c891af933a407",
-      "bytes": 1430724
-    },
-    "r4r5_r2_upside_bridge.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_r2_upside_bridge.csv",
-      "sha256": "1bb910e72e80a2699efa20d6f0f87462c53530aad16fdfd269d4881a5445253c",
-      "bytes": 10467
-    },
-    "r4r5_ranking_reconciliation.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_ranking_reconciliation.csv",
-      "sha256": "fcbc2b9854364528b141d1f239d9f6cb0b6df70e916f20afa2c2dc834a9fd850",
-      "bytes": 9002
-    },
     "r4r5_trade_exceptions.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_trade_exceptions.csv",
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_trade_exceptions.csv",
       "sha256": "22232fe36ebf446efd8916b5586450b9ab4fdcf68969eb6743ccd046a3210c23",
       "bytes": 1676450
     },
-    "r4r5_trade_exceptions_initial.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_trade_exceptions_initial.csv",
-      "sha256": "a04ff82de1103d95e28c10b14244b0ffe388174c694b3bb44bf035723c8cd27c",
-      "bytes": 1676588
+    "r4r5_verified_trades.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_verified_trades.csv",
+      "sha256": "1617820430c0bf7534cc3d6220e71ac56b3751fc7db92d0bad52d426b6a17089",
+      "bytes": 5759095
     },
     "r4r5_verified_cohort_audit.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_verified_cohort_audit.csv",
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_verified_cohort_audit.csv",
       "sha256": "2828b97f0d3953c862a6fcd3686cb1de168365fc78f3e2f9deccc1da925e2f8d",
       "bytes": 861757
     },
-    "r4r5_verified_trades.csv": {
-      "path": "handoff/outgoing/cg_arrow007/r4r5_verified_trades.csv",
-      "sha256": "882891fbdb360ceb8aa4313bfb3c3719004656f4fed64a9ebbc5c7a325275b5c",
-      "bytes": 5535937
+    "r4r5_cohort_matrix.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_cohort_matrix.csv",
+      "sha256": "23c60f398aa73f99361a11ba77a83bf124f22fd46661990d0d3b9586fd8fb03d",
+      "bytes": 445437
+    },
+    "r4r5_daily_account.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_daily_account.csv",
+      "sha256": "5507dc364075a752fb1cd96b25e7568f97b10710b2831d2a9285a38edda99532",
+      "bytes": 1288939
+    },
+    "r4r5_trade_exceptions_initial.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_trade_exceptions_initial.csv",
+      "sha256": "a04ff82de1103d95e28c10b14244b0ffe388174c694b3bb44bf035723c8cd27c",
+      "bytes": 1676588
     }
   },
   "log": [
-    "2026-09-14T15:01:43+00:00 +0.0m calendar rule cg_arrow007_weekly_wednesday_rollback_v1: identical=True weeks=52 rollbacks=0",
-    "2026-09-14T15:01:43+00:00 +0.0m universe: roster=15322 etp=5672 test_issues=['ZAZZT', 'ZBZZT', 'ZCZZT', 'ZFZZT', 'ZJZZT', 'ZVZZT', 'ZWZZT', 'ZXZZT']",
-    "2026-09-14T15:01:45+00:00 +0.0m loading 109526 ranking endpoints",
-    "2026-09-14T15:01:58+00:00 +0.3m   discontinuity classification: {'MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS': 90}",
-    "2026-09-14T15:01:58+00:00 +0.3m iteration 1: unresolved selected-name events=0 membership=e51a07d60312",
-    "2026-09-14T15:01:59+00:00 +0.3m confirmation rerank: membership stable=True",
-    "2026-09-14T15:01:59+00:00 +0.3m fixed point after 2 iterations, converged=True",
-    "2026-09-14T15:01:59+00:00 +0.3m ranking reconciliation: membership changed vs recorded in 46 cohorts, order-only in 0",
-    "2026-09-14T15:02:04+00:00 +0.3m selection lifecycle observations missing: 0",
-    "2026-09-14T15:02:06+00:00 +0.4m PARENT: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
-    "2026-09-14T15:02:06+00:00 +0.4m R4: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
-    "2026-09-14T15:02:06+00:00 +0.4m R5: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
-    "2026-09-14T15:02:10+00:00 +0.4m split-owned books built: 36",
-    "2026-09-14T15:02:11+00:00 +0.5m oracle ok=True trades={'checked': 4980, 'errors': 0, 'max_abs_error': 1.8189894035458565e-12} cohorts={'cohorts': 624, 'errors': 0}",
-    "2026-09-14T15:02:11+00:00 +0.5m PARENT R1->R2: 36,536.55 -> 104,938.02 (common +0.00, added +65,474.53, dropped +2,926.93)",
-    "2026-09-14T15:02:11+00:00 +0.5m R4 R1->R2: 56,971.05 -> 114,190.85 (common -9,296.59, added +69,859.65, dropped -3,343.26)",
-    "2026-09-14T15:02:11+00:00 +0.5m R5 R1->R2: 65,676.39 -> 129,092.60 (common -9,022.88, added +75,365.07, dropped -2,925.99)",
-    "2026-09-14T15:02:11+00:00 +0.5m GATE OPEN blockers=[]"
-  ],
-  "horizon": {
-    "status": "OOS_REVEALED",
-    "preferred_holds": {
-      "PARENT": 8,
-      "R4": 8,
-      "R5": 10
-    },
-    "confirmation": {
-      "PARENT": {
-        "preferred_horizon": 8,
-        "oos_net": 63526.519418799995,
-        "oos_h10_net": 63755.4924108,
-        "oos_increment": -228.9729920000027,
-        "oos_dd": -22445.375265099894,
-        "oos_h10_dd": -23322.810157299915,
-        "verdict": "NOT REPEATED"
-      },
-      "R4": {
-        "preferred_horizon": 8,
-        "oos_net": 65857.2042427,
-        "oos_h10_net": 66892.75719589999,
-        "oos_increment": -1035.5529531999928,
-        "oos_dd": -20949.07364800031,
-        "oos_h10_dd": -22110.797005400033,
-        "verdict": "NOT REPEATED"
-      },
-      "R5": {
-        "preferred_horizon": 10,
-        "oos_net": 70137.151093,
-        "oos_h10_net": 70137.151093,
-        "oos_increment": 0.0,
-        "oos_dd": -24964.887142000196,
-        "oos_h10_dd": -24964.887142000196,
-        "verdict": "NOT REPEATED"
-      }
-    },
-    "h10_identity": {
-      "PARENT/LEGACY_FILL_QTY": {
-        "h10_all_net": 104938.0163195,
-        "locked_baseline_net": 104938.0163195,
-        "difference": 0.0
-      },
-      "PARENT/CAUSAL_PREORDER_QTY": {
-        "h10_all_net": 104399.1668686,
-        "locked_baseline_net": 104399.1668686,
-        "difference": 0.0
-      },
-      "R4/LEGACY_FILL_QTY": {
-        "h10_all_net": 114190.8496268,
-        "locked_baseline_net": 114190.8496268,
-        "difference": 0.0
-      },
-      "R4/CAUSAL_PREORDER_QTY": {
-        "h10_all_net": 113845.29164529999,
-        "locked_baseline_net": 113845.29164529999,
-        "difference": 0.0
-      },
-      "R5/LEGACY_FILL_QTY": {
-        "h10_all_net": 129092.5950666,
-        "locked_baseline_net": 129092.5950666,
-        "difference": 0.0
-      },
-      "R5/CAUSAL_PREORDER_QTY": {
-        "h10_all_net": 128864.6248656,
-        "locked_baseline_net": 128864.6248656,
-        "difference": 0.0
-      }
-    },
-    "cells": 180
-  },
-  "adversarial_audit": {
-    "timestamp": "2026-09-14T15:06:16+00:00",
-    "all_passed": true,
-    "checks": [
-      {
-        "check": "largest winners and losers recompute from stored prices, quantities and factors",
-        "ok": true,
-        "detail": "max absolute difference 9.09e-13 across 10 trades"
-      },
-      {
-        "check": "sizing tier and integer share count follow the frozen rule",
-        "ok": true,
-        "detail": "0 mismatches in 400 checked"
-      },
-      {
-        "check": "cohort subtotals and the period total reconcile to the trade ledger",
-        "ok": true,
-        "detail": "52 cohort subtotals, max difference 1.82e-12"
-      },
-      {
-        "check": "August 31 equity equals cash minus short liability",
-        "ok": true,
-        "detail": "equity 229,202.83 cash 293,056.30 liability 63,853.47"
-      },
-      {
-        "check": "calendar-account and September runoff totals are reported separately and add up",
-        "ok": true,
-        "detail": "through cutoff 122,842.21 + runoff 6,250.39 = 129,092.60"
-      },
-      {
-        "check": "adjusted 15-session ranking returns rebuild from stored prices and documented factors",
-        "ok": true,
-        "detail": "max difference 0.00e+00 across 4 changed cohorts"
-      },
-      {
-        "check": "the certified top eight is the ranked head of the field, in order",
-        "ok": true,
-        "detail": "4 changed cohorts inspected"
-      },
-      {
-        "check": "every canonical corporate action carries a source URL",
-        "ok": true,
-        "detail": "32 events, 0 without a source"
-      },
-      {
-        "check": "no unresolved or blocked row carries a modelled net total",
-        "ok": true,
-        "detail": "0 leaking rows"
-      },
-      {
-        "check": "public repository contains no .env, private CSV, vendor partition or parquet",
-        "ok": true,
-        "detail": "651 tracked files, 0 offending"
-      },
-      {
-        "check": "public Arrow 007 artefacts contain no credential material",
-        "ok": true,
-        "detail": "[]"
-      }
-    ]
-  },
-  "tests": {
-    "suite": "613 passed, 1 skipped",
-    "command": "python -m pytest tests -q --basetemp=data/tmp/cg_arrow007_tests"
-  }
+    "2026-09-14T15:11:41+00:00 +0.0m calendar rule cg_arrow007_weekly_wednesday_rollback_v1: identical=True weeks=52 rollbacks=0",
+    "2026-09-14T15:11:41+00:00 +0.0m universe: roster=15322 etp=5672 test_issues=['ZAZZT', 'ZBZZT', 'ZCZZT', 'ZFZZT', 'ZJZZT', 'ZVZZT', 'ZWZZT', 'ZXZZT']",
+    "2026-09-14T15:11:43+00:00 +0.0m loading 109526 ranking endpoints",
+    "2026-09-14T15:11:56+00:00 +0.2m   discontinuity classification: {'MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS': 90}",
+    "2026-09-14T15:11:56+00:00 +0.2m iteration 1: unresolved selected-name events=0 membership=e51a07d60312",
+    "2026-09-14T15:11:56+00:00 +0.3m confirmation rerank: membership stable=True",
+    "2026-09-14T15:11:56+00:00 +0.3m fixed point after 2 iterations, converged=True",
+    "2026-09-14T15:11:57+00:00 +0.3m ranking reconciliation: membership changed vs recorded in 46 cohorts, order-only in 0",
+    "2026-09-14T15:12:01+00:00 +0.3m selection lifecycle observations missing: 0",
+    "2026-09-14T15:12:03+00:00 +0.4m PARENT: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
+    "2026-09-14T15:12:03+00:00 +0.4m R4: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
+    "2026-09-14T15:12:03+00:00 +0.4m R5: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
+    "2026-09-14T15:12:08+00:00 +0.5m split-owned books built: 36",
+    "2026-09-14T15:12:09+00:00 +0.5m oracle ok=True trades={'checked': 4980, 'errors': 0, 'max_abs_error': 1.8189894035458565e-12} cohorts={'cohorts': 624, 'errors': 0}",
+    "2026-09-14T15:12:09+00:00 +0.5m PARENT R1->R2: 36,536.55 -> 104,938.02 (common +0.00, added +65,474.53, dropped +2,926.93)",
+    "2026-09-14T15:12:09+00:00 +0.5m R4 R1->R2: 56,971.05 -> 114,190.85 (common -9,296.59, added +69,859.65, dropped -3,343.26)",
+    "2026-09-14T15:12:09+00:00 +0.5m R5 R1->R2: 65,676.39 -> 129,092.60 (common -9,022.88, added +75,365.07, dropped -2,925.99)",
+    "2026-09-14T15:12:09+00:00 +0.5m GATE OPEN blockers=[]"
+  ]
 }

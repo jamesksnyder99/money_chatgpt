@@ -135,6 +135,14 @@ def _base_row(family, stage, c, rank, h, hold, quantity):
             "lookback_flag": h.get("lookback_flag"), "lookback_max_ratio": h.get("lookback_max_ratio"),
             "lookback_ratio_date": h.get("lookback_ratio_date"),
             "lookback_resolution": h.get("lookback_resolution"),
+            "lookback_evidence_classification": h.get("lookback_evidence_classification"),
+            "lookback_issuer_filings_searched": h.get("lookback_issuer_filings_searched"),
+            "lookback_filings_scanned": h.get("lookback_filings_scanned"),
+            "lookback_volume_ratio_at_flag": h.get("lookback_volume_ratio_at_flag"),
+            "holding_flag": h.get("holding_flag"), "holding_max_ratio": h.get("holding_max_ratio"),
+            "holding_ratio_date": h.get("holding_ratio_date"),
+            "holding_resolution": h.get("holding_resolution"),
+            "holding_evidence_classification": h.get("holding_evidence_classification"),
             "scheduled_entry_date": c["fill"].isoformat()}
 
 

@@ -14,6 +14,7 @@ Names used throughout, with legacy identifiers in parentheses for code continuit
 | Fixed-point reranking | **CONVERGED** | Two iterations; the confirmation rerank reproduced the same membership hash and produced no new unresolved event. |
 | Structural data acceptance | **ENFORCED** | A partition with duplicate, unordered, inconsistent or negative-volume bars cannot support a verified trade unless explicitly reviewed and accepted. |
 | Risk accounting separation | **REPAIRED** | In-sample and out-of-sample drawdown, worst day, exposure and underwater time now come from split-owned books; the all-signal account is a separate view. |
+| Audit-file consistency | **REPAIRED** | The exported ledger now carries the same certification state the gate used: zero rows read as unexplained, 321 with a continuous action-adjusted window, 88 documented market moves with the issuer filing-search count attached, 7 with dated screen resolutions. |
 | Independent reconciliation | **PASSED** | 4,980 trade rows, 624 cohort subtotals, maximum absolute difference 1.8e-12. |
 | Adversarial audit | **11 of 11 PASSED** | Largest winners and losers, sizing tiers, subtotals, equity identity, runoff separation, rank boundary and adjusted ranking returns all rebuilt independently from stored evidence. |
 | Baseline release gate | **OPEN** | Every gate condition satisfied. |
@@ -115,7 +116,18 @@ The preferred holds were predeclared and committed before any out-of-sample cell
 
 What does repeat is the shape: short holds are clearly worse in both splits, the curve rises into the 8-to-10 session region, and the differences among 8, 9 and 10 sessions are small relative to their drawdowns. Ten correlated hold lengths on one entry ledger are one family, not ten discoveries.
 
-## 7. What is still not established
+## 7. One reporting defect found and repaired during the audit
+
+The first export carried the raw screen label on 95 selected rows even though the gate had already
+classified them, with evidence, as documented market moves. A reader of the private ledger would have
+seen `UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY` on trades the run had in fact resolved. The
+classification is now written back onto every selected name, so the audit file, the manifest and the
+gate agree: 321 rows have a continuous action-adjusted ranking window, 88 are market moves whose
+issuer filing record was searched (with the document count on the row), and 7 carry dated screen
+resolutions. The frozen entry-ledger hash is unchanged by this repair, so the committed horizon freeze
+and the single-batch reveal remain valid.
+
+## 8. What is still not established
 
 - **Borrow, locate and dividend history remain unavailable.** Every net figure is conditional on the inherited modelled commission and spread proxy plus a borrow scenario. At 30% annualised borrow the Momentum+Volume variant still earns 110,268.34, but that is a scenario, not a quoted rate, and none of this is verified executable historical net profit.
 - **Single market-data vendor.** SEC filings are a genuinely independent source for events, but prices come from one vendor. A second endpoint of the same vendor is corroboration, not independent validation.

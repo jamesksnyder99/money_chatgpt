@@ -24,7 +24,11 @@ TRADE_FIELDS = ["model", "replay_stage", "data_version", "quantity_convention", 
                 "stale_liability_last_mark_date", "stale_liability_eod_reference", "diagnostic_delayed_exit_date",
                 "diagnostic_delayed_open", "diagnostic_delayed_ts", "diagnostic_delay_sessions", "security_identity_status",
                 "max_session_ratio_in_hold", "max_session_ratio_date", "discontinuity_flag", "action_review_resolution",
-                "lookback_flag", "lookback_max_ratio", "lookback_ratio_date", "lookback_resolution", "status",
+                "lookback_flag", "lookback_max_ratio", "lookback_ratio_date", "lookback_resolution",
+                "lookback_evidence_classification", "lookback_issuer_filings_searched",
+                "lookback_filings_scanned", "lookback_volume_ratio_at_flag",
+                "holding_flag", "holding_max_ratio", "holding_ratio_date", "holding_resolution",
+                "holding_evidence_classification", "status",
                 "verification_status", "verification_reason"]
 
 
