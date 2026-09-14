@@ -1,73 +1,58 @@
 # money_chatgpt economic and evaluation policy
 
-## Active mandate — September 14, 2026: CG Arrow 007
+## Active mandate — CG Arrow 011, September 14, 2026
 
-Opus in Claude Code is assigned **belief-worthy verification first, then gated H1–H10 completion** for PARENT, R4 and R5. The exact assignment is `docs/CG_BUILD_ARROW_007.md`. Arrow 006 remains the acquisition/reconstruction checkpoint, not the final certified economics.
+**Fable in Claude Code** is assigned Winner-Fade Anatomy: pre-entry characteristics, model/month attribution and within-cohort winner/loser outcomes. Exact scope: `docs/CG_BUILD_ARROW_011.md`. Budget is 240 elapsed minutes inclusive of delivery, approximately 70% directed/shared work and at most 30% Fable-led discovery.
 
-The user explicitly prefers additional time and engineering work over material ambiguity. A positive backtest is not a success if selection/action units are uncertified. A negative repaired result is not a failed assignment. Do not preserve apparent upside through assumptions; equally, do not delete genuine market moves because they resemble splits.
+Capital-constraint and redeployment studies are parked by the user. No new equity-sizing rule, hold optimization, timing grid or long-model program is authorized. Momentum+Volume-Sized Short is the main subject; other frozen sizing books are explanatory references.
 
-## Calendar policy frozen before new tests
+Success means a complete auditable cohort atlas, useful pre-entry relationships or well-supported negative findings, counterexamples, honest internal confirmation, and precisely specified next experiments. It does not require a better P&L or a production model. Do not change the frozen results to make a hypothesis work.
 
-Each cohort has a nominal Wednesday signal anchor. If Wednesday is closed, roll backward to the most recent exchange session. Entry is the first exchange session after the signal. Do not skip the weekly cohort solely because Wednesday is a holiday. Hn is n exchange sessions after actual fill. Current sample should be unchanged; prove this before scoring.
+## Frozen reference hierarchy
 
-## Corporate-action selection policy
+Arrow 008 supplies the historical baseline under the declared modeled-cost convention. Arrow 009 supplies calendar-month reporting. Arrow 010 supplies fixed-dollar and equity-scaled Momentum+Volume comparisons with causal pre-order quantities. Use their manifests for exact inputs, accounting bases and precision.
 
-Never manually discard a suspicious selected stock and substitute rank 9. The correct process is: document the event/security identity, normalize price/share/volume units to a common as-of unit, recompute eligibility/ranking/features across the full point-in-time field, and rerank mechanically. A stock remains or leaves the top eight only because the corrected rule says so.
+Preserve and distinguish raw historical cache, Historical-Selection Replay and Corrected-Universe Replay. Preserve all original source partitions, prior reports, freeze markers and trade ledgers. Their historical findings do not automatically validate newly enriched features.
 
-For pure splits under the established convention `price_factor = old shares per new share`: earlier comparison prices multiply by factor, earlier share volumes divide by factor, held shares divide by factor, and per-share basis multiplies by factor. Position value and dollar volume should be neutral across the mechanical action before market movement/rounding/cash-in-lieu. Multiple events compound. Use documented dated factors only.
+## Calendar and corporate-action policy
 
-Unresolved material events that can change top-eight membership keep the baseline uncertified. The old `>=2x` discontinuity screen is diagnostic triage, not proof that all actions were found.
+Nominal Wednesday signal; roll backward to the most recent exchange session if Wednesday is closed. Entry is the first session after the signal. Do not skip the cohort solely because Wednesday is a holiday. Hn is n exchange sessions after actual fill; preserve early-close conventions.
 
-## Economic context
+Never replace an unresolved stock manually with rank 9. Resolve the evidence, normalize units, rerank the full intended field and let membership emerge mechanically. Unresolved material events block the affected claim. A price-jump screen is triage, not proof of comprehensive action coverage.
 
-Starting equity remains $100,000. Broader commercial ambition remains $300–$500 modeled net per trading session, including flat/loss days. Historical $200/day portfolio and $100/day component references remain context, not reasons to suppress valid evidence.
+For pure splits with price_factor = old shares per new share, earlier comparison prices multiply by factor, earlier share volumes divide by factor, held shares divide by factor and per-share basis multiplies by factor. Verify neutrality before market movement, rounding or separately documented cashflows. Multiple factors compose. A non-comparable reorganization requires its own treatment, not an inferred split. Pre-entry features may use only the action state effective at their cutoff.
 
-Approximately $130,000 gross remains a soft planning range for later operational work. Arrow 007 is a fixed-entry/fixed-share horizon study; do not introduce equity compounding, new capital caps, released-capital redeployment, reserves or leverage optimization. Those are queued for a later arrow once trustworthy H1–H10 economics are known.
+## Economic context and reporting lenses
 
-## Baselines and the Arrow 006 upside question
+Starting equity remains $100,000. The broader commercial ambition of $300–$500 modeled net per account session is context, not an acceptance threshold for this anatomy study. Approximately $130,000 gross was a soft planning range, not a broker guarantee. Arrow 010's uncapped equity-scaled path is now a recorded research reference, not authority to add leverage. Arrow 011 does not cap, retune or redeploy it.
 
-Preserve and distinguish:
+Scientific target: corporate-action-adjusted short return and modeled net per entry-exposure dollar before studying dollar size. Fixed-dollar and equity-scaled contribution are separate lenses. A higher dollar result does not by itself demonstrate better stock selection.
 
-- R0 raw historical cache/legacy result for forensic history;
-- R1 recorded historical decisions with repaired observations/actions;
-- R2 certified unchanged rules on complete point-in-time inputs.
+Maintain quantity conventions distinctly: LEGACY_FILL_QTY for lineage comparisons; CAUSAL_PREORDER_QTY for orders determined from completed pre-order observations. Never combine their rows as additional independent trades. Observed bars are simulation references, not guaranteed broker fills.
 
-Arrow 006 reported very large provisional R2 profits, but most depended on uncertified ranking-window units. Arrow 007 must determine whether this upside survives exact corporate-action normalization and full reranking. If certified R2 remains stronger, freeze it before horizons; if not, freeze the weaker/collapsed result just as firmly.
+## Declared costs
 
-Publish R1→R2 decomposition by common names, added/dropped names, cohort/month/symbol contribution, field restoration, test-issue cleanup, documented action normalization and feature/sizing changes. Do not overstate interacting waterfall components as independent causal effects.
+Headline economics use the inherited modeled commission/spread convention. Do not carry generic 10%/30% borrowing deductions in headline tables; preserve historical stress artifacts without rerunning a cost program. Use one concise footnote listing excluded broker-specific locate/HTB charges, dividends, financing, forced-close effects, taxes and other execution items. Unknown/excluded is not verified zero. These exclusions do not block internal accounting certification under a correctly named model convention.
 
-## Execution and quantity conventions
+## IS/OOS ownership and discovery
 
-Keep two predeclared panels where practical:
-
-1. `LEGACY_FILL_QTY`: historical fill-close price determines integer shares, for exact lineage comparability.
-2. `CAUSAL_PREORDER_QTY`: shares determined from the last completed pre-order observation, with the same modeled final-minute execution reference.
-
-Observed bars are simulation references, not guaranteed broker fills. Unknown locate availability, actual historical stock-loan fees, dividends and financing are not verified zero; show them as unknown plus the inherited modeled cost/borrow scenarios.
-
-## IS/OOS and horizon policy
-
-Signal-month ownership remains:
-
-- IS: 2025-09, 2025-11, 2026-01, 2026-03, 2026-05, 2026-07.
+- IS discovery: 2025-09, 2025-11, 2026-01, 2026-03, 2026-05, 2026-07.
 - OOS internal confirmation: 2025-10, 2025-12, 2026-02, 2026-04, 2026-06, 2026-08.
 
-Historical even months are reused internal confirmation, not pristine validation. Repair can inspect full history to establish facts, but repair/source conventions cannot be chosen for favorable PnL.
+Even months have been reused; do not call them pristine OOS. New definitions, quantile bins, combinations and small probes are developed on IS and committed before one new confirmation batch. Preserve failures. Post-reveal observations may inform a future research queue, not a retuned claim in the same batch.
 
-Before H1–H9 OOS, certify/freeze R2, score IS-owned horizon books, publish the IS matrix and predeclare any preferred horizon/claim. Then reveal all OOS horizons once. No post-reveal parameter/horizon switch presented as confirmed.
+Cross-month feature histories and causal holdings are permitted. IS risk/account statistics contain IS-owned positions only; OOS analogous; ALL is a separate chronological account. Within-cohort comparisons do not make eight concurrent names or repeated overlapping securities independent observations.
 
-IS DD/worst-day/exposure/monthly ride must contain only IS-owned positions; OOS analogous. ALL is a separate chronological account. Cross-month holdings remain intact.
+## Required reporting
 
-Separate calendar account through August 31, September runoff of August-signal cohorts, completed-trade PnL by signal ownership and still-open event obligations. Every $/session metric names its denominator.
+Follow `cg_lab_monthly_account_reporting_v1`: every calendar month separately, principal comparisons side by side, monthly P&L dollars, monthly return on prior month-end marked equity, month-end equity, positive/red/flat counts, worst/best/median month, cent-chained rows and full-precision reconciliation. Calendar marked P&L, eventual trade profit, incremental runoff and open obligations remain separate.
 
-## Metrics
+For any actual account comparison also publish intended/filled/completed/open counts, wins/losses/flats, hit rate, average winner/loser, payoff ratio, profit factor, drawdown dollars/percent, worst day, time underwater, gross exposure and concentration/turnover. Do not infer account risk statistics from trade-group averages without rebuilding the corresponding daily account.
 
-For certified baselines and horizon cells publish: intended/filled/completed/open/event counts; gross/model-cost PnL; wins/losses/flats, hit rate, avg win/loss, payoff ratio, PF; DD $, DD %, worst day, time underwater; red-month count/loss sum, worst/median month; average/peak gross, concentration, exposure-dollar-days, turnover; R4/R5 tier contribution; doubled-spread and 0/10/30% borrow scenarios; documented event liabilities and unknown costs.
-
-Same-trade Hn increments cannot silently intersect away a trade that becomes halted/open at a longer horizon. Report status transitions and obligations.
+For anatomy relationships publish normalized effects, cohort/security/month counts, coverage/missingness, within- versus between-cohort evidence, examples, counterexamples, IS definition and confirmation outcome. Use established arithmetic / recurring association / plausible mechanism / exploratory / rejected / unresolved labels. Do not describe an observational relationship as proven causation.
 
 ## Inputs and delivery
 
-Original `data/virgin`, `data/full`, historical reports and prior freeze markers remain preserved. Versioned repair data continue under ignored `data/verification/r4r5/`. Repo-root `.env` remains ignored secret local configuration.
+Original raw trees and frozen artifacts remain untouched. Arrow 011 feature/evidence caches are versioned and ignored. Repo-root `.env` stays local and secret. New observations and features must pass the applicable historically aware integrity gate before supporting findings; missing optional enrichment narrows only that claim, not the complete intended trade census.
 
-Detailed user audit files are mandatory under ignored `handoff/outgoing/cg_arrow007/`: certified trades/cohort subtotals, action ledger, ranking reconciliation, R1→R2 upside bridge, daily account, and—if released—horizon trade paths/summary. Public GitHub gets safe aggregates, schemas, provenance and hashes only.
+Detailed atlas/evidence files go individually and unzipped to ignored `handoff/outgoing/cg_arrow011/`. Public GitHub receives reviewed aggregate reports, schemas, provenance/hashes, code and tests only. Commit/push, verify remote equality and stop for ChatGPT audit.
