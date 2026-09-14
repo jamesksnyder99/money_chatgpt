@@ -16,6 +16,8 @@ The Arrow 007 runtime is quality-first: up to 300 elapsed minutes, with a modest
 
 **Calendar repair frozen before testing:** nominal Wednesday signal; if closed, roll backward to the most recent exchange session; entry is the first valid exchange session after the signal. Prove this produces no change in the current study window before scoring.
 
+**User-facing nomenclature:** use plain-English names first in all new reports, summaries and tables. `PARENT` = **Equal-Dollar Short**; `R4` = **Volume-Sized Short**; `R5` = **Momentum+Volume-Sized Short**; `R1` = **Historical-Selection Replay**; `R2` = **Corrected-Universe Replay**; `H10` = **10-Session Hold**; `H1–H10` = **Hold-Length Ladder**; umbrella family = **Winner-Fade Short**. Legacy IDs may appear in parentheses for provenance/code continuity, e.g. `Corrected-Universe Winner-Fade Short — Momentum+Volume sizing — 6-session hold (R2/R5/H6)`. Do not lead user-facing prose with opaque legacy strings.
+
 This repository is PUBLIC. Market data under `data/verification/` and detailed CSVs under `handoff/outgoing/` are LOCAL/ignored. Publish only reviewed code, tests, safe aggregates and provenance/event manifests. Inspect staged paths and contents before every push.
 
 Use Arrow 007’s sequence exactly: calendar helper; corporate-action/security event census; precise ranking/volume/holding unit normalization; iterative rerank to a fixed point; fix identified engine/reporting inconsistencies; certify and freeze R1/R2; quantify whether Arrow 006’s apparent R2 upside survives; then run H1–H10 IS/freeze/one OOS batch/ALL only after the baseline gate opens. Opus has engineering/forensic autonomy, not authority to tune the frozen signal/sizing rules.
