@@ -1,0 +1,98 @@
+CG Arrow 010 — commands, checkpoints and timings (Opus in Claude Code)
+R5-only equity-sizing study. No redeployment, hold change, leverage sweep, gross cap,
+throttle, volatility target, Kelly rule, new filter or long-side research.
+Python 3.14.5, polars 1.43.2, 8 logical cores, 8 summary-loading workers.
+No credential value appears in any command, log, report or cache below.
+
+# 0. Pull and safety
+git pull --ff-only origin main            # fb5f854..0e125de
+git check-ignore -v .env                  # IGNORED, rechecked before the push
+
+# 1. Engine change — one injection point only
+# src/verification/r4r5_replay.py
+#   replay(..., scale=None): a per-cohort multiplier applied to the intended ticket notional
+#   and to nothing else. Tier, multipliers, selection, entry/exit sessions and every observed
+#   price are untouched, and a recorded R1 book is refused because its tickets are frozen.
+#   New trade fields: intended_size_fixed_dollar, sizing_scale_factor.
+# src/verification/r4r5_equity.py  — cg_arrow010_causal_signal_close_equity_scaling_v1
+#   causal_book(): builds cohort by cohort in signal order, so a cohort's reference equity
+#   can only contain trades entered before its own signal session. Causality is structural,
+#   not asserted afterwards.
+#   causality_violations(), rebuild_reference(), equity_at().
+# src/verification/r4r5_metrics.py — drawdown against the running peak, gross exposure against
+#   the SAME session's marked equity, time underwater, exposure dollar-sessions, turnover.
+# src/verification/r4r5_oracle.py — rebuild_account() factored out; verify_equity_sizing()
+#   re-derives every share count from stored inputs without consulting the sizing engine.
+
+# 2. First run — certified controls did NOT reproduce, and the run stopped itself
+python scripts/cg_arrow010_run.py --workers 8
+#   legacy fill eventual: expected 129,092.60 observed 142,364.21  -> STOPPED
+#   the script refuses to do sizing research on a substrate that does not reproduce.
+
+# 3. Diagnosis (minute 2-6)
+python scripts/cg_arrow010_diagnose.py
+#   membership sha256 e51a07d6... identical to the certified Arrow 008 value; 52 cohorts;
+#   the certified private trade ledger agrees name for name. So selection was not the fault.
+python scripts/cg_arrow010_diagnose2.py
+#   416/416 tickets, statuses identical, prices identical, 167 tickets at exactly 2x quantity.
+#   Cause: the substrate builder loaded a 16-session history window, but the engine's feature
+#   window is 20 sessions. With a short window the R5 volume or momentum feature is absent, its
+#   multiplier falls back to 1.0, and a HALF or QUARTER ticket is silently promoted to FULL.
+#   Fix: take the observation set from the engine itself, needs_for(corrected, hold=10).
+
+# 4. Second run — all four certified controls reproduce
+python scripts/cg_arrow010_run.py --workers 8
+#   legacy fill eventual 129,092.60; marked account B 129,202.83; equity 229,202.83;
+#   causal pre-order eventual 128,864.62 — all exact.
+#   The serial cohort-by-cohort control also equals the certified batch causal pre-order book
+#   exactly, so the only difference between the two experiment books is sizing.
+
+# 5. Coverage accounting repaired (minute 8-10)
+#   the first coverage figure counted 4,064 "missing" observations, which was alarming and
+#   wrong: needs_for() carries two extra history sessions and every post-due session a
+#   documented-halt carry might reach, and no pricing path reads them. Split into the pricing
+#   window (20 sessions of history through the scheduled exit) and the need-set margin:
+#   pricing-window observations missing = 0; margin absences = 4,064, none of which can move
+#   a price, a quantity or a P&L. All 80 borderline cases sat at offsets -22 and -21.
+
+# 6. Defects found in Arrow 010's own first report and repaired (minute 12-16)
+#   a) the positive/red month row printed only the positive count. Split into two rows.
+#   b) the max-drawdown-percent difference was printed with a % sign; it is percentage points.
+#   c) the leverage question was framed as a gap BETWEEN the books, which would have called the
+#      fixed book's de-levering "stability" in the scaled book. Measured correctly, within each
+#      book across the first and second half of its own sessions:
+#        fixed  0.520 -> 0.394  (drift -0.126; tickets do not follow the account, so it sheds
+#                                leverage as equity grows)
+#        scaled 0.621 -> 0.638  (drift +0.017; it holds the leverage it was designed to hold)
+#      The higher mean ratio in the scaled book is the absence of de-levering, not new leverage.
+
+# 7. Tests
+python -m pytest tests/test_cg_arrow010.py -q --basetemp=data/tmp/cg_arrow010_tests -p no:cacheprovider
+python -m pytest tests -q --basetemp=data/tmp/cg_arrow010_tests -p no:cacheprovider
+#   669 passed, 1 skipped. The Arrow 008 and Arrow 009 guard tests pass unchanged, so the
+#   scale injection did not disturb the certified substrate.
+
+# 8. Safety review and push
+git check-ignore .env handoff/outgoing/cg_arrow010/equity_scaled_trade_audit.csv
+git ls-files handoff data/verification      # empty
+git diff --cached --name-only               # paths AND content inspected before commit
+
+# Outcomes
+# Fixed-dollar control   : marked account P&L 128,986.40, return 128.99%, max drawdown -23,309.47
+# Equity-scaled          : marked account P&L 230,719.74, return 230.72%, max drawdown -29,172.81
+# Incremental P&L        : 101,701.69, of which 84.94% comes from June-August 2026 signals
+# Scale factor           : 1.000 first cohort, 1.385 median, 3.159 final cohort
+# Independent oracle     : 830 trades, max error 3.6e-12; 416 share counts re-derived, 0 disagreements
+# Causality violations   : 0
+# RESEARCH STATUS: EQUITY SCALING IS ECONOMICALLY ATTRACTIVE FOR FURTHER STUDY
+# NEXT RECOMMENDED STEP: CAPITAL REDEPLOYMENT STUDY
+
+# Local private deliverables (git-ignored; hashes in reports/cg_arrow010_manifest.json)
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow010\equity_scaled_trade_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow010\equity_scaled_cohort_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow010\equity_scaled_daily_account.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow010\r4r5_verified_trades.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow010\r4r5_verified_cohort_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow010\r4r5_cohort_matrix.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow010\r4r5_trade_exceptions.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow010\r4r5_daily_account.csv

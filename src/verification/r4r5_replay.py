@@ -147,15 +147,24 @@ def _base_row(family, stage, c, rank, h, hold, quantity):
 
 
 def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int = 10, quantity: str = "fill",
-           stage: str = "R2", recorded: dict | None = None) -> dict:
+           stage: str = "R2", recorded: dict | None = None, scale: dict | None = None) -> dict:
     """Return {'trades': [...], 'daily': [...]} for one family and horizon.
 
     `recorded` (stage R1) supplies the frozen Arrow 003 position record per ticket id so
     that recorded features, tickets and quantities are preserved; otherwise features and
     quantities are recomputed from checked inputs.
+
+    `scale` (Arrow 010) maps a cohort's signal ISO date to a sizing multiplier applied to the
+    intended ticket notional, and to nothing else. It is the single injection point for
+    equity-responsive sizing: the tier, the multipliers, the selection, the entry and exit
+    sessions and every observed price are untouched, so a scaled book differs from its
+    fixed-dollar control only in share counts and in the amounts that are proportional to
+    them. The caller owns causality; see verification.r4r5_equity.
     """
     if quantity not in {"fill", "preorder"}:
         raise ValueError("Unknown quantity convention")
+    if scale is not None and recorded is not None:
+        raise ValueError("A recorded R1 book has frozen tickets and cannot be equity-scaled")
     trades = []
     for c in cohort_list:
         signal, fill = c["signal"], c["fill"]
@@ -173,10 +182,14 @@ def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int =
             amount, tier, vm, mm = sizing(family, f)
             if old is not None:
                 amount = old["ticket"]
+            fixed_amount = amount
+            factor = 1.0 if scale is None else float(scale[c["signal_iso"]])
+            amount = fixed_amount * factor
             t.update({"ret3": f.get("ret3"), "volume_ratio": f.get("volume_ratio"),
                       "feature_history_sessions": f.get("history_sessions"),
                       "volume_feature_available": f.get("volume_ratio") is not None,
                       "momentum_feature_available": f.get("ret3") is not None,
+                      "intended_size_fixed_dollar": fixed_amount, "sizing_scale_factor": factor,
                       "intended_size": amount, "size_tier": tier, "volume_multiplier": vm, "momentum_multiplier": mm,
                       "entry_status": observation_status(fill, sym, rec, need_final_minute=True)})
             if not present(rec) or rec.get("exec_px") is None:

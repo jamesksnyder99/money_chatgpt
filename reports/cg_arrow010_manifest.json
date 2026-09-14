@@ -1,0 +1,936 @@
+{
+  "arrow": "CG Arrow 010",
+  "executor": "Opus in Claude Code",
+  "timestamp": "2026-09-14T17:56:47+00:00",
+  "elapsed_minutes": 0.413074801666274,
+  "head_at_run": "0e125de34317279e38ad1aad619cdc90cb42d57f",
+  "scope": "R5-only equity-responsive sizing on the certified R2/H10 causal pre-order substrate; no redeployment, hold change, leverage sweep or new strategy research",
+  "variant": "Momentum+Volume-Sized Short",
+  "legacy_id": "R5",
+  "sizing_rule_id": "cg_arrow010_causal_signal_close_equity_scaling_v1",
+  "sizing_rule": "intended ticket notional = fixed R5 tier notional * (marked account equity at the close of the signal session / 100,000); no leverage multiplier, drawdown throttle, gross cap, volatility target, Kelly rule, cohort filter or redeployment",
+  "tiers": {
+    "FULL": 8300.0,
+    "HALF": 4150.0,
+    "QUARTER": 2075.0
+  },
+  "certified_controls": {
+    "legacy_fill_eventual_completed_trade_pnl": {
+      "expected": 129092.6,
+      "observed": 129092.5950666,
+      "difference": -0.004933400006848387,
+      "reproduces": true
+    },
+    "legacy_fill_marked_account_pnl_at_cutoff": {
+      "expected": 129202.83,
+      "observed": 129202.83188659986,
+      "difference": 0.0018865998572437093,
+      "reproduces": true
+    },
+    "legacy_fill_marked_equity_at_cutoff": {
+      "expected": 229202.83,
+      "observed": 229202.83188659986,
+      "difference": 0.0018865998717956245,
+      "reproduces": true
+    },
+    "causal_preorder_eventual_completed_trade_pnl": {
+      "expected": 128864.62,
+      "observed": 128864.6248656,
+      "difference": 0.00486559999990277,
+      "reproduces": true
+    }
+  },
+  "certified_inputs": {
+    "arrow008_manifest_sha256": "b68304233ec621e19ce87c891faa05e6cd4b7dea987c943a68435fbcd0a63a21",
+    "action_table_sha256": "338a4b96970e40c21ae5e3427bf414dcade18f59a11a1b5fa70944af69a74a51",
+    "arrow008_certification": "CERTIFIED"
+  },
+  "observation_coverage": {
+    "pricing_window_missing": 0,
+    "absent_in_need_set_margin": 4064,
+    "pricing_window_basis": "20 sessions of feature history through the signal, the fill, and every mark through the scheduled exit",
+    "margin_basis": "two further history sessions and the post-due sessions a documented-halt carry may reach; read by no pricing path"
+  },
+  "substrate_identical_between_books": true,
+  "max_pre_sizing_price_return_gap": 0.0,
+  "causality_violations": [],
+  "serial_control_equals_batch": true,
+  "entry_ledger_sha256": {
+    "R5_FIXED_DOLLAR_CONTROL": "5db4289b01d09c9542527183974af0e597da619c4074229bb81c4aef900881d2",
+    "R5_EQUITY_SCALED": "51cfd86826048ad17b048cc9ea82be221784a27f22ebe6c89a0a973a7afd757d"
+  },
+  "membership_sha256": "e51a07d60312dfb574ed0df657c4c691607b28b3b710aa8b70a9169914773ae6",
+  "accounts": {
+    "R5_FIXED_DOLLAR_CONTROL/IS": {
+      "book": "Momentum+Volume-Sized Short / Fixed-dollar R5 / IS",
+      "A_completed_trade_pnl_all_cohorts": 58670.3410121,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 58670.3410121,
+      "completed_trade_count": 200,
+      "B_marked_account_pnl_at_cutoff": 58670.34101209976,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": -2.4010660126805305e-10,
+      "C_post_cutoff_incremental_runoff_pnl": 0,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 0,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 0,
+      "runoff_marked_pnl_at_cutoff": 0,
+      "E_open_documented_obligations": 0,
+      "E_open_obligation_tickets": [],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 0,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 233.746378534262,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (58,670.34); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R5_FIXED_DOLLAR_CONTROL/OOS": {
+      "book": "Momentum+Volume-Sized Short / Fixed-dollar R5 / OOS",
+      "A_completed_trade_pnl_all_cohorts": 70194.2838535,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 64012.3615185,
+      "completed_trade_count": 215,
+      "B_marked_account_pnl_at_cutoff": 70316.05965849964,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 6303.698139999637,
+      "C_post_cutoff_incremental_runoff_pnl": -0.9246750000011161,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 6181.922335,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 6182.847010000001,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 3947.6300000000006,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 280.1436639780862,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (70,316.06); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R5_FIXED_DOLLAR_CONTROL/ALL": {
+      "book": "Momentum+Volume-Sized Short / Fixed-dollar R5 / ALL",
+      "A_completed_trade_pnl_all_cohorts": 128864.6248656,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 122682.7025306,
+      "completed_trade_count": 415,
+      "B_marked_account_pnl_at_cutoff": 128986.40067059905,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 6303.698139999047,
+      "C_post_cutoff_incremental_runoff_pnl": -0.9246750000011161,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 6181.922335,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 6182.847010000001,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 3947.6300000000006,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 513.8900425123468,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (128,986.40); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R5_EQUITY_SCALED/IS": {
+      "book": "Momentum+Volume-Sized Short / Equity-scaled R5 / IS",
+      "A_completed_trade_pnl_all_cohorts": 74319.3079015,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 74319.3079015,
+      "completed_trade_count": 200,
+      "B_marked_account_pnl_at_cutoff": 74319.3079015,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 0.0,
+      "C_post_cutoff_incremental_runoff_pnl": 0,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 0,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 0,
+      "runoff_marked_pnl_at_cutoff": 0,
+      "E_open_documented_obligations": 0,
+      "E_open_obligation_tickets": [],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 0,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 296.0928601653386,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (74,319.31); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R5_EQUITY_SCALED/OOS": {
+      "book": "Momentum+Volume-Sized Short / Equity-scaled R5 / OOS",
+      "A_completed_trade_pnl_all_cohorts": 90030.81668070001,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 79168.5866357,
+      "completed_trade_count": 215,
+      "B_marked_account_pnl_at_cutoff": 90159.18565569978,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 10990.599019999776,
+      "C_post_cutoff_incremental_runoff_pnl": -7.517845000001238,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 10862.230045,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 10869.747890000002,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 3947.6300000000006,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 359.19994285139353,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (90,159.19); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R5_EQUITY_SCALED/ALL": {
+      "book": "Momentum+Volume-Sized Short / Equity-scaled R5 / ALL",
+      "A_completed_trade_pnl_all_cohorts": 230566.3561054,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 211688.93505039997,
+      "completed_trade_count": 415,
+      "B_marked_account_pnl_at_cutoff": 230719.7416604004,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 19030.806610000436,
+      "C_post_cutoff_incremental_runoff_pnl": -28.858345000004768,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 18877.421055,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 18906.279400000003,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 4067.7100000000005,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 919.2021580095634,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (230,719.74); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    }
+  },
+  "headline": {
+    "R5_FIXED_DOLLAR_CONTROL/IS": {
+      "starting_equity": 100000.0,
+      "ending_marked_equity_at_cutoff": 158670.34101209976,
+      "marked_account_pnl_at_cutoff": 58670.34101209976,
+      "eventual_completed_trade_pnl": 58670.3410121,
+      "return_on_starting_equity_pct": 58.670341012099755,
+      "worst_day": -9733.97100000002,
+      "best_day": 8404.5539727,
+      "account_sessions": 251,
+      "post_cutoff_incremental_runoff_pnl": 0,
+      "eventual_pnl_of_runoff_trades": 0,
+      "runoff_trade_count": 0,
+      "open_documented_obligations": 0,
+      "stale_gross_at_calendar_boundary": 0,
+      "completed_trades": 200,
+      "intended_tickets": 200,
+      "hit_rate": 0.52,
+      "avg_winner": 1014.4234005192308,
+      "avg_loser": -487.80929835312503,
+      "profit_factor": 2.252844887553368,
+      "turnover_entry_notional": 770364.7916,
+      "avg_entry_notional_per_ticket": 3851.823958,
+      "max_drawdown_dollars": -11773.840909600054,
+      "max_drawdown_pct_of_peak": -11.050409687063638,
+      "max_drawdown_date": "2026-01-16",
+      "peak_equity_before_max_drawdown": 106546.64616990005,
+      "sessions_underwater": 196,
+      "time_underwater_pct": 78.08764940239044,
+      "mean_gross_exposure": 29196.08763888048,
+      "peak_gross_exposure": 98288.3824,
+      "mean_gross_over_marked_equity": 0.23799299564409077,
+      "p95_gross_over_marked_equity": 0.5744814585471789,
+      "peak_gross_over_marked_equity": 0.771208548085038,
+      "exposure_dollar_sessions": 7328217.997359,
+      "gross_ratio_basis": "gross short exposure divided by the same session's marked account equity, not by starting equity",
+      "months": 12,
+      "positive_months": 10,
+      "red_months": 2,
+      "sum_of_red_months": -5949.51104529998,
+      "worst_month": -3883.051880500003,
+      "best_month": 17243.46937729999,
+      "median_month": 4421.239416200042
+    },
+    "R5_FIXED_DOLLAR_CONTROL/OOS": {
+      "starting_equity": 100000.0,
+      "ending_marked_equity_at_cutoff": 170316.05965849964,
+      "marked_account_pnl_at_cutoff": 70316.05965849964,
+      "eventual_completed_trade_pnl": 70194.2838535,
+      "return_on_starting_equity_pct": 70.31605965849964,
+      "worst_day": -9199.590000000011,
+      "best_day": 11811.67300000001,
+      "account_sessions": 251,
+      "post_cutoff_incremental_runoff_pnl": -0.9246750000011161,
+      "eventual_pnl_of_runoff_trades": 6181.922335,
+      "runoff_trade_count": 16,
+      "open_documented_obligations": 1,
+      "stale_gross_at_calendar_boundary": 3947.6300000000006,
+      "completed_trades": 215,
+      "intended_tickets": 216,
+      "hit_rate": 0.5581395348837209,
+      "avg_winner": 1103.8140555358334,
+      "avg_loser": -655.4042401136843,
+      "profit_factor": 2.1273762866253807,
+      "turnover_entry_notional": 880316.8489000001,
+      "avg_entry_notional_per_ticket": 4094.4969716279074,
+      "max_drawdown_dollars": -24773.164509500173,
+      "max_drawdown_pct_of_peak": -18.990007627281173,
+      "max_drawdown_date": "2026-03-02",
+      "peak_equity_before_max_drawdown": 130453.68383059984,
+      "sessions_underwater": 180,
+      "time_underwater_pct": 71.71314741035857,
+      "mean_gross_exposure": 35776.81475381275,
+      "peak_gross_exposure": 121023.31150000001,
+      "mean_gross_over_marked_equity": 0.2895078911000671,
+      "p95_gross_over_marked_equity": 0.6595493697843319,
+      "peak_gross_over_marked_equity": 1.002338246983589,
+      "exposure_dollar_sessions": 8979980.503207,
+      "gross_ratio_basis": "gross short exposure divided by the same session's marked account equity, not by starting equity",
+      "months": 12,
+      "positive_months": 7,
+      "red_months": 4,
+      "sum_of_red_months": -18749.645244100204,
+      "worst_month": -7019.907900000151,
+      "best_month": 36689.86720229998,
+      "median_month": 1193.7366780999728
+    },
+    "R5_FIXED_DOLLAR_CONTROL/ALL": {
+      "starting_equity": 100000.0,
+      "ending_marked_equity_at_cutoff": 228986.40067059905,
+      "marked_account_pnl_at_cutoff": 128986.40067059905,
+      "eventual_completed_trade_pnl": 128864.6248656,
+      "return_on_starting_equity_pct": 128.98640067059907,
+      "worst_day": -9733.97100000002,
+      "best_day": 13727.27497269999,
+      "account_sessions": 251,
+      "post_cutoff_incremental_runoff_pnl": -0.9246750000011161,
+      "eventual_pnl_of_runoff_trades": 6181.922335,
+      "runoff_trade_count": 16,
+      "open_documented_obligations": 1,
+      "stale_gross_at_calendar_boundary": 3947.6300000000006,
+      "completed_trades": 415,
+      "intended_tickets": 416,
+      "hit_rate": 0.5397590361445783,
+      "avg_winner": 1062.3112514209822,
+      "avg_loser": -571.1680390193718,
+      "profit_factor": 2.181235387362094,
+      "turnover_entry_notional": 1650681.6405,
+      "avg_entry_notional_per_ticket": 3977.546121686747,
+      "max_drawdown_dollars": -23309.47162610016,
+      "max_drawdown_pct_of_peak": -17.29262426570371,
+      "max_drawdown_date": "2026-01-16",
+      "peak_equity_before_max_drawdown": 134794.2988174999,
+      "sessions_underwater": 180,
+      "time_underwater_pct": 71.71314741035857,
+      "mean_gross_exposure": 64972.90239269323,
+      "peak_gross_exposure": 123797.77100000001,
+      "mean_gross_over_marked_equity": 0.4565652166602211,
+      "p95_gross_over_marked_equity": 0.6932744717372039,
+      "peak_gross_over_marked_equity": 1.0302751854867804,
+      "exposure_dollar_sessions": 16308198.500566,
+      "gross_ratio_basis": "gross short exposure divided by the same session's marked account equity, not by starting equity",
+      "months": 12,
+      "positive_months": 10,
+      "red_months": 2,
+      "sum_of_red_months": -11818.119125500307,
+      "worst_month": -10902.959780500169,
+      "best_month": 41830.29081499993,
+      "median_month": 12466.486440899971
+    },
+    "R5_EQUITY_SCALED/IS": {
+      "starting_equity": 100000.0,
+      "ending_marked_equity_at_cutoff": 174319.3079015,
+      "marked_account_pnl_at_cutoff": 74319.3079015,
+      "eventual_completed_trade_pnl": 74319.3079015,
+      "return_on_starting_equity_pct": 74.3193079015,
+      "worst_day": -16988.646999999997,
+      "best_day": 12483.298750400048,
+      "account_sessions": 251,
+      "post_cutoff_incremental_runoff_pnl": 0,
+      "eventual_pnl_of_runoff_trades": 0,
+      "runoff_trade_count": 0,
+      "open_documented_obligations": 0,
+      "stale_gross_at_calendar_boundary": 0,
+      "completed_trades": 200,
+      "intended_tickets": 200,
+      "hit_rate": 0.52,
+      "avg_winner": 1285.7187535519229,
+      "avg_loser": -618.7025257072918,
+      "profit_factor": 2.2512628042406706,
+      "turnover_entry_notional": 990240.1181000001,
+      "avg_entry_notional_per_ticket": 4951.2005905000005,
+      "max_drawdown_dollars": -16988.646999999997,
+      "max_drawdown_pct_of_peak": -9.265649692722688,
+      "max_drawdown_date": "2026-07-27",
+      "peak_equity_before_max_drawdown": 183350.84493150015,
+      "sessions_underwater": 195,
+      "time_underwater_pct": 77.68924302788844,
+      "mean_gross_exposure": 37578.79693516335,
+      "peak_gross_exposure": 157224.85700000002,
+      "mean_gross_over_marked_equity": 0.28627649261853233,
+      "p95_gross_over_marked_equity": 0.7518770815777703,
+      "peak_gross_over_marked_equity": 1.009906834456322,
+      "exposure_dollar_sessions": 9432278.030726,
+      "gross_ratio_basis": "gross short exposure divided by the same session's marked account equity, not by starting equity",
+      "months": 12,
+      "positive_months": 10,
+      "red_months": 2,
+      "sum_of_red_months": -6114.620768300054,
+      "worst_month": -3991.3366623000184,
+      "best_month": 21130.345688600108,
+      "median_month": 4980.042472350018
+    },
+    "R5_EQUITY_SCALED/OOS": {
+      "starting_equity": 100000.0,
+      "ending_marked_equity_at_cutoff": 190159.18565569978,
+      "marked_account_pnl_at_cutoff": 90159.18565569978,
+      "eventual_completed_trade_pnl": 90030.81668070001,
+      "return_on_starting_equity_pct": 90.15918565569979,
+      "worst_day": -11998.354999999996,
+      "best_day": 13808.914999999994,
+      "account_sessions": 251,
+      "post_cutoff_incremental_runoff_pnl": -7.517845000001238,
+      "eventual_pnl_of_runoff_trades": 10862.230045,
+      "runoff_trade_count": 16,
+      "open_documented_obligations": 1,
+      "stale_gross_at_calendar_boundary": 3947.6300000000006,
+      "completed_trades": 215,
+      "intended_tickets": 216,
+      "hit_rate": 0.5581395348837209,
+      "avg_winner": 1384.7045465708334,
+      "avg_loser": -801.4076727136843,
+      "profit_factor": 2.182535230734984,
+      "turnover_entry_notional": 1124329.6366,
+      "avg_entry_notional_per_ticket": 5229.440170232559,
+      "max_drawdown_dollars": -30162.86256320002,
+      "max_drawdown_pct_of_peak": -22.603362485379836,
+      "max_drawdown_date": "2026-03-02",
+      "peak_equity_before_max_drawdown": 133444.1394846,
+      "sessions_underwater": 180,
+      "time_underwater_pct": 71.71314741035857,
+      "mean_gross_exposure": 44153.741923844624,
+      "peak_gross_exposure": 151234.4382,
+      "mean_gross_over_marked_equity": 0.34687780351905434,
+      "p95_gross_over_marked_equity": 0.7990676795556477,
+      "peak_gross_over_marked_equity": 1.2484283949333237,
+      "exposure_dollar_sessions": 11082589.222885001,
+      "gross_ratio_basis": "gross short exposure divided by the same session's marked account equity, not by starting equity",
+      "months": 12,
+      "positive_months": 7,
+      "red_months": 4,
+      "sum_of_red_months": -22763.30312880002,
+      "worst_month": -9112.32729000003,
+      "best_month": 44283.910627100006,
+      "median_month": 1309.210135999987
+    },
+    "R5_EQUITY_SCALED/ALL": {
+      "starting_equity": 100000.0,
+      "ending_marked_equity_at_cutoff": 330719.7416604004,
+      "marked_account_pnl_at_cutoff": 230719.7416604004,
+      "eventual_completed_trade_pnl": 230566.3561054,
+      "return_on_starting_equity_pct": 230.71974166040042,
+      "worst_day": -27899.256000000052,
+      "best_day": 22970.391577699862,
+      "account_sessions": 251,
+      "post_cutoff_incremental_runoff_pnl": -28.858345000004768,
+      "eventual_pnl_of_runoff_trades": 18877.421055,
+      "runoff_trade_count": 16,
+      "open_documented_obligations": 1,
+      "stale_gross_at_calendar_boundary": 4067.7100000000005,
+      "completed_trades": 415,
+      "intended_tickets": 416,
+      "hit_rate": 0.5397590361445783,
+      "avg_winner": 1798.9080132973215,
+      "avg_loser": -902.5604129486911,
+      "profit_factor": 2.337476893034899,
+      "turnover_entry_notional": 2779070.4561,
+      "avg_entry_notional_per_ticket": 6696.555315903614,
+      "max_drawdown_dollars": -29172.813437899982,
+      "max_drawdown_pct_of_peak": -20.955707777223427,
+      "max_drawdown_date": "2026-01-16",
+      "peak_equity_before_max_drawdown": 139211.77823259996,
+      "sessions_underwater": 180,
+      "time_underwater_pct": 71.71314741035857,
+      "mean_gross_exposure": 105126.67090669721,
+      "peak_gross_exposure": 262305.19600000005,
+      "mean_gross_over_marked_equity": 0.6296060772883536,
+      "p95_gross_over_marked_equity": 0.9297242589809644,
+      "peak_gross_over_marked_equity": 1.3716855937669,
+      "exposure_dollar_sessions": 26386794.397581,
+      "gross_ratio_basis": "gross short exposure divided by the same session's marked account equity, not by starting equity",
+      "months": 12,
+      "positive_months": 10,
+      "red_months": 2,
+      "sum_of_red_months": -17097.232709299948,
+      "worst_month": -14344.053404299892,
+      "best_month": 79654.6439815,
+      "median_month": 14853.0740284501
+    }
+  },
+  "monthly": {
+    "R5_FIXED_DOLLAR_CONTROL": [
+      {
+        "month": "2025-09",
+        "monthly_pnl": 3702.0552197000943,
+        "monthly_return_pct": 3.702055219700094,
+        "month_end_equity": 103702.0552197001,
+        "prior_month_end_equity": 100000.0
+      },
+      {
+        "month": "2025-10",
+        "monthly_pnl": 14275.66362179989,
+        "monthly_return_pct": 13.766037318697197,
+        "month_end_equity": 117977.71884149998,
+        "prior_month_end_equity": 103702.0552197001
+      },
+      {
+        "month": "2025-11",
+        "monthly_pnl": 12205.226320999893,
+        "monthly_return_pct": 10.345365583307556,
+        "month_end_equity": 130182.94516249988,
+        "prior_month_end_equity": 117977.71884149998
+      },
+      {
+        "month": "2025-12",
+        "monthly_pnl": -10902.959780500169,
+        "monthly_return_pct": -8.375106099259494,
+        "month_end_equity": 119279.98538199971,
+        "prior_month_end_equity": 130182.94516249988
+      },
+      {
+        "month": "2026-01",
+        "monthly_pnl": 12727.74656080005,
+        "monthly_return_pct": 10.670479645045939,
+        "month_end_equity": 132007.73194279976,
+        "prior_month_end_equity": 119279.98538199971
+      },
+      {
+        "month": "2026-02",
+        "monthly_pnl": -915.1593450001383,
+        "monthly_return_pct": -0.6932619260489119,
+        "month_end_equity": 131092.57259779962,
+        "prior_month_end_equity": 132007.73194279976
+      },
+      {
+        "month": "2026-03",
+        "monthly_pnl": 16438.926359999954,
+        "monthly_return_pct": 12.539937262834586,
+        "month_end_equity": 147531.49895779957,
+        "prior_month_end_equity": 131092.57259779962
+      },
+      {
+        "month": "2026-04",
+        "monthly_pnl": 848.4425211999915,
+        "monthly_return_pct": 0.575092456318554,
+        "month_end_equity": 148379.94147899956,
+        "prior_month_end_equity": 147531.49895779957
+      },
+      {
+        "month": "2026-05",
+        "monthly_pnl": 8849.947733099893,
+        "monthly_return_pct": 5.9643828167653234,
+        "month_end_equity": 157229.88921209946,
+        "prior_month_end_equity": 148379.94147899956
+      },
+      {
+        "month": "2026-06",
+        "monthly_pnl": 41830.29081499993,
+        "monthly_return_pct": 26.604541302304067,
+        "month_end_equity": 199060.18002709938,
+        "prior_month_end_equity": 157229.88921209946
+      },
+      {
+        "month": "2026-07",
+        "monthly_pnl": 14855.39616349971,
+        "monthly_return_pct": 7.462766366169943,
+        "month_end_equity": 213915.5761905991,
+        "prior_month_end_equity": 199060.18002709938
+      },
+      {
+        "month": "2026-08",
+        "monthly_pnl": 15070.824479999952,
+        "monthly_return_pct": 7.045220712012025,
+        "month_end_equity": 228986.40067059905,
+        "prior_month_end_equity": 213915.5761905991
+      }
+    ],
+    "R5_EQUITY_SCALED": [
+      {
+        "month": "2025-09",
+        "monthly_pnl": 3734.7743147000438,
+        "monthly_return_pct": 3.7347743147000436,
+        "month_end_equity": 103734.77431470004,
+        "prior_month_end_equity": 100000.0
+      },
+      {
+        "month": "2025-10",
+        "monthly_pnl": 14425.673654899947,
+        "monthly_return_pct": 13.906304563922605,
+        "month_end_equity": 118160.44796959999,
+        "prior_month_end_equity": 103734.77431470004
+      },
+      {
+        "month": "2025-11",
+        "monthly_pnl": 14965.284023,
+        "monthly_return_pct": 12.665222822149616,
+        "month_end_equity": 133125.7319926,
+        "prior_month_end_equity": 118160.44796959999
+      },
+      {
+        "month": "2025-12",
+        "monthly_pnl": -14344.053404299892,
+        "monthly_return_pct": -10.774816550940901,
+        "month_end_equity": 118781.6785883001,
+        "prior_month_end_equity": 133125.7319926
+      },
+      {
+        "month": "2026-01",
+        "monthly_pnl": 15358.801675199822,
+        "monthly_return_pct": 12.930278354150698,
+        "month_end_equity": 134140.48026349992,
+        "prior_month_end_equity": 118781.6785883001
+      },
+      {
+        "month": "2026-02",
+        "monthly_pnl": -2753.179305000056,
+        "monthly_return_pct": -2.052459704625946,
+        "month_end_equity": 131387.30095849987,
+        "prior_month_end_equity": 134140.48026349992
+      },
+      {
+        "month": "2026-03",
+        "monthly_pnl": 22079.594786400034,
+        "monthly_return_pct": 16.80496868824036,
+        "month_end_equity": 153466.8957448999,
+        "prior_month_end_equity": 131387.30095849987
+      },
+      {
+        "month": "2026-04",
+        "monthly_pnl": 1080.4600895998592,
+        "monthly_return_pct": 0.7040346286770877,
+        "month_end_equity": 154547.35583449976,
+        "prior_month_end_equity": 153466.8957448999
+      },
+      {
+        "month": "2026-05",
+        "monthly_pnl": 14740.864033900201,
+        "monthly_return_pct": 9.538088797640615,
+        "month_end_equity": 169288.21986839996,
+        "prior_month_end_equity": 154547.35583449976
+      },
+      {
+        "month": "2026-06",
+        "monthly_pnl": 79654.6439815,
+        "monthly_return_pct": 47.052679769106994,
+        "month_end_equity": 248942.86384989996,
+        "prior_month_end_equity": 169288.21986839996
+      },
+      {
+        "month": "2026-07",
+        "monthly_pnl": 36519.690370500204,
+        "monthly_return_pct": 14.669908510621033,
+        "month_end_equity": 285462.55422040017,
+        "prior_month_end_equity": 248942.86384989996
+      },
+      {
+        "month": "2026-08",
+        "monthly_pnl": 45257.18744000024,
+        "monthly_return_pct": 15.853983918695702,
+        "month_end_equity": 330719.7416604004,
+        "prior_month_end_equity": 285462.55422040017
+      }
+    ]
+  },
+  "monthly_reconciliation": {
+    "R5_FIXED_DOLLAR_CONTROL": {
+      "standard": "cg_lab_monthly_account_reporting_v1",
+      "total_monthly_pnl": 128986.40067059905,
+      "expected_period_marked_pnl": 128986.40067059905,
+      "difference": 0.0,
+      "checks": {
+        "monthly_pnl_sums_to_period_marked_pnl": true,
+        "month_end_equity_chains": true,
+        "first_month_starts_from_starting_equity": true,
+        "last_month_end_equity_matches": true,
+        "return_denominator_is_prior_month_end_equity": true
+      },
+      "reconciles": true
+    },
+    "R5_EQUITY_SCALED": {
+      "standard": "cg_lab_monthly_account_reporting_v1",
+      "total_monthly_pnl": 230719.7416604004,
+      "expected_period_marked_pnl": 230719.7416604004,
+      "difference": 0.0,
+      "checks": {
+        "monthly_pnl_sums_to_period_marked_pnl": true,
+        "month_end_equity_chains": true,
+        "first_month_starts_from_starting_equity": true,
+        "last_month_end_equity_matches": true,
+        "return_denominator_is_prior_month_end_equity": true
+      },
+      "reconciles": true
+    }
+  },
+  "monthly_reporting_standard": "cg_lab_monthly_account_reporting_v1",
+  "diagnostics": {
+    "total_incremental_pnl_from_equity_scaling": 101701.69,
+    "scale_factor_min": 1.0,
+    "scale_factor_median": 1.384994,
+    "scale_factor_max": 3.15894,
+    "scale_factor_final_cohort": 3.15894,
+    "first_cohort_above": {
+      "1.10x": {
+        "cohort_id": "2025-10-22",
+        "scale_factor": 1.227778
+      },
+      "1.25x": {
+        "cohort_id": "2025-11-05",
+        "scale_factor": 1.294597
+      },
+      "1.50x": {
+        "cohort_id": "2026-03-25",
+        "scale_factor": 1.503155
+      },
+      "2.00x": {
+        "cohort_id": "2026-06-17",
+        "scale_factor": 2.17253
+      }
+    },
+    "uplift_share_by_signal_month_pct": {
+      "2025-09": -0.023706587373326843,
+      "2025-10": 2.8410933977596633,
+      "2025-11": -1.2349155653165644,
+      "2025-12": -2.421975485363124,
+      "2026-01": 4.329210261894369,
+      "2026-02": -3.303583254122916,
+      "2026-03": 5.736384518290698,
+      "2026-04": 1.4574290751707268,
+      "2026-05": 7.679823216310368,
+      "2026-06": 42.71939827155282,
+      "2026-07": 13.018436566786647,
+      "2026-08": 29.20240558441064
+    },
+    "uplift_share_june_to_august_2026_pct": 84.94024042275011,
+    "uplift_share_top_1_cohorts_pct": 18.116768757726643,
+    "uplift_share_top_3_cohorts_pct": 41.969568057325304,
+    "uplift_share_top_5_cohorts_pct": 62.42358411153247,
+    "top_cohorts": [
+      {
+        "cohort_id": "2026-06-10",
+        "split": "OOS",
+        "scale_factor": 1.999932,
+        "incremental_pnl": 18425.06
+      },
+      {
+        "cohort_id": "2026-06-17",
+        "split": "OOS",
+        "scale_factor": 2.17253,
+        "incremental_pnl": 12557.09
+      },
+      {
+        "cohort_id": "2026-08-12",
+        "split": "OOS",
+        "scale_factor": 2.983157,
+        "incremental_pnl": 11701.61
+      },
+      {
+        "cohort_id": "2026-08-19",
+        "split": "OOS",
+        "scale_factor": 3.044179,
+        "incremental_pnl": 11503.4
+      },
+      {
+        "cohort_id": "2026-07-08",
+        "split": "IS",
+        "scale_factor": 2.679754,
+        "incremental_pnl": 9298.68
+      }
+    ],
+    "uplift_from_trades_that_won_under_fixed_dollars": 164997.6746603,
+    "extra_loss_from_trades_that_lost_under_fixed_dollars": -63295.94342050003,
+    "uplift_by_tier": {
+      "HALF": 33926.048160199985,
+      "QUARTER": 16758.080447400003,
+      "FULL": 51017.60263220001
+    },
+    "incremental_max_drawdown_dollars": -5863.341811799823,
+    "incremental_max_drawdown_pct_of_peak": -3.663083511519716,
+    "gross_over_equity_fixed": {
+      "mean_gross_over_marked_equity": 0.4565652166602211,
+      "p95_gross_over_marked_equity": 0.6932744717372039,
+      "peak_gross_over_marked_equity": 1.0302751854867804
+    },
+    "gross_over_equity_scaled": {
+      "mean_gross_over_marked_equity": 0.6296060772883536,
+      "p95_gross_over_marked_equity": 0.9297242589809644,
+      "peak_gross_over_marked_equity": 1.3716855937669
+    },
+    "gross_over_equity_by_half": {
+      "R5_FIXED_DOLLAR_CONTROL": {
+        "first_half_mean": 0.5196514526972443,
+        "second_half_mean": 0.3939796650361902,
+        "drift": -0.12567178766105414
+      },
+      "R5_EQUITY_SCALED": {
+        "first_half_mean": 0.6213044813260565,
+        "second_half_mean": 0.6378417875684103,
+        "drift": 0.016537306242353722
+      }
+    },
+    "gross_over_equity_scaled_drift": 0.016537306242353722,
+    "gross_over_equity_fixed_drift": -0.12567178766105414,
+    "gross_over_equity_approximately_stable": true,
+    "gross_over_equity_stability_basis": "gross short exposure over the same session's marked equity, mean of the first half of the account sessions against the mean of the second half, measured separately for each book; the scaled book holds the ratio it was designed to hold, while the fixed-dollar book sheds leverage as equity grows because its tickets do not follow the account"
+  },
+  "oracle": {
+    "trades": {
+      "checked": 830,
+      "errors": 0,
+      "max_abs_error": 3.637978807091713e-12
+    },
+    "cohorts": {
+      "cohorts": 104,
+      "errors": 0
+    },
+    "daily": {
+      "R5/R5_FIXED_DOLLAR_CONTROL": {
+        "max_abs_error": 2.0372681319713593e-10,
+        "ok": true
+      },
+      "R5/R5_EQUITY_SCALED": {
+        "max_abs_error": 2.9103830456733704e-10,
+        "ok": true
+      }
+    },
+    "ok": true,
+    "equity_sizing": {
+      "cohorts": 52,
+      "tickets_checked": 416,
+      "errors": 0,
+      "max_share_error": 0.0,
+      "max_scale_error": 1.7763568394002505e-15,
+      "failures": [],
+      "ok": true
+    }
+  },
+  "local_csvs": {
+    "r4r5_trade_exceptions.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow010/r4r5_trade_exceptions.csv",
+      "sha256": "9d751a58aef16aab2d2325433b89b8cd67c28b95341ad2f49178fd35fa19235f",
+      "bytes": 273704
+    },
+    "r4r5_verified_trades.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow010/r4r5_verified_trades.csv",
+      "sha256": "1f578c2543140f8f38934bc8ecac3eaadca132c4322745d9085a6e2a67673a39",
+      "bytes": 942960
+    },
+    "r4r5_verified_cohort_audit.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow010/r4r5_verified_cohort_audit.csv",
+      "sha256": "bc6934c3a197677acde63ccddd12bf6e38afe2b1a73cd7eb3f967c5616107658",
+      "bytes": 142035
+    },
+    "r4r5_cohort_matrix.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow010/r4r5_cohort_matrix.csv",
+      "sha256": "086bad082983c6bc656ec7e66c39ba28d2b1eb3dd4105a48b3a812c2986d59ed",
+      "bytes": 74774
+    },
+    "r4r5_daily_account.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow010/r4r5_daily_account.csv",
+      "sha256": "8d235289e18c6db8246fffebb22a22ad18986e7ac0b5cc54afaaf235fd5de334",
+      "bytes": 224431
+    },
+    "equity_scaled_trade_audit.csv": "1f578c2543140f8f38934bc8ecac3eaadca132c4322745d9085a6e2a67673a39",
+    "equity_scaled_cohort_audit.csv": "bc6934c3a197677acde63ccddd12bf6e38afe2b1a73cd7eb3f967c5616107658",
+    "equity_scaled_daily_account.csv": "8d235289e18c6db8246fffebb22a22ad18986e7ac0b5cc54afaaf235fd5de334"
+  },
+  "research_status": "EQUITY SCALING IS ECONOMICALLY ATTRACTIVE FOR FURTHER STUDY",
+  "status_basis": {
+    "return_on_starting_equity_pct": {
+      "R5_FIXED_DOLLAR_CONTROL": 128.98640067059907,
+      "R5_EQUITY_SCALED": 230.71974166040042
+    },
+    "marked_pnl_per_drawdown_dollar": {
+      "R5_FIXED_DOLLAR_CONTROL": 5.5336475549351345,
+      "R5_EQUITY_SCALED": 7.908724407110488
+    }
+  },
+  "blockers": [],
+  "headline_footnote": "Headline modeled P&L includes the lab's stated commission/spread assumptions and excludes broker-specific locate/HTB charges, dividends, recalls/buy-ins, financing, taxes, and other account-specific execution items. Alpaca ETB securities currently carry $0 locate and borrow fees for Trading API users; short availability and other security-specific costs may still vary.",
+  "log": [
+    "2026-09-14T17:56:23+00:00 +0.0m loading 109518 ranking endpoints",
+    "2026-09-14T17:56:39+00:00 +0.3m cohorts=52 pricing-window observations missing=0; absent in the wider need-set margin=4064 (cannot move a result)",
+    "2026-09-14T17:56:40+00:00 +0.3m control legacy_fill_eventual_completed_trade_pnl: expected 129,092.60 observed 129,092.60 reproduces=True",
+    "2026-09-14T17:56:40+00:00 +0.3m control legacy_fill_marked_account_pnl_at_cutoff: expected 129,202.83 observed 129,202.83 reproduces=True",
+    "2026-09-14T17:56:40+00:00 +0.3m control legacy_fill_marked_equity_at_cutoff: expected 229,202.83 observed 229,202.83 reproduces=True",
+    "2026-09-14T17:56:40+00:00 +0.3m control causal_preorder_eventual_completed_trade_pnl: expected 128,864.62 observed 128,864.62 reproduces=True",
+    "2026-09-14T17:56:43+00:00 +0.3m Fixed-dollar R5: 415/416 completed, eventual 128,864.62",
+    "2026-09-14T17:56:43+00:00 +0.3m Equity-scaled R5: 415/416 completed, eventual 230,566.36",
+    "2026-09-14T17:56:43+00:00 +0.3m serial control equals batch causal pre-order book: True",
+    "2026-09-14T17:56:43+00:00 +0.3m selection, tiers, sessions and prices identical between books: True",
+    "2026-09-14T17:56:43+00:00 +0.3m max per-trade pre-sizing price-return gap: 0.000e+00",
+    "2026-09-14T17:56:43+00:00 +0.3m causality violations in the equity-scaled sizing path: 0",
+    "2026-09-14T17:56:43+00:00 +0.3m first cohort sizes from 100,000 at par tiers: True (reference 100,000.00)",
+    "2026-09-14T17:56:45+00:00 +0.4m account identities hold: 6/6",
+    "2026-09-14T17:56:45+00:00 +0.4m Fixed-dollar R5 monthly: 12 months, reconciles=True",
+    "2026-09-14T17:56:45+00:00 +0.4m Equity-scaled R5 monthly: 12 months, reconciles=True",
+    "2026-09-14T17:56:45+00:00 +0.4m uplift 101,701.69; scale 1.000..3.159; June-Aug share 84.94%",
+    "2026-09-14T17:56:47+00:00 +0.4m oracle ok=True trades={'checked': 830, 'errors': 0, 'max_abs_error': 3.637978807091713e-12} cohorts={'cohorts': 104, 'errors': 0}; independent sizing check ok=True tickets=416 max share error=0.0",
+    "2026-09-14T17:56:47+00:00 +0.4m return on starting equity: fixed 128.99% scaled 230.72%; pnl per drawdown dollar fixed 5.534 scaled 7.909",
+    "2026-09-14T17:56:47+00:00 +0.4m RESEARCH STATUS: EQUITY SCALING IS ECONOMICALLY ATTRACTIVE FOR FURTHER STUDY"
+  ]
+}
