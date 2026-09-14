@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-09-14T01:16:33+00:00",
+  "mode": "ALL",
+  "source_files": 113995,
+  "source_tree_counts": {
+    "data/full": 37098,
+    "data/virgin": 76897
+  },
+  "local_manifest": "data/tmp/cg_arrow004/raw_sources_ALL.json",
+  "manifest_sha256": "8b76194637db82fd355639eefb095454edd5518ef68799cf5fca4660f0f72c6c",
+  "verified_again": false,
+  "interpretation": "SHA-256 of every raw copied file referenced by the prepared mode cache, including reused summary sources; no market payload is published."
+}

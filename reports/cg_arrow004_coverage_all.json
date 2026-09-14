@@ -1,0 +1,508 @@
+{
+  "timestamp": "2026-09-14T01:15:11+00:00",
+  "mode": "ALL",
+  "books": {
+    "S0_R4": {
+      "side": "short",
+      "groups": {
+        "documented_price_range_exclusion": {
+          "position_sessions": 1078,
+          "gross_dollar_sessions": 5790365.040200017
+        },
+        "last_above_80": {
+          "position_sessions": 966,
+          "gross_dollar_sessions": 5142720.636200032
+        },
+        "primary": {
+          "position_sessions": 1088,
+          "gross_dollar_sessions": 5843816.432200015
+        },
+        "other_documented_exclusion": {
+          "position_sessions": 10,
+          "gross_dollar_sessions": 53451.39200000001
+        },
+        "last_below_10": {
+          "position_sessions": 20,
+          "gross_dollar_sessions": 84386.33600000001
+        },
+        "last_inside_10_80": {
+          "position_sessions": 102,
+          "gross_dollar_sessions": 616709.46
+        },
+        "eligible_but_missing_tape": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 26,
+      "terminal_stale_gross": 55782.770000000004,
+      "missing_scheduled_exits": 19,
+      "delayed_fills": 9
+    },
+    "S0_R5": {
+      "side": "short",
+      "groups": {
+        "documented_price_range_exclusion": {
+          "position_sessions": 1078,
+          "gross_dollar_sessions": 3490293.1520000203
+        },
+        "last_above_80": {
+          "position_sessions": 966,
+          "gross_dollar_sessions": 3050058.7308000224
+        },
+        "primary": {
+          "position_sessions": 1088,
+          "gross_dollar_sessions": 3534969.74560002
+        },
+        "other_documented_exclusion": {
+          "position_sessions": 10,
+          "gross_dollar_sessions": 44676.59360000001
+        },
+        "last_below_10": {
+          "position_sessions": 20,
+          "gross_dollar_sessions": 55302.844799999984
+        },
+        "last_inside_10_80": {
+          "position_sessions": 102,
+          "gross_dollar_sessions": 429608.16999999934
+        },
+        "eligible_but_missing_tape": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 26,
+      "terminal_stale_gross": 33407.770000000004,
+      "missing_scheduled_exits": 19,
+      "delayed_fills": 9
+    },
+    "BRIDGE_R4": {
+      "side": "short",
+      "groups": {
+        "documented_price_range_exclusion": {
+          "position_sessions": 1078,
+          "gross_dollar_sessions": 4279171.0984
+        },
+        "last_above_80": {
+          "position_sessions": 966,
+          "gross_dollar_sessions": 3733842.0327999964
+        },
+        "primary": {
+          "position_sessions": 1088,
+          "gross_dollar_sessions": 4328828.855199999
+        },
+        "other_documented_exclusion": {
+          "position_sessions": 10,
+          "gross_dollar_sessions": 49657.75680000001
+        },
+        "last_below_10": {
+          "position_sessions": 20,
+          "gross_dollar_sessions": 74986.58240000001
+        },
+        "last_inside_10_80": {
+          "position_sessions": 102,
+          "gross_dollar_sessions": 520000.2400000005
+        },
+        "eligible_but_missing_tape": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 26,
+      "terminal_stale_gross": 41687.55,
+      "missing_scheduled_exits": 19,
+      "delayed_fills": 9
+    },
+    "BRIDGE_R5": {
+      "side": "short",
+      "groups": {
+        "documented_price_range_exclusion": {
+          "position_sessions": 1078,
+          "gross_dollar_sessions": 4063333.6969999894
+        },
+        "last_above_80": {
+          "position_sessions": 966,
+          "gross_dollar_sessions": 3586612.016199987
+        },
+        "primary": {
+          "position_sessions": 1088,
+          "gross_dollar_sessions": 4110178.6393999895
+        },
+        "other_documented_exclusion": {
+          "position_sessions": 10,
+          "gross_dollar_sessions": 46844.9424
+        },
+        "last_below_10": {
+          "position_sessions": 20,
+          "gross_dollar_sessions": 60416.00319999998
+        },
+        "last_inside_10_80": {
+          "position_sessions": 102,
+          "gross_dollar_sessions": 463150.6199999996
+        },
+        "eligible_but_missing_tape": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 26,
+      "terminal_stale_gross": 37965.43,
+      "missing_scheduled_exits": 19,
+      "delayed_fills": 9
+    },
+    "L0": {
+      "side": "long",
+      "groups": {
+        "eligible_but_missing_tape": {
+          "position_sessions": 1,
+          "gross_dollar_sessions": 5438.670000000001
+        },
+        "last_below_10": {
+          "position_sessions": 419,
+          "gross_dollar_sessions": 1963893.2760000103
+        },
+        "primary": {
+          "position_sessions": 433,
+          "gross_dollar_sessions": 2039125.3760000095
+        },
+        "other_documented_exclusion": {
+          "position_sessions": 254,
+          "gross_dollar_sessions": 1260164.7500000072
+        },
+        "documented_price_range_exclusion": {
+          "position_sessions": 178,
+          "gross_dollar_sessions": 773521.9560000019
+        },
+        "last_inside_10_80": {
+          "position_sessions": 14,
+          "gross_dollar_sessions": 75232.10000000002
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 19,
+      "terminal_stale_gross": 14764.894,
+      "missing_scheduled_exits": 4,
+      "delayed_fills": 1
+    },
+    "L4": {
+      "side": "long",
+      "groups": {
+        "eligible_but_missing_tape": {
+          "position_sessions": 1,
+          "gross_dollar_sessions": 2842.32
+        },
+        "last_below_10": {
+          "position_sessions": 419,
+          "gross_dollar_sessions": 1155317.0579999979
+        },
+        "primary": {
+          "position_sessions": 433,
+          "gross_dollar_sessions": 1243551.0979999972
+        },
+        "other_documented_exclusion": {
+          "position_sessions": 254,
+          "gross_dollar_sessions": 811602.679999998
+        },
+        "documented_price_range_exclusion": {
+          "position_sessions": 178,
+          "gross_dollar_sessions": 429106.09799999953
+        },
+        "last_inside_10_80": {
+          "position_sessions": 14,
+          "gross_dollar_sessions": 88234.04000000002
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 19,
+      "terminal_stale_gross": 11245.177,
+      "missing_scheduled_exits": 4,
+      "delayed_fills": 1
+    },
+    "L5": {
+      "side": "long",
+      "groups": {
+        "eligible_but_missing_tape": {
+          "position_sessions": 1,
+          "gross_dollar_sessions": 1448.4900000000002
+        },
+        "last_below_10": {
+          "position_sessions": 419,
+          "gross_dollar_sessions": 706959.8399999975
+        },
+        "primary": {
+          "position_sessions": 433,
+          "gross_dollar_sessions": 799088.0199999971
+        },
+        "other_documented_exclusion": {
+          "position_sessions": 254,
+          "gross_dollar_sessions": 566734.0299999991
+        },
+        "documented_price_range_exclusion": {
+          "position_sessions": 178,
+          "gross_dollar_sessions": 230905.49999999968
+        },
+        "last_inside_10_80": {
+          "position_sessions": 14,
+          "gross_dollar_sessions": 92128.17999999998
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 19,
+      "terminal_stale_gross": 9056.57,
+      "missing_scheduled_exits": 4,
+      "delayed_fills": 1
+    },
+    "L5_REC_NORM8": {
+      "side": "long",
+      "groups": {
+        "eligible_but_missing_tape": {
+          "position_sessions": 1,
+          "gross_dollar_sessions": 4236.150000000001
+        },
+        "last_below_10": {
+          "position_sessions": 419,
+          "gross_dollar_sessions": 1367108.484
+        },
+        "primary": {
+          "position_sessions": 433,
+          "gross_dollar_sessions": 1424902.2840000007
+        },
+        "other_documented_exclusion": {
+          "position_sessions": 254,
+          "gross_dollar_sessions": 1042712.310000002
+        },
+        "documented_price_range_exclusion": {
+          "position_sessions": 178,
+          "gross_dollar_sessions": 377953.82400000014
+        },
+        "last_inside_10_80": {
+          "position_sessions": 14,
+          "gross_dollar_sessions": 57793.799999999996
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 19,
+      "terminal_stale_gross": 9879.546,
+      "missing_scheduled_exits": 4,
+      "delayed_fills": 1
+    },
+    "L5_REC_SELECT8": {
+      "side": "long",
+      "groups": {
+        "other_documented_exclusion": {
+          "position_sessions": 4,
+          "gross_dollar_sessions": 30614.388000000003
+        },
+        "last_below_10": {
+          "position_sessions": 4,
+          "gross_dollar_sessions": 30614.388000000003
+        },
+        "reserve": {
+          "position_sessions": 68,
+          "gross_dollar_sessions": 466833.9079999996
+        },
+        "documented_price_range_exclusion": {
+          "position_sessions": 64,
+          "gross_dollar_sessions": 436219.51999999967
+        },
+        "last_inside_10_80": {
+          "position_sessions": 64,
+          "gross_dollar_sessions": 436219.51999999967
+        },
+        "eligible_but_missing_tape": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 17,
+      "terminal_stale_gross": 6815.93,
+      "missing_scheduled_exits": 1,
+      "delayed_fills": 0
+    },
+    "A6_RECOVERY_EQUAL": {
+      "side": "long",
+      "groups": {
+        "other_documented_exclusion": {
+          "position_sessions": 4,
+          "gross_dollar_sessions": 19095.636000000002
+        },
+        "last_below_10": {
+          "position_sessions": 4,
+          "gross_dollar_sessions": 19095.636000000002
+        },
+        "reserve": {
+          "position_sessions": 68,
+          "gross_dollar_sessions": 455315.1559999996
+        },
+        "documented_price_range_exclusion": {
+          "position_sessions": 64,
+          "gross_dollar_sessions": 436219.51999999967
+        },
+        "last_inside_10_80": {
+          "position_sessions": 64,
+          "gross_dollar_sessions": 436219.51999999967
+        },
+        "eligible_but_missing_tape": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 17,
+      "terminal_stale_gross": 6815.93,
+      "missing_scheduled_exits": 1,
+      "delayed_fills": 0
+    },
+    "A8_PATIENT_RECOVERY": {
+      "side": "long",
+      "groups": {
+        "other_documented_exclusion": {
+          "position_sessions": 4,
+          "gross_dollar_sessions": 21385.224000000002
+        },
+        "last_below_10": {
+          "position_sessions": 4,
+          "gross_dollar_sessions": 21385.224000000002
+        },
+        "reserve": {
+          "position_sessions": 68,
+          "gross_dollar_sessions": 487574.0240000005
+        },
+        "documented_price_range_exclusion": {
+          "position_sessions": 64,
+          "gross_dollar_sessions": 466188.8000000005
+        },
+        "last_inside_10_80": {
+          "position_sessions": 64,
+          "gross_dollar_sessions": 466188.8000000005
+        },
+        "eligible_but_missing_tape": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 8,
+      "terminal_stale_gross": 7284.2,
+      "missing_scheduled_exits": 1,
+      "delayed_fills": 0
+    },
+    "PATIENT_MIRROR": {
+      "side": "long",
+      "groups": {
+        "other_documented_exclusion": {
+          "position_sessions": 4,
+          "gross_dollar_sessions": 21338.016000000003
+        },
+        "last_below_10": {
+          "position_sessions": 4,
+          "gross_dollar_sessions": 21338.016000000003
+        },
+        "reserve": {
+          "position_sessions": 68,
+          "gross_dollar_sessions": 487526.8160000005
+        },
+        "documented_price_range_exclusion": {
+          "position_sessions": 64,
+          "gross_dollar_sessions": 466188.8000000005
+        },
+        "last_inside_10_80": {
+          "position_sessions": 64,
+          "gross_dollar_sessions": 466188.8000000005
+        },
+        "eligible_but_missing_tape": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 7,
+      "terminal_stale_gross": 7284.2,
+      "missing_scheduled_exits": 1,
+      "delayed_fills": 0
+    },
+    "OBSERVED_REC_BOTTOM8": {
+      "side": "long",
+      "groups": {
+        "eligible_but_missing_tape": {
+          "position_sessions": 1,
+          "gross_dollar_sessions": 4135.9400000000005
+        },
+        "last_below_10": {
+          "position_sessions": 372,
+          "gross_dollar_sessions": 1170584.3319999897
+        },
+        "primary": {
+          "position_sessions": 372,
+          "gross_dollar_sessions": 1170584.3319999897
+        },
+        "other_documented_exclusion": {
+          "position_sessions": 196,
+          "gross_dollar_sessions": 810644.2399999964
+        },
+        "documented_price_range_exclusion": {
+          "position_sessions": 239,
+          "gross_dollar_sessions": 1105036.1520000002
+        },
+        "last_inside_10_80": {
+          "position_sessions": 64,
+          "gross_dollar_sessions": 749232.0
+        },
+        "reserve": {
+          "position_sessions": 64,
+          "gross_dollar_sessions": 749232.0
+        },
+        "no_eligibility_row": {
+          "position_sessions": 0,
+          "gross_dollar_sessions": 0.0
+        }
+      },
+      "terminal_tickets": 19,
+      "terminal_stale_gross": 17877.998,
+      "missing_scheduled_exits": 3,
+      "delayed_fills": 0
+    }
+  },
+  "interpretation": "Source reasons and last known price bands, not guesses about unobserved prices; entry eligibility is not held-position coverage"
+}

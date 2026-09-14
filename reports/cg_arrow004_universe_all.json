@@ -1,0 +1,327 @@
+{
+  "timestamp": "2026-09-14T01:15:26+00:00",
+  "mode": "ALL",
+  "signals": [
+    {
+      "signal": "2025-09-03",
+      "entry_rule_field": 1295,
+      "rankable_full_field": 1277,
+      "unrankable_endpoints": 18
+    },
+    {
+      "signal": "2025-09-10",
+      "entry_rule_field": 1303,
+      "rankable_full_field": 1282,
+      "unrankable_endpoints": 21
+    },
+    {
+      "signal": "2025-09-17",
+      "entry_rule_field": 1325,
+      "rankable_full_field": 1297,
+      "unrankable_endpoints": 28
+    },
+    {
+      "signal": "2025-09-24",
+      "entry_rule_field": 1345,
+      "rankable_full_field": 1306,
+      "unrankable_endpoints": 39
+    },
+    {
+      "signal": "2025-10-01",
+      "entry_rule_field": 1372,
+      "rankable_full_field": 1324,
+      "unrankable_endpoints": 48
+    },
+    {
+      "signal": "2025-10-08",
+      "entry_rule_field": 1353,
+      "rankable_full_field": 1316,
+      "unrankable_endpoints": 37
+    },
+    {
+      "signal": "2025-10-15",
+      "entry_rule_field": 1333,
+      "rankable_full_field": 1297,
+      "unrankable_endpoints": 36
+    },
+    {
+      "signal": "2025-10-22",
+      "entry_rule_field": 1290,
+      "rankable_full_field": 1259,
+      "unrankable_endpoints": 31
+    },
+    {
+      "signal": "2025-10-29",
+      "entry_rule_field": 1305,
+      "rankable_full_field": 1275,
+      "unrankable_endpoints": 30
+    },
+    {
+      "signal": "2025-11-05",
+      "entry_rule_field": 1380,
+      "rankable_full_field": 1339,
+      "unrankable_endpoints": 41
+    },
+    {
+      "signal": "2025-11-12",
+      "entry_rule_field": 1327,
+      "rankable_full_field": 1287,
+      "unrankable_endpoints": 40
+    },
+    {
+      "signal": "2025-11-19",
+      "entry_rule_field": 1346,
+      "rankable_full_field": 1286,
+      "unrankable_endpoints": 60
+    },
+    {
+      "signal": "2025-11-25",
+      "entry_rule_field": 1411,
+      "rankable_full_field": 1365,
+      "unrankable_endpoints": 46
+    },
+    {
+      "signal": "2025-12-03",
+      "entry_rule_field": 1322,
+      "rankable_full_field": 1290,
+      "unrankable_endpoints": 32
+    },
+    {
+      "signal": "2025-12-10",
+      "entry_rule_field": 1343,
+      "rankable_full_field": 1319,
+      "unrankable_endpoints": 24
+    },
+    {
+      "signal": "2025-12-17",
+      "entry_rule_field": 1376,
+      "rankable_full_field": 1347,
+      "unrankable_endpoints": 29
+    },
+    {
+      "signal": "2025-12-23",
+      "entry_rule_field": 1334,
+      "rankable_full_field": 1306,
+      "unrankable_endpoints": 28
+    },
+    {
+      "signal": "2025-12-30",
+      "entry_rule_field": 1227,
+      "rankable_full_field": 1201,
+      "unrankable_endpoints": 26
+    },
+    {
+      "signal": "2026-01-07",
+      "entry_rule_field": 1367,
+      "rankable_full_field": 1342,
+      "unrankable_endpoints": 25
+    },
+    {
+      "signal": "2026-01-14",
+      "entry_rule_field": 1331,
+      "rankable_full_field": 1304,
+      "unrankable_endpoints": 27
+    },
+    {
+      "signal": "2026-01-21",
+      "entry_rule_field": 1357,
+      "rankable_full_field": 1321,
+      "unrankable_endpoints": 36
+    },
+    {
+      "signal": "2026-01-28",
+      "entry_rule_field": 1302,
+      "rankable_full_field": 1276,
+      "unrankable_endpoints": 26
+    },
+    {
+      "signal": "2026-02-04",
+      "entry_rule_field": 1416,
+      "rankable_full_field": 1372,
+      "unrankable_endpoints": 44
+    },
+    {
+      "signal": "2026-02-11",
+      "entry_rule_field": 1311,
+      "rankable_full_field": 1271,
+      "unrankable_endpoints": 40
+    },
+    {
+      "signal": "2026-02-18",
+      "entry_rule_field": 1318,
+      "rankable_full_field": 1271,
+      "unrankable_endpoints": 47
+    },
+    {
+      "signal": "2026-02-25",
+      "entry_rule_field": 1371,
+      "rankable_full_field": 1322,
+      "unrankable_endpoints": 49
+    },
+    {
+      "signal": "2026-03-04",
+      "entry_rule_field": 1392,
+      "rankable_full_field": 1340,
+      "unrankable_endpoints": 52
+    },
+    {
+      "signal": "2026-03-11",
+      "entry_rule_field": 1395,
+      "rankable_full_field": 1334,
+      "unrankable_endpoints": 61
+    },
+    {
+      "signal": "2026-03-18",
+      "entry_rule_field": 1369,
+      "rankable_full_field": 1309,
+      "unrankable_endpoints": 60
+    },
+    {
+      "signal": "2026-03-25",
+      "entry_rule_field": 1367,
+      "rankable_full_field": 1308,
+      "unrankable_endpoints": 59
+    },
+    {
+      "signal": "2026-04-01",
+      "entry_rule_field": 1427,
+      "rankable_full_field": 1383,
+      "unrankable_endpoints": 44
+    },
+    {
+      "signal": "2026-04-08",
+      "entry_rule_field": 1321,
+      "rankable_full_field": 1297,
+      "unrankable_endpoints": 24
+    },
+    {
+      "signal": "2026-04-15",
+      "entry_rule_field": 1313,
+      "rankable_full_field": 1297,
+      "unrankable_endpoints": 16
+    },
+    {
+      "signal": "2026-04-22",
+      "entry_rule_field": 1345,
+      "rankable_full_field": 1328,
+      "unrankable_endpoints": 17
+    },
+    {
+      "signal": "2026-04-29",
+      "entry_rule_field": 1333,
+      "rankable_full_field": 1302,
+      "unrankable_endpoints": 31
+    },
+    {
+      "signal": "2026-05-06",
+      "entry_rule_field": 1376,
+      "rankable_full_field": 1329,
+      "unrankable_endpoints": 47
+    },
+    {
+      "signal": "2026-05-13",
+      "entry_rule_field": 1392,
+      "rankable_full_field": 1333,
+      "unrankable_endpoints": 59
+    },
+    {
+      "signal": "2026-05-20",
+      "entry_rule_field": 1359,
+      "rankable_full_field": 1295,
+      "unrankable_endpoints": 64
+    },
+    {
+      "signal": "2026-05-27",
+      "entry_rule_field": 1375,
+      "rankable_full_field": 1342,
+      "unrankable_endpoints": 33
+    },
+    {
+      "signal": "2026-06-03",
+      "entry_rule_field": 1423,
+      "rankable_full_field": 1046,
+      "unrankable_endpoints": 377
+    },
+    {
+      "signal": "2026-06-10",
+      "entry_rule_field": 1394,
+      "rankable_full_field": 1024,
+      "unrankable_endpoints": 370
+    },
+    {
+      "signal": "2026-06-17",
+      "entry_rule_field": 1380,
+      "rankable_full_field": 1006,
+      "unrankable_endpoints": 374
+    },
+    {
+      "signal": "2026-06-24",
+      "entry_rule_field": 1403,
+      "rankable_full_field": 995,
+      "unrankable_endpoints": 408
+    },
+    {
+      "signal": "2026-07-01",
+      "entry_rule_field": 1451,
+      "rankable_full_field": 1028,
+      "unrankable_endpoints": 423
+    },
+    {
+      "signal": "2026-07-08",
+      "entry_rule_field": 1373,
+      "rankable_full_field": 960,
+      "unrankable_endpoints": 413
+    },
+    {
+      "signal": "2026-07-15",
+      "entry_rule_field": 1322,
+      "rankable_full_field": 917,
+      "unrankable_endpoints": 405
+    },
+    {
+      "signal": "2026-07-22",
+      "entry_rule_field": 1322,
+      "rankable_full_field": 907,
+      "unrankable_endpoints": 415
+    },
+    {
+      "signal": "2026-07-29",
+      "entry_rule_field": 1334,
+      "rankable_full_field": 928,
+      "unrankable_endpoints": 406
+    },
+    {
+      "signal": "2026-08-05",
+      "entry_rule_field": 1415,
+      "rankable_full_field": 1005,
+      "unrankable_endpoints": 410
+    },
+    {
+      "signal": "2026-08-12",
+      "entry_rule_field": 1326,
+      "rankable_full_field": 937,
+      "unrankable_endpoints": 389
+    },
+    {
+      "signal": "2026-08-19",
+      "entry_rule_field": 1353,
+      "rankable_full_field": 943,
+      "unrankable_endpoints": 410
+    },
+    {
+      "signal": "2026-08-26",
+      "entry_rule_field": 1312,
+      "rankable_full_field": 915,
+      "unrankable_endpoints": 397
+    }
+  ],
+  "unique_ranked_symbols": 2423,
+  "feature_coverage": {
+    "long_pool_slots": 1040,
+    "long_missing_history20": 48,
+    "short_pool_slots": 1040,
+    "short_missing_history20": 54
+  },
+  "checks": "All rankable rows satisfy inherited common-stock and ETP exclusions, price/dollar-volume rules; no ticker cap; entire field ranked before twenty retained; every prepared feature recomputed using signal-bounded history",
+  "limitation": "Rankable field is conditional on available endpoint observations. Acquisition max-price differences are retained as unrankable counts, not hidden eligibility changes."
+}

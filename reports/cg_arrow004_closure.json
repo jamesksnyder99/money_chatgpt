@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-09-14T01:17:42+00:00",
+  "elapsed_minutes": 124.05747043333346,
+  "start": "2026-09-13T23:13:39+00:00",
+  "deadline": "2026-09-14T01:43:39+00:00",
+  "status": "SCIENTIFIC_DELIVERABLES_COMPLETE_PENDING_FINAL_GIT_CLOSURE",
+  "freeze_sha256": "00d9e96fdc73ee65b1f04e74244a82f3ba5a1bf0f86c5413d2f4c320195808a3",
+  "frozen_books": 32,
+  "new_finalists": [
+    "A8_PATIENT_RECOVERY",
+    "L5_REC_SELECT8"
+  ],
+  "oos_batches": 1,
+  "identical_resume_only": true,
+  "all_signal_chronological_accounts": true,
+  "source_repo_access": false,
+  "arrow005_started": false,
+  "code_identity_matches": true,
+  "dependency_identity_matches": true,
+  "tests": {
+    "full_suite_passed": 549,
+    "full_suite_seconds": 15.62,
+    "focused_passed_before_freeze": 32
+  },
+  "public_aggregate_checks": {
+    "daily_rows": 24096,
+    "schedule_rows": 4992,
+    "book_mode_accounts_reconciled": 96,
+    "observed_hold_durations_valid": true
+  },
+  "research_effort_estimates_minutes": {
+    "short": 25,
+    "long_range": [
+      55,
+      60
+    ],
+    "interpretation": "Retrospective substantive work categories,not instrumented CPU time;shared engineering/reporting/replays excluded"
+  },
+  "failed_frozen_claims": [
+    "L5_REC_SELECT8",
+    "A8_PATIENT_RECOVERY"
+  ],
+  "staged_public_review": {
+    "files": 15,
+    "result": "PASS",
+    "scope": "All staged bytes plus manual schemas/CSV row conservation/narrative review;final push diff reviewed separately before push"
+  },
+  "final_precommit_checkpoint": "2026-09-14T01:18:54+00:00",
+  "final_precommit_elapsed_minutes": 125.26114340666658
+}

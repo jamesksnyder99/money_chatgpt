@@ -156,3 +156,53 @@ Committed pre-reveal IS closure:5f8a3af.
   -m research.cg_arrow004_confirmation freeze --selection reports/cg_arrow004_selection.json
   Freeze timestamp:2026-09-14T01:08:48+00:00; elapsed minutes:115.15682640333326;2 finalists and30 controls.
   Freeze and code committed before one OOS batch; identities unchanged.
+
+Freeze commit:d2987a0.
+  -m research.cg_arrow004_confirmation confirmation --workers 8
+  Pre-reveal verification:77,073 local raw source files,all unchanged.
+  -m pytest tests/ -q --basetemp=data/tmp/cg_arrow004_tests_final
+  Complete suite:549 passed in15.62s. TEMP/TMP and pytest basetemp remain inside the lab. Frozen code unchanged.
+
+Single OOS batch completed:32/32 frozen books. Both finalist claims failed. No rescore or policy change.
+  -m research.cg_arrow004_confirmation investor --workers 8
+  One chronological account per frozen policy,not a sum of isolated books.
+
+Final frozen output and audits:
+  -m research.cg_arrow004_audit oracle --mode ALL
+  All32 chronological accounts independently reconcile cash/equity/gross.
+  -m research.cg_arrow004_report build
+  32 books x3 modes x251 sessions =24,096 aggregate daily rows;
+  32 x3 x52 nominal cohorts =4,992 schedule rows.
+  Editorial outcome/audit/effort paragraphs added to generated Markdown;
+  no frozen code, rules, results, dates or trades changed.
+  -m research.cg_arrow004_minute --mode ALL --ids S0_R4 S0_R5 BRIDGE_R4 BRIDGE_R5 L0 L4 L5 L5_REC_NORM8 L5_REC_SELECT8 A6_RECOVERY_EQUAL A8_PATIENT_RECOVERY PATIENT_MIRROR OBSERVED_REC_BOTTOM8 IWM_L5 IWM_L5_REC_SELECT8 IWM_A8_PATIENT_RECOVERY
+  16 key books,all251 EOD accounts reconcile against minute walks.
+  -m research.cg_arrow004_falsify coverage --mode ALL --ids S0_R4 S0_R5 BRIDGE_R4 BRIDGE_R5 L0 L4 L5 L5_REC_NORM8 L5_REC_SELECT8 A6_RECOVERY_EQUAL A8_PATIENT_RECOVERY PATIENT_MIRROR OBSERVED_REC_BOTTOM8
+  13 coverage books;counts and exposure amounts reconcile.
+  -m research.cg_arrow004_integrity universe --mode ALL
+  All52 signals;1,040 pool slots per side;full eligible fields and causal features verified.
+  -m research.cg_arrow004_integrity inherited
+  All63 inherited evidence files unchanged versus1827380.
+  -m research.cg_arrow004_long_evidence --mode ALL --ids L5 L5_REC_NORM8 L5_REC_SELECT8 A6_RECOVERY_EQUAL A8_PATIENT_RECOVERY PATIENT_MIRROR OBSERVED_REC_BOTTOM8
+  Seven completed-book attribution/concentration checks;no revised policy.
+  -m research.cg_arrow004_raw_audit manifest --mode ALL
+  SHA-256 identity manifest:113,995 referenced local copied source files.
+  No live data pull,no source-repository access,no credential values used.
+  -m scripts.cg_arrow004_closure finalcheck
+
+Git closure procedure (executed after scientific checkpoint):
+  git add -- reports/cg_arrow004*
+  git diff --cached --check
+  -m scripts.cg_arrow004_safety
+  Manual aggregate schemas,CSV fields/rows,narrative results and staged paths/content review.
+  git commit -m "Report Arrow 004 failed confirmation and completed account audits"
+  -m scripts.cg_arrow004_safety --base 1827380
+  git diff 1827380 HEAD --stat
+  git push origin main
+  git rev-parse HEAD
+  git ls-remote origin refs/heads/main
+  git status --porcelain
+  Actual final SHA,elapsed and remote equality are recorded in the handoff
+  and ignored local state after push,avoiding a self-referential report SHA.
+
+Actual staged review:15 files,9,614,531 bytes before this review annotation,zero flagged issues. All JSON schemas and CSV fields checked;24,096 daily rows reconcile96 book/mode accounts;4,992 schedule rows have valid observed holding durations. Both failed claims retained.
