@@ -6890,6 +6890,11 @@
       "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow006/r4r5_trade_exceptions_initial.csv",
       "sha256": "0a54f3d9718e910e2e1a0e7c18cf00ab259b295d216786933638d33d076a8722",
       "bytes": 1208682
+    },
+    "r4r5_ranking_window_diagnostics.csv": {
+      "path": "handoff/outgoing/cg_arrow006/r4r5_ranking_window_diagnostics.csv",
+      "sha256": "068833ea2b810154bc0f2f7dc6368cd1f07c2ae57d15720c1e059f4408bc9565",
+      "bytes": 13431
     }
   },
   "log": [
@@ -6915,5 +6920,214 @@
     "2026-09-14T12:46:36+00:00 +0.5m selection integrity R5/R1: 64 uncertified rank units carrying 48,270.80 of 65,676.39",
     "2026-09-14T12:46:36+00:00 +0.5m selection integrity R5/R2: 121 uncertified rank units carrying 123,292.12 of 140,256.07",
     "2026-09-14T12:46:36+00:00 +0.5m GATE NOT_RUN_DATA_GATE blockers=['121 corrected selections rest on a ranking window containing an undocumented discontinuity of 2x or more, so their 15-session return is not certified to be in consistent price units']"
-  ]
+  ],
+  "ranking_window_diagnostics": {
+    "timestamp": "2026-09-14T12:54:05+00:00",
+    "flags_characterised": 121,
+    "classification_counts": {
+      "CONSOLIDATION_SIGNATURE_FROM_BELOW_ELIGIBILITY_FLOOR": 28,
+      "PRICE_RISE_WITHOUT_VOLUME_CONTRACTION": 85,
+      "ENDPOINTS_UNAVAILABLE": 2,
+      "CONSOLIDATION_SIGNATURE": 2,
+      "OTHER_DISCONTINUITY": 4
+    },
+    "consolidation_signature_total": 30,
+    "from_below_eligibility_floor": 28,
+    "method": "joint price and share-volume behaviour at the flagged session; a consolidation multiplies price and divides share volume by the same factor. Diagnostic only: no corporate action is inferred and no price is adjusted.",
+    "local_detail": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow006/r4r5_ranking_window_diagnostics.csv"
+  },
+  "ranking_window_class_pnl": {
+    "PARENT/R1": {
+      "trades": 415,
+      "net": 36536.55,
+      "by_class": {
+        "PRICE_RISE_WITHOUT_VOLUME_CONTRACTION": {
+          "trades": 44,
+          "net": 22996.84
+        },
+        "CERTIFIED_OR_RESOLVED": {
+          "trades": 351,
+          "net": 6123.13
+        },
+        "CONSOLIDATION_SIGNATURE": {
+          "trades": 2,
+          "net": 2957.0
+        },
+        "UNCLASSIFIED": {
+          "trades": 3,
+          "net": 2672.25
+        },
+        "CONSOLIDATION_SIGNATURE_FROM_BELOW_ELIGIBILITY_FLOOR": {
+          "trades": 11,
+          "net": 1758.25
+        },
+        "OTHER_DISCONTINUITY": {
+          "trades": 3,
+          "net": 395.24
+        },
+        "ENDPOINTS_UNAVAILABLE": {
+          "trades": 1,
+          "net": -366.17
+        }
+      }
+    },
+    "PARENT/R2": {
+      "trades": 415,
+      "net": 114855.8,
+      "by_class": {
+        "PRICE_RISE_WITHOUT_VOLUME_CONTRACTION": {
+          "trades": 85,
+          "net": 85715.37
+        },
+        "CERTIFIED_OR_RESOLVED": {
+          "trades": 294,
+          "net": 13971.56
+        },
+        "CONSOLIDATION_SIGNATURE_FROM_BELOW_ELIGIBILITY_FLOOR": {
+          "trades": 28,
+          "net": 12468.24
+        },
+        "CONSOLIDATION_SIGNATURE": {
+          "trades": 2,
+          "net": 2957.0
+        },
+        "ENDPOINTS_UNAVAILABLE": {
+          "trades": 2,
+          "net": -1837.97
+        },
+        "OTHER_DISCONTINUITY": {
+          "trades": 4,
+          "net": 1581.59
+        }
+      }
+    },
+    "R4/R1": {
+      "trades": 415,
+      "net": 57025.53,
+      "by_class": {
+        "PRICE_RISE_WITHOUT_VOLUME_CONTRACTION": {
+          "trades": 44,
+          "net": 28215.77
+        },
+        "CERTIFIED_OR_RESOLVED": {
+          "trades": 351,
+          "net": 19264.57
+        },
+        "CONSOLIDATION_SIGNATURE": {
+          "trades": 2,
+          "net": 3814.4
+        },
+        "UNCLASSIFIED": {
+          "trades": 3,
+          "net": 3435.42
+        },
+        "CONSOLIDATION_SIGNATURE_FROM_BELOW_ELIGIBILITY_FLOOR": {
+          "trades": 11,
+          "net": 2258.27
+        },
+        "OTHER_DISCONTINUITY": {
+          "trades": 3,
+          "net": 508.99
+        },
+        "ENDPOINTS_UNAVAILABLE": {
+          "trades": 1,
+          "net": -471.89
+        }
+      }
+    },
+    "R4/R2": {
+      "trades": 415,
+      "net": 127546.11,
+      "by_class": {
+        "PRICE_RISE_WITHOUT_VOLUME_CONTRACTION": {
+          "trades": 85,
+          "net": 93282.44
+        },
+        "CONSOLIDATION_SIGNATURE_FROM_BELOW_ELIGIBILITY_FLOOR": {
+          "trades": 28,
+          "net": 16224.89
+        },
+        "CERTIFIED_OR_RESOLVED": {
+          "trades": 294,
+          "net": 14557.0
+        },
+        "CONSOLIDATION_SIGNATURE": {
+          "trades": 2,
+          "net": 3814.4
+        },
+        "ENDPOINTS_UNAVAILABLE": {
+          "trades": 2,
+          "net": -2371.55
+        },
+        "OTHER_DISCONTINUITY": {
+          "trades": 4,
+          "net": 2038.93
+        }
+      }
+    },
+    "R5/R1": {
+      "trades": 415,
+      "net": 65676.39,
+      "by_class": {
+        "PRICE_RISE_WITHOUT_VOLUME_CONTRACTION": {
+          "trades": 44,
+          "net": 37730.3
+        },
+        "CERTIFIED_OR_RESOLVED": {
+          "trades": 351,
+          "net": 17405.59
+        },
+        "UNCLASSIFIED": {
+          "trades": 3,
+          "net": 5720.1
+        },
+        "CONSOLIDATION_SIGNATURE": {
+          "trades": 2,
+          "net": 3063.93
+        },
+        "CONSOLIDATION_SIGNATURE_FROM_BELOW_ELIGIBILITY_FLOOR": {
+          "trades": 11,
+          "net": 2109.01
+        },
+        "ENDPOINTS_UNAVAILABLE": {
+          "trades": 1,
+          "net": -761.99
+        },
+        "OTHER_DISCONTINUITY": {
+          "trades": 3,
+          "net": 409.45
+        }
+      }
+    },
+    "R5/R2": {
+      "trades": 415,
+      "net": 140256.07,
+      "by_class": {
+        "PRICE_RISE_WITHOUT_VOLUME_CONTRACTION": {
+          "trades": 85,
+          "net": 109714.74
+        },
+        "CERTIFIED_OR_RESOLVED": {
+          "trades": 294,
+          "net": 16963.95
+        },
+        "CONSOLIDATION_SIGNATURE_FROM_BELOW_ELIGIBILITY_FLOOR": {
+          "trades": 28,
+          "net": 9942.79
+        },
+        "CONSOLIDATION_SIGNATURE": {
+          "trades": 2,
+          "net": 3063.93
+        },
+        "OTHER_DISCONTINUITY": {
+          "trades": 4,
+          "net": 2872.91
+        },
+        "ENDPOINTS_UNAVAILABLE": {
+          "trades": 2,
+          "net": -2302.25
+        }
+      }
+    }
+  }
 }

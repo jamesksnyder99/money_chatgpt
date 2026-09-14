@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-09-14T12:54:05+00:00",
+  "flags_characterised": 121,
+  "classification_counts": {
+    "CONSOLIDATION_SIGNATURE_FROM_BELOW_ELIGIBILITY_FLOOR": 28,
+    "PRICE_RISE_WITHOUT_VOLUME_CONTRACTION": 85,
+    "ENDPOINTS_UNAVAILABLE": 2,
+    "CONSOLIDATION_SIGNATURE": 2,
+    "OTHER_DISCONTINUITY": 4
+  },
+  "consolidation_signature_total": 30,
+  "from_below_eligibility_floor": 28,
+  "method": "joint price and share-volume behaviour at the flagged session; a consolidation multiplies price and divides share volume by the same factor. Diagnostic only: no corporate action is inferred and no price is adjusted.",
+  "local_detail": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow006/r4r5_ranking_window_diagnostics.csv"
+}

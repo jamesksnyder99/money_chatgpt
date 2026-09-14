@@ -14,10 +14,10 @@ Executor: Opus in Claude Code. Start 2026-09-14 11:31 UTC, hard maximum 180 minu
 | Corporate actions | **EXTENDED, NOT COMPLETE** | Eleven documented events, twenty dated resolutions, two identity changes, one trading event. |
 | Independent reconciliation | **PASSED** | 3,735 trade rows, 468 cohort subtotals, nine daily books; maximum absolute difference 1.8e-12. |
 | R1 — historically intended decisions | **VERIFIED** | All 409 frozen positions reproduced, 372 unchanged legs identical to 9e-13, seven repaired entries and 43 repaired exits, zero quantity mismatches. |
-| R2 — unchanged rule on complete inputs | **NOT CERTIFIED** | 121 of 415 completed trades were ranked on a window containing an undocumented discontinuity of 2x or more; they carry 88% of the total. |
+| R2 — unchanged rule on complete inputs | **NOT CERTIFIED** | 121 of 415 completed trades were ranked on a window containing an undocumented discontinuity of 2x or more and carry 88% of the total. A bounded diagnostic splits them: 30 show a share-consolidation signature, 85 show a price rise with expanding volume consistent with genuine repricing. |
 | H1–H10 horizon census | **NOT RUN (data gate)** | Horizons must clone the verified R2 ledger; that ledger is not certified. No real-data cell was scored, no OOS cell revealed. |
 
-**The repair succeeded; the economics did not survive it.** Every observation the ledgers need is now retrieved and checked, and the accounting reconciles exactly. What the completed substrate reveals is that the apparent profits of both the historical and the corrected baselines are concentrated in trades whose *selection* rests on price series that are not certified to be in consistent units.
+**The repair succeeded; the economics are not yet certifiable.** Every observation the ledgers need is now retrieved and checked, and the accounting reconciles exactly. What the completed substrate reveals is that the apparent profits of both the historical and the corrected baselines are concentrated in trades whose *selection* rests on price series not certified to be in consistent units. That is a statement about evidence, not a verdict that the profits are false: the diagnostic in section 7 shows most of the flagged population behaving like genuine repricing and a minority behaving like share consolidations.
 
 ## 1. Credentials and vendor access
 
@@ -91,6 +91,39 @@ Not every flag is a split. OCTO's 31x on 2025-09-08 is the documented Worldcoin 
 
 **The same defect is present in the inherited historical selection**, which this arrow did not create: 64 of R1's 415 completed trades carry 83% of PARENT's R1 total. Arrow 003's discontinuity screen was in-sample only and covered holding windows, not ranking windows, so this was not previously measured.
 
+## 7. What the flagged population actually looks like
+
+The 2x flag asks for evidence; it does not decide the answer. A bounded diagnostic records the
+joint price and share-volume behaviour at each flagged session. A share consolidation multiplies
+price and divides share volume by the same factor; a genuine repricing does not. Nothing here
+infers a corporate action or adjusts a price.
+
+| Class | Flags | PARENT net | R4 net | R5 net |
+|---|---:|---:|---:|---:|
+| Price rise with expanding volume, consistent with genuine repricing | 85 | 85,715.37 | 93,282.44 | 109,714.74 |
+| Consolidation signature, entering from below the $10 eligibility floor | 28 | 12,468.24 | 16,224.89 | 9,942.79 |
+| Consolidation signature, already inside the band | 2 | 2,957.00 | 3,814.40 | 3,063.93 |
+| Other discontinuity | 4 | 1,581.59 | 2,038.93 | 2,872.91 |
+| Endpoints unavailable | 2 | −1,837.97 | −2,371.55 | −2,302.25 |
+| Certified or already resolved selections | 294 | 13,971.56 | 14,557.00 | 16,963.95 |
+
+Three worked cases make the mechanism concrete. FGL closed at $0.0978 on 2026-02-09 and $15.44
+on 2026-02-10 while share volume fell to a seventh; DFNS went from $0.0424 to $4.30 with volume
+falling to a four-hundredth; WETO went from $0.0867 to $7.12 with volume falling to a
+two-thousandth. Each was below the $10 eligibility floor the session before and inside the
+$10–$80 band the session after, so the consolidation is what made the security eligible at all,
+and its unadjusted 15-session return of several thousand percent put it at the top of a ranking
+that sorts by exactly that quantity.
+
+Against that, OCTO's 31x carried an eight-thousand-fold increase in share volume, which is the
+documented Worldcoin treasury announcement rather than a consolidation. Roughly three quarters of
+the flagged profit sits in that second group. The honest reading is therefore narrower than the
+headline count: most of the flagged population probably is genuine, a clear minority is probably
+a units artefact, and none of it is certified until each name carries issuer or exchange evidence.
+
+Detail per flag is in the local `r4r5_ranking_window_diagnostics.csv`; counts are in
+`reports/cg_arrow006_ranking_window_diagnostics.json`.
+
 ## 7. Costs and scenarios
 
 Inherited assumptions only: $0.005 per share per side commission, a max($0.01, 0.10% of price) spread proxy per side, 0/10/30% annualised borrow on marked gross by actual calendar days, doubled-spread stress. No idle-cash yield.
@@ -115,7 +148,7 @@ Scoring thirty horizon cells on an uncertified entry ledger would inherit the de
 
 Established: the acquisition and validation pipeline works end to end; the selected-trade lifecycle is complete; the corrected $10–$80 field and the test-issue exclusion are rebuilt and certified; R1 reproduces the historically intended decisions exactly and repairs their observations; the accounting reconciles independently to 1.8e-12.
 
-Not established: any verified profit figure for PARENT, R4 or R5. Both the historical and corrected baselines depend for most of their measured profit on selections whose ranking units are uncertified. A positive reconstructed total is not evidence of a working strategy until those units are certified, and the direction of the correction cannot be predicted from the flags alone.
+Not established: any verified profit figure for PARENT, R4 or R5. Both the historical and corrected baselines depend for most of their measured profit on selections whose ranking units are uncertified. The diagnostic suggests the eventual correction removes a minority rather than the majority of the flagged profit, but a suggestion is not certification, and the arithmetic of a trade selected on a fabricated return is not rescued by the trade being profitable.
 
 ## 10. Exact resumable next step
 
