@@ -1,0 +1,28 @@
+basis,metric,value
+"number of cohorts making 0,1,2,... swaps",cohorts_by_substitution_count,"{""0"": 2, ""1"": 7, ""2"": 9, ""3"": 22, ""4"": 10, ""5"": 2}"
+outgoing/incoming pairs across all cohorts,total_swaps,141
+original rank of removed names,mean_outgoing_original_rank,5.687943
+original rank of added names,mean_incoming_original_rank,13.198582
+"distance from the 20-session high, removed",mean_outgoing_close_vs_high20,-0.023697
+"distance from the 20-session high, removed",median_outgoing_close_vs_high20,-0.021846
+"distance from the 20-session high, added",mean_incoming_close_vs_high20,-0.120424
+"distance from the 20-session high, added",median_incoming_close_vs_high20,-0.093117
+"sizing-neutral ten-session short return, removed",mean_outgoing_price_return_10,0.004984
+"sizing-neutral ten-session short return, added",mean_incoming_price_return_10,-0.005751
+"sizing-neutral, removed",median_outgoing_price_return_10,-0.000722
+"sizing-neutral, added",median_incoming_price_return_10,0.018492
+share of removed names that faded,outgoing_hit_rate,0.475177
+share of added names that faded,incoming_hit_rate,0.574468
+fixed-dollar net of removed names that won,profit_forfeited_on_outgoing_winners,31808.524825
+fixed-dollar net avoided on removed names that lost,loss_avoided_on_outgoing_losers,30227.178571
+fixed-dollar net of added names that won,profit_gained_on_incoming_winners,45274.953901
+fixed-dollar net lost on added names that lost,loss_added_on_incoming_losers,-44359.488976
+"added minus removed, fixed-dollar, at equalized cohort budget",net_fixed_dollar_swap_effect,-665.881329
+complete account marked P&L at 2026-08-31 minus the incumbent,C2_minus_C0_marked_pnl_FIXED_DOLLAR,-15572.84
+complete account marked P&L at 2026-08-31 minus the incumbent,C2_minus_C0_marked_pnl_EQUITY_SCALED,-52457.94
+complete account marked P&L at 2026-08-31 minus the incumbent,C2R_minus_C0_marked_pnl_FIXED_DOLLAR,-10242.59
+complete account marked P&L at 2026-08-31 minus the incumbent,C2R_minus_C0_marked_pnl_EQUITY_SCALED,-36831.77
+complete account marked P&L at 2026-08-31 minus the incumbent,C3_minus_C0_marked_pnl_FIXED_DOLLAR,13542.25
+complete account marked P&L at 2026-08-31 minus the incumbent,C3_minus_C0_marked_pnl_EQUITY_SCALED,32711.77
+complete account marked P&L at 2026-08-31 minus the incumbent,C3R_minus_C0_marked_pnl_FIXED_DOLLAR,19012.77
+complete account marked P&L at 2026-08-31 minus the incumbent,C3R_minus_C0_marked_pnl_EQUITY_SCALED,53631.09

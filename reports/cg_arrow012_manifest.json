@@ -1,0 +1,785 @@
+{
+  "arrow": "CG Arrow 012",
+  "executor": "Opus in Claude Code",
+  "timestamp": "2026-09-14T23:07:15+00:00",
+  "head_at_run": "8d05bcc19d90065affb9a589ddbb94849e41b29b",
+  "freeze_commit": "8d05bcc19d90065affb9a589ddbb94849e41b29b",
+  "config_version": "cg_arrow012_challengers_v1",
+  "holdout_embargo": {
+    "frozen_cohort_count": 52,
+    "guard_ok": true,
+    "scored_cohort_count": 52,
+    "declaration": "Arrow 012 scores only the frozen 52 signal cohorts from 2025-09 through 2026-08. No signal cohort outside this set is read, ranked, featurized, scored or summarized, even if new files appear locally. Lookback and lifecycle observations required by the frozen 52 remain permitted."
+  },
+  "phase_a": {
+    "stats_version": "cg_arrow012_repaired_within_cohort_v1",
+    "overall_verdict": "A11_RELATIONSHIP_SURVIVES_REPAIR",
+    "direct_group_verdict": "A11_RELATIONSHIP_UNAFFECTED_DIRECT_GROUP_RESULT",
+    "verdict_counts": {
+      "UNSCORABLE_AFTER_REPAIR": 2,
+      "SURVIVES_REPAIR": 18,
+      "STILL_NO_SIGNAL": 14,
+      "APPEARS_ONLY_AFTER_REPAIR": 8
+    },
+    "lost_after_repair": [],
+    "a11_replicated": [
+      "cx_gap_to_next_rank",
+      "cx_rank_in_eight",
+      "cx_ret15_field_percentile",
+      "cx_ret15_minus_cohort_median",
+      "po_partial_range_pct",
+      "sc_close_vs_high20",
+      "sc_close_vs_max_close15",
+      "sc_dollar_volume_cv20",
+      "sc_logret_std_15",
+      "sc_position_in_range20",
+      "sc_ret15",
+      "sc_signal_day_range_pct",
+      "sc_top3_sessions_share_of_advance",
+      "sc_up_sessions_15",
+      "sc_volume_expansion_15"
+    ],
+    "rank_one_direct_group": {
+      "IS": {
+        "rank1": {
+          "n": 25,
+          "mean": 0.32739384808776467,
+          "median": 0.3674568965517242,
+          "hit_rate": 0.88
+        },
+        "ranks2_8": {
+          "n": 175,
+          "mean": 0.014969193536692656,
+          "median": -0.0014154281670204494,
+          "hit_rate": 0.48
+        }
+      },
+      "OOS": {
+        "rank1": {
+          "n": 27,
+          "mean": 0.22127515359466624,
+          "median": 0.29926351633142223,
+          "hit_rate": 0.7777777777777778
+        },
+        "ranks2_8": {
+          "n": 189,
+          "mean": 0.05612119073913016,
+          "median": 0.035495902827731796,
+          "hit_rate": 0.5531914893617021
+        }
+      },
+      "ALL": {
+        "rank1": {
+          "n": 52,
+          "mean": 0.2722937567163482,
+          "median": 0.3606366874602104,
+          "hit_rate": 0.8269230769230769
+        },
+        "ranks2_8": {
+          "n": 364,
+          "mean": null,
+          "median": null,
+          "hit_rate": null
+        }
+      }
+    }
+  },
+  "phase_b": {
+    "c0_reproduction": {
+      "equity_scaled_eventual": {
+        "expected": 230566.36,
+        "observed": 230566.3561054,
+        "ok": true
+      },
+      "equity_scaled_ending_equity": {
+        "expected": 330719.74,
+        "observed": 330719.7416604004,
+        "ok": true
+      },
+      "fixed_dollar_eventual": {
+        "expected": 128864.62,
+        "observed": 128864.6248656,
+        "ok": true
+      },
+      "fixed_dollar_ending_equity": {
+        "expected": 228986.4,
+        "observed": 228986.40067059905,
+        "ok": true
+      }
+    },
+    "accounts": {
+      "C0/EQUITY_SCALED": {
+        "A_completed_trade_pnl_all_cohorts": 230566.3561054,
+        "B_marked_account_pnl_at_cutoff": 230719.7416604004,
+        "C_post_cutoff_incremental_runoff_pnl": -28.858345000004768,
+        "D_eventual_pnl_of_runoff_trades": 18877.421055,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 4067.7100000000005,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C0/FIXED_DOLLAR": {
+        "A_completed_trade_pnl_all_cohorts": 128864.6248656,
+        "B_marked_account_pnl_at_cutoff": 128986.40067059905,
+        "C_post_cutoff_incremental_runoff_pnl": -0.9246750000011161,
+        "D_eventual_pnl_of_runoff_trades": 6181.922335,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 3947.6300000000006,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C1/EQUITY_SCALED": {
+        "A_completed_trade_pnl_all_cohorts": 338376.8119295,
+        "B_marked_account_pnl_at_cutoff": 337801.4533295006,
+        "C_post_cutoff_incremental_runoff_pnl": 689.7765899999989,
+        "D_eventual_pnl_of_runoff_trades": 31034.085830000007,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 3737.4900000000002,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C1/FIXED_DOLLAR": {
+        "A_completed_trade_pnl_all_cohorts": 160159.0796661,
+        "B_marked_account_pnl_at_cutoff": 160073.34230610006,
+        "C_post_cutoff_incremental_runoff_pnl": 194.18171999999927,
+        "D_eventual_pnl_of_runoff_trades": 7879.17126,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 3542.3600000000006,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C2/EQUITY_SCALED": {
+        "A_completed_trade_pnl_all_cohorts": 180053.1386881,
+        "B_marked_account_pnl_at_cutoff": 178261.80482310033,
+        "C_post_cutoff_incremental_runoff_pnl": 1883.6953749999982,
+        "D_eventual_pnl_of_runoff_trades": 12662.100104999996,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 3017.01,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C2/FIXED_DOLLAR": {
+        "A_completed_trade_pnl_all_cohorts": 114036.60585379999,
+        "B_marked_account_pnl_at_cutoff": 113413.55871879996,
+        "C_post_cutoff_incremental_runoff_pnl": 713.570604999999,
+        "D_eventual_pnl_of_runoff_trades": 4808.5828999999985,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 2956.9700000000003,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C3/EQUITY_SCALED": {
+        "A_completed_trade_pnl_all_cohorts": 266025.5119441,
+        "B_marked_account_pnl_at_cutoff": 263431.51181409915,
+        "C_post_cutoff_incremental_runoff_pnl": 2681.3070299999995,
+        "D_eventual_pnl_of_runoff_trades": 19594.044704999997,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 2851.9,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C3/FIXED_DOLLAR": {
+        "A_completed_trade_pnl_all_cohorts": 143237.8155926,
+        "B_marked_account_pnl_at_cutoff": 142528.65434259948,
+        "C_post_cutoff_incremental_runoff_pnl": 793.2515799999999,
+        "D_eventual_pnl_of_runoff_trades": 5815.010294999999,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 2746.8300000000004,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C2R/EQUITY_SCALED": {
+        "A_completed_trade_pnl_all_cohorts": 194289.3040197,
+        "B_marked_account_pnl_at_cutoff": 193887.96903469972,
+        "C_post_cutoff_incremental_runoff_pnl": 494.15600499999766,
+        "D_eventual_pnl_of_runoff_trades": 10210.544319999997,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 3032.0200000000004,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C2R/FIXED_DOLLAR": {
+        "A_completed_trade_pnl_all_cohorts": 118833.6977386,
+        "B_marked_account_pnl_at_cutoff": 118743.81102359993,
+        "C_post_cutoff_incremental_runoff_pnl": 180.41018499999868,
+        "D_eventual_pnl_of_runoff_trades": 3674.586069999999,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 2956.9700000000003,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C3R/EQUITY_SCALED": {
+        "A_completed_trade_pnl_all_cohorts": 285205.9997496,
+        "B_marked_account_pnl_at_cutoff": 284350.8314596,
+        "C_post_cutoff_incremental_runoff_pnl": 943.3942099999975,
+        "D_eventual_pnl_of_runoff_trades": 16777.131519999995,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 2881.92,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C3R/FIXED_DOLLAR": {
+        "A_completed_trade_pnl_all_cohorts": 148200.6066589,
+        "B_marked_account_pnl_at_cutoff": 147999.16648889973,
+        "C_post_cutoff_incremental_runoff_pnl": 285.5304999999994,
+        "D_eventual_pnl_of_runoff_trades": 4735.727554999999,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 2746.8300000000004,
+        "completed_trade_count": 415,
+        "identities_hold": true
+      },
+      "C0/EQUITY_SCALED/IS": {
+        "A_completed_trade_pnl_all_cohorts": 74319.3079015,
+        "B_marked_account_pnl_at_cutoff": 74319.3079015,
+        "C_post_cutoff_incremental_runoff_pnl": 0,
+        "D_eventual_pnl_of_runoff_trades": 0,
+        "E_open_documented_obligations": 0,
+        "F_stale_gross_in_calendar_equity": 0,
+        "completed_trade_count": 200,
+        "identities_hold": true
+      },
+      "C0/EQUITY_SCALED/OOS": {
+        "A_completed_trade_pnl_all_cohorts": 90030.81668070001,
+        "B_marked_account_pnl_at_cutoff": 90159.18565569978,
+        "C_post_cutoff_incremental_runoff_pnl": -7.517845000001238,
+        "D_eventual_pnl_of_runoff_trades": 10862.230045,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 3947.6300000000006,
+        "completed_trade_count": 215,
+        "identities_hold": true
+      },
+      "C1/EQUITY_SCALED/IS": {
+        "A_completed_trade_pnl_all_cohorts": 106160.45743469999,
+        "B_marked_account_pnl_at_cutoff": 106160.45743470002,
+        "C_post_cutoff_incremental_runoff_pnl": 0,
+        "D_eventual_pnl_of_runoff_trades": 0,
+        "E_open_documented_obligations": 0,
+        "F_stale_gross_in_calendar_equity": 0,
+        "completed_trade_count": 200,
+        "identities_hold": true
+      },
+      "C1/EQUITY_SCALED/OOS": {
+        "A_completed_trade_pnl_all_cohorts": 113059.0318527,
+        "B_marked_account_pnl_at_cutoff": 112828.43790270039,
+        "C_post_cutoff_incremental_runoff_pnl": 339.0383099999987,
+        "D_eventual_pnl_of_runoff_trades": 15073.526110000004,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 3542.3600000000006,
+        "completed_trade_count": 215,
+        "identities_hold": true
+      },
+      "C2/EQUITY_SCALED/IS": {
+        "A_completed_trade_pnl_all_cohorts": 61754.32524369999,
+        "B_marked_account_pnl_at_cutoff": 61754.32524370012,
+        "C_post_cutoff_incremental_runoff_pnl": 0,
+        "D_eventual_pnl_of_runoff_trades": 0,
+        "E_open_documented_obligations": 0,
+        "F_stale_gross_in_calendar_equity": 0,
+        "completed_trade_count": 200,
+        "identities_hold": true
+      },
+      "C2/EQUITY_SCALED/OOS": {
+        "A_completed_trade_pnl_all_cohorts": 74499.9570928,
+        "B_marked_account_pnl_at_cutoff": 73414.13004280027,
+        "C_post_cutoff_incremental_runoff_pnl": 1176.3505199999981,
+        "D_eventual_pnl_of_runoff_trades": 7881.1927149999965,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 2956.9700000000003,
+        "completed_trade_count": 215,
+        "identities_hold": true
+      },
+      "C3/EQUITY_SCALED/IS": {
+        "A_completed_trade_pnl_all_cohorts": 89297.4075949,
+        "B_marked_account_pnl_at_cutoff": 89297.4075949002,
+        "C_post_cutoff_incremental_runoff_pnl": 0,
+        "D_eventual_pnl_of_runoff_trades": 0,
+        "E_open_documented_obligations": 0,
+        "F_stale_gross_in_calendar_equity": 0,
+        "completed_trade_count": 200,
+        "identities_hold": true
+      },
+      "C3/EQUITY_SCALED/OOS": {
+        "A_completed_trade_pnl_all_cohorts": 94914.2181839,
+        "B_marked_account_pnl_at_cutoff": 93563.97266889983,
+        "C_post_cutoff_incremental_runoff_pnl": 1434.3358449999994,
+        "D_eventual_pnl_of_runoff_trades": 10434.912559999997,
+        "E_open_documented_obligations": 1,
+        "F_stale_gross_in_calendar_equity": 2746.8300000000004,
+        "completed_trade_count": 215,
+        "identities_hold": true
+      }
+    },
+    "substitution": {
+      "cohorts_by_substitution_count": "{\"0\": 2, \"1\": 7, \"2\": 9, \"3\": 22, \"4\": 10, \"5\": 2}",
+      "total_swaps": "141",
+      "mean_outgoing_original_rank": "5.687943",
+      "mean_incoming_original_rank": "13.198582",
+      "mean_outgoing_close_vs_high20": "-0.023697",
+      "median_outgoing_close_vs_high20": "-0.021846",
+      "mean_incoming_close_vs_high20": "-0.120424",
+      "median_incoming_close_vs_high20": "-0.093117",
+      "mean_outgoing_price_return_10": "0.004984",
+      "mean_incoming_price_return_10": "-0.005751",
+      "median_outgoing_price_return_10": "-0.000722",
+      "median_incoming_price_return_10": "0.018492",
+      "outgoing_hit_rate": "0.475177",
+      "incoming_hit_rate": "0.574468",
+      "profit_forfeited_on_outgoing_winners": "31808.524825",
+      "loss_avoided_on_outgoing_losers": "30227.178571",
+      "profit_gained_on_incoming_winners": "45274.953901",
+      "loss_added_on_incoming_losers": "-44359.488976",
+      "net_fixed_dollar_swap_effect": "-665.881329",
+      "C2_minus_C0_marked_pnl_FIXED_DOLLAR": "-15572.84",
+      "C2_minus_C0_marked_pnl_EQUITY_SCALED": "-52457.94",
+      "C2R_minus_C0_marked_pnl_FIXED_DOLLAR": "-10242.59",
+      "C2R_minus_C0_marked_pnl_EQUITY_SCALED": "-36831.77",
+      "C3_minus_C0_marked_pnl_FIXED_DOLLAR": "13542.25",
+      "C3_minus_C0_marked_pnl_EQUITY_SCALED": "32711.77",
+      "C3R_minus_C0_marked_pnl_FIXED_DOLLAR": "19012.77",
+      "C3R_minus_C0_marked_pnl_EQUITY_SCALED": "53631.09"
+    },
+    "interaction": [
+      {
+        "C0": "128864.62",
+        "C1": "160159.08",
+        "C1_minus_C0": "31294.45",
+        "C2": "114036.61",
+        "C2_minus_C0": "-14828.02",
+        "C3": "143237.82",
+        "C3_minus_C0": "14373.19",
+        "additive": "True",
+        "basis": "interaction = C3 - C1 - C2 + C0 on an additive quantity",
+        "interaction_C3_minus_C1_minus_C2_plus_C0": "-2093.25",
+        "quantity": "eventual_completed_trade_pnl",
+        "sum_of_parts_C1_plus_C2_minus_C0": "145331.06",
+        "view": "FIXED_DOLLAR"
+      },
+      {
+        "C0": "128986.4",
+        "C1": "160073.34",
+        "C1_minus_C0": "31086.94",
+        "C2": "113413.56",
+        "C2_minus_C0": "-15572.84",
+        "C3": "142528.65",
+        "C3_minus_C0": "13542.25",
+        "additive": "True",
+        "basis": "interaction = C3 - C1 - C2 + C0 on an additive quantity",
+        "interaction_C3_minus_C1_minus_C2_plus_C0": "-1971.85",
+        "quantity": "marked_account_pnl_at_cutoff",
+        "sum_of_parts_C1_plus_C2_minus_C0": "144500.5",
+        "view": "FIXED_DOLLAR"
+      },
+      {
+        "C0": "230566.36",
+        "C1": "338376.81",
+        "C1_minus_C0": "107810.46",
+        "C2": "180053.14",
+        "C2_minus_C0": "-50513.22",
+        "C3": "266025.51",
+        "C3_minus_C0": "35459.16",
+        "additive": "True",
+        "basis": "interaction = C3 - C1 - C2 + C0 on an additive quantity",
+        "interaction_C3_minus_C1_minus_C2_plus_C0": "-21838.08",
+        "quantity": "eventual_completed_trade_pnl",
+        "sum_of_parts_C1_plus_C2_minus_C0": "287863.59",
+        "view": "EQUITY_SCALED"
+      },
+      {
+        "C0": "230719.74",
+        "C1": "337801.45",
+        "C1_minus_C0": "107081.71",
+        "C2": "178261.8",
+        "C2_minus_C0": "-52457.94",
+        "C3": "263431.51",
+        "C3_minus_C0": "32711.77",
+        "additive": "True",
+        "basis": "interaction = C3 - C1 - C2 + C0 on an additive quantity",
+        "interaction_C3_minus_C1_minus_C2_plus_C0": "-21912.0",
+        "quantity": "marked_account_pnl_at_cutoff",
+        "sum_of_parts_C1_plus_C2_minus_C0": "285343.52",
+        "view": "EQUITY_SCALED"
+      }
+    ],
+    "rank_one_attribution": [
+      {
+        "account_marked_pnl_change": "31086.94",
+        "basis": "trade-level differences use the same ticket ids; the account row is the complete rebuilt account",
+        "extra_pnl_from_larger_rank_one": "37575.06",
+        "max_drawdown_challenger": "-22338.39",
+        "max_drawdown_incumbent": "-23309.47",
+        "mean_gross_over_equity_challenger": "0.4252",
+        "mean_gross_over_equity_incumbent": "0.4566",
+        "net_change_vs_incumbent": "31294.45",
+        "pnl_change_from_reducing_ranks_2_8": "-6280.61",
+        "rank_one_entry_notional_share_challenger": "0.2319",
+        "rank_one_entry_notional_share_incumbent": "0.1545",
+        "view": "FIXED_DOLLAR",
+        "worst_day_challenger": "-15624.18",
+        "worst_day_incumbent": "-9733.97",
+        "worst_rank_one_loss_challenger": "-8413.7",
+        "worst_rank_one_loss_incumbent": "-5604.33"
+      },
+      {
+        "account_marked_pnl_change": "107081.71",
+        "basis": "trade-level differences use the same ticket ids; the account row is the complete rebuilt account",
+        "extra_pnl_from_larger_rank_one": "104072.36",
+        "max_drawdown_challenger": "-35471.92",
+        "max_drawdown_incumbent": "-29172.81",
+        "mean_gross_over_equity_challenger": "0.6175",
+        "mean_gross_over_equity_incumbent": "0.6296",
+        "net_change_vs_incumbent": "107810.46",
+        "pnl_change_from_reducing_ranks_2_8": "3738.1",
+        "rank_one_entry_notional_share_challenger": "0.2288",
+        "rank_one_entry_notional_share_incumbent": "0.1529",
+        "view": "EQUITY_SCALED",
+        "worst_day_challenger": "-35471.92",
+        "worst_day_incumbent": "-27899.26",
+        "worst_rank_one_loss_challenger": "-13254.46",
+        "worst_rank_one_loss_incumbent": "-8096.75"
+      }
+    ],
+    "c2_decomposition": {
+      "FIXED_DOLLAR": {
+        "removed_tickets": 141,
+        "added_tickets": 141,
+        "retained_tickets": 275,
+        "pnl_removed_forgone": -1581.35,
+        "pnl_added_gained": 915.46,
+        "pnl_retained_resized": -14162.14,
+        "total": -14828.02,
+        "residual": -0.0,
+        "retained_entry_notional_C0": 1205152.45,
+        "retained_entry_notional_C2": 1101374.77,
+        "retained_notional_change_pct": -8.61,
+        "basis": "removed and added are the 141 swapped tickets; retained are the 275 names in both lineups whose only change is the budget-neutral rescaling, so their P&L change is pure resizing"
+      },
+      "EQUITY_SCALED": {
+        "removed_tickets": 141,
+        "added_tickets": 141,
+        "retained_tickets": 275,
+        "pnl_removed_forgone": -7329.34,
+        "pnl_added_gained": 3914.2,
+        "pnl_retained_resized": -47098.08,
+        "total": -50513.22,
+        "residual": 0.0,
+        "retained_entry_notional_C0": 2027658.21,
+        "retained_entry_notional_C2": 1659190.42,
+        "retained_notional_change_pct": -18.17,
+        "basis": "removed and added are the 141 swapped tickets; retained are the 275 names in both lineups whose only change is the budget-neutral rescaling, so their P&L change is pure resizing"
+      }
+    }
+  },
+  "research_statuses": {
+    "C1": "CHALLENGER IMPROVES PROFIT BUT DEGRADES RISK/CONCENTRATION - AWAIT HOLDOUT WITH CAUTION",
+    "C2": "CHALLENGER DOES NOT IMPROVE COMPLETE HISTORICAL ENGINE",
+    "C3": "CHALLENGER IMPROVES PROFIT BUT DEGRADES RISK/CONCENTRATION - AWAIT HOLDOUT WITH CAUTION"
+  },
+  "verification": {
+    "oracle": {
+      "trades": {
+        "checked": 4980,
+        "errors": 0,
+        "max_abs_error": 3.637978807091713e-12
+      },
+      "cohorts": {
+        "cohorts": 624,
+        "errors": 0
+      },
+      "daily": {
+        "R5/C0_EQUITY_SCALED": {
+          "max_abs_error": 2.9103830456733704e-10,
+          "ok": true
+        },
+        "R5/C0_FIXED_DOLLAR": {
+          "max_abs_error": 2.0372681319713593e-10,
+          "ok": true
+        },
+        "R5/C1_EQUITY_SCALED": {
+          "max_abs_error": 2.3283064365386963e-10,
+          "ok": true
+        },
+        "R5/C1_FIXED_DOLLAR": {
+          "max_abs_error": 2.3283064365386963e-10,
+          "ok": true
+        },
+        "R5/C2_EQUITY_SCALED": {
+          "max_abs_error": 5.820766091346741e-11,
+          "ok": true
+        },
+        "R5/C2_FIXED_DOLLAR": {
+          "max_abs_error": 8.731149137020111e-11,
+          "ok": true
+        },
+        "R5/C3_EQUITY_SCALED": {
+          "max_abs_error": 2.3283064365386963e-10,
+          "ok": true
+        },
+        "R5/C3_FIXED_DOLLAR": {
+          "max_abs_error": 8.731149137020111e-11,
+          "ok": true
+        },
+        "R5/C2R_EQUITY_SCALED": {
+          "max_abs_error": 1.7462298274040222e-10,
+          "ok": true
+        },
+        "R5/C2R_FIXED_DOLLAR": {
+          "max_abs_error": 8.731149137020111e-11,
+          "ok": true
+        },
+        "R5/C3R_EQUITY_SCALED": {
+          "max_abs_error": 2.3283064365386963e-10,
+          "ok": true
+        },
+        "R5/C3R_FIXED_DOLLAR": {
+          "max_abs_error": 8.731149137020111e-11,
+          "ok": true
+        }
+      },
+      "ok": true
+    },
+    "allocation_recomputation": {
+      "checked": 4992,
+      "errors": 0,
+      "max_share_error": 0.0,
+      "failures": [],
+      "ok": true
+    },
+    "monthly_reconciliation": {
+      "C0/EQUITY_SCALED": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 230719.7416604004,
+        "expected_period_marked_pnl": 230719.7416604004,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      },
+      "C0/FIXED_DOLLAR": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 128986.40067059905,
+        "expected_period_marked_pnl": 128986.40067059905,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      },
+      "C1/EQUITY_SCALED": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 337801.4533295006,
+        "expected_period_marked_pnl": 337801.4533295006,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      },
+      "C1/FIXED_DOLLAR": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 160073.34230610006,
+        "expected_period_marked_pnl": 160073.34230610006,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      },
+      "C2/EQUITY_SCALED": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 178261.80482310033,
+        "expected_period_marked_pnl": 178261.80482310033,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      },
+      "C2/FIXED_DOLLAR": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 113413.55871879996,
+        "expected_period_marked_pnl": 113413.55871879996,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      },
+      "C3/EQUITY_SCALED": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 263431.51181409915,
+        "expected_period_marked_pnl": 263431.51181409915,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      },
+      "C3/FIXED_DOLLAR": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 142528.65434259948,
+        "expected_period_marked_pnl": 142528.65434259948,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      },
+      "C2R/EQUITY_SCALED": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 193887.96903469972,
+        "expected_period_marked_pnl": 193887.96903469972,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      },
+      "C2R/FIXED_DOLLAR": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 118743.81102359993,
+        "expected_period_marked_pnl": 118743.81102359993,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      },
+      "C3R/EQUITY_SCALED": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 284350.8314596,
+        "expected_period_marked_pnl": 284350.8314596,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      },
+      "C3R/FIXED_DOLLAR": {
+        "standard": "cg_lab_monthly_account_reporting_v1",
+        "total_monthly_pnl": 147999.16648889973,
+        "expected_period_marked_pnl": 147999.16648889973,
+        "difference": 0.0,
+        "checks": {
+          "monthly_pnl_sums_to_period_marked_pnl": true,
+          "month_end_equity_chains": true,
+          "first_month_starts_from_starting_equity": true,
+          "last_month_end_equity_matches": true,
+          "return_denominator_is_prior_month_end_equity": true
+        },
+        "reconciles": true
+      }
+    },
+    "code_drift_since_freeze_ok": false
+  },
+  "public_files": {
+    "cg_arrow012_account_summary.csv": "c05eb34ac06f4bbea980e09d1dff17bac1714edab1beae71b9fbc931d4dc6a7d",
+    "cg_arrow012_challenger_freeze.json": "84addc01d190c7889e775e39e9466f55ce16ff02fb0fe2d80ec6efb1795f68de",
+    "cg_arrow012_challengers.md": "0249456f69e6d6a7cb9f7cd90c9f3e3cde4744f5bf4044872cdfe6afa8bcbaa1",
+    "cg_arrow012_interaction.csv": "e895a6488f48f6a9e9318bd87635a40c60668180157fe76e7f866c2f4cb44fa6",
+    "cg_arrow012_manifest.json": "bf83a180b0b5134c8ffaaf4a907dcdb23df2b47a93481090c3508a170f4511d3",
+    "cg_arrow012_monthly_account.csv": "9b5c3ab65b95417e665473577216925e4e559dcd73b322ccc5a05204c785a403",
+    "cg_arrow012_rank_one_attribution.csv": "e8530535e9899e00d358ebd9e3cde5ec7351f056ad7588d722b83ba594b79851",
+    "cg_arrow012_repair.md": "cdc17ec7b0862657ab8d342f3b80ff62b52af396b40ac23333d0fbbd377257e6",
+    "cg_arrow012_repaired_relationships.csv": "8bbcf673d7a4397190960a0cd7687fcd721e1f8ded73317f0c14527131e0baff",
+    "cg_arrow012_substitution_summary.csv": "67ccb0dc7134b153679bdf751cb569f234007c0d17d84a0817657429138bd536"
+  },
+  "private_files": {
+    "certified_candidates.json": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow012\\certified_candidates.json",
+      "sha256": "3b85938016b8150058280e17ab9c88e2bd69c1d70173bb138ff006c55099b4bf",
+      "bytes": 26185
+    },
+    "cohort_allocation_audit.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow012\\cohort_allocation_audit.csv",
+      "sha256": "26f060f4a95af2437d68feade3135979f5f2dcf8e4028105079d432a1046876c",
+      "bytes": 117550
+    },
+    "r4r5_cohort_matrix.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow012\\r4r5_cohort_matrix.csv",
+      "sha256": "8ff02ffd88c47dcbe7e971aae0f3a18a624a7b088dfe5e817be62ec35693dcfd",
+      "bytes": 442243
+    },
+    "r4r5_daily_account.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow012\\r4r5_daily_account.csv",
+      "sha256": "4226c7f7733a0d2f4c6a854600363510cab3a631118a0c7696c1a11717cf11a6",
+      "bytes": 1320027
+    },
+    "r4r5_trade_exceptions.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow012\\r4r5_trade_exceptions.csv",
+      "sha256": "7579bb78c2a14c13c2f25e1b49282d793e0b96295d0b233cf55c5746b2224730",
+      "bytes": 1622436
+    },
+    "r4r5_verified_cohort_audit.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow012\\r4r5_verified_cohort_audit.csv",
+      "sha256": "f0570c7d5e49221236f4b9296acdd0364b1c48415a75963e2df04ff8a7206d68",
+      "bytes": 829510
+    },
+    "r4r5_verified_trades.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow012\\r4r5_verified_trades.csv",
+      "sha256": "a371e89bc1f84631ca720a5a3644dedc3d955c4e3c74820ecd74b3549852a990",
+      "bytes": 5681167
+    },
+    "substitution_paired_outcomes.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow012\\substitution_paired_outcomes.csv",
+      "sha256": "1a15551ce6438a1e6d2b0bc09896d7d8226be7910d4206affb2e149bb826b2fd",
+      "bytes": 20802
+    },
+    "substitution_pairs.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow012\\substitution_pairs.csv",
+      "sha256": "7b5c3312344b5825902b89ca08b5dec9634a09b454b927fd294f1d59ca5e1397",
+      "bytes": 18691
+    },
+    "top20_candidate_audit.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow012\\top20_candidate_audit.csv",
+      "sha256": "2432a60a9ff2c5e1d3fefb2fa311d57411da350df084ed57a28ac572a115ac23",
+      "bytes": 318223
+    }
+  },
+  "headline_footnote": "Modeled P&L includes the lab's stated commission/spread assumptions; broker-specific locate/HTB charges, dividends, financing, forced-close effects, taxes and other execution items are excluded. Historical fills and availability are modeled, not broker execution guarantees.",
+  "next_step": "PRISTINE ADDITIONAL-YEAR REVEAL OF C0/C1/C2/C3 AFTER DATA CERTIFICATION"
+}

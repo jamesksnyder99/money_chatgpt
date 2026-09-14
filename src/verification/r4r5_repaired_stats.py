@@ -82,8 +82,8 @@ def strict_half_contrast(pairs: list[tuple[float, float]]) -> float | None:
     k = n // 2
     if s[k - 1][0] == s[n - k][0]:
         return None
-    lo = statistics.mean(p[1] for p in s[:k])
-    hi = statistics.mean(p[1] for p in s[n - k:])
+    lo = math.fsum(sorted(p[1] for p in s[:k])) / k
+    hi = math.fsum(sorted(p[1] for p in s[n - k:])) / k
     return hi - lo
 
 
@@ -97,7 +97,7 @@ def pairwise_directional_effect(pairs: list[tuple[float, float]]) -> tuple[float
     outcome units per pair. Returns (effect, number of contributing pairs); the effect is
     None when no pair has distinct feature values, which is exactly the constant-feature case.
     """
-    total, count = 0.0, 0
+    terms = []
     n = len(pairs)
     for i in range(n):
         fi, yi = pairs[i]
@@ -105,9 +105,13 @@ def pairwise_directional_effect(pairs: list[tuple[float, float]]) -> tuple[float
             fj, yj = pairs[j]
             if fi == fj:
                 continue
-            total += (yj - yi) if fj > fi else (yi - yj)
-            count += 1
-    return ((total / count) if count else None), count
+            terms.append((yj - yi) if fj > fi else (yi - yj))
+    if not terms:
+        return None, 0
+    # math.fsum is correctly rounded from the exact sum, so the result does not depend on the
+    # order the pairs were generated in; a plain running total drifts in the last bit under a
+    # row permutation, which would break the invariance this module exists to guarantee
+    return math.fsum(sorted(terms)) / len(terms), len(terms)
 
 
 def relationship(rows: list[dict], feature: str, outcome: str) -> dict:
@@ -158,14 +162,14 @@ def relationship(rows: list[dict], feature: str, outcome: str) -> dict:
         "cohorts": len(by_c), "securities": len({r["symbol"] for r in ok}),
         "months": len({r["cohort_id"][:7] for r in ok}),
         "pooled_spearman": spearman(x, y),
-        "within_cohort_mean_spearman": statistics.mean(rhos) if rhos else None,
+        "within_cohort_mean_spearman": (math.fsum(sorted(rhos)) / len(rhos)) if rhos else None,
         "within_cohort_spearman_cohorts": len(rhos),
         "within_cohort_spearman_positive_share": (sum(1 for r in rhos if r > 0) / len(rhos)) if rhos else None,
-        "strict_half_contrast": statistics.mean(halves) if halves else None,
+        "strict_half_contrast": (math.fsum(sorted(halves)) / len(halves)) if halves else None,
         "strict_half_cohorts_scored": len(halves),
         "strict_half_cohorts_tie_excluded": tie_blocked,
         "strict_half_positive_share": (sum(1 for h in halves if h > 0) / len(halves)) if halves else None,
-        "pairwise_directional_effect": statistics.mean(effects) if effects else None,
+        "pairwise_directional_effect": (math.fsum(sorted(effects)) / len(effects)) if effects else None,
         "pairwise_cohorts_scored": len(effects),
         "pairwise_total_pairs": sum(pair_counts),
         "pairwise_positive_share": (sum(1 for e in effects if e > 0) / len(effects)) if effects else None,

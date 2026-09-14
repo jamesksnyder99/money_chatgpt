@@ -1,0 +1,105 @@
+CG Arrow 012 — commands, checkpoints and timings (Opus in Claude Code)
+Start 2026-09-14 22:42 UTC. Planning allocation 75-90 minutes, hard stop 120 minutes.
+Python 3.14.5, polars 1.43.2, 8 logical cores. Summary loading used 8 worker processes;
+causal equity compounding is serial within each book; one writer per artifact.
+No ThetaData request was needed: every observation came from the existing local cache.
+No credential value appears in any command, log, report or cache below.
+
+# 0. Pull, governance, safety (22:42-22:47)
+git pull --ff-only origin main            # e1701d2..1734e0c (arrow doc, protocol, SUCCESS)
+git check-ignore -v .env                  # IGNORED, rechecked before every push
+# read CLAUDE.md, AGENTS.md, docs/CHATGPT_LAB_PROTOCOL.md, docs/SUCCESS.md, docs/CG_BUILD_ARROW_012.md
+
+# 1. Engine hook (22:47-22:48) — one injection point, nothing else
+# src/verification/r4r5_replay.py  replay(..., allocation=)  per-ticket base notional at 100,000
+# src/verification/r4r5_equity.py  causal_book(..., allocation=)  passes it through the serial path
+# No frozen selection, price, quantity, trade, account or prior artifact is altered by this.
+
+# 2. Phase A repair (22:48-22:53)
+# src/verification/r4r5_repaired_stats.py  cg_arrow012_repaired_within_cohort_v1
+#   strict_half_contrast: scored only when no tie crosses the median boundary
+#   pairwise_directional_effect: unordered distinct-feature pairs, oriented low to high
+#   moving_block_resample(block=1,2,4) and repeated_security_sensitivity
+python scripts/cg_arrow012_repair.py
+#   Arrow 011 atlas hash matches its committed freeze; 416 rows, 52 cohorts
+#   verdicts: 18 SURVIVES_REPAIR, 14 STILL_NO_SIGNAL, 8 APPEARS_ONLY_AFTER_REPAIR, 2 UNSCORABLE
+#   all 15 Arrow 011 REPLICATED relationships survive; lost after repair: none
+#   the tie defect carried exactly two features, both of which Arrow 011 had declined to claim:
+#     cx_cohort_ret15_spread is constant in all 25 IS cohorts, so its -0.086 was pure row order
+#     ep_sessions_since_last_selection has only 7 scorable cohorts
+#   VERDICT A11_RELATIONSHIP_SURVIVES_REPAIR; rank-one direct group result unaffected
+
+# 3. Phase B preflight and certification (22:48-22:53)
+python scripts/cg_arrow012_candidates.py --workers 8
+#   all five frozen economic controls reproduce exactly; census 52/416/415/1
+#   membership hash matches Arrow 008; rank order through 20 reproduces the frozen top eight
+#   624 rank 9-20 name-cohorts, 589 certified, 251 on the off-high side
+#   certification failures: h10 exit/event 19, lookback action units 10, feature history 8,
+#     volume feature 8, off-high feature 8, pre-order entry 7, holding action units 3, momentum 1
+#   substitution plan: 141 swaps across 50 cohorts (0:2, 1:7, 2:9, 3:22, 4:10, 5:2)
+#   6 cohorts had their lineup changed by unresolved candidate evidence rather than by the rule;
+#     named in the freeze with a pre-declared revert sensitivity (C2R, C3R) before any economics
+
+# 4. Defect found in the first freeze and repaired (22:52)
+#   the public freeze carried certified candidate symbols. Moved to the ignored private file
+#   handoff/outgoing/cg_arrow012/certified_candidates.json; the public freeze now pins the set
+#   with per-cohort counts and a sha256. Caught by the pre-commit symbol scan, not by review.
+
+# 5. Freeze committed and pushed BEFORE any challenger economics (22:53)
+git commit / git push origin main         # 1734e0c..8d05bcc  reports/cg_arrow012_challenger_freeze.json
+
+# 6. Challenger scoring (22:55-23:06)
+python scripts/cg_arrow012_run.py --workers 8
+#   freeze committed at 8d05bcc, code drift since freeze: none
+#   cohort base capital T preserved on all 52 cohorts in C1/C2/C3, worst deviation 1.5e-11
+#   C0 reproduces Arrow 010 exactly: equity-scaled eventual 230,566.36, ending equity 330,719.74,
+#     fixed-dollar eventual 128,864.62, ending equity 228,986.40
+#   holdout guard: scored cohort ids == the frozen 52
+#   account identities 20/20; monthly reconcile 12/12
+#   independent oracle: 4,980 trades, max error 3.6e-12, 12 daily books
+#   independent allocation/share recomputation: 4,992 tickets, 0 disagreements
+#   C2 decomposition: the 141 swaps are nearly a wash (removed -1,581, added +915 fixed-dollar);
+#     the loss is -14,162 on the 275 RETAINED tickets, whose notional falls 8.6% because budget
+#     neutrality funds the replacements by shrinking the whole lineup, rank one included
+#   rank-one base allocation vs incumbent: C1 median 1.500, C2 median 0.897, C3 median 1.346
+
+# 7. Defects found by the audit gates in this arrow's own work and repaired (23:01)
+#   a) the pairwise statistic used a running total and drifted about 1e-16 under a row
+#      permutation, which would have broken the invariance the module exists to guarantee.
+#      Switched to exact summation over a canonically ordered term list; permutation
+#      invariance is now bit-exact.
+#   b) IS/OOS rows in the account summary read the all-cohort book, so their intended,
+#      completed and open counts described the wrong positions. Split rows now read their
+#      own split-owned book.
+
+# 8. Reports and tests (23:06-23:12)
+python scripts/cg_arrow012_report.py
+python -m pytest tests -q --basetemp=data/tmp/cg_arrow012_tests -p no:cacheprovider
+
+# 9. Safety review and push
+git ls-files handoff data/verification      # empty
+git diff --cached --name-only               # paths AND content inspected; symbol scan of every public file
+
+# Outcomes
+# Phase A: A11_RELATIONSHIP_SURVIVES_REPAIR; A11_RELATIONSHIP_UNAFFECTED_DIRECT_GROUP_RESULT
+# C1 rank-one 1.50x     equity-scaled marked P&L 230,720 -> 337,801; worst day -27,899 -> -35,472;
+#                       rank-one share of P&L 60% -> 71%
+#                       CHALLENGER IMPROVES PROFIT BUT DEGRADES RISK/CONCENTRATION - AWAIT HOLDOUT WITH CAUTION
+# C2 off-high swap      equity-scaled marked P&L 230,720 -> 178,262 despite a better incoming hit rate
+#                       CHALLENGER DOES NOT IMPROVE COMPLETE HISTORICAL ENGINE
+# C3 combined           equity-scaled marked P&L 263,432; interaction -21,912; dominated by C1
+#                       CHALLENGER IMPROVES PROFIT BUT DEGRADES RISK/CONCENTRATION - AWAIT HOLDOUT WITH CAUTION
+# NEXT STEP: PRISTINE ADDITIONAL-YEAR REVEAL OF C0/C1/C2/C3 AFTER DATA CERTIFICATION
+
+# Private review files (git-ignored; hashes and sizes in reports/cg_arrow012_manifest.json)
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow012\top20_candidate_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow012\substitution_pairs.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow012\substitution_paired_outcomes.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow012\certified_candidates.json
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow012\cohort_allocation_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow012\r4r5_verified_trades.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow012\r4r5_verified_cohort_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow012\r4r5_daily_account.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow012\r4r5_cohort_matrix.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow012\r4r5_trade_exceptions.csv
+# C:\Users\james\money_chatgpt\data\verification\r4r5\v1\a12\  (repair, candidates, run manifests)

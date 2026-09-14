@@ -1,0 +1,17 @@
+C0,C1,C1_minus_C0,C2,C2_minus_C0,C3,C3_minus_C0,additive,basis,interaction_C3_minus_C1_minus_C2_plus_C0,quantity,sum_of_parts_C1_plus_C2_minus_C0,view
+128864.62,160159.08,31294.45,114036.61,-14828.02,143237.82,14373.19,True,interaction = C3 - C1 - C2 + C0 on an additive quantity,-2093.25,eventual_completed_trade_pnl,145331.06,FIXED_DOLLAR
+128986.4,160073.34,31086.94,113413.56,-15572.84,142528.65,13542.25,True,interaction = C3 - C1 - C2 + C0 on an additive quantity,-1971.85,marked_account_pnl_at_cutoff,144500.5,FIXED_DOLLAR
+-23309.4716,-22338.3877,,-31016.4605,,-29360.1487,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,max_drawdown_dollars,,FIXED_DOLLAR
+-17.2926,-16.1007,,-23.4455,,-21.6086,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,max_drawdown_pct_of_peak,,FIXED_DOLLAR
+-9733.971,-15624.1824,,-8930.3908,,-14353.5248,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,worst_day,,FIXED_DOLLAR
+1.0303,1.0291,,1.0979,,1.0923,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,peak_gross_over_marked_equity,,FIXED_DOLLAR
+0.4566,0.4252,,0.477,,0.4442,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,mean_gross_over_marked_equity,,FIXED_DOLLAR
+0.5398,0.5398,,0.5783,,0.5783,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,hit_rate,,FIXED_DOLLAR
+230566.36,338376.81,107810.46,180053.14,-50513.22,266025.51,35459.16,True,interaction = C3 - C1 - C2 + C0 on an additive quantity,-21838.08,eventual_completed_trade_pnl,287863.59,EQUITY_SCALED
+230719.74,337801.45,107081.71,178261.8,-52457.94,263431.51,32711.77,True,interaction = C3 - C1 - C2 + C0 on an additive quantity,-21912.0,marked_account_pnl_at_cutoff,285343.52,EQUITY_SCALED
+-29172.8134,-35471.921,,-36894.1778,,-36334.8891,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,max_drawdown_dollars,,EQUITY_SCALED
+-20.9557,-9.452,,-27.2217,,-25.8955,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,max_drawdown_pct_of_peak,,EQUITY_SCALED
+-27899.256,-35471.921,,-13867.53,,-19278.1541,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,worst_day,,EQUITY_SCALED
+1.3717,1.425,,1.3673,,1.4187,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,peak_gross_over_marked_equity,,EQUITY_SCALED
+0.6296,0.6175,,0.6302,,0.6198,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,mean_gross_over_marked_equity,,EQUITY_SCALED
+0.5398,0.5398,,0.5783,,0.5783,,False,"nonlinear risk metric: four actual values side by side, no additive decomposition",,hit_rate,,EQUITY_SCALED
