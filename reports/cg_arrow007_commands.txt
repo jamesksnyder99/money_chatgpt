@@ -1,0 +1,97 @@
+CG Arrow 007 — commands, checkpoints and timings (Opus in Claude Code)
+Start 2026-09-14T13:44:20Z. Allowance 300 minutes (deadline 18:44:20Z). Completed well inside it; no overrun used.
+Python 3.14.5, thetadata SDK 1.0.10, polars 1.43.2, 8 logical cores, 16 GB.
+No credential value appears in any command, log, report or cache below.
+
+# 0. Pull, credentials, environment (minute 0-4)
+git pull --ff-only origin main                  # dfcac94..712684b
+git check-ignore -v .env                        # .gitignore:1:.env -> IGNORED (rechecked before every push)
+python -c "import os; print(os.cpu_count())"    # 8 logical cores
+# SEC EDGAR reachability proved: company_tickers.json, 10,426 entries
+
+# 1. Phase 0 frozen calendar (minute 4-8)
+# src/verification/r4r5_schedule.py: nominal Wednesday anchor, backward rollback, next-session entry
+python data/tmp/a7_sched.py
+#   52 weeks, derived signals identical to the study set, zero rollbacks, entry = next session for all
+#   boundary proofs: 2025-11-26 -> entry 2025-11-28 (Thanksgiving); 2025-12-24 -> entry 2025-12-26 (Christmas)
+
+# 2. Phase 1 event census (minute 8-40)
+python scripts/cg_arrow007_events.py --workers 8 --top 25 --threshold 1.2
+#   first design: one investigation per symbol/session case, ~3.9 s/case, 1017 cases -> ETA ~55 min. Stopped.
+#   restructured to one filing scan per security: 386 securities in 14.8 min at ~2.3 s/security
+#   1,017 unique cases, 386 securities, filing evidence for 40 securities / 215 cases
+python scripts/cg_arrow007_actions.py
+#   acceptance first drafted on a relative-error tolerance, then tightened to the integrity test itself:
+#   a stated factor is accepted only when applying it flattens the observed discontinuity below the 2x screen
+
+# 3. Phase 3 engine repairs (minute 20-45, overlapped with the census)
+#   3A structural acceptance: duplicate/unordered/OHLC-inconsistent/negative-volume partitions block a
+#      verified trade unless explicitly reviewed and accepted
+#   3B adjusted-series rescreen: apply every documented event in the window, then rescreen the adjusted path
+#   3C split-owned books so in-sample risk never contains out-of-sample positions
+#   3D runoff and denominators separated and labelled
+#   3E horizon state transitions rather than set intersection
+#   3F both quantity panels carried
+
+# 4. Phase 2 fixed point and residual evidence (minute 45-78)
+python scripts/cg_arrow007_run.py --workers 8         # 108 blocking -> classified -> 25 blocking
+python scripts/cg_arrow007_deepscan.py --workers 8    # exhibits and historical-ticker CIK resolution -> 13 blocking
+# primary-source review of the last seven securities (exchange notices and issuer releases):
+#   FGL one-for-one-hundred effective 2026-02-10 (Nasdaq equity corporate action alert 2026-78)
+#   SMX 4.8828125:1 effective 2026-02-17 (issuer release, corroborated by the 6-K exhibit)
+#   NCI one-for-eight effective 2026-05-19 (Nasdaq equity corporate action alert 2026-331)
+#   WOLF Chapter 11 emergence 2025-09-29 recorded as a non-comparable reorganisation, not a factor
+#   APLS 2026-03-31 Biogen acquisition at $41/share; GLTO 2025-10-07 and 2025-11-10 Damora deal and raise
+#   OKLS 2026-03-23 forty issuer filings searched, no split ratio, Nasdaq delisting hearing the next session
+python scripts/cg_arrow007_run.py --workers 8
+#   discontinuity classification: 90 MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS, 0 blocking
+#   fixed point: 2 iterations, confirmation rerank membership stable, converged
+#   GATE OPEN
+
+# 5. Phase 4 certified baseline and exports (minute 78-80)
+python scripts/cg_arrow007_exports.py
+#   action ledger 1,019 rows, ranking reconciliation 52, upside bridge 204, split-owned books 36
+
+# 6. Phase 5 Hold-Length Ladder (minute 80-82)
+python scripts/cg_arrow007_horizons.py is --workers 8
+#   30 in-sample cells per panel; preferred holds predeclared 8 / 8 / 10 sessions
+git add ... && git commit && git push              # freeze committed BEFORE any out-of-sample look
+python scripts/cg_arrow007_horizons.py oos --workers 8
+#   committed-freeze and entry-ledger-hash checks passed; single batch reveal
+#   10-Session Hold identity with the frozen baseline: 0.0 across all six family/panel combinations
+#   predeclared preference NOT REPEATED for all three variants
+
+# 7. Phase 7 tests and adversarial audit (minute 82-85)
+python -m pytest tests -q --basetemp=data/tmp/cg_arrow007_tests -p no:cacheprovider   # 613 passed, 1 skipped
+python scripts/cg_arrow007_audit.py --workers 8                                        # 11 of 11 checks passed
+
+# 8. Reports, safety review, push
+git check-ignore .env handoff/outgoing/cg_arrow007/r4r5_verified_trades.csv data/verification/r4r5/v1/events/http_cache
+git ls-files handoff data/verification          # empty
+git diff --cached --name-only                   # paths AND content inspected before every commit
+
+# Outcomes
+# Calendar rule: frozen, proved to change no cohort in this sample.
+# Events: 1,017 cases investigated, 22 newly primary-verified, 32 canonical events, 2 identity changes,
+#   1 documented halt, 1 non-comparable reorganisation, 0 unresolved in any certified window.
+# Fixed point: converged in 2 iterations with a stable membership hash.
+# Gate: OPEN. Ladder: complete, both quantity panels, one-batch out-of-sample reveal.
+# Upside: survived certification. Equal-Dollar 36,536.55 -> 104,938.02; Volume-Sized 56,971.05 -> 114,190.85;
+#   Momentum+Volume 65,676.39 -> 129,092.60. Driven by 85 newly selected tickets per variant, not by
+#   revaluing shared trades.
+# Preferred holds did not repeat out of sample; the 9-session hold was the out-of-sample peak and is
+#   explicitly recorded as an unconfirmed observation, not a finding.
+
+# Local private deliverables (git-ignored; hashes in reports/cg_arrow007_manifest.json)
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_verified_trades.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_verified_cohort_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_cohort_matrix.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_trade_exceptions.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_trade_exceptions_initial.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_daily_account.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_corporate_action_ledger.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_ranking_reconciliation.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_r2_upside_bridge.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_horizon_trade_paths.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_horizon_trade_paths_tidy.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow007\r4r5_horizon_summary.csv

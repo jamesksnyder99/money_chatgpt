@@ -159,6 +159,7 @@ def test_adjusted_series_rescreen_clears_only_a_continuous_path(monkeypatch):
     eff = data.FEATS[data.INDEX[signal] - 5]
     events = ({"symbol": "S", "effective_session": eff.isoformat(), "price_factor": 10},)
     monkeypatch.setattr(data, "action_events", lambda: events)
+    monkeypatch.setattr(rank, "action_events", lambda: events)
     sums = {}
     for d in data.FEATS[data.INDEX[signal] - 20: data.INDEX[signal] + 1]:
         sums[(d.isoformat(), "S")] = obs(d, 2.0 if d < eff else 20.0)
@@ -182,6 +183,7 @@ def test_documented_event_alone_does_not_clear_a_window(monkeypatch):
     eff = data.FEATS[data.INDEX[signal] - 5]
     events = ({"symbol": "S", "effective_session": eff.isoformat(), "price_factor": 2},)
     monkeypatch.setattr(data, "action_events", lambda: events)
+    monkeypatch.setattr(rank, "action_events", lambda: events)
     sums = {}
     for d in data.FEATS[data.INDEX[signal] - 20: data.INDEX[signal] + 1]:
         sums[(d.isoformat(), "S")] = obs(d, 1.0 if d < eff else 50.0)
@@ -253,8 +255,14 @@ def test_is_book_contains_no_oos_owned_positions():
     assert {t["cohort_id"] for t in book["trades"]} == {"2026-01-07"}
     full = rp.replay("PARENT", cl, s)
     assert len(full["trades"]) == 2 * len(book["trades"])
-    # the split-owned account must not inherit the other split's exposure
-    assert max(r["gross_exposure"] for r in book["daily"]) < max(r["gross_exposure"] for r in full["daily"])
+    # while only the OOS-owned position is live, the IS book must show no exposure at all
+    oos_fill = [c for c in cl if c["split"] == "OOS"][0]["fill"]
+    live = data.FEATS[data.INDEX[oos_fill] + 3].isoformat()
+    is_rows = {r["date"]: r for r in book["daily"]}
+    full_rows = {r["date"]: r for r in full["daily"]}
+    assert full_rows[live]["gross_exposure"] > 0
+    assert is_rows[live]["gross_exposure"] == 0
+    assert is_rows[live]["open_tickets"] == 0
 
 
 def test_runoff_is_separated_from_the_calendar_account():

@@ -6103,35 +6103,65 @@
   },
   "r2_entry_ledger_sha256": "071bb7e13dfac51856e1d144f7ef0f58cd61b275089250eb3156cd2038c699ed",
   "local_csvs": {
-    "r4r5_trade_exceptions.csv": {
-      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_trade_exceptions.csv",
-      "sha256": "22232fe36ebf446efd8916b5586450b9ab4fdcf68969eb6743ccd046a3210c23",
-      "bytes": 1676450
-    },
-    "r4r5_verified_trades.csv": {
-      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_verified_trades.csv",
-      "sha256": "882891fbdb360ceb8aa4313bfb3c3719004656f4fed64a9ebbc5c7a325275b5c",
-      "bytes": 5535937
-    },
-    "r4r5_verified_cohort_audit.csv": {
-      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_verified_cohort_audit.csv",
-      "sha256": "2828b97f0d3953c862a6fcd3686cb1de168365fc78f3e2f9deccc1da925e2f8d",
-      "bytes": 861757
-    },
     "r4r5_cohort_matrix.csv": {
-      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_cohort_matrix.csv",
+      "path": "handoff/outgoing/cg_arrow007/r4r5_cohort_matrix.csv",
       "sha256": "23c60f398aa73f99361a11ba77a83bf124f22fd46661990d0d3b9586fd8fb03d",
       "bytes": 445437
     },
+    "r4r5_corporate_action_ledger.csv": {
+      "path": "handoff/outgoing/cg_arrow007/r4r5_corporate_action_ledger.csv",
+      "sha256": "3af5d74f55f83bd51e4b3d91322ee431e88e7b834e75f510a52030902831262e",
+      "bytes": 320801
+    },
     "r4r5_daily_account.csv": {
-      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_daily_account.csv",
+      "path": "handoff/outgoing/cg_arrow007/r4r5_daily_account.csv",
       "sha256": "5507dc364075a752fb1cd96b25e7568f97b10710b2831d2a9285a38edda99532",
       "bytes": 1288939
     },
+    "r4r5_horizon_summary.csv": {
+      "path": "handoff/outgoing/cg_arrow007/r4r5_horizon_summary.csv",
+      "sha256": "b75f779f2aa7ff1b7df697f023c2a8365c7065ec2d889b912b1ab3bb417c4972",
+      "bytes": 101338
+    },
+    "r4r5_horizon_trade_paths.csv": {
+      "path": "handoff/outgoing/cg_arrow007/r4r5_horizon_trade_paths.csv",
+      "sha256": "aed9c15bda2ed9b32136c439f52cc1bdb5e751fe6e5cf4eecc468ee6b78ce9d4",
+      "bytes": 1006664
+    },
+    "r4r5_horizon_trade_paths_tidy.csv": {
+      "path": "handoff/outgoing/cg_arrow007/r4r5_horizon_trade_paths_tidy.csv",
+      "sha256": "93cd962da8310363b893bdf929458f959869e2bb8b28f66a400c891af933a407",
+      "bytes": 1430724
+    },
+    "r4r5_r2_upside_bridge.csv": {
+      "path": "handoff/outgoing/cg_arrow007/r4r5_r2_upside_bridge.csv",
+      "sha256": "1bb910e72e80a2699efa20d6f0f87462c53530aad16fdfd269d4881a5445253c",
+      "bytes": 10467
+    },
+    "r4r5_ranking_reconciliation.csv": {
+      "path": "handoff/outgoing/cg_arrow007/r4r5_ranking_reconciliation.csv",
+      "sha256": "fcbc2b9854364528b141d1f239d9f6cb0b6df70e916f20afa2c2dc834a9fd850",
+      "bytes": 9002
+    },
+    "r4r5_trade_exceptions.csv": {
+      "path": "handoff/outgoing/cg_arrow007/r4r5_trade_exceptions.csv",
+      "sha256": "22232fe36ebf446efd8916b5586450b9ab4fdcf68969eb6743ccd046a3210c23",
+      "bytes": 1676450
+    },
     "r4r5_trade_exceptions_initial.csv": {
-      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_trade_exceptions_initial.csv",
+      "path": "handoff/outgoing/cg_arrow007/r4r5_trade_exceptions_initial.csv",
       "sha256": "a04ff82de1103d95e28c10b14244b0ffe388174c694b3bb44bf035723c8cd27c",
       "bytes": 1676588
+    },
+    "r4r5_verified_cohort_audit.csv": {
+      "path": "handoff/outgoing/cg_arrow007/r4r5_verified_cohort_audit.csv",
+      "sha256": "2828b97f0d3953c862a6fcd3686cb1de168365fc78f3e2f9deccc1da925e2f8d",
+      "bytes": 861757
+    },
+    "r4r5_verified_trades.csv": {
+      "path": "handoff/outgoing/cg_arrow007/r4r5_verified_trades.csv",
+      "sha256": "882891fbdb360ceb8aa4313bfb3c3719004656f4fed64a9ebbc5c7a325275b5c",
+      "bytes": 5535937
     }
   },
   "log": [
@@ -6153,5 +6183,140 @@
     "2026-09-14T15:02:11+00:00 +0.5m R4 R1->R2: 56,971.05 -> 114,190.85 (common -9,296.59, added +69,859.65, dropped -3,343.26)",
     "2026-09-14T15:02:11+00:00 +0.5m R5 R1->R2: 65,676.39 -> 129,092.60 (common -9,022.88, added +75,365.07, dropped -2,925.99)",
     "2026-09-14T15:02:11+00:00 +0.5m GATE OPEN blockers=[]"
-  ]
+  ],
+  "horizon": {
+    "status": "OOS_REVEALED",
+    "preferred_holds": {
+      "PARENT": 8,
+      "R4": 8,
+      "R5": 10
+    },
+    "confirmation": {
+      "PARENT": {
+        "preferred_horizon": 8,
+        "oos_net": 63526.519418799995,
+        "oos_h10_net": 63755.4924108,
+        "oos_increment": -228.9729920000027,
+        "oos_dd": -22445.375265099894,
+        "oos_h10_dd": -23322.810157299915,
+        "verdict": "NOT REPEATED"
+      },
+      "R4": {
+        "preferred_horizon": 8,
+        "oos_net": 65857.2042427,
+        "oos_h10_net": 66892.75719589999,
+        "oos_increment": -1035.5529531999928,
+        "oos_dd": -20949.07364800031,
+        "oos_h10_dd": -22110.797005400033,
+        "verdict": "NOT REPEATED"
+      },
+      "R5": {
+        "preferred_horizon": 10,
+        "oos_net": 70137.151093,
+        "oos_h10_net": 70137.151093,
+        "oos_increment": 0.0,
+        "oos_dd": -24964.887142000196,
+        "oos_h10_dd": -24964.887142000196,
+        "verdict": "NOT REPEATED"
+      }
+    },
+    "h10_identity": {
+      "PARENT/LEGACY_FILL_QTY": {
+        "h10_all_net": 104938.0163195,
+        "locked_baseline_net": 104938.0163195,
+        "difference": 0.0
+      },
+      "PARENT/CAUSAL_PREORDER_QTY": {
+        "h10_all_net": 104399.1668686,
+        "locked_baseline_net": 104399.1668686,
+        "difference": 0.0
+      },
+      "R4/LEGACY_FILL_QTY": {
+        "h10_all_net": 114190.8496268,
+        "locked_baseline_net": 114190.8496268,
+        "difference": 0.0
+      },
+      "R4/CAUSAL_PREORDER_QTY": {
+        "h10_all_net": 113845.29164529999,
+        "locked_baseline_net": 113845.29164529999,
+        "difference": 0.0
+      },
+      "R5/LEGACY_FILL_QTY": {
+        "h10_all_net": 129092.5950666,
+        "locked_baseline_net": 129092.5950666,
+        "difference": 0.0
+      },
+      "R5/CAUSAL_PREORDER_QTY": {
+        "h10_all_net": 128864.6248656,
+        "locked_baseline_net": 128864.6248656,
+        "difference": 0.0
+      }
+    },
+    "cells": 180
+  },
+  "adversarial_audit": {
+    "timestamp": "2026-09-14T15:06:16+00:00",
+    "all_passed": true,
+    "checks": [
+      {
+        "check": "largest winners and losers recompute from stored prices, quantities and factors",
+        "ok": true,
+        "detail": "max absolute difference 9.09e-13 across 10 trades"
+      },
+      {
+        "check": "sizing tier and integer share count follow the frozen rule",
+        "ok": true,
+        "detail": "0 mismatches in 400 checked"
+      },
+      {
+        "check": "cohort subtotals and the period total reconcile to the trade ledger",
+        "ok": true,
+        "detail": "52 cohort subtotals, max difference 1.82e-12"
+      },
+      {
+        "check": "August 31 equity equals cash minus short liability",
+        "ok": true,
+        "detail": "equity 229,202.83 cash 293,056.30 liability 63,853.47"
+      },
+      {
+        "check": "calendar-account and September runoff totals are reported separately and add up",
+        "ok": true,
+        "detail": "through cutoff 122,842.21 + runoff 6,250.39 = 129,092.60"
+      },
+      {
+        "check": "adjusted 15-session ranking returns rebuild from stored prices and documented factors",
+        "ok": true,
+        "detail": "max difference 0.00e+00 across 4 changed cohorts"
+      },
+      {
+        "check": "the certified top eight is the ranked head of the field, in order",
+        "ok": true,
+        "detail": "4 changed cohorts inspected"
+      },
+      {
+        "check": "every canonical corporate action carries a source URL",
+        "ok": true,
+        "detail": "32 events, 0 without a source"
+      },
+      {
+        "check": "no unresolved or blocked row carries a modelled net total",
+        "ok": true,
+        "detail": "0 leaking rows"
+      },
+      {
+        "check": "public repository contains no .env, private CSV, vendor partition or parquet",
+        "ok": true,
+        "detail": "651 tracked files, 0 offending"
+      },
+      {
+        "check": "public Arrow 007 artefacts contain no credential material",
+        "ok": true,
+        "detail": "[]"
+      }
+    ]
+  },
+  "tests": {
+    "suite": "613 passed, 1 skipped",
+    "command": "python -m pytest tests -q --basetemp=data/tmp/cg_arrow007_tests"
+  }
 }
