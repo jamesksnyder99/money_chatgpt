@@ -4,20 +4,26 @@ This is an independent laboratory seeded from `jamesksnyder99/money`. Source pro
 
 ## Roles and workflow
 
-ChatGPT is research director and auditor. It publishes detailed GitHub arrows and reviews resulting code, evidence and economics. The execution agent is named by the active arrow. **For CG Arrow 011 the executor is Fable in Claude Code.**
+ChatGPT is research director and auditor. It publishes detailed GitHub arrows and reviews resulting code, evidence and economics. The execution agent is named by the active arrow. **For CG Arrow 012 the executor is Opus in Claude Code.**
 
 1. Pull current main with `git pull --ff-only origin main` without overwriting legitimate local work; confirm root/remote.
 2. Read `AGENTS.md`, `docs/SUCCESS.md`, `CLAUDE.md`, and the active arrow.
 3. Execute only the active scope, preserve historical evidence, test, inspect public safety, commit/push safe code and reports.
 4. Verify remote equality, identify local private deliverables and unresolved evidence, then stop for audit. Do not invent the next arrow or run concurrent writers in one worktree.
 
-## Active authority — CG Arrow 011
+## Active authority — CG Arrow 012
 
-The user has parked capital constraints and redeployment to study **Winner-Fade Anatomy: Pre-Entry Characteristics and Within-Cohort Outcomes**. Combine pre-entry feature/mechanism discovery, attribution of differences between the existing models/months, and every-cohort winner/loser comparison. Principal subject is Momentum+Volume-Sized Short; other existing books are explanatory references.
+The user has authorized a narrow **Arrow 011 measurement repair plus two whole-engine challenger ideas and their interaction**. Exact scope: `docs/CG_BUILD_ARROW_012.md`.
 
-Allowance: four hours total, **70% directed/shared work / at most 30% Fable-led exploration**, including evidence, tests, reports and push. The exact assignment is `docs/CG_BUILD_ARROW_011.md`. No next arrow or production promotion is authorized.
+Phase A repairs Arrow 011 analysis statistics/tests only; it does not change any frozen trade/account result. Phase B compares the incumbent Momentum+Volume-Sized Winner-Fade Short (R5/R2/H10, causal pre-order, Arrow 010 equity scaling) with: a cohort-budget-neutral 1.50x rank-one reallocation, an off-high substitution rule using certified original ranks 9–20 while protecting rank one, and their combination. Every challenger is replayed as a complete account; component gains are not assumed additive.
 
-Arrow 008 is the frozen historical baseline reference; Arrow 009 supplies the standing monthly-reporting requirement; Arrow 010 is the fixed-dollar/equity-scaled sizing reference. Preserve all recorded results. Old next-step instructions and active headers in archived arrows do not compete with the current assignment.
+Arrow 008 remains the certified historical baseline reference; Arrow 009 supplies the monthly-reporting standard; Arrow 010 supplies fixed-dollar/equity-scaled account mechanics; Arrow 011 supplies anatomy hypotheses and frozen threshold provenance. Preserve all prior artifacts unchanged.
+
+### Pristine additional-year embargo
+
+The user is acquiring an additional historical year for a future reveal. Arrow 012 may score **only the frozen 52 cohorts from September 2025 through August 2026**. Do not inspect, score, rank, feature-engineer, summarize, or otherwise learn outcomes from any new signal cohort outside that set even if new files appear locally. Existing lookbacks and lifecycle/runoff observations needed by those frozen cohorts are permitted. Active scripts must use frozen cohort membership rather than scanning all available signal dates.
+
+The additional year is reserved for a later one-batch evaluation of the incumbent and pre-registered challengers after its data are certified.
 
 ### Permanent calendar repair for new tests
 
@@ -34,16 +40,20 @@ The GitHub repository is public. Never publish `.env`, credentials, raw vendor b
 - Preserve prior arrows and raw source trees as historical evidence; repairs are versioned and reconciled.
 - Entry eligibility is separate from lifecycle and feature-history coverage. A documented open position is not a completed zero-return trade.
 - No inferred splits, invented executions, hindsight deletion, stale marks labeled verified, or empty-file success without documented coverage.
-- Never hand-replace a suspicious selected name with the next rank. Resolve/document events, normalize units, recompute eligibility/ranks/features across the complete field and let the corrected top eight emerge mechanically.
+- Never hand-replace a suspicious selected name with the next rank because of a data problem. Resolve/document events, normalize units, recompute eligibility/ranks/features across the complete field and let a predeclared strategy rule act only on verified inputs.
+- A predeclared research substitution rule may select a different verified candidate; unresolved evidence may not itself determine who is substituted.
 - Corporate actions before selection and while held require documented dated factors, correct share/price/volume handling, security identity and explicit event cashflows/unknowns. A jump screen is triage, not a complete event census.
 - Distinguish raw historical cache, recorded historical selections and unchanged rules on repaired complete inputs. Do not confuse rank-order changes with membership changes.
 - A positive return does not satisfy verification. A negative repaired result is not an engineering failure. Source-data uncertainty is neither proof of success nor proof of failure.
 - Certification is scoped to the declared dataset, implementation and accounting convention. It is not proof of future performance or broker execution availability.
 - Use original signal-month ownership. IS and OOS risk/account books must be separated; ALL is a distinct chronological account. Causal holdings may cross month boundaries.
-- These repeatedly inspected even signal months are internal confirmation, not pristine validation. New hypothesis development stays in IS, definitions freeze before new OOS analysis, and failed confirmations cannot trigger same-batch retuning.
+- Repeatedly inspected even signal months are internal confirmation, not pristine validation. Failed confirmation cannot trigger same-batch retuning.
 - Separate calendar account through the cutoff, incremental later runoff, eventual completed-trade totals and still-open obligations. Every $/session field names numerator and denominator.
 - Retain all attempted hypotheses and counterexamples. Prefer interpretable mechanisms over black-box sweeps or coefficient-significance screening. Associations are not proven causal explanations.
 - For pre-entry discovery, preserve separate SIGNAL_CLOSE and PRE_ORDER availability cutoffs. Outcomes/post-entry path labels must not enter predictors. Within-cohort and pooled effects are different, and repeated securities/overlapping trades are not independent observations.
+- Analytical repair must be order-invariant: tied feature values may not acquire arbitrary separation from row ordering. Repair does not authorize strategy changes.
+- **Whole-engine rule:** a component idea is not an improvement until its complete chronological account is rebuilt and compared with the untouched incumbent. Preserve interaction failures; do not sum isolated gains and call them portfolio gains.
+- Equity-scaled challengers use their own causal account equity path. Never paste changed trade P&L onto the incumbent compounding path.
 - Outcomes and resource limits never justify false completion. Exact irreducible blockers remain explicit.
 
 ## Historically aware data and feature certification
@@ -54,6 +64,8 @@ At minimum check price/timestamp completeness, missing or stale required observa
 
 Unresolved material defects block affected claims. Do not fill missing data with favorable values, silently discard affected trades or treat retrieval failure as a market event. Missing optional enrichment can limit that feature's analysis while other verified work proceeds; its row masks and limitations must be published. If an inherited material defect is discovered, preserve originals, identify dependent claims and version any authorized correction.
 
+For Arrow 012 specifically, ranks 9–20 that the substitution rule could select are new research observations and require verified identity, eligibility, feature units, action treatment, causal entry observation and H10 lifecycle before scoring.
+
 ## Monthly account reporting standard
 
 Frozen in Arrow 009 as `cg_lab_monthly_account_reporting_v1`, implemented in `src/verification/r4r5_monthly.py`.
@@ -62,7 +74,7 @@ Every future arrow that publishes strategy economics and has a daily marked-acco
 
 Monthly P&L comes from the daily marked-account path, never from grouping completed trades by exit month. The months reconcile to marked account P&L at the period end, not eventual completed-trade P&L including later exits. Runoff stays separate.
 
-Published monthly rows are stated in whole cents and chain exactly. Use those same numbers in CSV and prose; preserve full precision in the manifest. This is a reporting requirement, not an optimization dimension. Previously revealed months may be described, but may not drive new confirmed trading rules.
+Published monthly rows are stated in whole cents and chain exactly. Use those same numbers in CSV and prose; preserve full precision in the manifest. This is a reporting requirement, not an optimization dimension. Previously revealed months may be described, but may not drive same-batch retuning.
 
 ## Headline cost convention
 
