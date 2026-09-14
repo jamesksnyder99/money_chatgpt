@@ -17,3 +17,10 @@ data/pilot/
 data/full/
 data/virgin/
 data/meta/
+
+# Arrow 005: private verification observations and user audit CSVs.
+data/verification/
+handoff/outgoing/
+.env.*
+!.env.example
+!.env.template

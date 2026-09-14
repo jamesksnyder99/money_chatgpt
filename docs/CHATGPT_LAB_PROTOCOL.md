@@ -1,48 +1,43 @@
-# money_chatgpt — ChatGPT / Codex research protocol
+# money_chatgpt — research and verification protocol
 
 This is an independent laboratory seeded from `jamesksnyder99/money`. Source provenance is in `SOURCE_MONEY_COMMIT.txt`; it is not permission to access the original local repository.
 
 ## Roles and workflow
 
-ChatGPT is research director and auditor: it writes the detailed GH arrows, reviews committed code/results, interprets the evidence, and determines the next assignment. Codex Astra is the local investigator/executor. The user normally supplies only a short pointer to the named arrow.
+ChatGPT is research director and auditor. It publishes detailed GitHub arrows and reviews the resulting code, evidence and economics. The execution agent is named by the active arrow. **For CG Arrow 005 the executor is Fable in Claude Code, not Codex Astra.** The user supplies only a short pointer.
 
-1. ChatGPT reads the latest pushed evidence and publishes the next detailed arrow.
-2. Codex checks its current work, uses `git pull --ff-only origin main` without overwriting local changes, and confirms the lab root and remote.
-3. Codex executes the assigned work, tests, records all findings, reviews public safety, commits and pushes to `origin/main`.
-4. Codex verifies the pushed state and stops for audit. It may not invent or begin the next arrow.
+1. Read the current workspace state, pull with `git pull --ff-only origin main` without overwriting local changes, and confirm root/remote.
+2. Read `AGENTS.md`, `docs/SUCCESS.md`, the explicitly assigned arrow, and `CLAUDE.md` when using Claude Code.
+3. Execute only the assigned scope, preserve history, test and record findings, inspect public safety, commit/push intended code and safe reports to main.
+4. Verify remote equality, identify local user deliverables and unresolved evidence, then stop for audit. Do not invent the next arrow or run concurrent writers in one worktree.
 
-One arrow may authorize a whole recursive research session without interim user approvals. Approximately 60% directed hypotheses / 40% Astra-originated investigation is the present discovery allocation, not a rigid hypothesis-count quota. Astra may originate new mechanisms within the active scope, reject weak branches, and follow useful IS evidence. It cannot change the confirmation rule or silently relax data/economic assumptions.
+## Active authority — CG Arrow 005
 
-## Authority and scope
+The user's September 14 instruction authorizes a repair/verification pass on PARENT-H10, original R4 and original R5, followed ONLY AFTER checked reconstruction by a fixed H1–H10 exit-horizon census. See `docs/CG_BUILD_ARROW_005.md` for exact controls, data authority, gates, CSVs and the initial 180-minute allocation.
 
-The user's latest explicit direction and the active CG arrow supersede conflicting historical Money/CG instructions. `docs/SUCCESS.md` holds the current economic policy. Previous reports and freeze manifests remain immutable historical evidence.
+Earlier Arrow 004 Thursday-two-week and separate-long research scope is historical. New long engines, reserves, capital optimization and general recursive research are parked. Earlier 60/40 discovery allocations and minimum-OOS-clock gates do not apply to this forensic assignment. A negative verified baseline is acceptable; unexplained missing observations are not proof of a positive or negative result.
 
-**CG Arrow 004 is now authorized:** R4/R5 short capital utilization, qualified reserves/top-twenty allocation/cohort replacement, weekly-staggered versus biweekly-reset two-week Thursday cohorts, and a separate long-only loser/recovery engine. All new cohorts use the two-week nominal Thursday expiry defined in that arrow. Earlier proposed 5/10/15-session horizon exploration is superseded for this run. R4/R5 are separate short benchmarks, not two full accounts combined. Unrelated swing/day engines remain parked. The 150-minute limit includes scientific and Git closure, with meaningful time protected for long-engine discovery. Arrow 003's short-only scope was specific to that earlier run.
+Full-calendar observation checks and unchanged H10 verification may inspect both splits. This is not fresh validation. New H1–H9 OOS performance must not direct the horizon investigation: use IS summaries, commit the grid/interpretation, then one full OOS batch. Repairs cannot quietly become optimization, nor can a shortened hold conceal an incomplete H10 reconstruction.
 
-## Isolation
+## Isolation and public safety
 
-Do not read from, write to, execute/import code from, or otherwise access `C:\Users\james\Money`. The same prohibition applies when Codex runs without an OS-enforced sandbox; the instruction does not itself create a technical security boundary.
+Never read, write, execute/import from or otherwise access `C:\Users\james\Money`. Use independent lab inputs and acquisitions expressly authorized by the active arrow. No junctions/symlinks/hard links back to Money or copied credentials. An instruction boundary is not an OS sandbox.
 
-Use only lab code and local independent copies under `C:\Users\james\money_chatgpt`, or inputs acquired directly into this lab when expressly authorized by the active arrow. No links back to Money and no copied source credentials. Never run cleanup/reset operations against the original repository. Missing inputs require a bounded permitted fallback or a precise limitation, not silent fallback to the source.
-
-## Public GitHub safety
-
-The repository is intentionally public. Before pushing, inspect staged paths and CONTENT. Do not publish credentials, `.env`, private account identifiers, vendor parquet, raw OHLC/quote payloads, caches, virtual environments, or proprietary datasets. Aggregate performance tables and safe manifests may be published. Keep detailed market-data and trade-audit payloads local with hashes when they cannot be released safely.
+The GitHub repository is public. Never publish secrets, `.env` values, private account identifiers, raw vendor bars/quotes, local caches or proprietary detailed trade observations. Inspect staged paths AND contents before pushing. Store detailed CSVs for private user review under ignored `handoff/outgoing/`, with local paths/hashes and safe aggregate summaries on GitHub. User file delivery does not imply public redistribution permission.
 
 ## Scientific practice
 
-- Preserve historical controls. New common repairs get versioned working controls and a reconciliation; do not attribute a data repair's profit change to the signal.
-- Never infer absence of corporate actions from an empty placeholder. Never invent split factors from returns. Known material defects limit conclusions; unresolved coverage is explicitly labeled.
-- Use as-of information before execution. Do not remove losing trades/months based on future outcomes or use missing future data to create present-day capacity. Entry eligibility is separate from held-position data coverage on BOTH sides.
-- Develop on odd signal months; allow causal lookbacks and position lifecycles across even months. Freeze new finalists before one confirmation reveal. Historical OOS knowledge is disclosed; newly scored OOS cannot direct the current search.
-- Keep signal-cohort statistics separate from actual calendar-month MTM. Replay joint capacity chronologically after freeze. Report outcome overlap; no formal purity project is required.
-- Prefer interpretable rules and focused neighboring checks, not opaque broad grids. Log every tested branch and its mechanism, including negative findings and superseded bug-affected results.
-- Separate less exposure, more efficient exposure, and genuinely different signals. A common R4/R5 mixture is not diversification across independent engines. A standalone long engine is separately evaluated, not presumed to diversify or finance shorts.
-- The active arrow's deadline includes setup, research, confirmation, reports, tests, and push. Reserve closure time and stop opening experiments that cannot finish. Do not silently reinterpret a meaningful research allocation as permission to freeze at the first convenient result.
-- Completion and success are different: a fully completed search may find no improvement. Never claim unperformed work or fabricated performance to meet a target.
+- Preserve historical data, reports, code identities and old confirmation markers. New repairs use versioned inputs, loaders and clearly named replays.
+- Acquisition eligibility is not lifecycle or feature-history coverage. Reconstruct all required observations independently of whether a security still qualifies for a new entry.
+- No inferred splits, invented executions, hindsight deleted trades, stale prices labeled verified, or empty-file success without documented coverage.
+- Separate fixed-historical-decision reconstruction from unchanged-rule complete-field reconstruction. Explain changed memberships/sizes and account for repair-versus-strategy effects.
+- Distinguish verified price/action arithmetic, modeled execution/cost assumptions, and historical financing evidence. Bar replay is not proof of a broker fill or future profitability.
+- Use original signal-month ownership; allow causal histories and holdings across months. Keep signal-cohort outcomes, calendar account MTM and post-window runoff distinct.
+- Horizons in Arrow 005 clone the same entries and initial quantities. No capital reinvestment or extra entries merely because positions close sooner.
+- Outcomes and resource limits do not justify false completion. Checkpoint useful partial work and exact missing evidence if the active allocation is insufficient.
 
 ## Naming
 
-Hold short for fade is the Money Arrow 44 lineage, later Wednesday/eight-name/15-session-lookback/delayed-fill/ten-session-hold. R4 denotes volume-conditioned sizing; R5 adds stalled-momentum sizing. Their exact historical implementations remain versioned controls. New two-week rotation and long mirror policies get distinct IDs and plain-English descriptions rather than silently redefining R4/R5.
+PARENT is the original equal-dollar short rule; H10 is its exit horizon, also used by R4 and R5. R4 denotes volume-conditioned sizing; R5 adds momentum-conditioned sizing. Always attach a plain-English description and explicit model/data/execution version. Do not silently redefine original fixed tickets as an equity-budgeted policy.
 
-Lab assignments use `docs/CG_BUILD_ARROW_XXX.md`. Preserve earlier arrows as history. A short chat pointer is not the full specification.
+Lab arrows use `docs/CG_BUILD_ARROW_XXX.md`. Historical arrows are evidence, not competing current assignments.
