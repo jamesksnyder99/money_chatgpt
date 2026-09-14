@@ -1,0 +1,299 @@
+"""Arrow 005 data layer: checked observations with explicit source and status.
+
+Precedence: validated repair partitions (data/verification/r4r5/v1/validated) first,
+then the original canonical minute tree (virgin through 2026-05-29, full afterwards),
+then the alternate copied tree. National EOD reports are same-vendor references
+only: they never supply an execution. Every observation carries its source path.
+"""
+from __future__ import annotations
+
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from datetime import date, datetime, time, timedelta, timezone
+from functools import lru_cache
+import hashlib
+import json
+import math
+from pathlib import Path
+import statistics
+
+import polars as pl
+
+from ingest.calendar import NYSE_EARLY_CLOSE, nyse_sessions
+from ingest.paths import DATA, REPO_ROOT, safe_symbol_filename
+
+VERSION = "r4r5_v1"
+VERIFY_ROOT = DATA / "verification" / "r4r5" / "v1"
+VALIDATED = VERIFY_ROOT / "validated"
+CACHE = VERIFY_ROOT / "cache" / f"summaries_{VERSION}"
+HANDOFF = REPO_ROOT / "handoff" / "outgoing" / "cg_arrow005"
+ACTION_PATH = REPO_ROOT / "reports" / "cg_arrow003_corporate_actions.json"
+RANKS_PATH = DATA / "tmp" / "cg_arrow002r" / "ranks_ALL_wed.json"
+VIRGIN_END = date(2026, 5, 29)
+LOCAL_TAPE_END = date(2026, 8, 31)
+CUTOFF = date(2026, 8, 31)
+FEATS = nyse_sessions(date(2025, 8, 1), date(2026, 9, 30))
+INDEX = {d: i for i, d in enumerate(FEATS)}
+SCORE = [d for d in FEATS if date(2025, 9, 2) <= d <= CUTOFF]
+IS_MONTHS = {9, 11, 1, 3, 5, 7}
+
+STATUS = ("PRESENT_CHECKED", "NOT_PREVIOUSLY_REQUESTED", "EMPTY_RESPONSE_UNRESOLVED",
+          "PARTIAL_OR_SPARSE_REVIEW", "RETRIEVED_CHECKED", "DOCUMENTED_NO_TRADING",
+          "CORPORATE_ACTION_OR_ID_REVIEW", "UNRESOLVED", "FUTURE_NOT_OBSERVABLE")
+
+
+def stamp() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def split_of(signal: date) -> str:
+    return "IS" if signal.month in IS_MONTHS else "OOS"
+
+
+def close_time(d: date) -> time:
+    return NYSE_EARLY_CLOSE.get(d, time(16))
+
+
+def final_minute(d: date) -> time:
+    return (datetime.combine(d, close_time(d)) - timedelta(minutes=1)).time()
+
+
+def read_json(path: Path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def dump_json(path: Path, obj) -> None:
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(obj, indent=2, allow_nan=False) + "\n", encoding="utf-8", newline="\n")
+    tmp.replace(path)
+
+
+def digest(path: Path) -> str:
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def safe_path(path: Path) -> Path:
+    root = REPO_ROOT.absolute()
+    p = Path(path).absolute()
+    if not p.is_relative_to(root) or ".." in p.parts:
+        raise ValueError("Path outside the independent lab")
+    cursor = root
+    for part in p.relative_to(root).parts:
+        cursor = cursor / part
+        if cursor.is_symlink() or cursor.is_junction():
+            raise ValueError("Linked lab inputs are forbidden")
+    return p
+
+
+# ---------------------------------------------------------------- corporate actions
+@lru_cache(maxsize=1)
+def action_events() -> tuple:
+    if not ACTION_PATH.exists():
+        return ()
+    return tuple(read_json(ACTION_PATH)["events"])
+
+
+def adjustment_factor(symbol: str, observed: date, asof: date, events=None) -> float:
+    """Price factor converting a price observed on `observed` into `asof` units."""
+    factor = 1.0
+    for e in (action_events() if events is None else events):
+        if e["symbol"] == symbol and observed.isoformat() < e["effective_session"] <= asof.isoformat():
+            factor *= e["price_factor"]
+    return factor
+
+
+def adjusted(rec: dict | None, factor: float) -> dict | None:
+    if rec is None or factor == 1:
+        return rec
+    out = dict(rec)
+    for k in ("open", "close", "high", "low", "entry_px", "preorder", "eod_close"):
+        if out.get(k) is not None:
+            out[k] *= factor
+    if out.get("volume") is not None:
+        out["volume"] /= factor
+    return out
+
+
+# ---------------------------------------------------------------- source resolution
+def candidate_paths(d: date, symbol: str) -> list[tuple[str, Path]]:
+    fn = safe_symbol_filename(symbol) + ".parquet"
+    primary = "virgin" if d <= VIRGIN_END else "full"
+    alternate = "full" if primary == "virgin" else "virgin"
+    return [("validated", VALIDATED / d.isoformat() / fn),
+            (primary, DATA / primary / "bars" / d.isoformat() / fn),
+            (alternate, DATA / alternate / "bars" / d.isoformat() / fn)]
+
+
+def read_bars(d: date, symbol: str):
+    """Return (rth_frame, source_label, relative_path, checks) or (None, None, None, checks)."""
+    checks = {"tried": [], "duplicates": 0, "unordered": False, "ohlc_inconsistent": 0, "negative_volume": 0}
+    for label, p in candidate_paths(d, symbol):
+        safe_path(p)
+        if not p.is_file():
+            continue
+        checks["tried"].append(p.relative_to(REPO_ROOT).as_posix())
+        try:
+            df = pl.read_parquet(p, columns=["bar_start", "open", "high", "low", "close", "volume"])
+        except (OSError, pl.exceptions.PolarsError):
+            continue
+        if df.height == 0:
+            checks.setdefault("empty_files", []).append(label)
+            continue
+        checks["negative_volume"] += int(df.filter(pl.col("volume") < 0).height)
+        checks["unordered"] = bool(not df["bar_start"].is_sorted())
+        checks["duplicates"] += int(df.height - df["bar_start"].n_unique())
+        clock = pl.col("bar_start").dt.time()
+        rth = df.filter((clock >= time(9, 30)) & (clock < close_time(d)) & (pl.col("volume") > 0)
+                        & pl.col("open").is_finite() & pl.col("close").is_finite()
+                        & (pl.col("open") > 0) & (pl.col("close") > 0)).sort("bar_start")
+        checks["ohlc_inconsistent"] += int(rth.filter((pl.col("high") < pl.col("low")) | (pl.col("close") > pl.col("high") + 1e-9)
+                                                        | (pl.col("close") < pl.col("low") - 1e-9)).height)
+        if rth.height:
+            return rth, label, p.relative_to(REPO_ROOT).as_posix(), checks
+    return None, None, None, checks
+
+
+def summarize(df: pl.DataFrame, d: date, source: str, path: str, checks: dict) -> dict:
+    last = df.row(-1, named=True)
+    first = df.row(0, named=True)
+    clock = pl.col("bar_start").dt.time()
+    fm = final_minute(d)
+    closing = df.filter(clock == fm)
+    pre = df.filter(clock < fm)
+    return {"version": VERSION, "source": source, "path": path, "mark_kind": "minute_close",
+            "ts": last["bar_start"].isoformat(), "close": float(last["close"]),
+            "first_ts": first["bar_start"].isoformat(), "open": float(first["open"]),
+            "high": float(df["high"].max()), "low": float(df["low"].min()),
+            "volume": float(df["volume"].sum()), "n_bars": int(df.height),
+            "entry_ts": closing["bar_start"][0].isoformat() if closing.height else None,
+            "entry_px": float(closing["close"][0]) if closing.height else None,
+            "preorder": float(pre["close"][-1]) if pre.height else None,
+            "preorder_ts": pre["bar_start"][-1].isoformat() if pre.height else None,
+            "early_close": d in NYSE_EARLY_CLOSE,
+            "checks": {k: v for k, v in checks.items() if k != "tried"}}
+
+
+def eod_reference(d: date, symbol: str) -> dict | None:
+    """Same-vendor national 17:15 EOD close. Reference only; not an RTH execution."""
+    base = DATA / "virgin" / "eod"
+    for chunk in (d.strftime("%Y-%m"), d.strftime("%Y-%m") + "-early"):
+        p = base / chunk / (safe_symbol_filename(symbol) + ".parquet")
+        safe_path(p)
+        if not p.is_file():
+            continue
+        try:
+            df = pl.read_parquet(p, columns=["eod_date", "close", "last_trade", "volume"])
+        except (OSError, pl.exceptions.PolarsError):
+            continue
+        rows = df.filter(pl.col("eod_date") == d)
+        if rows.height:
+            px = float(rows["close"][0])
+            if math.isfinite(px) and px > 0:
+                return {"eod_close": px, "eod_last_trade": str(rows["last_trade"][0]),
+                        "eod_volume": float(rows["volume"][0]), "eod_path": p.relative_to(REPO_ROOT).as_posix(),
+                        "scope": "national_1715_report; adjustment undeclared"}
+    return None
+
+
+def _file_key(p: Path) -> str:
+    st = p.stat()
+    return f"{st.st_size}:{int(st.st_mtime)}"
+
+
+def summary_job(job):
+    iso, symbols = job
+    d = date.fromisoformat(iso)
+    p = CACHE / (iso + ".json")
+    cache = read_json(p) if p.exists() else {}
+    changed = False
+    for sym in symbols:
+        entry = cache.get(sym)
+        df, source, rel, checks = read_bars(d, sym)
+        key = _file_key(REPO_ROOT / rel) if rel else None
+        if entry is not None and entry.get("_key") == key and entry.get("version") == VERSION:
+            continue
+        rec = summarize(df, d, source, rel, checks) if df is not None else None
+        eod = eod_reference(d, sym)
+        if rec is None:
+            rec = {"version": VERSION, "source": None, "path": None, "mark_kind": None, "missing": True,
+                   "tried": checks.get("tried", []), "empty_files": checks.get("empty_files", [])}
+        if eod:
+            rec.update(eod)
+        rec["_key"] = key
+        cache[sym] = rec
+        changed = True
+    if changed:
+        dump_json(p, cache)
+    return iso, {sym: cache[sym] for sym in symbols}
+
+
+def load_summaries(needs, workers: int = 8) -> dict:
+    by: dict[str, set] = {}
+    for iso, sym in needs:
+        by.setdefault(iso, set()).add(sym)
+    out = {}
+    jobs = sorted((iso, sorted(s)) for iso, s in by.items())
+    with ProcessPoolExecutor(max_workers=max(1, min(workers, 8))) as pool:
+        futures = [pool.submit(summary_job, j) for j in jobs]
+        for n, f in enumerate(as_completed(futures), 1):
+            iso, rows = f.result()
+            out.update({(iso, s): v for s, v in rows.items()})
+            if n % 40 == 0 or n == len(futures):
+                print(f"{stamp()} summaries {n}/{len(futures)}", flush=True)
+    return out
+
+
+def present(rec: dict | None) -> bool:
+    return bool(rec) and not rec.get("missing") and rec.get("mark_kind") == "minute_close"
+
+
+# ---------------------------------------------------------------- manifests / statuses
+@lru_cache(maxsize=1)
+def manifest_rows() -> dict:
+    out = {}
+    for tree in ("virgin", "full"):
+        p = DATA / tree / "manifest.parquet"
+        if not p.exists():
+            continue
+        m = pl.read_parquet(p, columns=["symbol", "session_date", "status", "rows"])
+        for sym, d, status, rows in m.iter_rows():
+            out[(sym, d.isoformat())] = (tree, status, int(rows or 0))
+    return out
+
+
+def observation_status(d: date, symbol: str, rec: dict | None, *, need_final_minute: bool) -> str:
+    """Evidence label for one symbol-session; describes data, not outcomes."""
+    if d > LOCAL_TAPE_END:
+        return "FUTURE_NOT_OBSERVABLE" if d > date.today() else "NOT_PREVIOUSLY_REQUESTED"
+    if present(rec):
+        if need_final_minute and rec.get("entry_ts") is None:
+            return "PARTIAL_OR_SPARSE_REVIEW"
+        return "PRESENT_CHECKED"
+    man = manifest_rows().get((symbol, d.isoformat()))
+    if man is None:
+        return "NOT_PREVIOUSLY_REQUESTED"
+    if man[2] == 0:
+        return "EMPTY_RESPONSE_UNRESOLVED"
+    return "PARTIAL_OR_SPARSE_REVIEW"
+
+
+# ---------------------------------------------------------------- features
+def history(symbol: str, days: list[date], asof: date, summaries: dict) -> list[dict | None]:
+    out = []
+    for x in days:
+        rec = summaries.get((x.isoformat(), symbol))
+        out.append(adjusted(rec, adjustment_factor(symbol, x, asof)) if present(rec) else None)
+    return out
+
+
+def features(hist: list[dict | None]) -> dict:
+    """ret3 and the 20-session mean volume ratio exactly as the frozen R4/R5 rules define them."""
+    days = hist[-21:]
+    out = {"ret3": None, "volume_ratio": None, "history_sessions": sum(1 for x in days if x)}
+    if len(days) >= 4 and all(x and x["close"] > 0 for x in days[-4:]):
+        out["ret3"] = days[-1]["close"] / days[-4]["close"] - 1
+    if len(days) == 21 and all(days):
+        vb = statistics.mean(x["volume"] for x in days[:-1])
+        out["volume_ratio"] = days[-1]["volume"] / vb if vb > 0 else None
+    return out

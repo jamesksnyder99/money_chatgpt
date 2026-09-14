@@ -1,0 +1,15 @@
+{
+  "status": "NOT_RUN_DATA_GATE",
+  "timestamp": "2026-09-14T10:46:20+00:00",
+  "blocking": [
+    "PARENT: 37 scheduled H10 exits unresolved locally",
+    "PARENT: 7 intended entries missing the final-minute observation",
+    "R4: 37 scheduled H10 exits unresolved locally",
+    "R4: 7 intended entries missing the final-minute observation",
+    "R5: 37 scheduled H10 exits unresolved locally",
+    "R5: 7 intended entries missing the final-minute observation",
+    "11 slots carry an unresolved action/identity review flag (>=2x session gap or test symbol)",
+    "13 cohorts ranked on a $50-ceiling field (rule requires $10-$80)"
+  ],
+  "note": "Horizon census not run; exporter tested on synthetic data only"
+}

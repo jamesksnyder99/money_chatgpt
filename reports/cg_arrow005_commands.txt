@@ -1,0 +1,52 @@
+CG Arrow 005 — commands, checkpoints and timings (Fable in Claude Code)
+Start 2026-09-14T10:21:51Z (06:21:51 ET). Deadline 13:21:51Z. Python 3.14.5, thetadata 1.0.10, polars 1.43.2, 8 CPU.
+
+# 0. Pull and read (minute 0–24)
+git pull --ff-only origin main                      # 263dd77..ae24604 (CLAUDE.md, Arrow 005 doc)
+# read CLAUDE.md AGENTS.md docs/CHATGPT_LAB_PROTOCOL.md docs/SUCCESS.md docs/CG_BUILD_ARROW_005.md
+# read reports/cg_arrow003_{report,repairs}.md, cg_arrow003_lifecycle_coverage.json, cg_arrow004_repairs.md,
+#      cg_arrow004_valuation_reference_audit.json, cg_arrow004_coverage_all.json (head), cg_arrow004_report.md (BRIDGE/S0 lines)
+# read src/research/arrow65.py cg_arrow003_data.py cg_arrow003_lab.py cg_arrow003_oracle.py (head) research/{book,costs,clock}.py
+#      src/ingest/{paths,eligibility,manifest,calendar,bars,theta_pool}.py full.py/virgin.py (grep) src/theta/client.py
+# credential presence check (names only): no .env, no THETA* env vars, no ~/.thetadata -> auth_mode() raises
+
+# 1. Plan committed before outcome-dependent work (minute 24)
+python - (writes reports/cg_arrow005_plan.json)
+git add reports/cg_arrow005_plan.json && git commit -m "Arrow 005: predeclare verification plan, stages, cells and cost scenarios"   # 0174e7e
+
+# 2. Code (minute 24–47): src/verification/{__init__,r4r5_data,r4r5_replay,r4r5_export,r4r5_oracle,r4r5_acquire}.py, scripts/cg_arrow005_run.py
+
+# 3. Orchestration runs
+python scripts/cg_arrow005_run.py --workers 8      # run 1, minute 47: 1m31s wall; summaries 280 date partitions built (35,412 symbol-sessions, 28,213 present)
+#   R0 read; cohorts=52 slots=416; pilot authenticated=False; required manifest PRESENT 8683 / NOT_PREVIOUSLY_REQUESTED 403 / PARTIAL 18; 118 requests
+#   R1/R2/R2_CAUSAL x PARENT/R4/R5: 372 verified each; oracle ok (3,348 trades, 468 cohorts, max err 1.8e-12); gate NOT_RUN_DATA_GATE
+# finding: ZVZZT (Nasdaq test symbol) in inherited roster, selected 2026-04-01 and 2026-06-17; NVA/PMI/ONEG/SMJF >=3x session gaps never screened (Arrow 003 screen was IS-only)
+# patch: screen_hold + identity_status + stale/identity columns in daily account
+python scripts/cg_arrow005_run.py --workers 8      # run 2, minute 66: 0.9m (warm cache); gate adds "11 slots action/identity review"
+python scripts/cg_arrow005_run.py --workers 8      # run 3, minute 75: 0.9m; identity-review daily columns; results unchanged
+
+# 4. Tests
+python -m pytest tests/test_cg_arrow005.py -q --basetemp=data/tmp/cg_arrow005_tests      # 18 passed in 3.01s (minute 80)
+#   (first attempt without --basetemp hit a PermissionError on the system pytest temp dir; rerun under ignored lab data/tmp as required)
+python -m pytest tests -q --basetemp=data/tmp/cg_arrow005_tests -p no:cacheprovider      # 567 passed in 10.55s (minute 89)
+
+# 5. Reports (minute 80–92): reports/cg_arrow005_{verification.md,file_changes.md,horizon_report.md,commands.txt,manifest.json,horizon_freeze.json}
+
+# 6. Public-safety inspection, commit, push (see terminal handoff for SHA)
+git status --short; git diff --cached --stat; git check-ignore handoff/outgoing/cg_arrow005/r4r5_verified_trades.csv data/verification/r4r5/v1/pilot.json .env
+grep -rniE "api_key=|password=|secret" <staged files>   # expect only the documented placeholder text in the setup instruction
+
+# Gates and outcomes
+# Baseline gate: NOT cleared (unresolved exits 37/family, missed entries 7, 11 action/identity flags, 13 truncated-field cohorts, no vendor auth).
+# Horizon census: NOT_RUN_DATA_GATE. No H1-H9 real-data cell scored; no OOS reveal.
+# Acquisition: 0 requests made, 0 bytes; exact request list local at data/verification/r4r5/v1/required_manifest.json (118 windows, 421 symbol-sessions).
+# Secondary BRIDGE/S0 reconciliation: not started (budget reserved for primary ledger).
+# Errors/retries: none in replay/oracle; pytest temp-dir permission error resolved by --basetemp.
+
+# Local private deliverables (ignored by Git; hashes in reports/cg_arrow005_manifest.json)
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow005\r4r5_trade_exceptions_initial.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow005\r4r5_trade_exceptions.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow005\r4r5_verified_trades.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow005\r4r5_verified_cohort_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow005\r4r5_cohort_matrix.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow005\r4r5_daily_account.csv

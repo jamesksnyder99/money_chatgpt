@@ -1,0 +1,1087 @@
+{
+  "timestamp": "2026-09-14T10:46:19+00:00",
+  "elapsed_minutes": 0.9111738349999844,
+  "head_at_run": "0174e7ee97cd74ad772ca32ad09f51b3fbe566d9",
+  "code_sha256": {
+    "src/verification/r4r5_data.py": "3fa2d54590fd82759b7d1727d81c375a0fb344c72fd1b28ee5cfb417ed3434c9",
+    "src/verification/r4r5_replay.py": "4239ece60164ea89699718337dd8c99b1490064c383be9df9c789521dcc129e6",
+    "src/verification/r4r5_export.py": "7ced8dbb4e7a21cb982cc3ff33bc03a53bc3fc688f2b6a8f1c210ed37ae04891",
+    "src/verification/r4r5_oracle.py": "f0ba825902741adabed7bf05c1392b01f1588ba626013a83b7eab9887dda8c5b",
+    "src/verification/r4r5_acquire.py": "345ac417ef16c917a9590b8516922027c3c5df02a73eb1af34a64ae3c672f40a",
+    "scripts/cg_arrow005_run.py": "23cf96d6e053683d4184843613ce46719c86a3f3c2e51556d54f2caa816efe33"
+  },
+  "input_sha256": {
+    "data/tmp/cg_arrow002r/ranks_ALL_wed.json": "33fb637bf5f9a2c12cfe192a425d8736545cbc76aa7fe73ce99ae2c65fc38397",
+    "data/tmp/cg_arrow003/results/PARENT_ALL.json": "283a9819f3627fe8c5df68ca28aec3e65d4fbec2abba36e2d170ecbfa72437aa",
+    "data/tmp/cg_arrow003/results/R4_ALL.json": "054fd991756acfe2da9a23a98f5165b5f8705ef23a6d0e6bb93112eb5450ae2b",
+    "data/tmp/cg_arrow003/results/R5_ALL.json": "3b7011c3be3fe5dccf449d330db6e0ffa5947a965d16fe8c639bcc96cd376544"
+  },
+  "calendar": {
+    "features_start": "2025-08-01",
+    "score_end": "2026-08-31",
+    "runoff_through": "2026-09-30",
+    "holidays_2026_in_window": [
+      "2026-09-07"
+    ],
+    "early_closes": [
+      "2025-11-28",
+      "2025-12-24"
+    ]
+  },
+  "action_identity_review": [
+    {
+      "cohort_id": "2025-10-15",
+      "symbol": "NVA",
+      "flag": "ACTION_OR_ID_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.20791722602403329,
+      "date": "2025-10-29",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2025-10-22",
+      "symbol": "NVA",
+      "flag": "ACTION_OR_ID_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.20791722602403329,
+      "date": "2025-10-29",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2025-10-22",
+      "symbol": "PMI",
+      "flag": "ACTION_OR_ID_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.3,
+      "date": "2025-10-24",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2025-12-24",
+      "symbol": "RGC",
+      "flag": "LARGE_MOVE_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 1.5779706674648308,
+      "date": "2026-01-07",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2026-01-14",
+      "symbol": "NBY",
+      "flag": "ACTION_OR_ID_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.4448334466349422,
+      "date": "2026-01-20",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2026-01-14",
+      "symbol": "AHMA",
+      "flag": "LARGE_MOVE_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 1.8916558861578265,
+      "date": "2026-01-15",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2026-01-28",
+      "symbol": "BNAI",
+      "flag": "ACTION_OR_ID_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.4702743902439024,
+      "date": "2026-01-30",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2026-03-11",
+      "symbol": "BATL",
+      "flag": "LARGE_MOVE_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.5672131147540984,
+      "date": "2026-03-25",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2026-03-18",
+      "symbol": "BATL",
+      "flag": "LARGE_MOVE_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.5672131147540984,
+      "date": "2026-03-25",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2026-04-01",
+      "symbol": "ZVZZT",
+      "flag": "ACTION_OR_ID_REVIEW",
+      "identity": "TEST_SYMBOL_ID_REVIEW",
+      "ratio": 0.178359096313912,
+      "date": "2026-04-02",
+      "status": "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW"
+    },
+    {
+      "cohort_id": "2026-04-22",
+      "symbol": "XNDU",
+      "flag": "ACTION_OR_ID_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.36603930251868255,
+      "date": "2026-05-04",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2026-04-22",
+      "symbol": "POET",
+      "flag": "LARGE_MOVE_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.5266644584299437,
+      "date": "2026-04-27",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2026-04-22",
+      "symbol": "MXL",
+      "flag": "LARGE_MOVE_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 1.7565521258008152,
+      "date": "2026-04-24",
+      "status": "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED"
+    },
+    {
+      "cohort_id": "2026-04-29",
+      "symbol": "XNDU",
+      "flag": "ACTION_OR_ID_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.36603930251868255,
+      "date": "2026-05-04",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2026-05-06",
+      "symbol": "ONEG",
+      "flag": "ACTION_OR_ID_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.1439803826728608,
+      "date": "2026-05-07",
+      "status": "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED"
+    },
+    {
+      "cohort_id": "2026-06-17",
+      "symbol": "ZVZZT",
+      "flag": null,
+      "identity": "TEST_SYMBOL_ID_REVIEW",
+      "ratio": null,
+      "date": null,
+      "status": "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW"
+    },
+    {
+      "cohort_id": "2026-08-12",
+      "symbol": "DFNS",
+      "flag": "LARGE_MOVE_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.5390966488586693,
+      "date": "2026-08-24",
+      "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE"
+    },
+    {
+      "cohort_id": "2026-08-19",
+      "symbol": "SMJF",
+      "flag": "ACTION_OR_ID_REVIEW",
+      "identity": "INHERITED_ROSTER_UNVERIFIED",
+      "ratio": 0.12743362831858407,
+      "date": "2026-08-27",
+      "status": "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED"
+    }
+  ],
+  "r0": {
+    "source": "data/tmp/cg_arrow003/results and details (frozen, read-only)",
+    "books": {
+      "PARENT_IS": {
+        "total_pnl": 6450.9913142000005,
+        "per_day": 52.024123501612905,
+        "trades": 197,
+        "exit_legs": 191,
+        "terminal_tickets": 6,
+        "terminal_net_mtm": -1605.542940000001,
+        "terminal_stale_gross": 25367.99,
+        "legs_by_reason": {
+          "backstop": 6709.889187200004,
+          "delayed_backstop": 1346.645067
+        },
+        "counters": {
+          "missing_volume_neutral": 17,
+          "missing_momentum_neutral": 0,
+          "entry_update_fallback": 0,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delayed_exit_sessions": 95,
+          "missed_late_entry": 3
+        },
+        "result_sha256": "081640268542212e93da688da10a0787ad69f3345259a1c3e3c58a480b54c57c",
+        "detail_sha256": "723a67329dab502d0ec6a91a8eb6fc6c137f2f70b78c19066c645796135fd366"
+      },
+      "PARENT_OOS": {
+        "total_pnl": 31866.2040538,
+        "per_day": 250.9149925496063,
+        "trades": 212,
+        "exit_legs": 192,
+        "terminal_tickets": 20,
+        "terminal_net_mtm": -1685.3715550000018,
+        "terminal_stale_gross": 22688.980000000003,
+        "legs_by_reason": {
+          "backstop": 38681.82544880003,
+          "delayed_backstop": -5130.24984
+        },
+        "counters": {
+          "missing_volume_neutral": 24,
+          "missing_momentum_neutral": 0,
+          "entry_update_fallback": 0,
+          "stale_position_sessions": 366,
+          "missed_late_entry": 4,
+          "missing_scheduled_exit": 6,
+          "delayed_exit_fills": 2,
+          "delayed_exit_sessions": 3
+        },
+        "result_sha256": "6770ff2373421ada922aa4f5137e491ef85c22f14a9c5a3bbca8958d41aacc23",
+        "detail_sha256": "26962a8a92731f55f4316e316c18e2d37443f401cf46f04cfa473645364fc474"
+      },
+      "PARENT_ALL": {
+        "total_pnl": 38317.195368,
+        "per_day": 152.65814887649404,
+        "trades": 409,
+        "exit_legs": 383,
+        "terminal_tickets": 26,
+        "terminal_net_mtm": -3290.9144950000027,
+        "terminal_stale_gross": 48056.97,
+        "legs_by_reason": {
+          "backstop": 45391.71463599999,
+          "delayed_backstop": -3783.604773000001
+        },
+        "counters": {
+          "missing_volume_neutral": 41,
+          "missing_momentum_neutral": 0,
+          "entry_update_fallback": 0,
+          "stale_position_sessions": 1090,
+          "missing_scheduled_exit": 21,
+          "delayed_exit_fills": 11,
+          "delayed_exit_sessions": 98,
+          "missed_late_entry": 7
+        },
+        "result_sha256": "283a9819f3627fe8c5df68ca28aec3e65d4fbec2abba36e2d170ecbfa72437aa",
+        "detail_sha256": "861fbe1047fca8baa2547c9e41137634e8ae94d53ce2cff9dc20bde271ff9b91"
+      },
+      "R4_IS": {
+        "total_pnl": 14078.448518399999,
+        "per_day": 113.53587514838709,
+        "trades": 197,
+        "exit_legs": 191,
+        "terminal_tickets": 6,
+        "terminal_net_mtm": -1598.1717950000007,
+        "terminal_stale_gross": 24545.29,
+        "legs_by_reason": {
+          "backstop": 14239.90008039999,
+          "delayed_backstop": 1436.7202330000002
+        },
+        "counters": {
+          "missing_volume_neutral": 17,
+          "missing_momentum_neutral": 0,
+          "entry_update_fallback": 0,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delayed_exit_sessions": 95,
+          "missed_late_entry": 3
+        },
+        "result_sha256": "d618e4c4eb2c0f043b0b2fb17a0dbb6a9b68150b0a180cb63b6f0cff1304a54c",
+        "detail_sha256": "7af2e2f5bb5abc5ec0e4241cdc47982bff0440b0d15320e22d7f7632d98e4fc7"
+      },
+      "R4_OOS": {
+        "total_pnl": 44962.237880500004,
+        "per_day": 354.0333691377953,
+        "trades": 212,
+        "exit_legs": 192,
+        "terminal_tickets": 20,
+        "terminal_net_mtm": 1550.5969049999992,
+        "terminal_stale_gross": 17060.600000000002,
+        "legs_by_reason": {
+          "backstop": 50291.52653549999,
+          "delayed_backstop": -6879.885560000001
+        },
+        "counters": {
+          "missing_volume_neutral": 24,
+          "missing_momentum_neutral": 0,
+          "entry_update_fallback": 0,
+          "stale_position_sessions": 366,
+          "missed_late_entry": 4,
+          "missing_scheduled_exit": 6,
+          "delayed_exit_fills": 2,
+          "delayed_exit_sessions": 3
+        },
+        "result_sha256": "ef84bfe845309defce4c9a4830fabd00d6855c0874e5f1c73ce54edcf540821d",
+        "detail_sha256": "39511087cafd544db52059a5d5a39df4e2daeed30283fcb5b470543189bba39a"
+      },
+      "R4_ALL": {
+        "total_pnl": 59040.686398900005,
+        "per_day": 235.22185816294822,
+        "trades": 409,
+        "exit_legs": 383,
+        "terminal_tickets": 26,
+        "terminal_net_mtm": -47.57489000000143,
+        "terminal_stale_gross": 41605.89000000001,
+        "legs_by_reason": {
+          "backstop": 64531.426615899974,
+          "delayed_backstop": -5443.165327000001
+        },
+        "counters": {
+          "missing_volume_neutral": 41,
+          "missing_momentum_neutral": 0,
+          "entry_update_fallback": 0,
+          "stale_position_sessions": 1090,
+          "missing_scheduled_exit": 21,
+          "delayed_exit_fills": 11,
+          "delayed_exit_sessions": 98,
+          "missed_late_entry": 7
+        },
+        "result_sha256": "054fd991756acfe2da9a23a98f5165b5f8705ef23a6d0e6bb93112eb5450ae2b",
+        "detail_sha256": "6211ee72cf9d9f2bf52ffcd4d072c5847d5698ca5bad1e952bce75a870aaf43c"
+      },
+      "R5_IS": {
+        "total_pnl": 21662.039154499995,
+        "per_day": 174.6938641491935,
+        "trades": 197,
+        "exit_legs": 191,
+        "terminal_tickets": 6,
+        "terminal_net_mtm": -1498.41873,
+        "terminal_stale_gross": 24072.920000000002,
+        "legs_by_reason": {
+          "backstop": 22109.037849500008,
+          "delayed_backstop": 1051.4200350000003
+        },
+        "counters": {
+          "missing_volume_neutral": 17,
+          "missing_momentum_neutral": 4,
+          "entry_update_fallback": 0,
+          "stale_position_sessions": 724,
+          "missing_scheduled_exit": 15,
+          "delayed_exit_fills": 9,
+          "delayed_exit_sessions": 95,
+          "missed_late_entry": 3
+        },
+        "result_sha256": "6c513a8962b6c3b24afec74e5c2c933306a9918187da03c374f929cd95688b09",
+        "detail_sha256": "1a672e042ec513b499cc9f3cf45229bc8e64145f2785df978b02ab04367ac8ed"
+      },
+      "R5_OOS": {
+        "total_pnl": 47259.10147930001,
+        "per_day": 372.1189092858268,
+        "trades": 212,
+        "exit_legs": 192,
+        "terminal_tickets": 20,
+        "terminal_net_mtm": 711.5374349999992,
+        "terminal_stale_gross": 13810.92,
+        "legs_by_reason": {
+          "backstop": 52093.355224300016,
+          "delayed_backstop": -5545.791180000001
+        },
+        "counters": {
+          "missing_volume_neutral": 24,
+          "missing_momentum_neutral": 5,
+          "entry_update_fallback": 0,
+          "stale_position_sessions": 366,
+          "missed_late_entry": 4,
+          "missing_scheduled_exit": 6,
+          "delayed_exit_fills": 2,
+          "delayed_exit_sessions": 3
+        },
+        "result_sha256": "7ab26c29b516ef661100ea5673c07b4b224477344cbe8b84ea77f46f38b31352",
+        "detail_sha256": "535f77a7ded0eb73ac8342e3339594370bb8101ed3e28a9c062f64849d1b7bd0"
+      },
+      "R5_ALL": {
+        "total_pnl": 68921.14063380001,
+        "per_day": 274.5862176645419,
+        "trades": 409,
+        "exit_legs": 383,
+        "terminal_tickets": 26,
+        "terminal_net_mtm": -786.8812950000008,
+        "terminal_stale_gross": 37883.840000000004,
+        "legs_by_reason": {
+          "backstop": 74202.39307380002,
+          "delayed_backstop": -4494.371145000001
+        },
+        "counters": {
+          "missing_volume_neutral": 41,
+          "missing_momentum_neutral": 9,
+          "entry_update_fallback": 0,
+          "stale_position_sessions": 1090,
+          "missing_scheduled_exit": 21,
+          "delayed_exit_fills": 11,
+          "delayed_exit_sessions": 98,
+          "missed_late_entry": 7
+        },
+        "result_sha256": "3b7011c3be3fe5dccf449d330db6e0ffa5947a965d16fe8c639bcc96cd376544",
+        "detail_sha256": "96af56ad20ddae73927d0c8dbc2a760c94e16289a4bc9fad5b737d3e03c2e6bf"
+      }
+    },
+    "legacy_is": {
+      "PARENT": {
+        "legacy": 9969.572685699999,
+        "accounting_only": 10425.918742700002,
+        "working": 6450.9913142000005
+      },
+      "R4": {
+        "legacy": 16598.290789399998,
+        "accounting_only": 17358.9750274,
+        "working": 14078.448518399999
+      },
+      "R5": {
+        "legacy": 24628.0960564,
+        "accounting_only": 25654.3712014,
+        "working": 21662.039154499995
+      }
+    },
+    "record_types": {
+      "PARENT/R4/R5 frozen books": "original fixed-ticket H10, Arrow 003 working convention (fill-close quantity, delayed backstop at later open, stale marks in totals)",
+      "Arrow 004 BRIDGE_R4/R5": "timing bridge (open prices, preorder quantity) \u2014 not replayed in this pass",
+      "Arrow 004 S0_R4/R5": "equity-budgeted variant \u2014 not replayed in this pass"
+    }
+  },
+  "r0_r1_reconciliation": {
+    "PARENT": {
+      "frozen_positions": 409,
+      "r1_filled": 409,
+      "identity_equal": true,
+      "missing_from_r1": [],
+      "extra_in_r1": [],
+      "quantity_mismatches": 0,
+      "verified_scheduled_exits": 372,
+      "frozen_scheduled_legs": 372,
+      "matched_scheduled_legs": 372,
+      "max_abs_leg_difference": 9.094947017729282e-13,
+      "waterfall": {
+        "R0_total": 38317.195368,
+        "R0_scheduled_exit_legs": 45391.714636,
+        "R0_delayed_backstop_legs_diagnostic": -3783.6047730000005,
+        "R0_terminal_mtm_incl_stale": -3290.9144950000027,
+        "R1_verified_scheduled_exits_net": 45391.714636000004,
+        "R1_unresolved_slots": 37,
+        "R1_missed_entries": 7,
+        "R1_blocked_or_zero": 0
+      }
+    },
+    "R4": {
+      "frozen_positions": 409,
+      "r1_filled": 409,
+      "identity_equal": true,
+      "missing_from_r1": [],
+      "extra_in_r1": [],
+      "quantity_mismatches": 0,
+      "verified_scheduled_exits": 372,
+      "frozen_scheduled_legs": 372,
+      "matched_scheduled_legs": 372,
+      "max_abs_leg_difference": 1.8189894035458565e-12,
+      "waterfall": {
+        "R0_total": 59040.686398900005,
+        "R0_scheduled_exit_legs": 64531.426615899996,
+        "R0_delayed_backstop_legs_diagnostic": -5443.165327000001,
+        "R0_terminal_mtm_incl_stale": -47.57489000000143,
+        "R1_verified_scheduled_exits_net": 64531.426615899996,
+        "R1_unresolved_slots": 37,
+        "R1_missed_entries": 7,
+        "R1_blocked_or_zero": 0
+      }
+    },
+    "R5": {
+      "frozen_positions": 409,
+      "r1_filled": 409,
+      "identity_equal": true,
+      "missing_from_r1": [],
+      "extra_in_r1": [],
+      "quantity_mismatches": 0,
+      "verified_scheduled_exits": 372,
+      "frozen_scheduled_legs": 372,
+      "matched_scheduled_legs": 372,
+      "max_abs_leg_difference": 9.094947017729282e-13,
+      "waterfall": {
+        "R0_total": 68921.14063380001,
+        "R0_scheduled_exit_legs": 74202.3930738,
+        "R0_delayed_backstop_legs_diagnostic": -4494.371145000001,
+        "R0_terminal_mtm_incl_stale": -786.8812950000008,
+        "R1_verified_scheduled_exits_net": 74202.39307379999,
+        "R1_unresolved_slots": 37,
+        "R1_missed_entries": 7,
+        "R1_blocked_or_zero": 0
+      }
+    }
+  },
+  "r1_r2_comparison": {
+    "PARENT": {
+      "membership_equal": true,
+      "feature_differences": 0,
+      "size_differences": 0,
+      "quantity_differences": 0,
+      "R1_verified_net": 45391.714636000004,
+      "R2_verified_net": 45391.714636000004,
+      "R2_causal_preorder_verified_net": 45274.6076,
+      "causal_quantity_changes": 152,
+      "note": "R2 uses the same local field as R1; complete-field reconstruction is blocked by acquisition (see ranking_scope)"
+    },
+    "R4": {
+      "membership_equal": true,
+      "feature_differences": 0,
+      "size_differences": 0,
+      "quantity_differences": 0,
+      "R1_verified_net": 64531.426615899996,
+      "R2_verified_net": 64531.426615899996,
+      "R2_causal_preorder_verified_net": 64481.1146111,
+      "causal_quantity_changes": 152,
+      "note": "R2 uses the same local field as R1; complete-field reconstruction is blocked by acquisition (see ranking_scope)"
+    },
+    "R5": {
+      "membership_equal": true,
+      "feature_differences": 0,
+      "size_differences": 0,
+      "quantity_differences": 0,
+      "R1_verified_net": 74202.39307379999,
+      "R2_verified_net": 74202.39307379999,
+      "R2_causal_preorder_verified_net": 74041.2421098,
+      "causal_quantity_changes": 140,
+      "note": "R2 uses the same local field as R1; complete-field reconstruction is blocked by acquisition (see ranking_scope)"
+    }
+  },
+  "eod_corroboration": {
+    "counts": {
+      "entry_eod_within_1pct": 305,
+      "exit_eod_within_1pct": 275,
+      "entry_eod_over_1pct": 4,
+      "exit_eod_over_1pct": 3,
+      "exit_no_same_vendor_eod": 94,
+      "entry_no_same_vendor_eod": 100
+    },
+    "flagged": [
+      {
+        "symbol": "PMI",
+        "date": "2025-11-06",
+        "relative_difference": 0.015151515151515138
+      },
+      {
+        "symbol": "MCRB",
+        "date": "2025-11-20",
+        "relative_difference": 0.013636363636363669
+      },
+      {
+        "symbol": "DGNX",
+        "date": "2025-10-09",
+        "relative_difference": 0.012352049537201149
+      },
+      {
+        "symbol": "NCI",
+        "date": "2026-03-26",
+        "relative_difference": 0.011884550084889645
+      },
+      {
+        "symbol": "STI",
+        "date": "2025-10-16",
+        "relative_difference": 0.011519473395501967
+      },
+      {
+        "symbol": "ZVZZT",
+        "date": "2026-04-02",
+        "relative_difference": 0.011428571428571566
+      },
+      {
+        "symbol": "NVA",
+        "date": "2025-11-06",
+        "relative_difference": 0.010339734121122657
+      }
+    ],
+    "scope": "same-vendor national 17:15 EOD versus final-minute RTH close; corroboration, not an independent vendor; June-August 2026 has no local EOD partition"
+  },
+  "pilot": {
+    "timestamp": "2026-09-14T10:46:02+00:00",
+    "sdk": "1.0.10",
+    "auth_mode": null,
+    "authenticated": false,
+    "cases": [],
+    "error": "RuntimeError: Missing Theta Data credentials in .env. Expected THETADATA_API_KEY, or an email/password pair: THETADATA_EMAIL/THETADATA_PASSWORD, THETA_EMAIL/THETA_PASSWORD, THETA_USERNAME/THETA_PASSWORD, EMAIL/PASS",
+    "required_setup": "Create C:/Users/james/money_chatgpt/.env (ignored by Git) containing THETADATA_API_KEY=<key> or THETADATA_EMAIL/THETADATA_PASSWORD, then rerun scripts/cg_arrow005_run.py --acquire."
+  },
+  "required_observations": {
+    "PRESENT_CHECKED": 8683,
+    "NOT_PREVIOUSLY_REQUESTED": 403,
+    "PARTIAL_OR_SPARSE_REVIEW": 18
+  },
+  "coalesced_requests": 118,
+  "acquired": null,
+  "summary": {
+    "PARENT/R1": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 372,
+        "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED": 35,
+        "MISSED_ENTRY_NOT_PREVIOUSLY_REQUESTED": 6,
+        "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
+        "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
+      },
+      "verified_gross": 49008.4505,
+      "verified_modeled_net": 45391.714636000004,
+      "verified_net_by_split": {
+        "IS": 6709.889187200004,
+        "OOS": 38681.825448800024
+      },
+      "verified_net_excluding_action_review": 26518.636206,
+      "action_review_flagged_verified": 7,
+      "large_move_flagged_verified": 6,
+      "test_symbol_slots": 2,
+      "verified_wins": 186,
+      "verified_losses": 186,
+      "verified_flats": 0,
+      "net_double_spread": 42454.378772000004,
+      "net_borrow_10": 39620.26011390027,
+      "net_borrow_30": 28077.35106970082,
+      "tier_contribution": {
+        "FULL": 45391.714636000004,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "unresolved_stale_liability_last_marks": 151790.55000000002,
+      "aug31_equity": 146807.6772209998,
+      "aug31_open_tickets": 37,
+      "aug31_stale_gross": 71636.695,
+      "aug31_overdue_gross": 87021.585,
+      "peak_gross": 194925.89,
+      "mean_gross": 99879.42811429483,
+      "min_equity": 80015.90756919995
+    },
+    "PARENT/R2": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 372,
+        "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED": 35,
+        "MISSED_ENTRY_NOT_PREVIOUSLY_REQUESTED": 6,
+        "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
+        "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
+      },
+      "verified_gross": 49008.4505,
+      "verified_modeled_net": 45391.714636000004,
+      "verified_net_by_split": {
+        "IS": 6709.889187200004,
+        "OOS": 38681.825448800024
+      },
+      "verified_net_excluding_action_review": 26518.636206,
+      "action_review_flagged_verified": 7,
+      "large_move_flagged_verified": 6,
+      "test_symbol_slots": 2,
+      "verified_wins": 186,
+      "verified_losses": 186,
+      "verified_flats": 0,
+      "net_double_spread": 42454.378772000004,
+      "net_borrow_10": 39620.26011390027,
+      "net_borrow_30": 28077.35106970082,
+      "tier_contribution": {
+        "FULL": 45391.714636000004,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "unresolved_stale_liability_last_marks": 151790.55000000002,
+      "aug31_equity": 146807.6772209998,
+      "aug31_open_tickets": 37,
+      "aug31_stale_gross": 71636.695,
+      "aug31_overdue_gross": 87021.585,
+      "peak_gross": 194925.89,
+      "mean_gross": 99879.42811429483,
+      "min_equity": 80015.90756919995
+    },
+    "PARENT/R2_CAUSAL": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 372,
+        "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED": 35,
+        "MISSED_ENTRY_NOT_PREVIOUSLY_REQUESTED": 6,
+        "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
+        "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
+      },
+      "verified_gross": 48892.3136,
+      "verified_modeled_net": 45274.6076,
+      "verified_net_by_split": {
+        "IS": 6666.604149500006,
+        "OOS": 38608.00345050002
+      },
+      "verified_net_excluding_action_review": 26461.293325,
+      "action_review_flagged_verified": 7,
+      "large_move_flagged_verified": 6,
+      "test_symbol_slots": 2,
+      "verified_wins": 186,
+      "verified_losses": 186,
+      "verified_flats": 0,
+      "net_double_spread": 42336.4516,
+      "net_borrow_10": 39501.56305833863,
+      "net_borrow_30": 27955.47397501589,
+      "tier_contribution": {
+        "FULL": 45274.6076,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "unresolved_stale_liability_last_marks": 151832.844,
+      "aug31_equity": 146661.46180999983,
+      "aug31_open_tickets": 37,
+      "aug31_stale_gross": 71695.815,
+      "aug31_overdue_gross": 87033.625,
+      "peak_gross": 194448.495,
+      "mean_gross": 99872.75507086854,
+      "min_equity": 79993.45167949995
+    },
+    "R4/R1": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 372,
+        "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED": 35,
+        "MISSED_ENTRY_NOT_PREVIOUSLY_REQUESTED": 6,
+        "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
+        "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
+      },
+      "verified_gross": 68164.9013,
+      "verified_modeled_net": 64531.426615899996,
+      "verified_net_by_split": {
+        "IS": 14239.900080399997,
+        "OOS": 50291.52653549999
+      },
+      "verified_net_excluding_action_review": 40163.049225899995,
+      "action_review_flagged_verified": 7,
+      "large_move_flagged_verified": 6,
+      "test_symbol_slots": 2,
+      "verified_wins": 186,
+      "verified_losses": 186,
+      "verified_flats": 0,
+      "net_double_spread": 61585.171931799996,
+      "net_borrow_10": 58755.620657900545,
+      "net_borrow_30": 47204.00874190164,
+      "tier_contribution": {
+        "FULL": 70677.3459421,
+        "HALF": -6145.919326200002,
+        "QUARTER": 0
+      },
+      "unresolved_stale_liability_last_marks": 150366.94640000002,
+      "aug31_equity": 167811.11712590026,
+      "aug31_open_tickets": 37,
+      "aug31_stale_gross": 68318.47,
+      "aug31_overdue_gross": 86773.35,
+      "peak_gross": 205044.09,
+      "mean_gross": 99562.23236042232,
+      "min_equity": 83920.12646610009
+    },
+    "R4/R2": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 372,
+        "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED": 35,
+        "MISSED_ENTRY_NOT_PREVIOUSLY_REQUESTED": 6,
+        "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
+        "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
+      },
+      "verified_gross": 68164.9013,
+      "verified_modeled_net": 64531.426615899996,
+      "verified_net_by_split": {
+        "IS": 14239.900080399997,
+        "OOS": 50291.52653549999
+      },
+      "verified_net_excluding_action_review": 40163.049225899995,
+      "action_review_flagged_verified": 7,
+      "large_move_flagged_verified": 6,
+      "test_symbol_slots": 2,
+      "verified_wins": 186,
+      "verified_losses": 186,
+      "verified_flats": 0,
+      "net_double_spread": 61585.171931799996,
+      "net_borrow_10": 58755.620657900545,
+      "net_borrow_30": 47204.00874190164,
+      "tier_contribution": {
+        "FULL": 70677.3459421,
+        "HALF": -6145.919326200002,
+        "QUARTER": 0
+      },
+      "unresolved_stale_liability_last_marks": 150366.94640000002,
+      "aug31_equity": 167811.11712590026,
+      "aug31_open_tickets": 37,
+      "aug31_stale_gross": 68318.47,
+      "aug31_overdue_gross": 86773.35,
+      "peak_gross": 205044.09,
+      "mean_gross": 99562.23236042232,
+      "min_equity": 83920.12646610009
+    },
+    "R4/R2_CAUSAL": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 372,
+        "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED": 35,
+        "MISSED_ENTRY_NOT_PREVIOUSLY_REQUESTED": 6,
+        "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
+        "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
+      },
+      "verified_gross": 68114.5688,
+      "verified_modeled_net": 64481.1146111,
+      "verified_net_by_split": {
+        "IS": 14233.955037799995,
+        "OOS": 50247.159573299985
+      },
+      "verified_net_excluding_action_review": 40172.501376099994,
+      "action_review_flagged_verified": 7,
+      "large_move_flagged_verified": 6,
+      "test_symbol_slots": 2,
+      "verified_wins": 186,
+      "verified_losses": 186,
+      "verified_flats": 0,
+      "net_double_spread": 61534.8604222,
+      "net_borrow_10": 58705.16190798328,
+      "net_borrow_30": 47153.256501749864,
+      "tier_contribution": {
+        "FULL": 70579.8459086,
+        "HALF": -6098.731297500001,
+        "QUARTER": 0
+      },
+      "unresolved_stale_liability_last_marks": 150298.27680000002,
+      "aug31_equity": 167785.58835610034,
+      "aug31_open_tickets": 37,
+      "aug31_stale_gross": 68284.235,
+      "aug31_overdue_gross": 86695.93500000001,
+      "peak_gross": 204246.39,
+      "mean_gross": 99549.95885853388,
+      "min_equity": 83926.41256410009
+    },
+    "R5/R1": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 372,
+        "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED": 35,
+        "MISSED_ENTRY_NOT_PREVIOUSLY_REQUESTED": 6,
+        "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
+        "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
+      },
+      "verified_gross": 77878.78970000001,
+      "verified_modeled_net": 74202.39307379999,
+      "verified_net_by_split": {
+        "IS": 22109.0378495,
+        "OOS": 52093.35522430002
+      },
+      "verified_net_excluding_action_review": 45763.611338799994,
+      "action_review_flagged_verified": 7,
+      "large_move_flagged_verified": 6,
+      "test_symbol_slots": 2,
+      "verified_wins": 186,
+      "verified_losses": 186,
+      "verified_flats": 0,
+      "net_double_spread": 71230.4464476,
+      "net_borrow_10": 68363.18316892603,
+      "net_borrow_30": 56684.763359178076,
+      "tier_contribution": {
+        "FULL": 43868.228351000005,
+        "HALF": 35476.711912399995,
+        "QUARTER": -5142.5471896
+      },
+      "unresolved_stale_liability_last_marks": 164344.96060000002,
+      "aug31_equity": 177174.98658879974,
+      "aug31_open_tickets": 37,
+      "aug31_stale_gross": 69143.825,
+      "aug31_overdue_gross": 89738.345,
+      "peak_gross": 197092.185,
+      "mean_gross": 102783.69803358566,
+      "min_equity": 85010.46415860011
+    },
+    "R5/R2": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 372,
+        "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED": 35,
+        "MISSED_ENTRY_NOT_PREVIOUSLY_REQUESTED": 6,
+        "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
+        "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
+      },
+      "verified_gross": 77878.78970000001,
+      "verified_modeled_net": 74202.39307379999,
+      "verified_net_by_split": {
+        "IS": 22109.0378495,
+        "OOS": 52093.35522430002
+      },
+      "verified_net_excluding_action_review": 45763.611338799994,
+      "action_review_flagged_verified": 7,
+      "large_move_flagged_verified": 6,
+      "test_symbol_slots": 2,
+      "verified_wins": 186,
+      "verified_losses": 186,
+      "verified_flats": 0,
+      "net_double_spread": 71230.4464476,
+      "net_borrow_10": 68363.18316892603,
+      "net_borrow_30": 56684.763359178076,
+      "tier_contribution": {
+        "FULL": 43868.228351000005,
+        "HALF": 35476.711912399995,
+        "QUARTER": -5142.5471896
+      },
+      "unresolved_stale_liability_last_marks": 164344.96060000002,
+      "aug31_equity": 177174.98658879974,
+      "aug31_open_tickets": 37,
+      "aug31_stale_gross": 69143.825,
+      "aug31_overdue_gross": 89738.345,
+      "peak_gross": 197092.185,
+      "mean_gross": 102783.69803358566,
+      "min_equity": 85010.46415860011
+    },
+    "R5/R2_CAUSAL": {
+      "intended_slots": 416,
+      "status_counts": {
+        "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE": 372,
+        "UNRESOLVED_NOT_PREVIOUSLY_REQUESTED": 35,
+        "MISSED_ENTRY_NOT_PREVIOUSLY_REQUESTED": 6,
+        "UNRESOLVED_PARTIAL_OR_SPARSE_REVIEW": 2,
+        "MISSED_ENTRY_PARTIAL_OR_SPARSE_REVIEW": 1
+      },
+      "verified_gross": 77716.6699,
+      "verified_modeled_net": 74041.2421098,
+      "verified_net_by_split": {
+        "IS": 22044.9048524,
+        "OOS": 51996.337257399995
+      },
+      "verified_net_excluding_action_review": 45702.886529799995,
+      "action_review_flagged_verified": 7,
+      "large_move_flagged_verified": 6,
+      "test_symbol_slots": 2,
+      "verified_wins": 186,
+      "verified_losses": 186,
+      "verified_flats": 0,
+      "net_double_spread": 71070.1243196,
+      "net_borrow_10": 68203.63248259726,
+      "net_borrow_30": 56528.413228191785,
+      "tier_contribution": {
+        "FULL": 43716.47099080001,
+        "HALF": 35443.1694545,
+        "QUARTER": -5118.3983355
+      },
+      "unresolved_stale_liability_last_marks": 164357.0624,
+      "aug31_equity": 177030.94002479926,
+      "aug31_open_tickets": 37,
+      "aug31_stale_gross": 69148.955,
+      "aug31_overdue_gross": 89684.625,
+      "peak_gross": 196334.02500000002,
+      "mean_gross": 102759.04784952191,
+      "min_equity": 85008.71810660009
+    }
+  },
+  "oracle": {
+    "trades": {
+      "checked": 3348,
+      "errors": 0,
+      "max_abs_error": 1.8189894035458565e-12
+    },
+    "cohorts": {
+      "cohorts": 468,
+      "errors": 0
+    },
+    "daily": {
+      "PARENT/R1": {
+        "max_abs_error": 8.731149137020111e-11,
+        "ok": true
+      },
+      "PARENT/R2": {
+        "max_abs_error": 8.731149137020111e-11,
+        "ok": true
+      },
+      "PARENT/R2_CAUSAL": {
+        "max_abs_error": 7.275957614183426e-11,
+        "ok": true
+      },
+      "R4/R1": {
+        "max_abs_error": 1.4551915228366852e-10,
+        "ok": true
+      },
+      "R4/R2": {
+        "max_abs_error": 1.4551915228366852e-10,
+        "ok": true
+      },
+      "R4/R2_CAUSAL": {
+        "max_abs_error": 7.275957614183426e-11,
+        "ok": true
+      },
+      "R5/R1": {
+        "max_abs_error": 1.4551915228366852e-10,
+        "ok": true
+      },
+      "R5/R2": {
+        "max_abs_error": 1.4551915228366852e-10,
+        "ok": true
+      },
+      "R5/R2_CAUSAL": {
+        "max_abs_error": 1.4551915228366852e-10,
+        "ok": true
+      }
+    },
+    "ok": true
+  },
+  "gate": {
+    "status": "NOT_RUN_DATA_GATE",
+    "blocking": [
+      "PARENT: 37 scheduled H10 exits unresolved locally",
+      "PARENT: 7 intended entries missing the final-minute observation",
+      "R4: 37 scheduled H10 exits unresolved locally",
+      "R4: 7 intended entries missing the final-minute observation",
+      "R5: 37 scheduled H10 exits unresolved locally",
+      "R5: 7 intended entries missing the final-minute observation",
+      "11 slots carry an unresolved action/identity review flag (>=2x session gap or test symbol)",
+      "13 cohorts ranked on a $50-ceiling field (rule requires $10-$80)"
+    ],
+    "disclosed": [
+      "PARENT: 37 scheduled H10 exits unresolved locally",
+      "PARENT: 7 intended entries missing the final-minute observation",
+      "R4: 37 scheduled H10 exits unresolved locally",
+      "R4: 7 intended entries missing the final-minute observation",
+      "R5: 37 scheduled H10 exits unresolved locally",
+      "R5: 7 intended entries missing the final-minute observation",
+      "11 slots carry an unresolved action/identity review flag (>=2x session gap or test symbol)",
+      "13 cohorts ranked on a $50-ceiling field (rule requires $10-$80)",
+      "no independent second vendor; loans/dividends unknown (does not by itself block a conditional model-cost study)"
+    ]
+  },
+  "local_csvs": {
+    "r4r5_trade_exceptions.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_trade_exceptions.csv",
+      "sha256": "bd654b398bbc585fd28086b27bdf8890948f323bad7cb0c3c36c87c0c7e364f7",
+      "bytes": 1208219
+    },
+    "r4r5_verified_trades.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_verified_trades.csv",
+      "sha256": "bd5aa952f658481521c0631b6b94edd33ecfc473b5925071a4c87bbdf73426e1",
+      "bytes": 3843650
+    },
+    "r4r5_verified_cohort_audit.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_verified_cohort_audit.csv",
+      "sha256": "61109ddd9402c96656504133c5c5a264198a29d9db1ccf132c3669c1ee230d3d",
+      "bytes": 562629
+    },
+    "r4r5_cohort_matrix.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_cohort_matrix.csv",
+      "sha256": "c1a5d20fc312fb1be66296e70dd40b65d986067b98887f32697c975d37b53ed3",
+      "bytes": 316678
+    },
+    "r4r5_daily_account.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_daily_account.csv",
+      "sha256": "0526a917be429ec48ed5299fe47f3d4d672b8eb9d179960f7df86efa38ba0b05",
+      "bytes": 958881
+    },
+    "r4r5_trade_exceptions_initial.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow005/r4r5_trade_exceptions_initial.csv",
+      "sha256": "e2e2fd2fcd08eaf9aad53fc852c8eacf58663aa1c760a64f726e191646cab47a",
+      "bytes": 1082814
+    }
+  },
+  "log": [
+    "2026-09-14T10:45:25+00:00 +0.0m R0 frozen reproduction read: PARENT_ALL=38317.20, R4_ALL=59040.69, R5_ALL=68921.14",
+    "2026-09-14T10:45:25+00:00 +0.0m cohorts=52 slots=416 ranking scope={'LOCAL_FIELD_CEILING_80_ACTIONS_PARTIAL': 39, 'RANKING_SCOPE_UNVERIFIED_CEILING_50': 13}",
+    "2026-09-14T10:45:25+00:00 +0.0m observations required (incl. post-due sessions)=35412",
+    "2026-09-14T10:46:02+00:00 +0.6m summaries loaded: present=28213 missing=7199",
+    "2026-09-14T10:46:02+00:00 +0.6m vendor pilot: authenticated=False error=RuntimeError: Missing Theta Data credentials in .env. Expected THETADATA_API_KEY, or an email/password pair: THETADATA_EMAIL/THETADATA_PASSWORD, THETA_EMAIL/THETA_PASSWORD, THETA_USERNAME/THETA_PASSWORD, EMAIL/PASS",
+    "2026-09-14T10:46:04+00:00 +0.7m required manifest: {'PRESENT_CHECKED': 8683, 'NOT_PREVIOUSLY_REQUESTED': 403, 'PARTIAL_OR_SPARSE_REVIEW': 18}; coalesced requests=118",
+    "2026-09-14T10:46:04+00:00 +0.7m PARENT: R1=372verified R2=372verified R2_CAUSAL=372verified",
+    "2026-09-14T10:46:05+00:00 +0.7m R4: R1=372verified R2=372verified R2_CAUSAL=372verified",
+    "2026-09-14T10:46:05+00:00 +0.7m R5: R1=372verified R2=372verified R2_CAUSAL=372verified",
+    "2026-09-14T10:46:06+00:00 +0.7m CSVs exported",
+    "2026-09-14T10:46:06+00:00 +0.7m oracle ok=True trades={'checked': 3348, 'errors': 0, 'max_abs_error': 1.8189894035458565e-12} cohorts={'cohorts': 468, 'errors': 0}",
+    "2026-09-14T10:46:19+00:00 +0.9m gate=NOT_RUN_DATA_GATE blocking=['PARENT: 37 scheduled H10 exits unresolved locally', 'PARENT: 7 intended entries missing the final-minute observation', 'R4: 37 scheduled H10 exits unresolved locally', 'R4: 7 intended entries missing the final-minute observation', 'R5: 37 scheduled H10 exits unresolved locally', 'R5: 7 intended entries missing the final-minute observation', '11 slots carry an unresolved action/identity review flag (>=2x session gap or test symbol)', '13 cohorts ranked on a $50-ceiling field (rule requires $10-$80)']"
+  ]
+}
