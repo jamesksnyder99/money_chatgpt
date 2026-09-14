@@ -151,3 +151,8 @@ Final pre-freeze schedule export check:
   Final report-only change requires a new exact identity proof before freeze.
   Final exact replay:111 books,zero economic mismatches. Discovery and preflight regenerated.
   Effort estimates:short substantive research about25min; long substantive research about55-60min within approximately78min long-phase elapsed window, excluding shared engineering/reporting/replay. These are retrospective estimates, not instrumented CPU times.
+
+Committed pre-reveal IS closure:5f8a3af.
+  -m research.cg_arrow004_confirmation freeze --selection reports/cg_arrow004_selection.json
+  Freeze timestamp:2026-09-14T01:08:48+00:00; elapsed minutes:115.15682640333326;2 finalists and30 controls.
+  Freeze and code committed before one OOS batch; identities unchanged.
