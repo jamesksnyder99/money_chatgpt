@@ -1,45 +1,73 @@
 # money_chatgpt economic and evaluation policy
 
-## Active mandate — September 14, 2026: CG Arrow 006
+## Active mandate — September 14, 2026: CG Arrow 007
 
-Opus in Claude Code is assigned **completion of the historical economics repair first, then a gated H1–H10 census** for the original equal-dollar PARENT, R4 and R5. The exact assignment is `docs/CG_BUILD_ARROW_006.md`. It supersedes Arrow 005 as the active execution brief while preserving Arrow 005 as a partial forensic checkpoint. No baseline tuning, reserve allocation, new long model, cash-yield optimization or rescue search is authorized.
+Opus in Claude Code is assigned **belief-worthy verification first, then gated H1–H10 completion** for PARENT, R4 and R5. The exact assignment is `docs/CG_BUILD_ARROW_007.md`. Arrow 006 remains the acquisition/reconstruction checkpoint, not the final certified economics.
 
-A positive return does not satisfy a verification gate. A negative reconstructed result is not a failed engineering assignment. Unexplained missing trade/ranking/action observations prevent a verified total regardless of sign. Publish verification levels and the user-readable cohort ledger.
+The user explicitly prefers additional time and engineering work over material ambiguity. A positive backtest is not a success if selection/action units are uncertified. A negative repaired result is not a failed assignment. Do not preserve apparent upside through assumptions; equally, do not delete genuine market moves because they resemble splits.
+
+## Calendar policy frozen before new tests
+
+Each cohort has a nominal Wednesday signal anchor. If Wednesday is closed, roll backward to the most recent exchange session. Entry is the first exchange session after the signal. Do not skip the weekly cohort solely because Wednesday is a holiday. Hn is n exchange sessions after actual fill. Current sample should be unchanged; prove this before scoring.
+
+## Corporate-action selection policy
+
+Never manually discard a suspicious selected stock and substitute rank 9. The correct process is: document the event/security identity, normalize price/share/volume units to a common as-of unit, recompute eligibility/ranking/features across the full point-in-time field, and rerank mechanically. A stock remains or leaves the top eight only because the corrected rule says so.
+
+For pure splits under the established convention `price_factor = old shares per new share`: earlier comparison prices multiply by factor, earlier share volumes divide by factor, held shares divide by factor, and per-share basis multiplies by factor. Position value and dollar volume should be neutral across the mechanical action before market movement/rounding/cash-in-lieu. Multiple events compound. Use documented dated factors only.
+
+Unresolved material events that can change top-eight membership keep the baseline uncertified. The old `>=2x` discontinuity screen is diagnostic triage, not proof that all actions were found.
 
 ## Economic context
 
-Starting equity remains $100,000. The broader commercial ambition remains $300–$500 modeled net per trading session, including flat and losing days. Historical $200/day portfolio and $100/day component references are commercial context, not permission to suppress a valid negative or lower-return reconstruction. Each test account is standalone; do not combine their equity into a fictitious single account.
+Starting equity remains $100,000. Broader commercial ambition remains $300–$500 modeled net per trading session, including flat/loss days. Historical $200/day portfolio and $100/day component references remain context, not reasons to suppress valid evidence.
 
-Approximately $130,000 gross exposure remains a SOFT planning range, not added equity, a broker credit guarantee or an automatic pass/fail threshold. Small temporary excursions are reported, not hidden or automatically liquidated. Report average/peak exposure, duration, concentration and marked equity. Gross headroom is not interest-eligible cash. Short-sale proceeds create cash AND liabilities, not extra equity.
+Approximately $130,000 gross remains a soft planning range for later operational work. Arrow 007 is a fixed-entry/fixed-share horizon study; do not introduce equity compounding, new capital caps, released-capital redeployment, reserves or leverage optimization. Those are queued for a later arrow once trustworthy H1–H10 economics are known.
 
-For this fixed-entry horizon study, do not add a new capital cap, resize to fit, reinvest released capital or change the fixed initial shares. Those changes would confound the horizon comparison. Any historical quantity/execution-causality correction must be separately versioned and reconciled.
+## Baselines and the Arrow 006 upside question
 
-## Verification and costs
+Preserve and distinguish:
 
-Preserve legacy results as history. Reconstruct fixed historical decisions (R1) and then unchanged rules on the complete intended field (R2). Verification must account for all scheduled slots, documented corporate actions, actual observation conventions, intended versus observed exits, missed entries and terminal inventory. Independently reconcile trade/cohort/account calculations.
+- R0 raw historical cache/legacy result for forensic history;
+- R1 recorded historical decisions with repaired observations/actions;
+- R2 certified unchanged rules on complete point-in-time inputs.
 
-Arrow 006 must finish the acquisition pipeline end to end: authenticated raw retrieval, validation/normalization, dated validated partitions, cache invalidation/rebuild and replay consumption. Existing `data/full` and `data/virgin` remain preserved. Entry eligibility must never stop held-position or required feature-history acquisition.
+Arrow 006 reported very large provisional R2 profits, but most depended on uncertified ranking-window units. Arrow 007 must determine whether this upside survives exact corporate-action normalization and full reranking. If certified R2 remains stronger, freeze it before horizons; if not, freeze the weaker/collapsed result just as firmly.
 
-Corrected R2 must exclude documented test issues from the tradable universe and restore the intended `$10–$80` candidate field where old acquisition truncated at `$50`; reranking the old cached field alone is not complete reconstruction.
+Publish R1→R2 decomposition by common names, added/dropped names, cohort/month/symbol contribution, field restoration, test-issue cleanup, documented action normalization and feature/sizing changes. Do not overstate interacting waterfall components as independent causal effects.
 
-Publish price/action-based simulated gross PnL separately from modeled costs and from verified historical costs. Unknown loan fees, locate availability, dividends, corporate actions or financing are not zero verified expenses. The active arrow specifies inherited commission/spread and 0/10/30% annualized borrow sensitivities plus doubled spread; these are scenarios, not current rates. No idle-yield credit in this pass.
+## Execution and quantity conventions
 
-An observed bar price is not a guaranteed broker execution. A late national EOD price is not automatically an RTH intraday fill. Missing local data is not proof of a halt; stale marks and diagnostic prolonged holds do not verify the intended H10 trade.
+Keep two predeclared panels where practical:
 
-## IS/OOS and reporting
+1. `LEGACY_FILL_QTY`: historical fill-close price determines integer shares, for exact lineage comparability.
+2. `CAUSAL_PREORDER_QTY`: shares determined from the last completed pre-order observation, with the same modeled final-minute execution reference.
 
-September 2025–August 2026 original SIGNAL months: IS = September/November 2025 and January/March/May/July 2026; OOS = October/December 2025 and February/April/June/August 2026. Historical even months are reused INTERNAL confirmation, never pristine validation. Causal histories and existing positions can cross month boundaries.
+Observed bars are simulation references, not guaranteed broker fills. Unknown locate availability, actual historical stock-loan fees, dividends and financing are not verified zero; show them as unknown plus the inherited modeled cost/borrow scenarios.
 
-Repair and unchanged H10 verification can inspect the whole observation period to resolve facts consistently. Do not select repairs or source conventions by favorable PnL. New H1–H9 OOS scoreboards remain closed until the predeclared grid, IS interpretation and code/entry identities are committed. One all-horizon OOS batch; no tuning afterward. H10 OOS is already-known verification context.
+## IS/OOS and horizon policy
 
-Show price/model-cost profit, return per session, wins/losses/flats, hit rate, average win/loss, profit factor, red-month counts/losses, worst/median month, DD, time underwater, worst day, exposure, turnover and sizing-tier contributions. Keep closed-trade win counts separate from still-open MTM.
+Signal-month ownership remains:
 
-Calendar account reporting ends August 31, while follow-up prices can establish scheduled September exits for prior August cohorts. Show runoff separately; do not backdate September profit into August or label full-runoff PnL divided by 251 as realized twelve-month income. Paired horizon comparisons retain every intended trade and all flat sessions.
+- IS: 2025-09, 2025-11, 2026-01, 2026-03, 2026-05, 2026-07.
+- OOS internal confirmation: 2025-10, 2025-12, 2026-02, 2026-04, 2026-06, 2026-08.
 
-## Input and delivery
+Historical even months are reused internal confirmation, not pristine validation. Repair can inspect full history to establish facts, but repair/source conventions cannot be chosen for favorable PnL.
 
-Original `data/virgin`, `data/full`, reference files and historical evidence remain preserved. Add/continue a versioned verification layer under ignored `data/verification/r4r5/`. Candidate/held-position history must extend beyond old acquisition price bands without changing entry rules. Validate request completeness, not mere file existence.
+Before H1–H9 OOS, certify/freeze R2, score IS-owned horizon books, publish the IS matrix and predeclare any preferred horizon/claim. Then reveal all OOS horizons once. No post-reveal parameter/horizon switch presented as confirmed.
 
-The user has placed a local `.env` in the repo root for ThetaData access. It is secret local configuration and must remain ignored, unstaged and unreported. No credential values may appear in logs, reports or chat handoffs.
+IS DD/worst-day/exposure/monthly ride must contain only IS-owned positions; OOS analogous. ALL is a separate chronological account. Cross-month holdings remain intact.
 
-Detailed entry/exit and cohort CSVs are mandatory private local deliverables under ignored `handoff/outgoing/cg_arrow006/` (or a clearly versioned Arrow 006 path). Publish safe aggregate results, schema, hashes and local paths only. Market-data licensing and user-requested CSV delivery do not imply permission for public raw-data redistribution.
+Separate calendar account through August 31, September runoff of August-signal cohorts, completed-trade PnL by signal ownership and still-open event obligations. Every $/session metric names its denominator.
+
+## Metrics
+
+For certified baselines and horizon cells publish: intended/filled/completed/open/event counts; gross/model-cost PnL; wins/losses/flats, hit rate, avg win/loss, payoff ratio, PF; DD $, DD %, worst day, time underwater; red-month count/loss sum, worst/median month; average/peak gross, concentration, exposure-dollar-days, turnover; R4/R5 tier contribution; doubled-spread and 0/10/30% borrow scenarios; documented event liabilities and unknown costs.
+
+Same-trade Hn increments cannot silently intersect away a trade that becomes halted/open at a longer horizon. Report status transitions and obligations.
+
+## Inputs and delivery
+
+Original `data/virgin`, `data/full`, historical reports and prior freeze markers remain preserved. Versioned repair data continue under ignored `data/verification/r4r5/`. Repo-root `.env` remains ignored secret local configuration.
+
+Detailed user audit files are mandatory under ignored `handoff/outgoing/cg_arrow007/`: certified trades/cohort subtotals, action ledger, ranking reconciliation, R1→R2 upside bridge, daily account, and—if released—horizon trade paths/summary. Public GitHub gets safe aggregates, schemas, provenance and hashes only.
