@@ -1,0 +1,132 @@
+{
+  "arrow": "CG Arrow 005",
+  "executor": "Fable in Claude Code (claude-fable-5-1)",
+  "start_utc": "2026-09-14T10:21:51+00:00",
+  "start_et": "2026-09-14T06:21:51-04:00",
+  "deadline_utc": "2026-09-14T13:21:51+00:00",
+  "allocation_minutes": 180,
+  "starting_snapshot": "fee07b8fe25bcac31070c36931a0dbcfe54a9a63",
+  "pulled_head": "ae246044a34659ca3b67b4a5e4e9841e6def377f",
+  "environment": {
+    "python": "3.14.5",
+    "thetadata_sdk": "1.0.10",
+    "polars": "1.43.2",
+    "cpu": 8,
+    "credential_check": "NO lab .env, no THETA* OS environment variables, no home config; auth_mode() raises. Acquisition branch blocked pending user-supplied credentials (see verification report)."
+  },
+  "baseline_specs": {
+    "field": "inherited point-in-time common-stock/ETP-exclusion field; prior close $10-$80; prior-day dollar volume >= $10M; Wednesday signal; rank by 15-session RTH last-minute close return (residual vs IWM has identical order within a session); top eight",
+    "PARENT": {
+      "ticket": 4000.0,
+      "sizing": "constant"
+    },
+    "R4": {
+      "ticket": 5150.0,
+      "sizing": "x0.5 when signal-session RTH volume > arithmetic mean of preceding 20 RTH sessions (signal excluded); equality full; missing 21-session history neutral (full)"
+    },
+    "R5": {
+      "ticket": 8300.0,
+      "sizing": "independently x0.5 for ret3>0 (signal close / close 3 sessions earlier - 1; zero is not positive) and x0.5 for the same above-mean volume; tiers 8300/4150/2075"
+    },
+    "entry": "next exchange session after signal; final RTH minute bar (15:59 regular, 12:59 early close) CLOSE; missed if that exact bar is absent",
+    "quantity_original": "floor(ticket / fill close) \u2014 LEGACY_FILL_CLOSE_QUANTITY, labeled modeling assumption (uses the fill print to size)",
+    "quantity_causal": "floor(ticket / last completed bar close before the final minute) \u2014 CAUSAL_PREORDER_QUANTITY, separately labeled panel",
+    "exit": "H10 = ten exchange sessions after fill (fill = H0); same final-RTH-minute CLOSE; missing observation => UNRESOLVED_LOCAL_MISSING, never backdated; a later print is a diagnostic delayed cover, shown separately",
+    "borrow_proxy": "inherited borrow_blocks_short(gap<=-5% and prior DV<$10M) retained and counted as INHERITED_BORROW_PROXY_BLOCK; it is not locate evidence",
+    "actions": "the eight issuer-documented reverse splits in reports/cg_arrow003_corporate_actions.json applied as-of; no inferred factors; unknown dividends/loans are null"
+  },
+  "replay_stages": {
+    "R0": "read-only reproduction of frozen Arrow 003 control results (data/tmp/cg_arrow003/results/{PARENT,R4,R5}_{IS,OOS,ALL}.json) and legacy figures in cg_arrow003_repair_metrics.json; no rescoring of old code",
+    "R1": "fixed historical decisions: the recorded top-eight per cohort (repaired-ranking order as frozen in Arrow 003 details), recorded features/tickets/quantities; corrected observation statuses and accounting; every intended slot exported",
+    "R2": "unchanged rules on the locally available complete-as-possible field: recompute eligibility, rank, top eight and features from checked inputs; report membership/feature deltas versus R1; ranking scope labeled RANKING_SCOPE_UNVERIFIED where the copied acquisition ceiling ($50 for 2026-06..08, $80 earlier) truncates the $10-$80 field"
+  },
+  "source_hierarchy": [
+    "data/verification/r4r5/v1/validated (new, none acquired in this pass)",
+    "data/virgin/bars and data/full/bars canonical one-minute partitions (checked: RTH filter, positive volume, finite OHLC, ordering)",
+    "data/virgin/eod national 17:15 reports: SAME-VENDOR reference for corroboration/uncertain liability marks only; never an execution"
+  ],
+  "verification_tests": [
+    "R0 totals equal frozen records",
+    "R1 entry ids and quantities equal Arrow 003 recorded positions",
+    "independent oracle: per-trade PnL, cohort subtotals, daily cash-minus-liability equality within 1e-6 internal and cents at report level",
+    "every intended slot exported (52 cohorts x 8)",
+    "no stale mark counted VERIFIED",
+    "minute-close vs EOD close consistency for every H10 entry/exit where both exist"
+  ],
+  "comparison_tolerances": {
+    "internal": 1e-06,
+    "report_cents": 0.005,
+    "eod_vs_minute_flag_relative": 0.01
+  },
+  "missing_data_policy": "Missing local observation => status UNRESOLVED_LOCAL_MISSING (not a market halt claim); status NOT_PREVIOUSLY_REQUESTED when absent from the ingest manifest, EMPTY_RESPONSE_UNRESOLVED when manifest rows==0, PARTIAL_OR_SPARSE_REVIEW when present but final-minute bar absent; unresolved slots carry null net PnL and are excluded from VERIFIED totals but included in INTENDED counts",
+  "horizon_cells": [
+    "PARENT/H1",
+    "PARENT/H2",
+    "PARENT/H3",
+    "PARENT/H4",
+    "PARENT/H5",
+    "PARENT/H6",
+    "PARENT/H7",
+    "PARENT/H8",
+    "PARENT/H9",
+    "PARENT/H10",
+    "R4/H1",
+    "R4/H2",
+    "R4/H3",
+    "R4/H4",
+    "R4/H5",
+    "R4/H6",
+    "R4/H7",
+    "R4/H8",
+    "R4/H9",
+    "R4/H10",
+    "R5/H1",
+    "R5/H2",
+    "R5/H3",
+    "R5/H4",
+    "R5/H5",
+    "R5/H6",
+    "R5/H7",
+    "R5/H8",
+    "R5/H9",
+    "R5/H10"
+  ],
+  "horizon_rule": "same R2 entry ledger, same shares, exit at Hn final-RTH-minute close; no reinvestment; gate = all R2 H1..H10 exit observations present or documented; IS first, then one OOS batch",
+  "cost_scenarios": {
+    "commission_per_share_side": 0.005,
+    "spread_proxy_side": "max(0.01, 0.001*price)",
+    "spread_multipliers": [
+      1.0,
+      2.0
+    ],
+    "borrow_annual": [
+      0.0,
+      0.1,
+      0.3
+    ],
+    "borrow_clock": "calendar days on preceding EOD marked gross / 365",
+    "dividends_locate_financing": "unknown => null"
+  },
+  "input_identity": {
+    "data/tmp/cg_arrow002r/ranks_ALL_wed.json": "33fb637bf5f9a2c12cfe192a425d8736545cbc76aa7fe73ce99ae2c65fc38397",
+    "reports/cg_arrow003_corporate_actions.json": "522f027dcacd2cc3e6831d43ed894f5a21ef49048814041d919e88b6cade13cf",
+    "data/virgin/eligibility.parquet": "2a5f5ef703997a785298ea2a7c7ba193ce6c12843db24093f2e31a02005dfde9",
+    "data/full/eligibility.parquet": "fb5b89057ec5777c50c9348be45e6f8179dfe7960375518f366ccaf721d85858",
+    "data/virgin/manifest.parquet": "4a7fc3a06bd290a86ad5abcab83725b3d78f0cb8e2f8792fa9842543597e7958",
+    "data/full/manifest.parquet": "a025e7c706247c338e50d42ffac814f3c4dfab631c53352b6d4c7f4293cd5b14"
+  },
+  "frozen_evidence_preserved": [
+    "reports/cg_arrow003_*",
+    "reports/cg_arrow004_*",
+    "data/tmp/cg_arrow003",
+    "data/tmp/cg_arrow004",
+    "data/virgin",
+    "data/full"
+  ],
+  "not_in_scope": [
+    "baseline tuning",
+    "new capital caps",
+    "secondary BRIDGE/S0 replay unless budget remains",
+    "Arrow 006"
+  ]
+}
