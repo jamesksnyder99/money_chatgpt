@@ -1,0 +1,99 @@
+CG Arrow 011 — commands, checkpoints, lane times and worker choices (Fable in Claude Code)
+Start 2026-09-14 19:18 UTC. Allowance 240 minutes; deadline 23:18 UTC. Completed at about 19:55 UTC.
+Python 3.14.5, polars 1.43.2, 8 logical cores. Summary loading and pre-order bar reads used 8
+worker processes; one writer per artifact; no ThetaData requests were needed (all inputs local).
+No credential value appears in any command, log, report or cache below.
+
+# 0. Pull, governance, safety (19:18-19:24)
+git pull --ff-only origin main            # 4a4d201..264b528 (arrow document, SUCCESS.md, protocol)
+git check-ignore -v .env                  # IGNORED, rechecked before every push
+# read CLAUDE.md, AGENTS.md, docs/CHATGPT_LAB_PROTOCOL.md, docs/SUCCESS.md, docs/CG_BUILD_ARROW_011.md,
+# the Arrow 008/009/010 manifests and reports, and r4r5_data/rank/replay/accounting/oracle/monthly/equity.
+
+# 1. Isolated analysis layer (19:24-19:32)
+# src/verification/r4r5_anatomy.py        SIGNAL_CLOSE / PRE_ORDER / OUTCOME schemas, four-state, paths, archetypes
+# src/verification/r4r5_anatomy_stats.py  rank correlation, tercile contrast, within/between cohort, LOO, cohort-block resampling
+# Path archetype rules were written in code before any data was viewed and are frozen as written.
+
+# 2. Build: preflight and private atlas (19:32-19:37)
+python scripts/cg_arrow011_build.py --workers 8
+#   private input hashes 16/16 against the Arrow 008 and 010 manifests; action table hash matches
+#   every principal book: 52 cohorts / 416 intended / 415 completed / 1 documented open obligation
+#   controls: R5 legacy 129,092.60; R5 causal 128,864.62; equity-scaled 230,566.36; R4 legacy 114,190.85 (exact)
+#   Arrow 010 fixed control identical to the Arrow 008 causal pre-order book ticket by ticket
+#   substrate via cg_arrow010_run.build_substrate (the engine's own need set, 20-session feature window)
+#   fresh replay vs certified causal pre-order ledger: 0 mismatches on 416 tickets
+#   independent oracle: Arrow 008 R2 books ok (4,980 trades, max error 1.8e-12, 6 daily books); Arrow 010 books ok
+#     first attempt ran the oracle over the R1 books too and failed on daily marks: those books' names lie
+#     outside the substrate loaded here (coverage, not a ledger defect); scope narrowed to the R2 books
+#     this arrow reads, and the R1 failure is recorded rather than hidden
+#   SIGNAL_CLOSE features 416/416; four-state labels and frozen features agree with the ledger: 0 disagreements
+#   PRE_ORDER features 416/416 from entry-session minute bars through preorder_ts, 8 worker processes, 7 s
+#     first attempt failed on a timezone dtype comparison; fixed by comparing on the frozen bar's clock time
+#   sizing-neutral gross reconciles to the ledger on all 415 completed tickets
+
+# 3. IS discovery (19:37-19:41)
+python scripts/cg_arrow011_analyze.py
+#   IS: 25 cohorts, 200 tickets; 24 mixed cohorts, 1 all-loss
+#   42 registered feature relationships (pooled, within-cohort, between-cohort), 6 group tables,
+#   stability (leave-one-cohort-out, leave-one-security-out, 300 cohort-block resamples, by month,
+#   first vs repeat episodes), holding paths by age and by state
+#   leading rule declared before scoring: within share >= 0.62 (or <= 0.38), |within rho| >= 0.12, sign agreement
+#   interaction maps (scratch, IS only): rank-1 x gap, rank x band, off-high among ranks 2-8,
+#   four-state within ranks 2-8 and within band >= 20, 2x2 band x off-high, ret3 sign split
+
+# 4. Freeze and push before any OOS reveal (19:41-19:44)
+python scripts/cg_arrow011_freeze.py
+git commit / git push origin main         # 264b528..5742000  reports/cg_arrow011_hypothesis_freeze.json
+#   23 registry entries with predictions recorded before scoring, 10 claims with expected OOS behaviour,
+#   4 research-only probes, every tercile cut and median, archetype rules, input and code hashes
+
+# 5. D1 bridge and monthly accounts (19:44-19:49), pure arithmetic, no hypothesis
+python scripts/cg_arrow011_bridge.py --workers 8
+#   per-share marked path x quantity reproduces all four daily accounts: worst 1.0e-9
+#   net-per-share identity worst 1.4e-14; monthly marked reconciliation worst 2.8e-10; identity worst 6.1e-12
+#   five principal books: monthly rows chain in cents and reconcile to B; identities hold
+#   defect found by the audit tests and repaired: the calendar-month winners/losers split omitted the
+#   documented open obligation's marked change; it now sits in its own bucket, never in either side
+
+# 6. One confirmation batch on OOS, then the all-year retrospective (19:49-19:52)
+python scripts/cg_arrow011_confirm.py
+#   freeze committed at 5742000; hash drift since freeze: none
+#   OOS: 27 cohorts, 216 tickets (1 partly censored cohort)
+#   claims met 5/10: C1 rank-1 extremeness yes; C2 off-high among ranks 2-8 yes; C3 mean range NO (same sign,
+#     share 0.59 < 0.62); C4 10-20 band yes (narrow); C5 momentum sign NO (reversed); C6 repeats NO;
+#     C7 episodic advances yes; C8 pre-order no-signal yes; C9 state-map ordering NO (worst cell moved);
+#     C10 path shape NO (fade accrued later in confirmation)
+#   features: 15 replicated, 3 same-sign weaker, 13 no-signal confirmed, 11 post-reveal separations queued
+#   probes: P1 rank-1, P2 10-20 x off-high, P3 exclude near-high 20-80 replicated on net per entry dollar; P4 not
+
+# 7. Report, stability table, manifest, tests (19:52-19:56)
+python scripts/cg_arrow011_report.py
+python -m pytest tests -q --basetemp=data/tmp/cg_arrow011_tests -p no:cacheprovider   # 694 passed, 1 skipped
+#   two first-run failures were in the new layer and were repaired: the bridge bucket above, and a test
+#   that mis-stated the engine's missing-feature fallback (a missing feature leaves ITS multiplier at 1.0)
+
+# 8. Safety review and push
+git diff HEAD -- reports/cg_arrow011_hypothesis_freeze.json   # empty: the freeze is preserved as committed
+git ls-files handoff data/verification                        # empty
+git diff --cached --name-only                                 # paths AND content inspected; symbol scan of every public file
+
+# Lane accounting (wall clock, not summed worker time)
+#   directed / shared, including verification and delivery: about 26 minutes
+#   Fable-led investigation (F1-F4, interaction maps, probe design): about 12 minutes (ceiling 72)
+#   total: about 38 minutes of the 240 allowed. Unused time was unnecessary: every directed section is
+#   complete, the four freelance questions are resolved, and no new hypothesis may start after the reveal.
+#   Bottleneck was writing the analysis layer, not compute; every stage ran in under a minute.
+
+# Public outputs
+#   reports/cg_arrow011_anatomy.md, _hypotheses.csv, _hypothesis_freeze.json, _confirmation.csv, _feature_catalog.csv,
+#   _within_cohort_summary.csv, _model_month_attribution.csv, _holding_path_summary.csv, _monthly_account.csv,
+#   _account_summary.csv, _probes.csv, _stability.csv, _manifest.json, _commands.txt
+# Private review files (git-ignored; hashes and sizes in reports/cg_arrow011_manifest.json)
+#   C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow011\trade_atlas.csv
+#   C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow011\cohort_atlas.md
+#   C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow011\pre_entry_feature_evidence.csv
+#   C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow011\model_month_trade_bridge.csv
+#   C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow011\trade_path_atlas.csv
+#   C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow011\hypothesis_casebook.md
+#   C:\Users\james\money_chatgpt\data\verification\r4r5\v1\a11\  (build, is_results, bridge, confirm manifests; preorder feature cache)

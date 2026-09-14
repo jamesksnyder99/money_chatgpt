@@ -1,0 +1,585 @@
+{
+  "arrow": "CG Arrow 011",
+  "executor": "Fable in Claude Code",
+  "timestamp": "2026-09-14T19:50:53+00:00",
+  "head_at_run": "57420003ad4d371e2d86bf7a3ab3c212e3fb6675",
+  "freeze_commit": "57420003ad4d371e2d86bf7a3ab3c212e3fb6675",
+  "schema": "cg_arrow011_anatomy_v1",
+  "principal_book": "R5/R2_CAUSAL_PREORDER_QTY",
+  "is_months": [
+    "2025-09",
+    "2025-11",
+    "2026-01",
+    "2026-03",
+    "2026-05",
+    "2026-07"
+  ],
+  "oos_months": [
+    "2025-10",
+    "2025-12",
+    "2026-02",
+    "2026-04",
+    "2026-06",
+    "2026-08"
+  ],
+  "oos_status": "internal confirmation only; these months have been inspected in earlier arrows and are not pristine",
+  "build": {
+    "hash_checks": {
+      "a8/certified_cohort_audit.csv": {
+        "expected": "2828b97f0d3953c862a6fcd3686cb1de168365fc78f3e2f9deccc1da925e2f8d",
+        "observed": "2828b97f0d3953c862a6fcd3686cb1de168365fc78f3e2f9deccc1da925e2f8d",
+        "ok": true
+      },
+      "a8/certified_trade_audit.csv": {
+        "expected": "c8a6837c01f222053069b884c2cdb8b35e24b655bd97863059ed84e85985cb3f",
+        "observed": "c8a6837c01f222053069b884c2cdb8b35e24b655bd97863059ed84e85985cb3f",
+        "ok": true
+      },
+      "a8/material_event_audit.csv": {
+        "expected": "ac400dc8760abaa28d7151bb971713828cb28c888f3e22b668de713dbae4126a",
+        "observed": "ac400dc8760abaa28d7151bb971713828cb28c888f3e22b668de713dbae4126a",
+        "ok": true
+      },
+      "a8/r4r5_cohort_matrix.csv": {
+        "expected": "23c60f398aa73f99361a11ba77a83bf124f22fd46661990d0d3b9586fd8fb03d",
+        "observed": "23c60f398aa73f99361a11ba77a83bf124f22fd46661990d0d3b9586fd8fb03d",
+        "ok": true
+      },
+      "a8/r4r5_daily_account.csv": {
+        "expected": "5507dc364075a752fb1cd96b25e7568f97b10710b2831d2a9285a38edda99532",
+        "observed": "5507dc364075a752fb1cd96b25e7568f97b10710b2831d2a9285a38edda99532",
+        "ok": true
+      },
+      "a8/r4r5_trade_exceptions.csv": {
+        "expected": "22232fe36ebf446efd8916b5586450b9ab4fdcf68969eb6743ccd046a3210c23",
+        "observed": "22232fe36ebf446efd8916b5586450b9ab4fdcf68969eb6743ccd046a3210c23",
+        "ok": true
+      },
+      "a8/r4r5_verified_cohort_audit.csv": {
+        "expected": "2828b97f0d3953c862a6fcd3686cb1de168365fc78f3e2f9deccc1da925e2f8d",
+        "observed": "2828b97f0d3953c862a6fcd3686cb1de168365fc78f3e2f9deccc1da925e2f8d",
+        "ok": true
+      },
+      "a8/r4r5_verified_trades.csv": {
+        "expected": "c8a6837c01f222053069b884c2cdb8b35e24b655bd97863059ed84e85985cb3f",
+        "observed": "c8a6837c01f222053069b884c2cdb8b35e24b655bd97863059ed84e85985cb3f",
+        "ok": true
+      },
+      "a10/r4r5_trade_exceptions.csv": {
+        "expected": "9d751a58aef16aab2d2325433b89b8cd67c28b95341ad2f49178fd35fa19235f",
+        "observed": "9d751a58aef16aab2d2325433b89b8cd67c28b95341ad2f49178fd35fa19235f",
+        "ok": true
+      },
+      "a10/r4r5_verified_trades.csv": {
+        "expected": "1f578c2543140f8f38934bc8ecac3eaadca132c4322745d9085a6e2a67673a39",
+        "observed": "1f578c2543140f8f38934bc8ecac3eaadca132c4322745d9085a6e2a67673a39",
+        "ok": true
+      },
+      "a10/r4r5_verified_cohort_audit.csv": {
+        "expected": "bc6934c3a197677acde63ccddd12bf6e38afe2b1a73cd7eb3f967c5616107658",
+        "observed": "bc6934c3a197677acde63ccddd12bf6e38afe2b1a73cd7eb3f967c5616107658",
+        "ok": true
+      },
+      "a10/r4r5_cohort_matrix.csv": {
+        "expected": "086bad082983c6bc656ec7e66c39ba28d2b1eb3dd4105a48b3a812c2986d59ed",
+        "observed": "086bad082983c6bc656ec7e66c39ba28d2b1eb3dd4105a48b3a812c2986d59ed",
+        "ok": true
+      },
+      "a10/r4r5_daily_account.csv": {
+        "expected": "8d235289e18c6db8246fffebb22a22ad18986e7ac0b5cc54afaaf235fd5de334",
+        "observed": "8d235289e18c6db8246fffebb22a22ad18986e7ac0b5cc54afaaf235fd5de334",
+        "ok": true
+      },
+      "a10/equity_scaled_trade_audit.csv": {
+        "expected": "1f578c2543140f8f38934bc8ecac3eaadca132c4322745d9085a6e2a67673a39",
+        "observed": "1f578c2543140f8f38934bc8ecac3eaadca132c4322745d9085a6e2a67673a39",
+        "ok": true
+      },
+      "a10/equity_scaled_cohort_audit.csv": {
+        "expected": "bc6934c3a197677acde63ccddd12bf6e38afe2b1a73cd7eb3f967c5616107658",
+        "observed": "bc6934c3a197677acde63ccddd12bf6e38afe2b1a73cd7eb3f967c5616107658",
+        "ok": true
+      },
+      "a10/equity_scaled_daily_account.csv": {
+        "expected": "8d235289e18c6db8246fffebb22a22ad18986e7ac0b5cc54afaaf235fd5de334",
+        "observed": "8d235289e18c6db8246fffebb22a22ad18986e7ac0b5cc54afaaf235fd5de334",
+        "ok": true
+      },
+      "action_table": {
+        "expected": "338a4b96970e40c21ae5e3427bf414dcade18f59a11a1b5fa70944af69a74a51",
+        "observed": "338a4b96970e40c21ae5e3427bf414dcade18f59a11a1b5fa70944af69a74a51",
+        "ok": true
+      }
+    },
+    "counts": {
+      "PARENT/R1_LEGACY_FILL_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 0,
+        "cohorts": 52,
+        "eventual_completed_pnl": 36536.55213129999
+      },
+      "PARENT/R1_CAUSAL_PREORDER_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 0,
+        "cohorts": 52,
+        "eventual_completed_pnl": 36353.777595299995
+      },
+      "PARENT/R2_LEGACY_FILL_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 1,
+        "cohorts": 52,
+        "eventual_completed_pnl": 104938.0163195
+      },
+      "PARENT/R2_CAUSAL_PREORDER_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 1,
+        "cohorts": 52,
+        "eventual_completed_pnl": 104399.1668686
+      },
+      "R4/R1_LEGACY_FILL_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 0,
+        "cohorts": 52,
+        "eventual_completed_pnl": 56971.05004499999
+      },
+      "R4/R1_CAUSAL_PREORDER_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 0,
+        "cohorts": 52,
+        "eventual_completed_pnl": 56900.24648729999
+      },
+      "R4/R2_LEGACY_FILL_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 1,
+        "cohorts": 52,
+        "eventual_completed_pnl": 114190.8496268
+      },
+      "R4/R2_CAUSAL_PREORDER_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 1,
+        "cohorts": 52,
+        "eventual_completed_pnl": 113845.29164529999
+      },
+      "R5/R1_LEGACY_FILL_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 0,
+        "cohorts": 52,
+        "eventual_completed_pnl": 65676.3937779
+      },
+      "R5/R1_CAUSAL_PREORDER_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 0,
+        "cohorts": 52,
+        "eventual_completed_pnl": 65520.520488899994
+      },
+      "R5/R2_LEGACY_FILL_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 1,
+        "cohorts": 52,
+        "eventual_completed_pnl": 129092.5950666
+      },
+      "R5/R2_CAUSAL_PREORDER_QTY": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 1,
+        "cohorts": 52,
+        "eventual_completed_pnl": 128864.6248656
+      },
+      "R5/R5_FIXED_DOLLAR_CONTROL": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 1,
+        "cohorts": 52,
+        "eventual_completed_pnl": 128864.6248656
+      },
+      "R5/R5_EQUITY_SCALED": {
+        "intended": 416,
+        "completed": 415,
+        "open_documented": 1,
+        "cohorts": 52,
+        "eventual_completed_pnl": 230566.3561054
+      }
+    },
+    "control_checks": {
+      "R5/R2_LEGACY_FILL_QTY": {
+        "expected": 129092.6,
+        "observed": 129092.5950666,
+        "ok": true
+      },
+      "R5/R2_CAUSAL_PREORDER_QTY": {
+        "expected": 128864.62,
+        "observed": 128864.6248656,
+        "ok": true
+      },
+      "R5/R5_EQUITY_SCALED": {
+        "expected": 230566.36,
+        "observed": 230566.3561054,
+        "ok": true
+      },
+      "R4/R2_LEGACY_FILL_QTY": {
+        "expected": 114190.85,
+        "observed": 114190.8496268,
+        "ok": true
+      }
+    },
+    "fresh_replay_mismatches": 0,
+    "oracle_a8_r2": {
+      "scope": "Arrow 008 R2 books only; R1 books not used in this arrow",
+      "trades": {
+        "checked": 4980,
+        "errors": 0,
+        "max_abs_error": 1.8189894035458565e-12
+      },
+      "cohorts": {
+        "cohorts": 624,
+        "errors": 0
+      },
+      "daily": {
+        "PARENT/R2_LEGACY_FILL_QTY": {
+          "max_abs_error": 8.731149137020111e-11,
+          "ok": true
+        },
+        "PARENT/R2_CAUSAL_PREORDER_QTY": {
+          "max_abs_error": 1.1641532182693481e-10,
+          "ok": true
+        },
+        "R4/R2_LEGACY_FILL_QTY": {
+          "max_abs_error": 1.1641532182693481e-10,
+          "ok": true
+        },
+        "R4/R2_CAUSAL_PREORDER_QTY": {
+          "max_abs_error": 1.4551915228366852e-10,
+          "ok": true
+        },
+        "R5/R2_LEGACY_FILL_QTY": {
+          "max_abs_error": 1.1641532182693481e-10,
+          "ok": true
+        },
+        "R5/R2_CAUSAL_PREORDER_QTY": {
+          "max_abs_error": 2.0372681319713593e-10,
+          "ok": true
+        }
+      },
+      "ok": true
+    },
+    "oracle_a10": {
+      "trades": {
+        "checked": 830,
+        "errors": 0,
+        "max_abs_error": 3.637978807091713e-12
+      },
+      "daily": {
+        "R5/R5_FIXED_DOLLAR_CONTROL": {
+          "max_abs_error": 2.0372681319713593e-10,
+          "ok": true
+        },
+        "R5/R5_EQUITY_SCALED": {
+          "max_abs_error": 2.9103830456733704e-10,
+          "ok": true
+        }
+      },
+      "ok": true
+    },
+    "feature_state_disagreements": 0,
+    "pre_order_available": 416,
+    "atlas_rows": 416
+  },
+  "bridge": {
+    "per_share_path_reconciliation": {
+      "R5/R2_LEGACY_FILL_QTY": {
+        "max_abs_equity_error": 3.7834979593753815e-10,
+        "ok": true
+      },
+      "R4/R2_LEGACY_FILL_QTY": {
+        "max_abs_equity_error": 6.402842700481415e-10,
+        "ok": true
+      },
+      "R5/R2_CAUSAL_PREORDER_QTY": {
+        "max_abs_equity_error": 1.0186340659856796e-09,
+        "ok": true
+      },
+      "R4/R2_CAUSAL_PREORDER_QTY": {
+        "max_abs_equity_error": 4.0745362639427185e-10,
+        "ok": true
+      }
+    },
+    "net_per_share_identity_worst": 1.4210854715202004e-14,
+    "monthly_marked_reconciliation_worst": 2.817159838741645e-10,
+    "identity_worst": 6.131983809609665e-12,
+    "decomposition_order": "BASE_TICKET (5150 -> 8300 at R4 multipliers) then MOMENTUM (mm at the 8300 base), ROUNDING residual; exact identity"
+  },
+  "monthly_reconciliation": {
+    "R5/R2_LEGACY_FILL_QTY": {
+      "standard": "cg_lab_monthly_account_reporting_v1",
+      "total_monthly_pnl": 129202.83188659986,
+      "expected_period_marked_pnl": 129202.83188659986,
+      "difference": 0.0,
+      "checks": {
+        "monthly_pnl_sums_to_period_marked_pnl": true,
+        "month_end_equity_chains": true,
+        "first_month_starts_from_starting_equity": true,
+        "last_month_end_equity_matches": true,
+        "return_denominator_is_prior_month_end_equity": true
+      },
+      "reconciles": true
+    },
+    "R5/R2_CAUSAL_PREORDER_QTY": {
+      "standard": "cg_lab_monthly_account_reporting_v1",
+      "total_monthly_pnl": 128986.40067059905,
+      "expected_period_marked_pnl": 128986.40067059905,
+      "difference": 0.0,
+      "checks": {
+        "monthly_pnl_sums_to_period_marked_pnl": true,
+        "month_end_equity_chains": true,
+        "first_month_starts_from_starting_equity": true,
+        "last_month_end_equity_matches": true,
+        "return_denominator_is_prior_month_end_equity": true
+      },
+      "reconciles": true
+    },
+    "R4/R2_LEGACY_FILL_QTY": {
+      "standard": "cg_lab_monthly_account_reporting_v1",
+      "total_monthly_pnl": 114655.1790767994,
+      "expected_period_marked_pnl": 114655.1790767994,
+      "difference": 0.0,
+      "checks": {
+        "monthly_pnl_sums_to_period_marked_pnl": true,
+        "month_end_equity_chains": true,
+        "first_month_starts_from_starting_equity": true,
+        "last_month_end_equity_matches": true,
+        "return_denominator_is_prior_month_end_equity": true
+      },
+      "reconciles": true
+    },
+    "R4/R2_CAUSAL_PREORDER_QTY": {
+      "standard": "cg_lab_monthly_account_reporting_v1",
+      "total_monthly_pnl": 114321.47115529975,
+      "expected_period_marked_pnl": 114321.47115529975,
+      "difference": 0.0,
+      "checks": {
+        "monthly_pnl_sums_to_period_marked_pnl": true,
+        "month_end_equity_chains": true,
+        "first_month_starts_from_starting_equity": true,
+        "last_month_end_equity_matches": true,
+        "return_denominator_is_prior_month_end_equity": true
+      },
+      "reconciles": true
+    },
+    "R5/R5_EQUITY_SCALED": {
+      "standard": "cg_lab_monthly_account_reporting_v1",
+      "total_monthly_pnl": 230719.7416604004,
+      "expected_period_marked_pnl": 230719.7416604004,
+      "difference": 0.0,
+      "checks": {
+        "monthly_pnl_sums_to_period_marked_pnl": true,
+        "month_end_equity_chains": true,
+        "first_month_starts_from_starting_equity": true,
+        "last_month_end_equity_matches": true,
+        "return_denominator_is_prior_month_end_equity": true
+      },
+      "reconciles": true
+    }
+  },
+  "cohort_census": {
+    "IS": {
+      "MIXED": 24,
+      "ALL_LOSS": 1
+    },
+    "OOS": {
+      "PARTLY_CENSORED": 1,
+      "MIXED": 24,
+      "ALL_WIN": 2
+    },
+    "ALL": {
+      "MIXED": 48,
+      "PARTLY_CENSORED": 1,
+      "ALL_WIN": 2,
+      "ALL_LOSS": 1
+    }
+  },
+  "claims": [
+    {
+      "comparison": "claim:C1",
+      "is_value": 0.312424654551072,
+      "oos_value": 0.16514493941799793,
+      "expected": "difference > 0.10, rank-1 hit > 0.65, gap share >= 0.62",
+      "met": true,
+      "status": "REPLICATED",
+      "value_basis": "rank-1 minus ranks 2-8, cohort-equal-weight; rank-1 hit IS 0.88 OOS 0.78; gap share IS 0.92 OOS 0.70"
+    },
+    {
+      "comparison": "claim:C2",
+      "is_value": 0.1970103444954902,
+      "oos_value": 0.06578897253143641,
+      "expected": "positive; within share <= 0.38",
+      "met": true,
+      "status": "REPLICATED",
+      "value_basis": "ranks 2-8: T1 minus T3 of close_vs_high20; within share IS 0.20 OOS 0.30"
+    },
+    {
+      "comparison": "claim:C3",
+      "is_value": 0.16168137469179816,
+      "oos_value": 0.07708302239800116,
+      "expected": "positive; share >= 0.62",
+      "met": false,
+      "status": "NOT_REPLICATED",
+      "value_basis": "sc_mean_range_pct_10 within-cohort half contrast; share IS 0.88 OOS 0.59"
+    },
+    {
+      "comparison": "claim:C4",
+      "is_value": 0.10407413606404371,
+      "oos_value": 0.025419954133925934,
+      "expected": "positive",
+      "met": true,
+      "status": "REPLICATED",
+      "value_basis": "band 10-20 minus max(20-40, 40-80), cohort-equal-weight; OOS bands {'10-20': 0.09325961594471371, '20-40': 0.06783966181078778, '40-80': 0.0063716351153058366}"
+    },
+    {
+      "comparison": "claim:C5",
+      "is_value": 0.09215819937274192,
+      "oos_value": -0.07558279896411976,
+      "expected": "positive; S2 nearer S1 (S2 sparse)",
+      "met": false,
+      "status": "NOT_REPLICATED",
+      "value_basis": "ret3<=0 minus ret3>0, cohort-equal-weight; S2 closer to S1 than to S3; OOS S1 +0.073 S2 -0.133 (n=5) S3 +0.123"
+    },
+    {
+      "comparison": "claim:C6",
+      "is_value": 0.027182786139451402,
+      "oos_value": -0.005777452365629515,
+      "expected": "positive, modest",
+      "met": false,
+      "status": "NOT_REPLICATED",
+      "value_basis": "FIRST minus OVERLAPPING_REPEAT, cohort-equal-weight; "
+    },
+    {
+      "comparison": "claim:C7",
+      "is_value": -0.10122595131419965,
+      "oos_value": -0.0936836884186813,
+      "expected": "up_sessions negative and top3 share positive",
+      "met": true,
+      "status": "REPLICATED",
+      "value_basis": "up_sessions within contrast (expect negative); top3 share within contrast (expect positive); top3 share contrast IS +0.097 OOS +0.114"
+    },
+    {
+      "comparison": "claim:C8",
+      "is_value": 0.6,
+      "oos_value": 0.4444444444444444,
+      "expected": "no separation",
+      "met": true,
+      "status": "REPLICATED",
+      "value_basis": "pre-order features within-cohort share (expect between 0.38 and 0.62); location share IS 0.48 OOS 0.41"
+    },
+    {
+      "comparison": "claim:C9",
+      "is_value": 0.1724268111576361,
+      "oos_value": 0.11601929600098869,
+      "expected": "best = 10-20 x off_high, worst = >=20 x near_high",
+      "met": false,
+      "status": "NOT_REPLICATED",
+      "value_basis": "2x2 state map: best and worst cell; IS best 10-20 x off_high; OOS best 10-20 x off_high, worst 10-20 x near_high"
+    },
+    {
+      "comparison": "claim:C10",
+      "is_value": null,
+      "oos_value": 0.33873221799297903,
+      "expected": "archetype and accrual shape",
+      "met": false,
+      "status": "NOT_REPLICATED",
+      "value_basis": "IMMEDIATE_FADE most common; age-2 mean at least half of age-10 mean; S1 accrues from age 5 to 10; OOS archetypes {'IMMEDIATE_FADE': 87, 'CONTINUATION': 56, 'OTHER': 7, 'ADVERSE_THEN_FADE': 37, 'UNLABELED_STALE_OR_OPEN': 1, 'FADE_THEN_REVERSAL': 28}; OOS mean age2 +0.026 age10 +0.077; S1 age5 +0.025 age10 +0.097"
+    }
+  ],
+  "claims_met": 5,
+  "claims_total": 10,
+  "feature_confirmation_counts": {
+    "NO_SIGNAL_CONFIRMED": 13,
+    "SEPARATION_APPEARED_POST_HOC": 11,
+    "REPLICATED": 15,
+    "SAME_SIGN_WEAKER": 3
+  },
+  "probe_oos": {
+    "probe:P1": "REPLICATED",
+    "probe:P2": "REPLICATED",
+    "probe:P3": "REPLICATED",
+    "probe:P4": "NOT_REPLICATED"
+  },
+  "hash_drift_since_freeze_ok": true,
+  "public_files": {
+    "cg_arrow011_account_summary.csv": "b1465a83be3f963e88f1208d3244a135402cede62b5dd393599babeb4ddc1e26",
+    "cg_arrow011_anatomy.md": "f9e64d86ff3d5adbc03a116b6e2ce6423900b99a29e457b7372ade9bb8459698",
+    "cg_arrow011_commands.txt": "2977322bbeb8a6445fd4ff9d42a1646243439f519181c16c881d5a5ca3c3826b",
+    "cg_arrow011_confirmation.csv": "0f62d644ad4995f2e52e1ea4eab5ad8bf61b3abfc524a8745dc854f352a4f1d2",
+    "cg_arrow011_feature_catalog.csv": "a74f298052a8d11c5fe50d2fce5a76d138d9a5f04e071d1b69d9115b516baa27",
+    "cg_arrow011_holding_path_summary.csv": "f619d10bcd433f5d2d1625e2d47318bcfbacea6dcbb8ccf57de5e3f15fdf2a5f",
+    "cg_arrow011_hypotheses.csv": "12931a199f71dc091a1aad99c0fdeece9c3685811751358323c575578e56c042",
+    "cg_arrow011_hypothesis_freeze.json": "87a8221fa6613326128324611841f30f6ad000c188a8b0f64a926c5d62e7a111",
+    "cg_arrow011_manifest.json": "446dc50032102362abca8b6fa2322542dfaa1d399cdb227477f9050c10783f17",
+    "cg_arrow011_model_month_attribution.csv": "97aaa9e178db639e75c42ef8f6e1118e436cead84b546691535141ef335d7daf",
+    "cg_arrow011_monthly_account.csv": "0893865e0c53e8b6c57c1ce87af66f52c5c640c4e6d2cac93bf2a1cdd72a1cec",
+    "cg_arrow011_probes.csv": "438a1e7a7c8964b0ca496cdc2451485208f54af82f04ade089b3598e77c20e67",
+    "cg_arrow011_stability.csv": "e9a236f38976b3a5f719ddf833cdbd6d3e906b412987c44d231602ae3d2e0efb",
+    "cg_arrow011_within_cohort_summary.csv": "8ef2b78f5ad22299f1ee98e3ccc551fdf06d00867af6e7aab0e35602792ece29"
+  },
+  "private_files": {
+    "cohort_atlas.md": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow011\\cohort_atlas.md",
+      "sha256": "4ed6f131ff52b30feb8f06df23a0316114a2324d918ad780d915c5c5ee40e836",
+      "bytes": 76897
+    },
+    "hypothesis_casebook.md": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow011\\hypothesis_casebook.md",
+      "sha256": "47308ee5d8f91d2155b1aa627f9c69be1d2b4c313d4ca6580f1e46a85762024e",
+      "bytes": 17948
+    },
+    "model_month_trade_bridge.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow011\\model_month_trade_bridge.csv",
+      "sha256": "3833fd18091965814bf68f5231c3e164dcd24ffedbb2bb32b74c8c409c578dc0",
+      "bytes": 395917
+    },
+    "pre_entry_feature_evidence.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow011\\pre_entry_feature_evidence.csv",
+      "sha256": "a8aa77a5d5f8d8457b09425262e47ba9b4fb54b3e56d3e77e71c720e86f79caa",
+      "bytes": 118211
+    },
+    "trade_atlas.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow011\\trade_atlas.csv",
+      "sha256": "a691e8fc50115fb55c751d10103bac58e8473bb3d5fc33fa5f67a746fca2542f",
+      "bytes": 895710
+    },
+    "trade_path_atlas.csv": {
+      "path": "C:\\Users\\james\\Money_ChatGPT\\handoff\\outgoing\\cg_arrow011\\trade_path_atlas.csv",
+      "sha256": "a92e2b79ec0705e74d37b2c4e458806fb3822c8baa24494d5d0d6ae62da8b796",
+      "bytes": 166594
+    }
+  },
+  "ignored_caches": {
+    "bridge_manifest.json": "0246e7dd9c0f143218ea37469c490678d65c213d48fe0785b6de5986501de9e0",
+    "build_manifest.json": "969d8e53bb35ab4f4335c2ff854d34ad7becd1d87908f3ae4cb90f006865f5fd",
+    "confirm_manifest.json": "2df708e0385eb44d847e7e8e6ec2c27c438bec838d4e8ebcc686aabdd1975ebe",
+    "is_results.json": "7213b36d77c6068cbb8aa2432a37582bcd16a0a8b5a22a832705c439e3ae61c8",
+    "preorder_features.json": "86bb9f43c91df1e37114c4cc1e3c44619640372cb2d4d3a266797888c954ed37"
+  },
+  "lane_minutes": {
+    "directed_including_verification_and_delivery": null,
+    "freelance": null,
+    "note": "filled in the commands log"
+  },
+  "headline_footnote": "Modeled P&L includes the lab's stated commission/spread assumptions; broker-specific locate/HTB charges, dividends, financing, forced-close effects, taxes and other execution items are excluded. Historical fills and availability are modeled, not broker execution guarantees.",
+  "ending": {
+    "baseline_preserved": "YES",
+    "anatomy_study": "COMPLETE",
+    "new_relationships": "INTERNAL CONFIRMATION ONLY; NO PRISTINE OOS CLAIM",
+    "next_research_proposals": "ranked, precisely specified, NOT EXECUTED"
+  }
+}
