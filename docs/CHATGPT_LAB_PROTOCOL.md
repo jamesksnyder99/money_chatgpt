@@ -45,8 +45,19 @@ The GitHub repository is public. Never publish `.env`, credentials, raw vendor b
 - One H1–H10 IS interpretation/freeze, then one full OOS batch; no OOS-driven horizon switch presented as confirmation.
 - Outcomes and resource limits never justify false completion. Exact irreducible blockers must remain explicit.
 
-## Naming
+## Naming and reporting convention
 
-PARENT = original equal-dollar short rule. R4 = volume-conditioned sizing. R5 = R4 plus 3-session momentum-conditioned sizing. Hn = exit n exchange sessions after actual fill. Always attach plain-English descriptions and explicit data/execution version. Do not silently redefine fixed-ticket controls as equity-budgeted policies.
+Use human-readable names first in all new arrows, reports, tables and conversation. Legacy IDs remain in parentheses or filenames only where needed for provenance and code continuity.
+
+- **Winner-Fade Short** = umbrella strategy family.
+- **Equal-Dollar Short** = legacy `PARENT`.
+- **Volume-Sized Short** = legacy `R4`.
+- **Momentum+Volume-Sized Short** = legacy `R5`.
+- **Historical-Selection Replay** = legacy `R1`.
+- **Corrected-Universe Replay** = legacy `R2`.
+- **10-Session Hold** = legacy `H10`; more generally `Hn` means an n-session hold.
+- **Hold-Length Ladder** = the `H1–H10` comparison.
+
+Example preferred wording: **Corrected-Universe Winner-Fade Short — Momentum+Volume sizing — 6-session hold (`R2/R5/H6`)**. Do not lead user-facing prose with opaque strings such as `R2/R5/H6` unless the surrounding sentence immediately translates them. Preserve old filenames, result IDs and historical reports; do not rename archival artifacts merely for readability.
 
 Lab assignments live in `docs/CG_BUILD_ARROW_XXX.md`; historical arrows remain evidence, not competing current instructions.
