@@ -15,6 +15,7 @@ from datetime import date
 
 from verification.r4r5_data import (
     FEATS, INDEX, action_events, adjustment_factor, features, history, present,
+    spans_non_comparable,
 )
 
 LOOKBACK = 15
@@ -29,7 +30,8 @@ def endpoint_close(symbol: str, d: date, summaries: dict):
 NO_TRADING = {"DOCUMENTED_NO_TRADING"}
 
 
-def rank_cohort(signal: date, candidates: dict, summaries: dict, status: dict | None = None) -> dict:
+def rank_cohort(signal: date, candidates: dict, summaries: dict, status: dict | None = None,
+                events=None) -> dict:
     """candidates: symbol -> {prior_close, prior_dollar_volume}. Returns ranked rows plus scope.
 
     A candidate that genuinely did not trade at a ranking endpoint cannot be ranked under the
@@ -41,6 +43,15 @@ def rank_cohort(signal: date, candidates: dict, summaries: dict, status: dict | 
     back = FEATS[INDEX[signal] - LOOKBACK]
     rows, unrankable = [], []
     for sym in sorted(candidates):
+        span = spans_non_comparable(sym, back, signal)
+        if span is not None:
+            unrankable.append({"symbol": sym, "endpoint": "window",
+                               "endpoint_date": span["effective_session"],
+                               "vendor_status": "DOCUMENTED_NON_COMPARABLE_EVENT",
+                               "classification": "RULE_FAITHFUL_NON_COMPARABLE_UNITS",
+                               "event_type": span["event_type"], "source": span["source"],
+                               "signal_close_present": True, "lookback_close_present": True})
+            continue
         now = endpoint_close(sym, signal, summaries)
         then = endpoint_close(sym, back, summaries)
         if now is None or then is None or then <= 0:
@@ -55,7 +66,7 @@ def rank_cohort(signal: date, candidates: dict, summaries: dict, status: dict | 
                                "signal_close_present": now is not None,
                                "lookback_close_present": then is not None})
             continue
-        factor = adjustment_factor(sym, back, signal)
+        factor = adjustment_factor(sym, back, signal, events)
         ret = now / (then * factor) - 1
         rows.append({"symbol": sym, "prior_close": candidates[sym]["prior_close"],
                      "prior_dv": candidates[sym]["prior_dollar_volume"], "raw_return": ret,
@@ -113,38 +124,76 @@ def corrected_cohorts(cohort_field: dict, candidate_meta: dict, summaries: dict,
     return out, recon
 
 
-def lookback_integrity(signal, symbol: str, summaries: dict, resolutions: dict | None = None) -> dict:
-    """Screen the 15-session ranking window for a discontinuity large enough to be a
-    corporate action rather than a price move.
-
-    A ranking return is only rule-faithful if its two endpoints are in the same price
-    units. This flags candidates whose window contains a jump that an undocumented split
-    would produce. It never infers a split and never changes a price: it reports whether
-    the selection rests on certified units.
-    """
-    i = INDEX[signal]
-    prev, worst, worst_date = None, 1.0, None
-    for j in range(i - LOOKBACK - 1, i + 1):
+def adjusted_path(symbol: str, first_idx: int, last_idx: int, asof, summaries: dict) -> list[tuple]:
+    """Observed closes and opens converted into as-of share units with every documented event."""
+    out = []
+    for j in range(first_idx, last_idx + 1):
         d = FEATS[j]
         rec = summaries.get((d.isoformat(), symbol))
         if not present(rec):
             continue
+        f = adjustment_factor(symbol, d, asof)
+        out.append((d, rec["open"] * f, rec["close"] * f, rec["volume"] / f if rec["volume"] else rec["volume"]))
+    return out
+
+
+def screen_adjusted(symbol: str, first_idx: int, last_idx: int, asof, summaries: dict,
+                    threshold: float = 2.0) -> dict:
+    """Rescreen the action-adjusted series. Applying some event in a window is not a clearance:
+    the adjusted path itself must be continuous."""
+    path = adjusted_path(symbol, first_idx, last_idx, asof, summaries)
+    worst, worst_date = 1.0, None
+    prev = None
+    for d, op, cl, _vol in path:
         if prev is not None:
-            for px in (rec["open"], rec["close"]):
+            for px in (op, cl):
                 ratio = px / prev
                 if max(ratio, 1 / ratio) > max(worst, 1 / worst):
                     worst, worst_date = ratio, d.isoformat()
-        prev = rec["close"]
+        prev = cl
     big = max(worst, 1 / worst)
-    if big < 2.0:
-        return {"lookback_flag": "NONE", "lookback_max_ratio": worst, "lookback_ratio_date": worst_date,
-                "lookback_resolution": "NONE"}
+    return {"max_adjusted_ratio": worst, "max_adjusted_ratio_date": worst_date,
+            "observations": len(path),
+            "adjusted_discontinuity": bool(big >= threshold)}
+
+
+def lookback_integrity(signal, symbol: str, summaries: dict, resolutions: dict | None = None,
+                       threshold: float = 2.0) -> dict:
+    """Certify that a 15-session ranking return rests on one consistent share unit.
+
+    All documented events in the window are applied first; the adjusted path is then
+    rescreened. A window is only clear when the adjusted series carries no material
+    discontinuity, or when every remaining discontinuity has dated evidence that it is a
+    price move rather than a unit change.
+    """
+    i = INDEX[signal]
+    scr = screen_adjusted(symbol, i - LOOKBACK - 1, i, signal, summaries, threshold)
     lo, hi = FEATS[i - LOOKBACK].isoformat(), signal.isoformat()
-    documented = [e for e in action_events()
-                  if e["symbol"] == symbol and lo < e["effective_session"] <= hi]
-    if documented:
-        res = "DOCUMENTED_ACTION_IN_RANKING_WINDOW"
-    else:
-        res = (resolutions or {}).get((symbol, worst_date)) or "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"
-    return {"lookback_flag": "RANKING_WINDOW_DISCONTINUITY", "lookback_max_ratio": worst,
-            "lookback_ratio_date": worst_date, "lookback_resolution": res}
+    applied = [e for e in action_events() if e["symbol"] == symbol and lo < e["effective_session"] <= hi]
+    if not scr["adjusted_discontinuity"]:
+        return {"lookback_flag": "NONE" if not applied else "RESOLVED_BY_DOCUMENTED_ACTION",
+                "lookback_max_ratio": scr["max_adjusted_ratio"],
+                "lookback_ratio_date": scr["max_adjusted_ratio_date"],
+                "lookback_events_applied": len(applied),
+                "lookback_resolution": "ADJUSTED_SERIES_CONTINUOUS"}
+    res = (resolutions or {}).get((symbol, scr["max_adjusted_ratio_date"]))
+    return {"lookback_flag": "RANKING_WINDOW_DISCONTINUITY",
+            "lookback_max_ratio": scr["max_adjusted_ratio"],
+            "lookback_ratio_date": scr["max_adjusted_ratio_date"],
+            "lookback_events_applied": len(applied),
+            "lookback_resolution": res or "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"}
+
+
+def holding_integrity(fill, exit_d, symbol: str, summaries: dict, resolutions: dict | None = None,
+                      threshold: float = 2.0) -> dict:
+    """Same rescreen across the holding window, in fill-session units."""
+    scr = screen_adjusted(symbol, INDEX[fill] - 1, INDEX[exit_d], fill, summaries, threshold)
+    if not scr["adjusted_discontinuity"]:
+        return {"holding_flag": "NONE", "holding_max_ratio": scr["max_adjusted_ratio"],
+                "holding_ratio_date": scr["max_adjusted_ratio_date"],
+                "holding_resolution": "ADJUSTED_SERIES_CONTINUOUS"}
+    res = (resolutions or {}).get((symbol, scr["max_adjusted_ratio_date"]))
+    return {"holding_flag": "HOLDING_WINDOW_DISCONTINUITY",
+            "holding_max_ratio": scr["max_adjusted_ratio"],
+            "holding_ratio_date": scr["max_adjusted_ratio_date"],
+            "holding_resolution": res or "UNEXPLAINED_HOLDING_WINDOW_DISCONTINUITY"}

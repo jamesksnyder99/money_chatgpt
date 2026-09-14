@@ -28,7 +28,8 @@ CACHE = VERIFY_ROOT / "cache" / f"summaries_{VERSION}"
 HANDOFF = REPO_ROOT / "handoff" / "outgoing" / "cg_arrow005"
 ACTION_PATH_V1 = REPO_ROOT / "reports" / "cg_arrow003_corporate_actions.json"
 ACTION_PATH_V2 = REPO_ROOT / "reports" / "cg_arrow005_corporate_actions.json"  # v2: inherited plus Arrow 005 additions
-ACTION_PATH = REPO_ROOT / "reports" / "cg_arrow006_corporate_actions.json"  # v3: active reference for Arrow 006
+ACTION_PATH_V3 = REPO_ROOT / "reports" / "cg_arrow006_corporate_actions.json"  # v3: Arrow 006 reference
+ACTION_PATH = REPO_ROOT / "reports" / "cg_arrow007_corporate_actions.json"  # v4: active reference for Arrow 007
 RANKS_PATH = DATA / "tmp" / "cg_arrow002r" / "ranks_ALL_wed.json"
 VIRGIN_END = date(2026, 5, 29)
 LOCAL_TAPE_END = date(2026, 9, 11)  # Arrow 006: last required H10 exit of the 2026-08-26 cohort, now retrievable
@@ -161,6 +162,27 @@ def halted(symbol: str, d: date) -> dict | None:
     return None
 
 
+@lru_cache(maxsize=1)
+def non_comparable_events() -> tuple:
+    """Documented events after which a price series is not one continuous claim.
+
+    A plan-of-reorganisation share exchange changes both the share count and the economic
+    claim, so no single factor converts a pre-event price into post-event units. A ranking
+    return spanning such an event is not a return; the candidate simply cannot be ranked
+    across it under the unchanged rule.
+    """
+    if not ACTION_PATH.exists():
+        return ()
+    return tuple(read_json(ACTION_PATH).get("non_comparable_events", []))
+
+
+def spans_non_comparable(symbol: str, first: date, last: date) -> dict | None:
+    for e in non_comparable_events():
+        if e["symbol"] == symbol and first.isoformat() < e["effective_session"] <= last.isoformat():
+            return e
+    return None
+
+
 # ---------------------------------------------------------------- source resolution
 def candidate_paths(d: date, symbol: str) -> list[tuple[str, Path]]:
     fn = safe_symbol_filename(resolved_symbol(symbol, d)) + ".parquet"
@@ -198,6 +220,39 @@ def read_bars(d: date, symbol: str):
         if rth.height:
             return rth, label, p.relative_to(REPO_ROOT).as_posix(), checks
     return None, None, None, checks
+
+
+ACCEPTED_STRUCTURAL_ISSUES: dict = {}
+
+
+def set_accepted_structural_issues(mapping: dict) -> None:
+    """(symbol, session) -> reason. An explicitly reviewed and accepted structural defect."""
+    ACCEPTED_STRUCTURAL_ISSUES.clear()
+    ACCEPTED_STRUCTURAL_ISSUES.update(mapping)
+
+
+def structural_issues(checks: dict) -> list[str]:
+    """Structural defects that must block a VERIFIED status until reviewed."""
+    out = []
+    if checks.get("duplicates"):
+        out.append(f"duplicate_timestamps={checks['duplicates']}")
+    if checks.get("unordered"):
+        out.append("unordered_timestamps")
+    if checks.get("ohlc_inconsistent"):
+        out.append(f"ohlc_inconsistent={checks['ohlc_inconsistent']}")
+    if checks.get("negative_volume"):
+        out.append(f"negative_volume={checks['negative_volume']}")
+    return out
+
+
+def structural_block(symbol: str, d: date, rec: dict | None) -> str | None:
+    """None when the observation may support a verified execution, else the blocking reason."""
+    if not rec or not rec.get("structural_issues"):
+        return None
+    accepted = ACCEPTED_STRUCTURAL_ISSUES.get((symbol, d.isoformat()))
+    if accepted:
+        return None
+    return "; ".join(rec["structural_issues"])
 
 
 def summarize(df: pl.DataFrame, d: date, source: str, path: str, checks: dict) -> dict:
@@ -324,6 +379,10 @@ def summary_job(job):
                    if rth is not None else
                    {"version": VERSION, "source": None, "path": None, "mark_kind": None, "missing": True,
                     "tried": checks["tried"], "empty_files": []})
+            issues = structural_issues(checks)
+            if issues:
+                rec["structural_issues"] = issues
+                rec["structural_status"] = "RETRIEVED_WITH_ISSUES"
             eod = eod_reference(d, sym)
             if eod:
                 rec.update(eod)

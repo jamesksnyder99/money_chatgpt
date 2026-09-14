@@ -1,0 +1,11 @@
+{
+  "rule_id": "cg_arrow007_weekly_wednesday_rollback_v1",
+  "weeks": 52,
+  "derived_signals": 52,
+  "existing_signals": 52,
+  "identical": true,
+  "only_in_derived": [],
+  "only_in_existing": [],
+  "weeks_requiring_rollback": [],
+  "entry_is_next_session_for_all": true
+}

@@ -16,8 +16,7 @@ import re
 
 from research.book import borrow_blocks_short
 from verification.r4r5_data import (
-    CUTOFF, FEATS, INDEX, LOCAL_TAPE_END, RANKS_PATH, SCORE, adjustment_factor, features, halted,
-    history, observation_status, present, read_json, resolved_symbol, split_of,
+    CUTOFF, FEATS, INDEX, LOCAL_TAPE_END, RANKS_PATH, SCORE, adjustment_factor, features, halted, history, observation_status, present, read_json, resolved_symbol, split_of, structural_block,
 )
 
 FAMILIES = {"PARENT": 4000.0, "R4": 5150.0, "R5": 8300.0}
@@ -181,6 +180,14 @@ def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int =
                           "event_source": (ev["source"] if ev else None)})
                 trades.append(t)
                 continue
+            blocked = structural_block(sym, fill, rec)
+            if blocked:
+                t.update({"status": "BLOCKED_STRUCTURAL_ENTRY", "quantity": 0, "gross_pnl": None,
+                          "modeled_net": None, "structural_issue": blocked,
+                          "verification_status": "BLOCKED_STRUCTURAL",
+                          "verification_reason": "entry partition carries an unreviewed structural defect"})
+                trades.append(t)
+                continue
             px = rec["exec_px"]
             t.update({"entry_ts": rec["exec_ts"], "entry_price_field": rec["exec_field"], "entry_price": px,
                       "entry_source": rec["path"], "preorder_price": rec.get("preorder"), "preorder_ts": rec.get("preorder_ts"),
@@ -235,7 +242,12 @@ def replay(family: str, cohort_list: list[dict], summaries: dict, *, hold: int =
                 q_now = qty / adjustment_factor(sym, fill, d)
                 borrow_base += q_now * last_mark * (FEATS[j + 1] - d).days / 365
             t.update({"stale_mark_sessions_in_hold": stale, "borrow_base_dollar_years": borrow_base})
-            if present(xrec) and xrec.get("exec_px") is not None:
+            exit_blocked = structural_block(sym, exit_d, xrec) if present(xrec) else None
+            if exit_blocked:
+                t.update({"status": "BLOCKED_STRUCTURAL_EXIT", "gross_pnl": None, "modeled_net": None,
+                          "structural_issue": exit_blocked, "verification_status": "BLOCKED_STRUCTURAL",
+                          "verification_reason": "exit partition carries an unreviewed structural defect"})
+            elif present(xrec) and xrec.get("exec_px") is not None:
                 xp = xrec["exec_px"]
                 gross = q_exit * (entry_adj - xp)
                 xc = q_exit * COMMISSION

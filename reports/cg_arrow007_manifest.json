@@ -1,0 +1,6157 @@
+{
+  "arrow": "CG Arrow 007",
+  "executor": "Opus in Claude Code",
+  "timestamp": "2026-09-14T15:02:11+00:00",
+  "elapsed_minutes": 0.46944549166655636,
+  "head_at_run": "712684be835e3bab447f084cc0c1d6874a8f1f3d",
+  "calendar_rule": {
+    "rule_id": "cg_arrow007_weekly_wednesday_rollback_v1",
+    "weeks": 52,
+    "derived_signals": 52,
+    "existing_signals": 52,
+    "identical": true,
+    "only_in_derived": [],
+    "only_in_existing": [],
+    "weeks_requiring_rollback": [],
+    "entry_is_next_session_for_all": true
+  },
+  "code_sha256": {
+    "src/verification/r4r5_data.py": "7dc97d7cca0fb71c585bbcdf8cf8240921d9660eee0a919909724222396835ea",
+    "src/verification/r4r5_replay.py": "477ae244349458b00448a6f15ef1559de39ed1af533a14a582c905f553307638",
+    "src/verification/r4r5_export.py": "82e3ebdaf776db02b68698d014e5d009502e92ab6bbecf99568a8d03c412d240",
+    "src/verification/r4r5_oracle.py": "a815939886f44d20c96894f410b0525622c73557b4fabe6c243b60746d13644b",
+    "src/verification/r4r5_repair.py": "9a566690b4a69723578d25243b25a131c804287cd1175f288ab94e386d86dc1d",
+    "src/verification/r4r5_rank.py": "6a6a84683ac317aca490365f5218145a2d6b3874e955fc30eeeb6d808721333a",
+    "src/verification/r4r5_events.py": "ab7ba1796ce8878a2212bc01a147b6b51d0f22e8c58f6a3efa452e3e78ce34df",
+    "src/verification/r4r5_schedule.py": "99e3c54e4a48768f40993720f6f52e236b19ed0a61108799c1f3f38eae81b842",
+    "scripts/cg_arrow007_run.py": "b09eceafac243a8ac14d7025b00bda16855b6c73df74fabf373c648e295f4e1c",
+    "scripts/cg_arrow007_events.py": "72f59b6ad35cb7f281ce97d9ff13e3be770e46eaa8ddc7635292b4dee85e480f",
+    "scripts/cg_arrow007_actions.py": "12d1ec3d91465be905e90a61de1b53063ff8f521a6ce857664b9a506774500bf"
+  },
+  "action_table_sha256": "0eedf2c6986f5772fd9e2cd88ad9e55cdc69d4f1cec1355f44e65f8795ed210c",
+  "action_summary": {
+    "events": 32,
+    "cases": 1017,
+    "resolution_counts": {
+      "NO_ACTION_FILING_FOUND": 829,
+      "FILING_EVIDENCE_DOES_NOT_EXPLAIN_MOVE": 166,
+      "PRIMARY_VERIFIED_ACTION": 22
+    },
+    "identity_changes": 2,
+    "trading_events": 1
+  },
+  "fixed_point": {
+    "iterations": [
+      {
+        "iteration": 1,
+        "unresolved_selected": 0,
+        "discontinuities_examined": 90,
+        "classification_counts": {
+          "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS": 90
+        },
+        "membership_sha256": "e51a07d60312dfb574ed0df657c4c691607b28b3b710aa8b70a9169914773ae6",
+        "blocking_cases": [],
+        "non_blocking_market_moves": [
+          {
+            "symbol": "SOGP",
+            "cohort_id": "2025-09-03",
+            "window": "ranking",
+            "date": "2025-08-28",
+            "ratio": 3.246052631578947,
+            "price_ratio": 3.246052631578947,
+            "volume_ratio": 2071.756813194592,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 8,
+            "issuer": "Sound Group Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "OCTO",
+            "cohort_id": "2025-09-10",
+            "window": "ranking",
+            "date": "2025-09-08",
+            "ratio": 31.224489795918366,
+            "price_ratio": 31.224489795918366,
+            "volume_ratio": 8030.434081070444,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 76,
+            "issuer": "Eightco Holdings Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "SOGP",
+            "cohort_id": "2025-09-10",
+            "window": "ranking",
+            "date": "2025-08-28",
+            "ratio": 3.246052631578947,
+            "price_ratio": 3.246052631578947,
+            "volume_ratio": 2071.756813194592,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 8,
+            "issuer": "Sound Group Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "TURB",
+            "cohort_id": "2025-09-17",
+            "window": "ranking",
+            "date": "2025-09-16",
+            "ratio": 4.592592592592593,
+            "price_ratio": 4.592592592592593,
+            "volume_ratio": 15867.097414146941,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 27,
+            "issuer": "Turbo Energy, S.A.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "HSDT",
+            "cohort_id": "2025-09-17",
+            "window": "ranking",
+            "date": "2025-09-15",
+            "ratio": 3.193166885676741,
+            "price_ratio": 2.3823915900131407,
+            "volume_ratio": 34.57812716792169,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 30,
+            "issuer": "Solana Co",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "BREA",
+            "cohort_id": "2025-09-24",
+            "window": "ranking",
+            "date": "2025-09-18",
+            "ratio": 3.276315789473684,
+            "price_ratio": 3.276315789473684,
+            "volume_ratio": 183.4530474630197,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 100,
+            "issuer": "Brera Holdings PLC",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "QURE",
+            "cohort_id": "2025-09-24",
+            "window": "ranking",
+            "date": "2025-09-24",
+            "ratio": 3.481171303074671,
+            "price_ratio": 3.481171303074671,
+            "volume_ratio": 67.59952066123131,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 21,
+            "issuer": "uniQure N.V.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "BREA",
+            "cohort_id": "2025-10-01",
+            "window": "ranking",
+            "date": "2025-09-18",
+            "ratio": 3.276315789473684,
+            "price_ratio": 3.276315789473684,
+            "volume_ratio": 183.4530474630197,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 100,
+            "issuer": "Brera Holdings PLC",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "QURE",
+            "cohort_id": "2025-10-01",
+            "window": "ranking",
+            "date": "2025-09-24",
+            "ratio": 3.481171303074671,
+            "price_ratio": 3.481171303074671,
+            "volume_ratio": 67.59952066123131,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 21,
+            "issuer": "uniQure N.V.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "HSDT",
+            "cohort_id": "2025-10-01",
+            "window": "ranking",
+            "date": "2025-09-15",
+            "ratio": 3.193166885676741,
+            "price_ratio": 2.3823915900131407,
+            "volume_ratio": 34.57812716792169,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 30,
+            "issuer": "Solana Co",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "QURE",
+            "cohort_id": "2025-10-08",
+            "window": "ranking",
+            "date": "2025-09-24",
+            "ratio": 3.481171303074671,
+            "price_ratio": 3.481171303074671,
+            "volume_ratio": 67.59952066123131,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 21,
+            "issuer": "uniQure N.V.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "BQ",
+            "cohort_id": "2025-10-08",
+            "window": "ranking",
+            "date": "2025-09-29",
+            "ratio": 3.4107997265892003,
+            "price_ratio": 3.4107997265892003,
+            "volume_ratio": 1809.2239647054462,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 16,
+            "issuer": "Boqii Holding Ltd",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "STI",
+            "cohort_id": "2025-10-15",
+            "window": "ranking",
+            "date": "2025-10-13",
+            "ratio": 3.8491785714285713,
+            "price_ratio": 3.8491785714285713,
+            "volume_ratio": 459.8108085677334,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 12,
+            "issuer": "Solidion Technology Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "TMQ",
+            "cohort_id": "2025-10-15",
+            "window": "ranking",
+            "date": "2025-10-07",
+            "ratio": 3.442857142857143,
+            "price_ratio": 3.0952380952380953,
+            "volume_ratio": 244.82538142208935,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 23,
+            "issuer": "Trilogy Metals Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "NVA",
+            "cohort_id": "2025-10-15",
+            "window": "ranking",
+            "date": "2025-10-14",
+            "ratio": 2.110164512338425,
+            "price_ratio": 2.110164512338425,
+            "volume_ratio": 15.300234276887373,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 40,
+            "issuer": "Nova Minerals Corp",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "NVA",
+            "cohort_id": "2025-10-15",
+            "window": "holding",
+            "date": "2025-10-29",
+            "ratio": 0.20791722602403329,
+            "price_ratio": 0.2180675157984349,
+            "volume_ratio": 5.877130410925905,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 40,
+            "issuer": "Nova Minerals Corp",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "AQMS",
+            "cohort_id": "2025-10-15",
+            "window": "ranking",
+            "date": "2025-10-14",
+            "ratio": 2.984984984984985,
+            "price_ratio": 2.984984984984985,
+            "volume_ratio": 1.7312412634423537,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 14,
+            "issuer": "Aqua Metals, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "GSIT",
+            "cohort_id": "2025-10-22",
+            "window": "ranking",
+            "date": "2025-10-20",
+            "ratio": 2.5510805500982316,
+            "price_ratio": 2.5510805500982316,
+            "volume_ratio": 257.54086471340327,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 13,
+            "issuer": "GSI TECHNOLOGY INC",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "NVA",
+            "cohort_id": "2025-10-22",
+            "window": "ranking",
+            "date": "2025-10-14",
+            "ratio": 2.110164512338425,
+            "price_ratio": 2.110164512338425,
+            "volume_ratio": 15.300234276887373,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 40,
+            "issuer": "Nova Minerals Corp",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "NVA",
+            "cohort_id": "2025-10-22",
+            "window": "holding",
+            "date": "2025-10-29",
+            "ratio": 0.20791722602403329,
+            "price_ratio": 0.2180675157984349,
+            "volume_ratio": 5.877130410925905,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 40,
+            "issuer": "Nova Minerals Corp",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "GSIT",
+            "cohort_id": "2025-10-29",
+            "window": "ranking",
+            "date": "2025-10-20",
+            "ratio": 2.5510805500982316,
+            "price_ratio": 2.5510805500982316,
+            "volume_ratio": 257.54086471340327,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 13,
+            "issuer": "GSI TECHNOLOGY INC",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "INBX",
+            "cohort_id": "2025-10-29",
+            "window": "ranking",
+            "date": "2025-10-24",
+            "ratio": 2.0273389950460015,
+            "price_ratio": 2.0273389950460015,
+            "volume_ratio": 6.615692474997458,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 14,
+            "issuer": "Inhibrx Biosciences, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "REPL",
+            "cohort_id": "2025-10-29",
+            "window": "ranking",
+            "date": "2025-10-20",
+            "ratio": 2.0422222222222226,
+            "price_ratio": 1.986666666666667,
+            "volume_ratio": 38.97932798461875,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 19,
+            "issuer": "Replimune Group, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "EVOK",
+            "cohort_id": "2025-11-05",
+            "window": "ranking",
+            "date": "2025-11-04",
+            "ratio": 2.3464912280701755,
+            "price_ratio": 2.337719298245614,
+            "volume_ratio": 26.933069960110462,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 45,
+            "issuer": "Evoke Pharma Inc",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "COGT",
+            "cohort_id": "2025-11-12",
+            "window": "ranking",
+            "date": "2025-11-10",
+            "ratio": 2.210526315789474,
+            "price_ratio": 2.1902834008097165,
+            "volume_ratio": 6.197027531000418,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 17,
+            "issuer": "Cogent Biosciences, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "INBX",
+            "cohort_id": "2025-11-12",
+            "window": "ranking",
+            "date": "2025-10-24",
+            "ratio": 2.0273389950460015,
+            "price_ratio": 2.0273389950460015,
+            "volume_ratio": 6.615692474997458,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 14,
+            "issuer": "Inhibrx Biosciences, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "OLMA",
+            "cohort_id": "2025-11-19",
+            "window": "ranking",
+            "date": "2025-11-18",
+            "ratio": 3.1086956521739126,
+            "price_ratio": 2.3760282021151586,
+            "volume_ratio": 91.34960708097223,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 18,
+            "issuer": "Olema Pharmaceuticals, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "COGT",
+            "cohort_id": "2025-11-19",
+            "window": "ranking",
+            "date": "2025-11-10",
+            "ratio": 2.210526315789474,
+            "price_ratio": 2.1902834008097165,
+            "volume_ratio": 6.197027531000418,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 17,
+            "issuer": "Cogent Biosciences, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "OLMA",
+            "cohort_id": "2025-11-26",
+            "window": "ranking",
+            "date": "2025-11-18",
+            "ratio": 3.1086956521739126,
+            "price_ratio": 2.3760282021151586,
+            "volume_ratio": 91.34960708097223,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 18,
+            "issuer": "Olema Pharmaceuticals, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "COGT",
+            "cohort_id": "2025-11-26",
+            "window": "ranking",
+            "date": "2025-11-10",
+            "ratio": 2.210526315789474,
+            "price_ratio": 2.1902834008097165,
+            "volume_ratio": 6.197027531000418,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 17,
+            "issuer": "Cogent Biosciences, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "SMX",
+            "cohort_id": "2025-12-03",
+            "window": "ranking",
+            "date": "2025-11-28",
+            "ratio": 3.590935844614479,
+            "price_ratio": 3.590935844614479,
+            "volume_ratio": 0.7698669472123569,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 116,
+            "issuer": "SMX (Security Matters) Public Ltd Co",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "OLMA",
+            "cohort_id": "2025-12-03",
+            "window": "ranking",
+            "date": "2025-11-18",
+            "ratio": 3.1086956521739126,
+            "price_ratio": 2.3760282021151586,
+            "volume_ratio": 91.34960708097223,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 18,
+            "issuer": "Olema Pharmaceuticals, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "AHMA",
+            "cohort_id": "2025-12-03",
+            "window": "ranking",
+            "date": "2025-12-01",
+            "ratio": 2.972972972972973,
+            "price_ratio": 2.972972972972973,
+            "volume_ratio": 2176.319387194284,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 5,
+            "issuer": "AMBITIONS ENTERPRISE MANAGEMENT CO. L.L.C",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "FLYE",
+            "cohort_id": "2025-12-03",
+            "window": "ranking",
+            "date": "2025-12-01",
+            "ratio": 2.9040178571428568,
+            "price_ratio": 2.9040178571428568,
+            "volume_ratio": 11599.038205980067,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 24,
+            "issuer": "Fly-E Group, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "CAPR",
+            "cohort_id": "2025-12-10",
+            "window": "ranking",
+            "date": "2025-12-03",
+            "ratio": 4.708201892744479,
+            "price_ratio": 4.708201892744479,
+            "volume_ratio": 22.36694364949373,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 17,
+            "issuer": "CAPRICOR THERAPEUTICS, INC.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "OCG",
+            "cohort_id": "2025-12-10",
+            "window": "ranking",
+            "date": "2025-12-09",
+            "ratio": 3.95,
+            "price_ratio": 3.95,
+            "volume_ratio": 33944.76824324324,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 23,
+            "issuer": "Oriental Culture Holding LTD",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "WVE",
+            "cohort_id": "2025-12-10",
+            "window": "ranking",
+            "date": "2025-12-08",
+            "ratio": 2.4719999999999995,
+            "price_ratio": 2.4719999999999995,
+            "volume_ratio": 56.39535568003063,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 22,
+            "issuer": "Wave Life Sciences, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "GPCR",
+            "cohort_id": "2025-12-10",
+            "window": "ranking",
+            "date": "2025-12-08",
+            "ratio": 2.017924255565192,
+            "price_ratio": 2.017924255565192,
+            "volume_ratio": 16.258699285962535,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 13,
+            "issuer": "Structure Therapeutics Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "CAPR",
+            "cohort_id": "2025-12-17",
+            "window": "ranking",
+            "date": "2025-12-03",
+            "ratio": 4.708201892744479,
+            "price_ratio": 4.708201892744479,
+            "volume_ratio": 22.36694364949373,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 17,
+            "issuer": "CAPRICOR THERAPEUTICS, INC.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "WVE",
+            "cohort_id": "2025-12-17",
+            "window": "ranking",
+            "date": "2025-12-08",
+            "ratio": 2.4719999999999995,
+            "price_ratio": 2.4719999999999995,
+            "volume_ratio": 56.39535568003063,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 22,
+            "issuer": "Wave Life Sciences, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "GPCR",
+            "cohort_id": "2025-12-17",
+            "window": "ranking",
+            "date": "2025-12-08",
+            "ratio": 2.017924255565192,
+            "price_ratio": 2.017924255565192,
+            "volume_ratio": 16.258699285962535,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 13,
+            "issuer": "Structure Therapeutics Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "AFJK",
+            "cohort_id": "2025-12-24",
+            "window": "ranking",
+            "date": "2025-12-09",
+            "ratio": 10.7475,
+            "price_ratio": 10.7475,
+            "volume_ratio": 11897.262,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 24,
+            "issuer": "Aimei Health Technology Co., Ltd.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "WVE",
+            "cohort_id": "2025-12-24",
+            "window": "ranking",
+            "date": "2025-12-08",
+            "ratio": 2.4719999999999995,
+            "price_ratio": 2.4719999999999995,
+            "volume_ratio": 56.39535568003063,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 22,
+            "issuer": "Wave Life Sciences, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "GPCR",
+            "cohort_id": "2025-12-24",
+            "window": "ranking",
+            "date": "2025-12-08",
+            "ratio": 2.017924255565192,
+            "price_ratio": 2.017924255565192,
+            "volume_ratio": 16.258699285962535,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 13,
+            "issuer": "Structure Therapeutics Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "ASPC",
+            "cohort_id": "2025-12-31",
+            "window": "ranking",
+            "date": "2025-12-10",
+            "ratio": 2.480916030534351,
+            "price_ratio": 1.6803435114503815,
+            "volume_ratio": 1436.4732881866064,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 4,
+            "issuer": "ASPAC III Acquisition Corp.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "INBS",
+            "cohort_id": "2026-01-07",
+            "window": "ranking",
+            "date": "2025-12-31",
+            "ratio": 2.3076923076923075,
+            "price_ratio": 2.3076923076923075,
+            "volume_ratio": 2483.5592694693314,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 40,
+            "issuer": "INTELLIGENT BIO SOLUTIONS INC.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "INBS",
+            "cohort_id": "2026-01-14",
+            "window": "ranking",
+            "date": "2025-12-31",
+            "ratio": 2.3076923076923075,
+            "price_ratio": 2.3076923076923075,
+            "volume_ratio": 2483.5592694693314,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 40,
+            "issuer": "INTELLIGENT BIO SOLUTIONS INC.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "NBY",
+            "cohort_id": "2026-01-14",
+            "window": "ranking",
+            "date": "2026-01-09",
+            "ratio": 2.025369978858351,
+            "price_ratio": 2.025369978858351,
+            "volume_ratio": 7.502581016115379,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 91,
+            "issuer": "Stablecoin Development Corp",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "AHMA",
+            "cohort_id": "2026-01-14",
+            "window": "ranking",
+            "date": "2026-01-13",
+            "ratio": 2.3673076923076923,
+            "price_ratio": 2.3673076923076923,
+            "volume_ratio": 828.2586147779873,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 5,
+            "issuer": "AMBITIONS ENTERPRISE MANAGEMENT CO. L.L.C",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "ALMS",
+            "cohort_id": "2026-01-14",
+            "window": "ranking",
+            "date": "2026-01-06",
+            "ratio": 2.676311030741411,
+            "price_ratio": 1.9590114526823388,
+            "volume_ratio": 26.033145207857288,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 16,
+            "issuer": "ALUMIS INC.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "ROLR",
+            "cohort_id": "2026-01-21",
+            "window": "ranking",
+            "date": "2026-01-14",
+            "ratio": 5.298295454545455,
+            "price_ratio": 5.298295454545455,
+            "volume_ratio": 443.997635040812,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 22,
+            "issuer": "High Roller Technologies, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "CRVS",
+            "cohort_id": "2026-01-21",
+            "window": "ranking",
+            "date": "2026-01-20",
+            "ratio": 2.6554934823091245,
+            "price_ratio": 2.6554934823091245,
+            "volume_ratio": 28.250605559311712,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 16,
+            "issuer": "Corvus Pharmaceuticals, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "ALMS",
+            "cohort_id": "2026-01-21",
+            "window": "ranking",
+            "date": "2026-01-06",
+            "ratio": 2.676311030741411,
+            "price_ratio": 1.9590114526823388,
+            "volume_ratio": 26.033145207857288,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 16,
+            "issuer": "ALUMIS INC.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "BNAI",
+            "cohort_id": "2026-01-28",
+            "window": "ranking",
+            "date": "2026-01-26",
+            "ratio": 3.778454047474133,
+            "price_ratio": 3.778454047474133,
+            "volume_ratio": 0.8797242218720909,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 40,
+            "issuer": "Brand Engagement Network Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "ANPA",
+            "cohort_id": "2026-01-28",
+            "window": "ranking",
+            "date": "2026-01-09",
+            "ratio": 3.5274822695035457,
+            "price_ratio": 3.5274822695035457,
+            "volume_ratio": 84.48461821866077,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 8,
+            "issuer": "Rich Sparkle Holdings Ltd",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "CRVS",
+            "cohort_id": "2026-01-28",
+            "window": "ranking",
+            "date": "2026-01-20",
+            "ratio": 2.6554934823091245,
+            "price_ratio": 2.6554934823091245,
+            "volume_ratio": 28.250605559311712,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 16,
+            "issuer": "Corvus Pharmaceuticals, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "MOVE",
+            "cohort_id": "2026-01-28",
+            "window": "ranking",
+            "date": "2026-01-23",
+            "ratio": 2.8895265423242464,
+            "price_ratio": 2.395982783357245,
+            "volume_ratio": 9976.88980836237,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 26,
+            "issuer": "Corvex, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "BNAI",
+            "cohort_id": "2026-02-04",
+            "window": "ranking",
+            "date": "2026-01-26",
+            "ratio": 3.778454047474133,
+            "price_ratio": 3.778454047474133,
+            "volume_ratio": 0.8797242218720909,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 40,
+            "issuer": "Brand Engagement Network Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "CRVS",
+            "cohort_id": "2026-02-04",
+            "window": "ranking",
+            "date": "2026-01-20",
+            "ratio": 2.6554934823091245,
+            "price_ratio": 2.6554934823091245,
+            "volume_ratio": 28.250605559311712,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 16,
+            "issuer": "Corvus Pharmaceuticals, Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          },
+          {
+            "symbol": "BNAI",
+            "cohort_id": "2026-02-11",
+            "window": "ranking",
+            "date": "2026-01-26",
+            "ratio": 3.778454047474133,
+            "price_ratio": 3.778454047474133,
+            "volume_ratio": 0.8797242218720909,
+            "consolidation_like": false,
+            "issuer_filings_searched": true,
+            "filings_scanned": 40,
+            "issuer": "Brand Engagement Network Inc.",
+            "classification": "MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS",
+            "blocking": false
+          }
+        ]
+      },
+      {
+        "iteration": 2,
+        "unresolved_selected": 0,
+        "confirmation_pass": true,
+        "membership_stable": true,
+        "membership_sha256": "e51a07d60312dfb574ed0df657c4c691607b28b3b710aa8b70a9169914773ae6"
+      }
+    ],
+    "converged": true
+  },
+  "ranking_reconciliation": [
+    {
+      "cohort_id": "2025-09-03",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "LCID",
+        "SATS",
+        "MLYS",
+        "IREN",
+        "ZEPP",
+        "ARWR",
+        "DK",
+        "PLYM"
+      ],
+      "R1_RECORDED_TOP8": [
+        "SATS",
+        "MLYS",
+        "IREN",
+        "ZEPP",
+        "ARWR",
+        "DK",
+        "PLYM",
+        "FTRE"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "SOGP",
+        "SATS",
+        "MLYS",
+        "IREN",
+        "ZEPP",
+        "ARWR",
+        "DK",
+        "PLYM"
+      ],
+      "raw_field_size": 1277,
+      "certified_field_size": 1290,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "SOGP"
+      ],
+      "dropped_vs_recorded": [
+        "FTRE"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-09-10",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "LCID",
+        "OXLC",
+        "MLYS",
+        "SUPX",
+        "TRML",
+        "KRRO",
+        "NKTR",
+        "IREN"
+      ],
+      "R1_RECORDED_TOP8": [
+        "MLYS",
+        "SUPX",
+        "TRML",
+        "KRRO",
+        "NKTR",
+        "IREN",
+        "DNTH",
+        "SNDK"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "OCTO",
+        "SOGP",
+        "MLYS",
+        "SUPX",
+        "FORD",
+        "TRML",
+        "KRRO",
+        "NKTR"
+      ],
+      "raw_field_size": 1282,
+      "certified_field_size": 1300,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "OCTO",
+        "SOGP",
+        "FORD"
+      ],
+      "dropped_vs_recorded": [
+        "IREN",
+        "DNTH",
+        "SNDK"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-09-17",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "LCID",
+        "OXLC",
+        "MLYS",
+        "TRML",
+        "NKTR",
+        "INOD",
+        "HYPD",
+        "CIFR"
+      ],
+      "R1_RECORDED_TOP8": [
+        "MLYS",
+        "TRML",
+        "NKTR",
+        "INOD",
+        "HYPD",
+        "CIFR",
+        "RAPP",
+        "IREN"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "TURB",
+        "HSDT",
+        "FORD",
+        "MLYS",
+        "TRML",
+        "NKTR",
+        "INOD",
+        "HYPD"
+      ],
+      "raw_field_size": 1297,
+      "certified_field_size": 1315,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "TURB",
+        "HSDT",
+        "FORD"
+      ],
+      "dropped_vs_recorded": [
+        "CIFR",
+        "RAPP",
+        "IREN"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-09-24",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "VOR",
+        "OXLC",
+        "GMRE",
+        "BETR",
+        "QURE",
+        "BKKT",
+        "FORD",
+        "NKTR"
+      ],
+      "R1_RECORDED_TOP8": [
+        "BETR",
+        "QURE",
+        "BKKT",
+        "FORD",
+        "NKTR",
+        "RGTI",
+        "TRML",
+        "INOD"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "BREA",
+        "BETR",
+        "QURE",
+        "BKKT",
+        "FORD",
+        "NKTR",
+        "RGTI",
+        "TRML"
+      ],
+      "raw_field_size": 1306,
+      "certified_field_size": 1329,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "BREA"
+      ],
+      "dropped_vs_recorded": [
+        "INOD"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-10-01",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "VOR",
+        "WOLF",
+        "BKKT",
+        "QURE",
+        "BETR",
+        "FLNC",
+        "CLPT",
+        "SKYT"
+      ],
+      "R1_RECORDED_TOP8": [
+        "WOLF",
+        "BKKT",
+        "QURE",
+        "BETR",
+        "FLNC",
+        "CLPT",
+        "SKYT",
+        "RGTI"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "BREA",
+        "BKKT",
+        "QURE",
+        "BETR",
+        "MFH",
+        "EFTY",
+        "HSDT",
+        "FLNC"
+      ],
+      "raw_field_size": 1324,
+      "certified_field_size": 1358,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "BREA",
+        "MFH",
+        "EFTY",
+        "HSDT"
+      ],
+      "dropped_vs_recorded": [
+        "WOLF",
+        "CLPT",
+        "SKYT",
+        "RGTI"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-10-08",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "VOR",
+        "WOLF",
+        "QURE",
+        "BKKT",
+        "GMRE",
+        "DGNX",
+        "MFH",
+        "CLPT"
+      ],
+      "R1_RECORDED_TOP8": [
+        "WOLF",
+        "QURE",
+        "BKKT",
+        "DGNX",
+        "MFH",
+        "CLPT",
+        "BETR",
+        "DPRO"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "QURE",
+        "BKKT",
+        "BQ",
+        "GLTO",
+        "DGNX",
+        "MFH",
+        "CLPT",
+        "BETR"
+      ],
+      "raw_field_size": 1316,
+      "certified_field_size": 1346,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "BQ",
+        "GLTO"
+      ],
+      "dropped_vs_recorded": [
+        "WOLF",
+        "DPRO"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-10-15",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "WOLF",
+        "STI",
+        "NVA",
+        "CRML",
+        "NUKK",
+        "AQMS",
+        "NVTS",
+        "BKKT"
+      ],
+      "R1_RECORDED_TOP8": [
+        "WOLF",
+        "STI",
+        "NVA",
+        "CRML",
+        "NUKK",
+        "AQMS",
+        "NVTS",
+        "BKKT"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "STI",
+        "TMQ",
+        "NVA",
+        "CRML",
+        "NUKK",
+        "AQMS",
+        "NVTS",
+        "BLBX"
+      ],
+      "raw_field_size": 1297,
+      "certified_field_size": 1323,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "TMQ",
+        "BLBX"
+      ],
+      "dropped_vs_recorded": [
+        "WOLF",
+        "BKKT"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-10-22",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "ETHZ",
+        "CRML",
+        "NVTS",
+        "VICR",
+        "UAMY",
+        "NVA",
+        "ATXS",
+        "CELC"
+      ],
+      "R1_RECORDED_TOP8": [
+        "CRML",
+        "NVTS",
+        "VICR",
+        "UAMY",
+        "NVA",
+        "ATXS",
+        "CELC",
+        "PMI"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "GSIT",
+        "ANRO",
+        "CRML",
+        "NVTS",
+        "VICR",
+        "UAMY",
+        "NVA",
+        "ATXS"
+      ],
+      "raw_field_size": 1259,
+      "certified_field_size": 1287,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "GSIT",
+        "ANRO"
+      ],
+      "dropped_vs_recorded": [
+        "CELC",
+        "PMI"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-10-29",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "ETHZ",
+        "GSIT",
+        "SUPV",
+        "INBX",
+        "ANRO",
+        "REPL",
+        "EDN",
+        "GGAL"
+      ],
+      "R1_RECORDED_TOP8": [
+        "GSIT",
+        "SUPV",
+        "INBX",
+        "ANRO",
+        "REPL",
+        "EDN",
+        "GGAL",
+        "BBAR"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "WKEY",
+        "GSIT",
+        "SUPV",
+        "INBX",
+        "ANRO",
+        "REPL",
+        "EDN",
+        "GGAL"
+      ],
+      "raw_field_size": 1275,
+      "certified_field_size": 1301,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "WKEY"
+      ],
+      "dropped_vs_recorded": [
+        "BBAR"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-11-05",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "ETHZ",
+        "TERN",
+        "PUMP",
+        "SUPV",
+        "NEGG",
+        "BBAR",
+        "GGAL",
+        "TCMD"
+      ],
+      "R1_RECORDED_TOP8": [
+        "TERN",
+        "PUMP",
+        "SUPV",
+        "NEGG",
+        "BBAR",
+        "GGAL",
+        "TCMD",
+        "MBX"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "EVOK",
+        "TERN",
+        "PUMP",
+        "SUPV",
+        "NEGG",
+        "BBAR",
+        "GGAL",
+        "TCMD"
+      ],
+      "raw_field_size": 1339,
+      "certified_field_size": 1373,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "EVOK"
+      ],
+      "dropped_vs_recorded": [
+        "MBX"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-11-12",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "LXP",
+        "TERN",
+        "COGT",
+        "INBX",
+        "AXTI",
+        "CSIQ",
+        "SUPV",
+        "PUMP"
+      ],
+      "R1_RECORDED_TOP8": [
+        "TERN",
+        "COGT",
+        "INBX",
+        "AXTI",
+        "CSIQ",
+        "SUPV",
+        "PUMP",
+        "GGAL"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "GLTO",
+        "FRGE",
+        "TERN",
+        "COGT",
+        "INBX",
+        "AXTI",
+        "CSIQ",
+        "SUPV"
+      ],
+      "raw_field_size": 1287,
+      "certified_field_size": 1317,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "GLTO",
+        "FRGE"
+      ],
+      "dropped_vs_recorded": [
+        "PUMP",
+        "GGAL"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-11-19",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "LXP",
+        "TERN",
+        "OLMA",
+        "FRGE",
+        "COGT",
+        "MCRB",
+        "HAE",
+        "MH"
+      ],
+      "R1_RECORDED_TOP8": [
+        "TERN",
+        "OLMA",
+        "FRGE",
+        "COGT",
+        "MCRB",
+        "HAE",
+        "MH",
+        "CSIQ"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "TERN",
+        "OLMA",
+        "FRGE",
+        "COGT",
+        "CMCT",
+        "MCRB",
+        "HAE",
+        "MH"
+      ],
+      "raw_field_size": 1286,
+      "certified_field_size": 1335,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "CMCT"
+      ],
+      "dropped_vs_recorded": [
+        "CSIQ"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-11-26",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "LXP",
+        "OLMA",
+        "COGT",
+        "PACS",
+        "FRGE",
+        "HLF",
+        "MAGN",
+        "CGEM"
+      ],
+      "R1_RECORDED_TOP8": [
+        "OLMA",
+        "COGT",
+        "PACS",
+        "FRGE",
+        "HLF",
+        "MAGN",
+        "CGEM",
+        "TERN"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "OLMA",
+        "COGT",
+        "PACS",
+        "FRGE",
+        "HLF",
+        "MAGN",
+        "CGEM",
+        "TERN"
+      ],
+      "raw_field_size": 1326,
+      "certified_field_size": 1356,
+      "membership_change_vs_recorded": false,
+      "added_vs_recorded": [],
+      "dropped_vs_recorded": [],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-12-03",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "HPP",
+        "OLMA",
+        "PACS",
+        "SGML",
+        "SEMR",
+        "MAGN",
+        "ARWR",
+        "SRRK"
+      ],
+      "R1_RECORDED_TOP8": [
+        "HPP",
+        "OLMA",
+        "PACS",
+        "SGML",
+        "SEMR",
+        "MAGN",
+        "ARWR",
+        "SRRK"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "SMX",
+        "OLMA",
+        "AHMA",
+        "PACS",
+        "SGML",
+        "FLYE",
+        "SEMR",
+        "MAGN"
+      ],
+      "raw_field_size": 1290,
+      "certified_field_size": 1320,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "SMX",
+        "AHMA",
+        "FLYE"
+      ],
+      "dropped_vs_recorded": [
+        "HPP",
+        "ARWR",
+        "SRRK"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-12-10",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "HPP",
+        "CAPR",
+        "WVE",
+        "PACS",
+        "GPCR",
+        "ALMS",
+        "PLAB",
+        "SEMR"
+      ],
+      "R1_RECORDED_TOP8": [
+        "HPP",
+        "CAPR",
+        "WVE",
+        "PACS",
+        "GPCR",
+        "ALMS",
+        "PLAB",
+        "SEMR"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "CAPR",
+        "OCG",
+        "WVE",
+        "PACS",
+        "GPCR",
+        "ALMS",
+        "PLAB",
+        "SEMR"
+      ],
+      "raw_field_size": 1319,
+      "certified_field_size": 1336,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "OCG"
+      ],
+      "dropped_vs_recorded": [
+        "HPP"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-12-17",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "HPP",
+        "CAPR",
+        "WVE",
+        "VOR",
+        "GPCR",
+        "DBVT",
+        "VERA",
+        "FEIM"
+      ],
+      "R1_RECORDED_TOP8": [
+        "HPP",
+        "CAPR",
+        "WVE",
+        "VOR",
+        "GPCR",
+        "DBVT",
+        "VERA",
+        "FEIM"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "CAPR",
+        "WVE",
+        "VOR",
+        "GPCR",
+        "DBVT",
+        "VERA",
+        "CPAC",
+        "FEIM"
+      ],
+      "raw_field_size": 1347,
+      "certified_field_size": 1364,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "CPAC"
+      ],
+      "dropped_vs_recorded": [
+        "HPP"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-12-24",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "WVE",
+        "GPCR",
+        "HYMC",
+        "ISSC",
+        "FEIM",
+        "SOC",
+        "RGC",
+        "KDK"
+      ],
+      "R1_RECORDED_TOP8": [
+        "WVE",
+        "GPCR",
+        "HYMC",
+        "ISSC",
+        "FEIM",
+        "SOC",
+        "RGC",
+        "KDK"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "AFJK",
+        "WVE",
+        "VELO",
+        "GPCR",
+        "HYMC",
+        "ISSC",
+        "FEIM",
+        "SOC"
+      ],
+      "raw_field_size": 1249,
+      "certified_field_size": 1265,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "AFJK",
+        "VELO"
+      ],
+      "dropped_vs_recorded": [
+        "RGC",
+        "KDK"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2025-12-31",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "VELO",
+        "HYMC",
+        "PL",
+        "FEIM",
+        "OMER",
+        "FOLD",
+        "DVAX",
+        "LUNR"
+      ],
+      "R1_RECORDED_TOP8": [
+        "VELO",
+        "HYMC",
+        "PL",
+        "FEIM",
+        "OMER",
+        "FOLD",
+        "DVAX",
+        "LUNR"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "ASPC",
+        "GLSI",
+        "VELO",
+        "HYMC",
+        "EKSO",
+        "PL",
+        "FEIM",
+        "OMER"
+      ],
+      "raw_field_size": 1208,
+      "certified_field_size": 1231,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "ASPC",
+        "GLSI",
+        "EKSO"
+      ],
+      "dropped_vs_recorded": [
+        "FOLD",
+        "DVAX",
+        "LUNR"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-01-07",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "RGC",
+        "HYMC",
+        "VELO",
+        "SKYT",
+        "CRML",
+        "LUNR",
+        "VTYX",
+        "HUT"
+      ],
+      "R1_RECORDED_TOP8": [
+        "RGC",
+        "HYMC",
+        "VELO",
+        "SKYT",
+        "CRML",
+        "LUNR",
+        "VTYX",
+        "HUT"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "RGC",
+        "HYMC",
+        "INBS",
+        "VELO",
+        "SKYT",
+        "CRML",
+        "LUNR",
+        "VTYX"
+      ],
+      "raw_field_size": 1342,
+      "certified_field_size": 1360,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "INBS"
+      ],
+      "dropped_vs_recorded": [
+        "HUT"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-01-14",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "NBY",
+        "CRML",
+        "GLSI",
+        "AHMA",
+        "ALMS",
+        "BKKT",
+        "BIOA",
+        "SKYT"
+      ],
+      "R1_RECORDED_TOP8": [
+        "NBY",
+        "CRML",
+        "GLSI",
+        "AHMA",
+        "ALMS",
+        "BKKT",
+        "BIOA",
+        "SKYT"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "INBS",
+        "NBY",
+        "CRML",
+        "GLSI",
+        "AHMA",
+        "ALMS",
+        "BKKT",
+        "BIOA"
+      ],
+      "raw_field_size": 1304,
+      "certified_field_size": 1328,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "INBS"
+      ],
+      "dropped_vs_recorded": [
+        "SKYT"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-01-21",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "AMCR",
+        "CRVS",
+        "ALMS",
+        "CRML",
+        "RCAT",
+        "SKYT",
+        "UCTT",
+        "MRAM"
+      ],
+      "R1_RECORDED_TOP8": [
+        "CRVS",
+        "ALMS",
+        "CRML",
+        "RCAT",
+        "SKYT",
+        "UCTT",
+        "MRAM",
+        "ICHR"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "ROLR",
+        "CRVS",
+        "ALMS",
+        "CRML",
+        "RCAT",
+        "SKYT",
+        "UCTT",
+        "MRAM"
+      ],
+      "raw_field_size": 1321,
+      "certified_field_size": 1353,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "ROLR"
+      ],
+      "dropped_vs_recorded": [
+        "ICHR"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-01-28",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "BNAI",
+        "AMCR",
+        "CRVS",
+        "ERAS",
+        "RAPT",
+        "HYMC",
+        "ASM",
+        "ALMS"
+      ],
+      "R1_RECORDED_TOP8": [
+        "BNAI",
+        "CRVS",
+        "ERAS",
+        "RAPT",
+        "HYMC",
+        "ASM",
+        "ALMS",
+        "VTYX"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "BNAI",
+        "ANPA",
+        "CRVS",
+        "ERAS",
+        "MOVE",
+        "RAPT",
+        "HYMC",
+        "ASM"
+      ],
+      "raw_field_size": 1276,
+      "certified_field_size": 1295,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "ANPA",
+        "MOVE"
+      ],
+      "dropped_vs_recorded": [
+        "ALMS",
+        "VTYX"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-02-04",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "BNAI",
+        "AMCR",
+        "CRVS",
+        "HOOZ",
+        "RAPT",
+        "OKLS",
+        "ASM",
+        "ERAS"
+      ],
+      "R1_RECORDED_TOP8": [
+        "BNAI",
+        "CRVS",
+        "HOOZ",
+        "RAPT",
+        "OKLS",
+        "ASM",
+        "ERAS",
+        "PKST"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "BNAI",
+        "CRVS",
+        "HOOZ",
+        "RAPT",
+        "OKLS",
+        "ASM",
+        "ERAS",
+        "PKST"
+      ],
+      "raw_field_size": 1372,
+      "certified_field_size": 1406,
+      "membership_change_vs_recorded": false,
+      "added_vs_recorded": [],
+      "dropped_vs_recorded": [],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-02-11",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "BNAI",
+        "NKTR",
+        "PLSE",
+        "VAL",
+        "HOOZ",
+        "EVMN",
+        "ASM",
+        "GOLD"
+      ],
+      "R1_RECORDED_TOP8": [
+        "BNAI",
+        "NKTR",
+        "PLSE",
+        "VAL",
+        "HOOZ",
+        "EVMN",
+        "ASM",
+        "GOLD"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "BNAI",
+        "NKTR",
+        "PLSE",
+        "VAL",
+        "HOOZ",
+        "ESOA",
+        "EVMN",
+        "ASM"
+      ],
+      "raw_field_size": 1271,
+      "certified_field_size": 1301,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "ESOA"
+      ],
+      "dropped_vs_recorded": [
+        "GOLD"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-02-18",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "SMX",
+        "NKTR",
+        "FSLY",
+        "EVMN",
+        "ICHR",
+        "CGNX",
+        "TPH",
+        "AXTI"
+      ],
+      "R1_RECORDED_TOP8": [
+        "SMX",
+        "NKTR",
+        "FSLY",
+        "EVMN",
+        "ICHR",
+        "CGNX",
+        "TPH",
+        "AXTI"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "NKTR",
+        "FSLY",
+        "EVMN",
+        "ICHR",
+        "CGNX",
+        "TPH",
+        "AXTI",
+        "CC"
+      ],
+      "raw_field_size": 1271,
+      "certified_field_size": 1309,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "CC"
+      ],
+      "dropped_vs_recorded": [
+        "SMX"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-02-25",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "AXTI",
+        "FSLY",
+        "NKTR",
+        "ICHR",
+        "EVMN",
+        "AEHR",
+        "ACHC",
+        "OIS"
+      ],
+      "R1_RECORDED_TOP8": [
+        "AXTI",
+        "FSLY",
+        "NKTR",
+        "ICHR",
+        "EVMN",
+        "AEHR",
+        "ACHC",
+        "OIS"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "AXTI",
+        "FSLY",
+        "NKTR",
+        "ICHR",
+        "EVMN",
+        "AEHR",
+        "ACHC",
+        "OIS"
+      ],
+      "raw_field_size": 1322,
+      "certified_field_size": 1364,
+      "membership_change_vs_recorded": false,
+      "added_vs_recorded": [],
+      "dropped_vs_recorded": [],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-03-04",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "BATL",
+        "FSLY",
+        "BNAI",
+        "ACHC",
+        "FIGS",
+        "AXTI",
+        "AEHR",
+        "PRAA"
+      ],
+      "R1_RECORDED_TOP8": [
+        "BATL",
+        "FSLY",
+        "BNAI",
+        "ACHC",
+        "FIGS",
+        "AXTI",
+        "AEHR",
+        "PRAA"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "BATL",
+        "NPT",
+        "FSLY",
+        "BNAI",
+        "ACHC",
+        "FIGS",
+        "AXTI",
+        "AEHR"
+      ],
+      "raw_field_size": 1340,
+      "certified_field_size": 1385,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "NPT"
+      ],
+      "dropped_vs_recorded": [
+        "PRAA"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-03-11",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "BATL",
+        "NCI",
+        "AXTI",
+        "SOC",
+        "BNAI",
+        "AMPX",
+        "DAWN",
+        "TECX"
+      ],
+      "R1_RECORDED_TOP8": [
+        "BATL",
+        "NCI",
+        "AXTI",
+        "SOC",
+        "BNAI",
+        "AMPX",
+        "DAWN",
+        "TECX"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "BATL",
+        "NCI",
+        "AXTI",
+        "SOC",
+        "BNAI",
+        "AMPX",
+        "DAWN",
+        "TECX"
+      ],
+      "raw_field_size": 1334,
+      "certified_field_size": 1387,
+      "membership_change_vs_recorded": false,
+      "added_vs_recorded": [],
+      "dropped_vs_recorded": [],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-03-18",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "BATL",
+        "DAWN",
+        "SOC",
+        "AMPX",
+        "VG",
+        "ZD",
+        "BW",
+        "DNTH"
+      ],
+      "R1_RECORDED_TOP8": [
+        "BATL",
+        "DAWN",
+        "SOC",
+        "AMPX",
+        "VG",
+        "ZD",
+        "BW",
+        "DNTH"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "BATL",
+        "DAWN",
+        "SOC",
+        "AMPX",
+        "VG",
+        "ZD",
+        "BW",
+        "DNTH"
+      ],
+      "raw_field_size": 1309,
+      "certified_field_size": 1363,
+      "membership_change_vs_recorded": false,
+      "added_vs_recorded": [],
+      "dropped_vs_recorded": [],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-03-25",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "FUBO",
+        "QURE",
+        "SOC",
+        "AXTI",
+        "TNGX",
+        "DAWN",
+        "WATT",
+        "AGRO"
+      ],
+      "R1_RECORDED_TOP8": [
+        "QURE",
+        "SOC",
+        "AXTI",
+        "TNGX",
+        "DAWN",
+        "WATT",
+        "AGRO",
+        "SSL"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "QURE",
+        "SOC",
+        "AXTI",
+        "TNGX",
+        "DAWN",
+        "WATT",
+        "AGRO",
+        "SSL"
+      ],
+      "raw_field_size": 1308,
+      "certified_field_size": 1360,
+      "membership_change_vs_recorded": false,
+      "added_vs_recorded": [],
+      "dropped_vs_recorded": [],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-04-01",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "ZVZZT",
+        "OKLS",
+        "APLS",
+        "KOD",
+        "TBN",
+        "ORKA",
+        "FLY",
+        "SEDG"
+      ],
+      "R1_RECORDED_TOP8": [
+        "ZVZZT",
+        "OKLS",
+        "APLS",
+        "KOD",
+        "TBN",
+        "ORKA",
+        "FLY",
+        "SEDG"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "UGRO",
+        "OKLS",
+        "APLS",
+        "KOD",
+        "TBN",
+        "ORKA",
+        "FLY",
+        "SEDG"
+      ],
+      "raw_field_size": 1383,
+      "certified_field_size": 1418,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "UGRO"
+      ],
+      "dropped_vs_recorded": [
+        "ZVZZT"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-04-08",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "FUBO",
+        "APLS",
+        "SPIR",
+        "KOD",
+        "AEHR",
+        "SLNO",
+        "FLY",
+        "ELVN"
+      ],
+      "R1_RECORDED_TOP8": [
+        "APLS",
+        "SPIR",
+        "KOD",
+        "AEHR",
+        "SLNO",
+        "FLY",
+        "ELVN",
+        "TH"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "UGRO",
+        "APLS",
+        "SPIR",
+        "KOD",
+        "AEHR",
+        "SLNO",
+        "FLY",
+        "ELVN"
+      ],
+      "raw_field_size": 1297,
+      "certified_field_size": 1317,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "UGRO"
+      ],
+      "dropped_vs_recorded": [
+        "TH"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-04-15",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "APLS",
+        "KOD",
+        "CBIO",
+        "ANL",
+        "AEHR",
+        "YSS",
+        "AVNS",
+        "SGML"
+      ],
+      "R1_RECORDED_TOP8": [
+        "APLS",
+        "KOD",
+        "CBIO",
+        "ANL",
+        "AEHR",
+        "YSS",
+        "AVNS",
+        "SGML"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "BBGI",
+        "APLS",
+        "KOD",
+        "CBIO",
+        "ANL",
+        "AEHR",
+        "YSS",
+        "AVNS"
+      ],
+      "raw_field_size": 1297,
+      "certified_field_size": 1311,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "BBGI"
+      ],
+      "dropped_vs_recorded": [
+        "SGML"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-04-22",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "XNDU",
+        "LWLG",
+        "POET",
+        "NVTS",
+        "YSS",
+        "MXL",
+        "AOSL",
+        "JBIO"
+      ],
+      "R1_RECORDED_TOP8": [
+        "XNDU",
+        "LWLG",
+        "POET",
+        "NVTS",
+        "YSS",
+        "MXL",
+        "AOSL",
+        "JBIO"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "XNDU",
+        "AGL",
+        "LWLG",
+        "POET",
+        "NVTS",
+        "YSS",
+        "MXL",
+        "AOSL"
+      ],
+      "raw_field_size": 1328,
+      "certified_field_size": 1336,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "AGL"
+      ],
+      "dropped_vs_recorded": [
+        "JBIO"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-04-29",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "XNDU",
+        "MXL",
+        "OGN",
+        "WATT",
+        "RMAX",
+        "AVNS",
+        "SHAZ",
+        "ALMU"
+      ],
+      "R1_RECORDED_TOP8": [
+        "XNDU",
+        "MXL",
+        "OGN",
+        "WATT",
+        "RMAX",
+        "AVNS",
+        "SHAZ",
+        "ALMU"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "AKAN",
+        "XNDU",
+        "MXL",
+        "EDSA",
+        "OGN",
+        "WATT",
+        "RMAX",
+        "AVNS"
+      ],
+      "raw_field_size": 1302,
+      "certified_field_size": 1322,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "AKAN",
+        "EDSA"
+      ],
+      "dropped_vs_recorded": [
+        "SHAZ",
+        "ALMU"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-05-06",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "BAND",
+        "ONEG",
+        "SILC",
+        "MRAM",
+        "WOLF",
+        "RMAX",
+        "ATOM",
+        "ALMU"
+      ],
+      "R1_RECORDED_TOP8": [
+        "BAND",
+        "ONEG",
+        "SILC",
+        "MRAM",
+        "WOLF",
+        "RMAX",
+        "ATOM",
+        "ALMU"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "AKAN",
+        "BAND",
+        "ONEG",
+        "SILC",
+        "MRAM",
+        "WOLF",
+        "RMAX",
+        "ATOM"
+      ],
+      "raw_field_size": 1329,
+      "certified_field_size": 1363,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "AKAN"
+      ],
+      "dropped_vs_recorded": [
+        "ALMU"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-05-13",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "MRAM",
+        "AGL",
+        "RVI",
+        "WOLF",
+        "BAND",
+        "AMBQ",
+        "HIMX",
+        "QUIK"
+      ],
+      "R1_RECORDED_TOP8": [
+        "MRAM",
+        "AGL",
+        "RVI",
+        "WOLF",
+        "BAND",
+        "AMBQ",
+        "HIMX",
+        "QUIK"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "MRAM",
+        "AGL",
+        "ERNA",
+        "RVI",
+        "WOLF",
+        "BAND",
+        "AMBQ",
+        "HIMX"
+      ],
+      "raw_field_size": 1333,
+      "certified_field_size": 1379,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "ERNA"
+      ],
+      "dropped_vs_recorded": [
+        "QUIK"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-05-20",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "BAND",
+        "WOLF",
+        "POET",
+        "AMBQ",
+        "MRAM",
+        "RVI",
+        "OSS",
+        "RDW"
+      ],
+      "R1_RECORDED_TOP8": [
+        "BAND",
+        "WOLF",
+        "POET",
+        "AMBQ",
+        "MRAM",
+        "RVI",
+        "OSS",
+        "RDW"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "PIII",
+        "BAND",
+        "WOLF",
+        "POET",
+        "AMBQ",
+        "MRAM",
+        "RVI",
+        "OSS"
+      ],
+      "raw_field_size": 1295,
+      "certified_field_size": 1347,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "PIII"
+      ],
+      "dropped_vs_recorded": [
+        "RDW"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-05-27",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "MNTS",
+        "CPSH",
+        "RDW",
+        "TE",
+        "ENPH",
+        "VELO",
+        "AEVA",
+        "VOYG"
+      ],
+      "R1_RECORDED_TOP8": [
+        "MNTS",
+        "CPSH",
+        "RDW",
+        "TE",
+        "ENPH",
+        "VELO",
+        "AEVA",
+        "VOYG"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "PCLA",
+        "MNTS",
+        "CPSH",
+        "AKTX",
+        "RDW",
+        "TE",
+        "ENPH",
+        "VELO"
+      ],
+      "raw_field_size": 1342,
+      "certified_field_size": 1364,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "PCLA",
+        "AKTX"
+      ],
+      "dropped_vs_recorded": [
+        "AEVA",
+        "VOYG"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-06-03",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "NCI",
+        "MNTS",
+        "BRUN",
+        "UMAC",
+        "TE",
+        "PSNL",
+        "QMCO",
+        "OPTX"
+      ],
+      "R1_RECORDED_TOP8": [
+        "NCI",
+        "MNTS",
+        "BRUN",
+        "UMAC",
+        "TE",
+        "PSNL",
+        "QMCO",
+        "OPTX"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "ASTC",
+        "MNTS",
+        "BRUN",
+        "UMAC",
+        "SWMR",
+        "TE",
+        "VSH",
+        "ENPH"
+      ],
+      "raw_field_size": 1046,
+      "certified_field_size": 1416,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "ASTC",
+        "SWMR",
+        "VSH",
+        "ENPH"
+      ],
+      "dropped_vs_recorded": [
+        "NCI",
+        "PSNL",
+        "QMCO",
+        "OPTX"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-06-10",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "OCC",
+        "MNTS",
+        "UMAC",
+        "OPTX",
+        "QMCO",
+        "ALOY",
+        "CBRL",
+        "FWRD"
+      ],
+      "R1_RECORDED_TOP8": [
+        "OCC",
+        "MNTS",
+        "UMAC",
+        "OPTX",
+        "QMCO",
+        "ALOY",
+        "CBRL",
+        "FWRD"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "ASTC",
+        "STI",
+        "OCC",
+        "MNTS",
+        "SWMR",
+        "UMAC",
+        "OPTX",
+        "QMCO"
+      ],
+      "raw_field_size": 1024,
+      "certified_field_size": 1382,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "ASTC",
+        "STI",
+        "SWMR"
+      ],
+      "dropped_vs_recorded": [
+        "ALOY",
+        "CBRL",
+        "FWRD"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-06-17",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "ZVZZT",
+        "HQ",
+        "QURE",
+        "ALOY",
+        "QMCO",
+        "TNGX",
+        "ZSQR",
+        "OCC"
+      ],
+      "R1_RECORDED_TOP8": [
+        "ZVZZT",
+        "HQ",
+        "QURE",
+        "ALOY",
+        "QMCO",
+        "TNGX",
+        "ZSQR",
+        "OCC"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "STI",
+        "HQ",
+        "QURE",
+        "ALOY",
+        "QMCO",
+        "TNGX",
+        "ZSQR",
+        "OCC"
+      ],
+      "raw_field_size": 1006,
+      "certified_field_size": 1366,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "STI"
+      ],
+      "dropped_vs_recorded": [
+        "ZVZZT"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-06-24",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "DD",
+        "HQ",
+        "DFTX",
+        "QURE",
+        "ARQQ",
+        "WNC",
+        "ALHC",
+        "MAAS"
+      ],
+      "R1_RECORDED_TOP8": [
+        "DD",
+        "HQ",
+        "DFTX",
+        "QURE",
+        "ARQQ",
+        "WNC",
+        "ALHC",
+        "MAAS"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "HQ",
+        "DFTX",
+        "QURE",
+        "ARQQ",
+        "WNC",
+        "ALHC",
+        "MAAS",
+        "MBX"
+      ],
+      "raw_field_size": 995,
+      "certified_field_size": 1388,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "MBX"
+      ],
+      "dropped_vs_recorded": [
+        "DD"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-07-01",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "SDOT",
+        "HQ",
+        "ARQQ",
+        "BLZE",
+        "RGNX",
+        "DFTX",
+        "FCEL",
+        "SLS"
+      ],
+      "R1_RECORDED_TOP8": [
+        "SDOT",
+        "HQ",
+        "ARQQ",
+        "BLZE",
+        "RGNX",
+        "DFTX",
+        "FCEL",
+        "SLS"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "SDOT",
+        "HQ",
+        "ARQQ",
+        "BLZE",
+        "RGNX",
+        "NVCT",
+        "DFTX",
+        "MBX"
+      ],
+      "raw_field_size": 1028,
+      "certified_field_size": 1434,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "NVCT",
+        "MBX"
+      ],
+      "dropped_vs_recorded": [
+        "FCEL",
+        "SLS"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-07-08",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "MQ",
+        "RGNX",
+        "BLZE",
+        "DFTX",
+        "SLS",
+        "RPD",
+        "QURE",
+        "ZBIO"
+      ],
+      "R1_RECORDED_TOP8": [
+        "MQ",
+        "RGNX",
+        "BLZE",
+        "DFTX",
+        "SLS",
+        "RPD",
+        "QURE",
+        "ZBIO"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "CLRO",
+        "RGNX",
+        "BLZE",
+        "DFTX",
+        "SLS",
+        "RPD",
+        "MBX",
+        "GSHD"
+      ],
+      "raw_field_size": 960,
+      "certified_field_size": 1364,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "CLRO",
+        "MBX",
+        "GSHD"
+      ],
+      "dropped_vs_recorded": [
+        "MQ",
+        "QURE",
+        "ZBIO"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-07-15",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "MQ",
+        "FBRX",
+        "TRAX",
+        "RPD",
+        "PSNL",
+        "GRPN",
+        "QDEL",
+        "COAG"
+      ],
+      "R1_RECORDED_TOP8": [
+        "MQ",
+        "FBRX",
+        "TRAX",
+        "RPD",
+        "PSNL",
+        "GRPN",
+        "QDEL",
+        "COAG"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "VEEE",
+        "FBRX",
+        "ALIT",
+        "TRAX",
+        "RPD",
+        "PSNL",
+        "GRPN",
+        "QDEL"
+      ],
+      "raw_field_size": 917,
+      "certified_field_size": 1314,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "VEEE",
+        "ALIT"
+      ],
+      "dropped_vs_recorded": [
+        "MQ",
+        "COAG"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-07-22",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "MQ",
+        "TRAX",
+        "UTZ",
+        "COAG",
+        "BMNR",
+        "VG",
+        "RHI",
+        "CDNA"
+      ],
+      "R1_RECORDED_TOP8": [
+        "MQ",
+        "TRAX",
+        "UTZ",
+        "COAG",
+        "BMNR",
+        "VG",
+        "RHI",
+        "CDNA"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "VEEE",
+        "FBRX",
+        "TRAX",
+        "UTZ",
+        "ALIT",
+        "MAN",
+        "PBF",
+        "COAG"
+      ],
+      "raw_field_size": 907,
+      "certified_field_size": 1317,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "VEEE",
+        "FBRX",
+        "ALIT",
+        "MAN",
+        "PBF"
+      ],
+      "dropped_vs_recorded": [
+        "MQ",
+        "BMNR",
+        "VG",
+        "RHI",
+        "CDNA"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-07-29",
+      "split": "IS",
+      "R0_RAW_CACHE_TOP8": [
+        "TRAX",
+        "UTZ",
+        "CBZ",
+        "BLKB",
+        "AVTR",
+        "ETON",
+        "EFOR",
+        "EXLS"
+      ],
+      "R1_RECORDED_TOP8": [
+        "TRAX",
+        "UTZ",
+        "CBZ",
+        "BLKB",
+        "AVTR",
+        "ETON",
+        "EFOR",
+        "EXLS"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "FBRX",
+        "DFNS",
+        "TRAX",
+        "UTZ",
+        "CBZ",
+        "BLKB",
+        "MAN",
+        "AVTR"
+      ],
+      "raw_field_size": 928,
+      "certified_field_size": 1332,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "FBRX",
+        "DFNS",
+        "MAN"
+      ],
+      "dropped_vs_recorded": [
+        "ETON",
+        "EFOR",
+        "EXLS"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-08-05",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "UTZ",
+        "EFOR",
+        "CDNA",
+        "CMCO",
+        "LIFE",
+        "BLKB",
+        "PLSE",
+        "LBRX"
+      ],
+      "R1_RECORDED_TOP8": [
+        "UTZ",
+        "EFOR",
+        "CDNA",
+        "CMCO",
+        "LIFE",
+        "BLKB",
+        "PLSE",
+        "LBRX"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "DFNS",
+        "FCUV",
+        "AMIX",
+        "UTZ",
+        "EFOR",
+        "FBRX",
+        "CDNA",
+        "CMCO"
+      ],
+      "raw_field_size": 1005,
+      "certified_field_size": 1410,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "DFNS",
+        "FCUV",
+        "AMIX",
+        "FBRX"
+      ],
+      "dropped_vs_recorded": [
+        "LIFE",
+        "BLKB",
+        "PLSE",
+        "LBRX"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-08-12",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "DFNS",
+        "QMCO",
+        "LIFE",
+        "VREX",
+        "VOYG",
+        "EFOR",
+        "NIQ",
+        "BWMN"
+      ],
+      "R1_RECORDED_TOP8": [
+        "DFNS",
+        "QMCO",
+        "LIFE",
+        "VREX",
+        "VOYG",
+        "EFOR",
+        "NIQ",
+        "BWMN"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "DFNS",
+        "QMCO",
+        "LIFE",
+        "VREX",
+        "RNG",
+        "VOYG",
+        "EFOR",
+        "HZO"
+      ],
+      "raw_field_size": 937,
+      "certified_field_size": 1322,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "RNG",
+        "HZO"
+      ],
+      "dropped_vs_recorded": [
+        "NIQ",
+        "BWMN"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-08-19",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "REPL",
+        "ABCL",
+        "QMCO",
+        "AMLX",
+        "SMJF",
+        "HTFL",
+        "FDMT",
+        "VOYG"
+      ],
+      "R1_RECORDED_TOP8": [
+        "REPL",
+        "ABCL",
+        "QMCO",
+        "AMLX",
+        "SMJF",
+        "HTFL",
+        "FDMT",
+        "VOYG"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "WETO",
+        "IPST",
+        "MRNA",
+        "REPL",
+        "ABCL",
+        "QMCO",
+        "AMLX",
+        "SMJF"
+      ],
+      "raw_field_size": 943,
+      "certified_field_size": 1345,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "WETO",
+        "IPST",
+        "MRNA"
+      ],
+      "dropped_vs_recorded": [
+        "HTFL",
+        "FDMT",
+        "VOYG"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    },
+    {
+      "cohort_id": "2026-08-26",
+      "split": "OOS",
+      "R0_RAW_CACHE_TOP8": [
+        "REAX",
+        "ARCT",
+        "ABCL",
+        "QMCO",
+        "HTFL",
+        "ASST",
+        "PURR",
+        "AMLX"
+      ],
+      "R1_RECORDED_TOP8": [
+        "REAX",
+        "ARCT",
+        "ABCL",
+        "QMCO",
+        "HTFL",
+        "ASST",
+        "PURR",
+        "AMLX"
+      ],
+      "R2_CERTIFIED_TOP8": [
+        "ARCT",
+        "ABCL",
+        "QMCO",
+        "EDRY",
+        "HTFL",
+        "ASST",
+        "PURR",
+        "AMLX"
+      ],
+      "raw_field_size": 915,
+      "certified_field_size": 1308,
+      "membership_change_vs_recorded": true,
+      "added_vs_recorded": [
+        "EDRY"
+      ],
+      "dropped_vs_recorded": [
+        "REAX"
+      ],
+      "order_only_change_vs_recorded": false,
+      "unrankable_unresolved": 0
+    }
+  ],
+  "split_owned_books": {
+    "PARENT/R1/LEGACY_FILL_QTY/IS": {
+      "book": "PARENT/R1/LEGACY_FILL_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 91,
+      "losses": 109,
+      "flats": 0,
+      "hit_rate": 0.455,
+      "avg_win": 743.927922256044,
+      "avg_loss": -591.9091733284404,
+      "payoff_ratio": 1.2568278306497052,
+      "profit_factor": 1.0492782806341574,
+      "gross_pnl": 5208.491899999994,
+      "modeled_net": 3179.3410324999954,
+      "net_double_spread": 1524.5801649999962,
+      "net_borrow_10": 80.62091917424151,
+      "net_borrow_30": -6116.819307477264,
+      "completed_net_through_cutoff": 3179.3410324999954,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 12.666697340637432,
+      "max_dd_dollars": -27222.82634670002,
+      "max_dd_percent": -0.27222826346700024,
+      "worst_day": -5071.614000000016,
+      "time_underwater_sessions": 239,
+      "red_calendar_months": 6,
+      "red_month_loss_sum": -28464.381478900075,
+      "worst_month": -10247.558193400051,
+      "median_month": 494.0769650000293,
+      "mean_gross": 31452.746726147412,
+      "peak_gross": 97441.27500000001,
+      "exposure_dollar_days": 7894639.428263,
+      "turnover_entry_notional": 796797.5505,
+      "tier_contribution": {
+        "FULL": 3179.3410324999954,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 103179.34103249993,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "PARENT/R1/LEGACY_FILL_QTY/OOS": {
+      "book": "PARENT/R1/LEGACY_FILL_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 114,
+      "losses": 101,
+      "flats": 0,
+      "hit_rate": 0.5302325581395348,
+      "avg_win": 799.2198800649122,
+      "avg_loss": -571.8203487980197,
+      "payoff_ratio": 1.397676528554627,
+      "profit_factor": 1.5775754876755195,
+      "gross_pnl": 35439.6614,
+      "modeled_net": 33357.2110988,
+      "net_double_spread": 31663.3007976,
+      "net_borrow_10": 29995.121647238353,
+      "net_borrow_30": 23270.942744115066,
+      "completed_net_through_cutoff": 28380.3828188,
+      "september_runoff_net": 4976.828279999999,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 132.89725537370518,
+      "max_dd_dollars": -46273.053930000024,
+      "max_dd_percent": -0.3647189851600079,
+      "worst_day": -37439.649999999994,
+      "time_underwater_sessions": 194,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -22029.31043259983,
+      "worst_month": -9592.356752399879,
+      "median_month": 4847.518140700064,
+      "mean_gross": 35655.73207968128,
+      "peak_gross": 114002.356,
+      "exposure_dollar_days": 8949588.752,
+      "turnover_entry_notional": 860820.8138,
+      "tier_contribution": {
+        "FULL": 33357.2110988,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 133012.95610380024,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "PARENT/R1/LEGACY_FILL_QTY/ALL": {
+      "book": "PARENT/R1/LEGACY_FILL_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 205,
+      "losses": 210,
+      "flats": 0,
+      "hit_rate": 0.4939759036144578,
+      "avg_win": 774.6756451351221,
+      "avg_loss": -582.24740534,
+      "payoff_ratio": 1.3304922238043375,
+      "profit_factor": 1.2988138375232816,
+      "gross_pnl": 40648.15329999999,
+      "modeled_net": 36536.55213129999,
+      "net_double_spread": 33187.8809626,
+      "net_borrow_10": 30075.742566412595,
+      "net_borrow_30": 17154.1234366378,
+      "completed_net_through_cutoff": 31559.723851299997,
+      "september_runoff_net": 4976.828279999999,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 145.5639527143426,
+      "max_dd_dollars": -53079.557300000044,
+      "max_dd_percent": -0.3878411473320519,
+      "worst_day": -37439.649999999994,
+      "time_underwater_sessions": 227,
+      "red_calendar_months": 3,
+      "red_month_loss_sum": -25335.924043700055,
+      "worst_month": -10247.558193400051,
+      "median_month": 3234.0378507998685,
+      "mean_gross": 67108.4788058287,
+      "peak_gross": 114002.356,
+      "exposure_dollar_days": 16844228.180263,
+      "turnover_entry_notional": 1657618.3643,
+      "tier_contribution": {
+        "FULL": 36536.55213129999,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 136192.29713630016,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "PARENT/R2/LEGACY_FILL_QTY/IS": {
+      "book": "PARENT/R2/LEGACY_FILL_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 104,
+      "losses": 96,
+      "flats": 0,
+      "hit_rate": 0.52,
+      "avg_win": 945.1239388413462,
+      "avg_loss": -594.8996430291667,
+      "payoff_ratio": 1.5887115581863087,
+      "profit_factor": 1.7211041880351676,
+      "gross_pnl": 43199.090099999994,
+      "modeled_net": 41182.5239087,
+      "net_double_spread": 39551.2277174,
+      "net_borrow_10": 38157.94119937425,
+      "net_borrow_30": 32108.77578072274,
+      "completed_net_through_cutoff": 41182.5239087,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 164.07380043306773,
+      "max_dd_dollars": -14273.278793300007,
+      "max_dd_percent": -0.13625934110716742,
+      "worst_day": -7135.844000000012,
+      "time_underwater_sessions": 201,
+      "red_calendar_months": 4,
+      "red_month_loss_sum": -7850.2725213000085,
+      "worst_month": -3848.1293578999903,
+      "median_month": 3203.5829147998884,
+      "mean_gross": 30629.632660011954,
+      "peak_gross": 95763.4636,
+      "exposure_dollar_days": 7688037.797663,
+      "turnover_entry_notional": 796897.3917,
+      "tier_contribution": {
+        "FULL": 41182.5239087,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 141182.5239087,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "PARENT/R2/LEGACY_FILL_QTY/OOS": {
+      "book": "PARENT/R2/LEGACY_FILL_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 120,
+      "losses": 95,
+      "flats": 0,
+      "hit_rate": 0.5581395348837209,
+      "avg_win": 1036.1189392783333,
+      "avg_loss": -637.6713716063158,
+      "payoff_ratio": 1.624847821956182,
+      "profit_factor": 2.052439354049914,
+      "gross_pnl": 65959.24215,
+      "modeled_net": 63755.4924108,
+      "net_double_spread": 61994.4826716,
+      "net_borrow_10": 60451.647685028765,
+      "net_borrow_30": 53843.9582334863,
+      "completed_net_through_cutoff": 55960.9614958,
+      "september_runoff_net": 7794.5309149999985,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 254.00594585976094,
+      "max_dd_dollars": -23322.810157299915,
+      "max_dd_percent": -0.16919383586164216,
+      "worst_day": -4871.152354999984,
+      "time_underwater_sessions": 179,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -12194.966617299928,
+      "worst_month": -5796.995136700032,
+      "median_month": 39.15737499996612,
+      "mean_gross": 35066.882184322705,
+      "peak_gross": 104365.2317,
+      "exposure_dollar_days": 8801787.428265,
+      "turnover_entry_notional": 860733.7858000001,
+      "tier_contribution": {
+        "FULL": 63755.4924108,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 165209.88239580014,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 3872.5800000000004
+    },
+    "PARENT/R2/LEGACY_FILL_QTY/ALL": {
+      "book": "PARENT/R2/LEGACY_FILL_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 224,
+      "losses": 191,
+      "flats": 0,
+      "hit_rate": 0.5397590361445783,
+      "avg_win": 993.8712605040179,
+      "avg_loss": -616.1735394418848,
+      "payoff_ratio": 1.6129729644090893,
+      "profit_factor": 1.8916541572127539,
+      "gross_pnl": 109158.33224999999,
+      "modeled_net": 104938.0163195,
+      "net_double_spread": 101545.710389,
+      "net_borrow_10": 98609.58888440301,
+      "net_borrow_30": 85952.73401420904,
+      "completed_net_through_cutoff": 97143.4854045,
+      "september_runoff_net": 7794.5309149999985,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 418.0797462928287,
+      "max_dd_dollars": -18004.897061600044,
+      "max_dd_percent": -0.1350317759079246,
+      "worst_day": -7135.844000000012,
+      "time_underwater_sessions": 179,
+      "red_calendar_months": 2,
+      "red_month_loss_sum": -7527.019636299941,
+      "worst_month": -4139.085272900018,
+      "median_month": 8619.607779800077,
+      "mean_gross": 65696.51484433467,
+      "peak_gross": 107497.37890000001,
+      "exposure_dollar_days": 16489825.225928001,
+      "turnover_entry_notional": 1657631.1775,
+      "tier_contribution": {
+        "FULL": 104938.0163195,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 206392.40630450024,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 3872.5800000000004
+    },
+    "PARENT/R1/CAUSAL_PREORDER_QTY/IS": {
+      "book": "PARENT/R1/CAUSAL_PREORDER_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 91,
+      "losses": 109,
+      "flats": 0,
+      "hit_rate": 0.455,
+      "avg_win": 743.5939630681319,
+      "avg_loss": -592.4762344899083,
+      "payoff_ratio": 1.2550612493483866,
+      "profit_factor": 1.0478034283550748,
+      "gross_pnl": 5114.665799999994,
+      "modeled_net": 3087.141079799995,
+      "net_double_spread": 1433.2063595999953,
+      "net_borrow_10": -13.40846407233391,
+      "net_borrow_30": -6214.507551816991,
+      "completed_net_through_cutoff": 3087.141079799995,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 12.29936685179281,
+      "max_dd_dollars": -27165.870334300038,
+      "max_dd_percent": -0.27165870334300035,
+      "worst_day": -5095.522000000012,
+      "time_underwater_sessions": 239,
+      "red_calendar_months": 6,
+      "red_month_loss_sum": -28450.183371300067,
+      "worst_month": -10252.818429100036,
+      "median_month": 491.95388000000094,
+      "mean_gross": 31471.668697043828,
+      "peak_gross": 97583.455,
+      "exposure_dollar_days": 7899388.8429580005,
+      "turnover_entry_notional": 797198.1648,
+      "tier_contribution": {
+        "FULL": 3087.141079799995,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 103087.14107980007,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "PARENT/R1/CAUSAL_PREORDER_QTY/OOS": {
+      "book": "PARENT/R1/CAUSAL_PREORDER_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 114,
+      "losses": 101,
+      "flats": 0,
+      "hit_rate": 0.5302325581395348,
+      "avg_win": 799.137486172807,
+      "avg_loss": -572.6241278039604,
+      "payoff_ratio": 1.3955707546546032,
+      "profit_factor": 1.5751986735705423,
+      "gross_pnl": 35349.2081,
+      "modeled_net": 33266.6365155,
+      "net_double_spread": 31572.584931,
+      "net_borrow_10": 29904.29000437671,
+      "net_borrow_30": 23179.596982130137,
+      "completed_net_through_cutoff": 28301.8213905,
+      "september_runoff_net": 4964.815124999999,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 132.53640046015937,
+      "max_dd_dollars": -45793.33552000005,
+      "max_dd_percent": -0.3610929120078594,
+      "worst_day": -37037.53499999999,
+      "time_underwater_sessions": 194,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -21969.470332199955,
+      "worst_month": -9577.37304239998,
+      "median_month": 4819.187540500076,
+      "mean_gross": 35623.04551553785,
+      "peak_gross": 113433.16500000001,
+      "exposure_dollar_days": 8941384.4244,
+      "turnover_entry_notional": 860827.1038,
+      "tier_contribution": {
+        "FULL": 33266.6365155,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 132926.8691855,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "PARENT/R1/CAUSAL_PREORDER_QTY/ALL": {
+      "book": "PARENT/R1/CAUSAL_PREORDER_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 205,
+      "losses": 210,
+      "flats": 0,
+      "hit_rate": 0.4939759036144578,
+      "avg_win": 774.4815807946342,
+      "avg_loss": -582.928316512381,
+      "payoff_ratio": 1.3286051798414988,
+      "profit_factor": 1.2969717231786062,
+      "gross_pnl": 40463.87389999999,
+      "modeled_net": 36353.777595299995,
+      "net_double_spread": 33005.7912906,
+      "net_borrow_10": 29890.881540304377,
+      "net_borrow_30": 16965.089430313146,
+      "completed_net_through_cutoff": 31388.962470299997,
+      "september_runoff_net": 4964.815124999999,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 144.83576731195217,
+      "max_dd_dollars": -52635.26762999996,
+      "max_dd_percent": -0.38490766204761195,
+      "worst_day": -37037.53499999999,
+      "time_underwater_sessions": 227,
+      "red_calendar_months": 3,
+      "red_month_loss_sum": -25311.314141200142,
+      "worst_month": -10252.818429100036,
+      "median_month": 3146.932220899893,
+      "mean_gross": 67094.71421258168,
+      "peak_gross": 113433.16500000001,
+      "exposure_dollar_days": 16840773.267358,
+      "turnover_entry_notional": 1658025.2686,
+      "tier_contribution": {
+        "FULL": 36353.777595299995,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 136014.01026529993,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "PARENT/R2/CAUSAL_PREORDER_QTY/IS": {
+      "book": "PARENT/R2/CAUSAL_PREORDER_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 104,
+      "losses": 96,
+      "flats": 0,
+      "hit_rate": 0.52,
+      "avg_win": 941.9627076288463,
+      "avg_loss": -595.2602928375001,
+      "payoff_ratio": 1.5824383365782344,
+      "profit_factor": 1.7143081979597539,
+      "gross_pnl": 42832.2388,
+      "modeled_net": 40819.133481,
+      "net_double_spread": 39190.108162,
+      "net_borrow_10": 37795.49328303178,
+      "net_borrow_30": 31748.21288709534,
+      "completed_net_through_cutoff": 40819.133481,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 162.62602980478087,
+      "max_dd_dollars": -14264.502205099998,
+      "max_dd_percent": -0.13622142853687957,
+      "worst_day": -7140.562000000005,
+      "time_underwater_sessions": 202,
+      "red_calendar_months": 4,
+      "red_month_loss_sum": -7838.437558099991,
+      "worst_month": -3828.926219699977,
+      "median_month": 3163.308440899971,
+      "mean_gross": 30619.89756457371,
+      "peak_gross": 95956.18860000001,
+      "exposure_dollar_days": 7685594.288708,
+      "turnover_entry_notional": 796512.2391,
+      "tier_contribution": {
+        "FULL": 40819.133481,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 140819.13348100003,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "PARENT/R2/CAUSAL_PREORDER_QTY/OOS": {
+      "book": "PARENT/R2/CAUSAL_PREORDER_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 120,
+      "losses": 95,
+      "flats": 0,
+      "hit_rate": 0.5581395348837209,
+      "avg_win": 1034.56312654,
+      "avg_loss": -637.5530715494737,
+      "payoff_ratio": 1.6227090303645704,
+      "profit_factor": 2.0497377225657734,
+      "gross_pnl": 65776.1235,
+      "modeled_net": 63580.0333876,
+      "net_double_spread": 61824.1332752,
+      "net_borrow_10": 60276.64301703343,
+      "net_borrow_30": 53669.862275900276,
+      "completed_net_through_cutoff": 55882.5623376,
+      "september_runoff_net": 7697.47105,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 253.30690592669322,
+      "max_dd_dollars": -23289.36410369996,
+      "max_dd_percent": -0.16922193013568643,
+      "worst_day": -4849.49066499999,
+      "time_underwater_sessions": 179,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -12331.219251699978,
+      "worst_month": -5741.367176500033,
+      "median_month": 88.77182499993069,
+      "mean_gross": 34993.59664449402,
+      "peak_gross": 104177.7665,
+      "exposure_dollar_days": 8783392.757768,
+      "turnover_entry_notional": 860430.4097000001,
+      "tier_contribution": {
+        "FULL": 63580.0333876,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 165050.7802476,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 3797.53
+    },
+    "PARENT/R2/CAUSAL_PREORDER_QTY/ALL": {
+      "book": "PARENT/R2/CAUSAL_PREORDER_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 224,
+      "losses": 191,
+      "flats": 0,
+      "hit_rate": 0.5397590361445783,
+      "avg_win": 991.5700749026786,
+      "avg_loss": -616.2959681130891,
+      "payoff_ratio": 1.6089186465693825,
+      "profit_factor": 1.886899355138962,
+      "gross_pnl": 108608.3623,
+      "modeled_net": 104399.1668686,
+      "net_double_spread": 101014.2414372,
+      "net_borrow_10": 98072.1363000652,
+      "net_borrow_30": 85418.07516299562,
+      "completed_net_through_cutoff": 96701.6958186,
+      "september_runoff_net": 7697.47105,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 415.9329357314741,
+      "max_dd_dollars": -18157.029988200098,
+      "max_dd_percent": -0.13622985947730215,
+      "worst_day": -7140.562000000005,
+      "time_underwater_sessions": 180,
+      "red_calendar_months": 2,
+      "red_month_loss_sum": -7729.614238100054,
+      "worst_month": -4315.499849700034,
+      "median_month": 8337.352400200092,
+      "mean_gross": 65613.49420906774,
+      "peak_gross": 107386.33450000001,
+      "exposure_dollar_days": 16468987.046476,
+      "turnover_entry_notional": 1656942.6488,
+      "tier_contribution": {
+        "FULL": 104399.1668686,
+        "HALF": 0,
+        "QUARTER": 0
+      },
+      "aug31_equity": 205869.91372859967,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 3797.53
+    },
+    "R4/R1/LEGACY_FILL_QTY/IS": {
+      "book": "R4/R1/LEGACY_FILL_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 91,
+      "losses": 109,
+      "flats": 0,
+      "hit_rate": 0.455,
+      "avg_win": 759.7350263725275,
+      "avg_loss": -552.0972746825689,
+      "payoff_ratio": 1.3760890720015615,
+      "profit_factor": 1.1488450050655241,
+      "gross_pnl": 10980.691599999993,
+      "modeled_net": 8957.284459499997,
+      "net_double_spread": 7310.107318999998,
+      "net_borrow_10": 5918.156583726023,
+      "net_borrow_30": -160.0991678219219,
+      "completed_net_through_cutoff": 8957.284459499997,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 35.686392268924294,
+      "max_dd_dollars": -22011.30751439996,
+      "max_dd_percent": -0.22011307514399958,
+      "worst_day": -5950.369999999995,
+      "time_underwater_sessions": 239,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -20899.85228639994,
+      "worst_month": -6928.0480575999245,
+      "median_month": 677.9336577000213,
+      "mean_gross": 30838.457479055778,
+      "peak_gross": 90345.73000000001,
+      "exposure_dollar_days": 7740452.827243,
+      "turnover_entry_notional": 787378.5518,
+      "tier_contribution": {
+        "FULL": 13916.711064,
+        "HALF": -4959.426604500003,
+        "QUARTER": 0
+      },
+      "aug31_equity": 108957.28445950017,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "R4/R1/LEGACY_FILL_QTY/OOS": {
+      "book": "R4/R1/LEGACY_FILL_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 114,
+      "losses": 101,
+      "flats": 0,
+      "hit_rate": 0.5302325581395348,
+      "avg_win": 896.0837928263157,
+      "avg_loss": -536.0374930366337,
+      "payoff_ratio": 1.6716811873550717,
+      "profit_factor": 1.8868480728562194,
+      "gross_pnl": 50133.91529999999,
+      "modeled_net": 48013.76558549999,
+      "net_double_spread": 46296.935870999994,
+      "net_borrow_10": 44611.798953226025,
+      "net_borrow_30": 37807.865688678074,
+      "completed_net_through_cutoff": 41942.5879505,
+      "september_runoff_net": 6071.177634999998,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 191.28990273107567,
+      "max_dd_dollars": -59923.89910499992,
+      "max_dd_percent": -0.4299023034791082,
+      "worst_day": -48747.750000000015,
+      "time_underwater_sessions": 190,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -19605.93976499996,
+      "worst_month": -8093.592513599971,
+      "median_month": 4752.064538099978,
+      "mean_gross": 37001.68357848606,
+      "peak_gross": 126545.835,
+      "exposure_dollar_days": 9287422.578200001,
+      "turnover_entry_notional": 879669.1499000001,
+      "tier_contribution": {
+        "FULL": 52999.80434039999,
+        "HALF": -4986.038754900001,
+        "QUARTER": 0
+      },
+      "aug31_equity": 147211.07644550002,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "R4/R1/LEGACY_FILL_QTY/ALL": {
+      "book": "R4/R1/LEGACY_FILL_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 205,
+      "losses": 210,
+      "flats": 0,
+      "hit_rate": 0.4939759036144578,
+      "avg_win": 835.5582428395122,
+      "avg_loss": -544.373284462381,
+      "payoff_ratio": 1.5348994278157926,
+      "profit_factor": 1.4983542033439878,
+      "gross_pnl": 61114.60689999999,
+      "modeled_net": 56971.05004499999,
+      "net_double_spread": 53607.04318999999,
+      "net_borrow_10": 50529.955536952046,
+      "net_borrow_30": 37647.76652085615,
+      "completed_net_through_cutoff": 50899.87240999999,
+      "september_runoff_net": 6071.177634999998,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 226.97629499999996,
+      "max_dd_dollars": -67389.14512999998,
+      "max_dd_percent": -0.4325026299500304,
+      "worst_day": -48747.750000000015,
+      "time_underwater_sessions": 225,
+      "red_calendar_months": 4,
+      "red_month_loss_sum": -22338.740896799995,
+      "worst_month": -7719.488738600048,
+      "median_month": 7060.010650000011,
+      "mean_gross": 67840.14105754184,
+      "peak_gross": 126545.835,
+      "exposure_dollar_days": 17027875.405443,
+      "turnover_entry_notional": 1667047.7017,
+      "tier_contribution": {
+        "FULL": 66916.5154044,
+        "HALF": -9945.465359400003,
+        "QUARTER": 0
+      },
+      "aug31_equity": 156168.36090500013,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "R4/R2/LEGACY_FILL_QTY/IS": {
+      "book": "R4/R2/LEGACY_FILL_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 104,
+      "losses": 96,
+      "flats": 0,
+      "hit_rate": 0.52,
+      "avg_win": 971.9468392528846,
+      "avg_loss": -560.25394636875,
+      "payoff_ratio": 1.7348326514297592,
+      "profit_factor": 1.8794020390489055,
+      "gross_pnl": 49230.2812,
+      "modeled_net": 47298.0924309,
+      "net_double_spread": 45732.5236618,
+      "net_borrow_10": 44373.711585122735,
+      "net_borrow_30": 38524.94989356822,
+      "completed_net_through_cutoff": 47298.0924309,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 188.43861526254977,
+      "max_dd_dollars": -12452.01064090003,
+      "max_dd_percent": -0.11719849321253417,
+      "worst_day": -8912.339999999997,
+      "time_underwater_sessions": 195,
+      "red_calendar_months": 3,
+      "red_month_loss_sum": -7084.033853500019,
+      "worst_month": -4820.150060300017,
+      "median_month": 4022.052328700025,
+      "mean_gross": 29591.160784681277,
+      "peak_gross": 95649.82380000001,
+      "exposure_dollar_days": 7427381.356955,
+      "turnover_entry_notional": 774504.5878000001,
+      "tier_contribution": {
+        "FULL": 41718.977451700004,
+        "HALF": 5579.114979199998,
+        "QUARTER": 0
+      },
+      "aug31_equity": 147298.0924308999,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "R4/R2/LEGACY_FILL_QTY/OOS": {
+      "book": "R4/R2/LEGACY_FILL_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 120,
+      "losses": 95,
+      "flats": 0,
+      "hit_rate": 0.5581395348837209,
+      "avg_win": 1039.2984432966666,
+      "avg_loss": -608.6637473652631,
+      "payoff_ratio": 1.7075083702545155,
+      "profit_factor": 2.15685267821623,
+      "gross_pnl": 69018.77135,
+      "modeled_net": 66892.75719589999,
+      "net_double_spread": 65191.603041799994,
+      "net_borrow_10": 63636.793434166575,
+      "net_borrow_30": 57124.86591069972,
+      "completed_net_through_cutoff": 58229.5888059,
+      "september_runoff_net": 8663.168389999999,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 266.5050087486055,
+      "max_dd_dollars": -22110.797005400033,
+      "max_dd_percent": -0.16551126776314418,
+      "worst_day": -5136.928900000028,
+      "time_underwater_sessions": 181,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -13550.248642400038,
+      "worst_month": -5847.152776399991,
+      "median_month": 2871.4038850000506,
+      "mean_gross": 35608.51801086454,
+      "peak_gross": 115882.48140000002,
+      "exposure_dollar_days": 8937738.020727001,
+      "turnover_entry_notional": 848972.2385,
+      "tier_contribution": {
+        "FULL": 51601.468076799996,
+        "HALF": 15291.289119100002,
+        "QUARTER": 0
+      },
+      "aug31_equity": 167357.08664589986,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 4983.320000000001
+    },
+    "R4/R2/LEGACY_FILL_QTY/ALL": {
+      "book": "R4/R2/LEGACY_FILL_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 224,
+      "losses": 191,
+      "flats": 0,
+      "hit_rate": 0.5397590361445783,
+      "avg_win": 1008.0280557049108,
+      "avg_loss": -584.332119639267,
+      "payoff_ratio": 1.725094380105631,
+      "profit_factor": 2.0231473358306875,
+      "gross_pnl": 118249.05255,
+      "modeled_net": 114190.8496268,
+      "net_double_spread": 110924.12670359999,
+      "net_borrow_10": 108010.50501928931,
+      "net_borrow_30": 95649.81580426794,
+      "completed_net_through_cutoff": 105527.6812368,
+      "september_runoff_net": 8663.168389999999,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 454.9436240111554,
+      "max_dd_dollars": -21767.759332300033,
+      "max_dd_percent": -0.16084443983244734,
+      "worst_day": -8912.340000000026,
+      "time_underwater_sessions": 178,
+      "red_calendar_months": 2,
+      "red_month_loss_sum": -8351.365073900102,
+      "worst_month": -8288.745975300044,
+      "median_month": 11413.147738,
+      "mean_gross": 65199.67879554583,
+      "peak_gross": 117761.58600000001,
+      "exposure_dollar_days": 16365119.377682002,
+      "turnover_entry_notional": 1623476.8263,
+      "tier_contribution": {
+        "FULL": 93320.4455285,
+        "HALF": 20870.404098299998,
+        "QUARTER": 0
+      },
+      "aug31_equity": 214655.1790767994,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 4983.320000000001
+    },
+    "R4/R1/CAUSAL_PREORDER_QTY/IS": {
+      "book": "R4/R1/CAUSAL_PREORDER_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 91,
+      "losses": 109,
+      "flats": 0,
+      "hit_rate": 0.455,
+      "avg_win": 759.3155808890109,
+      "avg_loss": -551.8684113935781,
+      "payoff_ratio": 1.3758996985741352,
+      "profit_factor": 1.1486869043141863,
+      "gross_pnl": 10964.279399999994,
+      "modeled_net": 8944.061018999995,
+      "net_double_spread": 7298.892637999996,
+      "net_borrow_10": 5904.423299472597,
+      "net_borrow_30": -174.85213958219518,
+      "completed_net_through_cutoff": 8944.061018999995,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 35.6337092390438,
+      "max_dd_dollars": -21983.613771199918,
+      "max_dd_percent": -0.21983613771199917,
+      "worst_day": -5941.274000000005,
+      "time_underwater_sessions": 240,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -20863.228313199885,
+      "worst_month": -6928.286712599947,
+      "median_month": 670.0183777000202,
+      "mean_gross": 30842.9937971753,
+      "peak_gross": 90359.83,
+      "exposure_dollar_days": 7741591.443091,
+      "turnover_entry_notional": 787463.8411000001,
+      "tier_contribution": {
+        "FULL": 13848.7108908,
+        "HALF": -4904.649871800003,
+        "QUARTER": 0
+      },
+      "aug31_equity": 108944.06101900013,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "R4/R1/CAUSAL_PREORDER_QTY/OOS": {
+      "book": "R4/R1/CAUSAL_PREORDER_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 114,
+      "losses": 101,
+      "flats": 0,
+      "hit_rate": 0.5302325581395348,
+      "avg_win": 895.7510629824561,
+      "avg_loss": -536.232036749505,
+      "payoff_ratio": 1.6704542093610428,
+      "profit_factor": 1.8854631670015733,
+      "gross_pnl": 50076.1611,
+      "modeled_net": 47956.1854683,
+      "net_double_spread": 46239.439836599995,
+      "net_borrow_10": 44554.27984175205,
+      "net_borrow_30": 37750.468588656164,
+      "completed_net_through_cutoff": 41897.2395683,
+      "september_runoff_net": 6058.9459,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 191.06049987370517,
+      "max_dd_dollars": -59213.60353499996,
+      "max_dd_percent": -0.42477093881040107,
+      "worst_day": -48145.425,
+      "time_underwater_sessions": 190,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -19473.671139999962,
+      "worst_month": -8044.304758599974,
+      "median_month": 4731.001102800015,
+      "mean_gross": 36949.063703187254,
+      "peak_gross": 125703.868,
+      "exposure_dollar_days": 9274214.989500001,
+      "turnover_entry_notional": 879568.6439,
+      "tier_contribution": {
+        "FULL": 52978.1891202,
+        "HALF": -5022.0036519000005,
+        "QUARTER": 0
+      },
+      "aug31_equity": 147159.53000829977,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "R4/R1/CAUSAL_PREORDER_QTY/ALL": {
+      "book": "R4/R1/CAUSAL_PREORDER_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 205,
+      "losses": 210,
+      "flats": 0,
+      "hit_rate": 0.4939759036144578,
+      "avg_win": 835.1870197117073,
+      "avg_loss": -544.3480597790477,
+      "payoff_ratio": 1.5342885947838445,
+      "profit_factor": 1.4977579139556578,
+      "gross_pnl": 61040.44049999999,
+      "modeled_net": 56900.24648729999,
+      "net_double_spread": 53538.33247459999,
+      "net_borrow_10": 50458.70314122465,
+      "net_borrow_30": 37575.61644907397,
+      "completed_net_through_cutoff": 50841.30058729999,
+      "september_runoff_net": 6058.9459,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 226.69420911274898,
+      "max_dd_dollars": -66688.41478499999,
+      "max_dd_percent": -0.42798330590914,
+      "worst_day": -48145.425,
+      "time_underwater_sessions": 225,
+      "red_calendar_months": 4,
+      "red_month_loss_sum": -22217.948093599887,
+      "worst_month": -7670.733368600035,
+      "median_month": 6985.238305000006,
+      "mean_gross": 67792.05750036256,
+      "peak_gross": 125703.868,
+      "exposure_dollar_days": 17015806.432591002,
+      "turnover_entry_notional": 1667032.485,
+      "tier_contribution": {
+        "FULL": 66826.90001099999,
+        "HALF": -9926.653523700003,
+        "QUARTER": 0
+      },
+      "aug31_equity": 156103.5910273,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "R4/R2/CAUSAL_PREORDER_QTY/IS": {
+      "book": "R4/R2/CAUSAL_PREORDER_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 104,
+      "losses": 96,
+      "flats": 0,
+      "hit_rate": 0.52,
+      "avg_win": 968.6820876855769,
+      "avg_loss": -559.7546676864584,
+      "payoff_ratio": 1.7305475838000077,
+      "profit_factor": 1.8747598824500085,
+      "gross_pnl": 48935.59449999999,
+      "modeled_net": 47006.4890214,
+      "net_double_spread": 45443.033542799996,
+      "net_borrow_10": 44083.90829335178,
+      "net_borrow_30": 38238.74683725534,
+      "completed_net_through_cutoff": 47006.4890214,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 187.27684869083663,
+      "max_dd_dollars": -12464.623496100001,
+      "max_dd_percent": -0.11736095763407484,
+      "worst_day": -8891.108999999997,
+      "time_underwater_sessions": 196,
+      "red_calendar_months": 3,
+      "red_month_loss_sum": -7107.979239400011,
+      "worst_month": -4801.122956200008,
+      "median_month": 4047.5964226999786,
+      "mean_gross": 29571.773666103585,
+      "peak_gross": 95841.3246,
+      "exposure_dollar_days": 7422515.190192,
+      "turnover_entry_notional": 773949.6869000001,
+      "tier_contribution": {
+        "FULL": 41396.9400604,
+        "HALF": 5609.548960999998,
+        "QUARTER": 0
+      },
+      "aug31_equity": 147006.4890214,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "R4/R2/CAUSAL_PREORDER_QTY/OOS": {
+      "book": "R4/R2/CAUSAL_PREORDER_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 120,
+      "losses": 95,
+      "flats": 0,
+      "hit_rate": 0.5581395348837209,
+      "avg_win": 1038.1444002800001,
+      "avg_loss": -607.7739516810527,
+      "payoff_ratio": 1.708109400556865,
+      "profit_factor": 2.157611874387619,
+      "gross_pnl": 68959.7064,
+      "modeled_net": 66838.8026239,
+      "net_double_spread": 65141.0688478,
+      "net_borrow_10": 63583.34092662876,
+      "net_borrow_30": 57072.4175320863,
+      "completed_net_through_cutoff": 58290.0736889,
+      "september_runoff_net": 8548.728935,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 266.2900502944223,
+      "max_dd_dollars": -22024.254487100057,
+      "max_dd_percent": -0.16501933473904296,
+      "worst_day": -5112.716415000046,
+      "time_underwater_sessions": 181,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -13559.5364021001,
+      "worst_month": -5774.621586100038,
+      "median_month": 2948.0157450000843,
+      "mean_gross": 35523.21721370518,
+      "peak_gross": 115744.7261,
+      "exposure_dollar_days": 8916327.52064,
+      "turnover_entry_notional": 848710.2663,
+      "tier_contribution": {
+        "FULL": 51656.9394068,
+        "HALF": 15181.863217100003,
+        "QUARTER": 0
+      },
+      "aug31_equity": 167314.98213389964,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 4893.26
+    },
+    "R4/R2/CAUSAL_PREORDER_QTY/ALL": {
+      "book": "R4/R2/CAUSAL_PREORDER_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 224,
+      "losses": 191,
+      "flats": 0,
+      "hit_rate": 0.5397590361445783,
+      "avg_win": 1005.8940408611608,
+      "avg_loss": -583.6386047518325,
+      "payoff_ratio": 1.7234878444836157,
+      "profit_factor": 2.0212632312268584,
+      "gross_pnl": 117895.3009,
+      "modeled_net": 113845.29164529999,
+      "net_double_spread": 110584.10239059999,
+      "net_borrow_10": 107667.24921998054,
+      "net_borrow_30": 95311.16436934164,
+      "completed_net_through_cutoff": 105296.5627103,
+      "september_runoff_net": 8548.728935,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 453.56689898525894,
+      "max_dd_dollars": -21832.861137199958,
+      "max_dd_percent": -0.16137843417460662,
+      "worst_day": -8891.108999999997,
+      "time_underwater_sessions": 179,
+      "red_calendar_months": 2,
+      "red_month_loss_sum": -8485.140729799954,
+      "worst_month": -8394.739011199941,
+      "median_month": 11373.661368000001,
+      "mean_gross": 65094.99087980876,
+      "peak_gross": 117533.37,
+      "exposure_dollar_days": 16338842.710832,
+      "turnover_entry_notional": 1622659.9532,
+      "tier_contribution": {
+        "FULL": 93053.8794672,
+        "HALF": 20791.4121781,
+        "QUARTER": 0
+      },
+      "aug31_equity": 214321.47115529975,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 4893.26
+    },
+    "R5/R1/LEGACY_FILL_QTY/IS": {
+      "book": "R5/R1/LEGACY_FILL_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 91,
+      "losses": 109,
+      "flats": 0,
+      "hit_rate": 0.455,
+      "avg_win": 781.8984828505495,
+      "avg_loss": -506.6773100073395,
+      "payoff_ratio": 1.543188272707975,
+      "profit_factor": 1.2883498423525297,
+      "gross_pnl": 17940.839499999995,
+      "modeled_net": 15924.935148599992,
+      "net_double_spread": 14285.680797199993,
+      "net_borrow_10": 12878.815298833419,
+      "net_borrow_30": 6786.575599300268,
+      "completed_net_through_cutoff": 15924.935148599992,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 63.44595676733065,
+      "max_dd_dollars": -19753.258608199976,
+      "max_dd_percent": -0.19753258608199975,
+      "worst_day": -6505.122000000003,
+      "time_underwater_sessions": 231,
+      "red_calendar_months": 6,
+      "red_month_loss_sum": -19891.90808919986,
+      "worst_month": -5952.161354800002,
+      "median_month": 1641.5408669999451,
+      "mean_gross": 30864.168980828686,
+      "peak_gross": 95936.13,
+      "exposure_dollar_days": 7746906.414188,
+      "turnover_entry_notional": 791687.4666,
+      "tier_contribution": {
+        "FULL": 15988.901937399998,
+        "HALF": 4548.276962799997,
+        "QUARTER": -4612.243751600002
+      },
+      "aug31_equity": 115924.93514859989,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "R5/R1/LEGACY_FILL_QTY/OOS": {
+      "book": "R5/R1/LEGACY_FILL_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 114,
+      "losses": 101,
+      "flats": 0,
+      "hit_rate": 0.5302325581395348,
+      "avg_win": 942.1998374780702,
+      "avg_loss": -570.8843845861386,
+      "payoff_ratio": 1.6504214564585016,
+      "profit_factor": 1.86285194095316,
+      "gross_pnl": 51936.7353,
+      "modeled_net": 49751.4586293,
+      "net_double_spread": 47982.8019586,
+      "net_borrow_10": 46230.02355940959,
+      "net_borrow_30": 39187.15341962877,
+      "completed_net_through_cutoff": 45011.7924143,
+      "september_runoff_net": 4739.666215,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 198.2129825868526,
+      "max_dd_dollars": -47318.604335000025,
+      "max_dd_percent": -0.337111965794859,
+      "worst_day": -38858.11,
+      "time_underwater_sessions": 192,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -24587.037822800237,
+      "worst_month": -6875.281198800047,
+      "median_month": 5248.717021599994,
+      "mean_gross": 37149.17089203187,
+      "peak_gross": 122299.061,
+      "exposure_dollar_days": 9324441.8939,
+      "turnover_entry_notional": 905680.7980000001,
+      "tier_contribution": {
+        "FULL": 22931.9576855,
+        "HALF": 30462.145259599994,
+        "QUARTER": -3642.6443157999993
+      },
+      "aug31_equity": 148738.70626929976,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "R5/R1/LEGACY_FILL_QTY/ALL": {
+      "book": "R5/R1/LEGACY_FILL_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 205,
+      "losses": 210,
+      "flats": 0,
+      "hit_rate": 0.4939759036144578,
+      "avg_win": 871.04167518,
+      "avg_loss": -537.5578554000001,
+      "payoff_ratio": 1.6203682383765976,
+      "profit_factor": 1.581788042224774,
+      "gross_pnl": 69877.5748,
+      "modeled_net": 65676.3937779,
+      "net_double_spread": 62268.48275579999,
+      "net_borrow_10": 59108.838858243005,
+      "net_borrow_30": 45973.729018929036,
+      "completed_net_through_cutoff": 60936.72756289999,
+      "september_runoff_net": 4739.666215,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 261.65893935418325,
+      "max_dd_dollars": -56630.98929000007,
+      "max_dd_percent": -0.3419704970371459,
+      "worst_day": -38858.11,
+      "time_underwater_sessions": 221,
+      "red_calendar_months": 4,
+      "red_month_loss_sum": -24856.649348200182,
+      "worst_month": -8301.901684200042,
+      "median_month": 6890.257888599765,
+      "mean_gross": 68013.33987286057,
+      "peak_gross": 124050.28,
+      "exposure_dollar_days": 17071348.308088,
+      "turnover_entry_notional": 1697368.2646,
+      "tier_contribution": {
+        "FULL": 38920.8596229,
+        "HALF": 35010.42222239999,
+        "QUARTER": -8254.888067400001
+      },
+      "aug31_equity": 164663.6414178993,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "R5/R2/LEGACY_FILL_QTY/IS": {
+      "book": "R5/R2/LEGACY_FILL_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 104,
+      "losses": 96,
+      "flats": 0,
+      "hit_rate": 0.52,
+      "avg_win": 1017.3605634086538,
+      "avg_loss": -488.0214023010417,
+      "payoff_ratio": 2.0846638254219085,
+      "profit_factor": 2.2583858108737345,
+      "gross_pnl": 60866.4487,
+      "modeled_net": 58955.4439736,
+      "net_double_spread": 57412.3892472,
+      "net_borrow_10": 56064.33753243041,
+      "net_borrow_30": 50282.12465009123,
+      "completed_net_through_cutoff": 58955.4439736,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 234.8822469067729,
+      "max_dd_dollars": -11761.009749400022,
+      "max_dd_percent": -0.11033161884377651,
+      "worst_day": -9719.287000000011,
+      "time_underwater_sessions": 196,
+      "red_calendar_months": 2,
+      "red_month_loss_sum": -5928.241419399943,
+      "worst_month": -3887.2116145999753,
+      "median_month": 5157.771176499955,
+      "mean_gross": 29211.86399963745,
+      "peak_gross": 97947.36660000001,
+      "exposure_dollar_days": 7332177.8639090005,
+      "turnover_entry_notional": 770855.3708,
+      "tier_contribution": {
+        "FULL": 38253.1978849,
+        "HALF": 17818.365605,
+        "QUARTER": 2883.880483699999
+      },
+      "aug31_equity": 158955.44397359982,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "R5/R2/LEGACY_FILL_QTY/OOS": {
+      "book": "R5/R2/LEGACY_FILL_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 120,
+      "losses": 95,
+      "flats": 0,
+      "hit_rate": 0.5581395348837209,
+      "avg_win": 1104.5631332683333,
+      "avg_loss": -656.9518410442105,
+      "payoff_ratio": 1.6813456698936327,
+      "profit_factor": 2.1238050567077464,
+      "gross_pnl": 72321.70635000001,
+      "modeled_net": 70137.151093,
+      "net_double_spread": 68383.635836,
+      "net_borrow_10": 66753.50425426713,
+      "net_borrow_30": 59986.21057680137,
+      "completed_net_through_cutoff": 63886.765168,
+      "september_runoff_net": 6250.385925,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 279.43088084860557,
+      "max_dd_dollars": -24964.887142000196,
+      "max_dd_percent": -0.191214415903326,
+      "worst_day": -9202.36,
+      "time_underwater_sessions": 180,
+      "red_calendar_months": 4,
+      "red_month_loss_sum": -18813.93113500021,
+      "worst_month": -6905.1876200001425,
+      "median_month": 1673.8567900000344,
+      "mean_gross": 35848.2825684263,
+      "peak_gross": 121182.46200000001,
+      "exposure_dollar_days": 8997918.924675,
+      "turnover_entry_notional": 880761.7173,
+      "tier_contribution": {
+        "FULL": 35502.9709235,
+        "HALF": 20932.9609693,
+        "QUARTER": 13701.219200200001
+      },
+      "aug31_equity": 170247.3879129997,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 4007.6700000000005
+    },
+    "R5/R2/LEGACY_FILL_QTY/ALL": {
+      "book": "R5/R2/LEGACY_FILL_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 224,
+      "losses": 191,
+      "flats": 0,
+      "hit_rate": 0.5397590361445783,
+      "avg_win": 1064.076225833482,
+      "avg_loss": -572.0443953931938,
+      "payoff_ratio": 1.860128749451502,
+      "profit_factor": 2.181512250665636,
+      "gross_pnl": 133188.15505,
+      "modeled_net": 129092.5950666,
+      "net_double_spread": 125796.0250832,
+      "net_borrow_10": 122817.84178669754,
+      "net_borrow_30": 110268.3352268926,
+      "completed_net_through_cutoff": 122842.20914159999,
+      "september_runoff_net": 6250.385925,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 514.3131277553784,
+      "max_dd_dollars": -23285.0546414,
+      "max_dd_percent": -0.17268679938633125,
+      "worst_day": -9719.287000000011,
+      "time_underwater_sessions": 180,
+      "red_calendar_months": 2,
+      "red_month_loss_sum": -11780.39704460025,
+      "worst_month": -10792.399234600089,
+      "median_month": 12585.956369100139,
+      "mean_gross": 65060.14656806375,
+      "peak_gross": 123913.19,
+      "exposure_dollar_days": 16330096.788584001,
+      "turnover_entry_notional": 1651617.0881,
+      "tier_contribution": {
+        "FULL": 73756.1688084,
+        "HALF": 38751.3265743,
+        "QUARTER": 16585.0996839
+      },
+      "aug31_equity": 229202.83188659986,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 4007.6700000000005
+    },
+    "R5/R1/CAUSAL_PREORDER_QTY/IS": {
+      "book": "R5/R1/CAUSAL_PREORDER_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 91,
+      "losses": 109,
+      "flats": 0,
+      "hit_rate": 0.455,
+      "avg_win": 780.5527614648352,
+      "avg_loss": -506.7630296036698,
+      "payoff_ratio": 1.5402717164969422,
+      "profit_factor": 1.2859149192772636,
+      "gross_pnl": 17805.937099999996,
+      "modeled_net": 15793.131066499995,
+      "net_double_spread": 14155.885032999995,
+      "net_borrow_10": 12747.261822815884,
+      "net_borrow_30": 6655.523335447665,
+      "completed_net_through_cutoff": 15793.131066499995,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 62.92084090239042,
+      "max_dd_dollars": -19759.774619999953,
+      "max_dd_percent": -0.19759774619999948,
+      "worst_day": -6505.126000000004,
+      "time_underwater_sessions": 231,
+      "red_calendar_months": 6,
+      "red_month_loss_sum": -19899.08141099986,
+      "worst_month": -5958.901004799991,
+      "median_month": 1632.4121619999496,
+      "mean_gross": 30861.357050944225,
+      "peak_gross": 95930.18000000001,
+      "exposure_dollar_days": 7746200.619787,
+      "turnover_entry_notional": 791521.8959,
+      "tier_contribution": {
+        "FULL": 15877.242167399998,
+        "HALF": 4507.643534999997,
+        "QUARTER": -4591.754635900002
+      },
+      "aug31_equity": 115793.13106649985,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "R5/R1/CAUSAL_PREORDER_QTY/OOS": {
+      "book": "R5/R1/CAUSAL_PREORDER_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 114,
+      "losses": 101,
+      "flats": 0,
+      "hit_rate": 0.5302325581395348,
+      "avg_win": 941.561465168421,
+      "avg_loss": -570.4021545227722,
+      "payoff_ratio": 1.6506975959026309,
+      "profit_factor": 1.8631636230980189,
+      "gross_pnl": 51911.9784,
+      "modeled_net": 49727.3894224,
+      "net_double_spread": 47959.3204448,
+      "net_borrow_10": 46207.23682409863,
+      "net_borrow_30": 39166.93162749589,
+      "completed_net_through_cutoff": 44996.194447400005,
+      "september_runoff_net": 4731.194974999999,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 198.11708933227092,
+      "max_dd_dollars": -46739.29012500003,
+      "max_dd_percent": -0.33282468107348007,
+      "worst_day": -38359.94999999998,
+      "time_underwater_sessions": 192,
+      "red_calendar_months": 5,
+      "red_month_loss_sum": -24406.523876400373,
+      "worst_month": -6796.106922800114,
+      "median_month": 5217.01036149991,
+      "mean_gross": 37091.4678438247,
+      "peak_gross": 122163.68100000001,
+      "exposure_dollar_days": 9309958.4288,
+      "turnover_entry_notional": 905354.3130000001,
+      "tier_contribution": {
+        "FULL": 22959.133965300007,
+        "HALF": 30413.119974499994,
+        "QUARTER": -3644.8645173999994
+      },
+      "aug31_equity": 148723.47995739972,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "R5/R1/CAUSAL_PREORDER_QTY/ALL": {
+      "book": "R5/R1/CAUSAL_PREORDER_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 0,
+      "unresolved": 1,
+      "wins": 205,
+      "losses": 210,
+      "flats": 0,
+      "hit_rate": 0.4939759036144578,
+      "avg_win": 870.089308890244,
+      "avg_loss": -537.3704182552382,
+      "payoff_ratio": 1.619161158359432,
+      "profit_factor": 1.580609702208017,
+      "gross_pnl": 69717.91549999999,
+      "modeled_net": 65520.520488899994,
+      "net_double_spread": 62115.205477799995,
+      "net_borrow_10": 58954.498646914515,
+      "net_borrow_30": 45822.45496294356,
+      "completed_net_through_cutoff": 60789.325513899996,
+      "september_runoff_net": 4731.194974999999,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 261.03793023466136,
+      "max_dd_dollars": -56072.138255000056,
+      "max_dd_percent": -0.3386854747486091,
+      "worst_day": -38359.95000000001,
+      "time_underwater_sessions": 221,
+      "red_calendar_months": 4,
+      "red_month_loss_sum": -24724.031924000286,
+      "worst_month": -8304.15401600019,
+      "median_month": 6849.4225234997575,
+      "mean_gross": 67952.82489476893,
+      "peak_gross": 124128.705,
+      "exposure_dollar_days": 17056159.048587,
+      "turnover_entry_notional": 1696876.2089,
+      "tier_contribution": {
+        "FULL": 38836.3761327,
+        "HALF": 34920.76350949999,
+        "QUARTER": -8236.6191533
+      },
+      "aug31_equity": 164516.61102389928,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 0
+    },
+    "R5/R2/CAUSAL_PREORDER_QTY/IS": {
+      "book": "R5/R2/CAUSAL_PREORDER_QTY/IS",
+      "sessions_in_account": 251,
+      "intended": 200,
+      "completed": 200,
+      "documented_event_open": 0,
+      "unresolved": 0,
+      "wins": 104,
+      "losses": 96,
+      "flats": 0,
+      "hit_rate": 0.52,
+      "avg_win": 1014.4234005192308,
+      "avg_loss": -487.80929835312503,
+      "payoff_ratio": 2.07954912697234,
+      "profit_factor": 2.252844887553368,
+      "gross_pnl": 60578.804299999996,
+      "modeled_net": 58670.3410121,
+      "net_double_spread": 57129.067724199995,
+      "net_borrow_10": 55780.72341077972,
+      "net_borrow_30": 50001.48820813917,
+      "completed_net_through_cutoff": 58670.3410121,
+      "september_runoff_net": 0,
+      "september_runoff_trades": 0,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 233.74637853426293,
+      "max_dd_dollars": -11773.840909600054,
+      "max_dd_percent": -0.11050409687063634,
+      "worst_day": -9733.97100000002,
+      "time_underwater_sessions": 196,
+      "red_calendar_months": 2,
+      "red_month_loss_sum": -5949.51104529998,
+      "worst_month": -3883.051880500003,
+      "median_month": 5140.4236126999895,
+      "mean_gross": 29196.08763888048,
+      "peak_gross": 98288.3824,
+      "exposure_dollar_days": 7328217.997359,
+      "turnover_entry_notional": 770364.7916,
+      "tier_contribution": {
+        "FULL": 38314.7472146,
+        "HALF": 17465.908064,
+        "QUARTER": 2889.685733499999
+      },
+      "aug31_equity": 158670.34101209976,
+      "aug31_open_tickets": 0,
+      "aug31_stale_gross": 0
+    },
+    "R5/R2/CAUSAL_PREORDER_QTY/OOS": {
+      "book": "R5/R2/CAUSAL_PREORDER_QTY/OOS",
+      "sessions_in_account": 251,
+      "intended": 216,
+      "completed": 215,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 120,
+      "losses": 95,
+      "flats": 0,
+      "hit_rate": 0.5581395348837209,
+      "avg_win": 1103.8140555358334,
+      "avg_loss": -655.4042401136843,
+      "payoff_ratio": 1.6841728935784264,
+      "profit_factor": 2.1273762866253807,
+      "gross_pnl": 72374.07485,
+      "modeled_net": 70194.2838535,
+      "net_double_spread": 68444.142857,
+      "net_borrow_10": 66812.39220752548,
+      "net_borrow_30": 60048.608915576435,
+      "completed_net_through_cutoff": 64012.3615185,
+      "september_runoff_net": 6181.922335,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 279.65850140836653,
+      "max_dd_dollars": -24773.164509500173,
+      "max_dd_percent": -0.1899000762728117,
+      "worst_day": -9199.590000000011,
+      "time_underwater_sessions": 180,
+      "red_calendar_months": 4,
+      "red_month_loss_sum": -18749.645244100204,
+      "worst_month": -7019.907900000151,
+      "median_month": 1719.2802000000083,
+      "mean_gross": 35776.81475381275,
+      "peak_gross": 121023.31150000001,
+      "exposure_dollar_days": 8979980.503207,
+      "turnover_entry_notional": 880316.8489000001,
+      "tier_contribution": {
+        "FULL": 35621.3882878,
+        "HALF": 20952.9097271,
+        "QUARTER": 13619.9858386
+      },
+      "aug31_equity": 170316.05965849964,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 3947.6300000000006
+    },
+    "R5/R2/CAUSAL_PREORDER_QTY/ALL": {
+      "book": "R5/R2/CAUSAL_PREORDER_QTY/ALL",
+      "sessions_in_account": 251,
+      "intended": 416,
+      "completed": 415,
+      "documented_event_open": 1,
+      "unresolved": 0,
+      "wins": 224,
+      "losses": 191,
+      "flats": 0,
+      "hit_rate": 0.5397590361445783,
+      "avg_win": 1062.3112514209822,
+      "avg_loss": -571.1680390193718,
+      "payoff_ratio": 1.859892674045357,
+      "profit_factor": 2.181235387362094,
+      "gross_pnl": 132952.87915,
+      "modeled_net": 128864.6248656,
+      "net_double_spread": 125573.2105812,
+      "net_borrow_10": 122593.1156183052,
+      "net_borrow_30": 110050.0971237156,
+      "completed_net_through_cutoff": 122682.7025306,
+      "september_runoff_net": 6181.922335,
+      "september_runoff_trades": 16,
+      "per_session_basis": "251 account sessions in this split-owned book",
+      "net_per_session": 513.4048799426295,
+      "max_dd_dollars": -23309.47162610016,
+      "max_dd_percent": -0.17292624265703715,
+      "worst_day": -9733.97100000002,
+      "time_underwater_sessions": 180,
+      "red_calendar_months": 2,
+      "red_month_loss_sum": -11818.119125500307,
+      "worst_month": -10902.959780500169,
+      "median_month": 12727.74656080005,
+      "mean_gross": 64972.90239269323,
+      "peak_gross": 123797.77100000001,
+      "exposure_dollar_days": 16308198.500566,
+      "turnover_entry_notional": 1650681.6405,
+      "tier_contribution": {
+        "FULL": 73936.1355024,
+        "HALF": 38418.817791099995,
+        "QUARTER": 16509.6715721
+      },
+      "aug31_equity": 228986.40067059905,
+      "aug31_open_tickets": 17,
+      "aug31_stale_gross": 3947.6300000000006
+    }
+  },
+  "upside_bridge": {
+    "PARENT": {
+      "r1_total": 36536.55213129999,
+      "r2_total": 104938.0163195,
+      "common_tickets": 330,
+      "common_r1_net": 39463.4846403,
+      "common_r2_net": 39463.4846403,
+      "common_difference": 0.0,
+      "added_tickets": 85,
+      "added_net": 65474.5316792,
+      "dropped_tickets": 85,
+      "dropped_net": -2926.932509000002,
+      "per_cohort": {
+        "2025-09-03": {
+          "r1": -2911.64,
+          "r2": -1160.78,
+          "delta": 1750.85
+        },
+        "2025-09-10": {
+          "r1": -2807.92,
+          "r2": 852.46,
+          "delta": 3660.38
+        },
+        "2025-09-17": {
+          "r1": -3138.17,
+          "r2": 2949.94,
+          "delta": 6088.11
+        },
+        "2025-09-24": {
+          "r1": -7880.76,
+          "r2": -5577.66,
+          "delta": 2303.1
+        },
+        "2025-10-01": {
+          "r1": -4062.89,
+          "r2": 3432.63,
+          "delta": 7495.52
+        },
+        "2025-10-08": {
+          "r1": 6873.91,
+          "r2": 7646.66,
+          "delta": 772.75
+        },
+        "2025-10-15": {
+          "r1": 11141.22,
+          "r2": 10567.62,
+          "delta": -573.6
+        },
+        "2025-10-22": {
+          "r1": 6879.17,
+          "r2": 5157.07,
+          "delta": -1722.11
+        },
+        "2025-10-29": {
+          "r1": 2598.92,
+          "r2": 4390.5,
+          "delta": 1791.59
+        },
+        "2025-11-05": {
+          "r1": 1308.1,
+          "r2": 1646.03,
+          "delta": 337.93
+        },
+        "2025-11-12": {
+          "r1": -2659.82,
+          "r2": -1269.96,
+          "delta": 1389.86
+        },
+        "2025-11-19": {
+          "r1": -2006.0,
+          "r2": 178.97,
+          "delta": 2184.97
+        },
+        "2025-11-26": {
+          "r1": -4496.49,
+          "r2": -4496.49,
+          "delta": 0.0
+        },
+        "2025-12-03": {
+          "r1": -895.45,
+          "r2": 290.96,
+          "delta": 1186.41
+        },
+        "2025-12-10": {
+          "r1": 413.84,
+          "r2": 3014.64,
+          "delta": 2600.8
+        },
+        "2025-12-17": {
+          "r1": 785.41,
+          "r2": 1037.63,
+          "delta": 252.22
+        },
+        "2025-12-24": {
+          "r1": -6000.28,
+          "r2": -5930.14,
+          "delta": 70.13
+        },
+        "2025-12-31": {
+          "r1": -5104.02,
+          "r2": -4501.03,
+          "delta": 602.98
+        },
+        "2026-01-07": {
+          "r1": -4654.59,
+          "r2": -3229.85,
+          "delta": 1424.74
+        },
+        "2026-01-14": {
+          "r1": 5393.21,
+          "r2": 6958.11,
+          "delta": 1564.89
+        },
+        "2026-01-21": {
+          "r1": 6551.17,
+          "r2": 8210.81,
+          "delta": 1659.64
+        },
+        "2026-01-28": {
+          "r1": 3666.11,
+          "r2": 5457.05,
+          "delta": 1790.95
+        },
+        "2026-02-04": {
+          "r1": 2477.99,
+          "r2": 2477.99,
+          "delta": 0.0
+        },
+        "2026-02-11": {
+          "r1": -1429.56,
+          "r2": -1911.59,
+          "delta": -482.02
+        },
+        "2026-02-18": {
+          "r1": -1106.12,
+          "r2": -1212.64,
+          "delta": -106.51
+        },
+        "2026-02-25": {
+          "r1": -1578.77,
+          "r2": -1578.77,
+          "delta": 0.0
+        },
+        "2026-03-04": {
+          "r1": 50.68,
+          "r2": 2439.65,
+          "delta": 2388.98
+        },
+        "2026-03-11": {
+          "r1": 4295.33,
+          "r2": 4295.33,
+          "delta": 0.0
+        },
+        "2026-03-18": {
+          "r1": 3173.88,
+          "r2": 3173.88,
+          "delta": 0.0
+        },
+        "2026-03-25": {
+          "r1": 44.2,
+          "r2": 44.2,
+          "delta": 0.0
+        },
+        "2026-04-01": {
+          "r1": 752.7,
+          "r2": 2381.79,
+          "delta": 1629.09
+        },
+        "2026-04-08": {
+          "r1": -1573.7,
+          "r2": -119.01,
+          "delta": 1454.69
+        },
+        "2026-04-15": {
+          "r1": -1424.27,
+          "r2": -3450.2,
+          "delta": -2025.93
+        },
+        "2026-04-22": {
+          "r1": -2455.2,
+          "r2": -7844.89,
+          "delta": -5389.69
+        },
+        "2026-04-29": {
+          "r1": 1014.07,
+          "r2": 5189.47,
+          "delta": 4175.4
+        },
+        "2026-05-06": {
+          "r1": -3438.35,
+          "r2": -2137.83,
+          "delta": 1300.52
+        },
+        "2026-05-13": {
+          "r1": 448.82,
+          "r2": 41.87,
+          "delta": -406.94
+        },
+        "2026-05-20": {
+          "r1": 2487.12,
+          "r2": 4018.64,
+          "delta": 1531.52
+        },
+        "2026-05-27": {
+          "r1": 4410.25,
+          "r2": 6670.84,
+          "delta": 2260.59
+        },
+        "2026-06-03": {
+          "r1": 3593.81,
+          "r2": 8097.41,
+          "delta": 4503.6
+        },
+        "2026-06-10": {
+          "r1": 3973.03,
+          "r2": 11033.69,
+          "delta": 7060.66
+        },
+        "2026-06-17": {
+          "r1": 8912.5,
+          "r2": 8272.59,
+          "delta": -639.91
+        },
+        "2026-06-24": {
+          "r1": 3104.15,
+          "r2": 2163.74,
+          "delta": -940.42
+        },
+        "2026-07-01": {
+          "r1": 6728.06,
+          "r2": 4601.84,
+          "delta": -2126.23
+        },
+        "2026-07-08": {
+          "r1": 3817.79,
+          "r2": 5658.52,
+          "delta": 1840.73
+        },
+        "2026-07-15": {
+          "r1": -2119.64,
+          "r2": 1258.79,
+          "delta": 3378.43
+        },
+        "2026-07-22": {
+          "r1": -2479.82,
+          "r2": -920.1,
+          "delta": 1559.72
+        },
+        "2026-07-29": {
+          "r1": -602.16,
+          "r2": 1518.27,
+          "delta": 2120.43
+        },
+        "2026-08-05": {
+          "r1": -1090.94,
+          "r2": 4279.33,
+          "delta": 5370.27
+        },
+        "2026-08-12": {
+          "r1": 2580.86,
+          "r2": 3075.52,
+          "delta": 494.66
+        },
+        "2026-08-19": {
+          "r1": 3629.32,
+          "r2": 8468.66,
+          "delta": 4839.33
+        },
+        "2026-08-26": {
+          "r1": 1347.5,
+          "r2": -674.13,
+          "delta": -2021.63
+        }
+      },
+      "top_symbol_contributions": [
+        {
+          "symbol": "AGL",
+          "net_effect": -5245.04
+        },
+        {
+          "symbol": "ASTC",
+          "net_effect": 5183.23
+        },
+        {
+          "symbol": "RGC",
+          "net_effect": 4341.94
+        },
+        {
+          "symbol": "STI",
+          "net_effect": 4306.37
+        },
+        {
+          "symbol": "DFNS",
+          "net_effect": 4215.28
+        },
+        {
+          "symbol": "VEEE",
+          "net_effect": 4060.5
+        },
+        {
+          "symbol": "WETO",
+          "net_effect": 3517.32
+        },
+        {
+          "symbol": "OCG",
+          "net_effect": 3490.68
+        },
+        {
+          "symbol": "AKAN",
+          "net_effect": 3427.03
+        },
+        {
+          "symbol": "UGRO",
+          "net_effect": 3314.56
+        },
+        {
+          "symbol": "GLTO",
+          "net_effect": 3157.25
+        },
+        {
+          "symbol": "BREA",
+          "net_effect": 3060.89
+        },
+        {
+          "symbol": "INBS",
+          "net_effect": 2998.35
+        },
+        {
+          "symbol": "PMI",
+          "net_effect": -2990.01
+        },
+        {
+          "symbol": "ZVZZT",
+          "net_effect": -2850.34
+        }
+      ]
+    },
+    "R4": {
+      "r1_total": 56971.05004499999,
+      "r2_total": 114190.8496268,
+      "common_tickets": 330,
+      "common_r1_net": 53627.78529299999,
+      "common_r2_net": 44331.197903299995,
+      "common_difference": -9296.5873897,
+      "added_tickets": 85,
+      "added_net": 69859.6517235,
+      "dropped_tickets": 85,
+      "dropped_net": 3343.2647519999955,
+      "per_cohort": {
+        "2025-09-03": {
+          "r1": -2042.06,
+          "r2": 169.24,
+          "delta": 2211.3
+        },
+        "2025-09-10": {
+          "r1": -2190.16,
+          "r2": 512.03,
+          "delta": 2702.19
+        },
+        "2025-09-17": {
+          "r1": -2509.07,
+          "r2": 3215.58,
+          "delta": 5724.65
+        },
+        "2025-09-24": {
+          "r1": -5535.87,
+          "r2": -3178.85,
+          "delta": 2357.02
+        },
+        "2025-10-01": {
+          "r1": -3311.61,
+          "r2": 3288.15,
+          "delta": 6599.75
+        },
+        "2025-10-08": {
+          "r1": 7435.65,
+          "r2": 8430.36,
+          "delta": 994.71
+        },
+        "2025-10-15": {
+          "r1": 11815.42,
+          "r2": 7879.55,
+          "delta": -3935.87
+        },
+        "2025-10-22": {
+          "r1": 7895.7,
+          "r2": 4852.68,
+          "delta": -3043.02
+        },
+        "2025-10-29": {
+          "r1": 3332.03,
+          "r2": 4483.75,
+          "delta": 1151.72
+        },
+        "2025-11-05": {
+          "r1": 2832.64,
+          "r2": 3291.37,
+          "delta": 458.73
+        },
+        "2025-11-12": {
+          "r1": -3009.55,
+          "r2": -2109.32,
+          "delta": 900.24
+        },
+        "2025-11-19": {
+          "r1": -1625.75,
+          "r2": 284.88,
+          "delta": 1910.63
+        },
+        "2025-11-26": {
+          "r1": -5250.05,
+          "r2": -5250.05,
+          "delta": 0.0
+        },
+        "2025-12-03": {
+          "r1": -1083.98,
+          "r2": -515.58,
+          "delta": 568.4
+        },
+        "2025-12-10": {
+          "r1": 348.56,
+          "r2": 1452.11,
+          "delta": 1103.54
+        },
+        "2025-12-17": {
+          "r1": 1070.87,
+          "r2": 865.32,
+          "delta": -205.55
+        },
+        "2025-12-24": {
+          "r1": -3280.61,
+          "r2": -5987.04,
+          "delta": -2706.43
+        },
+        "2025-12-31": {
+          "r1": -6024.01,
+          "r2": -5130.56,
+          "delta": 893.46
+        },
+        "2026-01-07": {
+          "r1": -4804.95,
+          "r2": -2967.65,
+          "delta": 1837.3
+        },
+        "2026-01-14": {
+          "r1": 5225.17,
+          "r2": 7362.41,
+          "delta": 2137.24
+        },
+        "2026-01-21": {
+          "r1": 5102.03,
+          "r2": 6681.21,
+          "delta": 1579.18
+        },
+        "2026-01-28": {
+          "r1": 4334.99,
+          "r2": 6642.91,
+          "delta": 2307.92
+        },
+        "2026-02-04": {
+          "r1": 2747.59,
+          "r2": 2747.59,
+          "delta": 0.0
+        },
+        "2026-02-11": {
+          "r1": -2759.33,
+          "r2": -3069.43,
+          "delta": -310.1
+        },
+        "2026-02-18": {
+          "r1": -1058.61,
+          "r2": -1658.12,
+          "delta": -599.52
+        },
+        "2026-02-25": {
+          "r1": -1472.82,
+          "r2": -1472.82,
+          "delta": 0.0
+        },
+        "2026-03-04": {
+          "r1": 366.15,
+          "r2": 3437.27,
+          "delta": 3071.11
+        },
+        "2026-03-11": {
+          "r1": 6099.32,
+          "r2": 6099.32,
+          "delta": 0.0
+        },
+        "2026-03-18": {
+          "r1": 4173.55,
+          "r2": 4173.55,
+          "delta": 0.0
+        },
+        "2026-03-25": {
+          "r1": 173.48,
+          "r2": 460.68,
+          "delta": 287.2
+        },
+        "2026-04-01": {
+          "r1": 2857.07,
+          "r2": 4500.82,
+          "delta": 1643.75
+        },
+        "2026-04-08": {
+          "r1": -970.63,
+          "r2": 904.25,
+          "delta": 1874.88
+        },
+        "2026-04-15": {
+          "r1": -2162.31,
+          "r2": -4633.31,
+          "delta": -2471.0
+        },
+        "2026-04-22": {
+          "r1": -369.1,
+          "r2": -3844.16,
+          "delta": -3475.05
+        },
+        "2026-04-29": {
+          "r1": 1997.35,
+          "r2": 5162.09,
+          "delta": 3164.74
+        },
+        "2026-05-06": {
+          "r1": -1050.62,
+          "r2": -480.83,
+          "delta": 569.79
+        },
+        "2026-05-13": {
+          "r1": -826.02,
+          "r2": -1371.0,
+          "delta": -544.98
+        },
+        "2026-05-20": {
+          "r1": 3645.68,
+          "r2": 5092.92,
+          "delta": 1447.24
+        },
+        "2026-05-27": {
+          "r1": 2914.43,
+          "r2": 5657.86,
+          "delta": 2743.43
+        },
+        "2026-06-03": {
+          "r1": 3699.11,
+          "r2": 8843.73,
+          "delta": 5144.63
+        },
+        "2026-06-10": {
+          "r1": 5581.43,
+          "r2": 12321.36,
+          "delta": 6739.93
+        },
+        "2026-06-17": {
+          "r1": 10327.83,
+          "r2": 8886.16,
+          "delta": -1441.67
+        },
+        "2026-06-24": {
+          "r1": 2796.28,
+          "r2": 1977.14,
+          "delta": -819.14
+        },
+        "2026-07-01": {
+          "r1": 5516.34,
+          "r2": 4155.2,
+          "delta": -1361.15
+        },
+        "2026-07-08": {
+          "r1": 4290.2,
+          "r2": 6634.36,
+          "delta": 2344.17
+        },
+        "2026-07-15": {
+          "r1": -3706.52,
+          "r2": -1188.08,
+          "delta": 2518.44
+        },
+        "2026-07-22": {
+          "r1": -2967.25,
+          "r2": -1186.6,
+          "delta": 1780.65
+        },
+        "2026-07-29": {
+          "r1": -198.85,
+          "r2": 1159.66,
+          "delta": 1358.51
+        },
+        "2026-08-05": {
+          "r1": -1426.3,
+          "r2": 3709.46,
+          "delta": 5135.76
+        },
+        "2026-08-12": {
+          "r1": 3957.02,
+          "r2": 4236.09,
+          "delta": 279.07
+        },
+        "2026-08-19": {
+          "r1": 4286.82,
+          "r2": 8531.02,
+          "delta": 4244.2
+        },
+        "2026-08-26": {
+          "r1": 1784.35,
+          "r2": 132.14,
+          "delta": -1652.21
+        }
+      },
+      "top_symbol_contributions": [
+        {
+          "symbol": "ASTC",
+          "net_effect": 6700.63
+        },
+        {
+          "symbol": "WETO",
+          "net_effect": 4536.13
+        },
+        {
+          "symbol": "UGRO",
+          "net_effect": 4277.4
+        },
+        {
+          "symbol": "STI",
+          "net_effect": 4199.72
+        },
+        {
+          "symbol": "DFNS",
+          "net_effect": 3903.76
+        },
+        {
+          "symbol": "INBS",
+          "net_effect": 3859.14
+        },
+        {
+          "symbol": "PMI",
+          "net_effect": -3857.11
+        },
+        {
+          "symbol": "ZVZZT",
+          "net_effect": -3664.73
+        },
+        {
+          "symbol": "VEEE",
+          "net_effect": 3552.7
+        },
+        {
+          "symbol": "AGL",
+          "net_effect": -3381.67
+        },
+        {
+          "symbol": "NPT",
+          "net_effect": 3345.03
+        },
+        {
+          "symbol": "VELO",
+          "net_effect": -3337.0
+        },
+        {
+          "symbol": "BREA",
+          "net_effect": 3336.69
+        },
+        {
+          "symbol": "GLTO",
+          "net_effect": 3130.95
+        },
+        {
+          "symbol": "AKAN",
+          "net_effect": 3083.04
+        }
+      ]
+    },
+    "R5": {
+      "r1_total": 65676.3937779,
+      "r2_total": 129092.5950666,
+      "common_tickets": 330,
+      "common_r1_net": 62750.4000788,
+      "common_r2_net": 53727.52384839999,
+      "common_difference": -9022.876230400001,
+      "added_tickets": 85,
+      "added_net": 75365.0712182,
+      "dropped_tickets": 85,
+      "dropped_net": 2925.993699099997,
+      "per_cohort": {
+        "2025-09-03": {
+          "r1": -1630.3,
+          "r2": 148.01,
+          "delta": 1778.31
+        },
+        "2025-09-10": {
+          "r1": -1762.79,
+          "r2": 983.13,
+          "delta": 2745.92
+        },
+        "2025-09-17": {
+          "r1": -1911.06,
+          "r2": 3117.34,
+          "delta": 5028.41
+        },
+        "2025-09-24": {
+          "r1": -5830.79,
+          "r2": -2556.75,
+          "delta": 3274.04
+        },
+        "2025-10-01": {
+          "r1": -3458.1,
+          "r2": 2635.06,
+          "delta": 6093.16
+        },
+        "2025-10-08": {
+          "r1": 7034.81,
+          "r2": 9111.97,
+          "delta": 2077.16
+        },
+        "2025-10-15": {
+          "r1": 11231.48,
+          "r2": 6344.86,
+          "delta": -4886.62
+        },
+        "2025-10-22": {
+          "r1": 8872.01,
+          "r2": 6417.44,
+          "delta": -2454.57
+        },
+        "2025-10-29": {
+          "r1": 2683.13,
+          "r2": 3610.88,
+          "delta": 927.75
+        },
+        "2025-11-05": {
+          "r1": 2280.57,
+          "r2": 2648.81,
+          "delta": 368.24
+        },
+        "2025-11-12": {
+          "r1": -2911.93,
+          "r2": -2200.64,
+          "delta": 711.3
+        },
+        "2025-11-19": {
+          "r1": -1590.41,
+          "r2": 208.29,
+          "delta": 1798.7
+        },
+        "2025-11-26": {
+          "r1": -4236.75,
+          "r2": -4236.75,
+          "delta": 0.0
+        },
+        "2025-12-03": {
+          "r1": -2656.5,
+          "r2": -2974.98,
+          "delta": -318.48
+        },
+        "2025-12-10": {
+          "r1": 1209.34,
+          "r2": 1174.89,
+          "delta": -34.45
+        },
+        "2025-12-17": {
+          "r1": 311.97,
+          "r2": 439.77,
+          "delta": 127.8
+        },
+        "2025-12-24": {
+          "r1": -2630.77,
+          "r2": -4834.28,
+          "delta": -2203.51
+        },
+        "2025-12-31": {
+          "r1": -7389.35,
+          "r2": -5329.44,
+          "delta": 2059.91
+        },
+        "2026-01-07": {
+          "r1": -3869.91,
+          "r2": -2388.69,
+          "delta": 1481.22
+        },
+        "2026-01-14": {
+          "r1": 7584.13,
+          "r2": 11135.55,
+          "delta": 3551.42
+        },
+        "2026-01-21": {
+          "r1": 4983.68,
+          "r2": 8540.72,
+          "delta": 3557.05
+        },
+        "2026-01-28": {
+          "r1": 3888.22,
+          "r2": 5744.77,
+          "delta": 1856.55
+        },
+        "2026-02-04": {
+          "r1": 3093.12,
+          "r2": 3093.12,
+          "delta": 0.0
+        },
+        "2026-02-11": {
+          "r1": -5021.28,
+          "r2": -5270.69,
+          "delta": -249.41
+        },
+        "2026-02-18": {
+          "r1": -3154.83,
+          "r2": -3638.87,
+          "delta": -484.04
+        },
+        "2026-02-25": {
+          "r1": -1473.46,
+          "r2": -1473.46,
+          "delta": 0.0
+        },
+        "2026-03-04": {
+          "r1": 302.68,
+          "r2": 2782.75,
+          "delta": 2480.06
+        },
+        "2026-03-11": {
+          "r1": 8355.54,
+          "r2": 8355.54,
+          "delta": 0.0
+        },
+        "2026-03-18": {
+          "r1": 5809.04,
+          "r2": 6132.78,
+          "delta": 323.75
+        },
+        "2026-03-25": {
+          "r1": -338.0,
+          "r2": 124.01,
+          "delta": 462.01
+        },
+        "2026-04-01": {
+          "r1": 2314.05,
+          "r2": 3638.41,
+          "delta": 1324.36
+        },
+        "2026-04-08": {
+          "r1": -785.34,
+          "r2": 2474.81,
+          "delta": 3260.16
+        },
+        "2026-04-15": {
+          "r1": -2070.13,
+          "r2": -4063.07,
+          "delta": -1992.94
+        },
+        "2026-04-22": {
+          "r1": -320.1,
+          "r2": -5847.26,
+          "delta": -5527.16
+        },
+        "2026-04-29": {
+          "r1": 2947.71,
+          "r2": 6104.3,
+          "delta": 3156.59
+        },
+        "2026-05-06": {
+          "r1": -341.67,
+          "r2": 1267.76,
+          "delta": 1609.43
+        },
+        "2026-05-13": {
+          "r1": -651.82,
+          "r2": -1090.77,
+          "delta": -438.96
+        },
+        "2026-05-20": {
+          "r1": 5632.92,
+          "r2": 7542.56,
+          "delta": 1909.64
+        },
+        "2026-05-27": {
+          "r1": 2341.16,
+          "r2": 4547.17,
+          "delta": 2206.02
+        },
+        "2026-06-03": {
+          "r1": 5186.88,
+          "r2": 11738.18,
+          "delta": 6551.3
+        },
+        "2026-06-10": {
+          "r1": 8318.95,
+          "r2": 18359.83,
+          "delta": 10040.89
+        },
+        "2026-06-17": {
+          "r1": 12552.88,
+          "r2": 10732.46,
+          "delta": -1820.42
+        },
+        "2026-06-24": {
+          "r1": 3586.17,
+          "r2": 2710.37,
+          "delta": -875.79
+        },
+        "2026-07-01": {
+          "r1": 4444.95,
+          "r2": 3390.17,
+          "delta": -1054.78
+        },
+        "2026-07-08": {
+          "r1": 3291.69,
+          "r2": 5513.8,
+          "delta": 2222.11
+        },
+        "2026-07-15": {
+          "r1": -3835.28,
+          "r2": -1809.91,
+          "delta": 2025.37
+        },
+        "2026-07-22": {
+          "r1": -3904.32,
+          "r2": 140.96,
+          "delta": 4045.28
+        },
+        "2026-07-29": {
+          "r1": -174.61,
+          "r2": 914.83,
+          "delta": 1089.44
+        },
+        "2026-08-05": {
+          "r1": -1154.47,
+          "r2": 2783.81,
+          "delta": 3938.29
+        },
+        "2026-08-12": {
+          "r1": 5783.64,
+          "r2": 5948.63,
+          "delta": 164.99
+        },
+        "2026-08-19": {
+          "r1": 2851.18,
+          "r2": 5692.89,
+          "delta": 2841.71
+        },
+        "2026-08-26": {
+          "r1": 1888.48,
+          "r2": 557.49,
+          "delta": -1330.99
+        }
+      },
+      "top_symbol_contributions": [
+        {
+          "symbol": "ASTC",
+          "net_effect": 10775.68
+        },
+        {
+          "symbol": "STI",
+          "net_effect": 6762.03
+        },
+        {
+          "symbol": "ZVZZT",
+          "net_effect": -5904.28
+        },
+        {
+          "symbol": "AGL",
+          "net_effect": -5452.08
+        },
+        {
+          "symbol": "UGRO",
+          "net_effect": 5191.0
+        },
+        {
+          "symbol": "INBS",
+          "net_effect": 4772.57
+        },
+        {
+          "symbol": "ROLR",
+          "net_effect": 4567.34
+        },
+        {
+          "symbol": "VEEE",
+          "net_effect": 4385.04
+        },
+        {
+          "symbol": "AKAN",
+          "net_effect": 3947.43
+        },
+        {
+          "symbol": "WETO",
+          "net_effect": 3638.61
+        },
+        {
+          "symbol": "DFNS",
+          "net_effect": 3135.68
+        },
+        {
+          "symbol": "PMI",
+          "net_effect": -3109.61
+        },
+        {
+          "symbol": "SOGP",
+          "net_effect": 2870.43
+        },
+        {
+          "symbol": "INOD",
+          "net_effect": 2779.24
+        },
+        {
+          "symbol": "NPT",
+          "net_effect": 2700.8
+        }
+      ]
+    }
+  },
+  "oracle": {
+    "trades": {
+      "checked": 4980,
+      "errors": 0,
+      "max_abs_error": 1.8189894035458565e-12
+    },
+    "cohorts": {
+      "cohorts": 624,
+      "errors": 0
+    },
+    "daily": {
+      "PARENT/R1_LEGACY_FILL_QTY": {
+        "max_abs_error": 5.820766091346741e-11,
+        "ok": true
+      },
+      "PARENT/R1_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "PARENT/R2_LEGACY_FILL_QTY": {
+        "max_abs_error": 8.731149137020111e-11,
+        "ok": true
+      },
+      "PARENT/R2_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R4/R1_LEGACY_FILL_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R4/R1_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R4/R2_LEGACY_FILL_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R4/R2_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 1.4551915228366852e-10,
+        "ok": true
+      },
+      "R5/R1_LEGACY_FILL_QTY": {
+        "max_abs_error": 1.7462298274040222e-10,
+        "ok": true
+      },
+      "R5/R1_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 8.731149137020111e-11,
+        "ok": true
+      },
+      "R5/R2_LEGACY_FILL_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R5/R2_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 2.0372681319713593e-10,
+        "ok": true
+      }
+    },
+    "ok": true
+  },
+  "gate": {
+    "status": "OPEN",
+    "blockers": [],
+    "disclosed": [
+      "borrow, locate and dividend history unavailable: modeled net is conditional",
+      "single market-data vendor; SEC filings are the independent event source",
+      "observed bar prices are a simulation reference, not guaranteed broker fills"
+    ]
+  },
+  "r2_entry_ledger_sha256": "071bb7e13dfac51856e1d144f7ef0f58cd61b275089250eb3156cd2038c699ed",
+  "local_csvs": {
+    "r4r5_trade_exceptions.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_trade_exceptions.csv",
+      "sha256": "22232fe36ebf446efd8916b5586450b9ab4fdcf68969eb6743ccd046a3210c23",
+      "bytes": 1676450
+    },
+    "r4r5_verified_trades.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_verified_trades.csv",
+      "sha256": "882891fbdb360ceb8aa4313bfb3c3719004656f4fed64a9ebbc5c7a325275b5c",
+      "bytes": 5535937
+    },
+    "r4r5_verified_cohort_audit.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_verified_cohort_audit.csv",
+      "sha256": "2828b97f0d3953c862a6fcd3686cb1de168365fc78f3e2f9deccc1da925e2f8d",
+      "bytes": 861757
+    },
+    "r4r5_cohort_matrix.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_cohort_matrix.csv",
+      "sha256": "23c60f398aa73f99361a11ba77a83bf124f22fd46661990d0d3b9586fd8fb03d",
+      "bytes": 445437
+    },
+    "r4r5_daily_account.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_daily_account.csv",
+      "sha256": "5507dc364075a752fb1cd96b25e7568f97b10710b2831d2a9285a38edda99532",
+      "bytes": 1288939
+    },
+    "r4r5_trade_exceptions_initial.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow007/r4r5_trade_exceptions_initial.csv",
+      "sha256": "a04ff82de1103d95e28c10b14244b0ffe388174c694b3bb44bf035723c8cd27c",
+      "bytes": 1676588
+    }
+  },
+  "log": [
+    "2026-09-14T15:01:43+00:00 +0.0m calendar rule cg_arrow007_weekly_wednesday_rollback_v1: identical=True weeks=52 rollbacks=0",
+    "2026-09-14T15:01:43+00:00 +0.0m universe: roster=15322 etp=5672 test_issues=['ZAZZT', 'ZBZZT', 'ZCZZT', 'ZFZZT', 'ZJZZT', 'ZVZZT', 'ZWZZT', 'ZXZZT']",
+    "2026-09-14T15:01:45+00:00 +0.0m loading 109526 ranking endpoints",
+    "2026-09-14T15:01:58+00:00 +0.3m   discontinuity classification: {'MARKET_MOVE_NO_SPLIT_IN_ISSUER_FILINGS': 90}",
+    "2026-09-14T15:01:58+00:00 +0.3m iteration 1: unresolved selected-name events=0 membership=e51a07d60312",
+    "2026-09-14T15:01:59+00:00 +0.3m confirmation rerank: membership stable=True",
+    "2026-09-14T15:01:59+00:00 +0.3m fixed point after 2 iterations, converged=True",
+    "2026-09-14T15:01:59+00:00 +0.3m ranking reconciliation: membership changed vs recorded in 46 cohorts, order-only in 0",
+    "2026-09-14T15:02:04+00:00 +0.3m selection lifecycle observations missing: 0",
+    "2026-09-14T15:02:06+00:00 +0.4m PARENT: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
+    "2026-09-14T15:02:06+00:00 +0.4m R4: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
+    "2026-09-14T15:02:06+00:00 +0.4m R5: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
+    "2026-09-14T15:02:10+00:00 +0.4m split-owned books built: 36",
+    "2026-09-14T15:02:11+00:00 +0.5m oracle ok=True trades={'checked': 4980, 'errors': 0, 'max_abs_error': 1.8189894035458565e-12} cohorts={'cohorts': 624, 'errors': 0}",
+    "2026-09-14T15:02:11+00:00 +0.5m PARENT R1->R2: 36,536.55 -> 104,938.02 (common +0.00, added +65,474.53, dropped +2,926.93)",
+    "2026-09-14T15:02:11+00:00 +0.5m R4 R1->R2: 56,971.05 -> 114,190.85 (common -9,296.59, added +69,859.65, dropped -3,343.26)",
+    "2026-09-14T15:02:11+00:00 +0.5m R5 R1->R2: 65,676.39 -> 129,092.60 (common -9,022.88, added +75,365.07, dropped -2,925.99)",
+    "2026-09-14T15:02:11+00:00 +0.5m GATE OPEN blockers=[]"
+  ]
+}
