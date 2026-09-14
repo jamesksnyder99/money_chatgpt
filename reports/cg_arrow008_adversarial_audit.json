@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-09-14T16:58:53+00:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "largest winners and losers recompute from stored prices, quantities and factors",
+      "ok": true,
+      "detail": "max absolute difference 9.09e-13 across 10 trades"
+    },
+    {
+      "check": "sizing and integer share count follow the frozen rule on every completed trade",
+      "ok": true,
+      "detail": "415 trades checked, 0 mismatches"
+    },
+    {
+      "check": "cohort subtotals and the period total reconcile to the trade ledger",
+      "ok": true,
+      "detail": "52 cohort subtotals, max difference 1.82e-12"
+    },
+    {
+      "check": "August 31 equity equals cash minus short liability",
+      "ok": true,
+      "detail": "equity 229,202.83"
+    },
+    {
+      "check": "completed-trade P&L splits exactly into through-cutoff plus eventual runoff",
+      "ok": true,
+      "detail": "A 129,092.60 = through 122,842.21 + runoff 6,250.39"
+    },
+    {
+      "check": "eventual runoff P&L splits into its cutoff mark plus the post-cutoff increment",
+      "ok": true,
+      "detail": "D 6,250.39 = marked 6,237.93 + increment 12.45"
+    },
+    {
+      "check": "the marked account figure at the cutoff is not the eventual completed figure",
+      "ok": true,
+      "detail": "B 129,202.83 vs A 129,092.60"
+    },
+    {
+      "check": "the per-session figure divides the cutoff account result by cutoff account sessions",
+      "ok": true,
+      "detail": "numerator: marked account P&L at 2026-08-31 (129,202.83); denominator: 251 account sessions from 2025-09-02 to 2026-08-31"
+    },
+    {
+      "check": "the R1 to R2 bridge identity holds when rebuilt from the two ledgers",
+      "ok": true,
+      "detail": "difference 63,416.20, residual 0.00e+00"
+    },
+    {
+      "check": "the dropped component is the signed P&L of the removed tickets",
+      "ok": true,
+      "detail": "DROPPED_R1_PNL 2,925.99"
+    },
+    {
+      "check": "every material selected-name event carries an adequate evidence state",
+      "ok": true,
+      "detail": "72 cases, 0 inadequate"
+    },
+    {
+      "check": "every canonical corporate action carries a ratio, an effective session and a source",
+      "ok": true,
+      "detail": "32 events"
+    },
+    {
+      "check": "no unresolved or blocked row carries a modelled net total",
+      "ok": true,
+      "detail": "0 rows"
+    },
+    {
+      "check": "the 10-session hold reproduces the certified baseline",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "public repository contains no .env, private CSV, vendor partition or parquet",
+      "ok": true,
+      "detail": "661 tracked files"
+    }
+  ]
+}

@@ -1,0 +1,659 @@
+{
+  "version": "cg_arrow008_actions_v1",
+  "timestamp": "2026-09-14T16:48:21+00:00",
+  "factor_convention": "price_factor = old shares per new share; 1-for-50 reverse -> 50; 5-for-1 forward -> 0.2",
+  "coverage": "Scoped census: every symbol/session discontinuity at or beyond 1.2x inside the 15-session ranking window of the top 25 ranked candidates of all 52 cohorts, plus the ranking and holding windows of every historically recorded selection, each taken to the issuer's SEC filings. Inherited Arrow 003/005/006 events are preserved unchanged.",
+  "primary_source": "SEC EDGAR issuer filings (data.sec.gov submissions and www.sec.gov Archives)",
+  "cases_investigated": 1017,
+  "resolution_counts": {
+    "NO_ACTION_FILING_FOUND": 829,
+    "FILING_EVIDENCE_DOES_NOT_EXPLAIN_MOVE": 166,
+    "PRIMARY_VERIFIED_ACTION": 22
+  },
+  "events": [
+    {
+      "symbol": "AGL",
+      "effective_session": "2026-03-31",
+      "price_factor": 25.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1831097/000162828026022074/agl-20260330.htm",
+      "source_date": "2026-03-30",
+      "source_form": "8-K",
+      "source_items": "3.03,5.03,9.01",
+      "ratio_text": "1-for-25",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0256,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "AIOS",
+      "effective_session": "2026-04-27",
+      "price_factor": 20.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1603993/000121390026046241/ea0287127-6k_aiostech.htm",
+      "source_date": "2026-04-21",
+      "source_form": "6-K",
+      "source_items": "",
+      "ratio_text": "20-for-1",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.1459,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "ALIT",
+      "effective_session": "2026-07-01",
+      "price_factor": 20.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1809104/000162828026044110/alit-20260618.htm",
+      "source_date": "2026-06-18",
+      "source_form": "8-K",
+      "source_items": "8.01,9.01",
+      "ratio_text": "1:20",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0009,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "AMCR",
+      "effective_session": "2026-01-15",
+      "price_factor": 5,
+      "source": "https://www.amcor.com/media/news/amcor-completes-one-for-five-reverse-stock-split",
+      "source_date": "2026-01-15",
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "origin": "inherited_arrow003_005_006"
+    },
+    {
+      "symbol": "BNAI",
+      "effective_session": "2025-12-12",
+      "price_factor": 10,
+      "source": "https://www.stocktitan.net/news/BNAI/brand-engagement-network-announces-a-1-for-10-reverse-stock-aexc7tpvwgjj.html",
+      "source_date": "2025-12-10",
+      "source_note": "Brand Engagement Network 1-for-10 reverse split; split-adjusted trading from market open 2025-12-12",
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "origin": "inherited_arrow003_005_006"
+    },
+    {
+      "symbol": "BYND",
+      "effective_session": "2026-08-14",
+      "price_factor": 30.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1655210/000165521026000057/bynd-20260811.htm",
+      "source_date": "2026-08-11",
+      "source_form": "8-K",
+      "source_items": "8.01,9.01",
+      "ratio_text": "1-for-30",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0214,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "CUE",
+      "effective_session": "2026-04-24",
+      "price_factor": 30.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1645460/000119312526168907/cue-20260422.htm",
+      "source_date": "2026-04-22",
+      "source_form": "8-K",
+      "source_items": "3.03,5.03",
+      "ratio_text": "1-for-30",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.3676,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "DD",
+      "effective_session": "2026-06-24",
+      "price_factor": 3.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1666700/000166670026000046/dd-20260623.htm",
+      "source_date": "2026-06-24",
+      "source_form": "8-K",
+      "source_items": "3.03,5.03,9.01",
+      "ratio_text": "reverse stock split of the Company's common stock at a ratio of 1-for-",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0339,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "DFNS",
+      "effective_session": "2026-07-20",
+      "price_factor": 125.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1787518/000121390026078551/ea0298224-8k_t3defense.htm",
+      "source_date": "2026-07-16",
+      "source_form": "8-K",
+      "source_items": "3.03,5.03,9.01",
+      "ratio_text": "1-for-125",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0291,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "ERNA",
+      "effective_session": "2026-05-04",
+      "price_factor": 25.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/748592/000149315226021112/form8-k.htm",
+      "source_date": "2026-05-04",
+      "source_form": "8-K",
+      "source_items": "5.03,9.01",
+      "ratio_text": "1-for-25",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0308,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "ETHZ",
+      "effective_session": "2025-10-20",
+      "price_factor": 10,
+      "source": "https://www.prnewswire.com/news-releases/ethzilla-corporation-announces-1-for-10-reverse-stock-split-302584765.html",
+      "source_date": "2025-10-15",
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "origin": "inherited_arrow003_005_006"
+    },
+    {
+      "symbol": "FGL",
+      "effective_session": "2026-02-10",
+      "price_factor": 100.0,
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "source": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2026-78",
+      "source_date": "2026-02-06",
+      "source_form": "Nasdaq equity corporate action alert 2026-78",
+      "ratio_text": "one-for-one hundred (1-100) reverse split of Class A Ordinary Shares",
+      "origin": "arrow007_primary_source_review",
+      "note": "Founder Group Limited; 32.2M Class A shares became 321,781."
+    },
+    {
+      "symbol": "FUBO",
+      "effective_session": "2026-03-24",
+      "price_factor": 12,
+      "source": "https://www.sec.gov/Archives/edgar/data/1484769/000149315226011823/form8-k.htm",
+      "source_date": "2026-03-20",
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "origin": "inherited_arrow003_005_006"
+    },
+    {
+      "symbol": "GMRE",
+      "effective_session": "2025-09-22",
+      "price_factor": 5,
+      "source": "https://s21.q4cdn.com/118490706/files/doc_news/Global-Medical-REIT-Inc--Completes-One-for-Five-Reverse-Stock-Split-09-19-2025-2025.pdf",
+      "source_date": "2025-09-19",
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "origin": "inherited_arrow003_005_006"
+    },
+    {
+      "symbol": "HPP",
+      "effective_session": "2025-12-02",
+      "price_factor": 7.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1482512/000148251225000157/0001482512-25-000157.txt",
+      "source_date": "2025-12-01",
+      "source_form": "8-K",
+      "source_items": "1.01,5.03,9.01",
+      "ratio_text": "reverse split ratio of one for seven",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0079,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "INBS",
+      "effective_session": "2025-12-16",
+      "price_factor": 10.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1725430/000149315225027534/form8-k.htm",
+      "source_date": "2025-12-12",
+      "source_form": "8-K",
+      "source_items": "3.03,5.03,8.01,9.01",
+      "ratio_text": "1-for-10",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0093,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "LCID",
+      "effective_session": "2025-09-02",
+      "price_factor": 10,
+      "source": "https://ir.lucidmotors.com/news-releases/news-release-details/lucid-group-inc-announces-effective-date-reverse-stock-split",
+      "source_date": "2025-08-21",
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "origin": "inherited_arrow003_005_006"
+    },
+    {
+      "symbol": "LXP",
+      "effective_session": "2025-11-11",
+      "price_factor": 5,
+      "source": "https://www.globenewswire.com/news-release/2025/11/10/3185113/19004/en/LXP-Industrial-Trust-Completes-Reverse-Share-Split.html/",
+      "source_date": "2025-11-10",
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "origin": "inherited_arrow003_005_006"
+    },
+    {
+      "symbol": "MQ",
+      "effective_session": "2026-07-01",
+      "price_factor": 4.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1522540/000152254026000043/mq-20260610.htm",
+      "source_date": "2026-06-11",
+      "source_form": "8-K",
+      "source_items": "5.07,8.01",
+      "ratio_text": "1-for-4",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0018,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "NCI",
+      "effective_session": "2026-05-19",
+      "price_factor": 8.0,
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "source": "https://m.nasdaqtrader.com/TraderNews.aspx?id=eca2026-331",
+      "source_date": "2026-05-14",
+      "source_form": "Nasdaq equity corporate action alert 2026-331",
+      "ratio_text": "one-for-eight (1-8) share consolidation; new CUSIP G6421C138",
+      "origin": "arrow007_primary_source_review",
+      "note": "Neo-Concept International Group Holdings; applies to Class A and Class B."
+    },
+    {
+      "symbol": "NVA",
+      "effective_session": "2025-10-29",
+      "price_factor": 0.2,
+      "source": "https://www.globenewswire.com/news-release/2025/10/15/3167513/0/en/Change-to-ADS-Ratio-and-Stock-Distribution.html",
+      "source_date": "2025-10-15",
+      "source_note": "Nova Minerals 5-for-1 ADS split (ADS ratio 60:1 to 12:1); first split-adjusted Nasdaq trading 2025-10-29; corroborated by BNY ADR notice AD2000247",
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "origin": "inherited_arrow003_005_006"
+    },
+    {
+      "symbol": "OXLC",
+      "effective_session": "2025-09-08",
+      "price_factor": 5,
+      "source": "https://ir.oxfordlanecapital.com/stock/dividends-splits",
+      "source_date": null,
+      "source_note": "Undated issuer dividend/split history; September 8 is the event date, not a publication date",
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "origin": "inherited_arrow003_005_006"
+    },
+    {
+      "symbol": "PFSA",
+      "effective_session": "2026-08-17",
+      "price_factor": 5.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1859807/000121390026089362/ea030148402-8k_profusa.htm",
+      "source_date": "2026-08-14",
+      "source_form": "8-K",
+      "source_items": "3.03,5.03,8.01,9.01",
+      "ratio_text": "1-for-5",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0931,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "PFSA",
+      "effective_session": "2026-08-18",
+      "price_factor": 4.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1859807/000121390026089362/ea030148402-8k_profusa.htm",
+      "source_date": "2026-08-14",
+      "source_form": "8-K",
+      "source_items": "3.03,5.03,8.01,9.01",
+      "ratio_text": "1:4",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.9683,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "REAX",
+      "effective_session": "2026-08-25",
+      "price_factor": 10.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/2136387/000110465926100334/0001104659-26-100334.txt",
+      "source_date": "2026-08-24",
+      "source_form": "8-K12B",
+      "source_items": "1.01,2.01,2.03,3.01,3.03,5.01,5.02,5.03,8.01,9.01",
+      "ratio_text": "10 for 1",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0046,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "SMX",
+      "effective_session": "2025-11-18",
+      "price_factor": 8,
+      "source": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2025-612",
+      "source_date": "2025-11-14",
+      "source_note": "Nasdaq equity corporate action alert 2025-612: one-for-eight reverse split of SMX (Security Matters) ordinary shares, effective and first post-split trading 2025-11-18, new CUSIP G8267K307. Found by the Arrow 006 ranking-window integrity screen.",
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "origin": "inherited_arrow003_005_006"
+    },
+    {
+      "symbol": "SMX",
+      "effective_session": "2026-02-17",
+      "price_factor": 4.8828125,
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "source": "https://www.theglobeandmail.com/investing/markets/stocks/SMX/pressreleases/208599/smx-sets-february-17-effective-date-for-reverse-stock-split-on-nasdaq/",
+      "source_date": "2026-02-12",
+      "source_form": "issuer announcement, corroborated by 6-K exhibit",
+      "ratio_text": "ratio fixed at 4.8828125:1; new CUSIP G8267K406, new ISIN IE000B5COQZ5",
+      "origin": "arrow007_primary_source_review",
+      "note": "Second SMX consolidation of the study window; the 2025-11-18 one-for-eight is separate."
+    },
+    {
+      "symbol": "TGL",
+      "effective_session": "2025-12-05",
+      "price_factor": 20.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1905956/000121390025119226/ea0268483-8k_treasure.htm",
+      "source_date": "2025-12-08",
+      "source_form": "8-K",
+      "source_items": "5.03,7.01,9.01",
+      "ratio_text": "1-for-20",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0146,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "TGL",
+      "effective_session": "2025-12-08",
+      "price_factor": 3.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1905956/000121390025117673/ea0268348-8k_treasure.htm",
+      "source_date": "2025-12-03",
+      "source_form": "8-K",
+      "source_items": "3.01",
+      "ratio_text": "1-for-3",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.5061,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "TLRY",
+      "effective_session": "2025-12-02",
+      "price_factor": 10.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1731348/000143774925036448/0001437749-25-036448.txt",
+      "source_date": "2025-11-26",
+      "source_form": "8-K",
+      "source_items": "3.03,5.03,8.01,9.01",
+      "ratio_text": "1-for-10",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.0041,
+      "origin": "arrow007_sec_edgar_census"
+    },
+    {
+      "symbol": "VOR",
+      "effective_session": "2025-09-19",
+      "price_factor": 20,
+      "source": "https://www.sec.gov/Archives/edgar/data/1817229/000119312525205553/d945826d8k.htm",
+      "source_date": "2025-09-17",
+      "event_type": "reverse_split",
+      "status": "PRIMARY_VERIFIED",
+      "origin": "inherited_arrow003_005_006"
+    },
+    {
+      "symbol": "WETO",
+      "effective_session": "2026-08-03",
+      "price_factor": 100.0,
+      "event_type": "reverse_split",
+      "source": "https://www.sec.gov/Archives/edgar/data/1941158/000121390026097747/ea0304709-6k_wetour.htm",
+      "source_date": "2026-09-04",
+      "source_form": "6-K",
+      "source_items": "",
+      "ratio_text": "100:1",
+      "status": "PRIMARY_VERIFIED",
+      "residual_discontinuity_after_factor": 1.2042,
+      "origin": "arrow007_sec_edgar_census"
+    }
+  ],
+  "security_identity": [
+    {
+      "symbol": "OCTO",
+      "successor": "ORBS",
+      "effective_session": "2025-09-11",
+      "event": "ticker change, same security (Eightco Holdings)",
+      "source": "https://seekingalpha.com/news/4494019-eightco-changes-ticker-to-orbs-reflecting-investment-in-orb-technology",
+      "source_date": "2025-09-11",
+      "note": "Nasdaq ticker changed OCTO -> ORBS effective 2025-09-11; shareholder rights unchanged. Held-position lifecycle continues under the successor symbol."
+    },
+    {
+      "symbol": "BREA",
+      "successor": "SLMT",
+      "effective_session": "2025-10-03",
+      "event": "ticker change, same security (Brera Holdings, rebranded Solmate)",
+      "source": "https://www.stocktitan.net/overview/BREA/",
+      "source_date": "2025-10-03",
+      "note": "Class B ordinary shares began trading as SLMT effective 2025-10-03."
+    }
+  ],
+  "trading_events": [
+    {
+      "symbol": "EFTY",
+      "first_non_trading_session": "2025-10-06",
+      "event": "SEC trading suspension 2025-10-06 to 2025-10-17, then Nasdaq halt from 2025-10-18 pending a response to an information request",
+      "source": "https://www.nasdaq.com/press-release/nasdaq-halts-etoiles-capital-group-co-ltd-2025-10-18",
+      "source_date": "2025-10-18",
+      "treatment": "documented non-execution: the resting cover order executes at the first later session on which the security actually trades, at the same late regular-hours close convention; if no such session exists inside the study window the position stays open at the boundary with the documented event and is excluded from completed-trade totals",
+      "note": "A halt is a real market event, not a missing local observation."
+    }
+  ],
+  "screen_resolutions": [
+    {
+      "symbol": "PMI",
+      "date": "2025-10-24",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Picard Medical ~60% decline on equity-plan/warrant dilution disclosure; no split on that date",
+      "source": "https://www.benzinga.com/markets/ipos/25/10/48403313/picard-medical-stock-sees-extreme-volatility-end-bull-run"
+    },
+    {
+      "symbol": "NBY",
+      "date": "2026-01-20",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "NovaBay ~54% decline on $100M ATM and pre-funded warrant sales",
+      "source": "https://www.investing.com/news/stock-market-news/novabay-pharmaceuticals-stock-falls-after-100-million-atm-offering-93CH-4455597"
+    },
+    {
+      "symbol": "XNDU",
+      "date": "2026-05-04",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Xanadu ~61% decline on resale prospectus for 293.6M shares",
+      "source": "https://www.theglobeandmail.com/business/article-xanadu-stock-shares-for-sale-prospectus/"
+    },
+    {
+      "symbol": "ONEG",
+      "date": "2026-05-07",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "OneConstruction $30M registered direct offering at $1.20; volatility halt and resumption same day",
+      "source": "https://stockanalysis.com/stocks/oneg/"
+    },
+    {
+      "symbol": "SMJF",
+      "date": "2026-08-27",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "SMJ International traded down $9.93 to $1.40; issuer statement on unusual market action",
+      "source": "https://www.stocktitan.net/news/SMJF/smj-international-holdings-inc-issues-statement-regarding-unusual-d9c26ji2ild0.html"
+    },
+    {
+      "symbol": "ZVZZT",
+      "date": "2026-04-02",
+      "resolution": "TEST_SYMBOL_ID_REVIEW",
+      "note": "Nasdaq test symbol present in inherited common-stock roster; prints are not a security"
+    },
+    {
+      "symbol": "BNAI",
+      "date": "2026-01-30",
+      "resolution": "LARGE_MOVE_AFTER_DOCUMENTED_SPLIT",
+      "note": "0.47x session on 2026-01-30 occurs after the documented 2025-12-12 reverse split; no action found on that date; treated as a market move pending further review"
+    },
+    {
+      "symbol": "RGC",
+      "date": "2026-01-07",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Regencell ~40% intraday surge on speculative trading; no action",
+      "source": "https://www.fxleaders.com/news/2026/01/07/regencell-from-collapse-to-comeback-rgc-stock-surges-135-weekly-taps-50/"
+    },
+    {
+      "symbol": "AHMA",
+      "date": "2026-01-15",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Ambitions Enterprise ~70% surge on Jan 15 after prior-day gains; no action",
+      "source": "https://stockstotrade.com/news/ambitions-enterprise-management-co-llc-ahma-news-2026_01_13/"
+    },
+    {
+      "symbol": "BATL",
+      "date": "2026-03-25",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Battalion Oil ~35% decline on Q4 loss and a 2.37M-share holder sale at $5.82",
+      "source": "https://stockstotrade.com/news/battalion-oil-corp-ordinary-shares-new-batl-news-2026_03_25/"
+    },
+    {
+      "symbol": "POET",
+      "date": "2026-04-27",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "POET ~45% decline after Marvell order cancellation disclosure",
+      "source": "https://www.fool.com/investing/2026/05/03/why-poet-technologies-stock-crashed-this-week/"
+    },
+    {
+      "symbol": "DFNS",
+      "date": "2026-08-24",
+      "resolution": "MARKET_MOVE_UNCONFIRMED",
+      "note": "T3 Defense fell ~61% week-over-week in late August 2026; no split found but no dated primary source for the session",
+      "source": "https://www.stocktitan.net/overview/DFNS/"
+    },
+    {
+      "symbol": "MXL",
+      "date": "2026-04-24",
+      "resolution": "LARGE_MOVE_UNREVIEWED",
+      "note": "1.76x up-move; exit unresolved regardless",
+      "source": null
+    },
+    {
+      "symbol": "SMX",
+      "date": "2025-12-08",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Reversal after the 2025-12-04/05 parabolic run and a $111.5M financing announcement. SMX reverse splits are dated 2025-11-18 (1-for-8) and 2026-02-17, both outside this holding window, so no price-unit change applies to the trade.",
+      "source": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2025-612",
+      "source_date": "2025-11-14"
+    },
+    {
+      "symbol": "OCG",
+      "date": "2025-12-11",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Oriental Culture Holding entered a $200M at-the-market sales agreement on 2025-12-11; the collapse is dilution, not a split. Its 1-for-220 consolidation is effective 2026-01-16 and the US$0.05 post-consolidation special dividend has a 2026-01-22 record date, both after this trade's scheduled exit, so neither affects the test.",
+      "source": "https://www.theglobeandmail.com/investing/markets/stocks/OCG-Q/pressreleases/37049004/oriental-culture-holding-announces-1-for-220-reverse-split-and-special-dividend/",
+      "source_date": "2025-12-14"
+    },
+    {
+      "symbol": "NPT",
+      "date": "2026-03-18",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Texxon Holding: intraday volatility trading pause 10:00-10:10 ET on 2026-03-18; trading resumed the same session. No corporate action.",
+      "source": "https://www.stocktitan.net/news/NPT/",
+      "source_date": "2026-03-18"
+    },
+    {
+      "symbol": "AGL",
+      "date": "2026-05-07",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "agilon health rose roughly 117% on a Q1 2026 earnings beat, a raised full-year guidance and a new chief executive effective the same day. A genuine adverse move for a short, not a defect.",
+      "source": "https://www.timothysykes.com/news/agilon-health-inc-agl-news-2026_05_07/",
+      "source_date": "2026-05-07"
+    },
+    {
+      "symbol": "SDOT",
+      "date": "2026-07-08",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Sadot Group retired about $3.36M of debt by issuing stock, amplified by a low float. Its 1-for-20 reverse split began trading 2026-05-27, before this cohort's entry, so no price-unit change falls inside the holding window.",
+      "source": "https://www.quiverquant.com/news/Sadot+Group+Jumps+as+Debt-for-Equity+Filing+Fuels+Low-Float+Rally",
+      "source_date": "2026-07-08"
+    },
+    {
+      "symbol": "WETO",
+      "date": "2026-08-28",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Wetour Robotics fell from $33.00 on 2026-08-18 to $5.72 on 2026-08-28 around a $1.8M Regulation S placement closing on 2026-08-27. The 1-for-100 consolidation was implemented earlier in August, before this cohort's entry, and the further 100-for-1 proposal voted on 2026-08-24 was not effective inside the holding window; the observed path contains no consolidation-sized jump.",
+      "source": "https://blockonomi.com/wetour-robotics-weto-stock-explodes-169-on-capital-raise-and-reverse-split-vote/",
+      "source_date": "2026-08-24"
+    },
+    {
+      "symbol": "DFNS",
+      "date": "2026-07-31",
+      "resolution": "MARKET_MOVE_UNCONFIRMED",
+      "note": "T3 Defense: no corporate action found for this session; coverage describes a momentum breakdown after the 2026-07-20 trend change and a private placement to fund acquisitions. No split evidence, but no dated primary source for the session itself.",
+      "source": "https://www.barchart.com/story/news/421707/t3-defense-inc-announces-private-placement-of-up-to-20-million-to-accelerate-acquisition-strategy",
+      "source_date": null
+    },
+    {
+      "symbol": "APLS",
+      "date": "2026-03-31",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Biogen agreed to acquire Apellis for $41.00 per share in cash plus a contingent value right; the shares rose about 135% on roughly 43x normal volume. A merger announcement, not a unit change.",
+      "source": "https://investors.apellis.com/news-releases/news-release-details/biogen-acquire-apellis-enhancing-companys-growth-portfolio",
+      "source_date": "2026-03-31"
+    },
+    {
+      "symbol": "GLTO",
+      "date": "2025-10-07",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Galecto rallied several hundred percent on roughly 288x normal volume. Volume expanded rather than contracted, which is inconsistent with a consolidation.",
+      "source": "https://www.stocktitan.net/news/GLTO/",
+      "source_date": "2025-10-07"
+    },
+    {
+      "symbol": "GLTO",
+      "date": "2025-11-10",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Galecto announced the Damora Therapeutics acquisition and a $285M private placement on 2025-11-06; the shares moved on roughly 1,360x normal volume.",
+      "source": "https://stocktwits.com/news-articles/markets/equity/galecto-stock-surges-premarket-after-damora-acquisition/cLPdkUMREP3",
+      "source_date": "2025-11-06"
+    },
+    {
+      "symbol": "OKLS",
+      "date": "2026-03-23",
+      "resolution": "DOCUMENTED_MARKET_MOVE",
+      "note": "Oak Woods Acquisition Corp, a blank-cheque company. Forty of the issuer's own filings across the surrounding window, exhibits included, contain no split or consolidation ratio. Nasdaq had issued a delisting determination on 2026-02-05 with a hearing set for 2026-03-24, and the move occurred on thin volume the session before that hearing. Classified as a market and liquidity move; no factor is inferred and none is applied.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1945422/000121390026018541/ea0277769-8k_oakwoods.htm",
+      "source_date": "2026-02-17",
+      "issuer_documents_searched": 40
+    }
+  ],
+  "limitations": [
+    "A filing search finds no evidence only within the fetched window and forms.",
+    "Cash-in-lieu and broker fractional treatment remain unknown unless stated.",
+    "Dividends, locate and financing history remain unavailable."
+  ],
+  "non_comparable_events": [
+    {
+      "symbol": "WOLF",
+      "effective_session": "2025-09-29",
+      "event_type": "reorganization_exchange",
+      "status": "PRIMARY_VERIFIED",
+      "source": "https://www.sec.gov/Archives/edgar/data/895419/000119312525199310/d36059d8k.htm",
+      "source_date": "2025-09-29",
+      "exchange_ratio_new_per_old": 0.0083,
+      "note": "Wolfspeed emerged from Chapter 11 on 2025-09-29. Existing equity was exchanged at roughly one new share per 120 old shares while legacy holders retained only 3-5% of the new equity, so value is not preserved across the event. A price ratio across this boundary is not a return on one continuous claim, and no single factor makes it one.",
+      "effect": "ranking returns spanning this session are not comparable in any share unit"
+    }
+  ],
+  "material_event_states": {
+    "ADEQUATELY_REVIEWED_MARKET_MOVE": 71,
+    "PRIMARY_VERIFIED_ACTION": 1
+  },
+  "material_event_review": {
+    "cases": 72,
+    "minimum_documents_for_adequate_review": 8,
+    "search_window_days": 200,
+    "rule": "a selected trade may not rest on a heuristic clearance; an adequately reviewed market move requires the issuer filing record searched with exhibits, no stated ratio, and a price/volume signature inconsistent with a consolidation"
+  }
+}

@@ -1,0 +1,90 @@
+CG Arrow 008 — commands, checkpoints and timings (Opus in Claude Code)
+Start 2026-09-14T16:01:14Z. Predicted budget 60-90 minutes. Completed inside it.
+Python 3.14.5, thetadata SDK 1.0.10, polars 1.43.2, 8 logical cores.
+No credential value appears in any command, log, report or cache below.
+
+# 0. Pull and safety (minute 0-2)
+git pull --ff-only origin main            # 04a3bd2..b7b3d0a
+git check-ignore -v .env                  # IGNORED, rechecked before the push
+
+# 1. Repair 1 — material-event evidence classification (minute 2-47)
+python scripts/cg_arrow008_events.py --workers 8
+#   72 material selected-name cases across 59 securities, taken from every Arrow 007 window
+#   whose action-adjusted series was not already continuous
+#   first design reused the Arrow 007 deep scan over registration statements and annual reports:
+#     10/59 in 7.1 min -> ~42 min projected. Stopped and narrowed.
+#   a reverse split cannot be effected without a current report, so the scan was restricted to
+#     8-K / 8-K/A / 6-K / 6-K/A / 8-K12B / 425 with all exhibits: 59 securities in 21.6 min
+#   scan results cached to data/verification/r4r5/v1/work/a8_symbol_scans.json so the two
+#     subsequent classification passes took under 2 seconds each
+#   classification pass 1: 46 adequate, 25 unresolved
+#     -> blocked only because the issuer mentioned a split SOMEWHERE in a 200-day window
+#   refinement A: only a statement placing a ratio on THIS session (+/- 2 days) can block
+#     -> 68 adequate, 3 unresolved (BNAI 2026-01-26, INBS 2025-12-31, NVA 2025-10-14)
+#   each of the three inspected individually: all were filings discussing an ALREADY documented
+#     and applied split at a different effective session
+#   refinement B: a statement whose ratio matches an already-applied canonical event at another
+#     effective session cannot block
+#     -> 71 ADEQUATELY_REVIEWED_MARKET_MOVE, 1 PRIMARY_VERIFIED_ACTION, 0 UNRESOLVED
+#   canonical events 32 -> 32: every previously applied event confirmed, none added
+
+# 2. Repairs 2 and 3 — account semantics and bridge (minute 25-50, written while scans ran)
+# src/verification/r4r5_accounting.py
+#   account_view: the six distinct quantities with three identities asserted in code
+#     A = exits through the cutoff + D ; D = marked at cutoff + C ; B = realised + unrealised
+#   bridge: R2 - R1 = COMMON_REVALUATION + ADDED_R2_PNL - DROPPED_R1_PNL, residual tested
+
+# 3. Repair 4 — rebuild, reconcile, certify (minute 47-50)
+python scripts/cg_arrow008_run.py --workers 8
+#   calendar rule identical=True, rollbacks 0
+#   selected-name windows not continuous after adjustment: 0; without an adequate state: 0
+#   rerank converged and stable under repetition
+#   lifecycle observations missing: 0
+#   account identities hold 18/18; bridges reconcile 6/6
+#   ladder rebuilt: 180 cells; 10-session hold reproduces the baseline exactly
+#   oracle ok: 4,980 trades, 624 cohorts, max abs error 1.8e-12
+#   membership hash and entry-ledger hash unchanged vs Arrow 007; 0 of 180 ladder cells changed
+#   VERDICT: CERTIFIED
+
+# 4. Defect found in Arrow 008's own first output and repaired (minute 55-58)
+#   the published baseline CSV took drawdown, worst day and gross exposure from the all-cohort
+#   book for the IS and OOS rows, so both splits showed identical risk. Rewired to the
+#   split-owned books and added a guard test that IS, OOS and ALL risk columns differ.
+python scripts/cg_arrow008_run.py --workers 8      # rebuilt; verdict unchanged
+
+# 5. Tests and adversarial audit (minute 50-58)
+python -m pytest tests -q --basetemp=data/tmp/cg_arrow008_tests -p no:cacheprovider   # 629 passed, 1 skipped
+python scripts/cg_arrow008_audit.py --workers 8                                       # 15 of 15 passed
+
+# 6. Arrow 007 artifacts preserved
+git checkout -- reports/cg_arrow007_adversarial_audit.json
+#   the Arrow 007 audit harness had been re-run during checking and rewrote its own output;
+#   restored to its committed state. No other Arrow 003-007 artifact was modified.
+
+# 7. Safety review and push
+git check-ignore .env handoff/outgoing/cg_arrow008/certified_trade_audit.csv
+git ls-files handoff data/verification      # empty
+git diff --cached --name-only               # paths AND content inspected before commit
+
+# Outcomes
+# Repair 1: 72 material cases, 0 unresolved, 0 heuristic-only; every canonical action carries an
+#   authoritative ratio, effective session and source URL.
+# Repair 2: six quantities published separately with three identities tested. The Arrow 007
+#   per-session figure divided eventual post-cutoff P&L by a cutoff denominator; corrected to the
+#   marked account result at the cutoff over 251 cutoff account sessions.
+# Repair 3: one identity, tested, with DROPPED_R1_PNL as the signed P&L of removed tickets. The
+#   Equal-Dollar dropped-ticket sign ambiguity is resolved: those tickets lost 2,926.93 in R1.
+# Repair 4: everything bit-identical to Arrow 007. No factor or date changed, so no selection,
+#   entry ledger or ladder cell changed.
+# Headline tables carry the standard footnote and no borrow-stress columns.
+# HISTORICAL BASELINE CERTIFICATION: CERTIFIED
+
+# Local private deliverables (git-ignored; hashes in reports/cg_arrow008_manifest.json)
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow008\certified_trade_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow008\certified_cohort_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow008\material_event_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow008\r4r5_verified_trades.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow008\r4r5_verified_cohort_audit.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow008\r4r5_cohort_matrix.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow008\r4r5_trade_exceptions.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow008\r4r5_daily_account.csv

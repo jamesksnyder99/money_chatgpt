@@ -1,0 +1,1036 @@
+{
+  "arrow": "CG Arrow 008",
+  "executor": "Opus in Claude Code",
+  "timestamp": "2026-09-14T16:58:15+00:00",
+  "elapsed_minutes": 0.714150948333554,
+  "head_at_run": "b7b3d0a6a63ac63ae186cc08ae0bd3ac5e66c65c",
+  "naming": {
+    "PARENT": "Equal-Dollar Short",
+    "R4": "Volume-Sized Short",
+    "R5": "Momentum+Volume-Sized Short"
+  },
+  "headline_footnote": "Headline modeled P&L includes the lab's stated commission/spread assumptions and excludes broker-specific locate/HTB charges, dividends, recalls/buy-ins, financing, taxes, and other account-specific execution items. Alpaca ETB securities currently carry $0 locate and borrow fees for Trading API users; short availability and other security-specific costs may still vary.",
+  "calendar_rule": {
+    "rule_id": "cg_arrow007_weekly_wednesday_rollback_v1",
+    "weeks": 52,
+    "derived_signals": 52,
+    "existing_signals": 52,
+    "identical": true,
+    "only_in_derived": [],
+    "only_in_existing": [],
+    "weeks_requiring_rollback": [],
+    "entry_is_next_session_for_all": true
+  },
+  "action_table_sha256": "338a4b96970e40c21ae5e3427bf414dcade18f59a11a1b5fa70944af69a74a51",
+  "material_event_states": {
+    "ADEQUATELY_REVIEWED_MARKET_MOVE": 71,
+    "PRIMARY_VERIFIED_ACTION": 1
+  },
+  "material_event_rule": {
+    "cases": 72,
+    "minimum_documents_for_adequate_review": 8,
+    "search_window_days": 200,
+    "rule": "a selected trade may not rest on a heuristic clearance; an adequately reviewed market move requires the issuer filing record searched with exhibits, no stated ratio, and a price/volume signature inconsistent with a consolidation"
+  },
+  "rerank_stable": true,
+  "membership_sha256": "e51a07d60312dfb574ed0df657c4c691607b28b3b710aa8b70a9169914773ae6",
+  "r2_entry_ledger_sha256": "071bb7e13dfac51856e1d144f7ef0f58cd61b275089250eb3156cd2038c699ed",
+  "accounts": {
+    "PARENT/LEGACY_FILL_QTY/IS": {
+      "book": "Equal-Dollar Short / LEGACY_FILL_QTY / IS",
+      "A_completed_trade_pnl_all_cohorts": 41182.5239087,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 41182.5239087,
+      "completed_trade_count": 200,
+      "B_marked_account_pnl_at_cutoff": 41182.52390870001,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 7.275957614183426e-12,
+      "C_post_cutoff_incremental_runoff_pnl": 0,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 0,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 0,
+      "runoff_marked_pnl_at_cutoff": 0,
+      "E_open_documented_obligations": 0,
+      "E_open_obligation_tickets": [],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 0,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 164.07380043306776,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (41,182.52); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "PARENT/LEGACY_FILL_QTY/OOS": {
+      "book": "Equal-Dollar Short / LEGACY_FILL_QTY / OOS",
+      "A_completed_trade_pnl_all_cohorts": 63755.4924108,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 55960.9614958,
+      "completed_trade_count": 215,
+      "B_marked_account_pnl_at_cutoff": 65209.882395800145,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 9248.920900000143,
+      "C_post_cutoff_incremental_runoff_pnl": -1335.8364050000016,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 7794.5309149999985,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 9130.367320000001,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 3872.5800000000004,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 259.8003282701201,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (65,209.88); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "PARENT/LEGACY_FILL_QTY/ALL": {
+      "book": "Equal-Dollar Short / LEGACY_FILL_QTY / ALL",
+      "A_completed_trade_pnl_all_cohorts": 104938.0163195,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 97143.4854045,
+      "completed_trade_count": 415,
+      "B_marked_account_pnl_at_cutoff": 106392.40630450024,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 9248.920900000245,
+      "C_post_cutoff_incremental_runoff_pnl": -1335.8364050000016,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 7794.5309149999985,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 9130.367320000001,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 3872.5800000000004,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 423.8741287031882,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (106,392.41); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "PARENT/CAUSAL_PREORDER_QTY/IS": {
+      "book": "Equal-Dollar Short / CAUSAL_PREORDER_QTY / IS",
+      "A_completed_trade_pnl_all_cohorts": 40819.133481,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 40819.133481,
+      "completed_trade_count": 200,
+      "B_marked_account_pnl_at_cutoff": 40819.133481000026,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 2.9103830456733704e-11,
+      "C_post_cutoff_incremental_runoff_pnl": 0,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 0,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 0,
+      "runoff_marked_pnl_at_cutoff": 0,
+      "E_open_documented_obligations": 0,
+      "E_open_obligation_tickets": [],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 0,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 162.62602980478098,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (40,819.13); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "PARENT/CAUSAL_PREORDER_QTY/OOS": {
+      "book": "Equal-Dollar Short / CAUSAL_PREORDER_QTY / OOS",
+      "A_completed_trade_pnl_all_cohorts": 63580.0333876,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 55882.5623376,
+      "completed_trade_count": 215,
+      "B_marked_account_pnl_at_cutoff": 65050.78024759999,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 9168.217909999992,
+      "C_post_cutoff_incremental_runoff_pnl": -1354.4908300000009,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 7697.47105,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 9051.96188,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 3797.53,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 259.1664551697211,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (65,050.78); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "PARENT/CAUSAL_PREORDER_QTY/ALL": {
+      "book": "Equal-Dollar Short / CAUSAL_PREORDER_QTY / ALL",
+      "A_completed_trade_pnl_all_cohorts": 104399.1668686,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 96701.6958186,
+      "completed_trade_count": 415,
+      "B_marked_account_pnl_at_cutoff": 105869.91372859967,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 9168.217909999672,
+      "C_post_cutoff_incremental_runoff_pnl": -1354.4908300000009,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 7697.47105,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 9051.96188,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 3797.53,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 421.79248497450067,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (105,869.91); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R4/LEGACY_FILL_QTY/IS": {
+      "book": "Volume-Sized Short / LEGACY_FILL_QTY / IS",
+      "A_completed_trade_pnl_all_cohorts": 47298.0924309,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 47298.0924309,
+      "completed_trade_count": 200,
+      "B_marked_account_pnl_at_cutoff": 47298.09243089991,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": -8.731149137020111e-11,
+      "C_post_cutoff_incremental_runoff_pnl": 0,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 0,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 0,
+      "runoff_marked_pnl_at_cutoff": 0,
+      "E_open_documented_obligations": 0,
+      "E_open_obligation_tickets": [],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 0,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 188.43861526254943,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (47,298.09); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R4/LEGACY_FILL_QTY/OOS": {
+      "book": "Volume-Sized Short / LEGACY_FILL_QTY / OOS",
+      "A_completed_trade_pnl_all_cohorts": 66892.75719589999,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 58229.5888059,
+      "completed_trade_count": 215,
+      "B_marked_account_pnl_at_cutoff": 67357.08664589986,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 9127.497839999865,
+      "C_post_cutoff_incremental_runoff_pnl": -311.77213000000245,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 8663.168389999999,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 8974.94052,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 4983.320000000001,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 268.3549268760951,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (67,357.09); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R4/LEGACY_FILL_QTY/ALL": {
+      "book": "Volume-Sized Short / LEGACY_FILL_QTY / ALL",
+      "A_completed_trade_pnl_all_cohorts": 114190.8496268,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 105527.6812368,
+      "completed_trade_count": 415,
+      "B_marked_account_pnl_at_cutoff": 114655.1790767994,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 9127.4978399994,
+      "C_post_cutoff_incremental_runoff_pnl": -311.77213000000245,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 8663.168389999999,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 8974.94052,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 4983.320000000001,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 456.79354213864303,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (114,655.18); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R4/CAUSAL_PREORDER_QTY/IS": {
+      "book": "Volume-Sized Short / CAUSAL_PREORDER_QTY / IS",
+      "A_completed_trade_pnl_all_cohorts": 47006.4890214,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 47006.4890214,
+      "completed_trade_count": 200,
+      "B_marked_account_pnl_at_cutoff": 47006.48902139999,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": -7.275957614183426e-12,
+      "C_post_cutoff_incremental_runoff_pnl": 0,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 0,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 0,
+      "runoff_marked_pnl_at_cutoff": 0,
+      "E_open_documented_obligations": 0,
+      "E_open_obligation_tickets": [],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 0,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 187.2768486908366,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (47,006.49); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R4/CAUSAL_PREORDER_QTY/OOS": {
+      "book": "Volume-Sized Short / CAUSAL_PREORDER_QTY / OOS",
+      "A_completed_trade_pnl_all_cohorts": 66838.8026239,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 58290.0736889,
+      "completed_trade_count": 215,
+      "B_marked_account_pnl_at_cutoff": 67314.98213389964,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 9024.908444999637,
+      "C_post_cutoff_incremental_runoff_pnl": -326.3792500000016,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 8548.728935,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 8875.108185000001,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 4893.26,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 268.18717981633324,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (67,314.98); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R4/CAUSAL_PREORDER_QTY/ALL": {
+      "book": "Volume-Sized Short / CAUSAL_PREORDER_QTY / ALL",
+      "A_completed_trade_pnl_all_cohorts": 113845.29164529999,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 105296.5627103,
+      "completed_trade_count": 415,
+      "B_marked_account_pnl_at_cutoff": 114321.47115529975,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 9024.908444999746,
+      "C_post_cutoff_incremental_runoff_pnl": -326.3792500000016,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 8548.728935,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 8875.108185000001,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 4893.26,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 455.4640285071703,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (114,321.47); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R5/LEGACY_FILL_QTY/IS": {
+      "book": "Momentum+Volume-Sized Short / LEGACY_FILL_QTY / IS",
+      "A_completed_trade_pnl_all_cohorts": 58955.4439736,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 58955.4439736,
+      "completed_trade_count": 200,
+      "B_marked_account_pnl_at_cutoff": 58955.44397359982,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": -1.8189894035458565e-10,
+      "C_post_cutoff_incremental_runoff_pnl": 0,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 0,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 0,
+      "runoff_marked_pnl_at_cutoff": 0,
+      "E_open_documented_obligations": 0,
+      "E_open_obligation_tickets": [],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 0,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 234.88224690677217,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (58,955.44); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R5/LEGACY_FILL_QTY/OOS": {
+      "book": "Momentum+Volume-Sized Short / LEGACY_FILL_QTY / OOS",
+      "A_completed_trade_pnl_all_cohorts": 70137.151093,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 63886.765168,
+      "completed_trade_count": 215,
+      "B_marked_account_pnl_at_cutoff": 70247.3879129997,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 6360.622744999695,
+      "C_post_cutoff_incremental_runoff_pnl": 12.452349999998546,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 6250.385925,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 6237.933575000001,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 4007.6700000000005,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 279.8700713665326,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (70,247.39); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R5/LEGACY_FILL_QTY/ALL": {
+      "book": "Momentum+Volume-Sized Short / LEGACY_FILL_QTY / ALL",
+      "A_completed_trade_pnl_all_cohorts": 129092.5950666,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 122842.20914159999,
+      "completed_trade_count": 415,
+      "B_marked_account_pnl_at_cutoff": 129202.83188659986,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 6360.62274499987,
+      "C_post_cutoff_incremental_runoff_pnl": 12.452349999998546,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 6250.385925,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 6237.933575000001,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 4007.6700000000005,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 514.7523182733062,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (129,202.83); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R5/CAUSAL_PREORDER_QTY/IS": {
+      "book": "Momentum+Volume-Sized Short / CAUSAL_PREORDER_QTY / IS",
+      "A_completed_trade_pnl_all_cohorts": 58670.3410121,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 58670.3410121,
+      "completed_trade_count": 200,
+      "B_marked_account_pnl_at_cutoff": 58670.34101209976,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": -2.4010660126805305e-10,
+      "C_post_cutoff_incremental_runoff_pnl": 0,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 0,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 0,
+      "runoff_marked_pnl_at_cutoff": 0,
+      "E_open_documented_obligations": 0,
+      "E_open_obligation_tickets": [],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 0,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 233.746378534262,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (58,670.34); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R5/CAUSAL_PREORDER_QTY/OOS": {
+      "book": "Momentum+Volume-Sized Short / CAUSAL_PREORDER_QTY / OOS",
+      "A_completed_trade_pnl_all_cohorts": 70194.2838535,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 64012.3615185,
+      "completed_trade_count": 215,
+      "B_marked_account_pnl_at_cutoff": 70316.05965849964,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 6303.698139999637,
+      "C_post_cutoff_incremental_runoff_pnl": -0.9246750000011161,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 6181.922335,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 6182.847010000001,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 3947.6300000000006,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 280.1436639780862,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (70,316.06); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    },
+    "R5/CAUSAL_PREORDER_QTY/ALL": {
+      "book": "Momentum+Volume-Sized Short / CAUSAL_PREORDER_QTY / ALL",
+      "A_completed_trade_pnl_all_cohorts": 128864.6248656,
+      "A_basis": "eventual P&L of every completed position of every signal cohort, including exits scheduled after 2026-08-31",
+      "completed_trades_exiting_through_cutoff": 122682.7025306,
+      "completed_trade_count": 415,
+      "B_marked_account_pnl_at_cutoff": 128986.40067059905,
+      "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised P&L through the cutoff plus unrealised P&L on positions still open",
+      "unrealised_at_cutoff": 6303.698139999047,
+      "C_post_cutoff_incremental_runoff_pnl": -0.9246750000011161,
+      "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+      "D_eventual_pnl_of_runoff_trades": 6181.922335,
+      "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+      "runoff_trade_count": 16,
+      "runoff_marked_pnl_at_cutoff": 6182.847010000001,
+      "E_open_documented_obligations": 1,
+      "E_open_obligation_tickets": [
+        "2025-10-01/EFTY"
+      ],
+      "E_basis": "positions with no completed exit under a documented trading event; never valued as completed trades",
+      "F_stale_gross_in_calendar_equity": 3947.6300000000006,
+      "F_stale_marked_runoff_trades": 0,
+      "F_basis": "gross exposure at the cutoff carried at a mark older than the cutoff session",
+      "unresolved_slots": 0,
+      "account_sessions_to_cutoff": 251,
+      "marked_account_pnl_per_account_session": 513.8900425123468,
+      "per_session_basis": "numerator: marked account P&L at 2026-08-31 (128,986.40); denominator: 251 account sessions from 2025-09-02 to 2026-08-31",
+      "identity_checks": {
+        "A_equals_through_plus_D": true,
+        "D_equals_marked_plus_C": true,
+        "B_equals_realised_plus_unrealised": true
+      },
+      "identities_hold": true
+    }
+  },
+  "bridges": {
+    "PARENT/LEGACY_FILL_QTY": {
+      "book": "Equal-Dollar Short / LEGACY_FILL_QTY",
+      "identity": "R2_total - R1_total = COMMON_REVALUATION + ADDED_R2_PNL - DROPPED_R1_PNL",
+      "R1_total": 36536.55213129999,
+      "R2_total": 104938.0163195,
+      "difference": 68401.46418820001,
+      "common_tickets": 330,
+      "COMMON_REVALUATION": 0.0,
+      "common_r1_pnl": 39463.4846403,
+      "common_r2_pnl": 39463.4846403,
+      "added_tickets": 85,
+      "ADDED_R2_PNL": 65474.5316792,
+      "dropped_tickets": 85,
+      "DROPPED_R1_PNL": -2926.932509000002,
+      "dropped_sign_note": "DROPPED_R1_PNL is the signed P&L those tickets earned inside R1; the identity subtracts it, so dropping a losing ticket raises the bridge",
+      "reconciliation_residual": 1.4551915228366852e-11,
+      "reconciles": true
+    },
+    "PARENT/CAUSAL_PREORDER_QTY": {
+      "book": "Equal-Dollar Short / CAUSAL_PREORDER_QTY",
+      "identity": "R2_total - R1_total = COMMON_REVALUATION + ADDED_R2_PNL - DROPPED_R1_PNL",
+      "R1_total": 36353.777595299995,
+      "R2_total": 104399.1668686,
+      "difference": 68045.38927330001,
+      "common_tickets": 330,
+      "COMMON_REVALUATION": 0.0,
+      "common_r1_pnl": 39340.0389593,
+      "common_r2_pnl": 39340.0389593,
+      "added_tickets": 85,
+      "ADDED_R2_PNL": 65059.127909300005,
+      "dropped_tickets": 85,
+      "DROPPED_R1_PNL": -2986.2613640000027,
+      "dropped_sign_note": "DROPPED_R1_PNL is the signed P&L those tickets earned inside R1; the identity subtracts it, so dropping a losing ticket raises the bridge",
+      "reconciliation_residual": 0.0,
+      "reconciles": true
+    },
+    "R4/LEGACY_FILL_QTY": {
+      "book": "Volume-Sized Short / LEGACY_FILL_QTY",
+      "identity": "R2_total - R1_total = COMMON_REVALUATION + ADDED_R2_PNL - DROPPED_R1_PNL",
+      "R1_total": 56971.05004499999,
+      "R2_total": 114190.8496268,
+      "difference": 57219.79958180001,
+      "common_tickets": 330,
+      "COMMON_REVALUATION": -9296.5873897,
+      "common_r1_pnl": 53627.78529299999,
+      "common_r2_pnl": 44331.197903299995,
+      "added_tickets": 85,
+      "ADDED_R2_PNL": 69859.6517235,
+      "dropped_tickets": 85,
+      "DROPPED_R1_PNL": 3343.2647519999955,
+      "dropped_sign_note": "DROPPED_R1_PNL is the signed P&L those tickets earned inside R1; the identity subtracts it, so dropping a losing ticket raises the bridge",
+      "reconciliation_residual": 0.0,
+      "reconciles": true
+    },
+    "R4/CAUSAL_PREORDER_QTY": {
+      "book": "Volume-Sized Short / CAUSAL_PREORDER_QTY",
+      "identity": "R2_total - R1_total = COMMON_REVALUATION + ADDED_R2_PNL - DROPPED_R1_PNL",
+      "R1_total": 56900.24648729999,
+      "R2_total": 113845.29164529999,
+      "difference": 56945.045158,
+      "common_tickets": 330,
+      "COMMON_REVALUATION": -9268.0903638,
+      "common_r1_pnl": 53602.6764153,
+      "common_r2_pnl": 44334.586051499995,
+      "added_tickets": 85,
+      "ADDED_R2_PNL": 69510.7055938,
+      "dropped_tickets": 85,
+      "DROPPED_R1_PNL": 3297.570071999995,
+      "dropped_sign_note": "DROPPED_R1_PNL is the signed P&L those tickets earned inside R1; the identity subtracts it, so dropping a losing ticket raises the bridge",
+      "reconciliation_residual": 0.0,
+      "reconciles": true
+    },
+    "R5/LEGACY_FILL_QTY": {
+      "book": "Momentum+Volume-Sized Short / LEGACY_FILL_QTY",
+      "identity": "R2_total - R1_total = COMMON_REVALUATION + ADDED_R2_PNL - DROPPED_R1_PNL",
+      "R1_total": 65676.3937779,
+      "R2_total": 129092.5950666,
+      "difference": 63416.2012887,
+      "common_tickets": 330,
+      "COMMON_REVALUATION": -9022.876230400001,
+      "common_r1_pnl": 62750.4000788,
+      "common_r2_pnl": 53727.52384839999,
+      "added_tickets": 85,
+      "ADDED_R2_PNL": 75365.0712182,
+      "dropped_tickets": 85,
+      "DROPPED_R1_PNL": 2925.993699099997,
+      "dropped_sign_note": "DROPPED_R1_PNL is the signed P&L those tickets earned inside R1; the identity subtracts it, so dropping a losing ticket raises the bridge",
+      "reconciliation_residual": 0.0,
+      "reconciles": true
+    },
+    "R5/CAUSAL_PREORDER_QTY": {
+      "book": "Momentum+Volume-Sized Short / CAUSAL_PREORDER_QTY",
+      "identity": "R2_total - R1_total = COMMON_REVALUATION + ADDED_R2_PNL - DROPPED_R1_PNL",
+      "R1_total": 65520.520488899994,
+      "R2_total": 128864.6248656,
+      "difference": 63344.1043767,
+      "common_tickets": 330,
+      "COMMON_REVALUATION": -8979.585274500001,
+      "common_r1_pnl": 62665.644483799995,
+      "common_r2_pnl": 53686.059209299994,
+      "added_tickets": 85,
+      "ADDED_R2_PNL": 75178.5656563,
+      "dropped_tickets": 85,
+      "DROPPED_R1_PNL": 2854.876005099997,
+      "dropped_sign_note": "DROPPED_R1_PNL is the signed P&L those tickets earned inside R1; the identity subtracts it, so dropping a losing ticket raises the bridge",
+      "reconciliation_residual": 7.275957614183426e-12,
+      "reconciles": true
+    }
+  },
+  "h10_reproduces_baseline": true,
+  "comparison_with_arrow007": {
+    "membership_sha256": {
+      "arrow007": "e51a07d60312dfb574ed0df657c4c691607b28b3b710aa8b70a9169914773ae6",
+      "arrow008": "e51a07d60312dfb574ed0df657c4c691607b28b3b710aa8b70a9169914773ae6"
+    },
+    "entry_ledger_sha256": {
+      "arrow007": "071bb7e13dfac51856e1d144f7ef0f58cd61b275089250eb3156cd2038c699ed",
+      "arrow008": "071bb7e13dfac51856e1d144f7ef0f58cd61b275089250eb3156cd2038c699ed"
+    },
+    "completed_trades": {
+      "PARENT": {
+        "arrow007": 415,
+        "arrow008": 415
+      },
+      "R4": {
+        "arrow007": 415,
+        "arrow008": 415
+      },
+      "R5": {
+        "arrow007": 415,
+        "arrow008": 415
+      }
+    },
+    "headline_modeled_pnl": {
+      "PARENT": {
+        "arrow007": 104938.0163195,
+        "arrow008": 104938.0163195,
+        "difference": 0.0
+      },
+      "R4": {
+        "arrow007": 114190.8496268,
+        "arrow008": 114190.8496268,
+        "difference": 0.0
+      },
+      "R5": {
+        "arrow007": 129092.5950666,
+        "arrow008": 129092.5950666,
+        "difference": 0.0
+      }
+    },
+    "is_oos": {
+      "PARENT/IS": {
+        "arrow007": 41182.5239087,
+        "arrow008": 41182.5239087,
+        "difference": 0.0
+      },
+      "PARENT/OOS": {
+        "arrow007": 63755.4924108,
+        "arrow008": 63755.4924108,
+        "difference": 0.0
+      },
+      "R4/IS": {
+        "arrow007": 47298.0924309,
+        "arrow008": 47298.0924309,
+        "difference": 0.0
+      },
+      "R4/OOS": {
+        "arrow007": 66892.75719589999,
+        "arrow008": 66892.75719589999,
+        "difference": 0.0
+      },
+      "R5/IS": {
+        "arrow007": 58955.4439736,
+        "arrow008": 58955.4439736,
+        "difference": 0.0
+      },
+      "R5/OOS": {
+        "arrow007": 70137.151093,
+        "arrow008": 70137.151093,
+        "difference": 0.0
+      }
+    },
+    "ladder_totals": {},
+    "reason_for_differences": "No corporate-action factor or date changed in this arrow: the material-event review confirmed every previously applied event and added none, so the selection, the entry ledger and every ladder cell are bit-identical to Arrow 007. The changes in this arrow are to evidence state labelling, account semantics and bridge presentation, none of which touch a price, a quantity or a selection."
+  },
+  "oracle": {
+    "trades": {
+      "checked": 4980,
+      "errors": 0,
+      "max_abs_error": 1.8189894035458565e-12
+    },
+    "cohorts": {
+      "cohorts": 624,
+      "errors": 0
+    },
+    "daily": {
+      "PARENT/R1_LEGACY_FILL_QTY": {
+        "max_abs_error": 5.820766091346741e-11,
+        "ok": true
+      },
+      "PARENT/R1_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "PARENT/R2_LEGACY_FILL_QTY": {
+        "max_abs_error": 8.731149137020111e-11,
+        "ok": true
+      },
+      "PARENT/R2_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R4/R1_LEGACY_FILL_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R4/R1_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R4/R2_LEGACY_FILL_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R4/R2_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 1.4551915228366852e-10,
+        "ok": true
+      },
+      "R5/R1_LEGACY_FILL_QTY": {
+        "max_abs_error": 1.7462298274040222e-10,
+        "ok": true
+      },
+      "R5/R1_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 8.731149137020111e-11,
+        "ok": true
+      },
+      "R5/R2_LEGACY_FILL_QTY": {
+        "max_abs_error": 1.1641532182693481e-10,
+        "ok": true
+      },
+      "R5/R2_CAUSAL_PREORDER_QTY": {
+        "max_abs_error": 2.0372681319713593e-10,
+        "ok": true
+      }
+    },
+    "ok": true
+  },
+  "local_csvs": {
+    "certified_cohort_audit.csv": {
+      "path": "handoff/outgoing/cg_arrow008/certified_cohort_audit.csv",
+      "sha256": "2828b97f0d3953c862a6fcd3686cb1de168365fc78f3e2f9deccc1da925e2f8d",
+      "bytes": 861757
+    },
+    "certified_trade_audit.csv": {
+      "path": "handoff/outgoing/cg_arrow008/certified_trade_audit.csv",
+      "sha256": "c8a6837c01f222053069b884c2cdb8b35e24b655bd97863059ed84e85985cb3f",
+      "bytes": 5722471
+    },
+    "material_event_audit.csv": {
+      "path": "handoff/outgoing/cg_arrow008/material_event_audit.csv",
+      "sha256": "ac400dc8760abaa28d7151bb971713828cb28c888f3e22b668de713dbae4126a",
+      "bytes": 38019
+    },
+    "r4r5_cohort_matrix.csv": {
+      "path": "handoff/outgoing/cg_arrow008/r4r5_cohort_matrix.csv",
+      "sha256": "23c60f398aa73f99361a11ba77a83bf124f22fd46661990d0d3b9586fd8fb03d",
+      "bytes": 445437
+    },
+    "r4r5_daily_account.csv": {
+      "path": "handoff/outgoing/cg_arrow008/r4r5_daily_account.csv",
+      "sha256": "5507dc364075a752fb1cd96b25e7568f97b10710b2831d2a9285a38edda99532",
+      "bytes": 1288939
+    },
+    "r4r5_trade_exceptions.csv": {
+      "path": "handoff/outgoing/cg_arrow008/r4r5_trade_exceptions.csv",
+      "sha256": "22232fe36ebf446efd8916b5586450b9ab4fdcf68969eb6743ccd046a3210c23",
+      "bytes": 1676450
+    },
+    "r4r5_verified_cohort_audit.csv": {
+      "path": "handoff/outgoing/cg_arrow008/r4r5_verified_cohort_audit.csv",
+      "sha256": "2828b97f0d3953c862a6fcd3686cb1de168365fc78f3e2f9deccc1da925e2f8d",
+      "bytes": 861757
+    },
+    "r4r5_verified_trades.csv": {
+      "path": "handoff/outgoing/cg_arrow008/r4r5_verified_trades.csv",
+      "sha256": "c8a6837c01f222053069b884c2cdb8b35e24b655bd97863059ed84e85985cb3f",
+      "bytes": 5722471
+    }
+  },
+  "certification": {
+    "verdict": "CERTIFIED",
+    "blockers": []
+  },
+  "log": [
+    "2026-09-14T16:57:32+00:00 +0.0m material event states: {'ADEQUATELY_REVIEWED_MARKET_MOVE': 71, 'PRIMARY_VERIFIED_ACTION': 1}",
+    "2026-09-14T16:57:32+00:00 +0.0m calendar rule identical=True rollbacks=0",
+    "2026-09-14T16:57:33+00:00 +0.0m loading 109518 ranking endpoints",
+    "2026-09-14T16:57:48+00:00 +0.3m selected-name windows not continuous after adjustment: 0; without an adequate evidence state: 0",
+    "2026-09-14T16:57:48+00:00 +0.3m rerank converged and stable: True",
+    "2026-09-14T16:57:53+00:00 +0.3m lifecycle observations missing: 0",
+    "2026-09-14T16:57:54+00:00 +0.4m Equal-Dollar Short: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
+    "2026-09-14T16:57:54+00:00 +0.4m Volume-Sized Short: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
+    "2026-09-14T16:57:55+00:00 +0.4m Momentum+Volume-Sized Short: R1/LEGACY_FILL_QTY=415/416  R1/CAUSAL_PREORDER_QTY=415/416  R2/LEGACY_FILL_QTY=415/416  R2/CAUSAL_PREORDER_QTY=415/416",
+    "2026-09-14T16:57:57+00:00 +0.4m account identities hold: 18/18; bridges reconcile: 6/6",
+    "2026-09-14T16:58:14+00:00 +0.7m ladder rebuilt: 180 cells",
+    "2026-09-14T16:58:14+00:00 +0.7m 10-session hold reproduces the rebuilt baseline exactly: True",
+    "2026-09-14T16:58:15+00:00 +0.7m oracle ok=True trades={'checked': 4980, 'errors': 0, 'max_abs_error': 1.8189894035458565e-12} cohorts={'cohorts': 624, 'errors': 0}",
+    "2026-09-14T16:58:15+00:00 +0.7m membership changed vs Arrow 007: False; ladder cells changed: 0"
+  ],
+  "adversarial_audit": {
+    "timestamp": "2026-09-14T16:58:53+00:00",
+    "all_passed": true,
+    "checks": [
+      {
+        "check": "largest winners and losers recompute from stored prices, quantities and factors",
+        "ok": true,
+        "detail": "max absolute difference 9.09e-13 across 10 trades"
+      },
+      {
+        "check": "sizing and integer share count follow the frozen rule on every completed trade",
+        "ok": true,
+        "detail": "415 trades checked, 0 mismatches"
+      },
+      {
+        "check": "cohort subtotals and the period total reconcile to the trade ledger",
+        "ok": true,
+        "detail": "52 cohort subtotals, max difference 1.82e-12"
+      },
+      {
+        "check": "August 31 equity equals cash minus short liability",
+        "ok": true,
+        "detail": "equity 229,202.83"
+      },
+      {
+        "check": "completed-trade P&L splits exactly into through-cutoff plus eventual runoff",
+        "ok": true,
+        "detail": "A 129,092.60 = through 122,842.21 + runoff 6,250.39"
+      },
+      {
+        "check": "eventual runoff P&L splits into its cutoff mark plus the post-cutoff increment",
+        "ok": true,
+        "detail": "D 6,250.39 = marked 6,237.93 + increment 12.45"
+      },
+      {
+        "check": "the marked account figure at the cutoff is not the eventual completed figure",
+        "ok": true,
+        "detail": "B 129,202.83 vs A 129,092.60"
+      },
+      {
+        "check": "the per-session figure divides the cutoff account result by cutoff account sessions",
+        "ok": true,
+        "detail": "numerator: marked account P&L at 2026-08-31 (129,202.83); denominator: 251 account sessions from 2025-09-02 to 2026-08-31"
+      },
+      {
+        "check": "the R1 to R2 bridge identity holds when rebuilt from the two ledgers",
+        "ok": true,
+        "detail": "difference 63,416.20, residual 0.00e+00"
+      },
+      {
+        "check": "the dropped component is the signed P&L of the removed tickets",
+        "ok": true,
+        "detail": "DROPPED_R1_PNL 2,925.99"
+      },
+      {
+        "check": "every material selected-name event carries an adequate evidence state",
+        "ok": true,
+        "detail": "72 cases, 0 inadequate"
+      },
+      {
+        "check": "every canonical corporate action carries a ratio, an effective session and a source",
+        "ok": true,
+        "detail": "32 events"
+      },
+      {
+        "check": "no unresolved or blocked row carries a modelled net total",
+        "ok": true,
+        "detail": "0 rows"
+      },
+      {
+        "check": "the 10-session hold reproduces the certified baseline",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "check": "public repository contains no .env, private CSV, vendor partition or parquet",
+        "ok": true,
+        "detail": "661 tracked files"
+      }
+    ]
+  },
+  "tests": {
+    "suite": "629 passed, 1 skipped",
+    "command": "python -m pytest tests -q --basetemp=data/tmp/cg_arrow008_tests -p no:cacheprovider"
+  },
+  "scope": "historical data integrity; security identity and corporate actions; candidate-field and ranking integrity; scheduling and lifecycle logic; sizing and replay accounting; IS/OOS separation; calendar and runoff reporting; R1 to R2 attribution; Hold-Length Ladder reproducibility; published modeled P&L under the declared commission/spread convention"
+}
