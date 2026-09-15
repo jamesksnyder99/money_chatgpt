@@ -1,0 +1,1217 @@
+{
+  "arrow": "CG Arrow 014",
+  "stage": "LOCK_1_reveal_specification",
+  "timestamp": "2026-09-15T16:53:09+00:00",
+  "head_at_freeze": "55d8c6ee3903b1a20ca838c1a78b862b941f7d1f",
+  "corridor_id": "cg_arrow014_pristine_sep2024_aug2025_v1",
+  "immutability": "This specification is immutable from the moment it is committed. No model, horizon, multiplier, threshold, filter, substitution rule, sizing rule, timing rule, cost convention, metric or output schema may change on the basis of anything learned from the pristine year.",
+  "no_outcome_declaration": "No September 2024 to August 2025 strategy outcome has been calculated at the time of this freeze. No ranking or membership for the holdout has been generated yet. Phase 0A verified source, calendar, universe and pristine status only.",
+  "period": {
+    "pristine_oos_signal_months": [
+      "2024-09",
+      "2024-10",
+      "2024-11",
+      "2024-12",
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04",
+      "2025-05",
+      "2025-06",
+      "2025-07",
+      "2025-08"
+    ],
+    "warmup": {
+      "start": "2024-08-01",
+      "end": "2024-08-30",
+      "role": "ranking and feature history only; owns no signal cohort"
+    },
+    "signal_period": {
+      "start": "2024-09-01",
+      "end": "2025-08-31"
+    },
+    "cutoff": "2025-08-29",
+    "cutoff_basis": "last exchange close of August 2025, proved from the calendar",
+    "lifecycle_tail": {
+      "start": "2025-09-01",
+      "end": "2025-09-30",
+      "role": "H8/H9/H10 completion for late-August 2025 cohorts only; owns no signal"
+    },
+    "corridor_sessions": 292,
+    "account_sessions": 249,
+    "starting_equity": 100000.0
+  },
+  "calendar_rule": {
+    "rule_id": "cg_arrow007_weekly_wednesday_rollback_v1",
+    "statement": "nominal Wednesday signal anchor; if closed, roll backward one calendar day at a time to the most recent exchange session; entry is the first valid exchange session strictly after the signal; Hn exits n exchange sessions after the actual fill; early closes keep their own final regular-hours minute; the nominal anchor never moves",
+    "cohort_count": 52,
+    "cohort_count_basis": "derived from the exchange calendar, not assumed",
+    "rollback_weeks": [
+      {
+        "nominal_anchor": "2024-12-25",
+        "signal_date": "2024-12-24",
+        "rolled_back_days": 1
+      },
+      {
+        "nominal_anchor": "2025-01-01",
+        "signal_date": "2024-12-31",
+        "rolled_back_days": 1
+      }
+    ],
+    "cohort_calendar": [
+      {
+        "nominal_anchor": "2024-09-04",
+        "signal_date": "2024-09-04",
+        "entry_date": "2024-09-05",
+        "rolled_back_days": 0,
+        "signal_month": "2024-09",
+        "status": "OK",
+        "h8_exit_date": "2024-09-17",
+        "h9_exit_date": "2024-09-18",
+        "h10_exit_date": "2024-09-19"
+      },
+      {
+        "nominal_anchor": "2024-09-11",
+        "signal_date": "2024-09-11",
+        "entry_date": "2024-09-12",
+        "rolled_back_days": 0,
+        "signal_month": "2024-09",
+        "status": "OK",
+        "h8_exit_date": "2024-09-24",
+        "h9_exit_date": "2024-09-25",
+        "h10_exit_date": "2024-09-26"
+      },
+      {
+        "nominal_anchor": "2024-09-18",
+        "signal_date": "2024-09-18",
+        "entry_date": "2024-09-19",
+        "rolled_back_days": 0,
+        "signal_month": "2024-09",
+        "status": "OK",
+        "h8_exit_date": "2024-10-01",
+        "h9_exit_date": "2024-10-02",
+        "h10_exit_date": "2024-10-03"
+      },
+      {
+        "nominal_anchor": "2024-09-25",
+        "signal_date": "2024-09-25",
+        "entry_date": "2024-09-26",
+        "rolled_back_days": 0,
+        "signal_month": "2024-09",
+        "status": "OK",
+        "h8_exit_date": "2024-10-08",
+        "h9_exit_date": "2024-10-09",
+        "h10_exit_date": "2024-10-10"
+      },
+      {
+        "nominal_anchor": "2024-10-02",
+        "signal_date": "2024-10-02",
+        "entry_date": "2024-10-03",
+        "rolled_back_days": 0,
+        "signal_month": "2024-10",
+        "status": "OK",
+        "h8_exit_date": "2024-10-15",
+        "h9_exit_date": "2024-10-16",
+        "h10_exit_date": "2024-10-17"
+      },
+      {
+        "nominal_anchor": "2024-10-09",
+        "signal_date": "2024-10-09",
+        "entry_date": "2024-10-10",
+        "rolled_back_days": 0,
+        "signal_month": "2024-10",
+        "status": "OK",
+        "h8_exit_date": "2024-10-22",
+        "h9_exit_date": "2024-10-23",
+        "h10_exit_date": "2024-10-24"
+      },
+      {
+        "nominal_anchor": "2024-10-16",
+        "signal_date": "2024-10-16",
+        "entry_date": "2024-10-17",
+        "rolled_back_days": 0,
+        "signal_month": "2024-10",
+        "status": "OK",
+        "h8_exit_date": "2024-10-29",
+        "h9_exit_date": "2024-10-30",
+        "h10_exit_date": "2024-10-31"
+      },
+      {
+        "nominal_anchor": "2024-10-23",
+        "signal_date": "2024-10-23",
+        "entry_date": "2024-10-24",
+        "rolled_back_days": 0,
+        "signal_month": "2024-10",
+        "status": "OK",
+        "h8_exit_date": "2024-11-05",
+        "h9_exit_date": "2024-11-06",
+        "h10_exit_date": "2024-11-07"
+      },
+      {
+        "nominal_anchor": "2024-10-30",
+        "signal_date": "2024-10-30",
+        "entry_date": "2024-10-31",
+        "rolled_back_days": 0,
+        "signal_month": "2024-10",
+        "status": "OK",
+        "h8_exit_date": "2024-11-12",
+        "h9_exit_date": "2024-11-13",
+        "h10_exit_date": "2024-11-14"
+      },
+      {
+        "nominal_anchor": "2024-11-06",
+        "signal_date": "2024-11-06",
+        "entry_date": "2024-11-07",
+        "rolled_back_days": 0,
+        "signal_month": "2024-11",
+        "status": "OK",
+        "h8_exit_date": "2024-11-19",
+        "h9_exit_date": "2024-11-20",
+        "h10_exit_date": "2024-11-21"
+      },
+      {
+        "nominal_anchor": "2024-11-13",
+        "signal_date": "2024-11-13",
+        "entry_date": "2024-11-14",
+        "rolled_back_days": 0,
+        "signal_month": "2024-11",
+        "status": "OK",
+        "h8_exit_date": "2024-11-26",
+        "h9_exit_date": "2024-11-27",
+        "h10_exit_date": "2024-11-29"
+      },
+      {
+        "nominal_anchor": "2024-11-20",
+        "signal_date": "2024-11-20",
+        "entry_date": "2024-11-21",
+        "rolled_back_days": 0,
+        "signal_month": "2024-11",
+        "status": "OK",
+        "h8_exit_date": "2024-12-04",
+        "h9_exit_date": "2024-12-05",
+        "h10_exit_date": "2024-12-06"
+      },
+      {
+        "nominal_anchor": "2024-11-27",
+        "signal_date": "2024-11-27",
+        "entry_date": "2024-11-29",
+        "rolled_back_days": 0,
+        "signal_month": "2024-11",
+        "status": "OK",
+        "h8_exit_date": "2024-12-11",
+        "h9_exit_date": "2024-12-12",
+        "h10_exit_date": "2024-12-13"
+      },
+      {
+        "nominal_anchor": "2024-12-04",
+        "signal_date": "2024-12-04",
+        "entry_date": "2024-12-05",
+        "rolled_back_days": 0,
+        "signal_month": "2024-12",
+        "status": "OK",
+        "h8_exit_date": "2024-12-17",
+        "h9_exit_date": "2024-12-18",
+        "h10_exit_date": "2024-12-19"
+      },
+      {
+        "nominal_anchor": "2024-12-11",
+        "signal_date": "2024-12-11",
+        "entry_date": "2024-12-12",
+        "rolled_back_days": 0,
+        "signal_month": "2024-12",
+        "status": "OK",
+        "h8_exit_date": "2024-12-24",
+        "h9_exit_date": "2024-12-26",
+        "h10_exit_date": "2024-12-27"
+      },
+      {
+        "nominal_anchor": "2024-12-18",
+        "signal_date": "2024-12-18",
+        "entry_date": "2024-12-19",
+        "rolled_back_days": 0,
+        "signal_month": "2024-12",
+        "status": "OK",
+        "h8_exit_date": "2025-01-02",
+        "h9_exit_date": "2025-01-03",
+        "h10_exit_date": "2025-01-06"
+      },
+      {
+        "nominal_anchor": "2024-12-25",
+        "signal_date": "2024-12-24",
+        "entry_date": "2024-12-26",
+        "rolled_back_days": 1,
+        "signal_month": "2024-12",
+        "status": "OK",
+        "h8_exit_date": "2025-01-08",
+        "h9_exit_date": "2025-01-10",
+        "h10_exit_date": "2025-01-13"
+      },
+      {
+        "nominal_anchor": "2025-01-01",
+        "signal_date": "2024-12-31",
+        "entry_date": "2025-01-02",
+        "rolled_back_days": 1,
+        "signal_month": "2024-12",
+        "status": "OK",
+        "h8_exit_date": "2025-01-15",
+        "h9_exit_date": "2025-01-16",
+        "h10_exit_date": "2025-01-17"
+      },
+      {
+        "nominal_anchor": "2025-01-08",
+        "signal_date": "2025-01-08",
+        "entry_date": "2025-01-10",
+        "rolled_back_days": 0,
+        "signal_month": "2025-01",
+        "status": "OK",
+        "h8_exit_date": "2025-01-23",
+        "h9_exit_date": "2025-01-24",
+        "h10_exit_date": "2025-01-27"
+      },
+      {
+        "nominal_anchor": "2025-01-15",
+        "signal_date": "2025-01-15",
+        "entry_date": "2025-01-16",
+        "rolled_back_days": 0,
+        "signal_month": "2025-01",
+        "status": "OK",
+        "h8_exit_date": "2025-01-29",
+        "h9_exit_date": "2025-01-30",
+        "h10_exit_date": "2025-01-31"
+      },
+      {
+        "nominal_anchor": "2025-01-22",
+        "signal_date": "2025-01-22",
+        "entry_date": "2025-01-23",
+        "rolled_back_days": 0,
+        "signal_month": "2025-01",
+        "status": "OK",
+        "h8_exit_date": "2025-02-04",
+        "h9_exit_date": "2025-02-05",
+        "h10_exit_date": "2025-02-06"
+      },
+      {
+        "nominal_anchor": "2025-01-29",
+        "signal_date": "2025-01-29",
+        "entry_date": "2025-01-30",
+        "rolled_back_days": 0,
+        "signal_month": "2025-01",
+        "status": "OK",
+        "h8_exit_date": "2025-02-11",
+        "h9_exit_date": "2025-02-12",
+        "h10_exit_date": "2025-02-13"
+      },
+      {
+        "nominal_anchor": "2025-02-05",
+        "signal_date": "2025-02-05",
+        "entry_date": "2025-02-06",
+        "rolled_back_days": 0,
+        "signal_month": "2025-02",
+        "status": "OK",
+        "h8_exit_date": "2025-02-19",
+        "h9_exit_date": "2025-02-20",
+        "h10_exit_date": "2025-02-21"
+      },
+      {
+        "nominal_anchor": "2025-02-12",
+        "signal_date": "2025-02-12",
+        "entry_date": "2025-02-13",
+        "rolled_back_days": 0,
+        "signal_month": "2025-02",
+        "status": "OK",
+        "h8_exit_date": "2025-02-26",
+        "h9_exit_date": "2025-02-27",
+        "h10_exit_date": "2025-02-28"
+      },
+      {
+        "nominal_anchor": "2025-02-19",
+        "signal_date": "2025-02-19",
+        "entry_date": "2025-02-20",
+        "rolled_back_days": 0,
+        "signal_month": "2025-02",
+        "status": "OK",
+        "h8_exit_date": "2025-03-04",
+        "h9_exit_date": "2025-03-05",
+        "h10_exit_date": "2025-03-06"
+      },
+      {
+        "nominal_anchor": "2025-02-26",
+        "signal_date": "2025-02-26",
+        "entry_date": "2025-02-27",
+        "rolled_back_days": 0,
+        "signal_month": "2025-02",
+        "status": "OK",
+        "h8_exit_date": "2025-03-11",
+        "h9_exit_date": "2025-03-12",
+        "h10_exit_date": "2025-03-13"
+      },
+      {
+        "nominal_anchor": "2025-03-05",
+        "signal_date": "2025-03-05",
+        "entry_date": "2025-03-06",
+        "rolled_back_days": 0,
+        "signal_month": "2025-03",
+        "status": "OK",
+        "h8_exit_date": "2025-03-18",
+        "h9_exit_date": "2025-03-19",
+        "h10_exit_date": "2025-03-20"
+      },
+      {
+        "nominal_anchor": "2025-03-12",
+        "signal_date": "2025-03-12",
+        "entry_date": "2025-03-13",
+        "rolled_back_days": 0,
+        "signal_month": "2025-03",
+        "status": "OK",
+        "h8_exit_date": "2025-03-25",
+        "h9_exit_date": "2025-03-26",
+        "h10_exit_date": "2025-03-27"
+      },
+      {
+        "nominal_anchor": "2025-03-19",
+        "signal_date": "2025-03-19",
+        "entry_date": "2025-03-20",
+        "rolled_back_days": 0,
+        "signal_month": "2025-03",
+        "status": "OK",
+        "h8_exit_date": "2025-04-01",
+        "h9_exit_date": "2025-04-02",
+        "h10_exit_date": "2025-04-03"
+      },
+      {
+        "nominal_anchor": "2025-03-26",
+        "signal_date": "2025-03-26",
+        "entry_date": "2025-03-27",
+        "rolled_back_days": 0,
+        "signal_month": "2025-03",
+        "status": "OK",
+        "h8_exit_date": "2025-04-08",
+        "h9_exit_date": "2025-04-09",
+        "h10_exit_date": "2025-04-10"
+      },
+      {
+        "nominal_anchor": "2025-04-02",
+        "signal_date": "2025-04-02",
+        "entry_date": "2025-04-03",
+        "rolled_back_days": 0,
+        "signal_month": "2025-04",
+        "status": "OK",
+        "h8_exit_date": "2025-04-15",
+        "h9_exit_date": "2025-04-16",
+        "h10_exit_date": "2025-04-17"
+      },
+      {
+        "nominal_anchor": "2025-04-09",
+        "signal_date": "2025-04-09",
+        "entry_date": "2025-04-10",
+        "rolled_back_days": 0,
+        "signal_month": "2025-04",
+        "status": "OK",
+        "h8_exit_date": "2025-04-23",
+        "h9_exit_date": "2025-04-24",
+        "h10_exit_date": "2025-04-25"
+      },
+      {
+        "nominal_anchor": "2025-04-16",
+        "signal_date": "2025-04-16",
+        "entry_date": "2025-04-17",
+        "rolled_back_days": 0,
+        "signal_month": "2025-04",
+        "status": "OK",
+        "h8_exit_date": "2025-04-30",
+        "h9_exit_date": "2025-05-01",
+        "h10_exit_date": "2025-05-02"
+      },
+      {
+        "nominal_anchor": "2025-04-23",
+        "signal_date": "2025-04-23",
+        "entry_date": "2025-04-24",
+        "rolled_back_days": 0,
+        "signal_month": "2025-04",
+        "status": "OK",
+        "h8_exit_date": "2025-05-06",
+        "h9_exit_date": "2025-05-07",
+        "h10_exit_date": "2025-05-08"
+      },
+      {
+        "nominal_anchor": "2025-04-30",
+        "signal_date": "2025-04-30",
+        "entry_date": "2025-05-01",
+        "rolled_back_days": 0,
+        "signal_month": "2025-04",
+        "status": "OK",
+        "h8_exit_date": "2025-05-13",
+        "h9_exit_date": "2025-05-14",
+        "h10_exit_date": "2025-05-15"
+      },
+      {
+        "nominal_anchor": "2025-05-07",
+        "signal_date": "2025-05-07",
+        "entry_date": "2025-05-08",
+        "rolled_back_days": 0,
+        "signal_month": "2025-05",
+        "status": "OK",
+        "h8_exit_date": "2025-05-20",
+        "h9_exit_date": "2025-05-21",
+        "h10_exit_date": "2025-05-22"
+      },
+      {
+        "nominal_anchor": "2025-05-14",
+        "signal_date": "2025-05-14",
+        "entry_date": "2025-05-15",
+        "rolled_back_days": 0,
+        "signal_month": "2025-05",
+        "status": "OK",
+        "h8_exit_date": "2025-05-28",
+        "h9_exit_date": "2025-05-29",
+        "h10_exit_date": "2025-05-30"
+      },
+      {
+        "nominal_anchor": "2025-05-21",
+        "signal_date": "2025-05-21",
+        "entry_date": "2025-05-22",
+        "rolled_back_days": 0,
+        "signal_month": "2025-05",
+        "status": "OK",
+        "h8_exit_date": "2025-06-04",
+        "h9_exit_date": "2025-06-05",
+        "h10_exit_date": "2025-06-06"
+      },
+      {
+        "nominal_anchor": "2025-05-28",
+        "signal_date": "2025-05-28",
+        "entry_date": "2025-05-29",
+        "rolled_back_days": 0,
+        "signal_month": "2025-05",
+        "status": "OK",
+        "h8_exit_date": "2025-06-10",
+        "h9_exit_date": "2025-06-11",
+        "h10_exit_date": "2025-06-12"
+      },
+      {
+        "nominal_anchor": "2025-06-04",
+        "signal_date": "2025-06-04",
+        "entry_date": "2025-06-05",
+        "rolled_back_days": 0,
+        "signal_month": "2025-06",
+        "status": "OK",
+        "h8_exit_date": "2025-06-17",
+        "h9_exit_date": "2025-06-18",
+        "h10_exit_date": "2025-06-20"
+      },
+      {
+        "nominal_anchor": "2025-06-11",
+        "signal_date": "2025-06-11",
+        "entry_date": "2025-06-12",
+        "rolled_back_days": 0,
+        "signal_month": "2025-06",
+        "status": "OK",
+        "h8_exit_date": "2025-06-25",
+        "h9_exit_date": "2025-06-26",
+        "h10_exit_date": "2025-06-27"
+      },
+      {
+        "nominal_anchor": "2025-06-18",
+        "signal_date": "2025-06-18",
+        "entry_date": "2025-06-20",
+        "rolled_back_days": 0,
+        "signal_month": "2025-06",
+        "status": "OK",
+        "h8_exit_date": "2025-07-02",
+        "h9_exit_date": "2025-07-03",
+        "h10_exit_date": "2025-07-07"
+      },
+      {
+        "nominal_anchor": "2025-06-25",
+        "signal_date": "2025-06-25",
+        "entry_date": "2025-06-26",
+        "rolled_back_days": 0,
+        "signal_month": "2025-06",
+        "status": "OK",
+        "h8_exit_date": "2025-07-09",
+        "h9_exit_date": "2025-07-10",
+        "h10_exit_date": "2025-07-11"
+      },
+      {
+        "nominal_anchor": "2025-07-02",
+        "signal_date": "2025-07-02",
+        "entry_date": "2025-07-03",
+        "rolled_back_days": 0,
+        "signal_month": "2025-07",
+        "status": "OK",
+        "h8_exit_date": "2025-07-16",
+        "h9_exit_date": "2025-07-17",
+        "h10_exit_date": "2025-07-18"
+      },
+      {
+        "nominal_anchor": "2025-07-09",
+        "signal_date": "2025-07-09",
+        "entry_date": "2025-07-10",
+        "rolled_back_days": 0,
+        "signal_month": "2025-07",
+        "status": "OK",
+        "h8_exit_date": "2025-07-22",
+        "h9_exit_date": "2025-07-23",
+        "h10_exit_date": "2025-07-24"
+      },
+      {
+        "nominal_anchor": "2025-07-16",
+        "signal_date": "2025-07-16",
+        "entry_date": "2025-07-17",
+        "rolled_back_days": 0,
+        "signal_month": "2025-07",
+        "status": "OK",
+        "h8_exit_date": "2025-07-29",
+        "h9_exit_date": "2025-07-30",
+        "h10_exit_date": "2025-07-31"
+      },
+      {
+        "nominal_anchor": "2025-07-23",
+        "signal_date": "2025-07-23",
+        "entry_date": "2025-07-24",
+        "rolled_back_days": 0,
+        "signal_month": "2025-07",
+        "status": "OK",
+        "h8_exit_date": "2025-08-05",
+        "h9_exit_date": "2025-08-06",
+        "h10_exit_date": "2025-08-07"
+      },
+      {
+        "nominal_anchor": "2025-07-30",
+        "signal_date": "2025-07-30",
+        "entry_date": "2025-07-31",
+        "rolled_back_days": 0,
+        "signal_month": "2025-07",
+        "status": "OK",
+        "h8_exit_date": "2025-08-12",
+        "h9_exit_date": "2025-08-13",
+        "h10_exit_date": "2025-08-14"
+      },
+      {
+        "nominal_anchor": "2025-08-06",
+        "signal_date": "2025-08-06",
+        "entry_date": "2025-08-07",
+        "rolled_back_days": 0,
+        "signal_month": "2025-08",
+        "status": "OK",
+        "h8_exit_date": "2025-08-19",
+        "h9_exit_date": "2025-08-20",
+        "h10_exit_date": "2025-08-21"
+      },
+      {
+        "nominal_anchor": "2025-08-13",
+        "signal_date": "2025-08-13",
+        "entry_date": "2025-08-14",
+        "rolled_back_days": 0,
+        "signal_month": "2025-08",
+        "status": "OK",
+        "h8_exit_date": "2025-08-26",
+        "h9_exit_date": "2025-08-27",
+        "h10_exit_date": "2025-08-28"
+      },
+      {
+        "nominal_anchor": "2025-08-20",
+        "signal_date": "2025-08-20",
+        "entry_date": "2025-08-21",
+        "rolled_back_days": 0,
+        "signal_month": "2025-08",
+        "status": "OK",
+        "h8_exit_date": "2025-09-03",
+        "h9_exit_date": "2025-09-04",
+        "h10_exit_date": "2025-09-05"
+      },
+      {
+        "nominal_anchor": "2025-08-27",
+        "signal_date": "2025-08-27",
+        "entry_date": "2025-08-28",
+        "rolled_back_days": 0,
+        "signal_month": "2025-08",
+        "status": "OK",
+        "h8_exit_date": "2025-09-10",
+        "h9_exit_date": "2025-09-11",
+        "h10_exit_date": "2025-09-12"
+      }
+    ]
+  },
+  "models": {
+    "universe": {
+      "prior_close_band": [
+        10.0,
+        80.0
+      ],
+      "min_prior_dollar_volume": 10000000.0,
+      "basis": "session D uses the official end-of-day record of session D-1",
+      "exclusions": "exchange-traded products and exchange test issues",
+      "etp_rule_effect": "no-op on this roster; applied so the contract is enforced"
+    },
+    "ranking": {
+      "rule": "15-session corporate-action-adjusted return, descending, ties by symbol",
+      "slots": 8
+    },
+    "PARENT": {
+      "name": "Equal-Dollar Short",
+      "base_notional": 4000.0,
+      "rule": "flat ticket, no multiplier"
+    },
+    "R4": {
+      "name": "Volume-Sized Short",
+      "base_notional": 5150.0,
+      "rule": "half ticket when the signal-session volume ratio exceeds 1"
+    },
+    "R5": {
+      "name": "Momentum+Volume-Sized Short",
+      "base_notional": 8300.0,
+      "rule": "independent halving when the three-session return exceeds 0 and when the signal-session volume ratio exceeds 1; operators are strictly > 0 and > 1; a missing feature leaves its own multiplier at 1 and is never a favorable state",
+      "volume_ratio": "signal-session share volume over the arithmetic mean of the prior 20 regular-hours sessions, all 21 sessions required, split-consistent units"
+    },
+    "C1": {
+      "name": "Rank-One 1.50x Reallocation",
+      "multiplier": 1.5,
+      "formula": "rank1_target = 1.50 * b1; other_scale = (T - rank1_target) / sum(b2..b8); all eight names retained; the cohort base total T is unchanged to full precision before integer-share flooring",
+      "failure_rule": "a nonpositive other_scale fails the cohort; no cap is invented",
+      "provenance": "Arrow 012 frozen definition; no other multiplier is tested"
+    },
+    "C2": {
+      "name": "Off-High Substitution",
+      "threshold_M": -0.05508960975760213,
+      "threshold_provenance": "reports/cg_arrow011_hypothesis_freeze.json frozen_definitions.close_vs_high20_is_median",
+      "search_depth": 20,
+      "formula": "rank one protected; removable = original ranks 2-8 with close_vs_high20 >= M; eligible = original ranks 9-20 with close_vs_high20 < M, certified, not already held; k = min(removable, eligible); remove the k worst original ranks (8 first), add the k best original ranks (9 first); exactly eight unique names",
+      "sizing": "compute the frozen R5 tier for every name in the new lineup from its own pre-entry features, then budget_scale = T / S so the cohort base total equals the incumbent T",
+      "missing_data_rule": "a name with a missing off-high value is neither removable nor eligible; a replacement whose evidence is incomplete is not certified and cannot be chosen; the rule never keeps the original silently nor skips to the next name for a data failure"
+    },
+    "C3": {
+      "name": "Combined Reallocation and Substitution",
+      "formula": "start from the C2 substituted lineup and its budget-normalized allocations summing to T; apply the C1 1.50x reallocation to the original protected rank-one name, reducing the other seven proportionally so the total is still T",
+      "independence": "built as its own chronological account, never inferred from C1 and C2"
+    }
+  },
+  "account_conventions": {
+    "quantity": "CAUSAL_PREORDER_QTY; integer shares floored from the last completed pre-order bar",
+    "fixed_dollar": "base allocations at 100,000 equity, no compounding",
+    "equity_scaling": {
+      "rule_id": "cg_arrow010_causal_signal_close_equity_scaling_v1",
+      "reference": "that account's own marked equity at the signal-session close",
+      "scale": "reference equity / 100,000",
+      "separation": "each equity-scaled book uses its own causal path, never another book's"
+    },
+    "costs": {
+      "commission_per_share_per_side": 0.005,
+      "spread_proxy": "max(0.01, 0.001 * price) per side",
+      "excluded": "no generic 10%/30% borrow haircut in headline tables"
+    },
+    "identity": "daily account equity is cash minus short liability at the last available minute close",
+    "footnote": "Modeled P&L includes the lab's stated commission/spread assumptions; broker-specific locate/HTB charges, dividends, financing, forced-close effects, taxes and other execution items are excluded. Historical fills and availability are modeled, not broker execution guarantees."
+  },
+  "reveal_matrix": {
+    "cells": [
+      {
+        "cell": 1,
+        "model": "Volume-Sized Short",
+        "legacy_id": "R4",
+        "account_view": "FIXED_DOLLAR",
+        "hold": 8,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal"
+      },
+      {
+        "cell": 2,
+        "model": "Volume-Sized Short",
+        "legacy_id": "R4",
+        "account_view": "FIXED_DOLLAR",
+        "hold": 9,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal"
+      },
+      {
+        "cell": 3,
+        "model": "Volume-Sized Short",
+        "legacy_id": "R4",
+        "account_view": "FIXED_DOLLAR",
+        "hold": 10,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal"
+      },
+      {
+        "cell": 4,
+        "model": "Momentum+Volume-Sized Short",
+        "legacy_id": "R5",
+        "account_view": "FIXED_DOLLAR",
+        "hold": 8,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal"
+      },
+      {
+        "cell": 5,
+        "model": "Momentum+Volume-Sized Short",
+        "legacy_id": "R5",
+        "account_view": "FIXED_DOLLAR",
+        "hold": 9,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal"
+      },
+      {
+        "cell": 6,
+        "model": "Momentum+Volume-Sized Short",
+        "legacy_id": "R5",
+        "account_view": "FIXED_DOLLAR",
+        "hold": 10,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal"
+      },
+      {
+        "cell": 7,
+        "model": "Momentum+Volume-Sized Short",
+        "legacy_id": "R5",
+        "account_view": "EQUITY_SCALED",
+        "hold": 8,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal"
+      },
+      {
+        "cell": 8,
+        "model": "Momentum+Volume-Sized Short",
+        "legacy_id": "R5",
+        "account_view": "EQUITY_SCALED",
+        "hold": 9,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal"
+      },
+      {
+        "cell": 9,
+        "model": "Momentum+Volume-Sized Short",
+        "legacy_id": "R5",
+        "account_view": "EQUITY_SCALED",
+        "hold": 10,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal"
+      },
+      {
+        "cell": 10,
+        "model": "Rank-One 1.50x Reallocation",
+        "legacy_id": "C1",
+        "account_view": "EQUITY_SCALED",
+        "hold": 8,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal challenger"
+      },
+      {
+        "cell": 11,
+        "model": "Rank-One 1.50x Reallocation",
+        "legacy_id": "C1",
+        "account_view": "EQUITY_SCALED",
+        "hold": 9,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal challenger"
+      },
+      {
+        "cell": 12,
+        "model": "Rank-One 1.50x Reallocation",
+        "legacy_id": "C1",
+        "account_view": "EQUITY_SCALED",
+        "hold": 10,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "principal challenger"
+      },
+      {
+        "cell": 13,
+        "model": "Equal-Dollar Short",
+        "legacy_id": "PARENT",
+        "account_view": "FIXED_DOLLAR",
+        "hold": 10,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "diagnostic control"
+      },
+      {
+        "cell": 14,
+        "model": "Rank-One 1.50x Reallocation",
+        "legacy_id": "C1",
+        "account_view": "FIXED_DOLLAR",
+        "hold": 10,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "mandatory diagnostic",
+        "note": "Addendum 1 section 3: separates the reallocation effect from equity compounding"
+      },
+      {
+        "cell": 15,
+        "model": "Off-High Substitution",
+        "legacy_id": "C2",
+        "account_view": "FIXED_DOLLAR",
+        "hold": 10,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "falsification control"
+      },
+      {
+        "cell": 16,
+        "model": "Off-High Substitution",
+        "legacy_id": "C2",
+        "account_view": "EQUITY_SCALED",
+        "hold": 10,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "falsification control"
+      },
+      {
+        "cell": 17,
+        "model": "Combined Reallocation and Substitution",
+        "legacy_id": "C3",
+        "account_view": "FIXED_DOLLAR",
+        "hold": 10,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "falsification control"
+      },
+      {
+        "cell": 18,
+        "model": "Combined Reallocation and Substitution",
+        "legacy_id": "C3",
+        "account_view": "EQUITY_SCALED",
+        "hold": 10,
+        "quantity_convention": "CAUSAL_PREORDER_QTY",
+        "role": "falsification control"
+      }
+    ],
+    "cell_count": 18,
+    "closed": "no cell may be added, removed or redefined after this commit"
+  },
+  "reporting": {
+    "monthly_standard": "cg_lab_monthly_account_reporting_v1",
+    "monthly_applies_to": "every scored complete account, all twelve months, none omitted",
+    "outcome_lenses": {
+      "sizing_neutral": "1 - P1 / (F * P0) where F is the action factor over the hold",
+      "fixed_dollar_contribution": "modeled net under fixed base allocations",
+      "equity_scaled_contribution": "modeled net under that book's own causal equity path"
+    },
+    "separate_quantities": [
+      "eventual completed-trade P&L",
+      "marked account P&L at the cutoff",
+      "post-cutoff incremental runoff",
+      "open documented obligations"
+    ],
+    "cohort_pnl_basis": "eventual modeled P&L owned by the original signal cohort",
+    "public_outputs": [
+      "cg_arrow014_certification_gate.md",
+      "cg_arrow014_reveal_freeze.json",
+      "cg_arrow014_headline_matrix.csv",
+      "cg_arrow014_account_summary.csv",
+      "cg_arrow014_monthly_account.csv",
+      "cg_arrow014_cohort_fixed_matrix.csv",
+      "cg_arrow014_cohort_equity_matrix.csv",
+      "cg_arrow014_cohort_breadth.csv",
+      "cg_arrow014_mechanism_confirmation.csv",
+      "cg_arrow014_horizon_attribution.csv",
+      "cg_arrow014_drawdown_episodes.csv",
+      "cg_arrow014_historical_vs_pristine.csv",
+      "cg_arrow014_rank_by_rank.csv",
+      "cg_arrow014_reveal.md",
+      "cg_arrow014_manifest.json",
+      "cg_arrow014_commands.txt"
+    ]
+  },
+  "mechanism_panel": {
+    "provenance": "Arrow 011 and Arrow 012 frozen definitions only; no threshold is learned here",
+    "checks": [
+      {
+        "id": "M1",
+        "name": "rank-one effect",
+        "test": "rank one versus ranks 2-8 on sizing-neutral H10 return: mean, median, hit rate, cohort support"
+      },
+      {
+        "id": "M2",
+        "name": "rank-one gap and extremeness",
+        "feature": "cx_gap_to_next_rank",
+        "test": "frozen continuous within-cohort relationship"
+      },
+      {
+        "id": "M3",
+        "name": "off-high among ranks 2-8",
+        "feature": "sc_close_vs_high20",
+        "cuts": "exact Arrow 011 frozen tercile cuts and median; no refit"
+      },
+      {
+        "id": "M4",
+        "name": "price-band by off-high state map",
+        "cuts": "frozen bands [10,20) [20,40) [40,80) and the A11 median -0.05508960975760213"
+      },
+      {
+        "id": "M5",
+        "name": "wide-range and volatility descriptors",
+        "features": [
+          "sc_mean_range_pct_10",
+          "sc_logret_std_15",
+          "sc_signal_day_range_pct",
+          "po_partial_range_pct"
+        ]
+      },
+      {
+        "id": "M6",
+        "name": "episodic-advance descriptors",
+        "features": [
+          "sc_up_sessions_15",
+          "sc_top3_sessions_share_of_advance"
+        ]
+      },
+      {
+        "id": "M7",
+        "name": "R5 three-session momentum sign",
+        "feature": "sc_ret3",
+        "test": "frozen sign split; sizing is not altered by the result"
+      },
+      {
+        "id": "M8",
+        "name": "pre-order incremental information",
+        "features": [
+          "po_signal_close_to_preorder",
+          "po_preorder_location_in_partial_range",
+          "po_overnight_gap_vs_signal_close"
+        ]
+      },
+      {
+        "id": "M9",
+        "name": "repeat-selection episode effect",
+        "feature": "ep_episode"
+      },
+      {
+        "id": "M10",
+        "name": "holding-path anatomy",
+        "test": "rank one and ranks 2-8 close-only sizing-neutral paths at ages 1..10, H8/H9/H10 marked"
+      }
+    ],
+    "classifications": [
+      "PRISTINE_REPLICATION",
+      "SAME_DIRECTION_WEAKER",
+      "NOT_REPLICATED",
+      "INCONCLUSIVE_SPARSE",
+      "DATA_LIMIT"
+    ],
+    "a11_frozen_cuts": {
+      "sc_ret1": [
+        -0.0015182186234816708,
+        0.045739910313901344
+      ],
+      "sc_ret3": [
+        0.04163169380560694,
+        0.22577140373750537
+      ],
+      "sc_ret5": [
+        0.11557512383048962,
+        0.49493333333333345
+      ],
+      "sc_ret10": [
+        0.4416403785488958,
+        1.027694929697486
+      ],
+      "sc_ret15": [
+        0.8111540585311983,
+        1.2533333333333334
+      ],
+      "sc_ret15_to_5": [
+        0.26696495152871,
+        0.7110956036287508
+      ],
+      "sc_recent_minus_earlier": [
+        -0.6267824211288942,
+        0.23122314987436177
+      ],
+      "sc_acceleration_3": [
+        -0.0959255222649027,
+        0.09617975876105045
+      ],
+      "sc_largest_session_share_of_advance": [
+        0.4403263457692494,
+        0.630976816829606
+      ],
+      "sc_top3_sessions_share_of_advance": [
+        0.838594928443275,
+        1.0257495452612244
+      ],
+      "sc_up_sessions_15": [
+        9.0,
+        10.0
+      ],
+      "sc_logret_std_15": [
+        0.09053605138980203,
+        0.14376051360776285
+      ],
+      "sc_gap_share_of_advance": [
+        0.21994397603065655,
+        0.5329651594632151
+      ],
+      "sc_close_vs_high20": [
+        -0.09703201013858798,
+        -0.032975670004701696
+      ],
+      "sc_close_vs_max_close15": [
+        -0.025963149078726988,
+        0.0
+      ],
+      "sc_sessions_since_max_close15": [
+        0.0,
+        2.0
+      ],
+      "sc_position_in_range20": [
+        0.8336134453781513,
+        0.9427570093457943
+      ],
+      "sc_close_location_signal_day": [
+        0.3297326203208556,
+        0.7132293691046107
+      ],
+      "sc_signal_day_range_pct": [
+        0.07136715391229578,
+        0.14552919708029202
+      ],
+      "sc_mean_range_pct_10": [
+        0.09132808746646522,
+        0.14497518378067362
+      ],
+      "sc_volume_ratio_frozen": [
+        0.7192108978491337,
+        1.4769011793629399
+      ],
+      "sc_volume_trend_5_vs_15": [
+        1.1389323062253511,
+        2.666820208433371
+      ],
+      "sc_dollar_volume_signal_day": [
+        34741191.120000005,
+        105323886.33
+      ],
+      "sc_dollar_volume_mean20": [
+        29075381.678,
+        73690759.24925001
+      ],
+      "sc_dollar_volume_cv20": [
+        0.9289505434267501,
+        1.6606976985161215
+      ],
+      "sc_volume_expansion_15": [
+        1.9714706189852051,
+        4.648878360597562
+      ],
+      "sc_move_per_volume_unit": [
+        0.2443516907923681,
+        0.44712798506163576
+      ],
+      "sc_signal_close": [
+        18.560000000000002,
+        37.275
+      ],
+      "cx_rank_in_eight": [
+        3.0,
+        6.0
+      ],
+      "cx_ret15_minus_cohort_median": [
+        -0.09326003840883312,
+        0.14276345116181188
+      ],
+      "cx_gap_to_next_rank": [
+        0.03185998112431343,
+        0.17591288943302086
+      ],
+      "cx_cohort_ret15_spread": [
+        1.6634740259740257,
+        3.3024511629777686
+      ],
+      "cx_ret15_field_percentile": [
+        0.9955979457079971,
+        0.9977426636568849
+      ],
+      "ep_prior_selections": [
+        0.0,
+        1.0
+      ],
+      "ep_sessions_since_last_selection": [
+        5.0,
+        5.0
+      ],
+      "po_overnight_gap_vs_signal_close": [
+        -0.00693107431651907,
+        0.006375227686703067
+      ],
+      "po_signal_close_to_preorder": [
+        -0.021302291742451795,
+        0.016966580976863765
+      ],
+      "po_open_to_preorder": [
+        -0.025237529691211402,
+        0.018563357546408366
+      ],
+      "po_preorder_location_in_partial_range": [
+        0.2961229946524067,
+        0.6610738255033565
+      ],
+      "po_partial_range_pct": [
+        0.06905089408528192,
+        0.13146811070998787
+      ],
+      "po_partial_volume_vs_elapsed_window_mean": [
+        0.5383518859613998,
+        0.9036052964087407
+      ],
+      "po_preorder_price": [
+        18.945,
+        37.45
+      ]
+    },
+    "a11_off_high_median": -0.05508960975760213
+  },
+  "rank_by_rank_diagnostic": {
+    "provenance": "Addendum 2 section 3",
+    "historical_reference_h10_mean": {
+      "1": 0.272,
+      "2": 0.073,
+      "3": 0.039,
+      "4": 0.027,
+      "5": 0.092,
+      "6": 0.026,
+      "7": -0.015,
+      "8": 0.013
+    },
+    "historical_reference_h10_hit": {
+      "1": 0.83,
+      "2": 0.58,
+      "3": 0.52,
+      "4": 0.5,
+      "5": 0.62,
+      "6": 0.49,
+      "7": 0.46,
+      "8": 0.46
+    },
+    "status": "diagnostic only; it may not create a top-five book, drop ranks 6-8, change the C1 multiplier or introduce any allocation rule on this holdout"
+  },
+  "input_hashes": {
+    "a11_freeze": "87a8221fa6613326128324611841f30f6ad000c188a8b0f64a926c5d62e7a111",
+    "a12_freeze": "84addc01d190c7889e775e39e9466f55ce16ff02fb0fe2d80ec6efb1795f68de",
+    "a13_manifest": "9ddf894aa1415502cb27447edd30d3af8a6727a7257c12d78d481bb7f65a26be",
+    "a13_holdout_definition": "2676af6fe2b1662565ce6aa7332f661166c39d26a57f75db2017ca5ddf388091",
+    "phase0a_manifest": "066e03ed6699c57f00dc74710f4e437e136eab99ae553dcd9033cc6631712b9d",
+    "eligibility_holdout": "f83656029e1f0e618c3a836a88402a1b7c3e9aa6943aaef0d2b3a716afb520a2",
+    "minute_universe": "f0a16c21c30af51d4ae3d0490d3f0df280b675230f943164eb2b1b9f43b72334"
+  },
+  "code_hashes": {
+    "src/verification/r4r5_holdout.py": "164d87c738e3c0c974f41a9f4e07a70df8edc06ce36b9519a7ff833251726101",
+    "src/verification/r4r5_replay.py": "52be77f2c43acc81eeb8628a0119a387386e6f16697d32c96bd13709528e7a42",
+    "src/verification/r4r5_equity.py": "f77396a3a1f9053d3845eae5ee37b302fa1f2367d27f017dc0d73e9868eb45d6",
+    "src/verification/r4r5_challenger.py": "2ffe2937ce5d7ddc86326f737f272f9f5efd21be95297c6110b69c1a058c4c6a",
+    "src/verification/r4r5_rank.py": "46352d8c0d2abf810782b6cf7d31cb2fcf1081a37fb38287bbd467aa3c4fade3",
+    "src/verification/r4r5_data.py": "cf0cd05cc055095b812bcb8ce7021b65baf8873c5d51e9fa77e6446416ccd9ce",
+    "src/verification/r4r5_accounting.py": "e3fe9cdfc0aa45950d95bc1a781b51ab6d804e75df4c7b24b1660b78a3ee09e3",
+    "src/verification/r4r5_metrics.py": "57b50791e80f4c6745bf213858a4a95a61b178c6b1b1c3f8c26841f2486d4c5f",
+    "src/verification/r4r5_monthly.py": "ba38eea95fa6868dee9178c73a07658c4089f68790bcb24315d8ea11a18b00b1",
+    "src/verification/r4r5_anatomy.py": "27400d4bd88b29052f63beeca70ee1fe5295a567e59ab25c247c18af7122df71",
+    "src/verification/r4r5_oracle.py": "ce0b846c65207597fea343d4f476f3013747fa3fcd53b6cc7171e3cdd1283206",
+    "src/ingest/holdout2024.py": "64a0364a248b3319c9139becb25fa3f9f611724460bc1899b2f319a29aaafe30",
+    "scripts/cg_arrow014_phase0a.py": "9214b3be9847d5beb266624a096925c7b7d91b0008cba7cb49cb9523ef3dd7d4",
+    "scripts/cg_arrow014_lock1.py": "e65158502445e739cfe8cbef27b42ecd9aa423b2344fc68e4a7b09abf8996296"
+  },
+  "a13_status_preserved": "HOLDOUT_DATA_PARTIALLY_CERTIFIED",
+  "a13_declared_gaps": [
+    "no documented dated corporate-action table exists yet for the holdout window",
+    "point-in-time security identity and ticker-change mapping not yet assembled for this window"
+  ],
+  "lock2_binding": {
+    "artifact": "reports/cg_arrow014_certification_gate.md",
+    "manifest": "reports/cg_arrow014_manifest.json",
+    "required_status": "HOLDOUT_DATA_CERTIFIED_FOR_PRISTINE_REVEAL",
+    "rule": "LOCK 2 references and hashes this immutable freeze. This freeze is never rewritten to insert the certification digest."
+  }
+}
