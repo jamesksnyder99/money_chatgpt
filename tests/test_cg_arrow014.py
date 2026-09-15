@@ -227,3 +227,103 @@ def test_the_gap_fill_tree_can_never_shadow_an_existing_observation():
     from verification import r4r5_data as data
     labels = [lbl for lbl, _ in data.candidate_paths(datetime.date(2025, 8, 6), "AAPL")]
     assert labels[-1] == "holdout_repair"
+
+# ------------------------------------------------------------------ the report builders
+def _trade(cohort, symbol, rank, ret, q=100, p0=20.0):
+    """A completed ledger row whose sizing-neutral return is exactly `ret`."""
+    p1 = (1 - ret) * p0
+    gross = q * p0 * ret
+    return {"cohort_id": cohort, "symbol": symbol, "rank": rank,
+            "status": "VERIFIED_PRICE_LOCAL_SINGLE_SOURCE", "quantity": q,
+            "entry_price": p0, "exit_price": p1, "action_factor_over_hold": 1.0,
+            "gross_pnl": gross, "modeled_net": gross - 5.0,
+            "scheduled_entry_date": "2024-09-05"}
+
+
+def _book(trades):
+    return {"trades": trades,
+            "daily": [{"date": "2025-08-29", "equity": 100000.0 + sum(t["modeled_net"] for t in trades)}]}
+
+
+def test_sizing_neutral_return_is_read_from_the_key_the_engine_uses():
+    """The engine returns `price_return_10`; reading a different key would give silent Nones."""
+    from verification import r4r5_anatomy as an
+    out = an.sizing_neutral_outcome(_trade("2024-09-04", "AAA", 1, 0.25))
+    assert out["completed"] is True
+    assert out["price_return_10"] == pytest.approx(0.25)
+
+
+def test_rank_by_rank_reports_every_rank_at_every_hold_against_the_frozen_reference():
+    from verification import r4r5_holdout as HO
+    freeze = json.loads((ROOT / "reports" / "cg_arrow014_reveal_freeze.json").read_text(encoding="utf-8"))
+    trades = [_trade(f"2024-09-{4 + c:02d}", f"S{r}", r, 0.30 if r == 1 else 0.02)
+              for c in range(0, 3) for r in range(1, 9)]
+    books = {("R5", "FIXED_DOLLAR", h): _book(trades) for h in HO.HOLDS}
+    rows = reveal.rank_by_rank(books, freeze)
+    assert {r["rank"] for r in rows} == set(range(1, 9))
+    assert {r["hold"] for r in rows} == set(HO.HOLDS)
+    h10 = {r["rank"]: r for r in rows if r["hold"] == 10}
+    assert h10[1]["mean"] == pytest.approx(0.30)
+    assert h10[1]["hit_rate"] == 1.0
+    # the historical reference is attached at H10 only, so the comparison is never implied elsewhere
+    assert h10[1]["historical_h10_mean"] == freeze["rank_by_rank_diagnostic"]["historical_reference_h10_mean"]["1"]
+    assert all(r["historical_h10_mean"] is None for r in rows if r["hold"] != 10)
+
+
+def test_mechanism_panel_covers_every_declared_check():
+    freeze = json.loads((ROOT / "reports" / "cg_arrow014_reveal_freeze.json").read_text(encoding="utf-8"))
+    anat = []
+    for c in range(24):
+        for r in range(1, 9):
+            anat.append({
+                "cohort_id": f"2024-09-{(c % 28) + 1:02d}", "symbol": f"S{c}_{r}", "rank": r,
+                "price_band": "[10,20)",
+                "sizing_neutral_return": 0.30 if r == 1 else (0.05 - 0.01 * r),
+                "sc_close_vs_high20": -0.02 - 0.01 * r, "sc_ret3": 0.05 * r,
+                "sc_mean_range_pct_10": 0.10 + 0.001 * r, "sc_logret_std_15": 0.09 + 0.002 * r,
+                "sc_signal_day_range_pct": 0.07 + 0.003 * r,
+                "sc_up_sessions_15": 8 + (r % 3),
+                "sc_top3_sessions_share_of_advance": 0.8 + 0.02 * r,
+                "po_partial_range_pct": 0.06 + 0.002 * r,
+                "po_signal_close_to_preorder": -0.01 + 0.002 * r,
+                "po_preorder_location_in_partial_range": 0.3 + 0.03 * r,
+                "po_overnight_gap_vs_signal_close": -0.005 + 0.001 * r,
+                "cx_gap_to_next_rank": 0.20 - 0.02 * r,
+                "ep_episode": "FIRST" if r % 2 else "LATER_REPEAT"})
+    rows = reveal.mechanism_panel(anat, freeze)
+    checks = {r["check"] for r in rows}
+    declared = {c["id"] for c in freeze["mechanism_panel"]["checks"]}
+    # M5, M6 and M8 are declared as multi-feature checks and are emitted one feature per row
+    families = {c.split("a")[0].split("b")[0].split("c")[0].split("d")[0] for c in checks}
+    assert declared - families - {"M10"} == set(), declared - families - {"M10"}
+    allowed = set(freeze["mechanism_panel"]["classifications"]) | {"REPORTED"}
+    assert {r["classification"] for r in rows} <= allowed
+
+    m1 = next(r for r in rows if r["check"] == "M1")
+    assert m1["n"] == 24 and m1["contrast_n"] == 168
+    assert m1["mean"] == pytest.approx(0.30)
+    assert m1["effect"] > 0
+    # the frozen cuts must actually be used where A11 declared them
+    m3 = next(r for r in rows if r["check"] == "M3")
+    assert m3["cuts_source"] == "A11 frozen"
+
+
+def test_mechanism_panel_marks_a_sparse_group_rather_than_ruling_on_it():
+    freeze = json.loads((ROOT / "reports" / "cg_arrow014_reveal_freeze.json").read_text(encoding="utf-8"))
+    anat = [{"cohort_id": "2024-09-04", "symbol": f"S{r}", "rank": r,
+             "price_band": "[40,80)", "sizing_neutral_return": 0.01 * r,
+             "sc_close_vs_high20": -0.05, "ep_episode": "FIRST"} for r in range(1, 6)]
+    rows = reveal.mechanism_panel(anat, freeze)
+    assert any(r["classification"] == "INCONCLUSIVE_SPARSE" for r in rows)
+    assert not any(r["classification"] == "PRISTINE_REPLICATION" for r in rows)
+
+
+def test_the_panel_never_invents_a_classification_outside_the_freeze():
+    freeze = json.loads((ROOT / "reports" / "cg_arrow014_reveal_freeze.json").read_text(encoding="utf-8"))
+    allowed = set(freeze["mechanism_panel"]["classifications"]) | {"REPORTED", None}
+    anat = [{"cohort_id": f"2024-09-{(i % 28) + 1:02d}", "symbol": f"S{i}", "rank": (i % 8) + 1,
+             "price_band": "[20,40)", "sizing_neutral_return": (i % 7) * 0.01 - 0.02,
+             "sc_close_vs_high20": -0.04 - 0.001 * i, "sc_ret3": 0.01 * i,
+             "cx_gap_to_next_rank": 0.05, "ep_episode": "FIRST"} for i in range(200)]
+    rows = reveal.mechanism_panel(anat, freeze)
+    assert {r["classification"] for r in rows} <= allowed
