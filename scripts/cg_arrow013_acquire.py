@@ -44,6 +44,11 @@ from ingest.theta_pool import ThetaLimiter, call_theta  # noqa: E402
 from verification.r4r5_data import dump_json, stamp  # noqa: E402
 
 MAX_CONCURRENCY = 8
+# A vendor session can expire or be invalidated mid-run. Every later request then fails with
+# UNAUTHENTICATED, and without a guard the stage would churn through its whole queue recording
+# failures and acquiring nothing, which looks like progress in a file count but is not. The
+# stage aborts after this many consecutive session failures so a resume starts a fresh session.
+SESSION_FAILURE_ABORT = 50
 # The vendor issues one session per authenticated client. A second concurrent client
 # invalidates the first, which surfaces as UNAUTHENTICATED "Invalid session ID. This can occur
 # if more than one terminal is running." Exactly one acquisition process may hold a session at
@@ -99,6 +104,32 @@ def errors_path(stage: str) -> Path:
     return H.WORK / f"vendor_errors_{stage}.jsonl"
 
 
+class SessionLost(RuntimeError):
+    """The vendor session is gone; abort rather than fail the rest of the queue."""
+
+
+_CONSECUTIVE_SESSION_FAILURES = 0
+
+
+def note_vendor_outcome(exc: BaseException | None) -> None:
+    """Track consecutive session failures and raise once the run is clearly dead."""
+    global _CONSECUTIVE_SESSION_FAILURES
+    if exc is None:
+        _CONSECUTIVE_SESSION_FAILURES = 0
+        return
+    msg = str(exc).lower()
+    if "unauthenticated" in msg or "invalid session id" in msg:
+        _CONSECUTIVE_SESSION_FAILURES += 1
+        if _CONSECUTIVE_SESSION_FAILURES >= SESSION_FAILURE_ABORT:
+            raise SessionLost(
+                f"{_CONSECUTIVE_SESSION_FAILURES} consecutive vendor session failures. The "
+                "authenticated session is gone, so nothing further can be acquired in this "
+                "process. Re-run the same command to resume with a fresh session; landed "
+                "partitions are skipped.")
+    else:
+        _CONSECUTIVE_SESSION_FAILURES = 0
+
+
 def record_error(stage: str, **fields) -> None:
     errors_path(stage).parent.mkdir(parents=True, exist_ok=True)
     with errors_path(stage).open("a", encoding="utf-8") as fh:
@@ -130,6 +161,7 @@ def pull_one_eod(client, limiter, symbol: str, start: date, end: date, chunk: st
     except Exception as exc:  # noqa: BLE001
         record_error("eod", symbol=symbol, chunk=chunk,
                      error_class=type(exc).__name__, error_message=str(exc)[:400])
+        note_vendor_outcome(exc)
         return {"symbol": symbol, "chunk": chunk, "state": "VENDOR_ERROR",
                 "error_class": type(exc).__name__, "rows": None, "seconds": 0.0}
 
@@ -181,8 +213,10 @@ def pull_one_month_bars(client, limiter, symbol: str, start: date, end: date, ch
     except Exception as exc:  # noqa: BLE001
         record_error("bars", symbol=symbol, chunk=chunk,
                      error_class=type(exc).__name__, error_message=str(exc)[:400])
+        note_vendor_outcome(exc)
         return {"symbol": symbol, "chunk": chunk, "state": "VENDOR_ERROR",
                 "error_class": type(exc).__name__, "sessions": 0, "rows": 0, "seconds": 0.0}
+    note_vendor_outcome(None)
     norm = normalize_ohlc_full(df, symbol, False)
     rows = 0
     by_day = {d: g for (d,), g in norm.group_by("session_date")} if norm.height else {}
@@ -231,7 +265,16 @@ def stage_bars(client, limiter, workers: int, months: list[str] | None) -> dict:
         with ThreadPoolExecutor(max_workers=workers) as pool:
             futs = [pool.submit(pull_one_month_bars, client, limiter, s, start, end, chunk) for s in syms]
             for fut in as_completed(futs):
-                r = fut.result()
+                try:
+                    r = fut.result()
+                except SessionLost as lost:
+                    note(f"ABORTING: {lost}")
+                    for f2 in futs:
+                        f2.cancel()
+                    dump_json(H.WORK / "bars_progress.json",
+                              {"last_completed_chunk": chunk, "counts": counts, "rows": total_rows,
+                               "aborted": "vendor session lost", "at": stamp()})
+                    raise
                 counts[r["state"]] = counts.get(r["state"], 0) + 1
                 total_rows += r.get("rows") or 0
                 done += 1

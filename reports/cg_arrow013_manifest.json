@@ -1,8 +1,8 @@
 {
   "arrow": "CG Arrow 013",
   "stage": "certification",
-  "timestamp": "2026-09-15T01:18:15+00:00",
-  "head_at_run": "df4fce709c1a49889f8632ed40d687b0986770d9",
+  "timestamp": "2026-09-15T01:25:10+00:00",
+  "head_at_run": "974285ac04c6929b4716c62e284029530e7c789b",
   "definition_id": "cg_arrow013_holdout_sep2024_aug2025_v1",
   "authentication": {
     "repo_root": "C:\\Users\\james\\Money_ChatGPT",
@@ -142,9 +142,9 @@
     "identical": true
   },
   "minute_integrity": {
-    "partitions": 70281,
+    "partitions": 75737,
     "empty_partitions": 0,
-    "rows": 50602320,
+    "rows": 54530640,
     "dup_timestamp_partitions": 0,
     "unordered_partitions": 0,
     "outside_window_partitions": 0,
@@ -152,12 +152,12 @@
     "negative_volume_partitions": 0,
     "nonfinite_price_partitions": 0,
     "rth_bar_over_expected": 0,
-    "no_trade_minutes": 8630652,
-    "traded_minutes": 18778938,
-    "volume_without_last_sale_price_minutes": 5124477,
-    "priced_traded_minutes": 13654461,
+    "no_trade_minutes": 9372046,
+    "traded_minutes": 20165384,
+    "volume_without_last_sale_price_minutes": 5527947,
+    "priced_traded_minutes": 14637437,
     "unreadable": 0,
-    "symbols_with_rth": 70281
+    "symbols_with_rth": 75737
   },
   "per_session_integrity_rows": 65,
   "eligibility": {
@@ -210,17 +210,17 @@
   },
   "aggregation_reconciliation": {
     "sampled": 65,
-    "compared": 11,
+    "compared": 15,
     "states": {
-      "MISSING_PARTITION": 54,
-      "COMPARED": 11
+      "MISSING_PARTITION": 50,
+      "COMPARED": 15
     },
-    "volume_ratio_min": 0.736076,
-    "volume_ratio_median": 0.874719,
+    "volume_ratio_min": 0.666862,
+    "volume_ratio_median": 0.868652,
     "volume_ratio_max": 0.986394,
     "volume_ratio_within_1pct": 0,
     "close_delta_median": 0.01,
-    "close_delta_max": 0.0141,
+    "close_delta_max": 0.04,
     "tolerance_note": "regular-hours minute volume is compared with the vendor's end-of-day share volume. The end-of-day figure is a consolidated national total and includes prints the regular-hours minute window does not carry, so a ratio below one is expected and is documented rather than tuned away"
   },
   "corporate_actions_and_identity": {
@@ -248,7 +248,7 @@
       "bytes": 10513
     },
     "data/holdout2024/work/bars_progress.json": {
-      "sha256": "a9f5aa8e250a9ae79df2e619f2ad131d2765889132e8f1bd055f0cabf17269db",
+      "sha256": "ee289d57dca4b8ab75e87daaec55db23b00ff33ee268a5bf7ed5deb0e5c95b2d",
       "bytes": 218
     },
     "data/holdout2024/work/eligibility_manifest.json": {
@@ -326,114 +326,114 @@
       "listing_sha256": "5a23dbd2ef40699c7460657fe1d1cb9a53e370e999fe7ee962ffc39c8983e34a"
     },
     "raw/bars/2024-08-01": {
-      "partitions": 2985,
-      "bytes": 30741093,
-      "listing_sha256": "21f82fb8ab5b0dc8058ec3ff4ef680b0f39a4723c00e78c2ddfec00347b9ba0c"
+      "partitions": 3339,
+      "bytes": 34351241,
+      "listing_sha256": "ae49d8c2e0f11a253660dd49ffc7b1bebbe51834317df7adc28b91f725a197b5"
     },
     "raw/bars/2024-08-02": {
-      "partitions": 2985,
-      "bytes": 30803550,
-      "listing_sha256": "d2cfa65d70b9e6e8b68567fbfd326b2fadc2a047ce1e4b5d1df5fb592b08421f"
+      "partitions": 3339,
+      "bytes": 34424485,
+      "listing_sha256": "a8d554eb95a9ff387a823ccb243398ad81d018a6c70f7f6222d3e9e9c5a33b89"
     },
     "raw/bars/2024-08-05": {
-      "partitions": 2985,
-      "bytes": 32074186,
-      "listing_sha256": "cc3e869d9bf9e80ebe37c1c7405bf2bf6c0fbb33ea9b739ff0b478665b168b9f"
+      "partitions": 3347,
+      "bytes": 35922437,
+      "listing_sha256": "b3769a4dae1d230395c0ce2b28e71dece261ea76cdca4bc3176ae2a0da3c22d7"
     },
     "raw/bars/2024-08-06": {
-      "partitions": 2985,
-      "bytes": 30268415,
-      "listing_sha256": "87670d5154b95f81cdc88b8e128a30f679244c0f5a5dcb00bc82f6a202dd5c1e"
+      "partitions": 3347,
+      "bytes": 33913203,
+      "listing_sha256": "6f82cf4fad606d22f7c1e07f23ad2d7816a8563ef1b8c58ef2c74eac1bab373c"
     },
     "raw/bars/2024-08-07": {
-      "partitions": 2985,
-      "bytes": 30282989,
-      "listing_sha256": "96d8916595f4a2d96403649eb498221cff586f66ab8e8e1c02fb568d5c9b8ba9"
+      "partitions": 3347,
+      "bytes": 33949108,
+      "listing_sha256": "380308067f7a3e48294418d2ad5e38973e6279bb35ce089b6850c1bfed8b0454"
     },
     "raw/bars/2024-08-08": {
-      "partitions": 2985,
-      "bytes": 29814722,
-      "listing_sha256": "e40d4ce19d6f5deb5716c2a33e6347a3c9e36d2773ec4e5277988f29a11c90e9"
+      "partitions": 3347,
+      "bytes": 33411044,
+      "listing_sha256": "231fd4a69d996749385f6cea0f6dc9b3c18143b3236913b329c0f411e3a5308e"
     },
     "raw/bars/2024-08-09": {
-      "partitions": 2985,
-      "bytes": 29350028,
-      "listing_sha256": "fc26a4552ca322fb69f487a8cfd3986343f1da270ce3c0c4ddcd71d92563d448"
+      "partitions": 3347,
+      "bytes": 32920280,
+      "listing_sha256": "c9709d51334ba034f0b4bb641e2d705a4ee948eb72f9085a9ac0d6cca61313f1"
     },
     "raw/bars/2024-08-12": {
-      "partitions": 2985,
-      "bytes": 29432200,
-      "listing_sha256": "0a35d26fce6a3610b6468e2b120addc7a6379182f1f5078f74262790421dc469"
+      "partitions": 3347,
+      "bytes": 33008465,
+      "listing_sha256": "30fdcabb12af97d2088b7e3a16dc03252302e00591ea9bdc00f94e48d6b8306b"
     },
     "raw/bars/2024-08-13": {
-      "partitions": 2985,
-      "bytes": 29429166,
-      "listing_sha256": "c5531c6a90039b871bca3a25c3174364e55af03534bba7161851c9bdfcad601d"
+      "partitions": 3347,
+      "bytes": 33005619,
+      "listing_sha256": "e414c4f07723591c3025ca309b02543481c79c90893365ee83cde26bf8e524b6"
     },
     "raw/bars/2024-08-14": {
-      "partitions": 2985,
-      "bytes": 29307094,
-      "listing_sha256": "027307a69bae4370a753c2357d2d2469fe13a115429b0b3ed3e10f4fbbe4b125"
+      "partitions": 3347,
+      "bytes": 32857021,
+      "listing_sha256": "17dc07c232a8f1814b67dc3ebe27a499d014203f247c7aea801d854ef73ffc73"
     },
     "raw/bars/2024-08-15": {
-      "partitions": 2985,
-      "bytes": 29737705,
-      "listing_sha256": "a8576a0270dfbd236a90ace39b1ad373090124e6353d1c3bceb249207dca3a5f"
+      "partitions": 3347,
+      "bytes": 33341706,
+      "listing_sha256": "c4fef1b003b5afcccb2857b1c1faad6c04b0c63ecf69c2f4ccbeaab0e8d63c95"
     },
     "raw/bars/2024-08-16": {
-      "partitions": 2985,
-      "bytes": 29181919,
-      "listing_sha256": "216a4608228d7d4a6d114666e0dce3474b4a8b72614d267ee657213b4d58b4c5"
+      "partitions": 3347,
+      "bytes": 32714580,
+      "listing_sha256": "19e82a16561fab498653357f1e1b9a6d5d15f97590a2d2353a74ea5a1b408939"
     },
     "raw/bars/2024-08-19": {
-      "partitions": 2985,
-      "bytes": 29445525,
-      "listing_sha256": "0758df8eb6db17d36e4a9df60c1aa046b308cb5e37ea580ba00be4cd873b2bf1"
+      "partitions": 3355,
+      "bytes": 33085416,
+      "listing_sha256": "e7a8b6bfa4843759607e9bc4599d1ec37184b962576a417a0b9ff843a3a1af05"
     },
     "raw/bars/2024-08-20": {
-      "partitions": 2985,
-      "bytes": 29196783,
-      "listing_sha256": "bb8b0735a79fceb50ee531da28261680b06aa3710f9a7db20535cbfcf6e092eb"
+      "partitions": 3355,
+      "bytes": 32804085,
+      "listing_sha256": "9871464d0f6febb40bcad2bf83eef756a51fe8bed6b48f94bb63a1ef0b4606d5"
     },
     "raw/bars/2024-08-21": {
-      "partitions": 2985,
-      "bytes": 29197997,
-      "listing_sha256": "a364b07709a3ea7f4faf2ebeb749cd994df984c60cea29db06521e75517ce443"
+      "partitions": 3355,
+      "bytes": 32816439,
+      "listing_sha256": "e16a001d35010bc2b2692d95f5d32aac6772925db3d852324cc964b6f0bbf6c4"
     },
     "raw/bars/2024-08-22": {
-      "partitions": 2985,
-      "bytes": 29007954,
-      "listing_sha256": "113af80eb155d3ab5e6d78d77e7acef21281f28777f579905bd5cda87e89c5f6"
+      "partitions": 3355,
+      "bytes": 32583577,
+      "listing_sha256": "bfecf3423c465ba9c084233581a8a4e441e7735b6d2d6b23b40124ea913b50f9"
     },
     "raw/bars/2024-08-23": {
-      "partitions": 2985,
-      "bytes": 29710535,
-      "listing_sha256": "9475d4f6a5ac9cf69f2ea46dabc9a2f6967215532c8937f61e35a7e36cd59353"
+      "partitions": 3355,
+      "bytes": 33374017,
+      "listing_sha256": "1a755e4ab31d133d7d4a746ab428ffe9b8d7c91eb392a5085827190403c7f185"
     },
     "raw/bars/2024-08-26": {
-      "partitions": 2985,
-      "bytes": 29459159,
-      "listing_sha256": "e9cb1b4dc31cfaea290c02490c50286977d5b78eea3e11e9ced087af2b18b9e5"
+      "partitions": 3355,
+      "bytes": 33091383,
+      "listing_sha256": "e0e4d04aafeeee22f00cc4e6e0b043ee5818df97e4c4050b27ef417ccd8fa9b2"
     },
     "raw/bars/2024-08-27": {
-      "partitions": 2985,
-      "bytes": 28924344,
-      "listing_sha256": "25bac1451d359fcf0e88e1784df33ea3c1e9138b3e1321af14b67c3804e5d8e8"
+      "partitions": 3355,
+      "bytes": 32478796,
+      "listing_sha256": "634655529f22556487bd1da3d17a7e2e34637f41501b47394674950bdec9a93b"
     },
     "raw/bars/2024-08-28": {
-      "partitions": 2985,
-      "bytes": 29261070,
-      "listing_sha256": "373149e350a731597ed7e89869a49559668151810d05f4947af9244e1b310fae"
+      "partitions": 3355,
+      "bytes": 32835297,
+      "listing_sha256": "b04ae7999d76b24aef28ad40a2732811b98653f8245e225e26c6e7ea6d517f6e"
     },
     "raw/bars/2024-08-29": {
-      "partitions": 2985,
-      "bytes": 29332124,
-      "listing_sha256": "ec6b462366ea81b2c73672c455c8a3b1b73ab55946bdbc4e0638d721242f8ace"
+      "partitions": 3355,
+      "bytes": 32923818,
+      "listing_sha256": "6f3ce0a909c30a590855467ceb8c582485adde3a2e7e921d67ff57d4c9f353b9"
     },
     "raw/bars/2024-08-30": {
-      "partitions": 2985,
-      "bytes": 28999771,
-      "listing_sha256": "39ea6b817144de99e13c607ad1c540c82c0bad091155679418f980e885346524"
+      "partitions": 3355,
+      "bytes": 32552488,
+      "listing_sha256": "6677e1ea1c6513beee5b8951960a671bc0b4a25f1d433d8abf349e9abf20f03c"
     },
     "raw/bars/2024-09-03": {
       "partitions": 142,
@@ -667,15 +667,15 @@
     "statement": "NO STRATEGY PERFORMANCE WAS SCORED OR REVEALED IN ARROW 013"
   },
   "log": [
-    "2026-09-15T01:16:28+00:00 +0.0m calendar cross-check: lab 292 sessions, reference 292, identical=True",
-    "2026-09-15T01:16:28+00:00 +0.0m calendar: 292 sessions, 3 early closes, 12 closures in window",
-    "2026-09-15T01:16:28+00:00 +0.0m minute integrity: validating 65 landed session partitions",
-    "2026-09-15T01:17:35+00:00 +1.2m   validated 50/65 sessions",
-    "2026-09-15T01:17:39+00:00 +1.2m minute integrity aggregate: {'partitions': 70281, 'empty_partitions': 0, 'rows': 50602320, 'dup_timestamp_partitions': 0, 'unordered_partitions': 0, 'outside_window_partitions': 0, 'ohlc_inconsistent_partitions': 0, 'negative_volume_partitions': 0, 'nonfinite_price_partitions': 0, 'rth_bar_over_expected': 0, 'no_trade_minutes': 8630652, 'traded_minutes': 18778938, 'volume_without_last_sale_price_minutes': 5124477, 'priced_traded_minutes': 13654461, 'unreadable': 0, 'symbols_with_rth': 70281}",
-    "2026-09-15T01:17:39+00:00 +1.2m coverage: 292 sessions inventoried; 107 carry a minute layer",
-    "2026-09-15T01:17:39+00:00 +1.2m aggregation reconciliation: 65 deterministic symbol-session samples",
-    "2026-09-15T01:17:41+00:00 +1.2m aggregation reconciliation: 11 compared, volume ratio median 0.874719, close delta median 0.01",
-    "2026-09-15T01:17:41+00:00 +1.2m exceptions: 4 recorded, 4 block certification",
-    "2026-09-15T01:18:14+00:00 +1.8m hash manifest: 6 certification artifacts, 77 raw partition groups"
+    "2026-09-15T01:22:55+00:00 +0.0m calendar cross-check: lab 292 sessions, reference 292, identical=True",
+    "2026-09-15T01:22:55+00:00 +0.0m calendar: 292 sessions, 3 early closes, 12 closures in window",
+    "2026-09-15T01:22:55+00:00 +0.0m minute integrity: validating 65 landed session partitions",
+    "2026-09-15T01:24:21+00:00 +1.5m   validated 50/65 sessions",
+    "2026-09-15T01:24:29+00:00 +1.6m minute integrity aggregate: {'partitions': 75737, 'empty_partitions': 0, 'rows': 54530640, 'dup_timestamp_partitions': 0, 'unordered_partitions': 0, 'outside_window_partitions': 0, 'ohlc_inconsistent_partitions': 0, 'negative_volume_partitions': 0, 'nonfinite_price_partitions': 0, 'rth_bar_over_expected': 0, 'no_trade_minutes': 9372046, 'traded_minutes': 20165384, 'volume_without_last_sale_price_minutes': 5527947, 'priced_traded_minutes': 14637437, 'unreadable': 0, 'symbols_with_rth': 75737}",
+    "2026-09-15T01:24:30+00:00 +1.6m coverage: 292 sessions inventoried; 107 carry a minute layer",
+    "2026-09-15T01:24:30+00:00 +1.6m aggregation reconciliation: 65 deterministic symbol-session samples",
+    "2026-09-15T01:24:31+00:00 +1.6m aggregation reconciliation: 15 compared, volume ratio median 0.868652, close delta median 0.01",
+    "2026-09-15T01:24:31+00:00 +1.6m exceptions: 4 recorded, 4 block certification",
+    "2026-09-15T01:25:10+00:00 +2.3m hash manifest: 6 certification artifacts, 77 raw partition groups"
   ]
 }

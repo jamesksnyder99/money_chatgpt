@@ -85,6 +85,15 @@ python scripts/cg_arrow013_acquire.py bars --workers 8 --threads 8
 #   acquisition continues under the documented resume command and certification reports the
 #   exact landed coverage rather than waiting on it.
 
+# 6b. Vendor session expiry and the fail-closed guard (01:11-01:21)
+#   the authenticated session expired mid-run. Every later request returned UNAUTHENTICATED and
+#   the stage churned through its queue recording 40,812 failures while acquiring nothing, which
+#   looks like progress in an error count but is not. Only one process was alive, so this was
+#   expiry rather than a second session. The acquisition now aborts after 50 consecutive session
+#   failures with an explicit instruction to re-run, so a dead session fails closed instead of
+#   silently consuming the queue. Restarting produced a fresh session with zero errors.
+#   The expired-session error ledger is preserved at work/vendor_errors_bars_expired_session.jsonl.
+
 # 7. Certification
 python scripts/cg_arrow013_certify.py --workers 8 --sample 400
 python scripts/cg_arrow013_report.py

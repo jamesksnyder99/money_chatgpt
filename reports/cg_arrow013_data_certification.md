@@ -1,6 +1,6 @@
 # CG Arrow 013 — acquisition and certification of the pristine September 2024 to August 2025 holdout
 
-Executor: Opus in Claude Code. Run head `df4fce7`. This arrow acquires, authenticates, normalizes and certifies data. It runs no strategy.
+Executor: Opus in Claude Code. Run head `974285a`. This arrow acquires, authenticates, normalizes and certifies data. It runs no strategy.
 
 ## The frozen period, fixed before any data were touched
 
@@ -72,9 +72,9 @@ Both New York daylight-saving transitions inside the window are covered, and lan
 | More regular-hours bars than the session schedule allows | 0 |
 | Landed partition that could not be read back | 0 |
 
-Inventory covers 70,281 landed partitions holding 50,602,320 minute rows, of which 18,778,938 regular-hours minutes carried volume and 8,630,652 did not.
+Inventory covers 75,737 landed partitions holding 54,530,640 minute rows, of which 20,165,384 regular-hours minutes carried volume and 9,372,046 did not.
 
-Four distinct minute states are kept apart and never merged. A no-trade minute returns NaN prices with zero volume. A missing bar is absent from the partition entirely. A halt is a documented market event. And 5,124,477 regular-hours minutes carried consolidated volume with a positive trade count but no last-sale-eligible price, so their open, high, low and close are NaN. Those are real prints that do not set high, low or last under the tape's trade-condition rules, not a data defect: the frozen loader already requires a finite positive open and close, so such a minute can never become a mark or an execution. The remaining 13,654,461 regular-hours minutes carry both volume and a usable price and are the ones the integrity checks above are run against.
+Four distinct minute states are kept apart and never merged. A no-trade minute returns NaN prices with zero volume. A missing bar is absent from the partition entirely. A halt is a documented market event. And 5,527,947 regular-hours minutes carried consolidated volume with a positive trade count but no last-sale-eligible price, so their open, high, low and close are NaN. Those are real prints that do not set high, low or last under the tape's trade-condition rules, not a data defect: the frozen loader already requires a finite positive open and close, so such a minute can never become a mark or an execution. The remaining 14,637,437 regular-hours minutes carry both volume and a usable price and are the ones the integrity checks above are run against.
 
 ### Full-universe and ranking-field completeness
 
@@ -98,9 +98,9 @@ Eligibility is point in time by construction: a session is judged on the prior s
 
 | Reconciliation | Value |
 |---|---:|
-| Deterministic symbol-session samples compared | 11 of 65 |
-| Regular-hours minute volume over end-of-day volume, median | 0.874719 |
-| Same ratio, minimum and maximum | 0.736076 to 0.986394 |
+| Deterministic symbol-session samples compared | 15 of 65 |
+| Regular-hours minute volume over end-of-day volume, median | 0.868652 |
+| Same ratio, minimum and maximum | 0.666862 to 0.986394 |
 | Last traded minute close versus end-of-day close, median absolute difference | 0.01 |
 
 Regular-hours minute volume is compared with the vendor's end-of-day share volume. The end-of-day figure is a consolidated national total and includes prints the regular-hours minute window does not carry, so a ratio below one is expected and is documented rather than tuned away.
