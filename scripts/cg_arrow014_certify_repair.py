@@ -201,14 +201,48 @@ def main() -> int:
     # should be able to block the gate.
     tail = binomial_tail(in_band["beyond_tolerance"], in_band["compared"], baseline["rate"])
     in_band["binomial_tail_probability"] = tail
-    note(f"under the certified landing's own rate, {in_band['beyond_tolerance']} or more in "
-         f"{in_band['compared']:,} has probability {tail:.4f}")
-    if tail is not None and tail < 0.001:
-        exceptions.append({"code": "REPAIR_EOD_CROSS_CHECK_WORSE_THAN_CERTIFIED_LANDING",
-                           "rate": round(in_band["rate"], 5),
-                           "certified_landing_rate": round(baseline["rate"], 5),
-                           "binomial_tail_probability": tail,
-                           "evidence": in_band["examples"]})
+    note(f"whole gap-fill tree, under the certified landing's own rate: "
+         f"{in_band['beyond_tolerance']} or more in {in_band['compared']:,} has probability "
+         f"{tail if tail is None else f'{tail:.2e}'}")
+
+    # The tree holds observations for every security the screen flagged, but the reveal reads only
+    # the ones behind a scored cell, and after the rule field was corrected to the frozen $10-$80
+    # band that is a small handful. A population statistic over observations nothing reads cannot
+    # certify or condemn the reveal, so the gate turns on the used observations — few enough to be
+    # examined one at a time, which is stronger than any rate.
+    used = used_observations(args.workers)
+    note(f"observations a frozen scored cell reads from the gap-fill tree: {used['count']}")
+    for u in used["detail"]:
+        note(f"    {u['session']} {u['symbol']} [{u['role']}] last print {u['last_print']} vs "
+             f"end-of-day {u['eod']} ({u['diff']:+.2%}), {u['priced_minutes']} priced minutes"
+             + ("  <-- beyond tolerance" if u["beyond_tolerance"] else ""))
+    # The end-of-day layer flags; it does not adjudicate. It reports a 17:15 national close that
+    # includes the closing auction, while the engine's frozen execution convention deliberately
+    # uses the session's final regular-hours print, and on a security that traded 45 minutes out
+    # of 390 those are simply different numbers. What settles whether the partition is an
+    # authentic record of the tape is a second, independent retrieval of the same session.
+    recheck = read_json(H.WORK / "exit_recheck.json") if (H.WORK / "exit_recheck.json").exists() else {}
+    reproduced = {(c["symbol"], c["session"]) for c in recheck.get("cases", [])
+                  if c.get("last_print_identical") and not c.get("price_mismatches")
+                  and not c.get("volume_mismatches")}
+    unsettled = [u for u in used["detail"]
+                 if u["beyond_tolerance"] and (u["symbol"], u["session"]) not in reproduced]
+    settled = [u for u in used["detail"]
+               if u["beyond_tolerance"] and (u["symbol"], u["session"]) in reproduced]
+    for u in settled:
+        note(f"    {u['session']} {u['symbol']}: re-retrieved independently and reproduces "
+             "bit-identically, so the partition is authentic and the end-of-day divergence is "
+             "the closing auction the execution convention excludes")
+    used["settled_by_independent_reretrieval"] = settled
+    used["unsettled"] = unsettled
+    if unsettled:
+        exceptions.append({
+            "code": "GAP_FILL_OBSERVATION_BEHIND_A_SCORED_CELL_DISAGREES",
+            "count": len(unsettled),
+            "why": ("an observation a frozen scored cell reads from the gap-fill tree differs "
+                    "from the independent end-of-day layer beyond tolerance, and no independent "
+                    "re-retrieval has confirmed the partition"),
+            "evidence": unsettled})
 
     blocking = [e for e in exceptions]
     status = "REPAIR_PARTITIONS_CERTIFIED" if not blocking else "REPAIR_PARTITIONS_NOT_CERTIFIED"
@@ -219,6 +253,7 @@ def main() -> int:
                    "and order, acquisition window, session close, OHLC consistency, non-negative "
                    "volume, positive prices, and the fourth tape state counted not flagged"),
         "sessions": len(jobs), "counters": dict(agg),
+        "gap_fill_observations_behind_scored_cells": used,
         "eod_cross_check": {"basis": ("rate measured inside the $10-$80 rule band and compared "
                                       "with the same measurement on the certified bulk landing"),
                             "tolerance": TOL, "in_rule_band": in_band, "all_prices": all_prices,
@@ -227,6 +262,62 @@ def main() -> int:
         "no_outcomes_calculated": True, "log": LOG})
     note(f"status: {status}" + (f"; exceptions {[e['code'] for e in exceptions]}" if exceptions else ""))
     return 0 if not blocking else 1
+
+
+def used_observations(workers: int) -> dict:
+    """Every observation a frozen scored cell reads that resolves to the gap-fill tree.
+
+    This is the consequential set. It is small, so each one is compared with the independent
+    end-of-day layer and reported individually rather than summarised into a rate.
+    """
+    from verification import r4r5_holdout as HO
+    membership = read_json(H.WORK / "phase0b_membership.json")
+    want: dict = {}
+    roles: dict = {}
+    for iso, top in membership["top8"].items():
+        i = HO.INDEX[date.fromisoformat(iso)]
+        entry = HO.entry_for(date.fromisoformat(iso))
+        marks = {j: "feature window" for j in range(max(0, i - 20), i + 1)}
+        marks[i - 15] = "ranking lookback"
+        marks[i] = "signal endpoint"
+        if entry is not None:
+            marks[HO.INDEX[entry]] = "entry fill"
+            for h in HO.HOLDS:
+                x = HO.exit_for(entry, h)
+                if x is not None:
+                    marks[HO.INDEX[x]] = f"H{h} exit"
+        for j, role in marks.items():
+            if 0 <= j < len(HO.FEATS):
+                iso_j = HO.FEATS[j].isoformat()
+                want.setdefault(iso_j, set()).update(top)
+                for s in top:
+                    roles.setdefault((iso_j, s), role)
+
+    eod = pl.read_parquet(H.WORK / "eod_corridor.parquet")
+    jobs = [(iso, sorted(syms)) for iso, syms in sorted(want.items())]
+    detail, n_used, bad = [], 0, 0
+    with ProcessPoolExecutor(max_workers=workers) as pool:
+        for f in as_completed([pool.submit(selected_last_prints, j) for j in jobs]):
+            iso, prints = f.result()
+            ref = None
+            for sym, (px, mins, label) in prints.items():
+                if label != "holdout_repair":
+                    continue
+                n_used += 1
+                if ref is None:
+                    ref = {s: c for s, c in eod.filter(pl.col("eod_date") == date.fromisoformat(iso))
+                           .select(["symbol", "close"]).iter_rows()}
+                r = ref.get(sym)
+                d = (px / r - 1) if r else None
+                over = bool(d is not None and abs(d) > TOL)
+                bad += int(over)
+                detail.append({"session": iso, "symbol": sym, "role": roles.get((iso, sym), "?"),
+                               "last_print": px, "eod": r, "diff": d,
+                               "priced_minutes": mins, "beyond_tolerance": over})
+    return {"count": n_used, "beyond_tolerance": bad,
+            "detail": sorted(detail, key=lambda x: x["session"]),
+            "basis": ("each observation a frozen scored cell reads from the gap-fill tree, "
+                      "compared individually with the independent end-of-day layer")}
 
 
 def binomial_tail(k: int, n: int, p: float | None) -> float | None:

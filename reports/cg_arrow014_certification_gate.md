@@ -55,7 +55,7 @@ both classes could not be ranked at all.
 
 They were acquired rather than dropped, because a candidate that cannot be ranked might belong in
 the top eight and excluding it would be choosing the selection by hand. The gap-fill landed
-27,360 rows over 2 vendor requests into
+867,600 rows over 78 vendor requests into
 `data/holdout2024/repair/bars`, which resolves **last** in source precedence: it can supply an
 observation nothing else has and can never replace one that already exists. Those partitions were
 certified under the identical Arrow 013 partition gate
@@ -70,10 +70,10 @@ selection would have been wrong.
 
 52 cohorts, 416 selected slots and
 624 rank 9-20 control candidates, drawn from a
-point-in-time eligible field of 1,261 to
-1,735 securities per signal session.
+point-in-time eligible field of 1,082 to
+1,387 securities per signal session.
 Candidates unrankable on an unresolved observation: 0.
-Membership SHA-256 `3931985d9e7e4c4998fe386d973dea372f109a0a66c9b750424378086fbde4fb`, reached as a fixed point under the
+Membership SHA-256 `339c86ca6a4362e3f7c448c49be65427d0be33b9512e071d105847e14bdbf7dc`, reached as a fixed point under the
 documented action table `reports/cg_arrow014_corporate_actions.json`.
 
 ## Sessions on which a selected security did not trade
@@ -98,4 +98,4 @@ No no-trade session is ever read as a price, a zero, or a halt.
 Nothing in Arrow 014 up to and including this gate has calculated a return, a hit rate, a drawdown, a monthly figure or an ending equity on the pristine corridor. Memberships were generated only to identify which observations required certification.
 
 ---
-Generated 2026-09-15T21:58:26+00:00 at `cb9c329`.
+Generated 2026-09-15T22:24:11+00:00 at `50677a0`.

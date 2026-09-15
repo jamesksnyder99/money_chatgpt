@@ -1,8 +1,8 @@
 {
   "arrow": "CG Arrow 014",
   "stage": "LOCK_2_certification_gate",
-  "timestamp": "2026-09-15T21:58:26+00:00",
-  "head_at_gate": "cb9c32962188106c2b4466914cc35aa93f20abb0",
+  "timestamp": "2026-09-15T22:24:11+00:00",
+  "head_at_gate": "50677a01f1c3f895e02308cdf4ba0abb3487e7e4",
   "corridor_id": "cg_arrow014_pristine_sep2024_aug2025_v1",
   "status": "HOLDOUT_DATA_CERTIFIED_FOR_PRISTINE_REVEAL",
   "a13_status_preserved": "HOLDOUT_DATA_PARTIALLY_CERTIFIED",
@@ -79,7 +79,7 @@
     "h10_holding_unexplained": 0
   },
   "exceptions": [],
-  "membership_sha256": "3931985d9e7e4c4998fe386d973dea372f109a0a66c9b750424378086fbde4fb",
+  "membership_sha256": "339c86ca6a4362e3f7c448c49be65427d0be33b9512e071d105847e14bdbf7dc",
   "action_table": "reports/cg_arrow014_corporate_actions.json",
   "action_table_sha256": "5aceb728541da2806299fcf9a55f4acfef05019cec035b8fb113dd4283d13b8b",
   "evidence": {
@@ -90,8 +90,8 @@
       "cohorts": 52
     },
     "gap_fill": {
-      "requests": 2,
-      "rows": 27360,
+      "requests": 78,
+      "rows": 867600,
       "tree": "data/holdout2024/repair/bars",
       "precedence": "resolved last, so it can fill a gap but never shadow an existing observation",
       "still_missing": 0,
@@ -118,16 +118,16 @@
       "cohorts": 52,
       "selected_slots": 416,
       "control_candidates": 624,
-      "distinct_selected_securities": 277,
-      "field_min": 1261,
-      "field_max": 1735,
+      "distinct_selected_securities": 230,
+      "field_min": 1082,
+      "field_max": 1387,
       "unrankable_unresolved": 0,
       "fixed_point_reached": true
     },
     "corridor_certification": {
       "rows": 1040,
       "selected_rows": 416,
-      "observations_required": 23761
+      "observations_required": 21313
     }
   },
   "input_hashes": {
@@ -137,31 +137,31 @@
   "no_outcomes_calculated": true,
   "declaration": "Nothing in Arrow 014 up to and including this gate has calculated a return, a hit rate, a drawdown, a monthly figure or an ending equity on the pristine corridor. Memberships were generated only to identify which observations required certification.",
   "log": [
-    "2026-09-15T21:58:26+00:00 +0.0m G1: pass \u2014 LOCK 1 is committed and its cohort calendar is unchanged",
-    "2026-09-15T21:58:26+00:00 +0.0m G2: pass \u2014 the reveal matrix is still the frozen 18 cells",
-    "2026-09-15T21:58:26+00:00 +0.0m G3: pass \u2014 Phase 0A source verification reported no blocker",
-    "2026-09-15T21:58:26+00:00 +0.0m G4: pass \u2014 August 2025 was never previously scored as a signal month",
-    "2026-09-15T21:58:26+00:00 +0.0m G5: pass \u2014 every gap-fill partition passes the Arrow 013 partition gate",
-    "2026-09-15T21:58:26+00:00 +0.0m G6: pass \u2014 no ranking-stage observation is still missing",
-    "2026-09-15T21:58:26+00:00 +0.0m G7: pass \u2014 no candidate is unrankable on an unresolved observation",
-    "2026-09-15T21:58:26+00:00 +0.0m G8: pass \u2014 the mechanical membership has reached a fixed point",
-    "2026-09-15T21:58:26+00:00 +0.0m G9: pass \u2014 every screened case that touches a scored cell is resolved from documented evidence",
-    "2026-09-15T21:58:26+00:00 +0.0m G10: pass \u2014 every observation a frozen scored cell depends on was retrieved from the vendor, so nothing is missing data",
-    "2026-09-15T21:58:26+00:00 +0.0m G12: pass \u2014 every retrieved session on which a selected security did not trade is governed by a rule frozen before this corridor was acquired, and is reported rather than filled",
-    "2026-09-15T21:58:26+00:00 +0.0m G11: pass \u2014 no unresolved material exception remains on any scored cell"
+    "2026-09-15T22:24:11+00:00 +0.0m G1: pass \u2014 LOCK 1 is committed and its cohort calendar is unchanged",
+    "2026-09-15T22:24:11+00:00 +0.0m G2: pass \u2014 the reveal matrix is still the frozen 18 cells",
+    "2026-09-15T22:24:11+00:00 +0.0m G3: pass \u2014 Phase 0A source verification reported no blocker",
+    "2026-09-15T22:24:11+00:00 +0.0m G4: pass \u2014 August 2025 was never previously scored as a signal month",
+    "2026-09-15T22:24:11+00:00 +0.0m G5: pass \u2014 every gap-fill partition passes the Arrow 013 partition gate",
+    "2026-09-15T22:24:11+00:00 +0.0m G6: pass \u2014 no ranking-stage observation is still missing",
+    "2026-09-15T22:24:11+00:00 +0.0m G7: pass \u2014 no candidate is unrankable on an unresolved observation",
+    "2026-09-15T22:24:11+00:00 +0.0m G8: pass \u2014 the mechanical membership has reached a fixed point",
+    "2026-09-15T22:24:11+00:00 +0.0m G9: pass \u2014 every screened case that touches a scored cell is resolved from documented evidence",
+    "2026-09-15T22:24:11+00:00 +0.0m G10: pass \u2014 every observation a frozen scored cell depends on was retrieved from the vendor, so nothing is missing data",
+    "2026-09-15T22:24:11+00:00 +0.0m G12: pass \u2014 every retrieved session on which a selected security did not trade is governed by a rule frozen before this corridor was acquired, and is reported rather than filled",
+    "2026-09-15T22:24:11+00:00 +0.0m G11: pass \u2014 no unresolved material exception remains on any scored cell"
   ],
   "governed_by_frozen_rules": {
     "RULE_DEFINED_MISSING_SIZING_FEATURE": {
-      "rows": 10,
+      "rows": 8,
       "rule": "r4r5_replay.sizing treats a missing volume ratio as vm=1.0 and a missing three-session return as mm=1.0, so the name sizes at its FULL tier",
       "basis": "every underlying session was retrieved and shows no qualifying trade"
     },
     "DOCUMENTED_NON_EXECUTION": {
-      "entry_rows": 1,
+      "entry_rows": 2,
       "exit_rows": {
-        "h8": 9,
-        "h9": 11,
-        "h10": 11
+        "h8": 7,
+        "h9": 7,
+        "h10": 7
       },
       "rule": "the Arrow 007 convention: a resting order executes at the first later session on which the security actually trades, and if no such session exists inside the corridor the position stays open at the boundary and is excluded from completed-trade totals, appearing in the account as an open obligation",
       "basis": "every underlying session was retrieved and shows no qualifying trade"

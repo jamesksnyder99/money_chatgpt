@@ -104,21 +104,26 @@ def account_view(book: dict, summaries: dict, label: str) -> dict:
         "B_equals_realised_plus_unrealised": abs(B - (realised + unrealised_at_cutoff)) < TOL,
     }
     n_sessions = len(daily)
+    # These strings are read by an auditor as a statement of what was measured, so they are taken
+    # from the account path itself. They previously named the 2025-26 study's own dates, which
+    # would have described the wrong period entirely on any other corridor.
+    cutoff_iso = last["date"]
+    first_iso = daily[0]["date"]
     return {
         "book": label,
         "A_completed_trade_pnl_all_cohorts": A,
-        "A_basis": "eventual P&L of every completed position of every signal cohort, including "
-                   "exits scheduled after 2026-08-31",
+        "A_basis": ("eventual P&L of every completed position of every signal cohort, including "
+                    f"exits scheduled after {cutoff_iso}"),
         "completed_trades_exiting_through_cutoff": realised,
         "completed_trade_count": len(views),
         "B_marked_account_pnl_at_cutoff": B,
-        "B_basis": "account equity at 2026-08-31 minus the 100,000 starting equity, that is realised "
-                   "P&L through the cutoff plus unrealised P&L on positions still open",
+        "B_basis": (f"account equity at {cutoff_iso} minus the 100,000 starting equity, that is "
+                    "realised P&L through the cutoff plus unrealised P&L on positions still open"),
         "unrealised_at_cutoff": unrealised_at_cutoff,
         "C_post_cutoff_incremental_runoff_pnl": C,
-        "C_basis": "value earned after 2026-08-31 only, on positions already open at the cutoff",
+        "C_basis": (f"value earned after {cutoff_iso} only, on positions already open at the cutoff"),
         "D_eventual_pnl_of_runoff_trades": D,
-        "D_basis": "full-life P&L of trades whose exit falls after 2026-08-31",
+        "D_basis": f"full-life P&L of trades whose exit falls after {cutoff_iso}",
         "runoff_trade_count": len(runoff),
         "runoff_marked_pnl_at_cutoff": runoff_marked,
         "E_open_documented_obligations": len(open_obl),
@@ -131,8 +136,9 @@ def account_view(book: dict, summaries: dict, label: str) -> dict:
         "unresolved_slots": len(unresolved),
         "account_sessions_to_cutoff": n_sessions,
         "marked_account_pnl_per_account_session": B / n_sessions,
-        "per_session_basis": (f"numerator: marked account P&L at 2026-08-31 ({B:,.2f}); "
-                              f"denominator: {n_sessions} account sessions from 2025-09-02 to 2026-08-31"),
+        "per_session_basis": (f"numerator: marked account P&L at {cutoff_iso} ({B:,.2f}); "
+                              f"denominator: {n_sessions} account sessions from {first_iso} "
+                              f"to {cutoff_iso}"),
         "identity_checks": checks,
         "identities_hold": all(checks.values()),
     }

@@ -1,0 +1,43 @@
+age_sessions,check,classification,cohorts,contrast_group,contrast_hit_rate,contrast_mean,contrast_n,cuts_source,effect,feature,group,historical_effect,hit_effect,hit_rate,is_frozen_hold,mean,median,n,name,pooled_spearman,securities,t1_low_mean,t3_high_mean,within_cohort_mean_spearman,within_cohort_positive_share
+,M1,SAME_DIRECTION_WEAKER,50,ranks 2-8,0.6676,0.06263,355,none,0.109168,rank,rank 1,0.235571,,0.84,,0.171798,0.238625,50,rank-one effect,,,,,,
+,M2,REPORTED,52,,,,,A11 frozen,0.04586,cx_gap_to_next_rank,all,,0.0901,,,,,405,cx_gap_to_next_rank,0.134891,273,0.030375,0.076235,0.101969,0.6154
+,M3,REPORTED,52,,,,,A11 frozen,-0.034945,sc_close_vs_high20,ranks 2-8,,-0.092,,,,,346,sc_close_vs_high20,-0.204974,245,0.063415,0.028469,-0.191484,0.3077
+,M5a,REPORTED,52,,,,,A11 frozen,0.097001,sc_mean_range_pct_10,all,,0.2701,,,,,396,sc_mean_range_pct_10,0.355855,265,-0.007059,0.089943,0.300641,0.7692
+,M5b,REPORTED,52,,,,,A11 frozen,-0.037733,sc_logret_std_15,all,,-0.1179,,,,,403,sc_logret_std_15,0.209319,271,0.120613,0.082879,0.199771,0.6923
+,M5c,REPORTED,52,,,,,A11 frozen,0.099161,sc_signal_day_range_pct,all,,0.3262,,,,,396,sc_signal_day_range_pct,0.312543,265,0.00112,0.100281,0.29739,0.7885
+,M5d,REPORTED,52,,,,,A11 frozen,0.196964,po_partial_range_pct,all,,0.3995,,,,,405,po_partial_range_pct,0.285371,273,-0.079539,0.117425,0.293544,0.7308
+,M6a,REPORTED,52,,,,,A11 frozen,-0.071188,sc_up_sessions_15,all,,-0.0788,,,,,403,sc_up_sessions_15,-0.103239,271,0.101931,0.030743,-0.072547,0.4423
+,M6b,REPORTED,52,,,,,A11 frozen,0.022609,sc_top3_sessions_share_of_advance,all,,-0.0085,,,,,403,sc_top3_sessions_share_of_advance,0.124506,271,0.072096,0.094705,0.112363,0.5385
+,M7,REPORTED,52,,,,,A11 frozen,0.028145,sc_ret3,all,,0.0361,,,,,404,sc_ret3,0.086496,272,0.058515,0.08666,0.082647,0.5769
+,M8a,REPORTED,52,,,,,A11 frozen,0.181337,po_signal_close_to_preorder,all,,0.1232,,,,,405,po_signal_close_to_preorder,0.135322,273,0.010002,0.191338,0.095788,0.5577
+,M8b,REPORTED,52,,,,,A11 frozen,0.196696,po_preorder_location_in_partial_range,all,,0.1175,,,,,405,po_preorder_location_in_partial_range,0.107989,273,-0.033094,0.163602,0.070742,0.5577
+,M8c,REPORTED,52,,,,,A11 frozen,0.075218,po_overnight_gap_vs_signal_close,all,,0.0132,,,,,405,po_overnight_gap_vs_signal_close,0.013572,273,0.054917,0.130136,-0.017183,0.4808
+,M4,INCONCLUSIVE_SPARSE,,,,,,A11 frozen bands and median,,sc_close_vs_high20 x price_band,"[10,20)/off_high",,,,,,,0,"price band [10,20) / off_high",,,,,,
+,M4,INCONCLUSIVE_SPARSE,,,,,,A11 frozen bands and median,,sc_close_vs_high20 x price_band,"[10,20)/near_high",,,,,,,0,"price band [10,20) / near_high",,,,,,
+,M4,INCONCLUSIVE_SPARSE,,,,,,A11 frozen bands and median,,sc_close_vs_high20 x price_band,"[20,40)/off_high",,,,,,,0,"price band [20,40) / off_high",,,,,,
+,M4,INCONCLUSIVE_SPARSE,,,,,,A11 frozen bands and median,,sc_close_vs_high20 x price_band,"[20,40)/near_high",,,,,,,0,"price band [20,40) / near_high",,,,,,
+,M4,INCONCLUSIVE_SPARSE,,,,,,A11 frozen bands and median,,sc_close_vs_high20 x price_band,"[40,80)/off_high",,,,,,,0,"price band [40,80) / off_high",,,,,,
+,M4,INCONCLUSIVE_SPARSE,,,,,,A11 frozen bands and median,,sc_close_vs_high20 x price_band,"[40,80)/near_high",,,,,,,0,"price band [40,80) / near_high",,,,,,
+,M9,REPORTED,,,,,,A11 frozen,,ep_episode,FIRST,,,0.6923,,0.08279,0.180064,273,repeat-selection episode,,,,,,
+,M9,INCONCLUSIVE_SPARSE,,,,,,A11 frozen,,ep_episode,LATER_REPEAT,,,0.7647,,0.173742,0.212598,17,repeat-selection episode,,,,,,
+,M9,REPORTED,,,,,,A11 frozen,,ep_episode,OVERLAPPING_REPEAT,,,0.6696,,0.04581,0.110847,115,repeat-selection episode,,,,,,
+1,M10,,,,,,,,,,rank 1,,,0.7115,False,0.068805,0.049939,52,,,,,,,
+2,M10,,,,,,,,,,rank 1,,,0.7647,False,0.102416,0.069224,51,,,,,,,
+3,M10,,,,,,,,,,rank 1,,,0.7647,False,0.117589,0.108191,51,,,,,,,
+4,M10,,,,,,,,,,rank 1,,,0.8039,False,0.070341,0.139198,51,,,,,,,
+5,M10,,,,,,,,,,rank 1,,,0.8431,False,0.123878,0.162304,51,,,,,,,
+6,M10,,,,,,,,,,rank 1,,,0.8235,False,0.133298,0.163043,51,,,,,,,
+7,M10,,,,,,,,,,rank 1,,,0.8235,False,0.159075,0.228261,51,,,,,,,
+8,M10,,,,,,,,,,rank 1,,,0.7843,True,0.179057,0.25861,51,,,,,,,
+9,M10,,,,,,,,,,rank 1,,,0.86,True,0.165097,0.238341,50,,,,,,,
+10,M10,,,,,,,,,,rank 1,,,0.84,True,0.171798,0.238625,50,,,,,,,
+1,M10,,,,,,,,,,ranks 2-8,,,0.5497,False,0.003323,0.010424,362,,,,,,,
+2,M10,,,,,,,,,,ranks 2-8,,,0.5651,False,0.007211,0.021528,361,,,,,,,
+3,M10,,,,,,,,,,ranks 2-8,,,0.6094,False,0.023855,0.044444,361,,,,,,,
+4,M10,,,,,,,,,,ranks 2-8,,,0.6184,False,0.023385,0.057175,359,,,,,,,
+5,M10,,,,,,,,,,ranks 2-8,,,0.6229,False,0.031901,0.063005,358,,,,,,,
+6,M10,,,,,,,,,,ranks 2-8,,,0.6443,False,0.049245,0.078516,357,,,,,,,
+7,M10,,,,,,,,,,ranks 2-8,,,0.6348,False,0.045712,0.083678,356,,,,,,,
+8,M10,,,,,,,,,,ranks 2-8,,,0.6489,True,0.040495,0.110273,356,,,,,,,
+9,M10,,,,,,,,,,ranks 2-8,,,0.6563,True,0.034479,0.120927,355,,,,,,,
+10,M10,,,,,,,,,,ranks 2-8,,,0.6676,True,0.06263,0.149852,355,,,,,,,

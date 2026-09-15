@@ -1,0 +1,29 @@
+# CG Arrow 014 — the exact sequence, in order. Each stage refuses to run out of turn.
+
+# LOCK 1: the reveal specification and the cohort calendar, committed before any membership
+python scripts/cg_arrow014_phase0a.py
+python scripts/cg_arrow014_lock1.py
+
+# Phase 0B: whole-corridor screen, mechanical membership, and the corridor census
+python scripts/cg_arrow014_phase0b.py --stage screen --threshold 1.2 --gap-sessions 3
+python scripts/cg_arrow014_phase0b.py --stage rank --workers 6
+
+# close every observation gap the August 2025 eligibility extension exposed, then certify it
+python scripts/cg_arrow014_repair_bars.py --mode ranking  --workers 8
+python scripts/cg_arrow014_repair_bars.py --mode corridor --workers 8
+python scripts/cg_arrow014_certify_repair.py --workers 8
+
+# primary-source corporate action and identity evidence, then rerank to a fixed point
+python scripts/cg_arrow014_census.py --stage scan --workers 8
+python scripts/cg_arrow014_census.py --stage resolve
+python scripts/cg_arrow014_phase0b.py --stage rank --workers 6     # repeat until the hash repeats
+
+# per-name corridor certification, then LOCK 2
+python scripts/cg_arrow014_phase0b.py --stage certify --workers 8
+python scripts/cg_arrow014_lock2.py
+
+# Phase 1: the reveal, one batch, only after LOCK 2 is committed
+python scripts/cg_arrow014_reveal.py --workers 8
+
+# the full suite
+python -m pytest tests -q

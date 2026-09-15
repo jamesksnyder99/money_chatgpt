@@ -1,0 +1,836 @@
+{
+  "arrow": "CG Arrow 014",
+  "phase": "1_reveal",
+  "timestamp": "2026-09-15T22:14:33+00:00",
+  "head_at_run": "50677a01f1c3f895e02308cdf4ba0abb3487e7e4",
+  "lock1_commit": "5b64dc6ed4fb8a9f5152139fdab1b64133f0d1ce",
+  "lock2_commit": "50677a01f1c3f895e02308cdf4ba0abb3487e7e4",
+  "corridor": {
+    "corridor_id": "cg_arrow014_pristine_sep2024_aug2025_v1",
+    "bindings_applied": 20,
+    "sessions": 292,
+    "score_sessions": 249,
+    "cutoff": "2025-08-29",
+    "local_tape_end": "2025-09-30",
+    "action_path": "C:\\Users\\james\\Money_ChatGPT\\reports\\cg_arrow014_corporate_actions.json"
+  },
+  "cells": 18,
+  "books": 18,
+  "membership_sha256": "3931985d9e7e4c4998fe386d973dea372f109a0a66c9b750424378086fbde4fb",
+  "cohorts_scored": 52,
+  "scored_matches_frozen": true,
+  "oracle": {
+    "ok": true,
+    "trades_checked": 7298,
+    "max_abs_error": 7.275957614183426e-12
+  },
+  "accounts": {
+    "R4/FIXED_DOLLAR/H8": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "R4/FIXED_DOLLAR/H9": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "R4/FIXED_DOLLAR/H10": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "R5/FIXED_DOLLAR/H8": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "R5/FIXED_DOLLAR/H9": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "R5/FIXED_DOLLAR/H10": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "R5/EQUITY_SCALED/H8": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "R5/EQUITY_SCALED/H9": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "R5/EQUITY_SCALED/H10": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "C1/EQUITY_SCALED/H8": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "C1/EQUITY_SCALED/H9": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "C1/EQUITY_SCALED/H10": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "PARENT/FIXED_DOLLAR/H10": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "C1/FIXED_DOLLAR/H10": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "C2/FIXED_DOLLAR/H10": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "C2/EQUITY_SCALED/H10": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "C3/FIXED_DOLLAR/H10": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    },
+    "C3/EQUITY_SCALED/H10": {
+      "identities_hold": true,
+      "monthly_reconciles": true,
+      "monthly_rows": 12
+    }
+  },
+  "headline_by_cell": {
+    "1": {
+      "model": "Volume-Sized Short",
+      "view": "FIXED_DOLLAR",
+      "hold": 8,
+      "A_eventual_completed_pnl": 92234.97,
+      "ending_equity": 179061.21
+    },
+    "2": {
+      "model": "Volume-Sized Short",
+      "view": "FIXED_DOLLAR",
+      "hold": 9,
+      "A_eventual_completed_pnl": 68265.68,
+      "ending_equity": 147919.17
+    },
+    "3": {
+      "model": "Volume-Sized Short",
+      "view": "FIXED_DOLLAR",
+      "hold": 10,
+      "A_eventual_completed_pnl": 114288.75,
+      "ending_equity": 192176.33
+    },
+    "4": {
+      "model": "Momentum+Volume-Sized Short",
+      "view": "FIXED_DOLLAR",
+      "hold": 8,
+      "A_eventual_completed_pnl": 93809.8,
+      "ending_equity": 183553.78
+    },
+    "5": {
+      "model": "Momentum+Volume-Sized Short",
+      "view": "FIXED_DOLLAR",
+      "hold": 9,
+      "A_eventual_completed_pnl": 56796.71,
+      "ending_equity": 139699.94
+    },
+    "6": {
+      "model": "Momentum+Volume-Sized Short",
+      "view": "FIXED_DOLLAR",
+      "hold": 10,
+      "A_eventual_completed_pnl": 109989.2,
+      "ending_equity": 191517.07
+    },
+    "7": {
+      "model": "Momentum+Volume-Sized Short",
+      "view": "EQUITY_SCALED",
+      "hold": 8,
+      "A_eventual_completed_pnl": 87496.0,
+      "ending_equity": 171862.53
+    },
+    "8": {
+      "model": "Momentum+Volume-Sized Short",
+      "view": "EQUITY_SCALED",
+      "hold": 9,
+      "A_eventual_completed_pnl": -74389.81,
+      "ending_equity": 22089.61
+    },
+    "9": {
+      "model": "Momentum+Volume-Sized Short",
+      "view": "EQUITY_SCALED",
+      "hold": 10,
+      "A_eventual_completed_pnl": 76355.1,
+      "ending_equity": 151844.61
+    },
+    "10": {
+      "model": "Rank-One 1.50x Reallocation",
+      "view": "EQUITY_SCALED",
+      "hold": 8,
+      "A_eventual_completed_pnl": 116736.55,
+      "ending_equity": 199228.95
+    },
+    "11": {
+      "model": "Rank-One 1.50x Reallocation",
+      "view": "EQUITY_SCALED",
+      "hold": 9,
+      "A_eventual_completed_pnl": -70890.87,
+      "ending_equity": 25041.63
+    },
+    "12": {
+      "model": "Rank-One 1.50x Reallocation",
+      "view": "EQUITY_SCALED",
+      "hold": 10,
+      "A_eventual_completed_pnl": 86820.3,
+      "ending_equity": 160411.16
+    },
+    "13": {
+      "model": "Equal-Dollar Short",
+      "view": "FIXED_DOLLAR",
+      "hold": 10,
+      "A_eventual_completed_pnl": 109697.69,
+      "ending_equity": 184572.75
+    },
+    "14": {
+      "model": "Rank-One 1.50x Reallocation",
+      "view": "FIXED_DOLLAR",
+      "hold": 10,
+      "A_eventual_completed_pnl": 121071.44,
+      "ending_equity": 202093.34
+    },
+    "15": {
+      "model": "Off-High Substitution",
+      "view": "FIXED_DOLLAR",
+      "hold": 10,
+      "A_eventual_completed_pnl": 106833.2,
+      "ending_equity": 190388.95
+    },
+    "16": {
+      "model": "Off-High Substitution",
+      "view": "EQUITY_SCALED",
+      "hold": 10,
+      "A_eventual_completed_pnl": 64724.94,
+      "ending_equity": 143472.25
+    },
+    "17": {
+      "model": "Combined Reallocation and Substitution",
+      "view": "FIXED_DOLLAR",
+      "hold": 10,
+      "A_eventual_completed_pnl": 117407.72,
+      "ending_equity": 200366.48
+    },
+    "18": {
+      "model": "Combined Reallocation and Substitution",
+      "view": "EQUITY_SCALED",
+      "hold": 10,
+      "A_eventual_completed_pnl": 71472.39,
+      "ending_equity": 148797.64
+    }
+  },
+  "substitutions": {
+    "2024-09-04": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 8,
+      "outgoing": [
+        "AAOI"
+      ],
+      "incoming": [
+        "ASTS"
+      ]
+    },
+    "2024-09-11": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 8,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2024-09-18": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 10,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2024-09-25": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 10,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2024-10-02": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 6,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2024-10-09": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 10,
+      "outgoing": [
+        "ALTM"
+      ],
+      "incoming": [
+        "MYTE"
+      ]
+    },
+    "2024-10-16": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 6,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2024-10-23": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 8,
+      "outgoing": [
+        "PHUN"
+      ],
+      "incoming": [
+        "LTBR"
+      ]
+    },
+    "2024-10-30": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 10,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2024-11-06": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 6,
+      "outgoing": [
+        "CDXC",
+        "SGMO"
+      ],
+      "incoming": [
+        "LTBR",
+        "SAVE"
+      ]
+    },
+    "2024-11-13": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 8,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2024-11-20": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 7,
+      "outgoing": [
+        "LMND"
+      ],
+      "incoming": [
+        "FMCC"
+      ]
+    },
+    "2024-11-27": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 9,
+      "outgoing": [
+        "PSTX"
+      ],
+      "incoming": [
+        "UAVS"
+      ]
+    },
+    "2024-12-04": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 9,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2024-12-11": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 10,
+      "outgoing": [
+        "PSTX"
+      ],
+      "incoming": [
+        "CMRX"
+      ]
+    },
+    "2024-12-18": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 12,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2024-12-24": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 10,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2024-12-31": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 11,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2025-01-08": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 10,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2025-01-15": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 9,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2025-01-22": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 6,
+      "outgoing": [
+        "VATE"
+      ],
+      "incoming": [
+        "USEG"
+      ]
+    },
+    "2025-01-29": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 4,
+      "outgoing": [
+        "STIM",
+        "CLEU"
+      ],
+      "incoming": [
+        "AKRO",
+        "AGL"
+      ]
+    },
+    "2025-02-05": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 4,
+      "outgoing": [
+        "OKLO",
+        "AKRO"
+      ],
+      "incoming": [
+        "CPIX",
+        "LTBR"
+      ]
+    },
+    "2025-02-12": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 4,
+      "outgoing": [
+        "BBAI",
+        "APPS"
+      ],
+      "incoming": [
+        "AKRO",
+        "ACB"
+      ]
+    },
+    "2025-02-19": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 11,
+      "outgoing": [
+        "EDIT"
+      ],
+      "incoming": [
+        "BBAI"
+      ]
+    },
+    "2025-02-26": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 11,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2025-03-05": {
+      "k": 5,
+      "removable": 5,
+      "eligible": 7,
+      "outgoing": [
+        "HLF",
+        "SKBL",
+        "CMRX",
+        "GRRR",
+        "SPHL"
+      ],
+      "incoming": [
+        "ESTA",
+        "CTM",
+        "MASS",
+        "STIM",
+        "ANAB"
+      ]
+    },
+    "2025-03-12": {
+      "k": 4,
+      "removable": 4,
+      "eligible": 11,
+      "outgoing": [
+        "PTGX",
+        "ECX",
+        "CMRX",
+        "TSVT"
+      ],
+      "incoming": [
+        "XNET",
+        "SNOA",
+        "MLYS",
+        "CYD"
+      ]
+    },
+    "2025-03-19": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 4,
+      "outgoing": [
+        "AKBA",
+        "CMRX",
+        "RDUS"
+      ],
+      "incoming": [
+        "TRVI",
+        "PTGX",
+        "QMCO"
+      ]
+    },
+    "2025-03-26": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 9,
+      "outgoing": [
+        "DM"
+      ],
+      "incoming": [
+        "RAY"
+      ]
+    },
+    "2025-04-02": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 5,
+      "outgoing": [
+        "NUTX",
+        "RDUS",
+        "AEVA"
+      ],
+      "incoming": [
+        "ONDS",
+        "QUBT",
+        "WOOF"
+      ]
+    },
+    "2025-04-09": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 9,
+      "outgoing": [
+        "PRA"
+      ],
+      "incoming": [
+        "MVST"
+      ]
+    },
+    "2025-04-16": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 6,
+      "outgoing": [
+        "HTZ"
+      ],
+      "incoming": [
+        "MBOT"
+      ]
+    },
+    "2025-04-23": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 7,
+      "outgoing": [
+        "TOI"
+      ],
+      "incoming": [
+        "HTZ"
+      ]
+    },
+    "2025-04-30": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 8,
+      "outgoing": [
+        "DEA"
+      ],
+      "incoming": [
+        "ENGS"
+      ]
+    },
+    "2025-05-07": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 4,
+      "outgoing": [
+        "PONY"
+      ],
+      "incoming": [
+        "WOLF"
+      ]
+    },
+    "2025-05-14": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 6,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2025-05-21": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 8,
+      "outgoing": [
+        "INZY"
+      ],
+      "incoming": [
+        "AEVA"
+      ]
+    },
+    "2025-05-28": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 6,
+      "outgoing": [
+        "VIGL"
+      ],
+      "incoming": [
+        "MWYN"
+      ]
+    },
+    "2025-06-04": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 7,
+      "outgoing": [
+        "APLD",
+        "LVWR"
+      ],
+      "incoming": [
+        "TNGX",
+        "RRGB"
+      ]
+    },
+    "2025-06-11": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 8,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2025-06-18": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 8,
+      "outgoing": [
+        "VERV",
+        "URGN"
+      ],
+      "incoming": [
+        "HUSA",
+        "RELI"
+      ]
+    },
+    "2025-06-25": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 9,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2025-07-02": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 7,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2025-07-09": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 12,
+      "outgoing": [
+        "NNNN"
+      ],
+      "incoming": [
+        "WKHS"
+      ]
+    },
+    "2025-07-16": {
+      "k": 2,
+      "removable": 2,
+      "eligible": 8,
+      "outgoing": [
+        "SBET",
+        "YHC"
+      ],
+      "incoming": [
+        "GAME",
+        "BTCS"
+      ]
+    },
+    "2025-07-23": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 12,
+      "outgoing": [
+        "UAVS"
+      ],
+      "incoming": [
+        "PLRZ"
+      ]
+    },
+    "2025-07-30": {
+      "k": 0,
+      "removable": 0,
+      "eligible": 11,
+      "outgoing": [],
+      "incoming": []
+    },
+    "2025-08-06": {
+      "k": 4,
+      "removable": 4,
+      "eligible": 7,
+      "outgoing": [
+        "YMAB",
+        "ZEPP",
+        "ZIMV",
+        "CELC"
+      ],
+      "incoming": [
+        "COMM",
+        "IMAB",
+        "BTAI",
+        "ESPR"
+      ]
+    },
+    "2025-08-13": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 3,
+      "outgoing": [
+        "CELC"
+      ],
+      "incoming": [
+        "AVAH"
+      ]
+    },
+    "2025-08-20": {
+      "k": 3,
+      "removable": 3,
+      "eligible": 11,
+      "outgoing": [
+        "COMM",
+        "RIGL",
+        "PHLT"
+      ],
+      "incoming": [
+        "PGEN",
+        "WULF",
+        "AVAH"
+      ]
+    },
+    "2025-08-27": {
+      "k": 1,
+      "removable": 1,
+      "eligible": 8,
+      "outgoing": [
+        "PGEN"
+      ],
+      "incoming": [
+        "UP"
+      ]
+    }
+  },
+  "private_files": {
+    "r4r5_trade_exceptions.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow014/r4r5_trade_exceptions.csv",
+      "sha256": "85ba466659f7c3ac8bdcf74009cd53f1a2e1bb4d37f4acf95f296578e91990fc",
+      "bytes": 2474082
+    },
+    "r4r5_verified_trades.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow014/r4r5_verified_trades.csv",
+      "sha256": "f2a42954749c61de2375f90ab581610f062bbe7ec49bc9ee7003dc38b37883ad",
+      "bytes": 9687757
+    },
+    "r4r5_verified_cohort_audit.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow014/r4r5_verified_cohort_audit.csv",
+      "sha256": "19a47520afee0b576eba0dcb4ad7319ceb2b6d81f7852bad16f40cc2f464ab9d",
+      "bytes": 1360051
+    },
+    "r4r5_cohort_matrix.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow014/r4r5_cohort_matrix.csv",
+      "sha256": "8c80af1dbd23059dfec400b0c404e39662485584aae88db6a1e61706ef569df0",
+      "bytes": 686569
+    },
+    "r4r5_daily_account.csv": {
+      "path": "C:/Users/james/Money_ChatGPT/handoff/outgoing/cg_arrow014/r4r5_daily_account.csv",
+      "sha256": "e00a34dd097a0ef6bc785f6fe9d44953f6010324e1ee96550ed70b9b2faa4419",
+      "bytes": 1896330
+    }
+  },
+  "blockers": [],
+  "log": [
+    "2026-09-15T22:12:32+00:00 +0.0m LOCK 1 at 5b64dc6, LOCK 2 at 50677a0, status HOLDOUT_DATA_CERTIFIED_FOR_PRISTINE_REVEAL, unresolved material exceptions 0 \u2014 the reveal may proceed",
+    "2026-09-15T22:12:32+00:00 +0.0m corridor active: 292 sessions, cutoff 2025-08-29, 147 documented actions",
+    "2026-09-15T22:12:32+00:00 +0.0m frozen membership 3931985d9e7e matches LOCK 2",
+    "2026-09-15T22:12:33+00:00 +0.0m loading 121,046 ranking endpoints with 6 workers",
+    "2026-09-15T22:12:48+00:00 +0.3m 52 cohorts rebuilt and every top eight reproduces the certified membership",
+    "2026-09-15T22:12:48+00:00 +0.3m loading 86,301 further lifecycle observations",
+    "2026-09-15T22:13:03+00:00 +0.5m allocations built for C0/C1/C2/C3 over 52 cohorts; 56 C2 substitutions across 52 cohorts",
+    "2026-09-15T22:13:03+00:00 +0.5m C1: cohort base capital preserved, worst deviation 7.28e-12",
+    "2026-09-15T22:13:03+00:00 +0.5m C2: cohort base capital preserved, worst deviation 7.28e-12",
+    "2026-09-15T22:13:03+00:00 +0.5m C3: cohort base capital preserved, worst deviation 7.28e-12",
+    "2026-09-15T22:14:19+00:00 +1.8m built 18 distinct books covering all 18 frozen cells",
+    "2026-09-15T22:14:19+00:00 +1.8m holdout guard: scored cohort ids == the frozen 52: True",
+    "2026-09-15T22:14:19+00:00 +1.8m accounts: 18; identities hold 18/18; monthly reconcile 18/18; months 2024-09..2025-08; accounts without twelve rows: 0",
+    "2026-09-15T22:14:22+00:00 +1.8m independent oracle: ok=True trades=7298 max_abs_error=7.3e-12",
+    "2026-09-15T22:14:33+00:00 +2.0m mechanism panel: 42 rows; rank-by-rank: 24 rows; anatomy rows: 416"
+  ]
+}

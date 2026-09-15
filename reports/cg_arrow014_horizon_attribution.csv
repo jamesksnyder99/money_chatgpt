@@ -1,0 +1,10 @@
+account_view,completed_trades,ending_equity,eventual_pnl,hit_rate,hold,increment_vs_h8,legacy_id,model
+FIXED_DOLLAR,407,179061.21,92234.97,0.6462,8,0.0,R4,Volume-Sized Short
+FIXED_DOLLAR,405,147919.17,68265.68,0.6716,9,-23969.28,R4,Volume-Sized Short
+FIXED_DOLLAR,405,192176.33,114288.75,0.6716,10,22053.79,R4,Volume-Sized Short
+FIXED_DOLLAR,407,183553.78,93809.8,0.6462,8,0.0,R5,Momentum+Volume-Sized Short
+FIXED_DOLLAR,405,139699.94,56796.71,0.6716,9,-37013.09,R5,Momentum+Volume-Sized Short
+FIXED_DOLLAR,405,191517.07,109989.2,0.6716,10,16179.4,R5,Momentum+Volume-Sized Short
+EQUITY_SCALED,407,171862.53,87496.0,0.6462,8,0.0,R5,Momentum+Volume-Sized Short
+EQUITY_SCALED,405,22089.61,-74389.81,0.6716,9,-161885.81,R5,Momentum+Volume-Sized Short
+EQUITY_SCALED,405,151844.61,76355.1,0.6716,10,-11140.9,R5,Momentum+Volume-Sized Short

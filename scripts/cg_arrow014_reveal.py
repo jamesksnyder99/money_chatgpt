@@ -433,7 +433,10 @@ def write_reveal_md(path: Path, cell_rows, breadth, horizon, rbr, panel, dd, gat
         rule = "|" + "|".join("---" for _ in headers) + "|"
         body = "\n".join("| " + " | ".join(
             money(r[c]) if isinstance(r.get(c), float) and abs(r.get(c) or 0) > 1.5
-            else (pct(r[c]) if c in ("return_on_starting_equity", "max_drawdown_pct", "hit_rate",
+            # max_drawdown_pct_of_peak already arrives scaled to a percentage; formatting it as a
+            # fraction would report a drawdown a hundred times too large
+            else (f"{r[c]:.2f}%" if c == "max_drawdown_pct_of_peak" and r.get(c) is not None
+                  else pct(r[c]) if c in ("return_on_starting_equity", "hit_rate",
                                      "cohort_hit_rate", "top_cohort_share_of_total",
                                      "top3_cohort_share_of_total")
                   else str(r.get(c))) for c in cols) + " |" for r in rows)
@@ -464,7 +467,7 @@ Membership SHA-256 `{membership['membership_sha256']}`.
 
 {table(cell_rows, ["cell", "model", "account_view", "hold", "completed_trades",
                    "A_eventual_completed_pnl", "ending_equity", "return_on_starting_equity",
-                   "hit_rate", "max_drawdown_pct"],
+                   "hit_rate", "max_drawdown_pct_of_peak"],
        ["cell", "model", "view", "hold", "trades", "eventual P&L", "ending equity", "return",
         "hit rate", "max drawdown"])}
 
@@ -720,7 +723,12 @@ def main() -> int:
         blockers.append(f"account identities fail for {bad_id[:3]}")
 
     # ---- private ledgers and the independent oracle
-    files = exp.export_all({(k[0], f"{k[0]}_{k[1]}_H{k[2]}"): b for k, b in books.items()}, root=OUT)
+    # The export is keyed by the engine family the book was actually built with, not by the
+    # cell's label. A challenger cell is a reallocation of an R5 book, so its trade rows carry
+    # model "R5"; keying the export by "C1" wrote daily rows the oracle then could not find
+    # against the trades they belong to.
+    files = exp.export_all({(CONFIG[k[0]][0], f"{k[0]}_{k[1]}_H{k[2]}"): b
+                            for k, b in books.items()}, root=OUT)
     orc = oracle.run(OUT, summaries)
     note(f"independent oracle: ok={orc['ok']} trades={orc['trades']['checked']} "
          f"max_abs_error={orc['trades']['max_abs_error']:.1e}")
@@ -740,16 +748,17 @@ def main() -> int:
             "quantity_convention": cell["quantity_convention"],
             "cohorts": len({t["cohort_id"] for t in b["trades"]}),
             "intended_positions": len(b["trades"]), "completed_trades": len(done),
-            "A_eventual_completed_pnl": _r(sum(nets), 2),
+            "A_eventual_completed_pnl": _r(a["A_completed_trade_pnl_all_cohorts"], 2),
             "B_marked_account_pnl_at_cutoff": _r(a["B_marked_account_pnl_at_cutoff"], 2),
-            "C_post_cutoff_runoff_increment": _r(a["C_post_cutoff_runoff_increment"], 2),
-            "D_eventual_runoff_pnl": _r(a["D_eventual_runoff_pnl"], 2),
-            "E_open_obligations": a["E_open_obligations"],
+            "C_post_cutoff_runoff_increment": _r(a["C_post_cutoff_incremental_runoff_pnl"], 2),
+            "D_eventual_runoff_pnl": _r(a["D_eventual_pnl_of_runoff_trades"], 2),
+            "E_open_obligations": a["E_open_documented_obligations"],
+            "F_stale_gross_in_calendar_equity": _r(a["F_stale_gross_in_calendar_equity"], 2),
             "ending_equity": _r(b["daily"][-1]["equity"], 2),
             "return_on_starting_equity": _r(b["daily"][-1]["equity"] / START - 1),
             "hit_rate": _r(sum(1 for n in nets if n > 0) / len(nets), 4) if nets else None,
             "mean_net_per_trade": _r(statistics.fmean(nets), 2) if nets else None,
-            "max_drawdown_pct": _r(met.drawdown(b["daily"], START)["max_drawdown_pct"]),
+            "max_drawdown_pct_of_peak": _r(met.drawdown(b["daily"], START)["max_drawdown_pct_of_peak"]),
             "identities_hold": a["identities_hold"],
             "monthly_reconciles": recon[key]["reconciles"]})
     exp.write_csv(REPORTS / "cg_arrow014_headline_matrix.csv", cell_rows)

@@ -103,9 +103,30 @@ def require_lock1() -> tuple[str, dict]:
     return committed, drift
 
 
+def universe_contract() -> dict:
+    """The frozen universe rule, read from LOCK 1 rather than inherited from a flag."""
+    return read_json(REPORTS / "cg_arrow014_reveal_freeze.json")["models"]["universe"]
+
+
 def eligible_pairs() -> pl.DataFrame:
+    """The point-in-time rule field: the frozen band and dollar-volume floor, applied here.
+
+    The `eligible` column of the acquisition layer is NOT the ranking rule. Arrow 013 built it
+    with a $1.00 floor because it was defining a universe to acquire minute data for, and a wider
+    net there is harmless. The ranking rule is $10 to $80, and the difference is not marginal: the
+    securities between $1 and $10 are exactly the ones that post enormous fifteen-session returns,
+    so inheriting the acquisition flag puts them at the top of the ranking and they take over the
+    selections. The band is therefore read from LOCK 1 and enforced here, on the same prior-close
+    record the rule names.
+    """
+    u = universe_contract()
+    lo, hi = u["prior_close_band"]
+    pdv = u["min_prior_dollar_volume"]
     elig = pl.read_parquet(WORK / "eligibility_holdout.parquet")
-    return elig.filter(pl.col("eligible") & pl.col("session_date").is_in(HO.signal_dates()))
+    return elig.filter(pl.col("eligible")
+                       & (pl.col("prior_close") >= lo) & (pl.col("prior_close") <= hi)
+                       & (pl.col("prior_dollar_volume") >= pdv)
+                       & pl.col("session_date").is_in(HO.signal_dates()))
 
 
 def candidate_field(pairs: pl.DataFrame) -> dict:
@@ -242,7 +263,12 @@ def stage_rank(args) -> int:
     note(f"corridor active: {info['sessions']} sessions, cutoff {info['cutoff']}, action table "
          f"{table.relative_to(REPO_ROOT).as_posix()}")
 
-    field = candidate_field(eligible_pairs())
+    pairs = eligible_pairs()
+    field = candidate_field(pairs)
+    u = universe_contract()
+    lo, hi = u["prior_close_band"]
+    note(f"rule field enforced at the frozen contract: prior close ${lo:g} to ${hi:g}, "
+         f"prior dollar volume >= ${u['min_prior_dollar_volume']:,.0f}")
     # The reveal has to rebuild exactly this field, so it is written down rather than rederived
     # from an eligibility file that a later pass could touch.
     dump_json(FIELD, field)
