@@ -75,9 +75,20 @@ def main() -> int:
     todo = [s for s in symbols if s not in done]
     note(f"{len(symbols)} securities in scope; {len(done)} already investigated, {len(todo)} to do")
 
+    # The screen already recorded exactly where each security's tape changed level. Those dates
+    # are what the filings have to explain, and confining the search to their neighbourhood is
+    # the difference between a thirty-minute census and a five-hour one.
+    import datetime
+    anchors: dict = {}
+    for c in read_json(WORK / "phase0b_event_cases.json").values():
+        anchors.setdefault(c["symbol"], []).append(datetime.date.fromisoformat(c["date"]))
+    note(f"discontinuity anchors available for {len(anchors)} securities; in scope, "
+         f"{sum(1 for s in symbols if s in anchors)} of {len(symbols)} have at least one")
+
     batch = 40
     for i in range(0, len(todo), batch):
-        done.update(idy.investigate(todo[i:i + batch], LO, HI, workers=args.workers))
+        done.update(idy.investigate(todo[i:i + batch], LO, HI, workers=args.workers,
+                                    anchors=anchors))
         dump_json(FOUND, done)
         res = sum(1 for v in done.values() if v["identity"].get("cik"))
         act = sum(1 for v in done.values() if v["actions"].get("events"))

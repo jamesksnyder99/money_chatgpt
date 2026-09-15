@@ -112,9 +112,25 @@ def stage_resolve(args) -> int:
     corridor = {d.isoformat() for d in HO.FEATS}
     ratios = eod_ratios()
 
+    # Two evidence sources, merged deterministically and held to the same standard. The first is
+    # the census over issuers SEC's current ticker file can reach. The second is the point-in-time
+    # identity investigation, which reaches the issuers it cannot — the delisted and consolidated
+    # microcaps whose actions are exactly the ones that distort a winner ranking.
+    merged: dict = {sym: list(scan.get("events", [])) for sym, scan in scans.items()}
+    identity_path = WORK / "identity_investigation.json"
+    identity_added = 0
+    if identity_path.exists():
+        for sym, rec in read_json(identity_path).items():
+            evs = (rec.get("actions") or {}).get("events") or []
+            if evs:
+                merged.setdefault(sym, []).extend(evs)
+                identity_added += len(evs)
+        note(f"point-in-time identity investigation contributed {identity_added} filing "
+             f"statements the ticker file could not reach")
+
     events, unmatched_filings, uncorroborated = [], [], []
-    for sym, scan in sorted(scans.items()):
-        for e in scan.get("events", []):
+    for sym, scan_events in sorted(merged.items()):
+        for e in scan_events:
             # An extracted statement becomes an event only when it carries a date that lands
             # inside the corridor and a factor the engine can apply.
             candidates = []
@@ -181,6 +197,10 @@ def stage_resolve(args) -> int:
     note(f"screened cases without a filing explanation: {len(unexplained):,} of {len(cases):,}")
 
     by_status = Counter(v.get("status") for v in scans.values())
+    ident_status = Counter()
+    if identity_path.exists():
+        for rec in read_json(identity_path).values():
+            ident_status[(rec.get("identity") or {}).get("status")] += 1
     payload = {
         "version": "cg_arrow014_corporate_actions_v1",
         "timestamp": stamp(),
@@ -189,6 +209,12 @@ def stage_resolve(args) -> int:
                               "session to express it in post-event share units; share volume is "
                               "divided by the same factor"),
         "primary_source": "SEC EDGAR issuer filings",
+        "identity_resolution": ("securities whose ticker SEC's current file no longer maps to an "
+                                "issuer were resolved point-in-time through EDGAR full-text "
+                                "search, counting a hit only where the ticker is the filer's own "
+                                "registered symbol inside the corridor"),
+        "identity_outcomes": dict(ident_status),
+        "identity_filing_statements_contributed": identity_added,
         "scan_window": [SCAN_LO, SCAN_HI],
         "coverage": ("every security that showed a price level change at or beyond the screen "
                      "threshold, or a multi-session trading gap, inside a session its own cohorts "

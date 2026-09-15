@@ -20,6 +20,7 @@ Nothing here computes a ranking, a selection or a return.
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import datetime as _dt
 import json
 import re
 import time
@@ -27,7 +28,13 @@ from urllib.parse import quote
 
 from verification import r4r5_events as ev
 
-FTS = "https://efts.sec.gov/LATEST/search-index?q=%22{q}%22&dateRange=custom&startdt={lo}&enddt={hi}"
+FTS = ("https://efts.sec.gov/LATEST/search-index?q=%22{q}%22"
+       "&dateRange=custom&startdt={lo}&enddt={hi}{forms}")
+# A ticker that is also an ordinary word or a common firm name returns a wall of unrelated
+# documents, and the filer we want can sit past the first page. Narrowing to the forms an issuer
+# uses to report its own affairs removes almost all of that noise, so the search is retried that
+# way before a security is called unresolvable.
+FORM_FILTERS = ("", "&forms=8-K%2C6-K", "&forms=10-K%2C20-F%2CS-1%2C424B3", "&forms=25%2C25-NSE")
 # Forms that carry a consolidation, split, delisting or transfer statement. Foreign private
 # issuers report on 6-K rather than 8-K, and microcap consolidations are very often announced
 # only in an exhibit, so the exhibit list is read as well as the primary document.
@@ -46,35 +53,41 @@ def resolve(ticker: str, lo: str, hi: str, *, limit: int = 100) -> dict:
     name. Without that test, a common word like ACON returns thousands of unrelated documents.
     """
     out = {"symbol": ticker, "window": [lo, hi], "method": "SEC_EDGAR_FULL_TEXT_SEARCH",
-           "candidates": [], "cik": None, "issuer": None,
+           "candidates": [], "cik": None, "issuer": None, "queries": [],
            "status": "IDENTITY_UNRESOLVED"}
-    raw = ev.fetch(FTS.format(q=quote(ticker), lo=lo, hi=hi))
-    if raw is None:
-        return out
-    try:
-        doc = json.loads(raw)
-    except ValueError:
-        return out
-    hits = (doc.get("hits") or {}).get("hits") or []
-    out["hits_searched"] = len(hits)
     by_cik: dict = {}
-    for h in hits[:limit]:
-        s = h.get("_source") or {}
-        names = s.get("display_names") or []
-        ciks = s.get("ciks") or []
-        for name, cik in zip(names, ciks):
-            if ticker.upper() not in _display_ticker(name):
-                continue
-            rec = by_cik.setdefault(int(cik), {"cik": int(cik), "issuer": name, "filings": 0,
-                                               "first_seen": s.get("file_date"),
-                                               "last_seen": s.get("file_date"),
-                                               "forms": set()})
-            rec["filings"] += 1
-            rec["forms"].add((s.get("root_forms") or [s.get("file_type")])[0])
-            d = s.get("file_date")
-            if d:
-                rec["first_seen"] = min(rec["first_seen"] or d, d)
-                rec["last_seen"] = max(rec["last_seen"] or d, d)
+    searched = 0
+    for forms in FORM_FILTERS:
+        raw = ev.fetch(FTS.format(q=quote(ticker), lo=lo, hi=hi, forms=forms))
+        out["queries"].append(forms or "all forms")
+        if raw is None:
+            continue
+        try:
+            doc = json.loads(raw)
+        except ValueError:
+            continue
+        hits = (doc.get("hits") or {}).get("hits") or []
+        searched += len(hits)
+        for h in hits[:limit]:
+            s = h.get("_source") or {}
+            names = s.get("display_names") or []
+            ciks = s.get("ciks") or []
+            for name, cik in zip(names, ciks):
+                if ticker.upper() not in _display_ticker(name):
+                    continue
+                rec = by_cik.setdefault(int(cik), {"cik": int(cik), "issuer": name, "filings": 0,
+                                                   "first_seen": s.get("file_date"),
+                                                   "last_seen": s.get("file_date"),
+                                                   "forms": set()})
+                rec["filings"] += 1
+                rec["forms"].add((s.get("root_forms") or [s.get("file_type")])[0])
+                d = s.get("file_date")
+                if d:
+                    rec["first_seen"] = min(rec["first_seen"] or d, d)
+                    rec["last_seen"] = max(rec["last_seen"] or d, d)
+        if by_cik:
+            break
+    out["hits_searched"] = searched
     cands = sorted(by_cik.values(), key=lambda r: -r["filings"])
     for c in cands:
         c["forms"] = sorted(x for x in c["forms"] if x)
@@ -90,22 +103,44 @@ def resolve(ticker: str, lo: str, hi: str, *, limit: int = 100) -> dict:
     return out
 
 
-def actions_for_cik(cik: int, symbol: str, lo: str, hi: str, *, max_docs: int = 60) -> dict:
-    """Every split or consolidation statement this filer made in the window, exhibits included.
+def _near(filing_date: str, anchors: tuple, days: int) -> bool:
+    """Is this filing close enough in time to a discontinuity to be about it?"""
+    if not anchors:
+        return True
+    try:
+        f = _dt.date.fromisoformat(filing_date)
+    except ValueError:
+        return False
+    return any(abs((f - a).days) <= days for a in anchors)
+
+
+def actions_for_cik(cik: int, symbol: str, lo: str, hi: str, *, max_docs: int = 12,
+                    anchors: tuple = (), window_days: int = 45) -> dict:
+    """The filer's split and consolidation statements around the dates in question.
 
     `r4r5_events.scan_symbol` reads only a filing's primary document. A microcap consolidation is
     usually announced in an attached press release, so the primary document says nothing and the
     ratio sits in EX-99.1. This reads the filing index and follows the exhibits too.
+
+    `anchors` are the sessions on which the tape actually changed level. Reading every filing an
+    issuer made across eighteen months costs hundreds of requests per security and answers a
+    question nobody asked; a consolidation is announced within weeks of taking effect, so the
+    search is confined to that neighbourhood. With no anchors the whole window is read.
     """
     out = {"symbol": symbol, "cik": cik, "events": [], "filings_scanned": 0,
+           "anchors": [a.isoformat() for a in anchors], "window_days": window_days,
            "status": "UNRESOLVED_NO_FILING_EVIDENCE"}
     sub = ev.submissions(cik)
     if sub is None:
         out["status"] = "UNRESOLVED_SUBMISSIONS_UNAVAILABLE"
         return out
     out["issuer"] = sub.get("name")
-    rows = [r for r in ev.filing_rows(sub) if lo <= r["date"] <= hi and r["form"] in ACTION_FORMS]
-    rows.sort(key=lambda r: r["date"])
+    rows = [r for r in ev.filing_rows(sub)
+            if lo <= r["date"] <= hi and r["form"] in ACTION_FORMS
+            and _near(r["date"], anchors, window_days)]
+    # the forms that actually carry a consolidation statement are read first
+    rows.sort(key=lambda r: (r["form"] not in ("8-K", "6-K", "8-K/A", "6-K/A"), r["date"]))
+    out["filings_in_neighbourhood"] = len(rows)
     for r in rows[:max_docs]:
         for url in _documents(cik, r):
             raw = ev.fetch(url)
@@ -149,18 +184,22 @@ def _documents(cik: int, row: dict) -> list:
             u = f"https://www.sec.gov/Archives/edgar/data/{cik}/{acc}/{name}"
             if u not in urls:
                 urls.append(u)
-    return urls[:6]
+    return urls[:3]
 
 
 def investigate(symbols: list[str], lo: str, hi: str, workers: int = 8,
-                progress_every: int = 20) -> dict:
+                progress_every: int = 20, anchors: dict | None = None) -> dict:
     """Resolve identity then gather actions, for securities the ticker file cannot reach."""
+    anchors = anchors or {}
+
     def one(sym: str) -> dict:
         ident = resolve(sym, lo, hi)
         if ident["cik"] is None:
             return {"identity": ident, "actions": {"symbol": sym, "events": [],
                                                    "status": "UNRESOLVED_NO_IDENTITY"}}
-        return {"identity": ident, "actions": actions_for_cik(ident["cik"], sym, lo, hi)}
+        return {"identity": ident,
+                "actions": actions_for_cik(ident["cik"], sym, lo, hi,
+                                           anchors=tuple(anchors.get(sym, ())))}
 
     results, t0 = {}, time.monotonic()
     with ThreadPoolExecutor(max_workers=workers) as pool:
