@@ -1,6 +1,6 @@
 # CG Arrow 013 — acquisition and certification of the pristine September 2024 to August 2025 holdout
 
-Executor: Opus in Claude Code. Run head `974285a`. This arrow acquires, authenticates, normalizes and certifies data. It runs no strategy.
+Executor: Opus in Claude Code. Run head `8832a65`. This arrow acquires, authenticates, normalizes and certifies data. It runs no strategy.
 
 ## The frozen period, fixed before any data were touched
 
@@ -38,7 +38,7 @@ Two vendor conventions were discovered and recorded rather than smoothed over. T
 | Layer | Source | Scope |
 |---|---|---|
 | End of day, full roster | newly downloaded | 1,718,304 symbol-sessions across 7,851 securities and 250 dates, 2024-08-01 to 2025-07-31 |
-| One-minute bars | newly downloaded | 107 of 250 new-acquisition sessions carry a landed minute layer |
+| One-minute bars | newly downloaded | 292 of 250 new-acquisition sessions carry a landed minute layer |
 | August 2025 | reused after authentication | 21 sessions, already held from the previous study's warmup, re-verified against a fresh stratified vendor sample |
 | September 2025 lifecycle tail | reused after verification | 21 sessions, required only to complete ten-session holds opened in late August 2025 |
 
@@ -72,9 +72,9 @@ Both New York daylight-saving transitions inside the window are covered, and lan
 | More regular-hours bars than the session schedule allows | 0 |
 | Landed partition that could not be read back | 0 |
 
-Inventory covers 75,737 landed partitions holding 54,530,640 minute rows, of which 20,165,384 regular-hours minutes carried volume and 9,372,046 did not.
+Inventory covers 1,079,750 landed partitions holding 777,420,000 minute rows, of which 302,508,021 regular-hours minutes carried volume and 116,262,219 did not.
 
-Four distinct minute states are kept apart and never merged. A no-trade minute returns NaN prices with zero volume. A missing bar is absent from the partition entirely. A halt is a documented market event. And 5,527,947 regular-hours minutes carried consolidated volume with a positive trade count but no last-sale-eligible price, so their open, high, low and close are NaN. Those are real prints that do not set high, low or last under the tape's trade-condition rules, not a data defect: the frozen loader already requires a finite positive open and close, so such a minute can never become a mark or an execution. The remaining 14,637,437 regular-hours minutes carry both volume and a usable price and are the ones the integrity checks above are run against.
+Four distinct minute states are kept apart and never merged. A no-trade minute returns NaN prices with zero volume. A missing bar is absent from the partition entirely. A halt is a documented market event. And 80,581,858 regular-hours minutes carried consolidated volume with a positive trade count but no last-sale-eligible price, so their open, high, low and close are NaN. Those are real prints that do not set high, low or last under the tape's trade-condition rules, not a data defect: the frozen loader already requires a finite positive open and close, so such a minute can never become a mark or an execution. The remaining 221,926,163 regular-hours minutes carry both volume and a usable price and are the ones the integrity checks above are run against.
 
 ### Full-universe and ranking-field completeness
 
@@ -98,9 +98,9 @@ Eligibility is point in time by construction: a session is judged on the prior s
 
 | Reconciliation | Value |
 |---|---:|
-| Deterministic symbol-session samples compared | 15 of 65 |
-| Regular-hours minute volume over end-of-day volume, median | 0.868652 |
-| Same ratio, minimum and maximum | 0.666862 to 0.986394 |
+| Deterministic symbol-session samples compared | 245 of 250 |
+| Regular-hours minute volume over end-of-day volume, median | 0.87579 |
+| Same ratio, minimum and maximum | 0.288233 to 0.999791 |
 | Last traded minute close versus end-of-day close, median absolute difference | 0.01 |
 
 Regular-hours minute volume is compared with the vendor's end-of-day share volume. The end-of-day figure is a consolidated national total and includes prints the regular-hours minute window does not carry, so a ratio below one is expected and is documented rather than tuned away.
@@ -118,10 +118,9 @@ Staged procedure: The frozen post-selection procedure retrieves primary-source e
 | Exception code | Meaning | Count | Blocks certification |
 |---|---|---:|---|
 | ACT | corporate action evidence | 1 | True |
-| COV | coverage | 2 | True |
 | ID | security identity | 1 | True |
 
-Every exception carries a stable identifier, cause, source evidence, repair status and whether it blocks certification. 4 exceptions are recorded and 4 block certification. Nothing was repaired because it produced a more convenient answer, no security was dropped without a record, and no vendor failure was reinterpreted as a market event.
+Every exception carries a stable identifier, cause, source evidence, repair status and whether it blocks certification. 2 exceptions are recorded and 2 block certification. Nothing was repaired because it produced a more convenient answer, no security was dropped without a record, and no vendor failure was reinterpreted as a market event.
 
 ## Reproducibility and hashes
 
@@ -129,15 +128,13 @@ Every exception carries a stable identifier, cause, source evidence, repair stat
 |---|---:|---:|---|
 | repeat query reproducibility | 1 | 1 | IDENTICAL |
 | august 2025 overlap vs local | 12 | 12 | MATCH |
-| minute to end of day aggregation | 65 | 0 | DOCUMENTED_CONSOLIDATED_TAPE_DIFFERENCE |
+| minute to end of day aggregation | 250 | 15 | DOCUMENTED_CONSOLIDATED_TAPE_DIFFERENCE |
 | calendar vs independent reference | 292 | 292 | IDENTICAL |
 
-The manifest carries a SHA-256 for each of 6 certification artifacts and a partition-listing digest for each of 77 raw partition groups. Raw vendor partitions are immutable after landing; a resume skips only a partition that already exists and reads back cleanly, and writes are atomic so an interrupted run cannot leave a half-written file.
+The manifest carries a SHA-256 for each of 9 certification artifacts and a partition-listing digest for each of 262 raw partition groups. Raw vendor partitions are immutable after landing; a resume skips only a partition that already exists and reads back cleanly, and writes are atomic so an interrupted run cannot leave a half-written file.
 
 ## What remains
 
-- minute layer not yet acquired for these sessions
-- minute layer present but short of the session's point-in-time eligible field
 - no documented dated corporate-action table exists yet for the holdout window
 - point-in-time security identity and ticker-change mapping not yet assembled for this window
 

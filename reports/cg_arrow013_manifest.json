@@ -1,8 +1,8 @@
 {
   "arrow": "CG Arrow 013",
   "stage": "certification",
-  "timestamp": "2026-09-15T01:25:10+00:00",
-  "head_at_run": "974285ac04c6929b4716c62e284029530e7c789b",
+  "timestamp": "2026-09-15T16:28:33+00:00",
+  "head_at_run": "8832a65b33b7f91c516f939842224d454ef37647",
   "definition_id": "cg_arrow013_holdout_sep2024_aug2025_v1",
   "authentication": {
     "repo_root": "C:\\Users\\james\\Money_ChatGPT",
@@ -142,9 +142,9 @@
     "identical": true
   },
   "minute_integrity": {
-    "partitions": 75737,
+    "partitions": 1079750,
     "empty_partitions": 0,
-    "rows": 54530640,
+    "rows": 777420000,
     "dup_timestamp_partitions": 0,
     "unordered_partitions": 0,
     "outside_window_partitions": 0,
@@ -152,14 +152,14 @@
     "negative_volume_partitions": 0,
     "nonfinite_price_partitions": 0,
     "rth_bar_over_expected": 0,
-    "no_trade_minutes": 9372046,
-    "traded_minutes": 20165384,
-    "volume_without_last_sale_price_minutes": 5527947,
-    "priced_traded_minutes": 14637437,
+    "no_trade_minutes": 116262219,
+    "traded_minutes": 302508021,
+    "volume_without_last_sale_price_minutes": 80581858,
+    "priced_traded_minutes": 221926163,
     "unreadable": 0,
-    "symbols_with_rth": 75737
+    "symbols_with_rth": 1079750
   },
-  "per_session_integrity_rows": 65,
+  "per_session_integrity_rows": 250,
   "eligibility": {
     "roster": 15322,
     "etp_list_size": 5672,
@@ -205,22 +205,22 @@
   },
   "coverage": {
     "sessions_inventoried": 292,
-    "sessions_with_minute_layer": 107,
-    "sessions_awaiting_minute_layer": 185
+    "sessions_with_minute_layer": 292,
+    "sessions_awaiting_minute_layer": 0
   },
   "aggregation_reconciliation": {
-    "sampled": 65,
-    "compared": 15,
+    "sampled": 250,
+    "compared": 245,
     "states": {
-      "MISSING_PARTITION": 50,
-      "COMPARED": 15
+      "COMPARED": 248,
+      "NO_EOD_ROW": 2
     },
-    "volume_ratio_min": 0.666862,
-    "volume_ratio_median": 0.868652,
-    "volume_ratio_max": 0.986394,
-    "volume_ratio_within_1pct": 0,
+    "volume_ratio_min": 0.288233,
+    "volume_ratio_median": 0.87579,
+    "volume_ratio_max": 0.999791,
+    "volume_ratio_within_1pct": 15,
     "close_delta_median": 0.01,
-    "close_delta_max": 0.04,
+    "close_delta_max": 0.11,
     "tolerance_note": "regular-hours minute volume is compared with the vendor's end-of-day share volume. The end-of-day figure is a consolidated national total and includes prints the regular-hours minute window does not carry, so a ratio below one is expected and is documented rather than tuned away"
   },
   "corporate_actions_and_identity": {
@@ -230,15 +230,18 @@
     "staged_procedure": "The frozen post-selection procedure retrieves primary-source evidence from SEC EDGAR for exactly the securities the frozen models mechanically select, using the Arrow 007 and 008 machinery in src/verification/r4r5_events.py, and fails closed on any unresolved material action rather than substituting a next name."
   },
   "exceptions": {
-    "total": 4,
-    "blocking": 4,
+    "total": 2,
+    "blocking": 2,
     "by_code": {
-      "COV": 2,
       "ACT": 1,
       "ID": 1
     }
   },
   "certification_artifacts": {
+    "data/holdout2024/work/acquire_bars_manifest.json": {
+      "sha256": "61f793c6485f2e5ec6228791d1afc97a75a96d9da29d71a1139cf52f9eebb778",
+      "bytes": 9644
+    },
     "data/holdout2024/work/acquire_eod_manifest.json": {
       "sha256": "95e43961d04089c52a595b1469850da4cd98d6fe6a9ae32d2f683e252d310396",
       "bytes": 1939
@@ -248,12 +251,20 @@
       "bytes": 10513
     },
     "data/holdout2024/work/bars_progress.json": {
-      "sha256": "ee289d57dca4b8ab75e87daaec55db23b00ff33ee268a5bf7ed5deb0e5c95b2d",
-      "bytes": 218
+      "sha256": "ed2881834de4e37bc30c01f5d6eea499207787274ba410cd0678ee406465e37b",
+      "bytes": 216
     },
     "data/holdout2024/work/eligibility_manifest.json": {
       "sha256": "2fd8bea2e90651a98dab9cdff23f8808e5a3165bf9ad8624da7efbf2568233c7",
       "bytes": 9352
+    },
+    "data/holdout2024/work/OVERNIGHT_PAUSE_CHECKPOINT.json": {
+      "sha256": "b1cae213a167a4380ccc6d9ce46681a4c7d481c087d77a940008e7d93f85a228",
+      "bytes": 4674
+    },
+    "data/holdout2024/work/supervise_progress.json": {
+      "sha256": "33e2c6ce8017ac2984e1414b8b9f2d2ae9b3fde381639f6606434eebd70e77f0",
+      "bytes": 245
     },
     "data/holdout2024/work/eligibility.parquet": {
       "sha256": "47cb6de3c16bbb50c5fdc8676e671e44580c8253ee4d0f3e64642e010353cba9",
@@ -326,336 +337,1259 @@
       "listing_sha256": "5a23dbd2ef40699c7460657fe1d1cb9a53e370e999fe7ee962ffc39c8983e34a"
     },
     "raw/bars/2024-08-01": {
-      "partitions": 3339,
-      "bytes": 34351241,
-      "listing_sha256": "ae49d8c2e0f11a253660dd49ffc7b1bebbe51834317df7adc28b91f725a197b5"
+      "partitions": 4319,
+      "bytes": 44408076,
+      "listing_sha256": "76d4505675fc2d99a7beb613915c7558eb4149b7e4fd451db6ea80494c63e775"
     },
     "raw/bars/2024-08-02": {
-      "partitions": 3339,
-      "bytes": 34424485,
-      "listing_sha256": "a8d554eb95a9ff387a823ccb243398ad81d018a6c70f7f6222d3e9e9c5a33b89"
+      "partitions": 4319,
+      "bytes": 44501586,
+      "listing_sha256": "500f1fc450622d18466bc62b7252f88de76efc160dc7913d3cd9101db83322ca"
     },
     "raw/bars/2024-08-05": {
-      "partitions": 3347,
-      "bytes": 35922437,
-      "listing_sha256": "b3769a4dae1d230395c0ce2b28e71dece261ea76cdca4bc3176ae2a0da3c22d7"
+      "partitions": 4319,
+      "bytes": 46344042,
+      "listing_sha256": "58111f188ecaed71c79643ecde8873f2f2d95ea7dd6f34f381b2ff9b36bd3cbd"
     },
     "raw/bars/2024-08-06": {
-      "partitions": 3347,
-      "bytes": 33913203,
-      "listing_sha256": "6f82cf4fad606d22f7c1e07f23ad2d7816a8563ef1b8c58ef2c74eac1bab373c"
+      "partitions": 4319,
+      "bytes": 43810019,
+      "listing_sha256": "9087bd897c539f4907c57b68e8cf785dd448c8ba65f1fc0ebea3af7b959e40bb"
     },
     "raw/bars/2024-08-07": {
-      "partitions": 3347,
-      "bytes": 33949108,
-      "listing_sha256": "380308067f7a3e48294418d2ad5e38973e6279bb35ce089b6850c1bfed8b0454"
+      "partitions": 4319,
+      "bytes": 43899056,
+      "listing_sha256": "c2f21c29dd5dd39cfe0ddb594e1d82a0007b29d86f97d18a5724ee517f57968d"
     },
     "raw/bars/2024-08-08": {
-      "partitions": 3347,
-      "bytes": 33411044,
-      "listing_sha256": "231fd4a69d996749385f6cea0f6dc9b3c18143b3236913b329c0f411e3a5308e"
+      "partitions": 4319,
+      "bytes": 43140176,
+      "listing_sha256": "0495837e2b2f429f93b346e359e5fe4e0dc100104ccf13d794436aad0939a324"
     },
     "raw/bars/2024-08-09": {
-      "partitions": 3347,
-      "bytes": 32920280,
-      "listing_sha256": "c9709d51334ba034f0b4bb641e2d705a4ee948eb72f9085a9ac0d6cca61313f1"
+      "partitions": 4319,
+      "bytes": 42471433,
+      "listing_sha256": "129b0a48627238346a1f155ef48c3ed17a1e2c514c979bdd4fcb5298a53939ca"
     },
     "raw/bars/2024-08-12": {
-      "partitions": 3347,
-      "bytes": 33008465,
-      "listing_sha256": "30fdcabb12af97d2088b7e3a16dc03252302e00591ea9bdc00f94e48d6b8306b"
+      "partitions": 4319,
+      "bytes": 42634538,
+      "listing_sha256": "806e50a351e0394f6433d697be31bade30dc33cfe54f23695e9b5ebf95307d4b"
     },
     "raw/bars/2024-08-13": {
-      "partitions": 3347,
-      "bytes": 33005619,
-      "listing_sha256": "e414c4f07723591c3025ca309b02543481c79c90893365ee83cde26bf8e524b6"
+      "partitions": 4319,
+      "bytes": 42639424,
+      "listing_sha256": "484d689a6e2b0a81845c50c536ed33528a90dd163f2f4bba6d6ea81909b9c290"
     },
     "raw/bars/2024-08-14": {
-      "partitions": 3347,
-      "bytes": 32857021,
-      "listing_sha256": "17dc07c232a8f1814b67dc3ebe27a499d014203f247c7aea801d854ef73ffc73"
+      "partitions": 4319,
+      "bytes": 42432209,
+      "listing_sha256": "54d4d59b8bbe2553196e5d7b065f45a7c2e9c1e3ee3c993013672c6b54c30330"
     },
     "raw/bars/2024-08-15": {
-      "partitions": 3347,
-      "bytes": 33341706,
-      "listing_sha256": "c4fef1b003b5afcccb2857b1c1faad6c04b0c63ecf69c2f4ccbeaab0e8d63c95"
+      "partitions": 4319,
+      "bytes": 43062417,
+      "listing_sha256": "e40e8f40cb3e5c9ad4179a8eef54b34a33a0e5df6cb056aaaa2a74d42cbc4dc1"
     },
     "raw/bars/2024-08-16": {
-      "partitions": 3347,
-      "bytes": 32714580,
-      "listing_sha256": "19e82a16561fab498653357f1e1b9a6d5d15f97590a2d2353a74ea5a1b408939"
+      "partitions": 4319,
+      "bytes": 42288189,
+      "listing_sha256": "4525ff10db70306d70b95c660199cadd831aca23f019f8c3147183ec5bcc3a64"
     },
     "raw/bars/2024-08-19": {
-      "partitions": 3355,
-      "bytes": 33085416,
-      "listing_sha256": "e7a8b6bfa4843759607e9bc4599d1ec37184b962576a417a0b9ff843a3a1af05"
+      "partitions": 4319,
+      "bytes": 42680408,
+      "listing_sha256": "3f8006660a2dc4fa112761d7b7b7be3169a42c682aa6b84b20d7db5d9fa1d168"
     },
     "raw/bars/2024-08-20": {
-      "partitions": 3355,
-      "bytes": 32804085,
-      "listing_sha256": "9871464d0f6febb40bcad2bf83eef756a51fe8bed6b48f94bb63a1ef0b4606d5"
+      "partitions": 4319,
+      "bytes": 42327586,
+      "listing_sha256": "5bba89f5db2317d4bebb827c471abc3618c567e10e2b9566954c260e5d63dfa9"
     },
     "raw/bars/2024-08-21": {
-      "partitions": 3355,
-      "bytes": 32816439,
-      "listing_sha256": "e16a001d35010bc2b2692d95f5d32aac6772925db3d852324cc964b6f0bbf6c4"
+      "partitions": 4319,
+      "bytes": 42310860,
+      "listing_sha256": "b21fb772fae0f52dd0e7c042e4a63d0df13e2ce727fd7eec0e1370bb41fe27c1"
     },
     "raw/bars/2024-08-22": {
-      "partitions": 3355,
-      "bytes": 32583577,
-      "listing_sha256": "bfecf3423c465ba9c084233581a8a4e441e7735b6d2d6b23b40124ea913b50f9"
+      "partitions": 4319,
+      "bytes": 41977698,
+      "listing_sha256": "57a902ad327ae5effb330982f0c72431639f5d30c3e2225c5221c2bb18f93acd"
     },
     "raw/bars/2024-08-23": {
-      "partitions": 3355,
-      "bytes": 33374017,
-      "listing_sha256": "1a755e4ab31d133d7d4a746ab428ffe9b8d7c91eb392a5085827190403c7f185"
+      "partitions": 4319,
+      "bytes": 43014135,
+      "listing_sha256": "32ecc66c495a8e849c0df6a06870c02d361085650ecbedf08a2997b5b57ba8a9"
     },
     "raw/bars/2024-08-26": {
-      "partitions": 3355,
-      "bytes": 33091383,
-      "listing_sha256": "e0e4d04aafeeee22f00cc4e6e0b043ee5818df97e4c4050b27ef417ccd8fa9b2"
+      "partitions": 4319,
+      "bytes": 42620566,
+      "listing_sha256": "7d3bd5ecc17379d82f824c1ed635525fe5be6bc5aaeefa1dff6bc17f8d830b38"
     },
     "raw/bars/2024-08-27": {
-      "partitions": 3355,
-      "bytes": 32478796,
-      "listing_sha256": "634655529f22556487bd1da3d17a7e2e34637f41501b47394674950bdec9a93b"
+      "partitions": 4319,
+      "bytes": 41844784,
+      "listing_sha256": "191fc2bad3c2ee97552ff0eb41883d4ff093e45fba2f80995be29c301e8ef110"
     },
     "raw/bars/2024-08-28": {
-      "partitions": 3355,
-      "bytes": 32835297,
-      "listing_sha256": "b04ae7999d76b24aef28ad40a2732811b98653f8245e225e26c6e7ea6d517f6e"
+      "partitions": 4319,
+      "bytes": 42325572,
+      "listing_sha256": "0f511567bc55181f0a99213a500ee2615dbbbbde82f446e43962fb8e734069d1"
     },
     "raw/bars/2024-08-29": {
-      "partitions": 3355,
-      "bytes": 32923818,
-      "listing_sha256": "6f3ce0a909c30a590855467ceb8c582485adde3a2e7e921d67ff57d4c9f353b9"
+      "partitions": 4319,
+      "bytes": 42417453,
+      "listing_sha256": "c3586956f849898d1388dd3e2ea1cccd49b4507ae3774f5d03c7a2381ca23381"
     },
     "raw/bars/2024-08-30": {
-      "partitions": 3355,
-      "bytes": 32552488,
-      "listing_sha256": "6677e1ea1c6513beee5b8951960a671bc0b4a25f1d433d8abf349e9abf20f03c"
+      "partitions": 4319,
+      "bytes": 41937597,
+      "listing_sha256": "1307bcacae0ebf839f5bd8f28989789a2fd53d84f9d6d0edf31dd01a440588ce"
     },
     "raw/bars/2024-09-03": {
-      "partitions": 142,
-      "bytes": 1412607,
-      "listing_sha256": "8e7d27a1df4cafae5a8e79ac226d2db296f2aa64ddd3640cc65ed0b91c1cc250"
+      "partitions": 4319,
+      "bytes": 43309840,
+      "listing_sha256": "3d22a12e8b556d269f45c36336414dd80f0015a1acf6416f508820e8b188c11e"
     },
     "raw/bars/2024-09-04": {
-      "partitions": 142,
-      "bytes": 1382491,
-      "listing_sha256": "8483644f164d6706f7d7c9b3484c24bedc11bb71819c4ffab79e9f1e418f7da6"
+      "partitions": 4319,
+      "bytes": 42511473,
+      "listing_sha256": "66c32eae4c64de170feafc730cf6a938e7079d93d0d1cd33417e173b21bddfd2"
     },
     "raw/bars/2024-09-05": {
-      "partitions": 142,
-      "bytes": 1370313,
-      "listing_sha256": "e94061d1fa43778289e69ebd1f4dd56a363803e2ae4a978592078c91d066746f"
+      "partitions": 4319,
+      "bytes": 42236972,
+      "listing_sha256": "d1ec14fa87b483e9c4409ed8b64ca99d71fb03e6cf6f64dd676fea5f53a96c3a"
     },
     "raw/bars/2024-09-06": {
-      "partitions": 142,
-      "bytes": 1396732,
-      "listing_sha256": "b6f98b37b3641a7b1ca47f2a6325e62393c9df34d0f1f8bb6cd300eae7d843bb"
+      "partitions": 4319,
+      "bytes": 42945300,
+      "listing_sha256": "09bb97690490117b14aa40541239f668843c3fa585c283a727a271a5025f5379"
     },
     "raw/bars/2024-09-09": {
-      "partitions": 142,
-      "bytes": 1405617,
-      "listing_sha256": "7c1744e6f70b1600bb19d3fc2150519725041a60ecfda7f1eb52582075c3ce77"
+      "partitions": 4319,
+      "bytes": 43010745,
+      "listing_sha256": "46fa7f668ec64e4a65340f005439c01e26323047b5bf1f2680603833a35e7343"
     },
     "raw/bars/2024-09-10": {
-      "partitions": 142,
-      "bytes": 1396273,
-      "listing_sha256": "e4721fdaef8fff6e25498a26102c8ae524de5e8db325f54f9a34384f47e66122"
+      "partitions": 4319,
+      "bytes": 42673032,
+      "listing_sha256": "568136378af772ca99cd97e67b77431a0493336573cb24857e5c9e24987caa27"
     },
     "raw/bars/2024-09-11": {
-      "partitions": 142,
-      "bytes": 1410965,
-      "listing_sha256": "17bd6ba1616473f1aab121108fe052422a2c505b1cc8e1c5f586175879876f18"
+      "partitions": 4319,
+      "bytes": 43227569,
+      "listing_sha256": "9b0787595eba7ea5422402d9e4f837d034e8e8f90228db96d2c0b2b3f243c596"
     },
     "raw/bars/2024-09-12": {
-      "partitions": 142,
-      "bytes": 1394438,
-      "listing_sha256": "c848ab122dac580b62d8e1dd8059d42028ddab2d25767975b91d0d796f3c40c2"
+      "partitions": 4319,
+      "bytes": 42679095,
+      "listing_sha256": "1bfbd5e610e676550139810db08079057650a06afd2458e9b2d677c4cbf9838b"
     },
     "raw/bars/2024-09-13": {
-      "partitions": 142,
-      "bytes": 1400496,
-      "listing_sha256": "4b48423f6ad7bb30764acc9ccc823730f961a23c8178a5689d478036768a4a32"
+      "partitions": 4319,
+      "bytes": 42859980,
+      "listing_sha256": "bd479b020f5ed1c702d7644e4e31a6da762c1687e7f08a9b33cca06e0ae6c270"
     },
     "raw/bars/2024-09-16": {
-      "partitions": 142,
-      "bytes": 1388246,
-      "listing_sha256": "8f6572e699f16219be5bf598c9688f6553bb5be57e7fc8e2c3b8bbe85ecfab16"
+      "partitions": 4319,
+      "bytes": 42846993,
+      "listing_sha256": "710ab15e04ad561e0155adddfc2271b17aa487e9b349d03fe0983337af022f12"
     },
     "raw/bars/2024-09-17": {
-      "partitions": 142,
-      "bytes": 1410546,
-      "listing_sha256": "62572c2f7a11c02b29e00e956dc2b3462434eb12b05e7477dc70d46904071523"
+      "partitions": 4319,
+      "bytes": 43323473,
+      "listing_sha256": "a1ed9818c09a41434d3052dd9b75a69455f4a7e1c7c038b15bb3b017a7347499"
     },
     "raw/bars/2024-09-18": {
-      "partitions": 142,
-      "bytes": 1417578,
-      "listing_sha256": "225bfd5719543e89deaccfd66fb851c0cf79d8337a940f16395851a3abf1a6c9"
+      "partitions": 4319,
+      "bytes": 43478601,
+      "listing_sha256": "7e9c74d75cbeb908d28756d9e3ff1a10700df8f9bd427b7917955b689c9a3565"
     },
     "raw/bars/2024-09-19": {
-      "partitions": 142,
-      "bytes": 1433839,
-      "listing_sha256": "78b7dae035c80e5e1b2f01b471b05bad5045347af6183ba8bf00d38ffe159fc7"
+      "partitions": 4319,
+      "bytes": 43924530,
+      "listing_sha256": "05e3f14751598f3afc1ef35c763f85e694ea959ee412cf24f52a511ebf411186"
     },
     "raw/bars/2024-09-20": {
-      "partitions": 142,
-      "bytes": 1418016,
-      "listing_sha256": "191d3ff4cada559f2d589530b705069e0b3a6325a25b6a0e4cc7573e99393bb3"
+      "partitions": 4319,
+      "bytes": 43436834,
+      "listing_sha256": "b8597bcfdf808de5b0513434dc6ba2ac7f042d65c42417393b3a80a2dfcf71c1"
     },
     "raw/bars/2024-09-23": {
-      "partitions": 142,
-      "bytes": 1409842,
-      "listing_sha256": "e89691f60982c07cf5be865e99a7798eacaf988ec948e828b701654aaf2488e2"
+      "partitions": 4319,
+      "bytes": 43248842,
+      "listing_sha256": "3ecc8aa12a44d52ed62ae0341d6d489f59e2bf076b51cabbd8e9fd9024a4961c"
     },
     "raw/bars/2024-09-24": {
-      "partitions": 142,
-      "bytes": 1405123,
-      "listing_sha256": "955b19758c079217fbf06a94468047a95817bf35de1a377186be117a9dbbc945"
+      "partitions": 4319,
+      "bytes": 43158262,
+      "listing_sha256": "103b991033fa992038f1e65e29e5776c1e91219ee8733cabb6fb51666224724a"
     },
     "raw/bars/2024-09-25": {
-      "partitions": 142,
-      "bytes": 1397230,
-      "listing_sha256": "20dd788f68be158f8cc2f26ee550af3a3471cb3ee80fc038610f7e8e8e55879e"
+      "partitions": 4319,
+      "bytes": 42905462,
+      "listing_sha256": "15aa0ab04620d759d4312598576b3a4a283e052cb64f09ad7e49aae95388ddec"
     },
     "raw/bars/2024-09-26": {
-      "partitions": 142,
-      "bytes": 1417372,
-      "listing_sha256": "d19a6686f36cf5351057abbdb5736ddcd23427fa6d0162a3d1aa26b686765303"
+      "partitions": 4319,
+      "bytes": 43686200,
+      "listing_sha256": "b2c90ede04550e371ce527097279aa9465049170822aa2dbedad86fc75e0f094"
     },
     "raw/bars/2024-09-27": {
-      "partitions": 142,
-      "bytes": 1401530,
-      "listing_sha256": "6da2dfc5cda0e53d87f9c862f32a0ff655aa7ea75d412db1c354bc3f35fada9e"
+      "partitions": 4319,
+      "bytes": 43272760,
+      "listing_sha256": "45e0536882bcb9185827bfad6fb05e22e6b1e1318039cece82460575a717fe14"
     },
     "raw/bars/2024-09-30": {
-      "partitions": 142,
-      "bytes": 1420371,
-      "listing_sha256": "6559bbd89c423d521c9c79dcacbed1ad7f44c148f31c43da5db5c85b286993a3"
+      "partitions": 4319,
+      "bytes": 43797702,
+      "listing_sha256": "f3dd50dc94610db59ff11c791a9e76b0d2391dd7de794d387924e8738d1b24c7"
     },
     "raw/bars/2024-10-01": {
-      "partitions": 77,
-      "bytes": 748404,
-      "listing_sha256": "e8cda0bfc8050b709d146ccfa5a4cb398bac4bb9bfd30615005a39d5b2c4ea50"
+      "partitions": 4319,
+      "bytes": 43857497,
+      "listing_sha256": "d8814610ef7dcce9c49d193f6a1d0bde946bc39262b0b5aca40eb53560e335b5"
     },
     "raw/bars/2024-10-02": {
-      "partitions": 77,
-      "bytes": 734400,
-      "listing_sha256": "e80be352f15948b3eec52921834b63186a54ef2476fe60305196f7aa0fb61df1"
+      "partitions": 4319,
+      "bytes": 43121200,
+      "listing_sha256": "b397963816e0d6d5094e1b84c9048ae911402b4df366031b79a8a8082255127f"
     },
     "raw/bars/2024-10-03": {
-      "partitions": 77,
-      "bytes": 728979,
-      "listing_sha256": "3d01103dfadef9db12a66f9521af54baffe130de4cfc071dae07b4c4f5f51751"
+      "partitions": 4319,
+      "bytes": 42740939,
+      "listing_sha256": "4a7236fdd00c721fbf384b97f10934649226e00754b1669eee6367d678b53dfb"
     },
     "raw/bars/2024-10-04": {
-      "partitions": 77,
-      "bytes": 732816,
-      "listing_sha256": "81c1a989f51adaae07a7d6abf6c9d142bb1bc0eb0db4878ae90d4ab14ccc89cc"
+      "partitions": 4319,
+      "bytes": 43186545,
+      "listing_sha256": "b84acdbca66cb187e34122d0b54878e1cdcff16ddbf2af632f0208f0aca244f7"
     },
     "raw/bars/2024-10-07": {
-      "partitions": 77,
-      "bytes": 747867,
-      "listing_sha256": "92a0b35b48d7e29c21432f5e460d98a5cef2e04c350ae04813cdbc90e2873f7f"
+      "partitions": 4319,
+      "bytes": 43362069,
+      "listing_sha256": "0cabefdea8a30678fc89643fdb066192fd53e816d2e2ed266dd407711f98d3a1"
     },
     "raw/bars/2024-10-08": {
-      "partitions": 77,
-      "bytes": 731745,
-      "listing_sha256": "65cdc55c40e7bdcd7b438ece885b4974a2a7cfb2f457d688677cfbaf193b293e"
+      "partitions": 4319,
+      "bytes": 43030029,
+      "listing_sha256": "47892043f13b2bdc704a317b7f18d1752a719c6835df3b1005fcee5334574556"
     },
     "raw/bars/2024-10-09": {
-      "partitions": 77,
-      "bytes": 734065,
-      "listing_sha256": "cc5294ddea9458d8fc0d20960b60db645abdf218742f0552665e3629b4ff29f5"
+      "partitions": 4319,
+      "bytes": 42906079,
+      "listing_sha256": "bae9b661a9961ea3517c4489130fa6ed813bd7cfeab8c1f02efeffcf7075f0ec"
     },
     "raw/bars/2024-10-10": {
-      "partitions": 77,
-      "bytes": 749964,
-      "listing_sha256": "ad41e1ffdc550d6a2f88686fc5cb1e60cfc353add59e7f9f3423249861e6f206"
+      "partitions": 4319,
+      "bytes": 42747382,
+      "listing_sha256": "74dea30bd12cfa942c44952dcb95b937337f0874a8766a8aa32bd970ff995b8a"
     },
     "raw/bars/2024-10-11": {
-      "partitions": 77,
-      "bytes": 745698,
-      "listing_sha256": "834ee5a9ee1d27f132a10eb4cd48a2c9c42e13466a780e652ed4a0fd65aa9584"
+      "partitions": 4319,
+      "bytes": 42812515,
+      "listing_sha256": "e6e70465175d55be9726518290c53471c696fa206d3adf345ac87a48de3dc29a"
     },
     "raw/bars/2024-10-14": {
-      "partitions": 77,
-      "bytes": 732238,
-      "listing_sha256": "6368685c8fc173aa6ef0dd5e445eb3aeb54f4ce442249d32c55f764660813959"
+      "partitions": 4319,
+      "bytes": 42831657,
+      "listing_sha256": "7e7cfc7e2efac91a33f5094a7acd36cfef30567fdf16f5c29e56cce7971937e2"
     },
     "raw/bars/2024-10-15": {
-      "partitions": 77,
-      "bytes": 741027,
-      "listing_sha256": "7548f55f49d6932af6984f57cb6395e2355860fe00c5e57bb5be1f926875d848"
+      "partitions": 4319,
+      "bytes": 43766204,
+      "listing_sha256": "eebe8d194854051b4cd7f8d0f683515cf2504291a022b24d38942dd90e0bc324"
     },
     "raw/bars/2024-10-16": {
-      "partitions": 77,
-      "bytes": 748572,
-      "listing_sha256": "80e10ef665956a7d47c55c053d475422b5bf850d26ed223fda103802559598ae"
+      "partitions": 4319,
+      "bytes": 43544515,
+      "listing_sha256": "0d4fe6f4d857611177994e58e79d27cd7dec9703dabd1a68fcdbcb625e5ba1e5"
     },
     "raw/bars/2024-10-17": {
-      "partitions": 77,
-      "bytes": 755407,
-      "listing_sha256": "3bcbfa489e2c5eabe69d5f77ff0129dd4ba81dbeee0dfbff4175865b415cca0e"
+      "partitions": 4319,
+      "bytes": 43362181,
+      "listing_sha256": "35c30061b8c8afc82fe0b6bd0549d6091b3859fc0cc66a6c53ab956ccbc19fad"
     },
     "raw/bars/2024-10-18": {
-      "partitions": 77,
-      "bytes": 729985,
-      "listing_sha256": "e9f0c3fb255bdba01cea434aed9e231f142f398ea3cd4a3713543f8446cfc4a2"
+      "partitions": 4319,
+      "bytes": 43126504,
+      "listing_sha256": "55762996a94ee8d75605f7c8cab73061637a3757b82df352af9e1d43af2e2ef9"
     },
     "raw/bars/2024-10-21": {
-      "partitions": 77,
-      "bytes": 749106,
-      "listing_sha256": "88bc5524537e01aa542ab51673a8698e5a844aefa8f8f3c2cc7b3ba94ce942f5"
+      "partitions": 4319,
+      "bytes": 43738448,
+      "listing_sha256": "5c32976a0839ef43df5cc54e0ead5c48f621aa594962cc8c21af5ca62af907ce"
     },
     "raw/bars/2024-10-22": {
-      "partitions": 77,
-      "bytes": 743643,
-      "listing_sha256": "f09c3025401580dc09f7cfc2d257a7a0eb94b8646bd74c063568791b4ede8ac6"
+      "partitions": 4319,
+      "bytes": 43166612,
+      "listing_sha256": "4712c65e0f22a1b672793c3583a52d3feb3fe39faf6fb48f3f2bf15ca24d48bc"
     },
     "raw/bars/2024-10-23": {
-      "partitions": 77,
-      "bytes": 756939,
-      "listing_sha256": "3ff74a6a3b3db40d1e237df8f46ca4a7fa3fc0cb41bf8a847ec02e09bd807386"
+      "partitions": 4319,
+      "bytes": 43595596,
+      "listing_sha256": "41af9a508759e77555d5900dfa90f57159c29e9d4e4326948189008259b0cffe"
     },
     "raw/bars/2024-10-24": {
-      "partitions": 77,
-      "bytes": 757606,
-      "listing_sha256": "4e6bc3f8967cfd51f3f21be79835ba3a340c2e3a44ecb5fd0208326a3ff2d299"
+      "partitions": 4319,
+      "bytes": 43357463,
+      "listing_sha256": "da38b9cfcd79478453bfd8f70aa5e94cd59ffeb07fac186864dea7ba5fef63dd"
     },
     "raw/bars/2024-10-25": {
-      "partitions": 77,
-      "bytes": 747709,
-      "listing_sha256": "39d56f9bbfd31e6fe9c9f04a83b37e2ceeb84b1cc149fe0915f72a8f4b419b40"
+      "partitions": 4319,
+      "bytes": 43457339,
+      "listing_sha256": "9ad6847eee15554dba2a114c723f474e6ab33178926fabe7f9a7ea7284615274"
     },
     "raw/bars/2024-10-28": {
-      "partitions": 77,
-      "bytes": 737797,
-      "listing_sha256": "6104119c87a82ab8c3184de9dac67f4ddf85daeaebe3387da0db0765045e2ec5"
+      "partitions": 4319,
+      "bytes": 43708034,
+      "listing_sha256": "37ea3c8293cd0ff84131b8ea3cf9c991f2b9b986aa00086a75f3bf1f69e4b95e"
     },
     "raw/bars/2024-10-29": {
-      "partitions": 77,
-      "bytes": 734181,
-      "listing_sha256": "9b959d592bf0fe2f13e798cdbe151633595a21b7f6217c8b45b4675757ef4763"
+      "partitions": 4319,
+      "bytes": 43517605,
+      "listing_sha256": "bf3980a517ef13f641bd4c17d47ffe4d9b471966df2b07f3f3ab93df95cc6cb8"
     },
     "raw/bars/2024-10-30": {
-      "partitions": 77,
-      "bytes": 738681,
-      "listing_sha256": "b89995c748ed80c11e513439bef66e7181c7608a647b7d49442b88b5ceeee29e"
+      "partitions": 4319,
+      "bytes": 43589442,
+      "listing_sha256": "e2d44e9b5f202c1e903cbf6113d78a8bd301310cdc51015eed087920232768d9"
     },
     "raw/bars/2024-10-31": {
-      "partitions": 77,
-      "bytes": 751854,
-      "listing_sha256": "d12612b3640d957d2db678531408f37fa57c51b41205ca4d610f8b743e78bac2"
+      "partitions": 4319,
+      "bytes": 43795999,
+      "listing_sha256": "c1da0ec02e59b3f9d760acf375b2810d6a3c2050a5fbc9023616db85245ff75c"
+    },
+    "raw/bars/2024-11-01": {
+      "partitions": 4319,
+      "bytes": 43727132,
+      "listing_sha256": "4955e59a4611214e6973dc6945be6f4ccf2ef944edb4aa6b720226531acf0e5b"
+    },
+    "raw/bars/2024-11-04": {
+      "partitions": 4319,
+      "bytes": 44104043,
+      "listing_sha256": "ac0c04a84cbf8c59df866d5c82745d89e3f59190424426f5a99a96fac9c3030c"
+    },
+    "raw/bars/2024-11-05": {
+      "partitions": 4319,
+      "bytes": 43800250,
+      "listing_sha256": "2423300da2722b79a8c561e4968c94a82decbf5dfbb796a4995776abc9a47bc6"
+    },
+    "raw/bars/2024-11-06": {
+      "partitions": 4319,
+      "bytes": 47532600,
+      "listing_sha256": "cdea0116690f0ffd52f74c2332e649126c935aff9e4afe715e231606e8ccd4f5"
+    },
+    "raw/bars/2024-11-07": {
+      "partitions": 4319,
+      "bytes": 45752344,
+      "listing_sha256": "347f5c4e68a02d11fea01f4aa7942d450c5c08920e46144124ef5e2184e8d1ec"
+    },
+    "raw/bars/2024-11-08": {
+      "partitions": 4319,
+      "bytes": 45300225,
+      "listing_sha256": "25e7fe0931cfa17143a42375572301877865756e1b5704b2ee5bcf33c21be275"
+    },
+    "raw/bars/2024-11-11": {
+      "partitions": 4319,
+      "bytes": 45841584,
+      "listing_sha256": "fbbdcdd209bd3c517af4853112d455f2e8fdaeff4f57bf402266f10dce139035"
+    },
+    "raw/bars/2024-11-12": {
+      "partitions": 4319,
+      "bytes": 45595156,
+      "listing_sha256": "e8c82e71f04ba08bce7687f310b12b166f0940e2f54bf2cc0b74174423e967ec"
+    },
+    "raw/bars/2024-11-13": {
+      "partitions": 4319,
+      "bytes": 45647182,
+      "listing_sha256": "b37a13839a82f842da7422afdfe87932ecda15041b625fb256eca878a0cf4ad8"
+    },
+    "raw/bars/2024-11-14": {
+      "partitions": 4319,
+      "bytes": 45077510,
+      "listing_sha256": "b83f535998af837f7f8d8f4e397ced84a822a6769d392fc108ceb51270da86f7"
+    },
+    "raw/bars/2024-11-15": {
+      "partitions": 4319,
+      "bytes": 44843683,
+      "listing_sha256": "032895a2792ed13056e6b6ab58192e0442421e0287d0e5fbcc631184f503da11"
+    },
+    "raw/bars/2024-11-18": {
+      "partitions": 4319,
+      "bytes": 44766553,
+      "listing_sha256": "601956b7b52ed9bf8e7356e5f33ca454f5fcd92dfde52e3b2c481988ab24d2c2"
+    },
+    "raw/bars/2024-11-19": {
+      "partitions": 4319,
+      "bytes": 44604576,
+      "listing_sha256": "1f92d1e3f1de19f2a5dd1f7e95735063e896d96d614567b8cee43bdee5bb6089"
+    },
+    "raw/bars/2024-11-20": {
+      "partitions": 4319,
+      "bytes": 44105355,
+      "listing_sha256": "4ce044fb516dbb248f10956b72df515ecb12cd7e8f683ba0c7a966f1d461e31f"
+    },
+    "raw/bars/2024-11-21": {
+      "partitions": 4319,
+      "bytes": 44837785,
+      "listing_sha256": "b3085e188e321bb3f51cd468802bf14e56a269be82b3da6bb821a46da20d0abc"
+    },
+    "raw/bars/2024-11-22": {
+      "partitions": 4319,
+      "bytes": 44653602,
+      "listing_sha256": "15104d7c76fe41b67138138a0153fcfbab127d3ad0d5ba34c1820c94ba62fda4"
+    },
+    "raw/bars/2024-11-25": {
+      "partitions": 4319,
+      "bytes": 45994929,
+      "listing_sha256": "dab3b9c6b0ab41042a24ca2d14afedbb9a8a7138b40f134eedf5d1b28e359cc0"
+    },
+    "raw/bars/2024-11-26": {
+      "partitions": 4319,
+      "bytes": 44620466,
+      "listing_sha256": "415b3fc5851ea34c32e1e8b8cd0a755a59cfb89df3ee97daa295c1a8486b008c"
+    },
+    "raw/bars/2024-11-27": {
+      "partitions": 4319,
+      "bytes": 44058018,
+      "listing_sha256": "50547e3770965cfcb71fb07d4ea14c60fa1607414fdd29d6aa5103330fcac846"
+    },
+    "raw/bars/2024-11-29": {
+      "partitions": 4319,
+      "bytes": 38701979,
+      "listing_sha256": "70bdf54a23fd70cffc1c599b775e5b6f852537b159308eafd7ba547993c70496"
+    },
+    "raw/bars/2024-12-02": {
+      "partitions": 4319,
+      "bytes": 45634431,
+      "listing_sha256": "663eef0728b5f267e909b548da3b09fd2e3a1e1fe9cb71262e7d6d49166c11ef"
+    },
+    "raw/bars/2024-12-03": {
+      "partitions": 4319,
+      "bytes": 44867884,
+      "listing_sha256": "5e3a708615602899133dac03421e0b0db60554a899a9f72d190e5307fa0e3193"
+    },
+    "raw/bars/2024-12-04": {
+      "partitions": 4319,
+      "bytes": 45027785,
+      "listing_sha256": "e30030da7cdbfa2adb6056903532a13e7ce307e278cb4cf5ec99ee14c45102c1"
+    },
+    "raw/bars/2024-12-05": {
+      "partitions": 4319,
+      "bytes": 44994963,
+      "listing_sha256": "c40434b08eee4807a499e56873ebf65dd1bd28589e7dc9fa2797539f610fe95a"
+    },
+    "raw/bars/2024-12-06": {
+      "partitions": 4319,
+      "bytes": 44845274,
+      "listing_sha256": "5204fa68f49b9355482c82a1d09b558509a7cff26606f58d337333f1b95de253"
+    },
+    "raw/bars/2024-12-09": {
+      "partitions": 4319,
+      "bytes": 46059847,
+      "listing_sha256": "20e082627e3976df9cd80b6208deccdddef5d1fa69316eb1e89d3194d2a4e1d1"
+    },
+    "raw/bars/2024-12-10": {
+      "partitions": 4319,
+      "bytes": 45238561,
+      "listing_sha256": "97df2a6319b6d89ad15dc5c2eacf78dec6db4ded19d6dd14a145b00d1d03e112"
+    },
+    "raw/bars/2024-12-11": {
+      "partitions": 4319,
+      "bytes": 45182193,
+      "listing_sha256": "824134be242630c20ce2bb0b6e64de3269647d4741f8494f18a3dc6a4636af16"
+    },
+    "raw/bars/2024-12-12": {
+      "partitions": 4319,
+      "bytes": 44662682,
+      "listing_sha256": "1641d96ea0aaf4da89c43dce133db77500cedd8c27cace0ff592035708293cc1"
+    },
+    "raw/bars/2024-12-13": {
+      "partitions": 4319,
+      "bytes": 44505528,
+      "listing_sha256": "3312c283543186ed6f82e970eaf8f447bbf85dad611948e0f2b7a4af7e3db40a"
+    },
+    "raw/bars/2024-12-16": {
+      "partitions": 4319,
+      "bytes": 45587931,
+      "listing_sha256": "e68f89a74219955fb0e7d7d10d0215f25e0f54dec12a7b3443003d9b1b5473bb"
+    },
+    "raw/bars/2024-12-17": {
+      "partitions": 4319,
+      "bytes": 45483663,
+      "listing_sha256": "246b6dc92dcc870715f75ef148dba8d4dcb805e92944d5716b32ac1891c62cd5"
+    },
+    "raw/bars/2024-12-18": {
+      "partitions": 4319,
+      "bytes": 47044715,
+      "listing_sha256": "ffbd8800669c03eabc14bb4a8a080819efff59ef781a9f2d53d32d2b6ce30ce9"
+    },
+    "raw/bars/2024-12-19": {
+      "partitions": 4319,
+      "bytes": 46257515,
+      "listing_sha256": "515d1fab008e2f0b25a13b8b5707e0b357c0c2953bfcfcfb1bfa6daad2dff211"
+    },
+    "raw/bars/2024-12-20": {
+      "partitions": 4319,
+      "bytes": 46593257,
+      "listing_sha256": "8a6cf63a952382553cbc0ce63a3b6a768ed2d31a2795afa3a1bf4a86c6797833"
+    },
+    "raw/bars/2024-12-23": {
+      "partitions": 4319,
+      "bytes": 45377034,
+      "listing_sha256": "131c4d8d12719ad50abdc153e7ab9b97024c066fa33cb90f952e154db87b6395"
+    },
+    "raw/bars/2024-12-24": {
+      "partitions": 4319,
+      "bytes": 38730084,
+      "listing_sha256": "af3e309e584488bc778ded00de80334ca56609feedeb702e80588bb0d0ae3b49"
+    },
+    "raw/bars/2024-12-26": {
+      "partitions": 4319,
+      "bytes": 44593198,
+      "listing_sha256": "1cc7df93a47c6b93c68c67df86363dd74c042b889dae4807735640d64c375298"
+    },
+    "raw/bars/2024-12-27": {
+      "partitions": 4319,
+      "bytes": 45185495,
+      "listing_sha256": "b8ad09b2253a63f6a3cb62561ee4262f0682126beb3be1d00f48914a89930242"
+    },
+    "raw/bars/2024-12-30": {
+      "partitions": 4319,
+      "bytes": 46019471,
+      "listing_sha256": "4a03b728b5b92217d34adc9cf123a5cddb0b63eac8d5b58a696394f64d5f1bef"
+    },
+    "raw/bars/2024-12-31": {
+      "partitions": 4319,
+      "bytes": 45169876,
+      "listing_sha256": "690d6886d0f85678081e09a976e241c440b649e1df4dd80ebe0eeb2281a941ac"
+    },
+    "raw/bars/2025-01-02": {
+      "partitions": 4319,
+      "bytes": 46092615,
+      "listing_sha256": "7e601d79715b392fefb0d18385db86642ac48c286c282027ec31007aa6b38309"
+    },
+    "raw/bars/2025-01-03": {
+      "partitions": 4319,
+      "bytes": 45479122,
+      "listing_sha256": "9e1fffc77dc7c260b29d51624e862a6764c9d9e7464801874e85e9aea8d064c1"
+    },
+    "raw/bars/2025-01-06": {
+      "partitions": 4319,
+      "bytes": 46929654,
+      "listing_sha256": "38061058fa4aafc3a6c5e6f135f069afa9d020ac3bf9d08ca459e65e8035b117"
+    },
+    "raw/bars/2025-01-07": {
+      "partitions": 4319,
+      "bytes": 46141421,
+      "listing_sha256": "485f0d4eb6fb2d72734707e5f11b340e352fb225dd637b6d58fb33b4ddedd9e5"
+    },
+    "raw/bars/2025-01-08": {
+      "partitions": 4319,
+      "bytes": 45743371,
+      "listing_sha256": "d56550b13ff46b40ab68d9ceb99d583d002b5e22537c29f8667e557db14fcc1b"
+    },
+    "raw/bars/2025-01-10": {
+      "partitions": 4319,
+      "bytes": 46464936,
+      "listing_sha256": "b4fa0fdcf8708630ba54c1120877dfa0e163b80fd43f01a39f6944b0f5a8fa82"
+    },
+    "raw/bars/2025-01-13": {
+      "partitions": 4319,
+      "bytes": 46213565,
+      "listing_sha256": "4fbad15b8fc85c9c1b17642c6dc5e6127784cb3e082bd2fccbd9ca8d5062701b"
+    },
+    "raw/bars/2025-01-14": {
+      "partitions": 4319,
+      "bytes": 45490599,
+      "listing_sha256": "5df07db2a63c7966101fa64caabc7d80000c772783f47cbdbbe110bcea9f04e2"
+    },
+    "raw/bars/2025-01-15": {
+      "partitions": 4319,
+      "bytes": 45527156,
+      "listing_sha256": "bc225547f0da3fa19e0bae2e546b2f3a6b6643d8e3101328b95415085741a4a1"
+    },
+    "raw/bars/2025-01-16": {
+      "partitions": 4319,
+      "bytes": 45038448,
+      "listing_sha256": "326f5b547225c13a679e0dce9ef5b7aca4d8e7f2951d8b36a25ca9368fcf67ab"
+    },
+    "raw/bars/2025-01-17": {
+      "partitions": 4319,
+      "bytes": 44964978,
+      "listing_sha256": "ab350e375f69842d7159ee9e6b7a46b26551fe9c2f1506b6c6dd44630cae2f58"
+    },
+    "raw/bars/2025-01-21": {
+      "partitions": 4319,
+      "bytes": 46012949,
+      "listing_sha256": "3deb869a1ad39e705b54236bfb7ae33bef99e993acbb506b8001a06565f82cbf"
+    },
+    "raw/bars/2025-01-22": {
+      "partitions": 4319,
+      "bytes": 45412158,
+      "listing_sha256": "6bc3eeb71cd9fb2c71bd1ce2bdd910bcff67b989ac53ef22d0a2e7d4bf6e17aa"
+    },
+    "raw/bars/2025-01-23": {
+      "partitions": 4319,
+      "bytes": 45052561,
+      "listing_sha256": "81f2959ed1d7db1f3d72b90827e3c75ae21184b6b195e1931d62d29ee393da9b"
+    },
+    "raw/bars/2025-01-24": {
+      "partitions": 4319,
+      "bytes": 45097213,
+      "listing_sha256": "601e431d5609afc5fa3b95127b20ec518a96560c7bb58a971d36d124eddba537"
+    },
+    "raw/bars/2025-01-27": {
+      "partitions": 4319,
+      "bytes": 46811191,
+      "listing_sha256": "d951b1e3cd7beb3112bed2219bf44b475e197e5d60d72bbe51932c75818a8055"
+    },
+    "raw/bars/2025-01-28": {
+      "partitions": 4319,
+      "bytes": 45141687,
+      "listing_sha256": "986af548805aad2e4205d5e6adee6a4f7cddc3e40ec516ab812085f947fff18b"
+    },
+    "raw/bars/2025-01-29": {
+      "partitions": 4319,
+      "bytes": 44774861,
+      "listing_sha256": "7029f53e0c7594d3dfdd39dcc1a7dbecc8686eacdba834a771c16d94dded926b"
+    },
+    "raw/bars/2025-01-30": {
+      "partitions": 4319,
+      "bytes": 44935773,
+      "listing_sha256": "3f6945a2a778dd7a35da12cb73972c6fb20c3bc00704b855f5df7b12722bcf8d"
+    },
+    "raw/bars/2025-01-31": {
+      "partitions": 4319,
+      "bytes": 45596081,
+      "listing_sha256": "5fb522278e639ab8485fc459bd7eae28558bce5dd8b78f9a9a4e2136325589c3"
+    },
+    "raw/bars/2025-02-03": {
+      "partitions": 4319,
+      "bytes": 46431957,
+      "listing_sha256": "e723a9c5ef0612c98ebe09efd94257411a97af5e057809649e0adadcd057f738"
+    },
+    "raw/bars/2025-02-04": {
+      "partitions": 4319,
+      "bytes": 44863175,
+      "listing_sha256": "13ea1b4ec94b75bd7794f0bfb732bb8b43691a6abf568563aaf14ced1fecfba6"
+    },
+    "raw/bars/2025-02-05": {
+      "partitions": 4319,
+      "bytes": 44984489,
+      "listing_sha256": "95b9c066ed79c359fb598333afa84020dfc87c52e6a4f6f1d0a25a932db68d5e"
+    },
+    "raw/bars/2025-02-06": {
+      "partitions": 4319,
+      "bytes": 45366525,
+      "listing_sha256": "065840248564c3bae4e8d925edfc1f919f03093285c7ef0560a5ea7b7aab3b82"
+    },
+    "raw/bars/2025-02-07": {
+      "partitions": 4319,
+      "bytes": 45358509,
+      "listing_sha256": "6f542a5eb17b81d9ed12a3005b79527d1d35694ceee929949de115573531a634"
+    },
+    "raw/bars/2025-02-10": {
+      "partitions": 4319,
+      "bytes": 45417744,
+      "listing_sha256": "c9b3dec5fa2c3208b00848d7accd598b133b0e7c29f285ea3507a151ef12eab6"
+    },
+    "raw/bars/2025-02-11": {
+      "partitions": 4319,
+      "bytes": 45082806,
+      "listing_sha256": "306d28f19e468b3f6a940e2549641c8062e2835487768edcb929b2f1da7d50cc"
+    },
+    "raw/bars/2025-02-12": {
+      "partitions": 4319,
+      "bytes": 45432621,
+      "listing_sha256": "ddefc30d7dd7785761d25674764ed5847d8232e70c37dc0e1dff16466adfef75"
+    },
+    "raw/bars/2025-02-13": {
+      "partitions": 4319,
+      "bytes": 45447250,
+      "listing_sha256": "8dd237f502dcda0d91a6f6205c7a0ed78321c70fce1d528987e929ed3a333517"
+    },
+    "raw/bars/2025-02-14": {
+      "partitions": 4319,
+      "bytes": 45310177,
+      "listing_sha256": "ccb83c77684d0aeb119f4a6082833a64744d50f770bc56ef7b06dadee8092e82"
+    },
+    "raw/bars/2025-02-18": {
+      "partitions": 4319,
+      "bytes": 46238718,
+      "listing_sha256": "f47f6e7e01dfdc971c76e0a56fa4719814517e87742cceb47996b77d5f938199"
+    },
+    "raw/bars/2025-02-19": {
+      "partitions": 4319,
+      "bytes": 45525082,
+      "listing_sha256": "ff9749d0d1b464c85c924f37467a1de565bc9c408a5cbc4126e9be27618e58d1"
+    },
+    "raw/bars/2025-02-20": {
+      "partitions": 4319,
+      "bytes": 45432461,
+      "listing_sha256": "ca13b4124344d8eeba63afd71983a643e5ce40fe0579adf25275542df1425981"
+    },
+    "raw/bars/2025-02-21": {
+      "partitions": 4319,
+      "bytes": 46073983,
+      "listing_sha256": "49dc7785367905b825d12e3fe35ab780f93a5efcb0592dc1c5ff987abe6f2850"
+    },
+    "raw/bars/2025-02-24": {
+      "partitions": 4319,
+      "bytes": 45801073,
+      "listing_sha256": "e42c0a2206ec0d62818e6d42b149a3d79c2bdd437729a8aa5fb21737fb0fcc93"
+    },
+    "raw/bars/2025-02-25": {
+      "partitions": 4319,
+      "bytes": 45986716,
+      "listing_sha256": "d2ac413ef256d1fdf472553b6581d49b8dc65da822ffb2fdac508d008d88d5e9"
+    },
+    "raw/bars/2025-02-26": {
+      "partitions": 4319,
+      "bytes": 45251993,
+      "listing_sha256": "0922e375a92e8ff33430a5e93879a3a0ad9a5bf5f569acbd6ddd79a31e8e588e"
+    },
+    "raw/bars/2025-02-27": {
+      "partitions": 4319,
+      "bytes": 45293069,
+      "listing_sha256": "800d4ee9b339516fbb9aea07779853dd246e7d7204fe9bbd610b4612f43f9320"
+    },
+    "raw/bars/2025-02-28": {
+      "partitions": 4319,
+      "bytes": 45315091,
+      "listing_sha256": "1efc49a1e40769d3ec6333fbde71e3e907d790a152bf73275408fcf7e27e6574"
+    },
+    "raw/bars/2025-03-03": {
+      "partitions": 4319,
+      "bytes": 46766800,
+      "listing_sha256": "da8cb7b5580b53da22916dc2f23eb626c1afcee3ecc62f91e65940014aa65d2b"
+    },
+    "raw/bars/2025-03-04": {
+      "partitions": 4319,
+      "bytes": 47197238,
+      "listing_sha256": "edce33c37fc0719cd1c927309a93652817b6bfe4f0c452cd5a803e64c4e291e6"
+    },
+    "raw/bars/2025-03-05": {
+      "partitions": 4319,
+      "bytes": 45518460,
+      "listing_sha256": "56971e4880d3b7ba1a8a8136fff008533d002e9f166dbbf29e571e6d4f35e364"
+    },
+    "raw/bars/2025-03-06": {
+      "partitions": 4319,
+      "bytes": 45569134,
+      "listing_sha256": "26934ef7d09a263fac4d9fcf86fd835c895643a177509a2e7f657e77381dd35c"
+    },
+    "raw/bars/2025-03-07": {
+      "partitions": 4319,
+      "bytes": 45675373,
+      "listing_sha256": "2f659fa1d088c026911ee179302990e1765dd011c06e6558fdd496f4857a575c"
+    },
+    "raw/bars/2025-03-10": {
+      "partitions": 4319,
+      "bytes": 46484074,
+      "listing_sha256": "004a7c4b71551f78724a880ff631faa5d5c7f642517caaa906f05cb898fafd50"
+    },
+    "raw/bars/2025-03-11": {
+      "partitions": 4319,
+      "bytes": 45986757,
+      "listing_sha256": "752d3fcf4c358d3829a6268852c4fa7cbe203f2a0043d4a9e2b584d54cd3529d"
+    },
+    "raw/bars/2025-03-12": {
+      "partitions": 4319,
+      "bytes": 45317852,
+      "listing_sha256": "0a830a837cc5dc9b85449e5766a1e2a47b02b72212bdff5086e4b7c9176cfe98"
+    },
+    "raw/bars/2025-03-13": {
+      "partitions": 4319,
+      "bytes": 44985085,
+      "listing_sha256": "5b6983399541c99cd8d7c70e02f5453fbfed8a16df6ef268ef4c6e44c0936a06"
+    },
+    "raw/bars/2025-03-14": {
+      "partitions": 4319,
+      "bytes": 44693462,
+      "listing_sha256": "e726849ec1fcba71cad0e80f20ba58d17e4784082c9bc80d796ff17a7c747381"
+    },
+    "raw/bars/2025-03-17": {
+      "partitions": 4319,
+      "bytes": 45272937,
+      "listing_sha256": "efb929df35e48b81662624a85a50144ebf450afb72982def271d6c9ed0cce82f"
+    },
+    "raw/bars/2025-03-18": {
+      "partitions": 4319,
+      "bytes": 44446340,
+      "listing_sha256": "746569851cd85f4dc978abea231d48be4c712c04dc7e8b18712effadb61f329f"
+    },
+    "raw/bars/2025-03-19": {
+      "partitions": 4319,
+      "bytes": 44454836,
+      "listing_sha256": "90ba49d14cfc43a4a61ea842c5b492fa7d2680f14c385887e9e9736377101bc0"
+    },
+    "raw/bars/2025-03-20": {
+      "partitions": 4319,
+      "bytes": 44404857,
+      "listing_sha256": "4ffb28426f8f07ba95350817d437f796285099a06dc3ca1ecab4db0c4f9842e4"
+    },
+    "raw/bars/2025-03-21": {
+      "partitions": 4319,
+      "bytes": 44487791,
+      "listing_sha256": "96ac2acb144b6f910475c42d94567180f8e9ebaa88656334f0e446215ac2c25c"
+    },
+    "raw/bars/2025-03-24": {
+      "partitions": 4319,
+      "bytes": 44845188,
+      "listing_sha256": "91e75311ec7610870b40193525c4cccdff6610e7c6a9ec1782415654f6c2837b"
+    },
+    "raw/bars/2025-03-25": {
+      "partitions": 4319,
+      "bytes": 44226984,
+      "listing_sha256": "0b621a16a810f074080399d98a6612db2325fb073da5804b0f6235cd6fb56fdf"
+    },
+    "raw/bars/2025-03-26": {
+      "partitions": 4319,
+      "bytes": 44187663,
+      "listing_sha256": "a244a9e7d94a69f402d1d33d1646e378ac668a6cc03ce7a48dc7b15c2362db9b"
+    },
+    "raw/bars/2025-03-27": {
+      "partitions": 4319,
+      "bytes": 44070740,
+      "listing_sha256": "12de80ba0338de9ae19d0902d869ffb507971d62e9c9c7f7df6ed02d066ee9ab"
+    },
+    "raw/bars/2025-03-28": {
+      "partitions": 4319,
+      "bytes": 44461019,
+      "listing_sha256": "226f8399dd50b1c28dfadf12813a54e2cccc4bffdd551c12f2e8657b128a0e95"
+    },
+    "raw/bars/2025-03-31": {
+      "partitions": 4319,
+      "bytes": 45495684,
+      "listing_sha256": "94638fb64dbbe2bb193891bc157a71617b673c5f1347859927899f4dea6dee14"
+    },
+    "raw/bars/2025-04-01": {
+      "partitions": 4319,
+      "bytes": 44932694,
+      "listing_sha256": "97ab36d9ae0a007ece6bed973f5cef612e6862d66a048ae5c80dccfdbbe6c4ab"
+    },
+    "raw/bars/2025-04-02": {
+      "partitions": 4319,
+      "bytes": 44657125,
+      "listing_sha256": "0590423c02de4e25b1e8b4e10ee134eb4703b70c64b0ee7141654bf0f558cdc0"
+    },
+    "raw/bars/2025-04-03": {
+      "partitions": 4319,
+      "bytes": 46784697,
+      "listing_sha256": "ddcae907a251523b70fcfffb6852d155a7de2cbc0def3cb12181085500598c4a"
+    },
+    "raw/bars/2025-04-04": {
+      "partitions": 4319,
+      "bytes": 49123553,
+      "listing_sha256": "f80f5fca082b39221289d59e659708ae7e2a1c7f8749c7c70823dd87fd3dac42"
+    },
+    "raw/bars/2025-04-07": {
+      "partitions": 4319,
+      "bytes": 49250089,
+      "listing_sha256": "c13372165bfd97d997b51c86d0cad829ffd84dfc56405d617b818f5206514140"
+    },
+    "raw/bars/2025-04-08": {
+      "partitions": 4319,
+      "bytes": 48431019,
+      "listing_sha256": "1deb70b6d17fa3a1f9266bc32a1ae5a5d46dca1b12693909222b334199beea7c"
+    },
+    "raw/bars/2025-04-09": {
+      "partitions": 4319,
+      "bytes": 49484417,
+      "listing_sha256": "565545f3d88756af828e9a0d198e070408c849354cc3b0c6914d7608e9084182"
+    },
+    "raw/bars/2025-04-10": {
+      "partitions": 4319,
+      "bytes": 46966624,
+      "listing_sha256": "c380a32c00d197a01aadd5e8982cfab4fd9826752f3c9734908a7d3bed21dd19"
+    },
+    "raw/bars/2025-04-11": {
+      "partitions": 4319,
+      "bytes": 45898721,
+      "listing_sha256": "2a1f950261621ef2d18f4402721a74b427d5d5d35aa7bfecc4f683b69653737f"
+    },
+    "raw/bars/2025-04-14": {
+      "partitions": 4319,
+      "bytes": 45703538,
+      "listing_sha256": "05ebdc435ca0d731669366cb835d13958f3e3f64860a6e19e9a9057eabb00fd4"
+    },
+    "raw/bars/2025-04-15": {
+      "partitions": 4319,
+      "bytes": 44342468,
+      "listing_sha256": "e3929fdd08dc37c41233a42fe8255c6781b4d8f5093cf4f06ede16cd79519d32"
+    },
+    "raw/bars/2025-04-16": {
+      "partitions": 4319,
+      "bytes": 44739729,
+      "listing_sha256": "98db2b038411adfa6d8cac814c09f7a10e3b9faa15a000b458415ad3ea1391e6"
+    },
+    "raw/bars/2025-04-17": {
+      "partitions": 4319,
+      "bytes": 44308044,
+      "listing_sha256": "01018a224649ec53fc8b8934fa0c1eb4cf9679436c88475770cc34825407b5c3"
+    },
+    "raw/bars/2025-04-21": {
+      "partitions": 4319,
+      "bytes": 44913547,
+      "listing_sha256": "8e05ce1a7ae28def874e5dfdf952dc3fc13cacbaebd9932bfb04902adfbe540c"
+    },
+    "raw/bars/2025-04-22": {
+      "partitions": 4319,
+      "bytes": 45036169,
+      "listing_sha256": "90904e9438e62b14f6ff1de5ec43adba4cfdec8e6b615f3ff85fe0786545a653"
+    },
+    "raw/bars/2025-04-23": {
+      "partitions": 4319,
+      "bytes": 45954755,
+      "listing_sha256": "b73222b8084f749dd9f8be3cb294972c96b0bf32114b57b2f645b7ac1270e6a5"
+    },
+    "raw/bars/2025-04-24": {
+      "partitions": 4319,
+      "bytes": 44868508,
+      "listing_sha256": "2230b519db33c8535ec29d751ff9824aac8282f7b84e2984dd544cf9fb928bbf"
+    },
+    "raw/bars/2025-04-25": {
+      "partitions": 4319,
+      "bytes": 44211846,
+      "listing_sha256": "9386a650c7558d85ede5ada5de4d4792ebe54410892631782fa5699d798e494b"
+    },
+    "raw/bars/2025-04-28": {
+      "partitions": 4319,
+      "bytes": 44619967,
+      "listing_sha256": "dc54b4c745488a7f424d9575fb75636c8a48aa20c56318ee45a13e91cd039668"
+    },
+    "raw/bars/2025-04-29": {
+      "partitions": 4319,
+      "bytes": 44150468,
+      "listing_sha256": "41ee0ed8a0901b4fca8bd4f26f7e7032f67ed5d2696a9842dc8ebdc07b71805c"
+    },
+    "raw/bars/2025-04-30": {
+      "partitions": 4319,
+      "bytes": 44833402,
+      "listing_sha256": "5ccea8b6590def09c8a7a9298da0e174464bd615257a27b7fa027e8d0c965be9"
+    },
+    "raw/bars/2025-05-01": {
+      "partitions": 4319,
+      "bytes": 44777746,
+      "listing_sha256": "433ced3dc9ad69c22948697004bf92d3f027d247d351c336b51c1a85d73c631c"
+    },
+    "raw/bars/2025-05-02": {
+      "partitions": 4319,
+      "bytes": 45119116,
+      "listing_sha256": "e42207eef917fe838d3fba054b8871739670f25663e83714791a9222f46d9e30"
+    },
+    "raw/bars/2025-05-05": {
+      "partitions": 4319,
+      "bytes": 44538788,
+      "listing_sha256": "76547c549a67f2457a609a3e5f50f740d635774ce8b7ffa6e81d962f0e7ba9b0"
+    },
+    "raw/bars/2025-05-06": {
+      "partitions": 4319,
+      "bytes": 44861214,
+      "listing_sha256": "378a01af253156da15a9e8e7f68af23d7e9cc6e88d1133f0eea75edecdde6c76"
+    },
+    "raw/bars/2025-05-07": {
+      "partitions": 4319,
+      "bytes": 44878146,
+      "listing_sha256": "3c487d27ff770b44e1913255f8e0823e7b51534e0bf16b9ee518728636c90416"
+    },
+    "raw/bars/2025-05-08": {
+      "partitions": 4319,
+      "bytes": 46052308,
+      "listing_sha256": "363816a6fe52a106b5791e5a489aa6eb36c76f806fa1e33e89491f5587d6e93a"
+    },
+    "raw/bars/2025-05-09": {
+      "partitions": 4319,
+      "bytes": 44702506,
+      "listing_sha256": "0b3ebe503d45d8c918f7713e52a811825a574abf3065a675ef0e2cb9c459ac07"
+    },
+    "raw/bars/2025-05-12": {
+      "partitions": 4319,
+      "bytes": 47139546,
+      "listing_sha256": "820adaa3452103c2fd35a837187c90595aceb296a457a2f3f2ab9fe80c62fe41"
+    },
+    "raw/bars/2025-05-13": {
+      "partitions": 4319,
+      "bytes": 45917626,
+      "listing_sha256": "462d57d6debb2cf85bd721b3e30cf075ec3a50234ea23ea5912a4b65ad9a2352"
+    },
+    "raw/bars/2025-05-14": {
+      "partitions": 4319,
+      "bytes": 45464498,
+      "listing_sha256": "2988e012cd7d74ab4b488db002c4e82bdbf4057a25d7f3d800fb439ca4758c10"
+    },
+    "raw/bars/2025-05-15": {
+      "partitions": 4319,
+      "bytes": 44851557,
+      "listing_sha256": "331298086cdb3628465c38cc1c7e5f264b578032074260a81b1917eb16b16d96"
+    },
+    "raw/bars/2025-05-16": {
+      "partitions": 4319,
+      "bytes": 44462024,
+      "listing_sha256": "d400b01f6a8fa85d764f3a2c39adef53e480b55c07be9ab075317ea35b41242c"
+    },
+    "raw/bars/2025-05-19": {
+      "partitions": 4319,
+      "bytes": 44348885,
+      "listing_sha256": "63afcaaaf5fa4700adba7bb8d80c2baedab2c33c5991a96180de9370bccb8e6f"
+    },
+    "raw/bars/2025-05-20": {
+      "partitions": 4319,
+      "bytes": 44086816,
+      "listing_sha256": "7bb38f64d9fe26ced8083502c9484d8ae6c591bcee254fbbf46ab606b2e5898e"
+    },
+    "raw/bars/2025-05-21": {
+      "partitions": 4319,
+      "bytes": 45060338,
+      "listing_sha256": "4384cf9dfbf78a31a0c13eca9c4b468763a51e021f11d9f924b4e2296203c80b"
+    },
+    "raw/bars/2025-05-22": {
+      "partitions": 4319,
+      "bytes": 44478816,
+      "listing_sha256": "748dec4eb14e9200ae3744542e754e45599ba4801319be373539645727d1d04f"
+    },
+    "raw/bars/2025-05-23": {
+      "partitions": 4319,
+      "bytes": 44427224,
+      "listing_sha256": "ec0a0aa6d722083f7c1745a300c71364f3178a294346dc254f3a6311fbf0d25e"
+    },
+    "raw/bars/2025-05-27": {
+      "partitions": 4319,
+      "bytes": 45266889,
+      "listing_sha256": "29aff6d37f0e10924f01d8a439be03ffef3ff305411f1a6cca01661230589001"
+    },
+    "raw/bars/2025-05-28": {
+      "partitions": 4319,
+      "bytes": 44073853,
+      "listing_sha256": "3d8e20f2f4066f8571ad2d28e9ea305536a1a690eae14ac231a0119a08517764"
+    },
+    "raw/bars/2025-05-29": {
+      "partitions": 4319,
+      "bytes": 44569141,
+      "listing_sha256": "09ab6ae60df0f4ea9ad943907cd3f58f3e4c21d23d66404ae304aa2cc72993c4"
+    },
+    "raw/bars/2025-05-30": {
+      "partitions": 4319,
+      "bytes": 44151830,
+      "listing_sha256": "d99d85ecd88f44be1eec4f7536f39e490745fddf6e99d8c81acb5ab861833b20"
+    },
+    "raw/bars/2025-06-02": {
+      "partitions": 4319,
+      "bytes": 45124720,
+      "listing_sha256": "5a73ebbf859af5b71aeb85fbedabea7f3c6821f38cd069b03395e8c9c978e37f"
+    },
+    "raw/bars/2025-06-03": {
+      "partitions": 4319,
+      "bytes": 45044201,
+      "listing_sha256": "5c193772e83e41aa43b69bd2f537d35b80b2372de0696ff6f1e50eac072e5ab5"
+    },
+    "raw/bars/2025-06-04": {
+      "partitions": 4319,
+      "bytes": 44569608,
+      "listing_sha256": "d0309ac69d683b759ec29da5cce3704c3c8cddf9451b5a9d525dc5f53f65dfc9"
+    },
+    "raw/bars/2025-06-05": {
+      "partitions": 4319,
+      "bytes": 44998428,
+      "listing_sha256": "d1c19a5d803ae2e3a8f08c1414d315c1df69857e8c6c747dbdeea84d20e40f52"
+    },
+    "raw/bars/2025-06-06": {
+      "partitions": 4319,
+      "bytes": 44439329,
+      "listing_sha256": "722937e7f29ffe480666cdce56b1c1919e0e3d0d489ebb41da468e459136d31a"
+    },
+    "raw/bars/2025-06-09": {
+      "partitions": 4319,
+      "bytes": 45403959,
+      "listing_sha256": "f4e7f7ff0e0dac112b02ed1a77faa98e4a08785bdee9932278f956f80b41f275"
+    },
+    "raw/bars/2025-06-10": {
+      "partitions": 4319,
+      "bytes": 45052826,
+      "listing_sha256": "21a4c0f109b98252fffdbb1b17a1dc73148d3e734f5181bad37ec7cdf6bd6a8a"
+    },
+    "raw/bars/2025-06-11": {
+      "partitions": 4319,
+      "bytes": 45408330,
+      "listing_sha256": "5b9cbc4c33a4137c6c684d716f8ef9f0d7484893aa644a80afb334509737c0d9"
+    },
+    "raw/bars/2025-06-12": {
+      "partitions": 4319,
+      "bytes": 44494048,
+      "listing_sha256": "2f4c6d1cf868cfdb168ecf0c3bd2d58dec160fd6d020aa06a3cccfc043b513b7"
+    },
+    "raw/bars/2025-06-13": {
+      "partitions": 4319,
+      "bytes": 45586397,
+      "listing_sha256": "dd96c9dd892c60688a12e6f3c2a2c02bdf96a2ceabc9b475701430c48e4d7831"
+    },
+    "raw/bars/2025-06-16": {
+      "partitions": 4319,
+      "bytes": 45381398,
+      "listing_sha256": "3c106bcddf5c0039f601301ac7d8520ceab256dd429ed9364bc829a815452571"
+    },
+    "raw/bars/2025-06-17": {
+      "partitions": 4319,
+      "bytes": 45058965,
+      "listing_sha256": "cb69409b573cbc8b1a8069d21a22b96ec751d88d7e1bc3628195cbc825fc316d"
+    },
+    "raw/bars/2025-06-18": {
+      "partitions": 4319,
+      "bytes": 44797804,
+      "listing_sha256": "2f3432f5ae9f975fa441672aafcf0b973d70d4f3e7783dbe078f6bd0c6b7ae2f"
+    },
+    "raw/bars/2025-06-20": {
+      "partitions": 4319,
+      "bytes": 45209833,
+      "listing_sha256": "98eca32b33020f5567cfb8f122417e7aa208f6bc931bab78c2be7e4f07e0519d"
+    },
+    "raw/bars/2025-06-23": {
+      "partitions": 4319,
+      "bytes": 46261914,
+      "listing_sha256": "213f310aa17bd17893445943e0f56cf4c51a16b87d2786eb38d4e19dc3eb0ac6"
+    },
+    "raw/bars/2025-06-24": {
+      "partitions": 4319,
+      "bytes": 45353245,
+      "listing_sha256": "79ebbe98f8c77bbe6f5b9f80be09de565a518b863c3669d2849a12f822341464"
+    },
+    "raw/bars/2025-06-25": {
+      "partitions": 4319,
+      "bytes": 45027499,
+      "listing_sha256": "1dfb891d1e247fde8e8471b71e214ff6612a48703e140f4ec075b201fdc0c3ad"
+    },
+    "raw/bars/2025-06-26": {
+      "partitions": 4319,
+      "bytes": 44967797,
+      "listing_sha256": "5b469ed35f4f3efeaeebba42dc65e2aab0b620f6d03ee2fe11b867f8326a26c4"
+    },
+    "raw/bars/2025-06-27": {
+      "partitions": 4319,
+      "bytes": 45670349,
+      "listing_sha256": "8fd154c8a4cd8e899947f89171f86990f8728922cdb3f56b4fc5d54bcbf32387"
+    },
+    "raw/bars/2025-06-30": {
+      "partitions": 4319,
+      "bytes": 45701914,
+      "listing_sha256": "f5089a0083ce9f6dd396655d8f2df2c32767435f4da50b3b5b722fce7a292202"
+    },
+    "raw/bars/2025-07-01": {
+      "partitions": 4319,
+      "bytes": 46493863,
+      "listing_sha256": "5430deeb5f5c4a82f2bbc50cd4faac575df64b7393806329467f9e2f1772d91e"
+    },
+    "raw/bars/2025-07-02": {
+      "partitions": 4319,
+      "bytes": 45515342,
+      "listing_sha256": "ae78b6bcec4b23cb753f0847101747a576c4a2eb044e1ed2c55020a92f970a18"
+    },
+    "raw/bars/2025-07-03": {
+      "partitions": 4319,
+      "bytes": 39446619,
+      "listing_sha256": "ff7be6468f5c0683b0f3c8ba6de97314e0593e89a8b0b1e9ad8ad3739c8d7c9b"
+    },
+    "raw/bars/2025-07-07": {
+      "partitions": 4319,
+      "bytes": 46113526,
+      "listing_sha256": "8cd7fad108760e70d6677d4434b8be0ded81d772990bd627ec7b959b18b323bb"
+    },
+    "raw/bars/2025-07-08": {
+      "partitions": 4319,
+      "bytes": 45521480,
+      "listing_sha256": "ddb462c48419db8823731dfaecfb15e4bfa2432ac0ea6ec0d411a01e6f356313"
+    },
+    "raw/bars/2025-07-09": {
+      "partitions": 4319,
+      "bytes": 45275612,
+      "listing_sha256": "fc8f1969aa13bf419cf9fb8b992bc2548523a6d61e26ffeffef57f801e5adf9a"
+    },
+    "raw/bars/2025-07-10": {
+      "partitions": 4319,
+      "bytes": 45623970,
+      "listing_sha256": "34c1574d459c129886346e28bfe9637bd1480e7b7a1ebc77ad9ef0a373f1dc10"
+    },
+    "raw/bars/2025-07-11": {
+      "partitions": 4319,
+      "bytes": 45203535,
+      "listing_sha256": "abbb38f68a82ef09f5284d49310755581e87891f2f7c8cd901763ddd62b60b6f"
+    },
+    "raw/bars/2025-07-14": {
+      "partitions": 4319,
+      "bytes": 45593407,
+      "listing_sha256": "82ddbd282740544d13149da63a5bfcdf27e4437cf6341c364df9fde0424d1993"
+    },
+    "raw/bars/2025-07-15": {
+      "partitions": 4319,
+      "bytes": 46075487,
+      "listing_sha256": "f3a717ef7cc8a6efafb7d0147f1e08d6a1970d311af3f06ae81711fca6542c6f"
+    },
+    "raw/bars/2025-07-16": {
+      "partitions": 4319,
+      "bytes": 45772083,
+      "listing_sha256": "5f3770c0c6716fa05a5040ecfd61e28cac24019d1f38a749512798adceb31c89"
+    },
+    "raw/bars/2025-07-17": {
+      "partitions": 4319,
+      "bytes": 45929986,
+      "listing_sha256": "f6e55c0007bab5dee92a655c9b591add57cae899c3eff354e365990558c306b5"
+    },
+    "raw/bars/2025-07-18": {
+      "partitions": 4319,
+      "bytes": 45714278,
+      "listing_sha256": "80049ee54657a69ae9a22a6acdb2df9a042fe726ff6d94e9175806782a7f4d69"
+    },
+    "raw/bars/2025-07-21": {
+      "partitions": 4319,
+      "bytes": 46188410,
+      "listing_sha256": "166cc625ddc6c1793e72556af1b6af715bffe1d1405f97cdc618e3e99ce7e8f0"
+    },
+    "raw/bars/2025-07-22": {
+      "partitions": 4319,
+      "bytes": 45550539,
+      "listing_sha256": "9f12223c0d21406bc91b078d2481f72861c212be4fc41cba9a93b3af92c7ab08"
+    },
+    "raw/bars/2025-07-23": {
+      "partitions": 4319,
+      "bytes": 45878794,
+      "listing_sha256": "5c6e0dcc4069aa03e948153f72b3b3229cbb22928c616fca7c51923c8603266d"
+    },
+    "raw/bars/2025-07-24": {
+      "partitions": 4319,
+      "bytes": 45665007,
+      "listing_sha256": "60c460a157c0f0e86e374f31c2cd6bddfc5d270b91510778a8bf2a803f5f96fb"
+    },
+    "raw/bars/2025-07-25": {
+      "partitions": 4319,
+      "bytes": 44912290,
+      "listing_sha256": "25a34524474782d17f5793bb483dbb76422b99ae00422c980935f90e2df1a289"
+    },
+    "raw/bars/2025-07-28": {
+      "partitions": 4319,
+      "bytes": 45600624,
+      "listing_sha256": "5385cd7c30eeb978bf22f2b4daacf29002bc6713d0e8f2a1d21cacf01eee8387"
+    },
+    "raw/bars/2025-07-29": {
+      "partitions": 4319,
+      "bytes": 45740850,
+      "listing_sha256": "85d8f856352a4e6fcf37b731f12914015da84e7672594b34619b2929ba6cfaa4"
+    },
+    "raw/bars/2025-07-30": {
+      "partitions": 4319,
+      "bytes": 45948332,
+      "listing_sha256": "a8f63180ab8a85ae0892274d0d432efda6fa230dca784920e414a734951a797b"
+    },
+    "raw/bars/2025-07-31": {
+      "partitions": 4319,
+      "bytes": 46057037,
+      "listing_sha256": "9e462c665938be6d659058d1571a97685bcf495aef133d292c6bef0751ee483f"
     }
   },
   "staged_post_selection_procedure": "cg_arrow013_post_selection_certification_v1",
   "certification_status": "HOLDOUT_DATA_PARTIALLY_CERTIFIED",
   "remaining_gaps": [
-    "minute layer not yet acquired for these sessions",
-    "minute layer present but short of the session's point-in-time eligible field",
     "no documented dated corporate-action table exists yet for the holdout window",
     "point-in-time security identity and ticker-change mapping not yet assembled for this window"
   ],
@@ -667,15 +1601,19 @@
     "statement": "NO STRATEGY PERFORMANCE WAS SCORED OR REVEALED IN ARROW 013"
   },
   "log": [
-    "2026-09-15T01:22:55+00:00 +0.0m calendar cross-check: lab 292 sessions, reference 292, identical=True",
-    "2026-09-15T01:22:55+00:00 +0.0m calendar: 292 sessions, 3 early closes, 12 closures in window",
-    "2026-09-15T01:22:55+00:00 +0.0m minute integrity: validating 65 landed session partitions",
-    "2026-09-15T01:24:21+00:00 +1.5m   validated 50/65 sessions",
-    "2026-09-15T01:24:29+00:00 +1.6m minute integrity aggregate: {'partitions': 75737, 'empty_partitions': 0, 'rows': 54530640, 'dup_timestamp_partitions': 0, 'unordered_partitions': 0, 'outside_window_partitions': 0, 'ohlc_inconsistent_partitions': 0, 'negative_volume_partitions': 0, 'nonfinite_price_partitions': 0, 'rth_bar_over_expected': 0, 'no_trade_minutes': 9372046, 'traded_minutes': 20165384, 'volume_without_last_sale_price_minutes': 5527947, 'priced_traded_minutes': 14637437, 'unreadable': 0, 'symbols_with_rth': 75737}",
-    "2026-09-15T01:24:30+00:00 +1.6m coverage: 292 sessions inventoried; 107 carry a minute layer",
-    "2026-09-15T01:24:30+00:00 +1.6m aggregation reconciliation: 65 deterministic symbol-session samples",
-    "2026-09-15T01:24:31+00:00 +1.6m aggregation reconciliation: 15 compared, volume ratio median 0.868652, close delta median 0.01",
-    "2026-09-15T01:24:31+00:00 +1.6m exceptions: 4 recorded, 4 block certification",
-    "2026-09-15T01:25:10+00:00 +2.3m hash manifest: 6 certification artifacts, 77 raw partition groups"
+    "2026-09-15T15:26:50+00:00 +0.0m calendar cross-check: lab 292 sessions, reference 292, identical=True",
+    "2026-09-15T15:26:50+00:00 +0.0m calendar: 292 sessions, 3 early closes, 12 closures in window",
+    "2026-09-15T15:26:50+00:00 +0.0m minute integrity: validating 250 landed session partitions",
+    "2026-09-15T15:38:10+00:00 +11.4m   validated 50/250 sessions",
+    "2026-09-15T15:48:54+00:00 +22.1m   validated 100/250 sessions",
+    "2026-09-15T16:01:24+00:00 +34.6m   validated 150/250 sessions",
+    "2026-09-15T16:12:31+00:00 +45.7m   validated 200/250 sessions",
+    "2026-09-15T16:24:06+00:00 +57.3m   validated 250/250 sessions",
+    "2026-09-15T16:24:06+00:00 +57.3m minute integrity aggregate: {'partitions': 1079750, 'empty_partitions': 0, 'rows': 777420000, 'dup_timestamp_partitions': 0, 'unordered_partitions': 0, 'outside_window_partitions': 0, 'ohlc_inconsistent_partitions': 0, 'negative_volume_partitions': 0, 'nonfinite_price_partitions': 0, 'rth_bar_over_expected': 0, 'no_trade_minutes': 116262219, 'traded_minutes': 302508021, 'volume_without_last_sale_price_minutes': 80581858, 'priced_traded_minutes': 221926163, 'unreadable': 0, 'symbols_with_rth': 1079750}",
+    "2026-09-15T16:24:09+00:00 +57.4m coverage: 292 sessions inventoried; 292 carry a minute layer",
+    "2026-09-15T16:24:09+00:00 +57.4m aggregation reconciliation: 250 deterministic symbol-session samples",
+    "2026-09-15T16:24:11+00:00 +57.4m aggregation reconciliation: 245 compared, volume ratio median 0.87579, close delta median 0.01",
+    "2026-09-15T16:24:11+00:00 +57.4m exceptions: 2 recorded, 2 block certification",
+    "2026-09-15T16:28:33+00:00 +61.7m hash manifest: 9 certification artifacts, 262 raw partition groups"
   ]
 }

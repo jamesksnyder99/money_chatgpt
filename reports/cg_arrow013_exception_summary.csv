@@ -1,5 +1,3 @@
 blocks_certification,cause,code,count,exception_id,repair_status,scope,source_evidence
-True,minute layer not yet acquired for these sessions,COV,185,A13-COV-00001,OPEN,185 sessions,coverage inventory
-True,minute layer present but short of the session's point-in-time eligible field,COV,43,A13-COV-00002,OPEN,43 sessions,coverage inventory
-True,no documented dated corporate-action table exists yet for the holdout window,ACT,,A13-ACT-00003,STAGED_FOR_POST_SELECTION_CERTIFICATION,2024-08-01..2025-08-31,the certified action table covers 2025-09 to 2026-08 only
-True,point-in-time security identity and ticker-change mapping not yet assembled for this window,ID,,A13-ID-00004,STAGED_FOR_POST_SELECTION_CERTIFICATION,2024-08-01..2025-08-31,identity evidence is part of the same primary-source layer as corporate actions
+True,no documented dated corporate-action table exists yet for the holdout window,ACT,,A13-ACT-00001,STAGED_FOR_POST_SELECTION_CERTIFICATION,2024-08-01..2025-08-31,the certified action table covers 2025-09 to 2026-08 only
+True,point-in-time security identity and ticker-change mapping not yet assembled for this window,ID,,A13-ID-00002,STAGED_FOR_POST_SELECTION_CERTIFICATION,2024-08-01..2025-08-31,identity evidence is part of the same primary-source layer as corporate actions

@@ -103,8 +103,35 @@ python scripts/cg_arrow013_supervise.py --attempts 60 --workers 8
 #   check, and stops when the stage completes, when two consecutive attempts acquire nothing,
 #   or at the attempt limit. Progress is recorded in work/supervise_progress.json.
 
+# 6d. Minute layer completed on the morning resume (2026-09-15 10:08-15:11 UTC)
+python scripts/cg_arrow013_supervise.py --attempts 60 --workers 8
+#   resumed from 147,449 landed partitions and ran 302 minutes of vendor time on a single
+#   supervisor attempt with no session expiry and zero vendor errors, sustaining 44-55
+#   symbol-months per second at vendor concurrency 8
+#   final: 44,899 symbol-months retrieved this run, 6,929 already landed, 0 VENDOR_NO_DATA,
+#   0 VENDOR_ERROR, 671,256,720 rows
+#   inventory verified independently rather than trusting the completion flag: 1,079,750 of
+#   1,079,750 expected partitions, 250 of 250 sessions, no session short of the 4,319-symbol
+#   universe, no unexpected session directory, 0 temp files
+
+# 6e. Certification restarted after a harness memory kill (15:26)
+#   the harness killed the wrapper under system memory pressure; the certification process
+#   survived but wedged with its parent CPU frozen and workers idle, because its stdout pipe
+#   died with the wrapper. Certification is read-only and idempotent, so nothing was at risk.
+#   Restarted detached with output to a file and 4 workers instead of 8. Note the certification
+#   was never the memory source: it used 688 MB across all nine processes.
+
 # 7. Certification
-python scripts/cg_arrow013_certify.py --workers 8 --sample 400
+python scripts/cg_arrow013_certify.py --workers 4 --sample 800
+#   62 minutes; opened all 1,079,750 partitions covering 777,420,000 minute rows
+#   zero defects of every kind checked: 0 duplicate timestamps, 0 unordered partitions,
+#   0 bars outside the declared window, 0 OHLC inconsistencies, 0 negative volumes,
+#   0 non-finite traded prices, 0 over-schedule bar counts, 0 unreadable partitions
+#   coverage now complete: 292 of 292 sessions carry a minute layer
+#   aggregation reconciliation: 245 of 250 deterministic samples compared, median minute-to-
+#   end-of-day volume ratio 0.876, median close difference 0.01
+#   exceptions fell from 4 to 2 as the two coverage exceptions were resolved by the completed
+#   layer; the two that remain are the corporate-action and identity gaps, which still block
 python scripts/cg_arrow013_report.py
 python -m pytest tests -q --basetemp=data/tmp/cg_arrow013_tests -p no:cacheprovider
 
