@@ -6,34 +6,34 @@ without any strategy result being computed on it. 52 weekly cohorts,
 
 The reveal specification — all eighteen cells, the cohort calendar, every formula, every frozen
 cut and the historical reference values — was committed at `5b64dc6` before any
-membership existed. The certification gate closed at `50677a0`. This run was a
+membership existed. The certification gate closed at `7780f95`. This run was a
 single batch: every cell below was produced by one execution, and no cell was inspected before the
 others existed.
 
-Membership SHA-256 `3931985d9e7e4c4998fe386d973dea372f109a0a66c9b750424378086fbde4fb`.
+Membership SHA-256 `339c86ca6a4362e3f7c448c49be65427d0be33b9512e071d105847e14bdbf7dc`.
 
 ## The eighteen frozen cells
 
 | cell | model | view | hold | trades | eventual P&L | ending equity | return | hit rate | max drawdown |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | Volume-Sized Short | FIXED_DOLLAR | 8 | 407 | 92,234.97 | 179,061.21 | 79.06% | 64.62% | -49.97 |
-| 2 | Volume-Sized Short | FIXED_DOLLAR | 9 | 405 | 68,265.68 | 147,919.17 | 47.92% | 67.16% | -81.73 |
-| 3 | Volume-Sized Short | FIXED_DOLLAR | 10 | 405 | 114,288.75 | 192,176.33 | 92.18% | 67.16% | -64.68 |
-| 4 | Momentum+Volume-Sized Short | FIXED_DOLLAR | 8 | 407 | 93,809.80 | 183,553.78 | 83.55% | 64.62% | -60.52 |
-| 5 | Momentum+Volume-Sized Short | FIXED_DOLLAR | 9 | 405 | 56,796.71 | 139,699.94 | 39.70% | 67.16% | -100.99 |
-| 6 | Momentum+Volume-Sized Short | FIXED_DOLLAR | 10 | 405 | 109,989.20 | 191,517.07 | 91.52% | 67.16% | -72.77 |
-| 7 | Momentum+Volume-Sized Short | EQUITY_SCALED | 8 | 407 | 87,496.00 | 171,862.53 | 71.86% | 64.62% | -56.78 |
-| 8 | Momentum+Volume-Sized Short | EQUITY_SCALED | 9 | 405 | -74,389.81 | 22,089.61 | -77.91% | 67.16% | -98.15 |
-| 9 | Momentum+Volume-Sized Short | EQUITY_SCALED | 10 | 405 | 76,355.10 | 151,844.61 | 51.84% | 67.16% | -72.35 |
-| 10 | Rank-One 1.50x Reallocation | EQUITY_SCALED | 8 | 407 | 116,736.55 | 199,228.95 | 99.23% | 64.62% | -56.36 |
-| 11 | Rank-One 1.50x Reallocation | EQUITY_SCALED | 9 | 405 | -70,890.87 | 25,041.63 | -74.96% | 67.16% | -98.33 |
-| 12 | Rank-One 1.50x Reallocation | EQUITY_SCALED | 10 | 405 | 86,820.30 | 160,411.16 | 60.41% | 67.16% | -74.44 |
-| 13 | Equal-Dollar Short | FIXED_DOLLAR | 10 | 405 | 109,697.69 | 184,572.75 | 84.57% | 67.16% | -68.43 |
-| 14 | Rank-One 1.50x Reallocation | FIXED_DOLLAR | 10 | 405 | 121,071.44 | 202,093.34 | 102.09% | 67.16% | -72.58 |
-| 15 | Off-High Substitution | FIXED_DOLLAR | 10 | 405 | 106,833.20 | 190,388.95 | 90.39% | 67.90% | -74.02 |
-| 16 | Off-High Substitution | EQUITY_SCALED | 10 | 405 | 64,724.94 | 143,472.25 | 43.47% | 67.90% | -74.88 |
-| 17 | Combined Reallocation and Substitution | FIXED_DOLLAR | 10 | 405 | 117,407.72 | 200,366.48 | 100.37% | 67.90% | -73.94 |
-| 18 | Combined Reallocation and Substitution | EQUITY_SCALED | 10 | 405 | 71,472.39 | 148,797.64 | 48.80% | 67.90% | -77.03 |
+| 1 | Volume-Sized Short | FIXED_DOLLAR | 8 | 408 | 4,840.16 | 103,369.16 | 3.37% | 52.94% | -45.09 |
+| 2 | Volume-Sized Short | FIXED_DOLLAR | 9 | 408 | -21,571.20 | 76,541.91 | -23.46% | 53.68% | -70.59 |
+| 3 | Volume-Sized Short | FIXED_DOLLAR | 10 | 408 | 11,245.17 | 109,010.74 | 9.01% | 53.43% | -54.75 |
+| 4 | Momentum+Volume-Sized Short | FIXED_DOLLAR | 8 | 408 | 7,758.58 | 107,452.16 | 7.45% | 52.94% | -51.07 |
+| 5 | Momentum+Volume-Sized Short | FIXED_DOLLAR | 9 | 408 | -27,838.58 | 71,740.83 | -28.26% | 53.68% | -82.51 |
+| 6 | Momentum+Volume-Sized Short | FIXED_DOLLAR | 10 | 408 | 12,449.24 | 111,792.52 | 11.79% | 53.43% | -59.86 |
+| 7 | Momentum+Volume-Sized Short | EQUITY_SCALED | 8 | 408 | -2,172.74 | 98,217.21 | -1.78% | 52.94% | -45.10 |
+| 8 | Momentum+Volume-Sized Short | EQUITY_SCALED | 9 | 408 | -45,516.36 | 54,566.04 | -45.43% | 53.68% | -70.62 |
+| 9 | Momentum+Volume-Sized Short | EQUITY_SCALED | 10 | 408 | -2,347.44 | 97,322.11 | -2.68% | 53.43% | -58.28 |
+| 10 | Rank-One 1.50x Reallocation | EQUITY_SCALED | 8 | 408 | 4,685.31 | 104,105.56 | 4.11% | 52.94% | -45.01 |
+| 11 | Rank-One 1.50x Reallocation | EQUITY_SCALED | 9 | 408 | -44,374.01 | 55,075.25 | -44.92% | 53.68% | -72.14 |
+| 12 | Rank-One 1.50x Reallocation | EQUITY_SCALED | 10 | 408 | 2,288.88 | 100,693.40 | 0.69% | 53.43% | -58.56 |
+| 13 | Equal-Dollar Short | FIXED_DOLLAR | 10 | 408 | 6,823.38 | 106,046.99 | 6.05% | 53.43% | -58.69 |
+| 14 | Rank-One 1.50x Reallocation | FIXED_DOLLAR | 10 | 408 | 18,686.80 | 116,794.32 | 16.79% | 53.43% | -59.78 |
+| 15 | Off-High Substitution | FIXED_DOLLAR | 10 | 408 | 29,600.31 | 127,383.94 | 27.38% | 58.82% | -57.63 |
+| 16 | Off-High Substitution | EQUITY_SCALED | 10 | 408 | 20,084.79 | 117,858.05 | 17.86% | 58.82% | -54.94 |
+| 17 | Combined Reallocation and Substitution | FIXED_DOLLAR | 10 | 408 | 33,871.58 | 130,761.39 | 30.76% | 58.82% | -57.31 |
+| 18 | Combined Reallocation and Substitution | EQUITY_SCALED | 10 | 408 | 24,351.98 | 121,028.93 | 21.03% | 58.82% | -55.02 |
 
 Account quantities are reported separately throughout, under the frozen convention: A is the
 eventual completed-trade P&L, B the marked account P&L at the cutoff, C the post-cutoff runoff
@@ -45,24 +45,24 @@ monthly rows for every scored account under `cg_lab_monthly_account_reporting_v1
 
 | model | view | hold | cohorts | profitable | cohort hit rate | top cohort share | top 3 share |
 |---|---|---|---|---|---|---|---|
-| Rank-One 1.50x Reallocation | EQUITY_SCALED | 8 | 52 | 39 | 75.00% | 15.02% | 42.84% |
-| Rank-One 1.50x Reallocation | EQUITY_SCALED | 9 | 52 | 37 | 71.15% | -8.43% | -22.11% |
-| Rank-One 1.50x Reallocation | EQUITY_SCALED | 10 | 52 | 40 | 76.92% | 15.92% | 46.38% |
-| Rank-One 1.50x Reallocation | FIXED_DOLLAR | 10 | 52 | 40 | 76.92% | 14.40% | 36.33% |
-| Off-High Substitution | EQUITY_SCALED | 10 | 52 | 40 | 76.92% | 16.32% | 47.69% |
-| Off-High Substitution | FIXED_DOLLAR | 10 | 52 | 40 | 76.92% | 16.13% | 41.96% |
-| Combined Reallocation and Substitution | EQUITY_SCALED | 10 | 52 | 40 | 76.92% | 18.49% | 48.40% |
-| Combined Reallocation and Substitution | FIXED_DOLLAR | 10 | 52 | 40 | 76.92% | 14.85% | 36.64% |
-| Equal-Dollar Short | FIXED_DOLLAR | 10 | 52 | 37 | 71.15% | 16.13% | 39.08% |
-| Volume-Sized Short | FIXED_DOLLAR | 8 | 52 | 36 | 69.23% | 16.69% | 41.75% |
-| Volume-Sized Short | FIXED_DOLLAR | 9 | 52 | 37 | 71.15% | 21.44% | 56.04% |
-| Volume-Sized Short | FIXED_DOLLAR | 10 | 52 | 38 | 73.08% | 16.04% | 36.87% |
-| Momentum+Volume-Sized Short | EQUITY_SCALED | 8 | 52 | 39 | 75.00% | 17.36% | 46.97% |
-| Momentum+Volume-Sized Short | EQUITY_SCALED | 9 | 52 | 37 | 71.15% | -8.89% | -22.98% |
-| Momentum+Volume-Sized Short | EQUITY_SCALED | 10 | 52 | 40 | 76.92% | 16.12% | 45.48% |
-| Momentum+Volume-Sized Short | FIXED_DOLLAR | 8 | 52 | 39 | 75.00% | 18.45% | 48.28% |
-| Momentum+Volume-Sized Short | FIXED_DOLLAR | 9 | 52 | 37 | 71.15% | 27.76% | 76.13% |
-| Momentum+Volume-Sized Short | FIXED_DOLLAR | 10 | 52 | 40 | 76.92% | 15.67% | 41.73% |
+| Rank-One 1.50x Reallocation | EQUITY_SCALED | 8 | 52 | 27 | 51.92% | 2.66 | 7.30 |
+| Rank-One 1.50x Reallocation | EQUITY_SCALED | 9 | 52 | 26 | 50.00% | -16.06% | -44.48% |
+| Rank-One 1.50x Reallocation | EQUITY_SCALED | 10 | 52 | 29 | 55.77% | 5.77 | 15.78 |
+| Rank-One 1.50x Reallocation | FIXED_DOLLAR | 10 | 52 | 29 | 55.77% | 100.05% | 2.58 |
+| Off-High Substitution | EQUITY_SCALED | 10 | 52 | 27 | 51.92% | 64.06% | 1.70 |
+| Off-High Substitution | FIXED_DOLLAR | 10 | 52 | 27 | 51.92% | 63.91% | 1.52 |
+| Combined Reallocation and Substitution | EQUITY_SCALED | 10 | 52 | 31 | 59.62% | 54.74% | 147.70% |
+| Combined Reallocation and Substitution | FIXED_DOLLAR | 10 | 52 | 31 | 59.62% | 57.34% | 135.76% |
+| Equal-Dollar Short | FIXED_DOLLAR | 10 | 52 | 25 | 48.08% | 2.22 | 5.47 |
+| Volume-Sized Short | FIXED_DOLLAR | 8 | 52 | 24 | 46.15% | 2.66 | 7.36 |
+| Volume-Sized Short | FIXED_DOLLAR | 9 | 52 | 26 | 50.00% | -76.77% | -1.75 |
+| Volume-Sized Short | FIXED_DOLLAR | 10 | 52 | 27 | 51.92% | 1.73 | 3.69 |
+| Momentum+Volume-Sized Short | EQUITY_SCALED | 8 | 52 | 24 | 46.15% | -5.69 | -14.00 |
+| Momentum+Volume-Sized Short | EQUITY_SCALED | 9 | 52 | 26 | 50.00% | -15.20% | -41.18% |
+| Momentum+Volume-Sized Short | EQUITY_SCALED | 10 | 52 | 29 | 55.77% | -5.12 | -13.97 |
+| Momentum+Volume-Sized Short | FIXED_DOLLAR | 8 | 52 | 23 | 44.23% | 2.42 | 5.39 |
+| Momentum+Volume-Sized Short | FIXED_DOLLAR | 9 | 52 | 26 | 50.00% | -62.08% | -1.58 |
+| Momentum+Volume-Sized Short | FIXED_DOLLAR | 10 | 52 | 29 | 55.77% | 145.85% | 3.78 |
 
 A result carried by a handful of cohorts is a different claim from one carried by most of them,
 which is why this table sits beside the headline rather than beneath it.
@@ -71,15 +71,15 @@ which is why this table sits beside the headline rather than beneath it.
 
 | model | view | hold | trades | eventual P&L | ending equity | vs H8 | hit rate |
 |---|---|---|---|---|---|---|---|
-| Volume-Sized Short | FIXED_DOLLAR | 8 | 407 | 92,234.97 | 179,061.21 | 0.0 | 64.62% |
-| Volume-Sized Short | FIXED_DOLLAR | 9 | 405 | 68,265.68 | 147,919.17 | -23,969.28 | 67.16% |
-| Volume-Sized Short | FIXED_DOLLAR | 10 | 405 | 114,288.75 | 192,176.33 | 22,053.79 | 67.16% |
-| Momentum+Volume-Sized Short | FIXED_DOLLAR | 8 | 407 | 93,809.80 | 183,553.78 | 0.0 | 64.62% |
-| Momentum+Volume-Sized Short | FIXED_DOLLAR | 9 | 405 | 56,796.71 | 139,699.94 | -37,013.09 | 67.16% |
-| Momentum+Volume-Sized Short | FIXED_DOLLAR | 10 | 405 | 109,989.20 | 191,517.07 | 16,179.40 | 67.16% |
-| Momentum+Volume-Sized Short | EQUITY_SCALED | 8 | 407 | 87,496.00 | 171,862.53 | 0.0 | 64.62% |
-| Momentum+Volume-Sized Short | EQUITY_SCALED | 9 | 405 | -74,389.81 | 22,089.61 | -161,885.81 | 67.16% |
-| Momentum+Volume-Sized Short | EQUITY_SCALED | 10 | 405 | 76,355.10 | 151,844.61 | -11,140.90 | 67.16% |
+| Volume-Sized Short | FIXED_DOLLAR | 8 | 408 | 4,840.16 | 103,369.16 | 0.0 | 52.94% |
+| Volume-Sized Short | FIXED_DOLLAR | 9 | 408 | -21,571.20 | 76,541.91 | -26,411.36 | 53.68% |
+| Volume-Sized Short | FIXED_DOLLAR | 10 | 408 | 11,245.17 | 109,010.74 | 6,405.02 | 53.43% |
+| Momentum+Volume-Sized Short | FIXED_DOLLAR | 8 | 408 | 7,758.58 | 107,452.16 | 0.0 | 52.94% |
+| Momentum+Volume-Sized Short | FIXED_DOLLAR | 9 | 408 | -27,838.58 | 71,740.83 | -35,597.16 | 53.68% |
+| Momentum+Volume-Sized Short | FIXED_DOLLAR | 10 | 408 | 12,449.24 | 111,792.52 | 4,690.66 | 53.43% |
+| Momentum+Volume-Sized Short | EQUITY_SCALED | 8 | 408 | -2,172.74 | 98,217.21 | 0.0 | 52.94% |
+| Momentum+Volume-Sized Short | EQUITY_SCALED | 9 | 408 | -45,516.36 | 54,566.04 | -43,343.62 | 53.68% |
+| Momentum+Volume-Sized Short | EQUITY_SCALED | 10 | 408 | -2,347.44 | 97,322.11 | -174.70 | 53.43% |
 
 ## Rank by rank, against the historical reference
 
@@ -88,22 +88,22 @@ ranks 6-8, change the C1 multiplier or introduce any allocation rule on this hol
 
 | rank | n | pristine mean | median | hit rate | historical mean | historical hit | classification |
 |---|---|---|---|---|---|---|---|
-| 1 | 50 | 0.171798 | 0.238625 | 84.00% | 0.272 | 0.83 | PRISTINE_REPLICATION |
-| 2 | 50 | -0.041263 | 0.181464 | 72.00% | 0.073 | 0.58 | NOT_REPLICATED |
-| 3 | 52 | 0.097728 | 0.220456 | 69.23% | 0.039 | 0.52 | PRISTINE_REPLICATION |
-| 4 | 50 | 0.137235 | 0.217105 | 68.00% | 0.027 | 0.5 | PRISTINE_REPLICATION |
-| 5 | 49 | 0.095521 | 0.132651 | 71.43% | 0.092 | 0.62 | PRISTINE_REPLICATION |
-| 6 | 51 | 0.045217 | 0.122807 | 60.78% | 0.026 | 0.49 | PRISTINE_REPLICATION |
-| 7 | 52 | 0.045276 | 0.168057 | 69.23% | -0.015 | 0.46 | NOT_REPLICATED |
-| 8 | 51 | 0.059061 | 0.023622 | 56.86% | 0.013 | 0.46 | PRISTINE_REPLICATION |
+| 1 | 49 | 0.063914 | 0.081118 | 71.43% | 0.272 | 0.83 | SAME_DIRECTION_WEAKER |
+| 2 | 49 | -0.02222 | 0.044381 | 65.31% | 0.073 | 0.58 | NOT_REPLICATED |
+| 3 | 51 | 0.017035 | 0.008532 | 54.90% | 0.039 | 0.52 | SAME_DIRECTION_WEAKER |
+| 4 | 52 | 0.036866 | 0.001089 | 51.92% | 0.027 | 0.5 | PRISTINE_REPLICATION |
+| 5 | 52 | 0.04599 | 0.026706 | 57.69% | 0.092 | 0.62 | SAME_DIRECTION_WEAKER |
+| 6 | 52 | -0.017943 | 0.004996 | 50.00% | 0.026 | 0.49 | NOT_REPLICATED |
+| 7 | 52 | -0.050741 | -0.004374 | 48.08% | -0.015 | 0.46 | PRISTINE_REPLICATION |
+| 8 | 51 | -0.015133 | -0.003811 | 41.18% | 0.013 | 0.46 | NOT_REPLICATED |
 
-Rank-one replication: **PRISTINE_REPLICATION**.
+Rank-one replication: **SAME_DIRECTION_WEAKER**.
 
 ## Mechanism
 
 M1, the rank-one effect, is the load-bearing one. On this corridor rank one returns a mean
-sizing-neutral 0.171798 against 0.06263 for ranks 2-8, an effect of
-0.109168 where the historical study showed 0.235571 —
+sizing-neutral 0.063914 against -0.00071 for ranks 2-8, an effect of
+0.064624 where the historical study showed 0.235571 —
 **SAME_DIRECTION_WEAKER**.
 
 The full panel, all ten checks on their frozen features and Arrow 011's frozen cuts with no
@@ -115,25 +115,25 @@ at every age 1 through 10.
 C2 substitutes off-high names from ranks 9-20 for near-high names in ranks 2-8, and C3 combines
 that with C1's rank-one reallocation. Both preserve each cohort's base capital exactly, so neither
 can win by spending more. Across 52 cohorts they made
-56 substitutions.
+120 substitutions.
 
 | cell | model | view | hold | eventual P&L | ending equity | return |
 |---|---|---|---|---|---|---|
-| 15 | Off-High Substitution | FIXED_DOLLAR | 10 | 106,833.20 | 190,388.95 | 90.39% |
-| 16 | Off-High Substitution | EQUITY_SCALED | 10 | 64,724.94 | 143,472.25 | 43.47% |
-| 17 | Combined Reallocation and Substitution | FIXED_DOLLAR | 10 | 117,407.72 | 200,366.48 | 100.37% |
-| 18 | Combined Reallocation and Substitution | EQUITY_SCALED | 10 | 71,472.39 | 148,797.64 | 48.80% |
+| 15 | Off-High Substitution | FIXED_DOLLAR | 10 | 29,600.31 | 127,383.94 | 27.38% |
+| 16 | Off-High Substitution | EQUITY_SCALED | 10 | 20,084.79 | 117,858.05 | 17.86% |
+| 17 | Combined Reallocation and Substitution | FIXED_DOLLAR | 10 | 33,871.58 | 130,761.39 | 30.76% |
+| 18 | Combined Reallocation and Substitution | EQUITY_SCALED | 10 | 24,351.98 | 121,028.93 | 21.03% |
 
 ## Drawdown
 
-The deepest episode on any scored account was -100.99% on Momentum+Volume-Sized Short / FIXED_DOLLAR / H9, from a peak on 2024-12-03 to a trough on 2024-12-26, recovered by 2025-05-13.
+The deepest episode on any scored account was -82.51% on Momentum+Volume-Sized Short / FIXED_DOLLAR / H9, from a peak on 2024-10-07 to a trough on 2024-12-27, not recovered inside the corridor.
 
 Every episode for every account is in `cg_arrow014_drawdown_episodes.csv`.
 
 ## Verification
 
 An independent oracle recomputed every ledger from its stored inputs:
-7,298 trades checked, maximum absolute error
+7,344 trades checked, maximum absolute error
 7.3e-12. Account identities hold on every scored account and every
 monthly table reconciles to its own marked account P&L at the cutoff.
 
@@ -145,4 +145,4 @@ convention assumes the frozen execution and cost rules throughout. The rank-by-r
 diagnostic, not a proposal.
 
 ---
-Generated 2026-09-15T22:14:33+00:00 from LOCK 1 `5b64dc6` and LOCK 2 `50677a0`.
+Generated 2026-09-15T22:31:51+00:00 from LOCK 1 `5b64dc6` and LOCK 2 `7780f95`.

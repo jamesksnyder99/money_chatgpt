@@ -909,10 +909,17 @@ def main() -> int:
                                          "A_eventual_completed_pnl": r["A_eventual_completed_pnl"],
                                          "ending_equity": r["ending_equity"]}
                              for r in cell_rows},
-        "substitutions": plans, "private_files": files,
+        # The public manifest carries how much substitution happened, never which securities.
+        # Naming the incoming and outgoing tickers would publish the selections themselves.
+        "substitutions": {"cohorts_with_a_substitution": sum(1 for p in plans.values() if p["k"]),
+                          "substitutions_total": sum(p["k"] for p in plans.values()),
+                          "removable_candidates_total": sum(p["removable"] for p in plans.values()),
+                          "eligible_replacements_total": sum(p["eligible"] for p in plans.values()),
+                          "detail": "per-cohort incoming and outgoing tickets are private"},
+        "private_files": files,
         "blockers": blockers, "log": LOG}
     dump_json(REPORTS / "cg_arrow014_manifest.json", manifest)
-    dump_json(WORK / "reveal_manifest.json", manifest)
+    dump_json(WORK / "reveal_manifest.json", {**manifest, "substitutions_detail": plans})
     write_reveal_md(REPORTS / "cg_arrow014_reveal.md", cell_rows, breadth, horizon, rbr, panel,
                     dd, gate, freeze, membership, plans, orc, info)
     write_commands(REPORTS / "cg_arrow014_commands.txt")
