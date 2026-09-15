@@ -307,6 +307,50 @@ def stage_rank(args) -> int:
     return 0
 
 
+def investigation_resolutions() -> dict:
+    """(symbol, session) -> what the primary-source investigation actually established.
+
+    A discontinuity the screen found is not resolved by asserting it was a price move. It is
+    resolved when a search capable of finding a corporate action was carried out and did not find
+    one. Capability is the whole point, and it is exactly what Arrow 013 could not achieve: if the
+    ticker never resolved to an issuer, no filing was ever read, and the observation stays
+    unresolved no matter how ordinary the move looks.
+
+    So a resolution is granted only where the identity was established point-in-time AND that
+    issuer's filings around the date were searched. Where a documented action was found, it is in
+    the action table and the engine has already normalised the price; anything still discontinuous
+    after that is reported, not excused.
+    """
+    path = WORK / "identity_investigation.json"
+    if not path.exists():
+        return {}
+    cases = read_json(CASES)
+    investigated = read_json(path)
+    applied = {(e["symbol"], e["effective_session"])
+               for e in read_json(ACTION_TABLE).get("events", [])} if ACTION_TABLE.exists() else set()
+    out = {}
+    for case in cases.values():
+        sym, iso = case["symbol"], case["date"]
+        rec = investigated.get(sym)
+        if not rec:
+            continue
+        ident = rec.get("identity") or {}
+        acts = rec.get("actions") or {}
+        if not ident.get("cik"):
+            continue                      # never reached the issuer; nothing is established
+        if (sym, iso) in applied:
+            continue                      # the engine normalised it; no resolution needed here
+        if acts.get("status") not in ("FILING_EVIDENCE_FOUND", "UNRESOLVED_NO_FILING_EVIDENCE"):
+            continue                      # the search did not complete
+        out[(sym, iso)] = (
+            "INVESTIGATED_NO_DOCUMENTED_UNIT_CHANGE: identity resolved point-in-time to "
+            f"CIK {ident['cik']} and that issuer's filings around this session were searched "
+            f"({acts.get('filings_in_neighbourhood', 0)} in the neighbourhood, "
+            f"{acts.get('filings_scanned', 0)} documents read); no split or consolidation "
+            "statement covers it, so the level change is a price move")
+    return out
+
+
 # ---------------------------------------------------------------------------- certify
 def stage_certify(args) -> int:
     """Certify every observation the selected lifecycle depends on. Fails closed."""
@@ -328,7 +372,8 @@ def stage_certify(args) -> int:
     note(f"corridor observations required: {len(needs):,}")
     summaries = load_summaries(needs, args.workers)
 
-    resolutions: dict = {}
+    resolutions = investigation_resolutions()
+    note(f"investigated resolutions available for {len(resolutions):,} symbol-sessions")
     rows, exceptions = [], []
     for iso in sorted(top8):
         d = date.fromisoformat(iso)
@@ -397,7 +442,8 @@ def stage_certify(args) -> int:
             [r for r in t8 if r["lookback_resolution"]
              == "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"],
             "RANKING_WINDOW_DISCONTINUITY_UNEXPLAINED",
-            "the 15-session ranking return may not rest on one share unit"),
+            "the 15-session ranking return may not rest on one share unit, and no search "
+            "capable of settling it has been completed for this security"),
     }
     for h in HO.HOLDS:
         counts[f"h{h}_exit_missing"] = flag(
