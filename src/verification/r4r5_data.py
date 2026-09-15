@@ -199,6 +199,12 @@ def spans_non_comparable(symbol: str, first: date, last: date) -> dict | None:
 # exist. Resolution must live here rather than in a caller-side patch, because the summary loader
 # runs in worker processes that import this module fresh.
 HOLDOUT_BARS = DATA / "holdout2024" / "raw" / "bars"
+# Arrow 014 gap-fill. Extending eligibility across August 2025 admitted candidates the Arrow 013
+# minute universe never contained, so their ranking and feature corridors had no bars at all.
+# Those are acquired into their own tree, and that tree is resolved LAST on purpose: a gap-fill
+# source that sorts after every existing one can supply an observation nothing else has, and can
+# never quietly replace one that already exists.
+HOLDOUT_REPAIR_BARS = DATA / "holdout2024" / "repair" / "bars"
 
 
 def candidate_paths(d: date, symbol: str) -> list[tuple[str, Path]]:
@@ -208,7 +214,8 @@ def candidate_paths(d: date, symbol: str) -> list[tuple[str, Path]]:
     return [("validated", VALIDATED / d.isoformat() / fn),
             ("holdout_raw", HOLDOUT_BARS / d.isoformat() / fn),
             (primary, DATA / primary / "bars" / d.isoformat() / fn),
-            (alternate, DATA / alternate / "bars" / d.isoformat() / fn)]
+            (alternate, DATA / alternate / "bars" / d.isoformat() / fn),
+            ("holdout_repair", HOLDOUT_REPAIR_BARS / d.isoformat() / fn)]
 
 
 def read_bars(d: date, symbol: str):

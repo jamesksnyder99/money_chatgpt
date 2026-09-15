@@ -64,6 +64,7 @@ EMPTY_TABLE = WORK / "actions_holdout_empty.json"
 EOD_CORRIDOR = WORK / "eod_corridor.parquet"
 CASES = WORK / "phase0b_event_cases.json"
 MEMBERSHIP = WORK / "phase0b_membership.json"
+FIELD = WORK / "phase0b_field.json"
 
 
 def note(msg: str) -> None:
@@ -113,26 +114,6 @@ def candidate_field(pairs: pl.DataFrame) -> dict:
             ["session_date", "symbol", "prior_close", "prior_dollar_volume"]).iter_rows():
         out[d.isoformat()][sym] = {"prior_close": pc, "prior_dollar_volume": pdv}
     return dict(out)
-
-
-def holdout_status(summaries: dict) -> dict:
-    """(symbol, session) -> evidence label, read from the observations themselves.
-
-    A record with no minute close has two causes that must not be conflated: the partition was
-    retrieved and holds no qualifying regular-hours trade, which is trading behaviour and a
-    rule-faithful exclusion, or nothing resolved, which is an unresolved observation. The summary
-    record carries that evidence directly, so no separate request log is needed. The rule fails
-    closed: without positive evidence of retrieval an observation stays unresolved.
-    """
-    out = {}
-    for (iso, sym), rec in summaries.items():
-        if present(rec):
-            continue
-        if rec and rec.get("missing") and rec.get("partition_resolved") and rec.get("raw_rows"):
-            out[(sym, iso)] = "DOCUMENTED_NO_TRADING"
-        else:
-            out[(sym, iso)] = "EMPTY_RESPONSE_UNRESOLVED"
-    return out
 
 
 # ---------------------------------------------------------------------------- screen
@@ -262,6 +243,9 @@ def stage_rank(args) -> int:
          f"{table.relative_to(REPO_ROOT).as_posix()}")
 
     field = candidate_field(eligible_pairs())
+    # The reveal has to rebuild exactly this field, so it is written down rather than rederived
+    # from an eligibility file that a later pass could touch.
+    dump_json(FIELD, field)
     note(f"point-in-time eligible field on {len(field)} signal sessions; sizes "
          f"{min(len(v) for v in field.values())}..{max(len(v) for v in field.values())}")
 
@@ -273,7 +257,7 @@ def stage_rank(args) -> int:
             endpoints.add((back, s))
     note(f"loading {len(endpoints):,} ranking endpoint observations with {args.workers} workers")
     summaries = load_summaries(endpoints, args.workers)
-    status = holdout_status(summaries)
+    status = HO.observation_status(summaries)
     no_trade = sum(1 for v in status.values() if v == "DOCUMENTED_NO_TRADING")
     note(f"non-present endpoint observations: {no_trade:,} documented no-trading, "
          f"{len(status) - no_trade:,} without retrieval evidence")

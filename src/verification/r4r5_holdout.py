@@ -132,6 +132,28 @@ def holdout_candidate_paths(d: date, symbol: str):
             ("full", DATA / "full" / "bars" / d.isoformat() / fn)]
 
 
+# ----------------------------------------------------------------- observation evidence
+def observation_status(summaries: dict) -> dict:
+    """(symbol, session) -> evidence label, read from the observations themselves.
+
+    A record with no minute close has two causes that must never be conflated: the partition was
+    retrieved and holds no qualifying regular-hours trade, which is trading behaviour and a
+    rule-faithful exclusion under the unchanged ranking rule, or nothing resolved at all, which is
+    an unresolved observation. The summary record carries that evidence directly, so the holdout
+    needs no separate vendor request log. The rule fails closed: without positive evidence of
+    retrieval an observation stays unresolved.
+    """
+    out = {}
+    for (iso, sym), rec in summaries.items():
+        if rec and not rec.get("missing") and rec.get("mark_kind") == "minute_close":
+            continue
+        if rec and rec.get("missing") and rec.get("partition_resolved") and rec.get("raw_rows"):
+            out[(sym, iso)] = "DOCUMENTED_NO_TRADING"
+        else:
+            out[(sym, iso)] = "EMPTY_RESPONSE_UNRESOLVED"
+    return out
+
+
 # ----------------------------------------------------------------- activation
 _TARGETS = {
     "verification.r4r5_data": ("FEATS", "INDEX", "SCORE", "CUTOFF", "LOCAL_TAPE_END"),

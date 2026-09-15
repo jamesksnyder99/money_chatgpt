@@ -96,6 +96,9 @@ def test_holdout_tree_is_in_the_resolution_order_and_cannot_shadow_the_study():
     """
     labels = [lbl for lbl, _ in data.candidate_paths(date(2026, 3, 4), "AAPL")]
     assert "holdout_raw" in labels
+    # the Arrow 014 gap-fill tree resolves last, so it can only supply an observation no other
+    # tree has; it can never shadow one that exists
+    assert labels[-1] == "holdout_repair"
     holdout = {p.name for p in data.HOLDOUT_BARS.iterdir()} if data.HOLDOUT_BARS.exists() else set()
     for tree in ("virgin", "full"):
         root = data.DATA / tree / "bars"
