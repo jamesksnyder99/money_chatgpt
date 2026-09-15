@@ -23,6 +23,31 @@ EOD_START = date(2026, 5, 14)
 EOD_END = date(2026, 5, 28)
 MEMORIAL_DAY = date(2026, 5, 25)
 
+# Official NYSE/Nasdaq 2024 full closures. The 2024 year is part of the exchange calendar
+# proper, not of any one study: the Arrow 013/014 pristine corridor opens in August 2024, and
+# an engine that reads its close times from this module must therefore know the year. Adding
+# it is inert for the 2025-26 study, whose session window starts 2025-08-01 and contains no
+# 2024 date at all; `tests/test_calendar_2024.py` asserts that non-overlap.
+NYSE_CLOSED_2024 = frozenset(
+    {
+        date(2024, 1, 1),
+        date(2024, 1, 15),
+        date(2024, 2, 19),
+        date(2024, 3, 29),
+        date(2024, 5, 27),
+        date(2024, 6, 19),
+        date(2024, 7, 4),
+        date(2024, 9, 2),
+        date(2024, 11, 28),
+        date(2024, 12, 25),
+    }
+)
+NYSE_EARLY_CLOSE_2024 = {
+    date(2024, 7, 3): time(13, 0),    # day before Independence Day
+    date(2024, 11, 29): time(13, 0),  # day after Thanksgiving
+    date(2024, 12, 24): time(13, 0),  # Christmas Eve
+}
+
 # Official NYSE/Nasdaq 2025 full closures (Jan 9 = National Day of Mourning).
 NYSE_CLOSED_2025 = frozenset(
     {
@@ -64,8 +89,8 @@ NYSE_EARLY_CLOSE_2026 = {
     date(2026, 11, 27): time(13, 0),
     date(2026, 12, 24): time(13, 0),
 }
-NYSE_CLOSED = NYSE_CLOSED_2025 | NYSE_CLOSED_2026
-NYSE_EARLY_CLOSE = {**NYSE_EARLY_CLOSE_2025, **NYSE_EARLY_CLOSE_2026}
+NYSE_CLOSED = NYSE_CLOSED_2024 | NYSE_CLOSED_2025 | NYSE_CLOSED_2026
+NYSE_EARLY_CLOSE = {**NYSE_EARLY_CLOSE_2024, **NYSE_EARLY_CLOSE_2025, **NYSE_EARLY_CLOSE_2026}
 
 VIRGIN_STUDY_START = date(2026, 1, 2)
 VIRGIN_STUDY_END = date(2026, 5, 29)

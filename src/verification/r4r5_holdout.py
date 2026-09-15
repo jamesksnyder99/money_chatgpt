@@ -167,11 +167,18 @@ def activate(action_path: Path | None = None) -> dict:
             applied[f"{mod_name}.{n}"] = True
 
     data = importlib.import_module("verification.r4r5_data")
-    data.candidate_paths = holdout_candidate_paths
-    rank = importlib.import_module("verification.r4r5_rank")
-    if hasattr(rank, "candidate_paths"):
-        rank.candidate_paths = holdout_candidate_paths
+    # Source resolution lives in r4r5_data.candidate_paths itself, because the summary loader
+    # runs in worker processes that import the module fresh and would never see a patch applied
+    # here. This only asserts that the holdout tree is actually in the resolution order.
+    probe = [lbl for lbl, _ in data.candidate_paths(FEATS[0], "AAPL")]
+    if "holdout_raw" not in probe:
+        raise RuntimeError(f"holdout bars are not in the source resolution order: {probe}")
     if action_path is not None:
+        # set both the in-process binding and the environment, so worker processes spawned by
+        # the summary loader inherit the holdout's own action/identity table rather than the
+        # 2025-26 study table they would otherwise import by default
+        import os
+        os.environ["CG_ACTION_PATH"] = str(Path(action_path).resolve())
         data.ACTION_PATH = Path(action_path)
     for fn in ("action_events", "identity_events", "trading_events", "non_comparable_events"):
         getattr(data, fn).cache_clear()
@@ -185,8 +192,6 @@ def activate(action_path: Path | None = None) -> dict:
         for n in names:
             if getattr(mod, n) is not _VALUES[n]:
                 bad.append(f"{mod_name}.{n}")
-    if data.candidate_paths is not holdout_candidate_paths:
-        bad.append("verification.r4r5_data.candidate_paths")
     if bad:
         raise RuntimeError(f"holdout activation did not take effect for: {bad}")
     _ACTIVE = True

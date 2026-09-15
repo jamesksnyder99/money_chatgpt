@@ -13,6 +13,7 @@ from functools import lru_cache
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
 import statistics
 
@@ -30,7 +31,14 @@ ACTION_PATH_V1 = REPO_ROOT / "reports" / "cg_arrow003_corporate_actions.json"
 ACTION_PATH_V2 = REPO_ROOT / "reports" / "cg_arrow005_corporate_actions.json"  # v2: inherited plus Arrow 005 additions
 ACTION_PATH_V3 = REPO_ROOT / "reports" / "cg_arrow006_corporate_actions.json"  # v3: Arrow 006 reference
 ACTION_PATH_V4 = REPO_ROOT / "reports" / "cg_arrow007_corporate_actions.json"  # v4: Arrow 007 reference
-ACTION_PATH = REPO_ROOT / "reports" / "cg_arrow008_corporate_actions.json"  # v5: active reference for Arrow 008
+# v5 is the active reference for the 2025-26 study. A different study corridor must be able to
+# point this at its own documented table, and the override has to survive process boundaries: the
+# summary loader runs in worker processes that import this module fresh, and those workers resolve
+# point-in-time ticker identity through identity_events(). An in-process patch would silently fail
+# to reach them and a 2025-26 identity or split event could then be applied to a 2024-25
+# observation wherever the effective sessions overlap. The environment carries the override.
+ACTION_PATH = Path(os.environ.get("CG_ACTION_PATH")
+                   or REPO_ROOT / "reports" / "cg_arrow008_corporate_actions.json")
 RANKS_PATH = DATA / "tmp" / "cg_arrow002r" / "ranks_ALL_wed.json"
 VIRGIN_END = date(2026, 5, 29)
 LOCAL_TAPE_END = date(2026, 9, 11)  # Arrow 006: last required H10 exit of the 2026-08-26 cohort, now retrievable
@@ -185,11 +193,20 @@ def spans_non_comparable(symbol: str, first: date, last: date) -> dict | None:
 
 
 # ---------------------------------------------------------------- source resolution
+# Arrow 013 landed the September 2024 to August 2025 holdout into its own immutable tree. Its
+# sessions (2024-08-01 to 2025-07-31) do not overlap the 2025-26 study trees, so listing it as a
+# candidate source is additive: for any pre-existing study date the holdout path simply does not
+# exist. Resolution must live here rather than in a caller-side patch, because the summary loader
+# runs in worker processes that import this module fresh.
+HOLDOUT_BARS = DATA / "holdout2024" / "raw" / "bars"
+
+
 def candidate_paths(d: date, symbol: str) -> list[tuple[str, Path]]:
     fn = safe_symbol_filename(resolved_symbol(symbol, d)) + ".parquet"
     primary = "virgin" if d <= VIRGIN_END else "full"
     alternate = "full" if primary == "virgin" else "virgin"
     return [("validated", VALIDATED / d.isoformat() / fn),
+            ("holdout_raw", HOLDOUT_BARS / d.isoformat() / fn),
             (primary, DATA / primary / "bars" / d.isoformat() / fn),
             (alternate, DATA / alternate / "bars" / d.isoformat() / fn)]
 
@@ -284,25 +301,35 @@ def summarize(df: pl.DataFrame, d: date, source: str, path: str, checks: dict) -
             "checks": {k: v for k, v in checks.items() if k != "tried"}}
 
 
+HOLDOUT_EOD = DATA / "holdout2024" / "raw" / "eod"
+
+
 def eod_reference(d: date, symbol: str) -> dict | None:
-    """Same-vendor national 17:15 EOD close. Reference only; not an RTH execution."""
-    base = DATA / "virgin" / "eod"
-    for chunk in (d.strftime("%Y-%m"), d.strftime("%Y-%m") + "-early"):
-        p = base / chunk / (safe_symbol_filename(symbol) + ".parquet")
-        safe_path(p)
-        if not p.is_file():
-            continue
-        try:
-            df = pl.read_parquet(p, columns=["eod_date", "close", "last_trade", "volume"])
-        except (OSError, pl.exceptions.PolarsError):
-            continue
-        rows = df.filter(pl.col("eod_date") == d)
-        if rows.height:
-            px = float(rows["close"][0])
-            if math.isfinite(px) and px > 0:
-                return {"eod_close": px, "eod_last_trade": str(rows["last_trade"][0]),
-                        "eod_volume": float(rows["volume"][0]), "eod_path": p.relative_to(REPO_ROOT).as_posix(),
-                        "scope": "national_1715_report; adjustment undeclared"}
+    """Same-vendor national 17:15 EOD close. Reference only; not an RTH execution.
+
+    Both end-of-day trees are searched. The pristine 2024-25 corridor was landed under
+    `data/holdout2024/raw/eod`, so a virgin-only lookup would silently drop the independent
+    EOD cross-reference for every session before August 2025 — exactly the corridor whose
+    executions most need a second source to check against.
+    """
+    for base in (DATA / "virgin" / "eod", HOLDOUT_EOD):
+        for chunk in (d.strftime("%Y-%m"), d.strftime("%Y-%m") + "-early"):
+            p = base / chunk / (safe_symbol_filename(symbol) + ".parquet")
+            safe_path(p)
+            if not p.is_file():
+                continue
+            try:
+                df = pl.read_parquet(p, columns=["eod_date", "close", "last_trade", "volume"])
+            except (OSError, pl.exceptions.PolarsError):
+                continue
+            rows = df.filter(pl.col("eod_date") == d)
+            if rows.height:
+                px = float(rows["close"][0])
+                if math.isfinite(px) and px > 0:
+                    return {"eod_close": px, "eod_last_trade": str(rows["last_trade"][0]),
+                            "eod_volume": float(rows["volume"][0]),
+                            "eod_path": p.relative_to(REPO_ROOT).as_posix(),
+                            "scope": "national_1715_report; adjustment undeclared"}
     return None
 
 
@@ -378,8 +405,15 @@ def summary_job(job):
                     rth = None
             rec = (summarize(rth, d, label, path.relative_to(REPO_ROOT).as_posix(), checks)
                    if rth is not None else
+                   # A record without a minute close has two very different causes, and the
+                   # certification layer must be able to tell them apart from the record alone:
+                   # the partition was retrieved and simply holds no qualifying regular-hours
+                   # trade (trading behaviour), or no partition resolved / none could be read
+                   # (an unresolved observation). `raw_rows` carries that evidence.
                    {"version": VERSION, "source": None, "path": None, "mark_kind": None, "missing": True,
-                    "tried": checks["tried"], "empty_files": []})
+                    "tried": checks["tried"], "empty_files": [],
+                    "partition_resolved": path is not None,
+                    "raw_rows": int(raw.height) if raw is not None else 0})
             issues = structural_issues(checks)
             if issues:
                 rec["structural_issues"] = issues

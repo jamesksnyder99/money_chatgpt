@@ -351,11 +351,21 @@ def test_no_raw_vendor_or_private_symbol_level_file_is_committed():
 
 
 def test_prior_arrow_artifacts_remain_unchanged():
+    """No artifact belonging to a completed arrow may be rewritten by a later one.
+
+    The invariant is about ownership, not filename recency: arrows 001 through 012 are closed,
+    so nothing under their prefixes may appear in the diff. A file first created by the arrow
+    currently executing is not a modification of a prior result, so 013 and 014 are its own.
+    """
     changed = subprocess.check_output(
         ["git", "diff", "--name-only", ARROW012_HEAD, "HEAD", "--", "reports/"],
         cwd=REPO_ROOT).decode().split()
-    stale = [p for p in changed if not p.startswith("reports/cg_arrow013_")]
+    active = ("reports/cg_arrow013_", "reports/cg_arrow014_")
+    stale = [p for p in changed if not p.startswith(active)]
     assert stale == [], stale
+    closed = [p for p in changed
+              if re.match(r"reports/cg_arrow0(0\d|1[0-2])_", p)]
+    assert closed == [], closed
 
 
 def test_the_2024_calendar_addition_does_not_move_any_frozen_session_list():

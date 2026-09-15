@@ -38,26 +38,11 @@ SIGNAL_MONTHS = ("2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02
                  "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08")
 
 # ---------------------------------------------------------------- 2024 exchange calendar
-# NYSE/Nasdaq 2024 full closures. Only the four from August onward touch this holdout; the
-# earlier ones are listed so the year is complete and can be cross-checked as a unit.
-NYSE_CLOSED_2024 = frozenset({
-    date(2024, 1, 1),    # New Year's Day
-    date(2024, 1, 15),   # Martin Luther King Jr. Day
-    date(2024, 2, 19),   # Washington's Birthday
-    date(2024, 3, 29),   # Good Friday
-    date(2024, 5, 27),   # Memorial Day
-    date(2024, 6, 19),   # Juneteenth National Independence Day
-    date(2024, 7, 4),    # Independence Day
-    date(2024, 9, 2),    # Labor Day
-    date(2024, 11, 28),  # Thanksgiving Day
-    date(2024, 12, 25),  # Christmas Day
-})
-# 2024 early closes at 13:00 ET.
-NYSE_EARLY_CLOSE_2024 = {
-    date(2024, 7, 3): time(13, 0),    # day before Independence Day
-    date(2024, 11, 29): time(13, 0),  # day after Thanksgiving
-    date(2024, 12, 24): time(13, 0),  # Christmas Eve
-}
+# The 2024 closure and early-close tables now live in `ingest.calendar` alongside 2025 and
+# 2026, so the summary/execution layer and this ingest layer read one calendar rather than
+# two. They are re-exported here under their original names because the Arrow 013 acquisition
+# and certification artifacts reference them.
+from ingest.calendar import NYSE_CLOSED_2024, NYSE_EARLY_CLOSE_2024  # noqa: E402
 
 # Closures and early closes inside the acquisition window, for the calendar audit.
 WINDOW_CLOSURES = {

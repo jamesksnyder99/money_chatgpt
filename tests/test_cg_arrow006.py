@@ -77,10 +77,30 @@ def test_end_to_end_repair_proof_recorded():
 
 def test_validated_layer_takes_precedence_over_original_tree(tmp_path, monkeypatch):
     early, late, sym = date(2026, 3, 4), date(2026, 7, 1), "AAPL"
-    assert [lbl for lbl, _ in data.candidate_paths(early, sym)] == ["validated", "virgin", "full"]
-    assert [lbl for lbl, _ in data.candidate_paths(late, sym)] == ["validated", "full", "virgin"]
+    assert [lbl for lbl, _ in data.candidate_paths(early, sym)][0] == "validated"
+    assert [lbl for lbl, _ in data.candidate_paths(late, sym)][0] == "validated"
+    # the repaired-tree precedence, and the virgin/full flip at the end of the virgin window
+    assert [lbl for lbl, _ in data.candidate_paths(early, sym) if lbl in ("virgin", "full")]         == ["virgin", "full"]
+    assert [lbl for lbl, _ in data.candidate_paths(late, sym) if lbl in ("virgin", "full")]         == ["full", "virgin"]
     first = data.candidate_paths(early, sym)[0][1]
     assert first.as_posix().endswith(f"validated/{early.isoformat()}/{sym}.parquet")
+
+
+def test_holdout_tree_is_in_the_resolution_order_and_cannot_shadow_the_study():
+    """Arrow 013's immutable holdout landing is a source, and its position is provably inert.
+
+    The summary loader runs in worker processes that import the data module fresh, so the
+    holdout tree has to be part of `candidate_paths` itself rather than patched in by a caller.
+    That makes its ordering a real question, and the answer is that it cannot matter: the two
+    landings are disjoint by session date, so no session can resolve differently because of it.
+    """
+    labels = [lbl for lbl, _ in data.candidate_paths(date(2026, 3, 4), "AAPL")]
+    assert "holdout_raw" in labels
+    holdout = {p.name for p in data.HOLDOUT_BARS.iterdir()} if data.HOLDOUT_BARS.exists() else set()
+    for tree in ("virgin", "full"):
+        root = data.DATA / tree / "bars"
+        study = {p.name for p in root.iterdir()} if root.exists() else set()
+        assert not (holdout & study), sorted(holdout & study)[:5]
 
 
 def test_month_chunking_respects_vendor_one_month_limit():
