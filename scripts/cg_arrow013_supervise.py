@@ -32,12 +32,16 @@ def landed() -> int:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--attempts", type=int, default=40)
+    ap.add_argument("--attempts", type=int, default=40,
+                    help="maximum acquisition attempts; 0 means keep going until the stage completes")
     ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--stagnant-limit", type=int, default=3,
+                    help="consecutive zero-gain attempts tolerated before stopping")
     args = ap.parse_args()
     log = []
     stagnant = 0
-    for attempt in range(1, args.attempts + 1):
+    limit = args.attempts if args.attempts > 0 else 10**9
+    for attempt in range(1, limit + 1):
         before = landed()
         t0 = time.monotonic()
         proc = subprocess.run(
@@ -58,11 +62,14 @@ def main() -> int:
             print(f"{stamp()} minute stage reported completion", flush=True)
             return 0
         stagnant = stagnant + 1 if gained == 0 else 0
-        if stagnant >= 2:
-            print(f"{stamp()} stopping: two consecutive attempts acquired nothing, so the blocker is "
-                  "not session expiry. Inspect data/holdout2024/work/vendor_errors_bars.jsonl.", flush=True)
+        if stagnant >= args.stagnant_limit:
+            print(f"{stamp()} stopping: {stagnant} consecutive attempts acquired nothing, so the blocker "
+                  "is not session expiry. Inspect data/holdout2024/work/vendor_errors_bars.jsonl.",
+                  flush=True)
             return 1
-        time.sleep(5)
+        # back off a little when an attempt gained nothing, in case the vendor is briefly
+        # unavailable; a productive attempt restarts immediately
+        time.sleep(5 if gained else 30 * stagnant)
     print(f"{stamp()} attempt limit reached; re-run to continue", flush=True)
     return 1
 
