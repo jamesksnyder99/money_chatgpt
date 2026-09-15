@@ -1,8 +1,23 @@
+# TEMPORARY OVERNIGHT PAUSE — A13 RESUME FIRST
+
+**Do not begin Arrow 014 yet.** The Arrow 013 minute-layer acquisition is paused overnight at a resumable supervisor boundary. This temporary pause notice overrides the Arrow-014 active-authority language below until the user/ChatGPT explicitly reactivates the reveal after A13 completes and is audited.
+
+Morning sequence:
+
+1. Resume/finish Arrow 013 acquisition using its documented supervisor/resume command and existing immutable landed partitions.
+2. Finish Arrow 013 certification/reporting only. Do not calculate any pristine-period strategy performance.
+3. Stop for ChatGPT audit.
+4. Only after explicit reactivation may Arrow 014 begin. When it does, read both `docs/CG_BUILD_ARROW_014.md` and `docs/CG_BUILD_ARROW_014_ADDENDUM_1.md`; the addendum controls where more specific.
+
+Do not pull/execute a pristine reveal merely because Arrow 014 is already authored in the repository.
+
+---
+
 # Claude Code — money_chatgpt
 
 Read `AGENTS.md`, `docs/CHATGPT_LAB_PROTOCOL.md`, `docs/SUCCESS.md`, and the explicitly assigned CG arrow before acting.
 
-**Current assignment: `docs/CG_BUILD_ARROW_014.md`. Executor: Opus in Claude Code.**
+**Current authored reveal assignment: `docs/CG_BUILD_ARROW_014.md`. Executor: Opus in Claude Code.** It remains dormant while the temporary A13 pause above is in force.
 
 Arrow 014 is the **gated pristine-year reveal** for September 2024 through August 2025. It is not permission to skip data certification. The latest public Arrow 013 record is still intermediate, so Arrow 014 must first verify the completed local ingest and close every material data/identity/corporate-action/lifecycle issue. Strategy scoring is locked until the exact status `HOLDOUT_DATA_CERTIFIED_FOR_PRISTINE_REVEAL` is committed.
 
@@ -14,16 +29,15 @@ Arrow 014 is the **gated pristine-year reveal** for September 2024 through Augus
 - September 2025 may support late-August H8/H9/H10 lifecycle/runoff only.
 - Every complete account starts fresh at $100,000 before the first September 2024 cohort.
 
-## Mandatory order
+## Mandatory order when Arrow 014 is later activated
 
-1. Pull `main`; confirm repo/root and ignored `.env`.
-2. Finish/verify Arrow 013 acquisition completeness and source authentication from the local immutable layer.
-3. Audit August 2025 prior-use status. Warmup/lookback is permitted; prior strategy scoring owned by August 2025 is not.
-4. Commit the Arrow 014 certification gate. No performance may exist before it passes.
-5. Commit/push `reports/cg_arrow014_reveal_freeze.json` with the entire matrix before calculating outcomes.
-6. Mechanically build frozen memberships as needed for corporate-action/security-identity closure; resolve all material corridors from documented dated evidence and rerank mechanically if units change.
-7. Only after certification, run the complete predeclared reveal in one batch.
-8. Report all required economics/months/cohorts/mechanism checks; do not tune anything after seeing the holdout.
+Read `docs/CG_BUILD_ARROW_014_ADDENDUM_1.md`. Its two-lock sequencing is authoritative:
+
+1. Verify completed A13 acquisition/source/calendar/universe state without outcomes.
+2. Commit immutable reveal-specification freeze before generating holdout selected memberships.
+3. Mechanically generate memberships only to close selected action/identity/feature/lifecycle corridors; still no outcomes.
+4. Commit final `HOLDOUT_DATA_CERTIFIED_FOR_PRISTINE_REVEAL` certification gate.
+5. Only then run the complete frozen one-batch reveal.
 
 ## Frozen reveal matrix
 
@@ -34,13 +48,14 @@ Principal causal-preorder cells:
 - Momentum+Volume-Sized Short (R5), Arrow-010 equity scaling: H8, H9, H10.
 - Rank-One 1.50x reallocation (C1), equity-scaled: H8, H9, H10.
 - Equal-Dollar H10 fixed-dollar diagnostic control.
+- **C1 Rank-One 1.50x fixed-dollar H10 diagnostic.**
 - Arrow-012 C2 and C3 at H10 only, fixed-dollar and equity-scaled, as falsification controls.
 
 No new horizon, multiplier, filter, substitution threshold, sizing rule, timing rule or model after first reveal. H8/H9 cross-products use already-frozen mechanics and are prospective cells, not holdout-selected changes.
 
 ## Required outputs
 
-Publish full account economics; all twelve monthly account rows under `cg_lab_monthly_account_reporting_v1`; public-safe performance for every weekly cohort; rank-one/ranks-2–8 attribution; H8→H9→H10 attribution; drawdown episodes; historical-versus-pristine exact-cell comparisons; and the frozen Arrow-011 mechanism confirmation panel. Use each equity-scaled book's own causal account path.
+Publish full account economics; all twelve monthly account rows under `cg_lab_monthly_account_reporting_v1` for every scored complete account; public-safe performance for every weekly cohort; rank-one/ranks-2–8 attribution; H8→H9→H10 attribution; drawdown episodes; historical-versus-pristine exact-cell comparisons; and the frozen Arrow-011 mechanism confirmation panel. Use each equity-scaled book's own causal account path.
 
 ## Data integrity
 
@@ -72,4 +87,4 @@ Work only in `C:\Users\james\money_chatgpt`; never access `C:\Users\james\Money`
 
 Use human-readable strategy names first. Headline economics use the standing commission/spread convention; do not add generic 10%/30% borrow haircuts. Use the concise excluded-cost/availability footnote.
 
-If the certification gate cannot close, stop with exact blockers and **no performance**. If it closes, finish the entire predeclared matrix before stopping. Commit/push reviewed outputs, verify remote equality, report private deliverables and stop for ChatGPT audit. Do not begin a post-reveal optimization arrow.
+If the certification gate cannot close, stop with exact blockers and **no performance**. If it closes after Arrow 014 is explicitly activated, finish the entire predeclared matrix before stopping. Commit/push reviewed outputs, verify remote equality, report private deliverables and stop for ChatGPT audit. Do not begin a post-reveal optimization arrow.
