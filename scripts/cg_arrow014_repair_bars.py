@@ -110,12 +110,17 @@ def _needed(mode: str) -> dict:
                 want[sym].add(HO.FEATS[i])
                 want[sym].add(back)
     else:
+        # This mirrors r4r5_replay.needs_for exactly: the feature window, the fill through the
+        # longest hold, and then every remaining session of the corridor. The tail is not
+        # optional. A position whose security stops trading never closes, so the account has to
+        # mark it at every later session through the cutoff, and the documented-non-execution
+        # convention has to be able to ask whether the security ever trades again. Neither
+        # question can be answered from a window that stops at H10.
         membership = read_json(H.WORK / "phase0b_membership.json")
         for iso, top in membership["top8"].items():
             i = HO.INDEX[date.fromisoformat(iso)]
             for sym in top + membership["ranks_9_20"].get(iso, []):
-                for j in range(max(0, i - FEATURE_WINDOW - 1),
-                               min(len(HO.FEATS), i + 1 + max(HO.HOLDS) + 1)):
+                for j in range(max(0, i - FEATURE_WINDOW - 1), len(HO.FEATS)):
                     want[sym].add(HO.FEATS[j])
     return want
 

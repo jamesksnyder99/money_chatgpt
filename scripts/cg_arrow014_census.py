@@ -80,15 +80,39 @@ def nearest_session(d: date) -> date | None:
     return None
 
 
+def eod_ratios() -> dict:
+    """(symbol, session) -> close / previous close, from the independent end-of-day layer.
+
+    Corroboration has to be able to look at any symbol and session a filing names, not only the
+    ones that made the screen's case set. The case set is restricted to sessions a cohort depends
+    on; a filing can state an effective date anywhere in the corridor.
+    """
+    import polars as pl
+    df = (pl.read_parquet(WORK / "eod_corridor.parquet")
+            .filter(pl.col("close").is_finite() & (pl.col("close") > 0))
+            .sort(["symbol", "eod_date"]))
+    df = (df.with_columns(prev=pl.col("close").shift(1).over("symbol"))
+            .filter(pl.col("prev").is_not_null())
+            .with_columns(ratio=pl.col("close") / pl.col("prev")))
+    return {(s, d.isoformat()): r
+            for s, d, r in df.select(["symbol", "eod_date", "ratio"]).iter_rows()}
+
+
 def stage_resolve(args) -> int:
-    """Match documented filing events to screened discontinuities and build the action table."""
+    """Match documented filing statements to what the tape shows, and build the action table.
+
+    Two independent things must agree before a factor is applied to a price. The issuer must have
+    filed a statement carrying a ratio and a dated effect, and the tape must show a level change
+    at that session which the factor flattens. A filing alone is not enough: the extraction reads
+    any date near split language, so an uncorroborated statement is as likely to be a mention of a
+    past or contemplated action as a record of one that happened here. Applying such a factor
+    would rewrite a price where no unit change occurred, which is worse than leaving it alone.
+    """
     cases, scans = read_json(CASES), read_json(SCANS)
     corridor = {d.isoformat() for d in HO.FEATS}
-    by_symbol: dict = defaultdict(list)
-    for c in cases.values():
-        by_symbol[c["symbol"]].append(c)
+    ratios = eod_ratios()
 
-    events, unmatched_filings = [], []
+    events, unmatched_filings, uncorroborated = [], [], []
     for sym, scan in sorted(scans.items()):
         for e in scan.get("events", []):
             # An extracted statement becomes an event only when it carries a date that lands
@@ -108,26 +132,34 @@ def stage_resolve(args) -> int:
                                           "reason": "no stated effective date inside the corridor"})
                 continue
             eff = min(candidates)
-            # Corroboration: the screen must actually show a level change at the stated session,
-            # in the direction and near the magnitude the filing states. A filing that describes
-            # an event the tape does not show is not applied.
-            observed = next((c for c in by_symbol.get(sym, [])
-                             if c.get("date") == eff.isoformat() and "ratio" in c), None)
             factor = e["price_factor"]
-            residual = None
-            if observed is not None:
-                residual = observed["ratio"] * factor
-                residual = max(residual, 1 / residual) if residual else None
-            events.append({
+            observed = ratios.get((sym, eff.isoformat()))
+            # price_factor converts a price observed BEFORE the effective session into post-event
+            # units, so a real event makes the observed session ratio and the factor equal: a
+            # 1-for-25 consolidation carries factor 25 and prints a ratio near 25, and a 2-for-1
+            # split carries factor 0.5 and prints a ratio near 0.5. The residual is therefore
+            # ratio / factor, and it sits near 1 exactly when the tape shows what the filing says.
+            residual = (observed / factor) if observed and factor else None
+            flat = residual is not None and 0.8 <= residual <= 1.25
+            rec = {
                 "symbol": sym, "effective_session": eff.isoformat(), "price_factor": factor,
                 "event_type": e["event_type"], "source": e["url"],
                 "source_date": e["filing_date"], "source_form": e["form"],
                 "source_items": e.get("items"), "ratio_text": e["ratio_text"],
-                "status": "PRIMARY_VERIFIED" if observed is not None
-                          else "PRIMARY_VERIFIED_NO_TAPE_DISCONTINUITY",
-                "observed_ratio": observed["ratio"] if observed else None,
+                "observed_ratio": round(observed, 6) if observed else None,
                 "residual_discontinuity_after_factor": round(residual, 4) if residual else None,
-                "origin": "arrow014_sec_edgar_census"})
+                "origin": "arrow014_sec_edgar_census"}
+            if flat:
+                rec["status"] = "PRIMARY_VERIFIED_AND_CORROBORATED_BY_TAPE"
+                events.append(rec)
+            else:
+                rec["status"] = ("FILING_STATEMENT_NOT_CORROBORATED_BY_TAPE" if observed
+                                 else "FILING_STATEMENT_NO_TAPE_OBSERVATION")
+                rec["why_not_applied"] = (
+                    "the stated factor does not flatten the observed session ratio, so the tape "
+                    "does not show the unit change the filing describes" if observed else
+                    "the end-of-day layer holds no ratio for this security at this session")
+                uncorroborated.append(rec)
 
     # Deduplicate: one issuer can file the same split in an 8-K and amend it. Keep one event per
     # symbol and effective session, preferring the record whose factor leaves the flattest tape.
@@ -139,8 +171,9 @@ def stage_resolve(args) -> int:
                 (prev["residual_discontinuity_after_factor"] or 9e9):
             best[key] = e
     events = [best[k] for k in sorted(best)]
-    note(f"documented events inside the corridor: {len(events)} "
-         f"({sum(1 for e in events if e['status'] == 'PRIMARY_VERIFIED')} corroborated by the tape)")
+    note(f"filing statements with an effective date inside the corridor: "
+         f"{len(events) + len(uncorroborated)}; applied because the tape corroborates them: "
+         f"{len(events)}; recorded but NOT applied: {len(uncorroborated)}")
 
     explained = {(e["symbol"], e["effective_session"]) for e in events}
     unexplained = [c for k, c in sorted(cases.items())
@@ -163,7 +196,12 @@ def stage_resolve(args) -> int:
         "cases_investigated": len(cases),
         "securities_investigated": len(scans),
         "scan_status_counts": dict(by_status),
+        "corroboration_rule": ("a factor is applied only when an issuer filing states the ratio "
+                               "and a dated effect AND the independent end-of-day tape shows a "
+                               "level change at that session which the factor flattens; a filing "
+                               "the tape does not corroborate is recorded and never applied"),
         "events": events,
+        "uncorroborated_filing_statements": uncorroborated,
         "security_identity": [],
         "trading_events": [],
         "non_comparable_events": [],
@@ -181,6 +219,7 @@ def stage_resolve(args) -> int:
         "arrow": "CG Arrow 014", "stage": "resolve", "timestamp": stamp(),
         "cases": len(cases), "securities_scanned": len(scans),
         "scan_status_counts": dict(by_status), "events": len(events),
+        "uncorroborated_filing_statements": len(uncorroborated),
         "unexplained_cases": len(unexplained),
         "no_outcomes_calculated": True, "log": LOG})
     return 0

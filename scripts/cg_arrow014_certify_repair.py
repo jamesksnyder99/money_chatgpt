@@ -30,7 +30,7 @@ import polars as pl  # noqa: E402
 
 from ingest import holdout2024 as H  # noqa: E402
 from ingest.paths import REPO_ROOT  # noqa: E402
-from verification.r4r5_data import HOLDOUT_REPAIR_BARS, dump_json, stamp  # noqa: E402
+from verification.r4r5_data import HOLDOUT_REPAIR_BARS, dump_json, read_json, stamp  # noqa: E402
 
 LOG: list[str] = []
 T0 = time.monotonic()
@@ -261,31 +261,84 @@ def last_rth_prints(job) -> tuple:
     return iso, out
 
 
-def baseline_rate(workers: int, sessions: int = 12, seed: int = 11) -> dict:
-    """The same cross-check on the already-certified bulk landing, as the calibration point."""
-    import random
-    folders = sorted(p.name for p in H.RAW_BARS.iterdir())
-    random.Random(seed).shuffle(folders)
-    sample = sorted(folders[:sessions])
-    jobs = [(H.RAW_BARS, iso, H.close_time(date.fromisoformat(iso)).isoformat())
-            for iso in sample]
+def baseline_rate(workers: int) -> dict:
+    """The same cross-check over the population the repaired observations actually belong to.
+
+    The obvious baseline — a random sample of the certified bulk landing — is the wrong one, and
+    using it produced a false alarm. That sample is dominated by ordinary liquid securities the
+    strategy never touches, while every repaired observation belongs to a security the ranking
+    rule selected or nearly selected: by construction the largest fifteen-session gainers in the
+    $10-$80 band, which are the thinnest and most violently repriced names on the tape. The
+    17:15 national close includes the closing auction and the minute tape's last regular-hours
+    print does not, so on such a security the two legitimately diverge far more often.
+
+    The baseline is therefore the same measurement over the observations the frozen cells read,
+    taken from the already-certified Arrow 013 landing. That is the like-for-like population, and
+    a repaired observation should be judged against it rather than against the market at large.
+    """
+    from verification import r4r5_holdout as HO
+    membership = read_json(H.WORK / "phase0b_membership.json")
+    want: dict = {}
+    for iso, top in membership["top8"].items():
+        i = HO.INDEX[date.fromisoformat(iso)]
+        entry = HO.entry_for(date.fromisoformat(iso))
+        idx = set(range(max(0, i - 20), i + 1)) | {i - 15}
+        if entry is not None:
+            idx.add(HO.INDEX[entry])
+            for h in HO.HOLDS:
+                x = HO.exit_for(entry, h)
+                if x is not None:
+                    idx.add(HO.INDEX[x])
+        for j in idx:
+            if 0 <= j < len(HO.FEATS):
+                want.setdefault(HO.FEATS[j].isoformat(), set()).update(top)
+
     eod = pl.read_parquet(H.WORK / "eod_corridor.parquet")
+    jobs = [(iso, sorted(syms)) for iso, syms in sorted(want.items())]
     n = bad = 0
     with ProcessPoolExecutor(max_workers=workers) as pool:
-        for f in as_completed([pool.submit(last_rth_prints, j) for j in jobs]):
+        for f in as_completed([pool.submit(selected_last_prints, j) for j in jobs]):
             iso, prints = f.result()
             ref = {s: c for s, c in eod.filter(pl.col("eod_date") == date.fromisoformat(iso))
                    .select(["symbol", "close"]).iter_rows()}
-            for sym, px in prints.items():
+            for sym, (px, _mins, label) in prints.items():
                 r = ref.get(sym)
-                if not r or r <= 0 or not (10.0 <= r <= 80.0):
+                if label == "holdout_repair" or not r or r <= 0 or not (10.0 <= r <= 80.0):
                     continue
                 n += 1
                 if abs(px / r - 1) > TOL:
                     bad += 1
-    return {"sessions_sampled": len(sample), "compared": n, "beyond_tolerance": bad,
-            "rate": (bad / n) if n else None, "seed": seed,
-            "scope": "randomly sampled sessions of the certified Arrow 013 bulk landing"}
+    return {"compared": n, "beyond_tolerance": bad, "rate": (bad / n) if n else None,
+            "scope": ("the observations the eighteen frozen cells read — ranking endpoints, "
+                      "feature windows, causal pre-order, entry fill and H8/H9/H10 exits of every "
+                      "selected name — taken from the certified Arrow 013 landing, excluding the "
+                      "gap-fill tree itself")}
+
+
+def selected_last_prints(job) -> tuple:
+    """Last regular-hours print for named securities on one session, with its source tree."""
+    from verification.r4r5_data import candidate_paths
+    iso, syms = job
+    d = date.fromisoformat(iso)
+    ct = H.close_time(d)
+    out = {}
+    for sym in syms:
+        for label, p in candidate_paths(d, sym):
+            if not p.is_file():
+                continue
+            try:
+                df = pl.read_parquet(p, columns=["bar_start", "open", "close", "volume"])
+            except Exception:  # noqa: BLE001
+                break
+            if df.height:
+                clock = pl.col("bar_start").dt.time()
+                r = df.filter((clock >= H.RTH_OPEN) & (clock < ct) & (pl.col("volume") > 0)
+                              & pl.col("open").is_finite() & pl.col("close").is_finite()
+                              & (pl.col("close") > 0)).sort("bar_start")
+                if r.height:
+                    out[sym] = (float(r["close"][-1]), r.height, label)
+            break
+    return iso, out
 
 
 def HO_FEATS():
