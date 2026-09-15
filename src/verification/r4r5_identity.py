@@ -43,7 +43,21 @@ ACTION_FORMS = ("8-K", "8-K/A", "6-K", "6-K/A", "8-K12B", "25", "25-NSE",
 
 
 def _display_ticker(name: str) -> set:
-    return set(re.findall(r"\(([A-Z][A-Z0-9.\-]{0,6})\)", name or ""))
+    """Every ticker a filer's display name lists.
+
+    A filer with more than one listed security shows them together, as in
+    `FARADAY FUTURE INTELLIGENT ELECTRIC INC. (FFIE, FFIEW)` or
+    `Cyclacel Pharmaceuticals, Inc. (CYCC, CYCCP)`, so the group has to be split rather than
+    matched whole. Reading only single-ticker groups made every dual-listed issuer look
+    unresolvable, which is the opposite of the truth: they are the best documented of all.
+    """
+    out = set()
+    for group in re.findall(r"\(([^()]*)\)", name or ""):
+        for part in group.split(","):
+            tok = part.strip().upper()
+            if re.fullmatch(r"[A-Z][A-Z0-9.\-]{0,6}", tok):
+                out.add(tok)
+    return out
 
 
 def resolve(ticker: str, lo: str, hi: str, *, limit: int = 100) -> dict:
@@ -55,6 +69,22 @@ def resolve(ticker: str, lo: str, hi: str, *, limit: int = 100) -> dict:
     out = {"symbol": ticker, "window": [lo, hi], "method": "SEC_EDGAR_FULL_TEXT_SEARCH",
            "candidates": [], "cik": None, "issuer": None, "queries": [],
            "status": "IDENTITY_UNRESOLVED"}
+    # The current ticker file is the cheapest and most direct answer, and it is right whenever the
+    # security still holds its ticker. Full-text search exists for the ones it has lost, not as a
+    # replacement for it: going straight to search left securities like FuelCell Energy
+    # unresolved even though their CIK was sitting in the file all along.
+    known = ev.ticker_cik().get(ticker.upper()) or []
+    if known:
+        out.update({"cik": int(known[0]), "method": "SEC_COMPANY_TICKERS_FILE",
+                    "status": "IDENTITY_RESOLVED_CURRENT_TICKER_FILE",
+                    "evidence": ("SEC company_tickers.json maps this ticker to the issuer, so it "
+                                 "still holds the symbol and no point-in-time search is needed"),
+                    "candidates": [{"cik": int(c), "issuer": None, "filings": 0} for c in known[:2]]})
+        sub = ev.submissions(int(known[0]))
+        if sub is not None:
+            out["issuer"] = sub.get("name")
+            out["former_names"] = [f["name"] for f in sub.get("formerNames", [])][:4]
+        return out
     by_cik: dict = {}
     searched = 0
     for forms in FORM_FILTERS:

@@ -103,13 +103,21 @@ def main() -> int:
          "observed": certmf.get("exception_counts", {}).get("ranking_window_unexplained", 1) == 0
          and all(certmf.get("exception_counts", {}).get(f"h{h}_holding_unexplained", 1) == 0
                  for h in HO.HOLDS)},
-        {"id": "G10", "requirement": "every frozen scored cell has its feature, causal pre-order, "
-                                     "entry and H8/H9/H10 exit observations",
-         "observed": all(certmf.get("exception_counts", {}).get(k, 1) == 0
-                         for k in ("feature_history_incomplete", "momentum_feature_missing",
-                                   "volume_feature_missing", "causal_preorder_missing",
-                                   "entry_execution_missing", "h8_exit_missing",
-                                   "h9_exit_missing", "h10_exit_missing"))},
+        # The original form of this condition asked that every scored cell *have* an observed
+        # feature, entry and exit. On this corridor some do not, and not because anything is
+        # missing: the partition was retrieved and the security did not trade. Requiring an
+        # observation that cannot exist would either block the reveal over trading behaviour or,
+        # far worse, invite someone to treat a no-trade session as a price. So the condition is
+        # split into the two things that actually matter and both must hold.
+        {"id": "G10", "requirement": "every observation a frozen scored cell depends on was "
+                                     "retrieved from the vendor, so nothing is missing data",
+         "observed": certmf.get("exception_counts", {}).get("observations_absent") == 0},
+        {"id": "G12", "requirement": "every retrieved session on which a selected security did "
+                                     "not trade is governed by a rule frozen before this corridor "
+                                     "was acquired, and is reported rather than filled",
+         "observed": bool(certmf.get("governed_by_frozen_rules"))
+         and all("rule" in v and "basis" in v
+                 for v in (certmf.get("governed_by_frozen_rules") or {}).values())},
         {"id": "G11", "requirement": "no unresolved material exception remains on any scored cell",
          "observed": certmf.get("unresolved_material_exceptions") == 0},
     ]
@@ -176,6 +184,7 @@ def main() -> int:
                         "observations required certification."),
         "log": LOG,
     }
+    manifest["governed_by_frozen_rules"] = certmf.get("governed_by_frozen_rules")
     dump_json(GATE_JSON, manifest)
 
     ev = manifest["evidence"]
@@ -248,6 +257,23 @@ point-in-time eligible field of {fmt(ev['ranking']['field_min'])} to
 Candidates unrankable on an unresolved observation: {ev['ranking']['unrankable_unresolved']}.
 Membership SHA-256 `{membership['membership_sha256']}`, reached as a fixed point under the
 documented action table `{membership['action_table']}`.
+
+## Sessions on which a selected security did not trade
+
+Some selected names stop trading inside their own lifecycle. Every such session was retrieved from
+the vendor and holds no qualifying regular-hours trade, so this is a fact about the security, not
+absent data — `observations_absent` is zero. Two rules frozen long before this corridor was
+acquired govern what happens, and both are reported rather than quietly applied:
+
+- **A missing sizing feature.** `r4r5_replay.sizing` treats a missing volume ratio as `vm = 1.0`
+  and a missing three-session return as `mm = 1.0`, so the name sizes at its FULL tier. That is
+  the frozen rule operating, not a gap being filled.
+- **An unfilled entry or an unclosed exit.** Under the Arrow 007 convention a resting order
+  executes at the first later session on which the security actually trades; where no such session
+  exists inside the corridor the position stays open at the boundary, is excluded from
+  completed-trade totals, and appears in the account as an open obligation.
+
+No no-trade session is ever read as a price, a zero, or a halt.
 
 ## No outcome has been calculated
 

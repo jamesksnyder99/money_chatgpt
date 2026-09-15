@@ -15,7 +15,7 @@ from datetime import date
 
 from verification.r4r5_data import (
     FEATS, INDEX, action_events, adjustment_factor, features, history, present,
-    spans_non_comparable,
+    spans_non_comparable, unit_factor,
 )
 
 LOOKBACK = 15
@@ -125,14 +125,21 @@ def corrected_cohorts(cohort_field: dict, candidate_meta: dict, summaries: dict,
 
 
 def adjusted_path(symbol: str, first_idx: int, last_idx: int, asof, summaries: dict) -> list[tuple]:
-    """Observed closes and opens converted into as-of share units with every documented event."""
+    """Observed closes and opens converted into as-of share units with every documented event.
+
+    The conversion is direction-aware. A holding window is screened in fill units, so sessions
+    after a consolidation effective during the hold sit on the far side of the as-of session and
+    have to be divided rather than multiplied; the backward-only form silently left them
+    unconverted and the screen then reported the issuer's own documented consolidation as an
+    unexplained discontinuity.
+    """
     out = []
     for j in range(first_idx, last_idx + 1):
         d = FEATS[j]
         rec = summaries.get((d.isoformat(), symbol))
         if not present(rec):
             continue
-        f = adjustment_factor(symbol, d, asof)
+        f = unit_factor(symbol, d, asof)
         out.append((d, rec["open"] * f, rec["close"] * f, rec["volume"] / f if rec["volume"] else rec["volume"]))
     return out
 

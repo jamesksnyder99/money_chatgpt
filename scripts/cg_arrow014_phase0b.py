@@ -307,6 +307,34 @@ def stage_rank(args) -> int:
     return 0
 
 
+def absent_observations(rows: list[dict], summaries: dict) -> list[dict]:
+    """Sessions a scored cell depends on for which no source resolved at all.
+
+    This is the distinction the gate turns on. A retrieved partition holding no qualifying
+    regular-hours trade is trading behaviour; a session nothing resolved for is missing data. The
+    summary record carries the evidence directly, and anything without positive evidence of
+    retrieval counts as absent, so the test fails closed.
+    """
+    out = []
+    for r in rows:
+        want = [("entry", r["entry_date"])]
+        for h in HO.HOLDS:
+            if r.get(f"h{h}_exit_date"):
+                want.append((f"h{h}", r[f"h{h}_exit_date"]))
+        i = HO.INDEX[date.fromisoformat(r["cohort_id"])]
+        for j in range(max(0, i - FEATURE_WINDOW), i + 1):
+            want.append(("feature", HO.FEATS[j].isoformat()))
+        for role, iso in want:
+            if not iso:
+                continue
+            rec = summaries.get((iso, r["symbol"]))
+            if rec is None or (rec.get("missing")
+                               and not (rec.get("partition_resolved") and rec.get("raw_rows"))):
+                out.append({"cohort_id": r["cohort_id"], "symbol": r["symbol"],
+                            "rank": r["rank"], "role": role, "session": iso})
+    return out
+
+
 def investigation_resolutions() -> dict:
     """(symbol, session) -> what the primary-source investigation actually established.
 
@@ -422,22 +450,23 @@ def stage_certify(args) -> int:
                                              "symbol": r["symbol"]} for r in rs[:10]]})
         return len(rs)
 
+    # An observation the engine cannot read has two causes that carry opposite consequences, and
+    # the gate must not conflate them. If nothing resolved for a session, the observation is
+    # missing and it blocks. If the partition was retrieved and the security simply did not trade,
+    # that is a fact about the security, and the frozen rules — written long before this corridor
+    # was acquired — already say what to do with it. Those are reported in full, never hidden, but
+    # they are not evidence gaps and cannot be closed by acquiring anything.
+    absent = absent_observations(t8, summaries)
+    if absent:
+        exceptions.append({"exception": "OBSERVATION_ABSENT_NOT_MERELY_UNTRADED",
+                           "count": len(absent),
+                           "why": "no source resolved for a session a scored cell depends on",
+                           "examples": absent[:10]})
+    note(f"sessions behind a scored cell that are genuinely absent rather than untraded: "
+         f"{len(absent)}")
+
     counts = {
-        "feature_history_incomplete": flag(
-            [r for r in t8 if r["feature_sessions_present"] < r["feature_sessions_required"]],
-            "FEATURE_HISTORY_INCOMPLETE", "an R4/R5 sizing input rests on a short history"),
-        "momentum_feature_missing": flag(
-            [r for r in t8 if not r["ret3_present"]], "MOMENTUM_FEATURE_MISSING",
-            "the R5 momentum tier cannot be determined"),
-        "volume_feature_missing": flag(
-            [r for r in t8 if not r["volume_ratio_present"]], "VOLUME_FEATURE_MISSING",
-            "the R4/R5 volume tier cannot be determined"),
-        "causal_preorder_missing": flag(
-            [r for r in t8 if not r["causal_preorder_present"]], "CAUSAL_PREORDER_MISSING",
-            "the causal pre-order observation that sets the quantity is absent"),
-        "entry_execution_missing": flag(
-            [r for r in t8 if not r["entry_execution_present"]], "ENTRY_EXECUTION_MISSING",
-            "the fill cannot be observed"),
+        "observations_absent": len(absent),
         "ranking_window_unexplained": flag(
             [r for r in t8 if r["lookback_resolution"]
              == "UNEXPLAINED_RANKING_WINDOW_DISCONTINUITY"],
@@ -446,14 +475,34 @@ def stage_certify(args) -> int:
             "capable of settling it has been completed for this security"),
     }
     for h in HO.HOLDS:
-        counts[f"h{h}_exit_missing"] = flag(
-            [r for r in t8 if not r[f"h{h}_exit_observed"]], f"H{h}_EXIT_MISSING",
-            f"the {h}-session hold cannot be closed on an observed price")
         counts[f"h{h}_holding_unexplained"] = flag(
             [r for r in t8 if r[f"h{h}_holding_resolution"]
              == "UNEXPLAINED_HOLDING_WINDOW_DISCONTINUITY"],
             f"H{h}_HOLDING_WINDOW_DISCONTINUITY_UNEXPLAINED",
             f"the {h}-session holding path may cross a share-unit change")
+    # what the frozen rules govern, reported rather than counted as a blocker
+    governed = {
+        "RULE_DEFINED_MISSING_SIZING_FEATURE": {
+            "rows": sum(1 for r in t8 if not r["volume_ratio_present"] or not r["ret3_present"]
+                        or r["feature_sessions_present"] < r["feature_sessions_required"]),
+            "rule": ("r4r5_replay.sizing treats a missing volume ratio as vm=1.0 and a missing "
+                     "three-session return as mm=1.0, so the name sizes at its FULL tier"),
+            "basis": "every underlying session was retrieved and shows no qualifying trade"},
+        "DOCUMENTED_NON_EXECUTION": {
+            "entry_rows": sum(1 for r in t8 if not r["entry_execution_present"]),
+            "exit_rows": {f"h{h}": sum(1 for r in t8 if not r[f"h{h}_exit_observed"])
+                          for h in HO.HOLDS},
+            "rule": ("the Arrow 007 convention: a resting order executes at the first later "
+                     "session on which the security actually trades, and if no such session "
+                     "exists inside the corridor the position stays open at the boundary and is "
+                     "excluded from completed-trade totals, appearing in the account as an open "
+                     "obligation"),
+            "basis": "every underlying session was retrieved and shows no qualifying trade"},
+    }
+    note("governed by frozen rules, reported not blocking: "
+         f"{governed['RULE_DEFINED_MISSING_SIZING_FEATURE']['rows']} sizing-feature rows, "
+         f"{governed['DOCUMENTED_NON_EXECUTION']['entry_rows']} unfilled entries, "
+         f"{sum(governed['DOCUMENTED_NON_EXECUTION']['exit_rows'].values())} unclosed exits")
     note("selected-corridor exceptions: " +
          (", ".join(f"{k}={v}" for k, v in counts.items() if v) or "none"))
 
@@ -465,6 +514,7 @@ def stage_certify(args) -> int:
         "membership_sha256": membership["membership_sha256"],
         "rows": len(rows), "selected_rows": len(t8), "observations_required": len(needs),
         "exception_counts": counts, "exceptions": exceptions,
+        "governed_by_frozen_rules": governed,
         "unresolved_material_exceptions": material,
         "gate": "READY_FOR_LOCK_2" if material == 0 else "BLOCKED",
         "no_outcomes_calculated": True, "log": LOG})

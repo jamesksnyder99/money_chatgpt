@@ -1,0 +1,170 @@
+{
+  "arrow": "CG Arrow 014",
+  "stage": "LOCK_2_certification_gate",
+  "timestamp": "2026-09-15T21:58:26+00:00",
+  "head_at_gate": "cb9c32962188106c2b4466914cc35aa93f20abb0",
+  "corridor_id": "cg_arrow014_pristine_sep2024_aug2025_v1",
+  "status": "HOLDOUT_DATA_CERTIFIED_FOR_PRISTINE_REVEAL",
+  "a13_status_preserved": "HOLDOUT_DATA_PARTIALLY_CERTIFIED",
+  "a13_status_note": "Arrow 013's acquisition and source layer were accepted; its two open blockers were documented dated corporate actions and point-in-time security identity. This gate records how Arrow 014 closed them and does not restate or overwrite Arrow 013's own status.",
+  "conditions": [
+    {
+      "id": "G1",
+      "requirement": "LOCK 1 is committed and its cohort calendar is unchanged",
+      "observed": true
+    },
+    {
+      "id": "G2",
+      "requirement": "the reveal matrix is still the frozen 18 cells",
+      "observed": true
+    },
+    {
+      "id": "G3",
+      "requirement": "Phase 0A source verification reported no blocker",
+      "observed": true
+    },
+    {
+      "id": "G4",
+      "requirement": "August 2025 was never previously scored as a signal month",
+      "observed": true
+    },
+    {
+      "id": "G5",
+      "requirement": "every gap-fill partition passes the Arrow 013 partition gate",
+      "observed": true
+    },
+    {
+      "id": "G6",
+      "requirement": "no ranking-stage observation is still missing",
+      "observed": true
+    },
+    {
+      "id": "G7",
+      "requirement": "no candidate is unrankable on an unresolved observation",
+      "observed": true
+    },
+    {
+      "id": "G8",
+      "requirement": "the mechanical membership has reached a fixed point",
+      "observed": true
+    },
+    {
+      "id": "G9",
+      "requirement": "every screened case that touches a scored cell is resolved from documented evidence",
+      "observed": true
+    },
+    {
+      "id": "G10",
+      "requirement": "every observation a frozen scored cell depends on was retrieved from the vendor, so nothing is missing data",
+      "observed": true
+    },
+    {
+      "id": "G12",
+      "requirement": "every retrieved session on which a selected security did not trade is governed by a rule frozen before this corridor was acquired, and is reported rather than filled",
+      "observed": true
+    },
+    {
+      "id": "G11",
+      "requirement": "no unresolved material exception remains on any scored cell",
+      "observed": true
+    }
+  ],
+  "failed_conditions": [],
+  "unresolved_material_exceptions": 0,
+  "exception_counts": {
+    "observations_absent": 0,
+    "ranking_window_unexplained": 0,
+    "h8_holding_unexplained": 0,
+    "h9_holding_unexplained": 0,
+    "h10_holding_unexplained": 0
+  },
+  "exceptions": [],
+  "membership_sha256": "3931985d9e7e4c4998fe386d973dea372f109a0a66c9b750424378086fbde4fb",
+  "action_table": "reports/cg_arrow014_corporate_actions.json",
+  "action_table_sha256": "5aceb728541da2806299fcf9a55f4acfef05019cec035b8fb113dd4283d13b8b",
+  "evidence": {
+    "phase0a": {
+      "eod_partitions": 183864,
+      "bar_partitions": 1079750,
+      "corridor_sessions": 292,
+      "cohorts": 52
+    },
+    "gap_fill": {
+      "requests": 2,
+      "rows": 27360,
+      "tree": "data/holdout2024/repair/bars",
+      "precedence": "resolved last, so it can fill a gap but never shadow an existing observation",
+      "still_missing": 0,
+      "certification": "REPAIR_PARTITIONS_CERTIFIED"
+    },
+    "screen": {
+      "securities_screened": 8024,
+      "observations": 1922870,
+      "cases": 5599,
+      "case_securities": 1634,
+      "scope": "every security in the corridor, restricted to the sessions its own cohorts depend on; no shortlist by measured return"
+    },
+    "census": {
+      "securities_scanned": 1634,
+      "documented_events": 147,
+      "unexplained_cases": 5540,
+      "scan_status_counts": {
+        "UNRESOLVED_NO_CIK_FOR_TICKER": 294,
+        "UNRESOLVED_NO_FILING_EVIDENCE": 1179,
+        "FILING_EVIDENCE_FOUND": 161
+      }
+    },
+    "ranking": {
+      "cohorts": 52,
+      "selected_slots": 416,
+      "control_candidates": 624,
+      "distinct_selected_securities": 277,
+      "field_min": 1261,
+      "field_max": 1735,
+      "unrankable_unresolved": 0,
+      "fixed_point_reached": true
+    },
+    "corridor_certification": {
+      "rows": 1040,
+      "selected_rows": 416,
+      "observations_required": 23761
+    }
+  },
+  "input_hashes": {
+    "reports/cg_arrow014_reveal_freeze.json": "854c2daa6234dbef285fbef1174a90b308e3b6a42263198cb2bf0ac705cc7582",
+    "reports/cg_arrow014_corporate_actions.json": "5aceb728541da2806299fcf9a55f4acfef05019cec035b8fb113dd4283d13b8b"
+  },
+  "no_outcomes_calculated": true,
+  "declaration": "Nothing in Arrow 014 up to and including this gate has calculated a return, a hit rate, a drawdown, a monthly figure or an ending equity on the pristine corridor. Memberships were generated only to identify which observations required certification.",
+  "log": [
+    "2026-09-15T21:58:26+00:00 +0.0m G1: pass \u2014 LOCK 1 is committed and its cohort calendar is unchanged",
+    "2026-09-15T21:58:26+00:00 +0.0m G2: pass \u2014 the reveal matrix is still the frozen 18 cells",
+    "2026-09-15T21:58:26+00:00 +0.0m G3: pass \u2014 Phase 0A source verification reported no blocker",
+    "2026-09-15T21:58:26+00:00 +0.0m G4: pass \u2014 August 2025 was never previously scored as a signal month",
+    "2026-09-15T21:58:26+00:00 +0.0m G5: pass \u2014 every gap-fill partition passes the Arrow 013 partition gate",
+    "2026-09-15T21:58:26+00:00 +0.0m G6: pass \u2014 no ranking-stage observation is still missing",
+    "2026-09-15T21:58:26+00:00 +0.0m G7: pass \u2014 no candidate is unrankable on an unresolved observation",
+    "2026-09-15T21:58:26+00:00 +0.0m G8: pass \u2014 the mechanical membership has reached a fixed point",
+    "2026-09-15T21:58:26+00:00 +0.0m G9: pass \u2014 every screened case that touches a scored cell is resolved from documented evidence",
+    "2026-09-15T21:58:26+00:00 +0.0m G10: pass \u2014 every observation a frozen scored cell depends on was retrieved from the vendor, so nothing is missing data",
+    "2026-09-15T21:58:26+00:00 +0.0m G12: pass \u2014 every retrieved session on which a selected security did not trade is governed by a rule frozen before this corridor was acquired, and is reported rather than filled",
+    "2026-09-15T21:58:26+00:00 +0.0m G11: pass \u2014 no unresolved material exception remains on any scored cell"
+  ],
+  "governed_by_frozen_rules": {
+    "RULE_DEFINED_MISSING_SIZING_FEATURE": {
+      "rows": 10,
+      "rule": "r4r5_replay.sizing treats a missing volume ratio as vm=1.0 and a missing three-session return as mm=1.0, so the name sizes at its FULL tier",
+      "basis": "every underlying session was retrieved and shows no qualifying trade"
+    },
+    "DOCUMENTED_NON_EXECUTION": {
+      "entry_rows": 1,
+      "exit_rows": {
+        "h8": 9,
+        "h9": 11,
+        "h10": 11
+      },
+      "rule": "the Arrow 007 convention: a resting order executes at the first later session on which the security actually trades, and if no such session exists inside the corridor the position stays open at the boundary and is excluded from completed-trade totals, appearing in the account as an open obligation",
+      "basis": "every underlying session was retrieved and shows no qualifying trade"
+    }
+  }
+}

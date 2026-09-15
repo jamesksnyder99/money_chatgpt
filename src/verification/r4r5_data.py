@@ -127,6 +127,27 @@ def adjustment_factor(symbol: str, observed: date, asof: date, events=None) -> f
     return factor
 
 
+def unit_factor(symbol: str, observed: date, asof: date, events=None) -> float:
+    """Convert a price observed on `observed` into `asof` share units, in either direction.
+
+    `adjustment_factor` answers only the backward case, where the as-of session is the later of
+    the two, because that is all the ledger ever asks of it: a ranking window is expressed in its
+    signal-session units and a hold is expressed in its exit-session units, and in both the as-of
+    session is last. It is deliberately left exactly as it is, since the ledger's quantities and
+    entry prices are computed from it.
+
+    A holding-window *screen* asks the opposite question. It expresses the window in fill units,
+    so a consolidation effective during the hold lies after the as-of session, the backward form
+    matches nothing, and the screen sees an unconverted level change it then reports as an
+    unexplained discontinuity. That is a false alarm, not a defect in the prices: mF International
+    consolidated 1-for-8 during a hold, the ledger converted it correctly, and only the screen
+    complained.
+    """
+    if asof >= observed:
+        return adjustment_factor(symbol, observed, asof, events)
+    return 1.0 / adjustment_factor(symbol, asof, observed, events)
+
+
 def adjusted(rec: dict | None, factor: float) -> dict | None:
     if rec is None or factor == 1:
         return rec

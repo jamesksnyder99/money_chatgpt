@@ -40,6 +40,10 @@ TABLE = REPORTS / "cg_arrow014_corporate_actions.json"
 # amended after, so a window clipped to the corridor would miss the document that explains it.
 SCAN_LO = "2024-06-01"
 SCAN_HI = "2025-11-30"
+# How far from a filing's stated date the tape may show the level change. A stated effective
+# time, a record date and the first session of trading in new units are three different things,
+# and they routinely sit a few sessions apart.
+ALIGN_SESSIONS = 5
 T0 = time.monotonic()
 LOG: list[str] = []
 
@@ -129,6 +133,7 @@ def stage_resolve(args) -> int:
              f"statements the ticker file could not reach")
 
     events, unmatched_filings, uncorroborated = [], [], []
+    undated_matched = 0
     for sym, scan_events in sorted(merged.items()):
         for e in scan_events:
             # An extracted statement becomes an event only when it carries a date that lands
@@ -142,21 +147,70 @@ def stage_resolve(args) -> int:
                 if eff is not None and eff.isoformat() in corridor:
                     candidates.append(eff)
             if not candidates:
-                unmatched_filings.append({"symbol": sym, "form": e.get("form"),
-                                          "filing_date": e.get("filing_date"),
-                                          "ratio_text": e.get("ratio_text"),
-                                          "reason": "no stated effective date inside the corridor"})
-                continue
-            eff = min(candidates)
+                # The filing states a ratio but no date this parser could read — mF International
+                # announced a 1-for-8 consolidation in a 6-K whose effective date sits in prose
+                # the extractor does not reach. The action is documented even though the date is
+                # not, so the tape is asked which session it happened on. This is only allowed to
+                # answer when the answer is unambiguous: exactly one session in the whole corridor
+                # may carry a level change this factor flattens. Two candidate sessions means the
+                # filing does not identify which, and it stays uncorroborated.
+                f = e["price_factor"]
+                matches = [(d, r) for (s2, d), r in ratios.items()
+                           if s2 == sym and f and 0.8 <= r / f <= 1.25]
+                if len(matches) == 1:
+                    d_iso, obs = matches[0]
+                    candidates = [date.fromisoformat(d_iso)]
+                    undated_matched += 1
+                else:
+                    unmatched_filings.append(
+                        {"symbol": sym, "form": e.get("form"),
+                         "filing_date": e.get("filing_date"), "ratio_text": e.get("ratio_text"),
+                         "price_factor": f, "corridor_sessions_matching_factor": len(matches),
+                         "reason": ("no stated effective date this parser could read, and the "
+                                    + ("tape shows no session this factor flattens"
+                                       if not matches else
+                                       f"tape shows {len(matches)} such sessions, so the filing "
+                                       "does not identify which"))})
+                    continue
             factor = e["price_factor"]
-            observed = ratios.get((sym, eff.isoformat()))
+            # A filing establishes the action and roughly when; the tape establishes the exact
+            # session on which units changed. The two are not the same date. FMTO's 6-K states a
+            # 1-for-500 consolidation effective 2025-04-17 and the tape changes level at the open
+            # of 2025-04-22, because a stated effective time, a record date and the first session
+            # of trading in new units are three different things. So each stated date is taken as
+            # an anchor and the neighbouring sessions are searched for the one the factor
+            # flattens. This is not choosing a convenient date: no session is accepted unless it
+            # independently shows the level change the filing describes.
+            #
             # price_factor converts a price observed BEFORE the effective session into post-event
-            # units, so a real event makes the observed session ratio and the factor equal: a
-            # 1-for-25 consolidation carries factor 25 and prints a ratio near 25, and a 2-for-1
-            # split carries factor 0.5 and prints a ratio near 0.5. The residual is therefore
-            # ratio / factor, and it sits near 1 exactly when the tape shows what the filing says.
-            residual = (observed / factor) if observed and factor else None
-            flat = residual is not None and 0.8 <= residual <= 1.25
+            # units, so a real event makes the session ratio and the factor equal: a 1-for-25
+            # consolidation carries factor 25 and prints a ratio near 25, a 2-for-1 split carries
+            # factor 0.5 and prints a ratio near 0.5. The residual ratio / factor sits near 1
+            # exactly when the tape shows what the filing says.
+            eff, observed, residual, flat = None, None, None, False
+            best = None
+            for anchor in sorted(set(candidates)):
+                i0 = HO.INDEX.get(anchor)
+                if i0 is None:
+                    continue
+                for j in range(max(0, i0 - ALIGN_SESSIONS),
+                               min(len(HO.FEATS), i0 + ALIGN_SESSIONS + 1)):
+                    d = HO.FEATS[j]
+                    r = ratios.get((sym, d.isoformat()))
+                    if not r or not factor:
+                        continue
+                    res = r / factor
+                    if 0.8 <= res <= 1.25:
+                        score = (abs(j - i0), abs(res - 1))
+                        if best is None or score < best[0]:
+                            best = (score, d, r, res)
+            if best is not None:
+                _s, eff, observed, residual = best
+                flat = True
+            else:
+                eff = min(candidates)
+                observed = ratios.get((sym, eff.isoformat()))
+                residual = (observed / factor) if observed and factor else None
             rec = {
                 "symbol": sym, "effective_session": eff.isoformat(), "price_factor": factor,
                 "event_type": e["event_type"], "source": e["url"],
@@ -164,6 +218,8 @@ def stage_resolve(args) -> int:
                 "source_items": e.get("items"), "ratio_text": e["ratio_text"],
                 "observed_ratio": round(observed, 6) if observed else None,
                 "residual_discontinuity_after_factor": round(residual, 4) if residual else None,
+                "stated_dates": [d.isoformat() for d in sorted(set(candidates))],
+                "alignment_sessions": ALIGN_SESSIONS,
                 "origin": "arrow014_sec_edgar_census"}
             if flat:
                 rec["status"] = "PRIMARY_VERIFIED_AND_CORROBORATED_BY_TAPE"
@@ -189,7 +245,9 @@ def stage_resolve(args) -> int:
     events = [best[k] for k in sorted(best)]
     note(f"filing statements with an effective date inside the corridor: "
          f"{len(events) + len(uncorroborated)}; applied because the tape corroborates them: "
-         f"{len(events)}; recorded but NOT applied: {len(uncorroborated)}")
+         f"{len(events)}; recorded but NOT applied: {len(uncorroborated)}; "
+         f"of the applied, {undated_matched} carried a documented ratio whose session only the "
+         f"tape could identify, uniquely")
 
     explained = {(e["symbol"], e["effective_session"]) for e in events}
     unexplained = [c for k, c in sorted(cases.items())
@@ -222,6 +280,7 @@ def stage_resolve(args) -> int:
         "cases_investigated": len(cases),
         "securities_investigated": len(scans),
         "scan_status_counts": dict(by_status),
+        "undated_filing_statements_matched_uniquely": undated_matched,
         "corroboration_rule": ("a factor is applied only when an issuer filing states the ratio "
                                "and a dated effect AND the independent end-of-day tape shows a "
                                "level change at that session which the factor flattens; a filing "
