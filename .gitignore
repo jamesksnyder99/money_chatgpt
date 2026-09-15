@@ -16,6 +16,7 @@ data/ref/
 data/pilot/
 data/full/
 data/virgin/
+data/holdout2024/
 data/meta/
 
 # Arrow 005: private verification observations and user audit CSVs.
