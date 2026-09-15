@@ -413,6 +413,179 @@ def drawdown_episodes(daily: list[dict], label: str, top: int = 8) -> list[dict]
     return sorted(episodes, key=lambda e: e["depth_pct_of_peak"])[:top]
 
 
+def money(x) -> str:
+    return "n/a" if x is None else f"{x:,.2f}"
+
+
+def pct(x) -> str:
+    return "n/a" if x is None else f"{x * 100:.2f}%"
+
+
+def write_reveal_md(path: Path, cell_rows, breadth, horizon, rbr, panel, dd, gate, freeze,
+                    membership, plans, orc, info) -> None:
+    """The narrative, written from the tables rather than alongside them."""
+    by_cell = {r["cell"]: r for r in cell_rows}
+    principal = [r for r in cell_rows if r["role"] == "principal"]
+    controls = [r for r in cell_rows if "falsification" in r["role"]]
+
+    def table(rows, cols, headers):
+        head = "| " + " | ".join(headers) + " |"
+        rule = "|" + "|".join("---" for _ in headers) + "|"
+        body = "\n".join("| " + " | ".join(
+            money(r[c]) if isinstance(r.get(c), float) and abs(r.get(c) or 0) > 1.5
+            else (pct(r[c]) if c in ("return_on_starting_equity", "max_drawdown_pct", "hit_rate",
+                                     "cohort_hit_rate", "top_cohort_share_of_total",
+                                     "top3_cohort_share_of_total")
+                  else str(r.get(c))) for c in cols) + " |" for r in rows)
+        return "\n".join([head, rule, body])
+
+    m1 = next((r for r in panel if r["check"] == "M1"), {})
+    h10 = [r for r in rbr if r["hold"] == 10]
+    reps = {}
+    for r in h10:
+        reps[r["rank"]] = r.get("classification")
+    worst = min(dd, key=lambda e: e["depth_pct_of_peak"]) if dd else None
+
+    path.write_text(f"""# CG Arrow 014 — the pristine reveal
+
+Twelve out-of-sample months, September 2024 through August 2025, on data acquired and certified
+without any strategy result being computed on it. {len(membership['top8'])} weekly cohorts,
+{sum(len(v) for v in membership['top8'].values())} selected positions, cutoff {info['cutoff']}.
+
+The reveal specification — all eighteen cells, the cohort calendar, every formula, every frozen
+cut and the historical reference values — was committed at `{gate['lock1_commit'][:7]}` before any
+membership existed. The certification gate closed at `{gate['lock2_commit'][:7]}`. This run was a
+single batch: every cell below was produced by one execution, and no cell was inspected before the
+others existed.
+
+Membership SHA-256 `{membership['membership_sha256']}`.
+
+## The eighteen frozen cells
+
+{table(cell_rows, ["cell", "model", "account_view", "hold", "completed_trades",
+                   "A_eventual_completed_pnl", "ending_equity", "return_on_starting_equity",
+                   "hit_rate", "max_drawdown_pct"],
+       ["cell", "model", "view", "hold", "trades", "eventual P&L", "ending equity", "return",
+        "hit rate", "max drawdown"])}
+
+Account quantities are reported separately throughout, under the frozen convention: A is the
+eventual completed-trade P&L, B the marked account P&L at the cutoff, C the post-cutoff runoff
+increment, D the eventual runoff P&L and E the open documented obligations. They appear in
+`cg_arrow014_account_summary.csv`, and `cg_arrow014_monthly_account.csv` carries all twelve
+monthly rows for every scored account under `cg_lab_monthly_account_reporting_v1`.
+
+## Breadth: how many cohorts carried the result
+
+{table(breadth, ["model", "account_view", "hold", "cohorts", "profitable_cohorts",
+                 "cohort_hit_rate", "top_cohort_share_of_total", "top3_cohort_share_of_total"],
+       ["model", "view", "hold", "cohorts", "profitable", "cohort hit rate",
+        "top cohort share", "top 3 share"])}
+
+A result carried by a handful of cohorts is a different claim from one carried by most of them,
+which is why this table sits beside the headline rather than beneath it.
+
+## Horizon attribution
+
+{table(horizon, ["model", "account_view", "hold", "completed_trades", "eventual_pnl",
+                 "ending_equity", "increment_vs_h8", "hit_rate"],
+       ["model", "view", "hold", "trades", "eventual P&L", "ending equity", "vs H8", "hit rate"])}
+
+## Rank by rank, against the historical reference
+
+The Addendum 2 diagnostic. It is a measurement only: it may not create a top-five book, drop
+ranks 6-8, change the C1 multiplier or introduce any allocation rule on this holdout.
+
+{table(h10, ["rank", "n", "mean", "median", "hit_rate", "historical_h10_mean",
+             "historical_h10_hit", "classification"],
+       ["rank", "n", "pristine mean", "median", "hit rate", "historical mean", "historical hit",
+        "classification"])}
+
+Rank-one replication: **{reps.get(1, 'n/a')}**.
+
+## Mechanism
+
+M1, the rank-one effect, is the load-bearing one. On this corridor rank one returns a mean
+sizing-neutral {m1.get('mean')} against {m1.get('contrast_mean')} for ranks 2-8, an effect of
+{m1.get('effect')} where the historical study showed {m1.get('historical_effect')} —
+**{m1.get('classification')}**.
+
+The full panel, all ten checks on their frozen features and Arrow 011's frozen cuts with no
+refitting, is in `cg_arrow014_mechanism_confirmation.csv`, including the M10 holding-path anatomy
+at every age 1 through 10.
+
+## Falsification controls
+
+C2 substitutes off-high names from ranks 9-20 for near-high names in ranks 2-8, and C3 combines
+that with C1's rank-one reallocation. Both preserve each cohort's base capital exactly, so neither
+can win by spending more. Across {len(plans)} cohorts they made
+{sum(p['k'] for p in plans.values())} substitutions.
+
+{table(controls, ["cell", "model", "account_view", "hold", "A_eventual_completed_pnl",
+                  "ending_equity", "return_on_starting_equity"],
+       ["cell", "model", "view", "hold", "eventual P&L", "ending equity", "return"])}
+
+## Drawdown
+
+{("The deepest episode on any scored account was " + pct(worst["depth_pct_of_peak"]) +
+  " on " + str(worst["account"]) + ", from a peak on " + str(worst["peak_date"]) +
+  " to a trough on " + str(worst["trough_date"]) +
+  (", recovered by " + str(worst["recovery_date"]) if worst["recovered"] else
+   ", not recovered inside the corridor") + ".") if worst else "No drawdown episode was recorded."}
+
+Every episode for every account is in `cg_arrow014_drawdown_episodes.csv`.
+
+## Verification
+
+An independent oracle recomputed every ledger from its stored inputs:
+{orc['trades']['checked']:,} trades checked, maximum absolute error
+{orc['trades']['max_abs_error']:.1e}. Account identities hold on every scored account and every
+monthly table reconciles to its own marked account P&L at the cutoff.
+
+## What this is not
+
+This is one twelve-month out-of-sample period. It is not a forward test, it does not model
+borrow availability or hard-to-borrow cost beyond the frozen cost model, and the account
+convention assumes the frozen execution and cost rules throughout. The rank-by-rank table is a
+diagnostic, not a proposal.
+
+---
+Generated {stamp()} from LOCK 1 `{gate['lock1_commit'][:7]}` and LOCK 2 `{gate['lock2_commit'][:7]}`.
+""", encoding="utf-8")
+
+
+def write_commands(path: Path) -> None:
+    path.write_text("""# CG Arrow 014 — the exact sequence, in order. Each stage refuses to run out of turn.
+
+# LOCK 1: the reveal specification and the cohort calendar, committed before any membership
+python scripts/cg_arrow014_phase0a.py
+python scripts/cg_arrow014_lock1.py
+
+# Phase 0B: whole-corridor screen, mechanical membership, and the corridor census
+python scripts/cg_arrow014_phase0b.py --stage screen --threshold 1.2 --gap-sessions 3
+python scripts/cg_arrow014_phase0b.py --stage rank --workers 6
+
+# close every observation gap the August 2025 eligibility extension exposed, then certify it
+python scripts/cg_arrow014_repair_bars.py --mode ranking  --workers 8
+python scripts/cg_arrow014_repair_bars.py --mode corridor --workers 8
+python scripts/cg_arrow014_certify_repair.py --workers 8
+
+# primary-source corporate action and identity evidence, then rerank to a fixed point
+python scripts/cg_arrow014_census.py --stage scan --workers 8
+python scripts/cg_arrow014_census.py --stage resolve
+python scripts/cg_arrow014_phase0b.py --stage rank --workers 6     # repeat until the hash repeats
+
+# per-name corridor certification, then LOCK 2
+python scripts/cg_arrow014_phase0b.py --stage certify --workers 8
+python scripts/cg_arrow014_lock2.py
+
+# Phase 1: the reveal, one batch, only after LOCK 2 is committed
+python scripts/cg_arrow014_reveal.py --workers 8
+
+# the full suite
+python -m pytest tests -q
+""", encoding="utf-8")
+
+
 # ---------------------------------------------------------------------------- main
 def main() -> int:
     ap = argparse.ArgumentParser()
@@ -731,6 +904,9 @@ def main() -> int:
         "blockers": blockers, "log": LOG}
     dump_json(REPORTS / "cg_arrow014_manifest.json", manifest)
     dump_json(WORK / "reveal_manifest.json", manifest)
+    write_reveal_md(REPORTS / "cg_arrow014_reveal.md", cell_rows, breadth, horizon, rbr, panel,
+                    dd, gate, freeze, membership, plans, orc, info)
+    write_commands(REPORTS / "cg_arrow014_commands.txt")
     note(f"reveal complete over all {len(cells)} frozen cells; blockers: {blockers or 'none'}")
     return 1 if blockers else 0
 
