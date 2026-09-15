@@ -1,0 +1,5 @@
+check,discrepant,escalated,matched,result,sampled,scope,volume_mismatches,worst_price_delta
+repeat_query_reproducibility,0,False,1,IDENTICAL,1,"smoke symbol, 2025-08-01",0,0.0
+august_2025_overlap_vs_local,0,False,12,MATCH,12,stratified sample across the month,0,0
+minute_to_end_of_day_aggregation,,False,0,DOCUMENTED_CONSOLIDATED_TAPE_DIFFERENCE,65,deterministic symbol-session sample,,0.0141
+calendar_vs_independent_reference,0,False,292,IDENTICAL,292,2024-08-01..2025-09-30,,

@@ -26,6 +26,7 @@ import csv
 from datetime import date, datetime, time as dtime
 import hashlib
 import json
+import math
 from pathlib import Path
 import subprocess
 import sys
@@ -150,6 +151,7 @@ def validate_session(job) -> dict:
            "ohlc_inconsistent_partitions": 0, "negative_volume_partitions": 0,
            "nonfinite_price_partitions": 0, "rth_bar_over_expected": 0,
            "no_trade_minutes": 0, "traded_minutes": 0, "unreadable": 0,
+           "volume_without_last_sale_price_minutes": 0, "priced_traded_minutes": 0,
            "max_rth_bars": 0, "symbols_with_rth": 0}
     if not folder.exists():
         return out
@@ -183,7 +185,16 @@ def validate_session(job) -> dict:
             traded = rth.filter(pl.col("volume") > 0)
             out["traded_minutes"] += traded.height
             out["no_trade_minutes"] += rth.height - traded.height
-            t2 = traded
+            # A fourth vendor state, distinct from a no-trade minute, a missing bar and a halt:
+            # consolidated volume with a positive trade count but no last-sale-eligible price, so
+            # open/high/low/close are NaN. These are real prints that do not set high, low or
+            # last under the tape's trade-condition rules. The frozen loader already requires
+            # finite positive open and close, so such a minute can never become a mark or an
+            # execution; it is counted here and never treated as a defect or forward-filled.
+            priced = traded.filter(pl.col("close").is_finite() & pl.col("open").is_finite())
+            out["volume_without_last_sale_price_minutes"] += traded.height - priced.height
+            out["priced_traded_minutes"] += priced.height
+            t2 = priced
             if t2.height:
                 bad = t2.filter((pl.col("high") < pl.col("low"))
                                 | (pl.col("close") > pl.col("high") + 1e-9)
@@ -192,7 +203,7 @@ def validate_session(job) -> dict:
                                 | (pl.col("open") < pl.col("low") - 1e-9))
                 if bad.height:
                     out["ohlc_inconsistent_partitions"] += 1
-                if bool((t2["close"] <= 0).any()) or bool(t2["close"].is_nan().any()):
+                if bool((t2["close"] <= 0).any()):
                     out["nonfinite_price_partitions"] += 1
         if bool((df["volume"] < 0).any()):
             out["negative_volume_partitions"] += 1
@@ -224,8 +235,10 @@ def reconcile_sample(job) -> dict:
         res["state"] = "NO_REGULAR_HOURS_BARS"
         return res
     res["minute_volume"] = int(rth["volume"].sum())
-    traded = rth.filter(pl.col("volume") > 0)
-    res["minute_close"] = float(traded["close"][-1]) if traded.height else None
+    # the last usable price is the last minute that both traded and carried a last-sale-eligible
+    # price; a volume-only minute has NaN prices and can never stand in for a close
+    priced = rth.filter((pl.col("volume") > 0) & pl.col("close").is_finite())
+    res["minute_close"] = float(priced["close"][-1]) if priced.height else None
     chunk = d.strftime("%Y-%m")
     ep = H.raw_eod_path(symbol, chunk)
     if not ep.exists():
@@ -241,7 +254,8 @@ def reconcile_sample(job) -> dict:
         res["state"] = "NO_EOD_ROW"
         return res
     res["eod_volume"] = int(row["volume"][0]) if row["volume"][0] is not None else None
-    res["eod_close"] = float(row["close"][0]) if row["close"][0] is not None else None
+    ec = row["close"][0]
+    res["eod_close"] = float(ec) if ec is not None and math.isfinite(float(ec)) else None
     if res["eod_volume"]:
         res["ratio"] = round(res["minute_volume"] / res["eod_volume"], 6)
     if res["minute_close"] is not None and res["eod_close"] is not None:
@@ -286,6 +300,7 @@ def main() -> int:
            ("partitions", "empty_partitions", "rows", "dup_timestamp_partitions", "unordered_partitions",
             "outside_window_partitions", "ohlc_inconsistent_partitions", "negative_volume_partitions",
             "nonfinite_price_partitions", "rth_bar_over_expected", "no_trade_minutes", "traded_minutes",
+            "volume_without_last_sale_price_minutes", "priced_traded_minutes",
             "unreadable", "symbols_with_rth")} if per_session else {}
     for key, code, msg in (("dup_timestamp_partitions", "TS", "duplicate timestamps inside a symbol-session"),
                            ("unordered_partitions", "TS", "timestamps not monotonically ordered"),
@@ -344,6 +359,21 @@ def main() -> int:
         add_exception("COV", f"{len(missing_sessions)} sessions", "minute layer not yet acquired for these sessions",
                       "coverage inventory", True, count=len(missing_sessions),
                       first=missing_sessions[0]["session_date"], last=missing_sessions[-1]["session_date"])
+    # A session can carry a minute layer that is real but incomplete against its own eligible
+    # field. That is reported per session rather than averaged away, because a partly covered
+    # session is not a covered session for the completeness guarantee.
+    partial = []
+    for r in cov_rows:
+        exp_n, got_n = r["eligible_field_expected"], r["securities_with_regular_hours_bars"]
+        if r["coverage_state"] == "MINUTE_LAYER_PRESENT" and exp_n and got_n is not None:
+            r["eligible_field_coverage_pct"] = round(100.0 * got_n / exp_n, 2)
+            if got_n < exp_n:
+                partial.append(r)
+        else:
+            r["eligible_field_coverage_pct"] = None
+    if partial:
+        add_exception("COV", f"{len(partial)} sessions", "minute layer present but short of the session's "
+                      "point-in-time eligible field", "coverage inventory", True, count=len(partial))
     note(f"coverage: {len(cov_rows)} sessions inventoried; "
          f"{sum(1 for r in cov_rows if r['coverage_state'] == 'MINUTE_LAYER_PRESENT')} carry a minute layer")
 
@@ -391,7 +421,8 @@ def main() -> int:
                      "states": dict(Counter(r["state"] for r in recon_rows))}
     if compared:
         ratios = sorted(r["ratio"] for r in compared)
-        deltas = sorted(r["close_delta"] for r in compared if r["close_delta"] is not None)
+        deltas = sorted(r["close_delta"] for r in compared
+                        if r["close_delta"] is not None and math.isfinite(r["close_delta"]))
         recon_summary.update({
             "volume_ratio_min": ratios[0], "volume_ratio_median": ratios[len(ratios) // 2],
             "volume_ratio_max": ratios[-1],
@@ -467,6 +498,71 @@ def main() -> int:
                                                  "listing_sha256": h.hexdigest()}
     note(f"hash manifest: {len(artifacts)} certification artifacts, {len(raw_digest)} raw partition groups")
 
+    # ---------------------------------------------------------------- private inventories
+    # Symbol-level detail stays under the ignored handoff path. The public outputs above carry
+    # counts, hashes and states only.
+    exp.write_csv(H.OUT / "session_partition_inventory.csv", [
+        {**r, "expected_rth_minutes": H.expected_rth_minutes(date.fromisoformat(r["session_date"])),
+         "is_early_close": H.is_early_close(date.fromisoformat(r["session_date"]))}
+        for r in per_session]) if per_session else None
+    if elig_path.exists():
+        el = pl.read_parquet(elig_path)
+        el.filter(pl.col("eligible")).select(
+            ["session_date", "symbol", "prior_close", "prior_volume", "prior_dollar_volume",
+             "period_role"]).write_parquet(H.OUT / "eligible_field_matrix.parquet")
+        el.group_by(["session_date", "exclude_reason"]).len().sort(
+            ["session_date", "exclude_reason"]).write_parquet(H.OUT / "exclusion_matrix.parquet")
+    err_rows = []
+    for stage in ("eod", "bars"):
+        p_err = H.WORK / f"vendor_errors_{stage}.jsonl"
+        if p_err.exists():
+            for line in p_err.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    err_rows.append(json.loads(line))
+    exp.write_csv(H.OUT / "vendor_error_detail.csv", err_rows) if err_rows else None
+    if recon_rows:
+        exp.write_csv(H.OUT / "aggregation_reconciliation_detail.csv", recon_rows)
+    dump_json(H.OUT / "overlap_detail.json", {"rows": auth["overlap_rows"], "smoke": auth["smoke"]})
+
+    # ---------------------------------------------------------------- staged post-selection procedure
+    staged = {
+        "procedure_id": "cg_arrow013_post_selection_certification_v1",
+        "frozen_before_reveal": True,
+        "purpose": ("Certify the remaining layers for exactly the securities the already-frozen models "
+                    "mechanically select, without any human choosing which names to certify."),
+        "inputs": ("the frozen C0/C1/C2/C3 configurations committed in reports/cg_arrow012_challenger_freeze.json, "
+                   "applied to the certified eligibility and minute layers of this holdout"),
+        "steps": [
+            "1. Build the point-in-time candidate field for each frozen weekly signal session from the "
+            "certified eligibility layer. This step produces the field, not a ranking.",
+            "2. Let the frozen models mechanically determine their own selections. No name is chosen, "
+            "reviewed or substituted by hand at any point.",
+            "3. For every mechanically selected security, retrieve primary-source corporate-action and "
+            "identity evidence from SEC EDGAR using src/verification/r4r5_events.py, the same machinery "
+            "Arrow 007 and Arrow 008 used, with its rate limit and caching.",
+            "4. Normalize prices, share volumes and held quantities using only documented dated actions "
+            "effective at or before each feature's own cutoff. A price-discontinuity screen is triage and "
+            "never a factor.",
+            "5. Verify mechanical split neutrality of price times shares before market movement and rounding, "
+            "and verify that multiple actions compose exactly.",
+            "6. Retrieve any missing execution or ten-session lifecycle observation for the selected names, "
+            "including the September 2025 tail for late-August cohorts.",
+            "7. Fail closed. An unresolved material action, an unresolved identity, or a missing execution or "
+            "lifecycle observation leaves that cohort uncertified and unscored. It never triggers a next-name "
+            "substitution, a stale-price rescue, or the silent retention of the original name.",
+            "8. Only after every selected observation is certified may the reveal batch be scored.",
+        ],
+        "forbidden": ["choosing which names to certify by hand",
+                      "substituting the next-ranked name for a data failure",
+                      "treating a vendor failure as a halt",
+                      "inferring a corporate action from a price jump",
+                      "scoring a cohort with an unresolved material action"],
+        "scope_limit": ("This procedure may retrieve evidence only for securities the frozen models select. "
+                        "It is not permission to inspect outcomes: it runs before scoring and its output is "
+                        "certification state, not performance."),
+    }
+    dump_json(REPORTS / "cg_arrow013_staged_procedure.json", staged)
+
     # ---------------------------------------------------------------- status
     status = ("HOLDOUT_DATA_CERTIFIED_FOR_PRISTINE_REVEAL" if not blocking else
               "HOLDOUT_DATA_PARTIALLY_CERTIFIED")
@@ -481,7 +577,8 @@ def main() -> int:
         "authentication_smoke": auth["smoke"], "overlap_summary": auth["overlap_summary"],
         "calendar": cal, "minute_integrity": agg, "per_session_integrity_rows": len(per_session),
         "eligibility": {k: elig_mf.get(k) for k in
-                        ("roster", "etp_excluded", "test_issues_excluded", "eod_rows", "eod_securities",
+                        ("roster", "etp_list_size", "etp_present_in_roster", "etp_rule_effect",
+                         "test_issues_excluded", "eod_rows", "eod_securities",
                          "eod_dates", "eligibility_rows", "sessions", "eligible_field_min",
                          "eligible_field_median", "eligible_field_max", "minute_universe_size",
                          "exclude_reasons")},
@@ -493,6 +590,7 @@ def main() -> int:
         "exceptions": {"total": len(EXCEPTIONS), "blocking": len(blocking),
                        "by_code": dict(Counter(e["code"] for e in EXCEPTIONS))},
         "certification_artifacts": artifacts, "raw_partition_groups": raw_digest,
+        "staged_post_selection_procedure": staged["procedure_id"],
         "certification_status": status, "remaining_gaps": gaps,
         "embargo": {"strategy_run": False, "rankings_emitted": False, "selections_revealed": False,
                     "performance_calculated": False,

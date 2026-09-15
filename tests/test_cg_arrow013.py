@@ -271,11 +271,17 @@ def test_point_in_time_eligibility_uses_the_prior_session_not_a_current_state_sh
     if not e.get("eligibility_rows"):
         pytest.skip("eligibility layer not yet built")
     assert e["roster"] > 10000
-    assert e["etp_excluded"] > 1000
+    assert e["etp_list_size"] > 1000
+    # The roster is already common-stock-only, so the product rule is a confirmed no-op here.
+    # The certification must say that rather than claim an exclusion it did not perform.
+    assert e["etp_present_in_roster"] == 0
+    assert "no-op" in e["etp_rule_effect"]
     assert len(e["test_issues_excluded"]) >= 1
     reasons = {r["exclude_reason"] for r in e["exclude_reasons"]}
-    assert "exchange_traded_product" in reasons
+    assert "exchange_test_issue" in reasons
     assert "prior_close_out_of_band" in reasons
+    assert "prior_dollar_volume_below_10m" in reasons
+    assert "exchange_traded_product" not in reasons
 
 
 def test_complete_field_inventory_cannot_silently_omit_a_security():

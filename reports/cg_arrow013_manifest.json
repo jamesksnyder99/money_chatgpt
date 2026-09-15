@@ -1,0 +1,681 @@
+{
+  "arrow": "CG Arrow 013",
+  "stage": "certification",
+  "timestamp": "2026-09-15T01:18:15+00:00",
+  "head_at_run": "df4fce709c1a49889f8632ed40d687b0986770d9",
+  "definition_id": "cg_arrow013_holdout_sep2024_aug2025_v1",
+  "authentication": {
+    "repo_root": "C:\\Users\\james\\Money_ChatGPT",
+    "remote": "https://github.com/jamesksnyder99/money_chatgpt.git",
+    "env_git_ignored": true,
+    "credential_mode": "api_key",
+    "versions": {
+      "python": "3.14.5",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "thetadata": "1.0.10",
+      "polars": "1.43.2",
+      "pyarrow": "24.0.0"
+    },
+    "vendor_contract": {
+      "sdk": "official installed ThetaData Python SDK",
+      "entitlement": "existing authorized Stocks Professional",
+      "endpoints": [
+        "stock_history_ohlc",
+        "stock_history_eod"
+      ],
+      "interval": "1m",
+      "venue": "utp_cta",
+      "window": "04:00-16:00 America/New_York, session close honoured on early closes",
+      "terminal_launched": false,
+      "subscription_changed": false,
+      "options_used": false,
+      "sub_minute_used": false,
+      "max_concurrency": 8,
+      "workers_used": 8
+    },
+    "timestamp_precision": {
+      "vendor": "milliseconds, America/New_York",
+      "landed": "microseconds, America/New_York",
+      "handling": "cast to one explicit unit before comparison; instants must then be identical, which is a unit alignment and not a tolerance"
+    },
+    "no_trade_convention": {
+      "vendor": "a minute with no trade returns NaN open/high/low/close with volume 0",
+      "handling": "NaN on both sides is a match; NaN on one side only is a discrepancy. A no-trade minute is not a missing bar and is not a halt, and none of the three is silently merged"
+    },
+    "throughput": {
+      "minute_requests_per_second": 38.457,
+      "minute_sample": {
+        "requests": 24,
+        "seconds": 0.62,
+        "workers": 8
+      },
+      "eod_requests_per_second": 58.825,
+      "eod_sample": {
+        "requests": 24,
+        "seconds": 0.41,
+        "rows": 504,
+        "workers": 8
+      }
+    }
+  },
+  "authentication_smoke": {
+    "session": "2025-08-01",
+    "endpoint": "stock_history_ohlc",
+    "interval": "1m",
+    "venue": "utp_cta",
+    "window": "04:00:00-16:00:00 America/New_York",
+    "rows_first": 720,
+    "rows_repeat": 720,
+    "schema": {
+      "symbol": "String",
+      "bar_start": "Datetime(time_unit='ms', time_zone='America/New_York')",
+      "open": "Float64",
+      "high": "Float64",
+      "low": "Float64",
+      "close": "Float64",
+      "volume": "Int64",
+      "count": "Int64",
+      "vwap": "Float64",
+      "session_date": "Date",
+      "session_part": "String",
+      "is_warmup": "Boolean"
+    },
+    "bar_start_dtype": "Datetime(time_unit='ms', time_zone='America/New_York')",
+    "elapsed_first_s": 0.208,
+    "elapsed_repeat_s": 0.076,
+    "empty_success_is_failure": true,
+    "repeat_query": {
+      "local_rows": 720,
+      "fresh_rows": 720,
+      "timestamps_only_local": 0,
+      "timestamps_only_fresh": 0,
+      "shared_timestamps": 720,
+      "field_mismatches": 0,
+      "worst_price_delta": 0.0,
+      "volume_mismatches": 0,
+      "mismatch_examples": [],
+      "no_trade_minutes_both_sides": 473
+    },
+    "repeat_identical": true,
+    "timestamps_unique": true,
+    "timestamps_monotonic": true,
+    "timestamps_inside_window": true,
+    "first_ts": "2025-08-01 04:00:00-04:00",
+    "last_ts": "2025-08-01 15:59:00-04:00"
+  },
+  "overlap_summary": {
+    "sampled": 12,
+    "matched": 12,
+    "discrepant": 0,
+    "worst_price_delta": 0,
+    "volume_mismatches": 0
+  },
+  "calendar": {
+    "lab_sessions": 292,
+    "window": [
+      "2024-08-01",
+      "2025-09-30"
+    ],
+    "early_closes": [
+      "2024-11-29",
+      "2024-12-24",
+      "2025-07-03"
+    ],
+    "closures_in_window": {
+      "2024-09-02": "Labor Day",
+      "2024-11-28": "Thanksgiving Day",
+      "2024-12-25": "Christmas Day",
+      "2025-01-01": "New Year's Day",
+      "2025-01-09": "National Day of Mourning, President Carter",
+      "2025-01-20": "Martin Luther King Jr. Day",
+      "2025-02-17": "Washington's Birthday",
+      "2025-04-18": "Good Friday",
+      "2025-05-26": "Memorial Day",
+      "2025-06-19": "Juneteenth National Independence Day",
+      "2025-07-04": "Independence Day",
+      "2025-09-01": "Labor Day"
+    },
+    "independent_reference": "pandas_market_calendars NYSE",
+    "independent_sessions": 292,
+    "only_in_lab_calendar": [],
+    "only_in_reference": [],
+    "identical": true
+  },
+  "minute_integrity": {
+    "partitions": 70281,
+    "empty_partitions": 0,
+    "rows": 50602320,
+    "dup_timestamp_partitions": 0,
+    "unordered_partitions": 0,
+    "outside_window_partitions": 0,
+    "ohlc_inconsistent_partitions": 0,
+    "negative_volume_partitions": 0,
+    "nonfinite_price_partitions": 0,
+    "rth_bar_over_expected": 0,
+    "no_trade_minutes": 8630652,
+    "traded_minutes": 18778938,
+    "volume_without_last_sale_price_minutes": 5124477,
+    "priced_traded_minutes": 13654461,
+    "unreadable": 0,
+    "symbols_with_rth": 70281
+  },
+  "per_session_integrity_rows": 65,
+  "eligibility": {
+    "roster": 15322,
+    "etp_list_size": 5672,
+    "etp_present_in_roster": 0,
+    "etp_rule_effect": "no-op: the roster is already common-stock-only and contains none of the listed exchange-traded products, so the rule excludes nothing here. It is still applied so the contract is enforced rather than assumed.",
+    "test_issues_excluded": [
+      "ZAZZT",
+      "ZBZZT",
+      "ZCZZT",
+      "ZFZZT",
+      "ZJZZT",
+      "ZVZZT",
+      "ZWZZT",
+      "ZXZZT"
+    ],
+    "eod_rows": 1718304,
+    "eod_securities": 7851,
+    "eod_dates": 250,
+    "eligibility_rows": 1718304,
+    "sessions": 250,
+    "eligible_field_min": 902,
+    "eligible_field_median": 1448,
+    "eligible_field_max": 2058,
+    "minute_universe_size": 4319,
+    "exclude_reasons": [
+      {
+        "exclude_reason": "prior_dollar_volume_below_10m",
+        "len": 940438
+      },
+      {
+        "exclude_reason": "prior_close_out_of_band",
+        "len": 413770
+      },
+      {
+        "exclude_reason": "",
+        "len": 362346
+      },
+      {
+        "exclude_reason": "exchange_test_issue",
+        "len": 1750
+      }
+    ]
+  },
+  "coverage": {
+    "sessions_inventoried": 292,
+    "sessions_with_minute_layer": 107,
+    "sessions_awaiting_minute_layer": 185
+  },
+  "aggregation_reconciliation": {
+    "sampled": 65,
+    "compared": 11,
+    "states": {
+      "MISSING_PARTITION": 54,
+      "COMPARED": 11
+    },
+    "volume_ratio_min": 0.736076,
+    "volume_ratio_median": 0.874719,
+    "volume_ratio_max": 0.986394,
+    "volume_ratio_within_1pct": 0,
+    "close_delta_median": 0.01,
+    "close_delta_max": 0.0141,
+    "tolerance_note": "regular-hours minute volume is compared with the vendor's end-of-day share volume. The end-of-day figure is a consolidated national total and includes prints the regular-hours minute window does not carry, so a ratio below one is expected and is documented rather than tuned away"
+  },
+  "corporate_actions_and_identity": {
+    "documented_action_table_for_holdout": false,
+    "basis": "The lab's certified action table covers the September 2025 to August 2026 study. No documented, dated corporate-action table has yet been assembled for September 2024 to August 2025. A price-discontinuity screen is triage and is explicitly not proof that no action occurred, so no corridor in this window is certified for unit integrity.",
+    "consequence": "Ranking and feature units, held-share normalization and point-in-time identity cannot be certified for this window until documented evidence is assembled. This is a declared remaining gap, not a silent assumption.",
+    "staged_procedure": "The frozen post-selection procedure retrieves primary-source evidence from SEC EDGAR for exactly the securities the frozen models mechanically select, using the Arrow 007 and 008 machinery in src/verification/r4r5_events.py, and fails closed on any unresolved material action rather than substituting a next name."
+  },
+  "exceptions": {
+    "total": 4,
+    "blocking": 4,
+    "by_code": {
+      "COV": 2,
+      "ACT": 1,
+      "ID": 1
+    }
+  },
+  "certification_artifacts": {
+    "data/holdout2024/work/acquire_eod_manifest.json": {
+      "sha256": "95e43961d04089c52a595b1469850da4cd98d6fe6a9ae32d2f683e252d310396",
+      "bytes": 1939
+    },
+    "data/holdout2024/work/auth_manifest.json": {
+      "sha256": "067d1fab58d55dc277727a4861bf3773d4b94f21f59b4f917aabb27c07450d99",
+      "bytes": 10513
+    },
+    "data/holdout2024/work/bars_progress.json": {
+      "sha256": "a9f5aa8e250a9ae79df2e619f2ad131d2765889132e8f1bd055f0cabf17269db",
+      "bytes": 218
+    },
+    "data/holdout2024/work/eligibility_manifest.json": {
+      "sha256": "2fd8bea2e90651a98dab9cdff23f8808e5a3165bf9ad8624da7efbf2568233c7",
+      "bytes": 9352
+    },
+    "data/holdout2024/work/eligibility.parquet": {
+      "sha256": "47cb6de3c16bbb50c5fdc8676e671e44580c8253ee4d0f3e64642e010353cba9",
+      "bytes": 29138617
+    },
+    "data/holdout2024/work/eod_layer.parquet": {
+      "sha256": "a537735a0ec5dffc4394a8061796fbba0eb3b1cece5853d20cbfb664329bb7ec",
+      "bytes": 16455256
+    }
+  },
+  "raw_partition_groups": {
+    "raw/eod/2024-08": {
+      "partitions": 15322,
+      "bytes": 58500057,
+      "listing_sha256": "bd3869ba9f42989031a5506b6d724c4cc41d1512370958e72d705935b592ef19"
+    },
+    "raw/eod/2024-09": {
+      "partitions": 15322,
+      "bytes": 57862739,
+      "listing_sha256": "cdd4c1dfe9905a6a9f5af48ba9e879a82da2c0c00f641cbc1116034d77559763"
+    },
+    "raw/eod/2024-10": {
+      "partitions": 15322,
+      "bytes": 58935994,
+      "listing_sha256": "ba2148cd101abb2f01a40e91192fb566ad81f4fdf2310f375a0b23919ea9d32a"
+    },
+    "raw/eod/2024-11": {
+      "partitions": 15322,
+      "bytes": 57784080,
+      "listing_sha256": "5088c85b8b1dc0098b95ba4373170ba146de27ced1b11ba81ef67c40ef9d3321"
+    },
+    "raw/eod/2024-12": {
+      "partitions": 15322,
+      "bytes": 58216425,
+      "listing_sha256": "ce8cb4bce6eecd144203da789809e0df0cc1b344052af6fb7f302b6739b36a82"
+    },
+    "raw/eod/2025-01": {
+      "partitions": 15322,
+      "bytes": 57378119,
+      "listing_sha256": "d803fb66d18d8165f5224813e7108b402d7a84c63d8e1e29710f63ce52d9b9ca"
+    },
+    "raw/eod/2025-02": {
+      "partitions": 15322,
+      "bytes": 56936020,
+      "listing_sha256": "400a65251c8d8fc8295c064ca4e69217a6a6ead4a45a17bd288e3297047eca9e"
+    },
+    "raw/eod/2025-03": {
+      "partitions": 15322,
+      "bytes": 57466734,
+      "listing_sha256": "86bf56229e8bc5749bf7ae3b6cc5a53fbdb7ce74a09849ccec0deb299773c3df"
+    },
+    "raw/eod/2025-04": {
+      "partitions": 15322,
+      "bytes": 57492597,
+      "listing_sha256": "f9d6aeeb9cfe77cc88859f4c6d89ea2d57039bff49afef9ec2206d96d1e46ddb"
+    },
+    "raw/eod/2025-05": {
+      "partitions": 15322,
+      "bytes": 57333921,
+      "listing_sha256": "07eb851b7fae7fcc99edef577a8fa8324a1ea1a88cd946ce6c309708672581e9"
+    },
+    "raw/eod/2025-06": {
+      "partitions": 15322,
+      "bytes": 56837171,
+      "listing_sha256": "580c1b67c4ede124585e3b31e017830e3ffe48dd816502d86d723e7028329873"
+    },
+    "raw/eod/2025-07": {
+      "partitions": 15322,
+      "bytes": 57774896,
+      "listing_sha256": "5a23dbd2ef40699c7460657fe1d1cb9a53e370e999fe7ee962ffc39c8983e34a"
+    },
+    "raw/bars/2024-08-01": {
+      "partitions": 2985,
+      "bytes": 30741093,
+      "listing_sha256": "21f82fb8ab5b0dc8058ec3ff4ef680b0f39a4723c00e78c2ddfec00347b9ba0c"
+    },
+    "raw/bars/2024-08-02": {
+      "partitions": 2985,
+      "bytes": 30803550,
+      "listing_sha256": "d2cfa65d70b9e6e8b68567fbfd326b2fadc2a047ce1e4b5d1df5fb592b08421f"
+    },
+    "raw/bars/2024-08-05": {
+      "partitions": 2985,
+      "bytes": 32074186,
+      "listing_sha256": "cc3e869d9bf9e80ebe37c1c7405bf2bf6c0fbb33ea9b739ff0b478665b168b9f"
+    },
+    "raw/bars/2024-08-06": {
+      "partitions": 2985,
+      "bytes": 30268415,
+      "listing_sha256": "87670d5154b95f81cdc88b8e128a30f679244c0f5a5dcb00bc82f6a202dd5c1e"
+    },
+    "raw/bars/2024-08-07": {
+      "partitions": 2985,
+      "bytes": 30282989,
+      "listing_sha256": "96d8916595f4a2d96403649eb498221cff586f66ab8e8e1c02fb568d5c9b8ba9"
+    },
+    "raw/bars/2024-08-08": {
+      "partitions": 2985,
+      "bytes": 29814722,
+      "listing_sha256": "e40d4ce19d6f5deb5716c2a33e6347a3c9e36d2773ec4e5277988f29a11c90e9"
+    },
+    "raw/bars/2024-08-09": {
+      "partitions": 2985,
+      "bytes": 29350028,
+      "listing_sha256": "fc26a4552ca322fb69f487a8cfd3986343f1da270ce3c0c4ddcd71d92563d448"
+    },
+    "raw/bars/2024-08-12": {
+      "partitions": 2985,
+      "bytes": 29432200,
+      "listing_sha256": "0a35d26fce6a3610b6468e2b120addc7a6379182f1f5078f74262790421dc469"
+    },
+    "raw/bars/2024-08-13": {
+      "partitions": 2985,
+      "bytes": 29429166,
+      "listing_sha256": "c5531c6a90039b871bca3a25c3174364e55af03534bba7161851c9bdfcad601d"
+    },
+    "raw/bars/2024-08-14": {
+      "partitions": 2985,
+      "bytes": 29307094,
+      "listing_sha256": "027307a69bae4370a753c2357d2d2469fe13a115429b0b3ed3e10f4fbbe4b125"
+    },
+    "raw/bars/2024-08-15": {
+      "partitions": 2985,
+      "bytes": 29737705,
+      "listing_sha256": "a8576a0270dfbd236a90ace39b1ad373090124e6353d1c3bceb249207dca3a5f"
+    },
+    "raw/bars/2024-08-16": {
+      "partitions": 2985,
+      "bytes": 29181919,
+      "listing_sha256": "216a4608228d7d4a6d114666e0dce3474b4a8b72614d267ee657213b4d58b4c5"
+    },
+    "raw/bars/2024-08-19": {
+      "partitions": 2985,
+      "bytes": 29445525,
+      "listing_sha256": "0758df8eb6db17d36e4a9df60c1aa046b308cb5e37ea580ba00be4cd873b2bf1"
+    },
+    "raw/bars/2024-08-20": {
+      "partitions": 2985,
+      "bytes": 29196783,
+      "listing_sha256": "bb8b0735a79fceb50ee531da28261680b06aa3710f9a7db20535cbfcf6e092eb"
+    },
+    "raw/bars/2024-08-21": {
+      "partitions": 2985,
+      "bytes": 29197997,
+      "listing_sha256": "a364b07709a3ea7f4faf2ebeb749cd994df984c60cea29db06521e75517ce443"
+    },
+    "raw/bars/2024-08-22": {
+      "partitions": 2985,
+      "bytes": 29007954,
+      "listing_sha256": "113af80eb155d3ab5e6d78d77e7acef21281f28777f579905bd5cda87e89c5f6"
+    },
+    "raw/bars/2024-08-23": {
+      "partitions": 2985,
+      "bytes": 29710535,
+      "listing_sha256": "9475d4f6a5ac9cf69f2ea46dabc9a2f6967215532c8937f61e35a7e36cd59353"
+    },
+    "raw/bars/2024-08-26": {
+      "partitions": 2985,
+      "bytes": 29459159,
+      "listing_sha256": "e9cb1b4dc31cfaea290c02490c50286977d5b78eea3e11e9ced087af2b18b9e5"
+    },
+    "raw/bars/2024-08-27": {
+      "partitions": 2985,
+      "bytes": 28924344,
+      "listing_sha256": "25bac1451d359fcf0e88e1784df33ea3c1e9138b3e1321af14b67c3804e5d8e8"
+    },
+    "raw/bars/2024-08-28": {
+      "partitions": 2985,
+      "bytes": 29261070,
+      "listing_sha256": "373149e350a731597ed7e89869a49559668151810d05f4947af9244e1b310fae"
+    },
+    "raw/bars/2024-08-29": {
+      "partitions": 2985,
+      "bytes": 29332124,
+      "listing_sha256": "ec6b462366ea81b2c73672c455c8a3b1b73ab55946bdbc4e0638d721242f8ace"
+    },
+    "raw/bars/2024-08-30": {
+      "partitions": 2985,
+      "bytes": 28999771,
+      "listing_sha256": "39ea6b817144de99e13c607ad1c540c82c0bad091155679418f980e885346524"
+    },
+    "raw/bars/2024-09-03": {
+      "partitions": 142,
+      "bytes": 1412607,
+      "listing_sha256": "8e7d27a1df4cafae5a8e79ac226d2db296f2aa64ddd3640cc65ed0b91c1cc250"
+    },
+    "raw/bars/2024-09-04": {
+      "partitions": 142,
+      "bytes": 1382491,
+      "listing_sha256": "8483644f164d6706f7d7c9b3484c24bedc11bb71819c4ffab79e9f1e418f7da6"
+    },
+    "raw/bars/2024-09-05": {
+      "partitions": 142,
+      "bytes": 1370313,
+      "listing_sha256": "e94061d1fa43778289e69ebd1f4dd56a363803e2ae4a978592078c91d066746f"
+    },
+    "raw/bars/2024-09-06": {
+      "partitions": 142,
+      "bytes": 1396732,
+      "listing_sha256": "b6f98b37b3641a7b1ca47f2a6325e62393c9df34d0f1f8bb6cd300eae7d843bb"
+    },
+    "raw/bars/2024-09-09": {
+      "partitions": 142,
+      "bytes": 1405617,
+      "listing_sha256": "7c1744e6f70b1600bb19d3fc2150519725041a60ecfda7f1eb52582075c3ce77"
+    },
+    "raw/bars/2024-09-10": {
+      "partitions": 142,
+      "bytes": 1396273,
+      "listing_sha256": "e4721fdaef8fff6e25498a26102c8ae524de5e8db325f54f9a34384f47e66122"
+    },
+    "raw/bars/2024-09-11": {
+      "partitions": 142,
+      "bytes": 1410965,
+      "listing_sha256": "17bd6ba1616473f1aab121108fe052422a2c505b1cc8e1c5f586175879876f18"
+    },
+    "raw/bars/2024-09-12": {
+      "partitions": 142,
+      "bytes": 1394438,
+      "listing_sha256": "c848ab122dac580b62d8e1dd8059d42028ddab2d25767975b91d0d796f3c40c2"
+    },
+    "raw/bars/2024-09-13": {
+      "partitions": 142,
+      "bytes": 1400496,
+      "listing_sha256": "4b48423f6ad7bb30764acc9ccc823730f961a23c8178a5689d478036768a4a32"
+    },
+    "raw/bars/2024-09-16": {
+      "partitions": 142,
+      "bytes": 1388246,
+      "listing_sha256": "8f6572e699f16219be5bf598c9688f6553bb5be57e7fc8e2c3b8bbe85ecfab16"
+    },
+    "raw/bars/2024-09-17": {
+      "partitions": 142,
+      "bytes": 1410546,
+      "listing_sha256": "62572c2f7a11c02b29e00e956dc2b3462434eb12b05e7477dc70d46904071523"
+    },
+    "raw/bars/2024-09-18": {
+      "partitions": 142,
+      "bytes": 1417578,
+      "listing_sha256": "225bfd5719543e89deaccfd66fb851c0cf79d8337a940f16395851a3abf1a6c9"
+    },
+    "raw/bars/2024-09-19": {
+      "partitions": 142,
+      "bytes": 1433839,
+      "listing_sha256": "78b7dae035c80e5e1b2f01b471b05bad5045347af6183ba8bf00d38ffe159fc7"
+    },
+    "raw/bars/2024-09-20": {
+      "partitions": 142,
+      "bytes": 1418016,
+      "listing_sha256": "191d3ff4cada559f2d589530b705069e0b3a6325a25b6a0e4cc7573e99393bb3"
+    },
+    "raw/bars/2024-09-23": {
+      "partitions": 142,
+      "bytes": 1409842,
+      "listing_sha256": "e89691f60982c07cf5be865e99a7798eacaf988ec948e828b701654aaf2488e2"
+    },
+    "raw/bars/2024-09-24": {
+      "partitions": 142,
+      "bytes": 1405123,
+      "listing_sha256": "955b19758c079217fbf06a94468047a95817bf35de1a377186be117a9dbbc945"
+    },
+    "raw/bars/2024-09-25": {
+      "partitions": 142,
+      "bytes": 1397230,
+      "listing_sha256": "20dd788f68be158f8cc2f26ee550af3a3471cb3ee80fc038610f7e8e8e55879e"
+    },
+    "raw/bars/2024-09-26": {
+      "partitions": 142,
+      "bytes": 1417372,
+      "listing_sha256": "d19a6686f36cf5351057abbdb5736ddcd23427fa6d0162a3d1aa26b686765303"
+    },
+    "raw/bars/2024-09-27": {
+      "partitions": 142,
+      "bytes": 1401530,
+      "listing_sha256": "6da2dfc5cda0e53d87f9c862f32a0ff655aa7ea75d412db1c354bc3f35fada9e"
+    },
+    "raw/bars/2024-09-30": {
+      "partitions": 142,
+      "bytes": 1420371,
+      "listing_sha256": "6559bbd89c423d521c9c79dcacbed1ad7f44c148f31c43da5db5c85b286993a3"
+    },
+    "raw/bars/2024-10-01": {
+      "partitions": 77,
+      "bytes": 748404,
+      "listing_sha256": "e8cda0bfc8050b709d146ccfa5a4cb398bac4bb9bfd30615005a39d5b2c4ea50"
+    },
+    "raw/bars/2024-10-02": {
+      "partitions": 77,
+      "bytes": 734400,
+      "listing_sha256": "e80be352f15948b3eec52921834b63186a54ef2476fe60305196f7aa0fb61df1"
+    },
+    "raw/bars/2024-10-03": {
+      "partitions": 77,
+      "bytes": 728979,
+      "listing_sha256": "3d01103dfadef9db12a66f9521af54baffe130de4cfc071dae07b4c4f5f51751"
+    },
+    "raw/bars/2024-10-04": {
+      "partitions": 77,
+      "bytes": 732816,
+      "listing_sha256": "81c1a989f51adaae07a7d6abf6c9d142bb1bc0eb0db4878ae90d4ab14ccc89cc"
+    },
+    "raw/bars/2024-10-07": {
+      "partitions": 77,
+      "bytes": 747867,
+      "listing_sha256": "92a0b35b48d7e29c21432f5e460d98a5cef2e04c350ae04813cdbc90e2873f7f"
+    },
+    "raw/bars/2024-10-08": {
+      "partitions": 77,
+      "bytes": 731745,
+      "listing_sha256": "65cdc55c40e7bdcd7b438ece885b4974a2a7cfb2f457d688677cfbaf193b293e"
+    },
+    "raw/bars/2024-10-09": {
+      "partitions": 77,
+      "bytes": 734065,
+      "listing_sha256": "cc5294ddea9458d8fc0d20960b60db645abdf218742f0552665e3629b4ff29f5"
+    },
+    "raw/bars/2024-10-10": {
+      "partitions": 77,
+      "bytes": 749964,
+      "listing_sha256": "ad41e1ffdc550d6a2f88686fc5cb1e60cfc353add59e7f9f3423249861e6f206"
+    },
+    "raw/bars/2024-10-11": {
+      "partitions": 77,
+      "bytes": 745698,
+      "listing_sha256": "834ee5a9ee1d27f132a10eb4cd48a2c9c42e13466a780e652ed4a0fd65aa9584"
+    },
+    "raw/bars/2024-10-14": {
+      "partitions": 77,
+      "bytes": 732238,
+      "listing_sha256": "6368685c8fc173aa6ef0dd5e445eb3aeb54f4ce442249d32c55f764660813959"
+    },
+    "raw/bars/2024-10-15": {
+      "partitions": 77,
+      "bytes": 741027,
+      "listing_sha256": "7548f55f49d6932af6984f57cb6395e2355860fe00c5e57bb5be1f926875d848"
+    },
+    "raw/bars/2024-10-16": {
+      "partitions": 77,
+      "bytes": 748572,
+      "listing_sha256": "80e10ef665956a7d47c55c053d475422b5bf850d26ed223fda103802559598ae"
+    },
+    "raw/bars/2024-10-17": {
+      "partitions": 77,
+      "bytes": 755407,
+      "listing_sha256": "3bcbfa489e2c5eabe69d5f77ff0129dd4ba81dbeee0dfbff4175865b415cca0e"
+    },
+    "raw/bars/2024-10-18": {
+      "partitions": 77,
+      "bytes": 729985,
+      "listing_sha256": "e9f0c3fb255bdba01cea434aed9e231f142f398ea3cd4a3713543f8446cfc4a2"
+    },
+    "raw/bars/2024-10-21": {
+      "partitions": 77,
+      "bytes": 749106,
+      "listing_sha256": "88bc5524537e01aa542ab51673a8698e5a844aefa8f8f3c2cc7b3ba94ce942f5"
+    },
+    "raw/bars/2024-10-22": {
+      "partitions": 77,
+      "bytes": 743643,
+      "listing_sha256": "f09c3025401580dc09f7cfc2d257a7a0eb94b8646bd74c063568791b4ede8ac6"
+    },
+    "raw/bars/2024-10-23": {
+      "partitions": 77,
+      "bytes": 756939,
+      "listing_sha256": "3ff74a6a3b3db40d1e237df8f46ca4a7fa3fc0cb41bf8a847ec02e09bd807386"
+    },
+    "raw/bars/2024-10-24": {
+      "partitions": 77,
+      "bytes": 757606,
+      "listing_sha256": "4e6bc3f8967cfd51f3f21be79835ba3a340c2e3a44ecb5fd0208326a3ff2d299"
+    },
+    "raw/bars/2024-10-25": {
+      "partitions": 77,
+      "bytes": 747709,
+      "listing_sha256": "39d56f9bbfd31e6fe9c9f04a83b37e2ceeb84b1cc149fe0915f72a8f4b419b40"
+    },
+    "raw/bars/2024-10-28": {
+      "partitions": 77,
+      "bytes": 737797,
+      "listing_sha256": "6104119c87a82ab8c3184de9dac67f4ddf85daeaebe3387da0db0765045e2ec5"
+    },
+    "raw/bars/2024-10-29": {
+      "partitions": 77,
+      "bytes": 734181,
+      "listing_sha256": "9b959d592bf0fe2f13e798cdbe151633595a21b7f6217c8b45b4675757ef4763"
+    },
+    "raw/bars/2024-10-30": {
+      "partitions": 77,
+      "bytes": 738681,
+      "listing_sha256": "b89995c748ed80c11e513439bef66e7181c7608a647b7d49442b88b5ceeee29e"
+    },
+    "raw/bars/2024-10-31": {
+      "partitions": 77,
+      "bytes": 751854,
+      "listing_sha256": "d12612b3640d957d2db678531408f37fa57c51b41205ca4d610f8b743e78bac2"
+    }
+  },
+  "staged_post_selection_procedure": "cg_arrow013_post_selection_certification_v1",
+  "certification_status": "HOLDOUT_DATA_PARTIALLY_CERTIFIED",
+  "remaining_gaps": [
+    "minute layer not yet acquired for these sessions",
+    "minute layer present but short of the session's point-in-time eligible field",
+    "no documented dated corporate-action table exists yet for the holdout window",
+    "point-in-time security identity and ticker-change mapping not yet assembled for this window"
+  ],
+  "embargo": {
+    "strategy_run": false,
+    "rankings_emitted": false,
+    "selections_revealed": false,
+    "performance_calculated": false,
+    "statement": "NO STRATEGY PERFORMANCE WAS SCORED OR REVEALED IN ARROW 013"
+  },
+  "log": [
+    "2026-09-15T01:16:28+00:00 +0.0m calendar cross-check: lab 292 sessions, reference 292, identical=True",
+    "2026-09-15T01:16:28+00:00 +0.0m calendar: 292 sessions, 3 early closes, 12 closures in window",
+    "2026-09-15T01:16:28+00:00 +0.0m minute integrity: validating 65 landed session partitions",
+    "2026-09-15T01:17:35+00:00 +1.2m   validated 50/65 sessions",
+    "2026-09-15T01:17:39+00:00 +1.2m minute integrity aggregate: {'partitions': 70281, 'empty_partitions': 0, 'rows': 50602320, 'dup_timestamp_partitions': 0, 'unordered_partitions': 0, 'outside_window_partitions': 0, 'ohlc_inconsistent_partitions': 0, 'negative_volume_partitions': 0, 'nonfinite_price_partitions': 0, 'rth_bar_over_expected': 0, 'no_trade_minutes': 8630652, 'traded_minutes': 18778938, 'volume_without_last_sale_price_minutes': 5124477, 'priced_traded_minutes': 13654461, 'unreadable': 0, 'symbols_with_rth': 70281}",
+    "2026-09-15T01:17:39+00:00 +1.2m coverage: 292 sessions inventoried; 107 carry a minute layer",
+    "2026-09-15T01:17:39+00:00 +1.2m aggregation reconciliation: 65 deterministic symbol-session samples",
+    "2026-09-15T01:17:41+00:00 +1.2m aggregation reconciliation: 11 compared, volume ratio median 0.874719, close delta median 0.01",
+    "2026-09-15T01:17:41+00:00 +1.2m exceptions: 4 recorded, 4 block certification",
+    "2026-09-15T01:18:14+00:00 +1.8m hash manifest: 6 certification artifacts, 77 raw partition groups"
+  ]
+}

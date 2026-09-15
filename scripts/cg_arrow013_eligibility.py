@@ -75,8 +75,11 @@ def main() -> int:
     etp = {x.strip().upper() for x in ETP_TICKERS.read_text(encoding="utf-8").splitlines()
            if x.strip() and not x.startswith("#")}
     tests = sorted(s for s in roster if TEST_ISSUE.match(s))
-    note(f"universe contract: roster {len(roster)}, exchange-traded products excluded {len(etp)}, "
-         f"test issues excluded {len(tests)}")
+    etp_in_roster = sorted(roster & etp)
+    note(f"universe contract: roster {len(roster)} securities; the exchange-traded-product list holds "
+         f"{len(etp)} tickers and {len(etp_in_roster)} of them appear in the roster, so the roster is "
+         f"already common-stock-only and the product rule is confirmed as a no-op here rather than an "
+         f"active filter; test issues in the roster: {len(tests)}")
 
     chunks = [c[2] for c in H.eod_chunks()]
     frames = []
@@ -141,7 +144,13 @@ def main() -> int:
                      "min_prior_dollar_volume": PDV_10M,
                      "basis": "session D uses the official end-of-day record of session D-1",
                      "exclusions": "exchange-traded products and exchange test issues, by contemporaneous list"},
-        "roster": len(roster), "etp_excluded": len(etp), "test_issues_excluded": tests,
+        "roster": len(roster),
+        "etp_list_size": len(etp),
+        "etp_present_in_roster": len(etp_in_roster),
+        "etp_rule_effect": ("no-op: the roster is already common-stock-only and contains none of the listed "
+                            "exchange-traded products, so the rule excludes nothing here. It is still applied "
+                            "so the contract is enforced rather than assumed."),
+        "test_issues_excluded": tests,
         "eod_rows": eod.height, "eod_securities": eod["symbol"].n_unique(), "eod_dates": eod["eod_date"].n_unique(),
         "eligibility_rows": elig.height, "sessions": elig["session_date"].n_unique(),
         "eligible_field_min": min(counts), "eligible_field_max": max(counts),

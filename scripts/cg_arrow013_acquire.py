@@ -7,17 +7,19 @@ Two stages, each independently resumable:
   bars    one request per eligible symbol and calendar month of one-minute bars over the
           04:00 to 16:00 window, honouring each session's actual close
 
-Discipline. Raw partitions land once and are never rewritten; a resume skips only a partition
-that already exists and reads back cleanly. Writes are atomic through a temporary file and a
-replace, so an interrupted run cannot leave a half-written partition. Vendor errors are
+Discipline. Raw partitions land once and are never rewritten; a resume skips a partition that
+already exists, and the certification stage independently opens every landed partition and
+reports any that cannot be read back. Writes are atomic through a temporary file and a
+replace, so a visible file is always complete and an interrupted run cannot leave a
+half-written partition. Vendor errors are
 persisted separately from market data, so a failure can never be mistaken for an absence of
 trading. Total vendor concurrency never exceeds eight across the process tree.
 
 No strategy, ranking, selection or performance is computed anywhere in this file.
 
 Usage:
-  python scripts/cg_arrow013_acquire.py eod   [--workers 8]
-  python scripts/cg_arrow013_acquire.py bars  [--workers 8] [--months 2024-08,...]
+  python scripts/cg_arrow013_acquire.py eod   [--workers 8] [--threads 8]
+  python scripts/cg_arrow013_acquire.py bars  [--workers 8] [--threads 24] [--months 2024-08,...]
 """
 from __future__ import annotations
 
@@ -42,6 +44,11 @@ from ingest.theta_pool import ThetaLimiter, call_theta  # noqa: E402
 from verification.r4r5_data import dump_json, stamp  # noqa: E402
 
 MAX_CONCURRENCY = 8
+# The vendor issues one session per authenticated client. A second concurrent client
+# invalidates the first, which surfaces as UNAUTHENTICATED "Invalid session ID. This can occur
+# if more than one terminal is running." Exactly one acquisition process may hold a session at
+# a time; stages are therefore run in sequence, never side by side.
+ONE_SESSION_PER_PROCESS_TREE = True
 LOG: list[str] = []
 T0 = time.monotonic()
 
@@ -60,10 +67,23 @@ def atomic_write(df: pl.DataFrame, path: Path) -> None:
     tmp.replace(path)
 
 
-def landed_ok(path: Path) -> bool:
-    """A partition counts as landed only if it exists and reads back as a valid parquet."""
+def landed_ok(path: Path, *, deep: bool = False) -> bool:
+    """Has this partition already landed?
+
+    The resume check is a stat by default. Opening every candidate parquet to prove it parses
+    costs about 130 files per second against 38,000 for a stat, and with eight workers that
+    contention dominated the acquisition: each symbol-month spent roughly 2.6 seconds on
+    pre-checks against 0.6 seconds in the vendor call. Readability is not skipped, it is moved
+    to where it belongs: the certification stage opens every landed partition once and reports
+    any that cannot be read back as a blocking exception. Atomic writes guarantee a visible
+    file is complete, so existence is a sound resume signal.
+
+    Pass deep=True to validate a specific partition immediately.
+    """
     if not path.exists():
         return False
+    if not deep:
+        return True
     try:
         pl.read_parquet(path, n_rows=1)
         return True
@@ -228,22 +248,37 @@ def stage_bars(client, limiter, workers: int, months: list[str] | None) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("stage", choices=["eod", "bars"])
-    ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--workers", type=int, default=8,
+                    help="vendor concurrency; never exceeds the 8-request cap")
+    ap.add_argument("--threads", type=int, default=0,
+                    help="worker threads; extra threads only overlap local normalize and write "
+                         "work with vendor waits, because the limiter still admits at most "
+                         "--workers requests to the vendor at any instant")
     ap.add_argument("--months", type=str, default="")
     args = ap.parse_args()
     workers = max(1, min(args.workers, MAX_CONCURRENCY))
+    threads = max(workers, args.threads or workers)
     H.WORK.mkdir(parents=True, exist_ok=True)
     from theta.client import get_shared_client
+    stale = [q for q in H.WORK.glob("*.running") if q.stat().st_mtime > time.time() - 120]
+    if stale:
+        raise SystemExit(f"another acquisition stage appears to hold a vendor session: {stale}. "
+                         "Only one process may authenticate at a time; wait for it to finish.")
+    marker = H.WORK / f"{args.stage}.running"
+    marker.write_text(stamp(), encoding="utf-8")
     client = get_shared_client()
     limiter = ThetaLimiter(workers)
     months = [m for m in args.months.split(",") if m] or None
-    note(f"stage={args.stage} workers={workers} (vendor cap {MAX_CONCURRENCY}) months={months or 'all'}")
-    counts = stage_eod(client, limiter, workers) if args.stage == "eod" else stage_bars(client, limiter, workers, months)
+    note(f"stage={args.stage} vendor_concurrency={workers} (cap {MAX_CONCURRENCY}) threads={threads} "
+         f"months={months or 'all'}")
+    counts = stage_eod(client, limiter, threads) if args.stage == "eod" else stage_bars(client, limiter, threads, months)
     dump_json(H.WORK / f"acquire_{args.stage}_manifest.json",
               {"arrow": "CG Arrow 013", "stage": args.stage, "timestamp": stamp(),
-               "workers": workers, "max_concurrency": MAX_CONCURRENCY,
+               "vendor_concurrency": workers, "worker_threads": threads,
+               "max_concurrency": MAX_CONCURRENCY,
                "window": {"start": H.BULK_START.isoformat(), "end": H.BULK_END.isoformat()},
                "counts": counts, "elapsed_minutes": (time.monotonic() - T0) / 60, "log": LOG})
+    marker.unlink(missing_ok=True)
     note(f"stage {args.stage} finished in {(time.monotonic() - T0) / 60:.1f} minutes")
     return 0
 

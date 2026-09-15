@@ -1,0 +1,131 @@
+CG Arrow 013 — commands, checkpoints and resume procedure (Opus in Claude Code)
+Start 2026-09-14 23:38 UTC. Overnight-quality acquisition and certification job.
+Python 3.14.5, thetadata SDK 1.0.10, polars 1.43.2, pyarrow 24.0.0, 8 logical cores.
+Total vendor concurrency never exceeds 8 requests across the process tree, with halving backoff.
+Local validation uses 8 deterministic worker processes with one writer per partition.
+No credential value appears in any command, log, report, manifest or cache below.
+
+# 0. Pull, governance, required reading (23:38-23:44)
+git pull --ff-only origin main            # 3a330fe..e92c826 (arrow doc, protocol, SUCCESS, CLAUDE)
+git check-ignore -v .env                  # IGNORED, rechecked before every push
+# read CLAUDE.md, AGENTS.md, docs/CHATGPT_LAB_PROTOCOL.md, docs/SUCCESS.md, docs/CG_BUILD_ARROW_013.md
+# inspected the existing acquisition contract before acting: src/ingest/{virgin,bars,eligibility,
+# calendar,theta_pool,paths}.py and src/theta/client.py
+
+# 1. Frozen definition and the 2024 calendar (23:44-23:46)
+# src/ingest/holdout2024.py
+#   warmup 2024-08-01..2024-08-30; signal months 2024-09..2025-08; bulk 2024-08-01..2025-07-31;
+#   reuse 2025-08; lifecycle tail 2025-09; reveal account starts fresh at 100,000
+#   the lab calendar held 2025 and 2026 only, so NYSE_CLOSED_2024 and NYSE_EARLY_CLOSE_2024 were added.
+#   The addition is additive: no 2024 date falls inside any window a prior arrow froze, and
+#   tests/test_cg_arrow013.py asserts every frozen session list is unchanged.
+# reports/cg_arrow013_holdout_definition.json written and committed BEFORE any data were touched.
+
+# 2. Authentication and source-provenance gate — before any bulk retrieval (23:44-23:47)
+python scripts/cg_arrow013_auth.py --workers 8
+#   repo root and remote confirmed; .env present and git-ignored; credential mode resolved by name only
+#   official ThetaData SDK 1.0.10, endpoints stock_history_ohlc and stock_history_eod,
+#     interval 1m, venue utp_cta, window 04:00-16:00 America/New_York
+#   Theta Terminal not launched, subscription unchanged, no options, no sub-minute ingest
+#   smoke query on a known session: 720 bars, expected schema, timestamps unique, monotonic, in-window
+#   repeat-query reproducibility: identical
+#   August 2025 overlap: 12 of 12 stratified symbol-sessions match the local partitions field for field
+#   empty success is treated as a failure, never as data
+#   measured throughput: single-day minute 38 req/s, end-of-day 59 req/s, one symbol-month of
+#     minute bars 0.61s serial
+
+# 3. Two vendor conventions found during the gate and recorded rather than smoothed over
+#   a) timestamps arrive at millisecond precision in New York time while landed partitions hold
+#      microseconds. Both are cast to one explicit unit before comparison; after the cast the
+#      instants must be identical. This is a unit alignment, not a tolerance.
+#   b) a minute with no trade returns NaN open/high/low/close with volume 0. That is a real vendor
+#      state, distinct from a missing bar and from a halt. The comparison treats absence on both
+#      sides as a match and absence on one side as a discrepancy, and the three are never merged.
+#      The first comparison did not handle this and reported 473 false discrepancies on one
+#      thinly traded symbol while the maximum price delta was 0.0; the gate caught it.
+
+# 4. End-of-day acquisition (23:47-...)
+python scripts/cg_arrow013_acquire.py eod --workers 8
+#   15,322 roster symbols x 12 calendar months = 183,864 immutable partitions
+#   landing rate approximately 60-63 partitions per second
+
+# 5. Point-in-time eligibility layer
+python scripts/cg_arrow013_eligibility.py --workers 8
+#   contract: prior session official close inside $10-$80 and prior-session dollar volume >= $10M,
+#   common stock only, exchange-traded products and exchange test issues excluded by contemporaneous list
+#   no return is computed, nothing is ranked and no security is selected
+
+# 5b. Memory kill and clean resume (00:44)
+#   the host ran low on memory and killed the background tasks with the end-of-day stage at
+#   183,281 of 183,864 partitions. One orphaned .tmp existed and no landed partition was corrupt,
+#   which is what the atomic write is for. Re-running the same command landed the remaining 583
+#   and reported ALREADY_LANDED 183,864, RETRIEVED 0, VENDOR_ERROR 0.
+
+# 5c. Two acquisition defects found and fixed during the minute stage
+#   a) resume pre-check cost. The check opened every candidate parquet to prove it parsed, at
+#      about 130 files per second against 38,552 for a stat. With eight workers that contention
+#      dominated: roughly 2.6 seconds of pre-check per symbol-month against 0.6 seconds in the
+#      vendor call. The check is now a stat, and readability moved to the certification stage,
+#      which opens every landed partition once and reports any that cannot be read back as a
+#      blocking exception. Atomic writes make existence a sound resume signal.
+#   b) vendor session conflict. Three acquisition processes were alive at once because pkill does
+#      not match Windows processes; each authenticated client invalidated the others, producing
+#      8,159 UNAUTHENTICATED "Invalid session ID. This can occur if more than one terminal is
+#      running." errors and spurious concurrency halving. This was NOT a rate limit. All processes
+#      were killed through Win32, a single-session guard was added to the acquisition script, and
+#      a single process then ran with zero backoff events and zero vendor errors. The conflict
+#      error ledger is preserved at work/vendor_errors_bars_session_conflict.jsonl.
+#   Measured sustained rate with one session at vendor concurrency 8: 2.43 symbol-months/second.
+
+# 6. One-minute bar acquisition for the point-in-time eligible universe
+python scripts/cg_arrow013_acquire.py bars --workers 8 --threads 8
+#   one request per eligible symbol and calendar month, split into immutable per-session partitions
+#   4,319 eligible securities x 12 months = 51,828 symbol-months at a measured 2.43/second,
+#   which is about 5.7 hours of vendor time. The arrow authorizes staging this layer, so
+#   acquisition continues under the documented resume command and certification reports the
+#   exact landed coverage rather than waiting on it.
+
+# 7. Certification
+python scripts/cg_arrow013_certify.py --workers 8 --sample 400
+python scripts/cg_arrow013_report.py
+python -m pytest tests -q --basetemp=data/tmp/cg_arrow013_tests -p no:cacheprovider
+
+# 8. Safety review and push
+git ls-files handoff data                   # empty
+git diff --cached --name-only               # paths AND content inspected before every push
+
+# RESUME PROCEDURE
+# Every stage is resumable and idempotent. A partition is skipped only when it already exists and
+# reads back as valid parquet; writes are atomic through a temporary file and a replace, so an
+# interrupted run cannot leave a half-written partition behind. Vendor errors are appended to
+# data/holdout2024/work/vendor_errors_<stage>.jsonl and never written into a market-data partition.
+#
+# To resume after any interruption, re-run the same commands in order; completed work is skipped:
+#   python scripts/cg_arrow013_acquire.py eod  --workers 8
+#   python scripts/cg_arrow013_eligibility.py  --workers 8
+#   python scripts/cg_arrow013_acquire.py bars --workers 8
+#   python scripts/cg_arrow013_certify.py      --workers 8 --sample 400
+#   python scripts/cg_arrow013_report.py
+#
+# To resume only specific months of the minute layer:
+#   python scripts/cg_arrow013_acquire.py bars --workers 8 --months 2025-04,2025-05,2025-06
+#
+# Last completed minute chunk is recorded in data/holdout2024/work/bars_progress.json.
+
+# HOLDOUT EMBARGO
+# No strategy was replayed. No ranking or selection was produced or inspected. No security that the
+# frozen models would choose was named. No trade P&L, hit rate, drawdown, monthly return, ending
+# equity or rank-one outcome was calculated on September 2024 through August 2025.
+
+# Private deliverables (git-ignored; hashes in reports/cg_arrow013_manifest.json)
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow013\exception_ledger.json
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow013\session_partition_inventory.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow013\eligible_field_matrix.parquet
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow013\exclusion_matrix.parquet
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow013\aggregation_reconciliation_detail.csv
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow013\overlap_detail.json
+# C:\Users\james\money_chatgpt\handoff\outgoing\cg_arrow013\vendor_error_detail.csv  (only if errors occurred)
+# Raw immutable vendor partitions (git-ignored, never committed)
+# C:\Users\james\money_chatgpt\data\holdout2024\raw\eod\<YYYY-MM>\<SYMBOL>.parquet
+# C:\Users\james\money_chatgpt\data\holdout2024\raw\bars\<YYYY-MM-DD>\<SYMBOL>.parquet
+# C:\Users\james\money_chatgpt\data\holdout2024\work\   (manifests, eligibility layer, progress, error ledgers)

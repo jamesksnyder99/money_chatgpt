@@ -142,9 +142,18 @@ def main() -> int:
             P(f"| {label} | {integ.get(key, 0):,} |")
         P("")
         P(f"Inventory covers {m(integ.get('partitions'))} landed partitions holding {m(integ.get('rows'))} "
-          f"minute rows, of which {m(integ.get('traded_minutes'))} regular-hours minutes carried a trade and "
-          f"{m(integ.get('no_trade_minutes'))} did not. A no-trade minute is inventoried as such and is never "
-          "forward-filled into an execution.")
+          f"minute rows, of which {m(integ.get('traded_minutes'))} regular-hours minutes carried volume and "
+          f"{m(integ.get('no_trade_minutes'))} did not.")
+        P("")
+        P("Four distinct minute states are kept apart and never merged. A no-trade minute returns NaN prices "
+          "with zero volume. A missing bar is absent from the partition entirely. A halt is a documented "
+          f"market event. And {m(integ.get('volume_without_last_sale_price_minutes'))} regular-hours minutes "
+          "carried consolidated volume with a positive trade count but no last-sale-eligible price, so their "
+          "open, high, low and close are NaN. Those are real prints that do not set high, low or last under "
+          "the tape's trade-condition rules, not a data defect: the frozen loader already requires a finite "
+          "positive open and close, so such a minute can never become a mark or an execution. The remaining "
+          f"{m(integ.get('priced_traded_minutes'))} regular-hours minutes carry both volume and a usable price "
+          "and are the ones the integrity checks above are run against.")
     else:
         P("The minute layer had not landed when this inventory ran; see the coverage section.")
     P("")
@@ -153,13 +162,20 @@ def main() -> int:
     P("| Universe contract | Value |")
     P("|---|---:|")
     P(f"| Common-stock roster | {m(elig.get('roster'))} |")
-    P(f"| Exchange-traded products excluded | {m(elig.get('etp_excluded'))} |")
+    P(f"| Exchange-traded-product list size | {m(elig.get('etp_list_size'))} |")
+    P(f"| Of those present in the roster | {m(elig.get('etp_present_in_roster'))} |")
     P(f"| Exchange test issues excluded | {len(elig.get('test_issues_excluded') or [])} |")
     P(f"| Eligibility rows, point in time | {m(elig.get('eligibility_rows'))} across {elig.get('sessions')} sessions |")
     P(f"| Eligible field per session, minimum | {m(elig.get('eligible_field_min'))} |")
     P(f"| Eligible field per session, median | {m(elig.get('eligible_field_median'))} |")
     P(f"| Eligible field per session, maximum | {m(elig.get('eligible_field_max'))} |")
     P(f"| Union of the eligible field across the window | {m(elig.get('minute_universe_size'))} securities |")
+    P("")
+    P(f"One claim is deliberately not overstated. The roster is already common-stock-only: none of the "
+      f"{m(elig.get('etp_list_size'))} listed exchange-traded products appear in it, so that rule excludes "
+      "nothing at this stage and is confirmed as a no-op rather than an active filter. It is still applied, "
+      "so the contract is enforced rather than assumed. The test-issue rule does bite, removing the eight "
+      "exchange test tickers.")
     P("")
     P("Eligibility is point in time by construction: a session is judged on the prior session's official "
       "end-of-day close and dollar volume, never on a later or present-day state. The per-session expected "

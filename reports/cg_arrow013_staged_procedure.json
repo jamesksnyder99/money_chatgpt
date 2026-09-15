@@ -1,0 +1,24 @@
+{
+  "procedure_id": "cg_arrow013_post_selection_certification_v1",
+  "frozen_before_reveal": true,
+  "purpose": "Certify the remaining layers for exactly the securities the already-frozen models mechanically select, without any human choosing which names to certify.",
+  "inputs": "the frozen C0/C1/C2/C3 configurations committed in reports/cg_arrow012_challenger_freeze.json, applied to the certified eligibility and minute layers of this holdout",
+  "steps": [
+    "1. Build the point-in-time candidate field for each frozen weekly signal session from the certified eligibility layer. This step produces the field, not a ranking.",
+    "2. Let the frozen models mechanically determine their own selections. No name is chosen, reviewed or substituted by hand at any point.",
+    "3. For every mechanically selected security, retrieve primary-source corporate-action and identity evidence from SEC EDGAR using src/verification/r4r5_events.py, the same machinery Arrow 007 and Arrow 008 used, with its rate limit and caching.",
+    "4. Normalize prices, share volumes and held quantities using only documented dated actions effective at or before each feature's own cutoff. A price-discontinuity screen is triage and never a factor.",
+    "5. Verify mechanical split neutrality of price times shares before market movement and rounding, and verify that multiple actions compose exactly.",
+    "6. Retrieve any missing execution or ten-session lifecycle observation for the selected names, including the September 2025 tail for late-August cohorts.",
+    "7. Fail closed. An unresolved material action, an unresolved identity, or a missing execution or lifecycle observation leaves that cohort uncertified and unscored. It never triggers a next-name substitution, a stale-price rescue, or the silent retention of the original name.",
+    "8. Only after every selected observation is certified may the reveal batch be scored."
+  ],
+  "forbidden": [
+    "choosing which names to certify by hand",
+    "substituting the next-ranked name for a data failure",
+    "treating a vendor failure as a halt",
+    "inferring a corporate action from a price jump",
+    "scoring a cohort with an unresolved material action"
+  ],
+  "scope_limit": "This procedure may retrieve evidence only for securities the frozen models select. It is not permission to inspect outcomes: it runs before scoring and its output is certification state, not performance."
+}
