@@ -218,9 +218,16 @@ def build_allocations(cohorts, deep, feats, off_high, threshold, certified):
 
 # ---------------------------------------------------------------------------- diagnostics
 def anatomy_rows(books: dict, deep: dict, summaries: dict, hold: int = 10) -> list[dict]:
-    """One row per selected name: frozen pre-entry descriptors plus its sizing-neutral outcome."""
+    """One row per selected name: frozen pre-entry descriptors plus its sizing-neutral outcome.
+
+    The anatomy helpers return unprefixed keys and Arrow 011 froze its cuts against the prefixed
+    names, so the same `sc_` / `cx_` / `po_` / `ep_` convention is applied here. Getting that
+    wrong would not raise; it would quietly leave every frozen cut unmatched and every mechanism
+    check reading a column of None.
+    """
     b = books[("R5", "FIXED_DOLLAR", hold)]
     episodes = an.selection_episodes({c: [h["symbol"] for h in v[:8]] for c, v in deep.items()})
+    ctx = {iso: an.cohort_context(rows[:8], rows) for iso, rows in deep.items()}
     out = []
     for t in b["trades"]:
         iso, sym = t["cohort_id"], t["symbol"]
@@ -229,24 +236,22 @@ def anatomy_rows(books: dict, deep: dict, summaries: dict, hold: int = 10) -> li
         po = an.pre_order_features(sym, signal, date.fromisoformat(t["scheduled_entry_date"]),
                                    t.get("preorder_ts"), summaries)
         sn = an.sizing_neutral_outcome(t)
-        row = {"cohort_id": iso, "symbol": sym, "rank": t["rank"],
-               "price_band": an.price_band(t.get("entry_price") or sc.get("sc_signal_close")),
+        row = {"cohort_id": iso, "symbol": sym, "rank": t["rank"], "status": t["status"],
+               "price_band": an.price_band(sc.get("signal_close")),
                "sizing_neutral_return": sn.get("price_return_10"),
                "net_per_entry_dollar": sn.get("net_per_entry_dollar"),
-               "modeled_net": sn.get("modeled_net"),
-               "ep_episode": (episodes.get((iso, sym)) or {}).get("ep_episode")
-               if isinstance(episodes.get((iso, sym)), dict) else episodes.get((iso, sym))}
-        row.update({k: v for k, v in sc.items() if k.startswith("sc_")})
-        row.update({k: v for k, v in po.items() if k.startswith("po_")})
+               "modeled_net": sn.get("modeled_net")}
+        row.update({f"sc_{k}": v for k, v in sc.items()
+                    if k not in ("schema", "cutoff", "signal_date")})
+        row.update({f"po_{k}": v for k, v in po.items()
+                    if k not in ("schema", "cutoff", "entry_date", "entry_source_path")})
+        row.update({f"cx_{k}": v for k, v in (ctx.get(iso, {}).get(sym) or {}).items()})
+        row.update({f"ep_{k}": v for k, v in (episodes.get((iso, sym)) or {}).items()})
         out.append(row)
-    ctx = {}
-    for iso, rows in deep.items():
-        ctx[iso] = an.cohort_context(rows[:8], rows)
-    for row in out:
-        c = ctx.get(row["cohort_id"]) or {}
-        per = c.get(row["symbol"]) if isinstance(c, dict) else None
-        if isinstance(per, dict):
-            row.update({k: v for k, v in per.items() if k.startswith("cx_")})
+    missing = [k for k in ("sc_close_vs_high20", "sc_ret3", "cx_gap_to_next_rank", "ep_episode")
+               if not any(r.get(k) is not None for r in out)]
+    if missing:
+        raise SystemExit(f"anatomy columns the mechanism panel needs are empty: {missing}")
     return out
 
 
@@ -466,7 +471,7 @@ def main() -> int:
             sym = h["symbol"]
             feats[(iso, sym)] = features(history(
                 sym, HO.FEATS[HO.INDEX[signal] - 20: HO.INDEX[signal] + 1], signal, summaries))
-            off_high[(iso, sym)] = an.signal_close_features(sym, signal, summaries)["sc_close_vs_high20"]
+            off_high[(iso, sym)] = an.signal_close_features(sym, signal, summaries)["close_vs_high20"]
     threshold = freeze["mechanism_panel"]["a11_off_high_median"]
     certified = {c["signal_iso"]: {h["symbol"] for h in deep[c["signal_iso"]][8:]} for c in cohorts}
     lineups, alloc, alloc_rows, plans, problems = build_allocations(
