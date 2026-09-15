@@ -115,6 +115,9 @@ The public manifest reports how much C2 substitution happened, never which secur
 One twelve-month out-of-sample period. Not a forward test. Borrow availability and hard-to-borrow
 cost are not modelled beyond the frozen cost model. The account convention assumes the frozen
 execution and cost rules throughout, and marked equity is not subject to margin calls or forced
-liquidation — several books show peak-to-trough drawdowns beyond 50%, and one path takes marked
-equity close to zero before recovering, which a real account would not have survived intact. The
-rank-by-rank table is a diagnostic and creates no book.
+liquidation. Every book shows a peak-to-trough drawdown beyond 45%; the deepest is the
+Momentum+Volume-Sized Short at H9 fixed-dollar, which falls 82.5% from a peak of 112,172 to a
+trough of 19,624 and does not recover inside the corridor. A real account carrying that path would
+have faced margin action the model does not impose, so the ending equities should be read with the
+drawdown column beside them, never alone. The rank-by-rank table is a diagnostic and creates no
+book.
